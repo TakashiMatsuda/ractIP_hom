@@ -1,0 +1,584 @@
+
+aln.cpp,1980
+#define __INC_LIBRNA_H37,1069
+namespace Vienna 38,1092
+struct aln_parser 51,1301
+  class format_error aln_parser::format_error53,1352
+    format_error(aln_parser::format_error::format_error56,1413
+  struct WAaln_parser::WA59,1489
+    WA(aln_parser::WA::WA61,1505
+    unsigned int cur_index;aln_parser::WA::cur_index63,1574
+    std::string cur_name;aln_parser::WA::cur_name64,1602
+    std::string cur_seq;aln_parser::WA::cur_seq65,1628
+    std::deque<std::string> names;aln_parser::WA::names66,1653
+    std::deque<std::string> seqs;aln_parser::WA::seqs67,1688
+  WA& wa;aln_parser::wa70,1728
+  aln_parser(aln_parser::aln_parser71,1738
+  struct push_seqaln_parser::push_seq73,1770
+    WA& wa;aln_parser::push_seq::wa75,1792
+    push_seq(aln_parser::push_seq::push_seq76,1804
+    void operator()(aln_parser::push_seq::operator()79,1864
+  struct reset_indexaln_parser::reset_index94,2294
+    WA& wa;aln_parser::reset_index::wa96,2319
+    reset_index(aln_parser::reset_index::reset_index97,2331
+    void operator()(aln_parser::reset_index::operator()100,2394
+  struct definitionaln_parser::definition112,2711
+    typedef rule<ScannerT> rule_t;aln_parser::definition::rule_t114,2735
+    rule_t aln;aln_parser::definition::aln115,2770
+    rule_t header;aln_parser::definition::header116,2786
+    rule_t head_word;aln_parser::definition::head_word117,2805
+    rule_t body;aln_parser::definition::body118,2827
+    rule_t body_part;aln_parser::definition::body_part119,2844
+    rule_t empty;aln_parser::definition::empty120,2866
+    rule_t seq;aln_parser::definition::seq121,2884
+    rule_t status;aln_parser::definition::status122,2900
+    rule_t status_or_empty;aln_parser::definition::status_or_empty123,2919
+    definition(aln_parser::definition::definition125,2952
+    const rule_t& start(aln_parser::definition::start140,3507
+load(146,3583
+load(168,4119
+main(192,4512
+consensus(213,4893
+energy_of_struct(248,5690
+
+bp.cpp,463
+struct IgnoreAlonePair34,998
+  IgnoreAlonePair(IgnoreAlonePair::IgnoreAlonePair36,1023
+  void operator()(IgnoreAlonePair::operator()38,1067
+  Table& bp_;IgnoreAlonePair::bp_48,1296
+parse(54,1357
+load(85,1986
+save(113,2626
+save(123,2827
+struct Updater138,3261
+  Updater(Updater::Updater140,3278
+  void operator()(Updater::operator()142,3347
+  CYKTable<V> bp_;Updater::bp_150,3474
+  std::vector<V> q;Updater::q151,3493
+calc_nonbp_prob(157,3570
+
+capi.cpp,252
+class CFWrapper13,180
+  CFWrapper(CFWrapper::CFWrapper16,206
+  ~CFWrapper(CFWrapper::~CFWrapper21,285
+  centroid_fold(CFWrapper::centroid_fold27,333
+  CentroidFold* impl_;CFWrapper::impl_46,837
+static CFWrapper cf;49,864
+centroidfold(52,890
+
+centroid.cpp,1968
+namespace Centroid35,1061
+  struct EstimatorCentroid::Estimator38,1105
+    Estimator(Centroid::Estimator::Estimator40,1128
+    void operator()(Centroid::Estimator::operator()43,1268
+    float expected_accuracy(Centroid::Estimator::expected_accuracy52,1459
+    const T& t_;Centroid::Estimator::t_54,1512
+    std::string& paren_;Centroid::Estimator::paren_55,1529
+    float th_;Centroid::Estimator::th_56,1554
+    float gamma_;Centroid::Estimator::gamma_57,1569
+    float ea_;Centroid::Estimator::ea_58,1587
+  struct CellCentroid::Cell62,1631
+    typedef V value_type;Centroid::Cell::value_type64,1649
+    value_type val;Centroid::Cell::val66,1676
+    Rule::type_t type;Centroid::Cell::type67,1696
+    uint br_pos;Centroid::Cell::br_pos68,1719
+    Cell(Centroid::Cell::Cell70,1737
+    update(Centroid::Cell::update77,1882
+  struct UpdaterCentroid::Updater91,2195
+    typedef typename BPTable::value_type value_type;Centroid::Updater::value_type93,2216
+    Updater(Centroid::Updater::Updater95,2270
+    void operator()(Centroid::Updater::operator()100,2418
+    const BPTable& bp_;Centroid::Updater::bp_131,3357
+    DPTable& dp_;Centroid::Updater::dp_132,3381
+    float gamma_;Centroid::Updater::gamma_133,3399
+    uint min_loop_;Centroid::Updater::min_loop_134,3417
+  struct TraceBackCentroid::TraceBack138,3472
+    TraceBack(Centroid::TraceBack::TraceBack140,3495
+    operator()(Centroid::TraceBack::operator()145,3596
+    std::string& paren_;Centroid::TraceBack::paren_176,4172
+    const DPTable& dp_;Centroid::TraceBack::dp_177,4197
+  execute(Centroid::execute182,4258
+      typedef typename T::value_type Centroid::T::value_type189,4483
+      typedef CYKTable< Cell<value_type> > DPTable;Centroid::DPTable190,4532
+  execute(Centroid::execute205,4879
+      typedef typename T::value_type Centroid::T::value_type212,5129
+      typedef CYKTable< Cell<value_type> > DPTable;Centroid::DPTable213,5178
+
+centroid_alifold.cpp,42
+centroid_alifold(55,1528
+main(379,12736
+
+centroid_fold.cpp,39
+centroid_fold(52,1439
+main(347,11131
+
+centroid_homfold.cpp,41
+centroid_homfold(49,1367
+main(291,9065
+
+diana.cpp,366
+Diana(20,268
+build(36,591
+get_clusters(118,2970
+optimal_size(146,3717
+diameter(155,3963
+find_seed_splinter(170,4289
+splinter_value(197,5027
+divide(220,5610
+cluster_index(284,7557
+typedef boost::multi_array<double,double314,8482
+typedef boost::multi_array<double,2> DMatrix;314,8482
+main(323,8609
+  typedef boost::multi_array<double,2> DMatrix;328,8763
+
+fa.cpp,1011
+struct fa_parser 31,941
+  fa_parser(fa_parser::fa_parser33,990
+  std::string& name;fa_parser::name36,1087
+  std::string& seq;fa_parser::seq37,1108
+  std::string& str;fa_parser::str38,1128
+  struct append_seqfa_parser::append_seq40,1149
+    std::string& seq;fa_parser::append_seq::seq42,1173
+    append_seq(fa_parser::append_seq::append_seq44,1196
+    void operator()(fa_parser::append_seq::operator()47,1266
+  struct definitionfa_parser::definition56,1400
+    typedef rule<ScannerT> rule_t;fa_parser::definition::rule_t58,1424
+    rule_t fa;fa_parser::definition::fa59,1459
+    rule_t head;fa_parser::definition::head60,1474
+    rule_t seq_l;fa_parser::definition::seq_l61,1491
+    rule_t seq;fa_parser::definition::seq62,1509
+    rule_t str;fa_parser::definition::str63,1525
+    rule_t str_l;fa_parser::definition::str_l64,1541
+    definition(fa_parser::definition::definition66,1560
+    const rule_t& start(fa_parser::definition::start76,1919
+load(82,1988
+load(105,2444
+
+folding_engine.cpp,1562
+#define __INC_LIBRNA_H42,1247
+namespace Vienna 43,1270
+const std::string& get_seq(55,1445
+float calc_energy(59,1535
+std::string get_seq(71,1797
+std::string get_seq 74,1869
+float calc_energy(78,1952
+float calc_energy(87,2106
+struct CountBP100,2386
+  CountBP(CountBP::CountBP102,2403
+  void operator()(CountBP::operator()106,2475
+  const L& bp_;CountBP::bp_117,2720
+  BPTable table;CountBP::table118,2736
+  uint p;CountBP::p119,2753
+centroid_fold(127,2900
+struct Result160,3712
+  Result(Result::Result162,3728
+  float g;Result::g167,3923
+  float sen;Result::sen168,3934
+  float ppv;Result::ppv169,3947
+  float mcc;Result::mcc170,3960
+  float ea;Result::ea171,3973
+  float e;Result::e172,3985
+  std::string paren;Result::paren173,3996
+struct cmp_by_mcc176,4021
+  bool operator()(cmp_by_mcc::operator()178,4041
+centroid_fold(187,4213
+stochastic_fold(246,5830
+stochastic_fold(269,6337
+hamming_distance(288,6819
+struct cmp_by_size293,6897
+  cmp_by_size(cmp_by_size::cmp_by_size295,6918
+  bool operator()(cmp_by_size::operator()297,6979
+  const std::vector<uint>& num_;cmp_by_size::num_302,7056
+stochastic_fold(308,7144
+    typedef boost::multi_array<double, 2> DMatrix;318,7504
+max_mcc_fold(405,10274
+compute_expected_accuracy(440,11124
+get_TP_TN_FP_FN 496,12559
+compute_expected_accuracy_sampling(508,12831
+decode_structure(554,14097
+ps_plot(576,14614
+svg_plot(590,14975
+set_constraint(603,15316
+prepare_stochastic_traceback(611,15477
+stochastic_traceback(619,15668
+clean_stochastic_traceback(628,15860
+
+iupac.cpp,56
+IUPACsymbol(26,849
+to_char(55,1714
+transform(64,1843
+
+log_prob.cpp,13
+main(11,194
+
+mea.cpp,1485
+namespace MEA34,1036
+  struct CellMEA::Cell37,1075
+    typedef V value_type;MEA::Cell::value_type39,1093
+    value_type val;MEA::Cell::val41,1120
+    Rule::type_t type;MEA::Cell::type42,1140
+    uint br_pos;MEA::Cell::br_pos43,1163
+    Cell(MEA::Cell::Cell45,1181
+    update(MEA::Cell::update52,1326
+  struct UpdaterMEA::Updater66,1639
+    typedef typename BPTable::value_type value_type;MEA::Updater::value_type68,1660
+    Updater(MEA::Updater::Updater70,1714
+    void operator()(MEA::Updater::operator()76,1910
+    const BPTable& bp_;MEA::Updater::bp_107,2830
+    const std::vector<value_type> q_;MEA::Updater::q_108,2854
+    DPTable& dp_;MEA::Updater::dp_109,2892
+    value_type gamma_;MEA::Updater::gamma_110,2910
+    uint min_loop_;MEA::Updater::min_loop_111,2933
+  struct TraceBackMEA::TraceBack115,2988
+    TraceBack(MEA::TraceBack::TraceBack117,3011
+    operator()(MEA::TraceBack::operator()122,3112
+    std::string& paren_;MEA::TraceBack::paren_153,3693
+    const DPTable& dp_;MEA::TraceBack::dp_154,3718
+  execute(MEA::execute159,3775
+    typedef V value_type;MEA::value_type161,3848
+    typedef BPTableTmpl<V> BPTable;MEA::BPTable162,3874
+    typedef CYKTable< Cell<value_type> > DPTable;MEA::DPTable163,3910
+  execute(MEA::execute177,4230
+    typedef V value_type;MEA::value_type179,4318
+    typedef BPTableTmpl<V> BPTable;MEA::BPTable180,4344
+    typedef CYKTable< Cell<value_type> > DPTable;MEA::DPTable181,4380
+
+ps_plot.cpp,362
+#define  MAX(11,168
+#define VERSION 12,205
+static char rcsid[rcsid19,442
+static const char *RNAss_head RNAss_head22,506
+static const char *RNAss_color RNAss_color93,2740
+int ps_plot(139,3960
+int ps_color_plot(255,7072
+static short *make_pair_table(make_pair_table390,10729
+static char *time_stamp(time_stamp431,11677
+static void nrerror(439,11789
+
+aln.h,538
+#define __INC_ALN_H__22,796
+#define BOOST_SPIRIT_CLASSIC_NS 34,1028
+class Aln37,1082
+  Aln(Aln::Aln40,1102
+  Aln(Aln::Aln43,1134
+  Aln(Aln::Aln48,1252
+  operator=(Aln::operator=53,1326
+  const std::list<std::string>& name(Aln::name62,1464
+  const std::list<std::string>& seq(Aln::seq63,1527
+  std::list<std::string>& seq(Aln::seq64,1588
+  unsigned int size(Aln::size65,1637
+  unsigned int num_aln(Aln::num_aln66,1698
+  std::list<std::string> name_;Aln::name_80,2025
+  std::list<std::string> seq_;Aln::seq_81,2057
+
+bp.h,754
+#define __INC_BP_H__22,795
+class BPTableTmpl29,895
+  typedef T value_type;BPTableTmpl::value_type32,923
+  BPTableTmpl(BPTableTmpl::BPTableTmpl35,962
+  BPTableTmpl(BPTableTmpl::BPTableTmpl37,1026
+  BPTableTmpl(BPTableTmpl::BPTableTmpl42,1145
+  void reserve(BPTableTmpl::reserve44,1250
+  uint reserved_size(BPTableTmpl::reserved_size51,1370
+  void resize(BPTableTmpl::resize53,1427
+  uint size(BPTableTmpl::size62,1612
+  uint max_dist(BPTableTmpl::max_dist64,1651
+  void update(BPTableTmpl::update66,1704
+  void add(BPTableTmpl::add68,1756
+  T operator()(BPTableTmpl::operator()70,1806
+  CYKTable<T> bp_;BPTableTmpl::bp_84,2278
+  uint size_;BPTableTmpl::size_85,2297
+  uint reserved_size_;BPTableTmpl::reserved_size_86,2311
+
+capi.h,168
+#define __INC_CAPI_H__4,35
+#define CENTROID_SUCCESS 10,99
+#define CENTROID_BAD_ALLOC 11,126
+#define CENTROID_LENGTH_ERR 12,155
+#define CENTROID_UNKNOWN_ERR 13,185
+
+centroid.h,34
+#define __INC_CENTROID_H__25,911
+
+cyktable.h,1336
+#define __INC_CYKTABLE_H__23,802
+typedef unsigned int uint;29,887
+typedef std::pair<uint,uint31,915
+typedef std::pair<uint,uint> Pos;31,915
+class CYKTable38,1074
+  typedef T value_type;CYKTable::value_type41,1099
+  std::vector<T> table_;CYKTable::table_44,1133
+  std::vector<T*> ptr_;CYKTable::ptr_45,1158
+  uint size_;CYKTable::size_46,1182
+  uint max_dist_;CYKTable::max_dist_47,1196
+  CYKTable(CYKTable::CYKTable50,1225
+  CYKTable(CYKTable::CYKTable55,1294
+  CYKTable(CYKTable::CYKTable61,1427
+  uint estimate_size(CYKTable::estimate_size68,1611
+  void setup(CYKTable::setup76,1758
+  uint size(CYKTable::size92,2186
+  uint table_size(CYKTable::table_size94,2225
+  uint max_dist(CYKTable::max_dist96,2278
+  void resize(CYKTable::resize98,2325
+  void fill(CYKTable::fill105,2449
+  void put(CYKTable::put112,2544
+  void put(CYKTable::put121,2712
+  const T& get(CYKTable::get127,2808
+  const T& get(CYKTable::get136,2975
+  T& get(CYKTable::get142,3069
+  T& get(CYKTable::get150,3180
+  const T& operator()(CYKTable::operator()157,3263
+  const T& operator()(CYKTable::operator()163,3346
+  T& operator()(CYKTable::operator()169,3433
+  T& operator()(CYKTable::operator()175,3504
+inside_traverse(183,3602
+inside_traverse(200,3909
+outside_traverse(217,4244
+outside_traverse(232,4514
+
+diana.h,1009
+#define __INC_DIANA_H__4,33
+typedef unsigned int uint;10,120
+  class Diana16,266
+    typedef std::pair<uint*Diana::uint19,294
+    typedef std::pair<uint*,uint*> range_t;Diana::range_t19,294
+    typedef typename DMatrix::element value_type;Diana::value_type20,338
+    struct clust_tDiana::clust_t23,400
+      std::pair<Diana::clust_t::std::pair25,425
+      std::pair<uint,uint> ch;Diana::clust_t::ch25,425
+      range_t range;Diana::clust_t::range26,456
+      value_type diameter;Diana::clust_t::diameter27,477
+    const DMatrix& dmatrix_;Diana::dmatrix_53,1182
+    std::vector<uint> objects_;Diana::objects_54,1211
+    std::vector<value_type> in_sum_;Diana::in_sum_55,1243
+    std::vector<clust_t> clusters_;Diana::clusters_56,1280
+    std::list<uint> active_;Diana::active_57,1316
+    std::vector<uint> hist_;Diana::hist_58,1345
+    std::vector<double> ch_index_;Diana::ch_index_59,1374
+    value_type in_c_;Diana::in_c_60,1409
+    value_type out_c_;Diana::out_c_61,1431
+
+fa.h,556
+#define __INC_FA_H__22,795
+#define BOOST_SPIRIT_CLASSIC_NS 35,1045
+class Fasta38,1099
+  Fasta(Fasta::Fasta41,1121
+  Fasta(Fasta::Fasta43,1162
+  Fasta(Fasta::Fasta49,1295
+  operator=(Fasta::operator=54,1392
+  const std::string& name(Fasta::name64,1545
+  const std::string& seq(Fasta::seq65,1597
+  std::string& seq(Fasta::seq66,1647
+  const std::string& str(Fasta::str67,1685
+  unsigned int size(Fasta::size68,1735
+  std::string name_;Fasta::name_78,1936
+  std::string seq_;Fasta::seq_79,1957
+  std::string str_;Fasta::str_80,1977
+
+folding_engine.h,1094
+#define __INC_FOLDING_ENGINE_H__24,916
+typedef unsigned int uint;35,1122
+typedef BPTableTmpl<float> BPTable;36,1149
+typedef boost::shared_ptr<BPTable> BPTablePtr;37,1185
+typedef boost::dynamic_bitset<> BPvec;38,1232
+typedef boost::shared_ptr<BPvec> BPvecPtr;39,1271
+class TH 42,1385
+  TH TH::TH45,1464
+  uint size TH::size50,1595
+class FoldingEngine54,1674
+  FoldingEngine(FoldingEngine::FoldingEngine57,1704
+  virtual ~FoldingEngine(FoldingEngine::~FoldingEngine59,1824
+  const BPTable& get_bp(FoldingEngine::get_bp79,3077
+  bool mea_;FoldingEngine::mea_94,3639
+  BPTable bp_;FoldingEngine::bp_95,3652
+  uint max_bp_dist_;FoldingEngine::max_bp_dist_96,3667
+  struct EncodeBPFoldingEngine::EncodeBP99,3700
+    EncodeBP(FoldingEngine::EncodeBP::EncodeBP101,3722
+    BPvecPtr execute(FoldingEngine::EncodeBP::execute105,3777
+    void operator()(FoldingEngine::EncodeBP::operator()115,4007
+    const CYKTable<uint>* t_;FoldingEngine::EncodeBP::t_122,4129
+    BPvecPtr vec_;FoldingEngine::EncodeBP::vec_123,4159
+    uint p_;FoldingEngine::EncodeBP::p_124,4178
+
+iupac.h,2299
+#define __INC_IUPAC_H__22,798
+typedef std::vector<IUPACsymbol> IUPACsequence;29,880
+  RNA_A ::RNA_A32,936
+  RNA_C ::RNA_C33,949
+  RNA_G ::RNA_G34,962
+  RNA_T ::RNA_T35,975
+  RNA_U ::RNA_U36,988
+  RNA_U = RNA_T,::RNA_T36,988
+  N_RNA ::N_RNA37,1005
+  N_IUPAC ::N_IUPAC38,1018
+class IUPACsymbol41,1037
+    GAP IUPACsymbol::GAP44,1066
+    A IUPACsymbol::A45,1079
+    A = 1<<RNA_A,IUPACsymbol::RNA_A45,1079
+    C IUPACsymbol::C46,1097
+    C = 1<<RNA_C,IUPACsymbol::RNA_C46,1097
+    G IUPACsymbol::G47,1115
+    G = 1<<RNA_G,IUPACsymbol::RNA_G47,1115
+    T IUPACsymbol::T48,1133
+    T = 1<<RNA_T,IUPACsymbol::RNA_T48,1133
+    U IUPACsymbol::U49,1151
+    U = T,IUPACsymbol::T49,1151
+    R IUPACsymbol::R50,1162
+    R = A IUPACsymbol::A50,1162
+    R = A | G,IUPACsymbol::G50,1162
+    Y IUPACsymbol::Y51,1177
+    Y = C IUPACsymbol::C51,1177
+    Y = C | T,IUPACsymbol::T51,1177
+    M IUPACsymbol::M52,1192
+    M = A IUPACsymbol::A52,1192
+    M = A | C,IUPACsymbol::C52,1192
+    K IUPACsymbol::K53,1207
+    K = G IUPACsymbol::G53,1207
+    K = G | T,IUPACsymbol::T53,1207
+    S IUPACsymbol::S54,1222
+    S = C IUPACsymbol::C54,1222
+    S = C | G,IUPACsymbol::G54,1222
+    W IUPACsymbol::W55,1237
+    W = A IUPACsymbol::A55,1237
+    W = A | T,IUPACsymbol::T55,1237
+    B IUPACsymbol::B56,1252
+    B = C IUPACsymbol::C56,1252
+    B = C | G IUPACsymbol::G56,1252
+    B = C | G | T,IUPACsymbol::T56,1252
+    D IUPACsymbol::D57,1271
+    D = A IUPACsymbol::A57,1271
+    D = A | G IUPACsymbol::G57,1271
+    D = A | G | T,IUPACsymbol::T57,1271
+    H IUPACsymbol::H58,1290
+    H = A IUPACsymbol::A58,1290
+    H = A | C IUPACsymbol::C58,1290
+    H = A | C | T,IUPACsymbol::T58,1290
+    V IUPACsymbol::V59,1309
+    V = A IUPACsymbol::A59,1309
+    V = A | C IUPACsymbol::C59,1309
+    V = A | C | G,IUPACsymbol::G59,1309
+    N IUPACsymbol::N60,1328
+    N = A IUPACsymbol::A60,1328
+    N = A | C IUPACsymbol::C60,1328
+    N = A | C | G IUPACsymbol::G60,1328
+    N = A | C | G | TIUPACsymbol::T60,1328
+  IUPACsymbol(IUPACsymbol::IUPACsymbol65,1402
+  IUPACsymbol& operator=(IUPACsymbol::operator=66,1460
+  unsigned int index(IUPACsymbol::index71,1570
+  unsigned char iupac_;IUPACsymbol::iupac_77,1745
+
+mea.h,29
+#define __INC_MEA_H__25,906
+
+ps_plot.h,31
+#define __INC_PS_PLOT_H__3,34
+
+rule.h,617
+#define __INC_RULE_H__22,797
+  enum type_t 27,864
+    E 28,880
+    N 29,909
+    L 30,932
+    R 31,957
+    P 32,982
+    B 33,1009
+    N_TYPE 34,1034
+  enum { TYPE,38,1086
+  enum { TYPE, BINARY,38,1086
+  enum { TYPE, BINARY, UNARY_N,38,1086
+  enum { TYPE, BINARY, UNARY_N, UNARY_L,38,1086
+  enum { TYPE, BINARY, UNARY_N, UNARY_L, UNARY_R,38,1086
+  enum { TYPE, BINARY, UNARY_N, UNARY_L, UNARY_R, UNARY_P,38,1086
+  enum { TYPE, BINARY, UNARY_N, UNARY_L, UNARY_R, UNARY_P, EMIT_S,38,1086
+  enum { TYPE, BINARY, UNARY_N, UNARY_L, UNARY_R, UNARY_P, EMIT_S, EMIT_P 38,1086
+  typedef unsigned short 40,1164
+
+util.h,174
+#define __H__UTIL__MH2,22
+#define __INC_LIBRNA_H12,232
+contra_align 34,708
+contra_align 43,928
+probcons 55,1294
+probcons 64,1498
+contra_fold(77,1856
+pf_fold(100,2496
+
+naview.c,2409
+typedef int LOGICAL;43,1735
+#define logical 44,1756
+#define true 46,1781
+#define false 47,1796
+#define FATAL_ERROR 48,1812
+#define SUCCESS 49,1834
+#define type_alloc(51,1853
+#define struct_alloc(53,1909
+#define add_double_list(55,1981
+static double pi 65,2230
+static double anum 66,2268
+#define minf2(73,2342
+#define maxf2(74,2386
+static struct base 76,2431
+  int mate;77,2452
+  double x,78,2464
+  double x,y;78,2464
+  logical extracted;79,2478
+  struct region *region;region80,2499
+} *bases;bases81,2524
+struct region 83,2539
+  int start1,84,2555
+  int start1,end1,84,2555
+  int start1,end1,start2,84,2555
+  int start1,end1,start2,end2;84,2555
+struct loop 87,2591
+  int nconnection;88,2605
+  struct connection **connections;connections89,2624
+  int number;90,2659
+  int depth;91,2673
+  logical mark;92,2686
+  double x,93,2702
+  double x,y,93,2702
+  double x,y,radius;93,2702
+struct connection 96,2731
+  struct loop *loop;loop97,2751
+  struct region *region;region98,2772
+  int start,99,2797
+  int start,end;99,2797
+  double xrad,100,2878
+  double xrad,yrad,100,2878
+  double xrad,yrad,angle;100,2878
+  logical extruded;101,2904
+  logical broken;103,3028
+static int nbase,106,3107
+static int nbase, nregion,106,3107
+static int nbase, nregion, loop_count;106,3107
+static struct loop *root,root108,3147
+static struct loop *root, *loops;loops108,3147
+static struct region *regions;regions110,3182
+struct radloop 114,3262
+  double radius;115,3279
+  int loopnumber;116,3296
+  struct radloop *next,next117,3314
+  struct radloop *next, *prev;prev117,3314
+static struct radloop *rlphead;rlphead120,3349
+static double lencut;122,3382
+static logical debug 124,3405
+int naview_xy_coordinates(142,4234
+static void read_in_bases(169,4918
+static void find_regions(192,5428
+static struct loop *construct_loop(construct_loop233,6539
+static void dump_loops(324,8985
+static void find_central_loop(347,9522
+static void determine_depths(374,10025
+static int depth(391,10287
+static void traverse_loop(418,10866
+static void determine_radius(818,21929
+static logical    connected_connection(877,23630
+static int    find_ic_middle(895,23931
+static void generate_region(932,24852
+static void construct_circle_segment(967,25719
+static void construct_extruded_segment(1017,27104
+static void find_center_for_arc(1097,29487
+#define maxiter 1115,30281
+
+test.c,11
+main(5,42

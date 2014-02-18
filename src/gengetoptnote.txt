@@ -1,0 +1,46 @@
+RactIP&
+RactIP::
+parse_options(int& argc, char**& argv)
+{
+  gengetopt_args_info args_info;// Gnu gengetopt
+  if (cmdline_parser(argc, argv, &args_info)!=0) exit(1);
+
+  alpha_ = args_info.alpha_arg;
+  beta_ = args_info.beta_arg;
+  th_ss_ = args_info.fold_th_arg;
+  th_hy_ = args_info.hybridize_th_arg;
+  th_ac_ = args_info.acc_th_arg;
+  max_w_ = args_info.max_w_arg;
+  min_w_ = args_info.min_w_arg;
+  mix_w = args_info.mix_w_arg;// warning:undefined
+  enable_zscore_ = args_info.zscore_arg;
+  num_shuffling_ = args_info.num_shuffling_arg;
+  seed_ = args_info.seed_arg;
+  in_pk_ = args_info.no_pk_flag==0;
+  use_contrafold_ = args_info.mccaskill_flag==0;
+  //use_pf_duplex_ = args_info.pf_duplex_flag;
+  stacking_constraints_ = args_info.allow_isolated_flag==0;
+  //allow_concat_ = args_info.allow_concat_flag;
+  //run_with_modena_ = args_info.modena_flag;
+  n_th_ = 1; // args_info.n_th_arg;
+  if (args_info.rip_given) rip_file_ = args_info.rip_arg;
+  show_energy_ = args_info.show_energy_flag==1;
+  if (args_info.param_file_given) param_file_ = args_info.param_file_arg;
+
+  if (args_info.inputs_num==0 ||
+      (min_w_!=0 && max_w_!=0 && (min_w_>max_w_ || use_contrafold_)))
+  {
+    cmdline_parser_print_help();
+    cmdline_parser_free(&args_info);
+    exit(1);
+  }
+  if (args_info.inputs_num>=1)
+    fa1_ = args_info.inputs[0];
+  if (args_info.inputs_num>=2)
+    fa2_ = args_info.inputs[1];
+
+  cmdline_parser_free(&args_info);
+  return *this;
+}
+
+

@@ -1,0 +1,17 @@
+homologous availableなコードを作成する。
+基本的には、homologous を利用した塩基対確率を与えることが目的となる。
+---
+contrafoldとmccaskillに投げるところを、contrafoldHomに投げるように変えればいいのかな。
+--
+engineは配列に対しての確率行列モデル
+engine_aはアラインメントに対しての確率行列モデル
+--------
+入力から順番に変更します
+---
+入力後のAln, Fastaの格納コードを書いた。
+---
+入力のオプションを追加した。
+---
+alifoldをhomfoldにした。
+---
+centroid_homfoldからコードを移行した。

@@ -1,0 +1,179 @@
+
+alifold.cpp,247
+namespace Vienna 35,1076
+AliFoldModel(56,1532
+set_constraint(85,2349
+alloc_aln(93,2518
+free_aln(108,2831
+calculate_posterior(116,2950
+prepare_stochastic_traceback(161,4043
+stochastic_traceback(201,5007
+clean_stochastic_traceback(222,5419
+
+aux.cpp,46
+AuxModel(30,971
+calculate_posterior(37,1144
+
+averaged.cpp,620
+remove_gaps(34,1012
+remove_gaps(51,1366
+struct AverageBP69,1850
+  AverageBP(AverageBP::AverageBP71,1869
+  void operator()(AverageBP::operator()79,2082
+  void make(AverageBP::make94,2531
+  BPTable& bp_;AverageBP::bp_103,2699
+  const std::list<BPTablePtr>& bps_;AverageBP::bps_104,2715
+  const std::list<std::vector<uint> >& idxmap_;AverageBP::idxmap_105,2752
+  uint max_dist_;AverageBP::max_dist_106,2800
+AveragedModel(110,2838
+stochastic_fold(117,3023
+stochastic_fold(153,3989
+max_mcc_fold(187,4969
+compute_expected_accuracy_sampling(236,6316
+set_constraint(294,8034
+calculate_posterior(317,8482
+
+contrafold.cpp,172
+CONTRAfoldModel(33,1046
+~CONTRAfoldModel(50,1547
+set_constraint(57,1633
+calculate_posterior(65,1742
+prepare_stochastic_traceback(92,2403
+stochastic_traceback(99,2544
+
+contrafoldhom.cpp,253
+CONTRAfoldHomModel(14,231
+~CONTRAfoldHomModel(32,771
+set_constraint(39,863
+calculate_posterior(47,975
+  typedef const CONTRALIGN::SparseMatrixEntry<CONTRALIGN::SparseMatrixEntry52,1100
+  typedef CONTRALIGN::SparseMatrixEntry<float>* Iter;53,1161
+
+contrafoldm.cpp,158
+CONTRAfoldMultiModel(33,1069
+~CONTRAfoldMultiModel(54,1772
+calculate_posterior(63,1934
+prepare_stochastic_traceback(71,2059
+stochastic_traceback(80,2313
+
+mccaskill.cpp,241
+#define __INC_LIBRNA_H36,1085
+namespace Vienna 37,1108
+McCaskillModel(59,1573
+set_constraint(89,2446
+calculate_posterior(98,2628
+prepare_stochastic_traceback(144,3826
+stochastic_traceback(177,4696
+clean_stochastic_traceback(197,5123
+
+mccaskillhom.cpp,281
+#define __INC_LIBRNA_H16,266
+namespace Vienna 17,289
+McCaskillHomModel(35,704
+set_constraint(67,1645
+calculate_posterior(76,1830
+  typedef const CONTRALIGN::SparseMatrixEntry<CONTRALIGN::SparseMatrixEntry81,1955
+  typedef CONTRALIGN::SparseMatrixEntry<float>* Iter;82,2016
+
+mixture.cpp,406
+MixtureModel(33,1082
+struct MulAdd39,1276
+  MulAdd(MulAdd::MulAdd41,1292
+  void operator()(MulAdd::operator()42,1368
+  BPTable& bp_;MulAdd::bp_44,1448
+  float w_;MulAdd::w_45,1464
+  const BPTable& t_;MulAdd::t_46,1476
+struct Div49,1501
+  Div(Div::Div51,1514
+  void operator()(Div::operator()52,1562
+  BPTable& bp_;Div::bp_54,1632
+  float d_;Div::d_55,1648
+calculate_posterior(61,1710
+
+pfold.cpp,108
+static int mkstemp(38,1138
+mk_tempname(55,1430
+mk_fa(66,1581
+mk_fa(75,1750
+calculate_posterior(90,2119
+
+alifold.h,291
+#define __INC_ENGINE_ALIFOLD_H__25,917
+class AliFoldModel 30,1002
+  virtual ~AliFoldModel(AliFoldModel::~AliFoldModel35,1189
+  bool canonical_only_;AliFoldModel::canonical_only_45,1553
+  int bk_st_back_;AliFoldModel::bk_st_back_46,1577
+  std::string str_;AliFoldModel::str_47,1596
+
+aux.h,208
+#define __INC_ENGINE_AUX_H__25,913
+class AuxModel 29,975
+  virtual ~AuxModel(AuxModel::~AuxModel33,1112
+  std::vector<std::string> bpfiles_;AuxModel::bpfiles_39,1240
+  uint pos_;AuxModel::pos_40,1277
+
+averaged.h,253
+#define __INC_ENGINE_AVERAGED_H__25,918
+class AveragedModel 29,985
+  virtual ~AveragedModel(AveragedModel::~AveragedModel33,1133
+  FoldingEngine<std::string>* cf_;AveragedModel::cf_47,1805
+  std::vector<uint> paren_;AveragedModel::paren_48,1840
+
+boltzmann_param.h,39
+#define __INC_BOLTZMANN_PARAM_H__2,34
+
+contrafold.h,240
+#define __INC_ENGINE_CONTRAFOLD_H__25,920
+class CONTRAfoldModel 36,1131
+  virtual void clean_stochastic_traceback(CONTRAfoldModel::clean_stochastic_traceback48,1656
+  CONTRAfold<float>* contrafold_;CONTRAfoldModel::contrafold_51,1736
+
+contrafoldhom.h,212
+#define __INC_ENGINE_CONTRAFOLDHOM_H__4,74
+class CONTRAfoldHomModel 11,235
+  CONTRAfold<float>* contrafold_;CONTRAfoldHomModel::contrafold_26,854
+  std::string engine_a_;CONTRAfoldHomModel::engine_a_27,888
+
+contrafoldm.h,391
+#define __INC_ENGINE_CONTRAFOLDM_H__25,921
+class CONTRAfoldMultiModel 31,1051
+  virtual void clean_stochastic_traceback(CONTRAfoldMultiModel::clean_stochastic_traceback43,1558
+  CONTRAfoldModel* contrafold_;CONTRAfoldMultiModel::contrafold_46,1630
+  CONTRAfoldM<float>* contrafoldm_;CONTRAfoldMultiModel::contrafoldm_47,1662
+  AveragedModel* avg_;CONTRAfoldMultiModel::avg_48,1698
+
+mccaskill.h,307
+#define __INC_ENGINE_MCCASKILL_H__25,919
+class McCaskillModel 30,1006
+  virtual ~McCaskillModel(McCaskillModel::~McCaskillModel35,1207
+  bool canonical_only_;McCaskillModel::canonical_only_45,1605
+  int bk_st_back_;McCaskillModel::bk_st_back_46,1629
+  std::string str_;McCaskillModel::str_47,1648
+
+mccaskillhom.h,439
+#define __INC_ENGINE_MCCASKILLHOM_H__4,79
+class McCaskillHomModel 9,169
+  virtual ~McCaskillHomModel(McCaskillHomModel::~McCaskillHomModel14,385
+  bool canonical_only_;McCaskillHomModel::canonical_only_24,795
+  int bk_st_back_;McCaskillHomModel::bk_st_back_25,819
+  std::string str_;McCaskillHomModel::str_26,838
+  const char* param_;McCaskillHomModel::param_27,858
+  std::string engine_a_;McCaskillHomModel::engine_a_28,880
+
+mixture.h,329
+#define __INC_ENGINE_MIXTURE_H__25,917
+class MixtureModel 30,1006
+  virtual ~MixtureModel(MixtureModel::~MixtureModel34,1168
+  std::vector<MixtureModel::std::vector40,1292
+  std::vector<std::pair<FoldingEngine<SEQ>*,float> > models_;MixtureModel::models_40,1292
+  using FoldingEngine<SEQ>::bp_;MixtureModel::bp_42,1355
+
+pfold.h,392
+#define __INC_ENGINE_PFOLD_H__25,964
+class PfoldModel 30,1049
+  PfoldModel(PfoldModel::PfoldModel33,1104
+  virtual ~PfoldModel(PfoldModel::~PfoldModel38,1364
+  using FoldingEngine<SEQ>::bp_;PfoldModel::bp_44,1486
+  std::string pfold_bin_dir_;PfoldModel::pfold_bin_dir_45,1519
+  std::string awk_bin_;PfoldModel::awk_bin_46,1549
+  std::string sed_bin_;PfoldModel::sed_bin_47,1573

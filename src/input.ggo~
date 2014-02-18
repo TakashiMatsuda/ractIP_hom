@@ -1,0 +1,36 @@
+ractip 0.0.3
+
+RactIP: RNA-RNA interation prediction using integer programming.
+
+Usage: ractip [OPTIONS]... [FILES]...
+
+  -h, --help                 Print help and exit
+      --full-help            Print help, including hidden options, and exit
+  -V, --version              Print version and exit
+  -a, --alpha=FLOAT          weight for hybridization  (default=`0.5')
+  -b, --beta=FLOAT           weight for unpaired bases  (default=`0.0')
+  -t, --fold-th=FLOAT        Threshold for base-pairing probabilities  
+                               (default=`0.5')
+  -u, --hybridize-th=FLOAT   Threshold for hybridazation probabilities  
+                               (default=`0.2')
+  -s, --acc-th=FLOAT         Threshold for accessible probabilities  
+                               (default=`0.0')
+      --max-w=INT            Maximum length of accessible regions  
+                               (default=`0')
+      --min-w=INT            Minimum length of accessible regions  
+                               (default=`0')
+      --zscore=INT           Calculate z-score via dishuffling (0=no shuffling, 
+                               1=1st seq only, 2=2nd seq only, or 12=both)  
+                               (default=`0')
+      --num-shuffling=INT    The number of shuffling  (default=`1000')
+      --seed=INT             Seed for random number generator  (default=`0')
+  -m, --mccaskill            Use McCaskill model for folding  (default=off)
+  -i, --allow-isolated       Allow isolated base-pairs  (default=off)
+  -e, --show-energy          calculate the free energy of the predicted joint 
+                               structure  (default=off)
+  -P, --param-file=FILENAME  Read the energy parameter file for Vienna RNA 
+                               package
+  -p, --no-pk                do not use the constraints for interenal 
+                               pseudoknots  (default=off)
+  -r, --rip=FILENAME         Import posterior probabilities from the result of 
+                               RIP

@@ -1,0 +1,5 @@
+#include "contrafold/SStruct.hpp"
+#include "contrafold/InferenceEngine.hpp"
+#include "contrafold/DuplexEngine.hpp"
+
+#include "contrafold/Defaults.ipp"

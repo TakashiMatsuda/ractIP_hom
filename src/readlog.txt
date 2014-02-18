@@ -1,0 +1,1868 @@
+ractipのmainから順番にソースを読んでいこう。
+
+parse_optionsでパースしてractipクラスにデータを格納した。
+::このRactIPクラスの中のリード相当メンバをアラインメントに変える。
+
+string fa1_
+string fa2_
+の型を
+Alnに変更する。##
+変更しない。これはファイル名。その後ロードする場面があるので、そこの行き先を変更する。
+
+Alnの実装はaln.hに入っているのでinclude.
+
+args_info.inputs[0]とは
+gengetopt_args_info args_info
+
+Aln::loadが使えるようだ。
+
+loadしたので、次は処理の部分を入れる。
+
+loadまで完了した。
+solve関数の中の書き換えを行う。
+
+solveの中、//calculate posterior probability matrices以下を書き換えかと思われる。
+
+contrafold()がcontrafoldを使ったbasepair probability matrixの計算関数だと思われる。
+
+ここについて、自前のcentroidalifoldを利用する関数ですり替える。
+
+まず入力と出力（ここではどのようにbpmatrixをRactIPが格納しているか)について
+調べる。
+次に、その間をどう埋めるかについて、
+centroidalifoldの実装を参考にして決めて書きましょう。
+
+
+
+
+:::::
+alifold::入力について
+入力は(const std::string&seq, VF& bp, VI& offset, VVF& up) const
+"インターフェースがあったらやりやすかったのにな"
+
+VF, VVF, VIの定義
+typedef std::vector<float> VF;
+typedef std::vector<VF> VVF;
+typedef std::vector<int>VI
+typedef std::vector<VI> VVI;
+
+返り値、というか実行結果の格納はこれらbp,offset,upに対して行う。
+問題は、bp,offset,upが本当に予想しているようなものか、すなわち
+
+SStruct SequenceStruct
+ParameterManager parameter set
+InferenceEngine iroiro, contrafoldの核
+
+contrafold()の読解
+string& seq, VF& bp, VI& offset, VVF& up
+seqに変更なし
+
+(参照：エイリアス（ポインタ非依存）)
+GetPosterior(0,bp,offset)で
+GetPosterior(0,bp){
+bp.resize(SIZE);
+for (int i=0; i<SIZE; i++){
+    bp[i]=(posterior[i] >= posterior_cutoff ? posterior[i] : RealT(0));
+}
+offsetにこのクラス(InferenceEngine)のoffsetが上書きされる
+
+
+
+up
+
+
+実装だが、centroidalifoldで行われていた、呼び出されていたとおりに
+入れればいいと思う。
+
+
+centroidalifold.cppでの呼びだされかたに注目。
+
+
+
+--------------------------------------------
+作業ログ：
+parserの形が違うのね。
+centroid_alifoldで用いられてるBoost式のinput方法か
+ractIPのgengetopt式の入力方法か
+どっちがいいに統一して書き直す。
+ractIP式の方が有利か。gengetoptのパーサの編集方法をみて、採用しよう。
+あと、centroidalifoldの論文をよく読んで、必要なパラメータが何かをみよう。
+ちゃんとコードを読むことにした。
+
+アラインメントにおける塩基対確率を求める確率モデルにおいて
+必要な、与えられるパラメータを以下にリストアップする。
+
+A: Alignment
+n: the number of sequences in A
+(どのestimatorを用いるか(McCaskill, CONTRAfold)
+w: mixture modelの混合重み
+
+InputはractIP流にすることにする。
+(のちのちのバグのことを考えたら、追加していく方が楽と考えた。）
+
+
+gengetoptを使ったみたい。
+gengetoptファイルはの残ってないので、めんどくさい。
+cmdline.hに手動で追加できるかやってみよう。
+やめた方がよさそう。(長いコードなので、読むのに時間がかかるし、変えたときに何がおこるか予想しにくい)
+新しい.ggoファイルを作成する必要がある。
+なるべく現在のものと互換性を持たせるようにする。
+gengetoptに対する呼び出し部分から、順番に.ggoファイルを作成する。
+
+ractipに引数を与えなかったときの出力が参考になるかもしれない。
+
+-----------------------
+その実装が終わった後
+（構文解析が終了した後）
+
+centroid_alifoldの流れ：
+(自分でかいた方が早いかもしれないが、もう少し粘ってみよう)
+パラメータのオプションを解析して、順番にその結果を格納している。
+同様にractIPの中でも格納を行う。
+
+ractIPのアルゴリズムをこのあとにつかうことを考慮すると、
+コードを完全に読んでいない以上、
+ractIPのcontraFold関数とほぼ同じ形式にするべきと考える。
+Alignmentの情報は、塩基対確率を与えた時点で消去される。
+塩基対確率には二種類あって、
+RNA自己での塩基対確率と、
+相互のRNA間での塩基対確率がある。
+
+ractIPではその二つが計算されているはずである。（centroid_alifoldでは計算されてないはず）
+まず、前者に集中する。
+<watching: centroid_alifold.cpp>
+push_backは単なるVectorのメンバ関数であって、DPmatrixのpushbackという意味ではない。
+(ちなみに、centroid_alifoldはInside-Outside アルゴリズムを使っている)
+engine.size
+engine：std::vector<std::string>
+(まずはcontrafoldだけでいい)
+    ("engine,e", po::value<std::vector<std::string> >(&engine),
+     "specify the inference engine (default: \"CONTRAfold\")")
+    engine.push_back("CONTRAfold");
+    なんでengineが複数必要なのか：
+    二つのモデルの混合で塩基対確率としている。
+    指定されなかった場合とかも考えて、
+    engineはベクターとして用意されている。
+
+vm.count:  po::variables_map vm;
+
+modelsに順番にcf_list[i]とmix_w[i]をペアにして格納している。
+mix_w[i]の由来：("mixture,w", po::value<std::vector<float> >(&mix_w), "mixture weights of inference engines")//poはコマンド引数を受け取るためのオプション、今回は違う方法で受け取るので理解しなくてよい
+
+cf_listの由来:  std::vector<FoldingEngine<Aln>*> cf_list(engine.size(), NULL);
+std::vector<FoldingEngine<Aln>*> cf_list(engine.size(), NULL);
+      cf_list[i] = new AveragedModel(src_list[i], max_bp_dist, vm.count("mea"));
+      cf_list[i] = new CONTRAfoldMultiModel(param, !vm.count("noncanonical"), max_bp_dist, seed, vm.count("mea"));
+      cf_list[i] = new AveragedModel(src_list[i], max_bp_dist, vm.count("mea"));
+      cf_list[i] = new AliFoldModel(!vm.count("noncanonical"), max_bp_dist,//これだけでいい
+      cf_list[i] = new PfoldModel<Aln>(pfold_bin_dir, awk_bin, sed_bin, vm.count("mea"));
+      cf_list[i] = new AveragedModel(src_list[i], 0, vm.count("mea"));
+    cf=cf_list[0];
+        models.push_back(std::make_pair(cf_list[i], 1.0)e);
+        models.push_back(std::make_pair(cf_list[i], mix_w[i]));
+  for (uint i=0; i!=cf_list.size(); ++i) if (cf_list[i]) delete cf_list[i];
+
+namespace po = boost::progrpam_options;
+
+MixtureModel<Aln>(models,vm.count("mea"))の内装
+やはりcentroid_alifoldとractIPをインストールした方が良さそうだ
+（入力、出力）
+インストールできた。作業復帰。実装するぞ。
+
+
+MixtureModel<Alb>の内装を細かく知る必要はないのではないか。（短ければ読んどいた方がいい）
+Basepair probabilityの引き出し方さえわかればよい。
+
+実装開始。
+1.MixtureModel<Aln>(models,vm.count("mea"))
+に投げる引数を用意するところまでを実装する。
+gamma:関係ない(Nussinovアルゴリズムの時に使う)
+
+modelsの中の計算だけ抜き出すのでもよい。
+
+何かしらのBPTableを抜き出す -> ractIPにフィットするように変換 -> ractIPに向けて返す
+の3ステップで実装する。
+
+最初のステップ、コマンドラインのポインタをそのまま渡して内部で処理してもらう方が実装が楽な気がしてきた。
+しかしそれは不可能。gengetoptに渡すことができない。
+
+やはりなんとしても最初の入出力を完成させなければ先にすすめない。
+
+/model*4
+/Alignment*2
+/mix_w*2
+
+まず現在のコードに合うようにggoファイルを作成して、そこに
+alignment用のコードを挿入する。
+
+
+ちなみに現在のractipが出力するヘルプはこれ。
+
+
+  -h, --help                 Print help and exit
+      --full-help            Print help, including hidden options, and exit
+  -V, --version              Print version and exit
+  -a, --alpha=FLOAT          weight for hybridization  (default=`0.5')
+  -b, --beta=FLOAT           weight for unpaired bases  (default=`0.0')
+  -t, --fold-th=FLOAT        Threshold for base-pairing probabilities  
+                               (default=`0.5')
+  -u, --hybridize-th=FLOAT   Threshold for hybridazation probabilities  
+                               (default=`0.2')
+  -s, --acc-th=FLOAT         Threshold for accessible probabilities  
+                               (default=`0.0')
+      --max-w=INT            Maximum length of accessible regions  
+                               (default=`0')
+      --min-w=INT            Minimum length of accessible regions  
+                               (default=`0')
+      --zscore=INT           Calculate z-score via dishuffling (0=no shuffling, 
+                               1=1st seq only, 2=2nd seq only, or 12=both)  
+                               (default=`0')
+      --num-shuffling=INT    The number of shuffling  (default=`1000')
+      --seed=INT             Seed for random number generator  (default=`0')
+  -m, --mccaskill            Use McCaskill model for folding  (default=off)
+  -i, --allow-isolated       Allow isolated base-pairs  (default=off)
+  -e, --show-energy          calculate the free energy of the predicted joint 
+                               structure  (default=off)
+  -P, --param-file=FILENAME  Read the energy parameter file for Vienna RNA 
+                               package
+  -p, --no-pk                do not use the constraints for interenal 
+                               pseudoknots  (default=off)
+  -r, --rip=FILENAME         Import posterior probabilities from the result of 
+                               RIP
+
+これRIPファイルで入力させればいいんじゃない・・・？
+centroidalifoldの前半部分だけを切り取って結果として出力して、
+二つをpythonで結べばいい気がしてきた。
+load_from_ripに注目。
+< ripはまったく違った。まともにやろう。
+
+cmdlineを作り終えた。
+次はファイルポインタの受け渡し。どのように行うか。
+
+If you specify the inference engines multiply, centroid_alifold employs a mixtured baes-pairing probability matrix. The mixture weight can be set by '-w' or '--mixture' option. The default setting of centroid_alifold is '-e McCaskill -w 1.0 -e Alifold -w 1.0'. See more detail in (Hamada et al., 2010).
+
+上の意味がわからない。二つの方法のweightがどちらも1.0とはどういうことなんだろうか。
+論文を参照。
+論文では0.5,0.5の配分と書いてあることから、あとで半分にしているのだろうか。内装をみてみる。
+（今回はcentroidalifoldにしたがう必要がある）
+
+ファイルポインタの引き渡し部分を実装する。
+ファイルのパスを引き渡した。
+
+受け取り側の型がconst char*
+もとの型はstring
+この二つの間に互換性はあるか。
+安全性からload関数の方の受け取り型をstringに変えることができないだろうか。
+
+Aln::loadの内装をみている。
+file_iterator: boost/spirit/include/classic.hppにあるらしい
+あとは内装をみる必要はなさそうだ。
+faとalnは非常によくにて作られている、作者も同じ人だしfaを流用してalnを作ったのだろう。
+
+centroid_alifold section, つまり
+alignmentに対する塩基対確率の計算に必要なパラメータを用意してまとめて適切な形でsolve関数に渡す。
+
+modelsに渡すもの
+engine
+どのようにengineを収集していたか、に着目。
+たくさん書いてあって、最終的にはgammaに関する記述部分をのぞく部分をすべてractIPに搭載することに
+なると思う。
+理解したところから順番にソースに加えていく。
+とりあえずデフォルトのみをカバーするコードを書く。
+
+po::variables_map vmとは何だろう
+variables_map: オプション引数を格納したmap
+vm.countで、辞書的に指定したオプション引数を取り出すことができる。
+
+vm.countとなっているところを修正して、投げる。
+meaとか関係ない。
+これリファクタリングしたほうがいいな。
+
+投げるところまでできた。
+
+base-pairing probabilityを取り出すメンバ関数をつくるか、
+centroid_alifoldで用いられている方法をそのまま流用して、
+塩基対確率行列を得る。
+
+MixtureModelのコンストラクタに塩基対確率行列の作成が実装されているかもしれない
+中をみていて、意味をしらない文法が出てきた。したにメモしておく。
+// Reading
+template <class SEQ>
+MixtureModel<SEQ>::
+MixtureModel(const std::vector<std::pair<FoldingEngine<SEQ>*,float> >& models,
+             bool run_as_mea /*=false*/)
+  : FoldingEngine<SEQ>(run_as_mea, 0), models_(models)
+{
+}
+コロンのつづきは初期化を表すということ（らしい）、標準は読んでません
+順番にみていく。
+FoldingEngineの初期化、おそらくこれは関係ないと思う。（modelsを入れていないので）
+変数名が書いてないのは何故
+models_の初期化：
+std::vector<std::pair<FoldingEngine<SEQ>*,float> > models_;
+これを初期化してもとくに何もおこらない、メンバに代入するだけ
+なにもしていない。
+
+次を読む。どこで塩基対確率が代入されているかを読みつづける。
+calculate_posteriarで実装されている（みたい）
+
+
+そのままcontrafoldと同様に実装していいんじゃないかな。
+継承のことも考えると、
+FoldingEngineとInferenceEngineの違いが気になる。
+FoldingEngineもInferenceEngineも何も継承していないクラスだった。
+umu.
+FoldingEngineの内装を読んでいって、どこで塩基対確率を求めているか理解する。
+最終的にはcontrafoldとかを使うはずだから、そこに注目すればわかりやすいかもしれない。
+FoldingEngineの内装を読み始める前に、
+centroid_alifoldの、cfが作られたあとのその利用状況について理解するのも必要だと思う。
+cf->stochastic_fold:
+FoldingEngineの実装。
+
+calculate_posterior:
+x->first firstはpairの第一要素
+FoldingEngine::calculate_posterior(SEQ seq):
+  virtual void calculate_posterior(const SEQ& seq) = 0;
+virtual宣言:仮想宣言
+実装は継承したクラス内で行われ、そのクラス内では宣言のみ行うときに書く
+
+これを呼び出せばいいのかな
+結果はどこに保管されるのだろう
+FoldingEngine:bp_
+BPTable bp_
+get_bp()で返ってくるみたい
+  const BPTable& get_bp() const { return bp_; }
+
+注意！
+bp_に何が格納されているかの確認をしていない！！！
+MulAdd, Divの理解をする必要がある。
+
+// C++, Java, その他プログラミング言語にいえることだけど
+書いた関数に関して、その仕様が明示され、保証されていないと
+結局内装を理解する手間がかかることになって、
+労力を削減できない。無駄である。
+契約プログラミングとかいうけど、プログラムの仕様証明は非常に重要な課題だな。
+
+stochastic_fold内でcalculate_posteriorが呼び出されているか < 未確認
+ractIP::alifoldの中でcalclulate_posterior(seq)とget_bp()を実装した
+でも、offset変数にも何かを入れないとractIPは動作しないみたい
+
+
+contrafold()でのoffsetの振る舞いをみる。
+下の文を再現するには、どうすればいいのか。
+  SStruct ss("unknown", seq);
+  ParameterManager<float> pm;
+  InferenceEngine<float> en(false);
+  VF w = GetDefaultComplementaryValues<float>();
+  bp.resize((seq.size()+1)*(seq.size()+2)/2);
+  std::fill(bp.begin(), bp.end(), 0.0);
+  en.RegisterParameters(pm);
+  en.LoadValues(w);
+  en.LoadSequence(ss);
+  en.ComputeInside();
+  en.ComputeOutside();
+  en.ComputePosterior();
+  en.GetPosterior(0, bp, offset);//
+
+
+
+offset:
+相殺、差し引き、埋め合わせ
+分かれ出たもの
+offset:(内装のなかでの意味)
+InferenceEngine<float>::GetPosterior :
+RealT *GetPosterior(const RealT posterior_cutoff, std::vector<RealT>& p, std::vector<int>& o) const
+    {
+        RealT* ret = GetPosterior(posterior_cutoff, p);
+        o = offset;
+        return ret;
+    }// Reading
+
+
+GetPosterior(0,bp,offset)で
+GetPosterior(0,bp){
+bp.resize(SIZE);
+for (int i=0; i<SIZE; i++){
+    bp[i]=(posterior[i] >= posterior_cutoff ? posterior[i] : RealT(0));
+}
+offsetにこのクラス(InferenceEngine)のoffsetが上書きされる
+InferenceEngine::offsetがどこで編集されるか調べる
+//C++のクラスのコード、toStringがないとデバッグも理解するのも難しいね。
+
+offset:
+headerには操作が見つからなかった
+InferenceEngine.ipp
+//////////////////////////////////////////////////////////////////////
+// ComputeRowOffset()
+//
+// Consider an N x N upper triangular matrix whose elements are
+// stored in a one-dimensional flat array using the following
+// row-major indexing scheme:
+//
+//     0  1  2  3     <-- row 0
+//        4  5  6     <-- row 1
+//           7 [8]    <-- row 2
+//              9     <-- row 3
+//
+// Assuming 0-based indexing, this function computes offset[i]
+// for the ith row such that offset[i]+j is the index of the
+// (i,j)th element of the upper triangular matrix in the flat
+// array.
+//
+// For example, offset[2] = 5, so the (2,3)th element of the
+// upper triangular matrix (marked in the picture above) can be 
+// found at position offset[2]+3 = 5+3 = 8 in the flat array.
+//////////////////////////////////////////////////////////////////////
+
+(space)
+
+    // compute indexing scheme for upper triangular arrays;
+    // also allow each position to be unpaired by default, and
+    // set the loss for each unpaired position to zero
+    for (int i = 0; i <= L; i++)
+    {
+      offset[i] = ComputeRowOffset(i,L+1,max_bp_dist);//
+        allow_unpaired_position[i] = 1;
+        loss_unpaired_position[i] = RealT(0);
+    }
+
+この実装がどこで呼ばれているか調べる。
+返されたoffsetが何を表すのか調べる。
+論文にもこの単語が出ていないか調べる。
+offset はbpを参照するためのものだった。
+bpmatrixは1-dimension vectorとして表現している。これはメモリを節約する工夫である。
+これからcentroid_alifoldのbpから、ractIPのメモリ節約型bp+offsetに変換する部分を実装する。
+
+もとのbpの形式と、offset systemを理解して、変換を書く
+const BPTable& get_bp() const { return bp_; }
+もとのbpの形式:
+BPTable bp_;
+BPTable: 
+typedef BPTableTmpl<float> BPTable;
+BPTableTmpl<V>:
+bp.hに書いてある
+
+BPTableTmpl<float>を理解したら、運動しにいこう。
+
+
+*        used for Cocke-Younger-Kasami (CYK) algorithm
+CYK法（英: CYK algorithm）は、ある文字列が与えられた文脈自由文法で生成できるかを決め、生成できる場合の生成方法を求めるアルゴリズムである。CYK は Cocke-Younger-Kasami の略。文字列の構文解析手法として知られている。このアルゴリズムは一種の動的計画法である。
+標準的なCYK法は、チョムスキー標準形で書かれた文脈自由文法で定義される言語を認識する。任意の文脈自由文法をチョムスキー標準形に書き換えるのはそれほど困難ではないので、CYK法は任意の文脈自由文法の認識に使うことができる。CYK法を拡張してチョムスキー標準形で書かれていない文脈自由文法を扱うようにすることも可能である。これにより性能は向上するが、アルゴリズムを理解することは難しくなる。
+
+どこから手をつければいいんだ？
+MulAdd, Div:(bp_の性質の理解)
+MulAdd:
+struct
+コンストラクタ:引数でメンバを初期化する
+inside_traverse:	
+    inside_traverse(0, bp_.size()-1, ma);
+cyktable.h
+template <class Update>
+void
+inside_traverse(uint from, uint to, Update& update)
+{
+  // for each position
+  for (uint j=from; j!=to+1; ++j) {
+    update(j, j);// updateは関数?: MulAdd::bp_.update(i, j, bp_(i,j)+w_*t_(i,j));
+    Div::void operator()(uint i, uint j) { bp_.update(i, j, bp_(i,j)/d_); }
+
+    if (j==from) continue;
+    
+    // for each substring
+    for (uint i=j-1; ; --i) {
+      update(i, j);
+      if (i==from) break;
+    }
+  }
+}
+void update(uint i, uint j, T v) { bp_(i,j)=v; }//
+void operator()(uint i, uint j) { bp_.update(i, j, bp_(i,j)+w_*t_(i,j)); }
+t_はいつ供給されてるのかな
+MulAdd ma(bp_, x->second, x->first->get_bp());
+bp_は参照で渡しているから、構造体に入れて上のコードが実行されるたびに編集される。
+bp_が事後確率行列であることを理解した。
+
+
+transBP_centroidfold_ractip(BPTable bp_centroid, std::vector<float>& bp_ractip, std::vector<int>& offset)
+を実装する。
+bp_の中身はbp_(i,j)でアクセス可能っぽい<-どこに書いてあるんだろう
+
+もとのbpの形式:
+BPTable bp_;
+BPTable: 
+typedef BPTableTmpl<float> BPTable;
+BPTableTmpl<V>:
+bp.hに書いてある
+BPTableTmpl<float>を理解する。bp(i.j)でなんで要素を呼べるんだー
+
+typedef BPTableTmpl<float> BPTable;
+BPTableTmpl<float>に演算子が定義されている。
+T operator()(uint i, uint j) const { return bp_(i,j); }
+CYKTable<T> bp_;
+CYKTable<T>にも演算子が定義されている。
+
+  inline
+  const T& operator()(uint i, uint j) const
+  {
+    return get(i,j);
+  }
+// const宣言を理解する  
+inline
+T& get(uint i, uint j)
+{
+  assert(i<=j);
+  assert(ptr_[i]!=NULL);
+  return ptr_[i][j];
+}
+#include <cassert>:一致判断関数
+ptr_:  std::vector<T*> ptr_;
+
+      for (uint i=0; i!=size_; ++i)
+        ptr_[i] = &table_[size_*(size_+1)/2 - (size_-i)*(size_-i+1)/2 - i];
+    } else {
+      for (uint i=0; i!=size_; ++i)
+        ptr_[i] = &table_[i*max_dist_-i];
+    }	
+// table_ と size_ わからない
+
+setupはいつよばれるのか: resizeのとき
+std::vector<T> table_;
+
+bp_(i,j)でよびだされているとしか思えないけどなぁ。。。それで実装してみるか。
+//!!!! CAUTION !!!! bp_(i,j)の正当性を理解していません！！！！！///////
+
+void RactIP::
+transBP_centroidfold_ractip(BPTable bp_centroidfold, VF& bp, VI& offset)
+
+まず上三角行列だけを取り出して、一次元配列にしていく。
+offsetは行列の大きさからただちに計算される。
+offset計算関数はComputeROwOffsetによって計算する。
+InferenceEngineのコードが参考になりそうなので閲覧する。
+template<class RealT>
+int InferenceEngine<RealT>::ComputeRowOffset(int i, int N, int w /*=0*/) const
+{
+    Assert(i >= 0 && i <= N, "Index out-of-bounds.");
+#define USE_EFFICIENT_WINDOW
+#ifdef USE_EFFICIENT_WINDOW
+    if (w==0)
+    {
+	// equivalent to:
+	//   return N*(N+1)/2 - (N-i)*(N-i+1)/2 - i;
+	return i*(N+N-i-1)/2;
+    }
+    else
+    {
+	return i*w - i;
+    }
+#else
+    // equivalent to:
+    //   return N*(N+1)/2 - (N-i)*(N-i+1)/2 - i;
+    return i*(N+N-i-1)/2;
+#endif
+}
+
+必要なのは、N
+    // compute indexing scheme for upper triangular arrays;
+    // also allow each position to be unpaired by default, and
+    // set the loss for each unpaired position to zero
+    for (int i = 0; i <= L; i++)
+    {
+      offset[i] = ComputeRowOffset(i,L+1,max_bp_dist);//(only here CRO)
+        allow_unpaired_position[i] = 1;
+        loss_unpaired_position[i] = RealT(0);
+    }
+
+enはこのあとまだ使われるのか。（メンバを用いることがあれば、問題になるかもしれない）
+->使わない。心配はいりません。
+
+まず、上三角行列をとりだすことから。
+bp(i,j)と(j,i)
+は等しいんだろうか？
+それともそもそもその座標には一回もアクセスしていなんだろうか。
+・・ふつうに入っていると仮定する。
+上三角の値が右上行列に入っていると仮定する。
+
+一次元配列を取り出した。
+    max_bp_dist(max_bp_dist),//contrafoldではこの引数は与えられないのでデフォルト値となる
+    InferenceEngine(bool allow_noncomplementary, int max_bp_dist=0);
+
+trans関数の実装を終了した.
+二次構造での塩基対確率の実装を終了した。
+----------------------------------------------
+残り
+・MakeFileの作成
+・rnaduplex_alnの実装
+----------------------------------------------
+・rnaduplex_alnの実装
+Alnから配列を引き抜く関数
+VVF& hpの各塩基に対する平均確率の取り方を考える。
+seq()でlist<string>を得る
+
+rnaduplex_alnを実装した。
+---------------------------------------------
+MakeFileの作成
+automakeを用いている
+環境依存の変数をコンパイラに渡すのに、autoconfを使う。
+automakeとは何か:
+
+-----------------------------------------------
+makeの前に、単体でコンパイルが通るようにデバッグする。
+---------
+私が手を付けていないところで出るエラーは、./configureしていないことによってマクロ変数が代入されていないことが原因になっているものですべてではないかと思う。
+今は私が手を付けたところだけを修正する。
+---------
+alifoldのところ、vmを通じて引数に接続する文がまだたくさんのこっているので、
+ひとまずそこをすべてコメントアウトする。
+iteratorの文法間違いを起こしているようなので、イテレータの仕様を読んで、書き直す。
+------------
+s1まわりのiterator 文法間違い
+s1は参照であるから、この中身に対するイテレータを生成しようとしているが、それは生成されない。
+右辺にあるものの正確な型を理解しよう。clangのエラーメッセージの理解もしよう。
+------------
+mix_weightのちゃんとした実装
+(gengetoptのggoファイルの実装)
+などの入出力の整備
+複数オプション：(mix_weightのため)
+複数オプションを廃止する。そもそもwと1-wなんだから、要求するほうがおかしい。
+片方だけを頂いて、もう片方はデフォルトで1-wとする。
+cmdline1.c .hのPACKAGEマクロ変数のエラーは、config.hがまだ生成されていないために起こるエラー。
+佐藤さんのggoファイルがあった。。。ショック。
+------------
+vmの書き換え
+-----------
+solve関数の引数型の指定でエラー
+constの理解をする。右左どちらを修飾するのか。
+
+undeclaredってでてくるの、ヘッダに書かれていないことが原因か？
+------
+modelsのメンバ関数を呼び出すようにしているけど、これはmodelsの型を間違えている。
+違う型で宣言しなきゃいけない。
+centroid_alifoldではMixtureModelのインスタンスに対して呼び出しをしていた。
+修正した。渡す引数をmodelsからcfに変更した。
+------
+ComputeRowOffset関数は、InferenceEngineに入っている。そのため、InferenceEngineを呼びださなければならない。
+public memberにして、InferenceEngine(false) en;としてenからcallした
+------
+ソースファイルの変更をターミナルが反映しない。ターミナルの設定を変更するにはどうすればいいんだろう。
+わからなかった。明日友達に聞こう。
+------
+include先でエラーになっている場合、下の出力のnoteメッセージに自分のソースコードがないか調べる
+それが問題のことが多い、下に行くほど原因らしい
+------
+まだまだ順番に読んでいく。3時になったら工学部の方を始める。
+ractip.cpp:526:32: note: in instantiation of template class 'std::__1::list<std::__1::basic_string<char> &, std::__1::allocator<std::__1::basic_string<char> &> >' requested here
+solve(std::list<std::string& > s1, std::list<std::string& > s2, std::string& r1, std::string& r2, MixtureModel<Aln> cf)
+listのインスタンス化が必要
+引数の型を変更したい。aln.seq()の型を確認する。
+ const std::list<std::string>& seq() const { return seq_; }
+変更した。
+------
+ std::string s1(fa1.seq());
+下流、ractIPの表示時に上の処理を行っている、ここを変更する
+the energy of the joint structureを計算・表示するのに配列が必要とされる。
+この部分はまだまったくソースを読んでいないのですが、配列が必要ならその塩基配列を塩基配列アラインメントに
+置き換える
+表示であれば、list<string>を与えて、内部でそれをそのまま表示する関数に変更する。
+この機能は私の卒業論文には含めないことができるので、卒業論文を書いてから実装する。
+------
+  cf.calculate_posterior(seq);
+calculate_posteriorの引数の型はAln
+Alnを入れる
+solve関数からすべてAlnを引数にとるように変更する。
+内部でlist<string>が必要ならコールする
+変更した。
+------
+ractip.cpp:228:3: error: member function 'transBP_centroidfold_ractip' not viable: 'this' argument has type 'const RactIP', but function is not marked const
+  transBP_centroidfold_ractip(bp_centroidfold, bp, offset);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+alifoldはRactIPに対してconstメンバ関数
+中でtransBPを読んでいて、これはconstでないため
+transBPをconstに修正した
+------
+eaの修正をした
+------
+ractip.cpp:1198:38: error: no viable conversion from 'FoldingEngine<Aln> *' to 'MixtureModel<Aln>'
+  float ea = solve(fa1, fa2, r1, r2, cf);
+                                     ^~
+./centroidalifold/engine/mixture.h:30:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'FoldingEngine<Aln> *' to 'const MixtureModel<Aln> &'
+      for 1st argument
+class MixtureModel : public FoldingEngine<SEQ>
+      ^
+./centroidalifold/engine/mixture.h:33:3: note: candidate constructor not viable: no known conversion from 'FoldingEngine<Aln> *' to
+      'const std::vector<std::pair<FoldingEngine<Aln> *, float> > &' for 1st argument
+  MixtureModel(const std::vector<std::pair<FoldingEngine<SEQ>*,float> >& models, bool run_as_mea=false);
+  ^
+ractip.cpp:526:77: note: passing argument to parameter 'cf' here
+solve(Aln& s1, Aln& s2, std::string& r1, std::string& r2, MixtureModel<Aln> cf)
+                                                                            ^
+cfの型が引数型と異る
+宣言を修正した
+------
+ractip.cpp:544:15: error: no viable conversion from 'Aln' to 'const std::string' (aka 'const basic_string<char, char_traits<char>, allocator<char> >')
+    rnaduplex(s1,s2,hp);// 1st structure base pairing probability
+              ^~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/string:1185:5: note: candidate constructor not viable: no known conversion from 'Aln' to
+      'const std::__1::basic_string<char> &' for 1st argument
+    basic_string(const basic_string& __str);
+    ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/string:1194:31: note: candidate constructor not viable: no known conversion from 'Aln' to
+      'const_pointer' (aka 'const char *') for 1st argument
+    _LIBCPP_INLINE_VISIBILITY basic_string(const_pointer __s);
+                              ^
+ractip.cpp:433:30: note: passing argument to parameter 's1' here
+rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const
+                             ^
+rnaduplexの型の問題
+普通にseqで渡すように変更した。(名前をへんこうして、引数をa1とa2とした)
+-------
+C++は型による条件分岐がしにくいな
+Haskellだったら非常にやりやすいのに
+templateにしても、やることを変えることはできない
+新しい関数を定義していたので、それを利用する形に変更した
+-------
+上と同様の問題
+専門化していないために怒られている
+一時的にコメントアウトするか、新しい関数に分離するか
+新しい関数に分離するためには、呼び出し側で分岐が必要。
+(c++ならautoで書けるんだっけ、それでもいい気がしてきた。)
+呼び出し側で分岐する形に変更する。
+solveとsolve_alnに分ける。それによって、solveまでの混流問題は解決する。バグカウント10程度。
+
+難しい(長いだけ)
+まずはコメントアウトで要らない機能を潰す。
+分岐方法は実装後に考えればよい。
+前処理を別の関数に分離して作る方法を思いついた
+---
+とりあえず、併用アプリケーションとしてではなく、独立アプリケーションとして開発する。
+それによって、純粋に使用したい機能を担う文のバグだけに集中できる。
+---
+出力を修正
+イテレータを取り出して、アラインメントに含まれる配列名と配列を全表示する　
+Aln::
+  const std::list<std::string>& name() const { return name_; }
+  const std::list<std::string>& seq() const { return seq_; }
+である
+参照返しでは、ちゃんと型として参照で宣言しなければいけないのだろうか、
+自動的に参照の中身をいれてくれるということはないだろうか
+上の処理を解決するものとして、const_iteratorがあったのでそれを使用して、修正した。
+---
+---
+makeをします
+既知の問題点は、configureで解消されると思われるが、実際のところはわからないので、気に留めておきます。
+complile
+分割コンパイルしたあと、どのようにオブジェクトファイルをリンクするのかを理解する
+おそらくractip.oのコンパイルコマンドを変更しなければいけないだろう
+automakeが勝手にやってくれるのかもしれない。automakeのMakeFile.amの書き方を知っておく。
+---
+autotoolsの使い方
+Makefile.am
+configure.ac
+------
+これからやること：
+---
+Makefile.amを理解して、書き直す
+configure.acを理解して、書き直す
+centroidalifoldのふくめかたを考える
+---
+順番にコンパイルエラーの原因を理解する
+---
+Undefined symbols for architecture x86_64:
+  "MixtureModel<Aln>::calculate_posterior(Aln const&)", referenced from:
+      RactIP::alifold(Aln const&, std::__1::vector<float, std::__1::allocator<float> >&, std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >&, MixtureModel<Aln>) const in ractip.o
+      vtable for MixtureModel<Aln> in ractip.o
+---
+現在のconfigure.acを読んで理解する
+centroidalifoldのmainとかと干渉しそうである。表に書いて整理して、いらないものを消す。
+-----
+コンパイルは、順番にリンクしていけばよい。cppファイルは個別にコンパイルしておいて、最後にリンクする。
+結局一つのプログラムを作るということ
+重複定義とか、相互定義とかがあってはいけない
+centroidalifold内の依存関係をチェックしなければいけない。
+---
+./configureでできたconfigファイルで、もうエラーは起きないはず
+---
+makeのエラー表示読みにくいけど、ｋれはどういう仕様で決まっているのだろう
+リンクの失敗を解消する
+---
+clang++  -g -O2  -L/usr/local/Cellar/viennarna/2.1.5//lib  -o ractip ractip.o ip.o fa.o boltzmann_param.o cmdline.o pf_duplex.o ushuffle.o SStruct.o Utilities.o  -lRNA -lglpk -lltdl -ldl -lz -lpthread 
+
+  "MixtureModel<Aln>::calculate_posterior(Aln const&)", referenced from:
+      RactIP::alifold(Aln const&, std::__1::vector<float, std::__1::allocator<float> >&, std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >&, MixtureModel<Aln>) const in ractip.o
+---
+コンパイル命令に、一緒にリンクする関数が足りなくなってる。
+修正しよう。
+MakeFileの構文を理解したら、automakeでどのように書けばいいか調べて、書く。
+それで動くはず。
+---
+configureに渡すviennaRNAのパスを変更する
+---
+書くのはconfigure.acとMakefile.am
+---
+リンクを変えればいいだけ、
+あんまり難しく考えることはありません
+---
+centroidalifold内のMakefile.amのなかの実行プログラム作成命令文を削除して、コンパイルだけするようにする
+リンクは最後にまとめて行う為
+---
+	util.h\
+	fa.cpp fa.h 
+	contrafold/contrafold.h \
+        probconsRNA/probcons.h \
+	contralign/contralign.h \
+        naview.c \
+	engine/boltzmann_param.h engine/boltzmann_param.c
+(nokori)
+---
+linkまできた
+viennaRNAのパス
+contrafold.oのなかでリンクに失敗した
+
+<contrafold>
+となっているところかな?centroidalifoldでのソースを確認してみよう。
+---
+contrafoldのクラス定義のパスが通らない
+ifndefで落ちているのかもしれない
+ifndefは違った
+contrafold/contrafold.hで宣言されている関数の実装を探している
+---
+contrafold/contrafold.hをincludeしているファイルを全探索する
+見つからない。centroidalifoldでどのようになっているか見てみよう。
+contrafold.rbが何をしているか調べる
+contrafold.rbはただのコマンドライン
+linuxでやってみよう。原因不明
+centroidalifoldではwrapper.cppでくるまれている
+---
+grepで探しても見つからない、どこにあるんだ
+継承しているものを確認
+CONTRAfoldModel:FoldingEngine<std::string>を継承している
+FoldingEngineにそんなのない
+wrapper.cppだった。できたー
+---
+duplicatesymbol
+7回
+どういうことか
+ParameterManagerが怪しいうん。違うね。ParameterGroupでした。
+InferenceEngine.ippか、Default.ippか
+どちらも修正した(ifndef慣用句を挿入した)
+治らない
+wrapperを使う前、まだ何も起こらなかった
+wrapperが原因なのはあきらか
+エラー表示の読み方を理解する
+サンプルを作って実験してみよう
+---
+いきなりリンクが効かなくなった
+g++を一回走らせただけなのに
+InferenceEngine.ippのリンクガードを解除したらこのエラーは起きなくなった
+^
+そうじゃない。clangではエラーが出ないけど、g++-4.8だと出ている
+でもこれはリンクエラーなので本質的でない
+---
+ヘッダファイルの中身はすべてリンクガードを貼った
+wrapper.oをincludeするときにractipと干渉したということ
+ractip.cppのmain関数を探索しよう
+mainはコードの量が少なかった
+wrapperを呼び出すときに、二重定義がおこっている可能性を考えよう
+wrapperのスコープで、一番外側にあるものは
+最後のインスタンス化を除きすべてスコープが制限されている。
+最後のインスタンス化について考える
+---
+wrapperしかincludeしていないファイルと、ractipしかincludeしていないファイルの名前衝突の可能性
+contrafold.hで名前衝突していないから、違う
+contrafold.hと, ractip.cppのヘッダが干渉した可能性
+名前衝突は、同一スコープで、同一名でないと発生しない
+---
+ヘッダファイルだけで実験してみる。
+Utilities.ippを二回読んでいる！！
+Utilities.ippを呼ぶヘッダにリンクガードをかける。
+grepで探索する。
+コンパイラが
+errortest => InferenceEngine.hpp => SStruct.hpp => Utilities.hpp
+って教えてくれた
+これは当たり前のことだったね・・・
+---
+ippファイルをincludeするのがやっぱりまずいんじゃないか
+片方はヘッダだけにしたい
+そうじゃないと、実装を二回コンパイルしてリンクしたものをリンクすることになる。
+wrapperの方で、ippのincludeを避けられるようにできないだろうか。
+---
+ippファイルイディオムを理解しよう。
+インラインガードマクロ法という手法を理解する。
+マクロについて理解する。
+マクロは、プリプロセッサによって展開される
+マクロを展開して、書き換えたあとのファイルがコンパイラに渡される。もし、おなじヘッダがリンクされた場合
+include命令はそれはそのままヘッダに書き換えられて、
+2つのヘッダが1つのファイルに結合されることになる
+その中では同じマクロが存在している
+
+リンクするときはすでにオブジェクトファイルになっているけど、
+マクロはどうなっているんだろうか
+
+リンク前にまたプリプロセッサを通すことと、
+マクロがまだ残っていることが
+満たされているなら、ガードマクロが働くはず。
+---
+普通にParameterGroupとかいうやつを調べてみよう
+名前空間のことだと思ってたけど、そうじゃないかもしれない
+--
+たくさんでてきた。すべてcontrafold/下のインライン展開用のファイル
+どう解決していこうか。
+すべてのippファイルについて、インラインガードを行う。
+
+ippファイルの中にはinline宣言は一個もないのね。
+headerを見てみよう。
+contrafoldのなかのheaderは、いくつかは定義も行っている。
+定義部分を二回includeしたらエラーになる。
+hpp, ippファイルについて、宣言と定義を分離して、
+宣言だけのファイルを作ればよい。
+
+---
+問題:contrafold内にあるhpp, ippが現行では一回きりの呼び出ししか許さない。
+しかし、二回呼び出したい。
+考えられる方法
+1. 呼び出し元のwrapper, ractIPを書き換えて、
+2回呼び出さないようにする。
+難所:今のコードはどちらもInferenceEngineを使用している。
+本来であればしれはいらないものであるかもしれないが、
+(塩基対確率を計算するだけなら、centroidalifoldがまったくすべてをじっそうしている)
+そのような設計にしていないため、厳しい。
+
+2. hpp, ippファイルを変更して、宣言と定義を分離する。
+宣言だけのファイルを作って、それだけをincludeさせる。
+難所：contrafoldのコードをいじるのはライセンス的にまずいかもしれない。
+
+2のほうが時間がかからなさそうである。
+まず、こっちをやってみよう。
+きれいにするのは、また別のときでいい。
+---
+contrafoldの定義と宣言を分離する作業を開始する。
+--
+InferenceEngine.hpp
+GetPosteriorとGetOffset
+InferenceEngine.ipp
+ここにしか宣言されていない関数を全部探す必要がある。
+なんと・・・5000行もあるぞ。
+どう解決すればいいだろうか・・・・
+hppの定義排除だけすればうまくいくだろうか・・・・
+---
+1が簡単にできないかもう少し調べてみよう
+transBP_centroidfold_ractip
+そもそもこれを変えればいい
+wrapperに関数を追加して、transBP_centroidfold_ractipから呼び出せるようにすればいいのである。
+どちらも難しいな・・・・
+ippに入っていて、hppに入っていない関数を見分けるソフトないかな。
+----
+そもそも、
+hppファイルがippファイルをincludeする時点で終わってる。
+ヘッダ自動生成ツールとかないだろうか・・・
+ぱっと出てこなかった。
+wimaxの電池が切れちゃった。今日は帰ろう。
+今日はここまで、としたいところだけど納期が近づいている。
+この問題はやはりractipのほうを変更する以外になさそうだ。
+---
+ractip からInferenceEngineを削除して、すべてcentroidalifoldのwrapper経由にまかせるようにする。
+すなわち、contrafold/以下のファイルを読むソースは１つに統一しなければいけない。
+--------
+これから
+contrafoldを読むソースを一個にする
+centroidalifoldをバラせるか? MixtureModelの中身だけれども
+厳しそうではある。south.1015.island@gmail.com
+centroidalifoldの配分設定をどうしていたか? contrafold100%になっていないか?
+それでは何も変わらない。
+どちらかというとPFold単独のほうが価値がある。
+--------
+まずそこを変更する。(pfoldとcontrafoldのミックスにする)
+それと、alifold以外の関数は使わない。ractip内のInferenceEngineをすべてコメントアウトする。
+---
+contrafold*pfoldミックスの実現
+InferenceEngineの削除とMixtureModel内の内部呼び出し関数追加
+---
+まず
+ヘッダでエラーが出た
+ippファイルはhppをincludeしていないのね
+解決した
+---
+InferenceEngineの削除を始める
+まずtransBPから
+んんんｎ???? MixturModelをincludeすれば解決するのか?
+MixtureModelのheaderにはInferenceEngineのインクルード命令がかかれてないとおもうけど、カカれていたらそれでかいけつする
+これはだめ
+---
+contrafld()からInferenceEngineを削除した。
+---
+wrapperでくるまれたcontrafold.hをどこでincludeしているか調べて、
+MixtureModelにcomputerowoffsetを呼び出すAPIを作る。
+--
+ractip.cppに含まれるcontrafold/以下の成分をすべてコメントアウトした。
+---
+InferenceEngineのincludeを削除する。使われているのはComputeOffsetだけである。
+ComputeOffsetの定義を理解する。
+InferenceEngineのメンバを使っているかが重要である
+使っていなかったら即座に移動する。
+--
+メンバを使っているかのテスト:
+理解するのは時間がかかりそう。
+とりあえずそのまま移植して、問題なかったらそれでいいだろう。
+課題:
+ライセンス違反の可能性がある。リリース前に、内部から呼び出す形に変更すること。
+ractip.cppにComputeRowOffsetを移植して、inferenceengineの使用を削除した。
+---
+Compu~~~に含まれるAssert: undeclaredの問題
+大文字Assertが見つからなかったので、ifとcoutでのエラーメッセージに置換した。
+(例外処理を加えたほうがよい)
+---
+コンパイル成功。
+----
+segmentation faultが出る問題
+まずはinputファイルを用意して実験してみる。
+cmdline1に到達していなかったら悲しい。
+--
+mix_wを初期化していない。
+インスタンスの初期化と同時にメンバオブジェクトを初期化する方法
+""C++では、クラスのデータメンバはコンストラクタ初期化子でしか初期化することができません。
+他の場所では、更新することはできても初期化することはできません。""
+mix_weight_argはfloat
+push_backで対応して、成功
+--
+何も出力されず、一瞬で終わってしまった
+どこまで走っているか確認する。
+未対応のファイルかもしれない。
+フォーマットエラーであることを確認した。
+-
+どのように対処するか。
+clustalW形式を受け取るようにはなっているはず。(それはcentroidalifoldの仕様書で確認したはず)
+clustalW形式の確認
+converterでconvertした。
+--
+noIPlinkedって怒られた。
+configureしなおしてみる。
+glpkがないのかな。glpkはHomeBrewで入れたから、OSのデフォルトパス集合に入っていないかもしれない。
+gurobiを落としてやってみるか。->有料だった。
+glpkがなぜ通らないのか調べる。
+config.logにレポートされているかもしれないから参照する。
+gmpをインストールしたら動くようになった。
+---
+segmentation faultが出てそのままの状態。
+何もヒントが出力されない。
+コンパイラを変更して、-gがでるようにしよう。
+-
+MakeFileを変更したのに
+srcの中は変更されていなかった。あたりまえ。
+変更して走らせたところ、いろいろと問題が出た。今は無視したいので、これらのことは考えないようにするために、
+やはりclangでデバッグする。
+問題箇所はstep-nextでなんとかする。
+-
+solveの中
+solveにbreakpointを仕掛ける
+alifoldの中
+calculate_posteriorに入れるところでエラー
+Internal error: pc 0x0 in read in psymtab, but not in symtab
+cfからの呼び出しがまずいのか、引数の入れ方がまずいのか
+コンパイルエラーは出なかった
+関数呼び出しでエラー、そのあとのコードではない
+-
+headerの宣言ではvirtual宣言なのだ
+virtualをやめておいた
+-
+cfの中身がおかしいのではないか
+-> cfの傀儡関数を作ってみたら、うまく動いた。
+cfのメンバにさわろうとしているのがまずいんじゃないか
+触っていない、というか関数の呼び出しのところでエラーが出ている
+
+centroid_alifoldではどういうふうに触られていたか確認しよう。
+コンストラクタの中で事後確率も計算されている?
+
+--
+変数の中身がおかしいという仮説
+SEQにAlnを代入するだけでエラーになる。
+おそらく重大な文法ミスを犯している。
+クラスの中の変数なら許されるだろうか
+-
+alifoldのcfを参照渡しにした。
+バグはとれなかったが、エラーメッセージがわかりやすくなった。
+
+gdb) backtrace
+#0  0x0000000100049d56 in ?? ()
+#1  0x00007fff5fc35720 in ?? ()
+#2  0x00007fff5fc3c280 in ?? ()
+#3  0xd400fcf619451834 in ?? ()
+#4  0x0000000000000090 in BPTableTmpl<float>::BPTableTmpl (this=<optimized out>, this=<optimized out>)
+Cannot access memory at address 0x50
+
+using命令に問題があるかもしれない
+  using FoldingEngine<SEQ>::bp_;
+これはbp_に対してのみ、接頭語を省略できるという意味。
+Segmentation faultなのだから、いけないメモリをアクセスしている。
+いけないメモリをアクセスするには、ポインタをいじらないと行えない。
+もしくは確保されていない変数へのアクセスとかか？
+-
+参照渡しにしちゃったけど、実際は参照渡しじゃ無い方がいいだろう。
+-
+centroidalifoldのコードをよく読む。(readlogにいろいろ書いてあると思う)
+foldingengineの中にcalculate_posteriorがvirtualとして定義されている。
+これを持ってくるのもvirtualとして
+実際には定義しているけど。
+Foldingengineの中:
+  virtual void calculate_posterior(const SEQ& seq) = 0;
+この意味はわからない。
+外側から触るとき、型の同一性が保証できないのではないか。
+そんなことはない。だってstochastic_foldを触っているんだから。
+SEQに何か制約がかかっているのか。
+-
+template関数のインスタンス化
+クラスをインスタンス化したときに、メンバもインスタンス化される。へー
+-
+どうすれば解決するのかな
+明日浜田先生に聞いてみるか
+-
+seqの中身をデバッガを使って覗いてみよう。
+-
+Alnのinclude元が違う可能性
+この際統一させておく。
+
+bp_centroidfold = {bp_ = {table_ = {<std::__1::__vector_base<float, std::__1::allocator<float> >> = {<std::__1::__vector_base_common<true>> = {<No data fields>}, __begin_ = 0x100000004, 
+        __end_ = 0x0, __end_cap_ = {<std::__1::__libcpp_compressed_pair_imp<float*, std::__1::allocator<float>, 2>> = {<std::__1::allocator<float>> = {<No data fields>}, __first_ = 0x0warning: (Internal error: pc 0x0 in read in psymtab, but not in symtab.)
+
+出た。これがバグ。順番に見ていこう。
+seqの中身がおかしいんじゃないか
+a1
+input, filepointerからの部分を、centroidalifold流に変えるほうがいいかもしれない。
+
+  Aln fa1, fa2;
+  if (!fa1_.empty() && !fa2_.empty())
+  {
+    std::cout<<"both fa1 and fa2 are not empty"<<std::endl;
+    std::list<Aln> l1, l2;// change here <input> (Fasta -> Aln)
+    if (Aln::load(l1, fa1_.c_str())==0)
+      throw (fa1_+": Format error").c_str();//これでいいのか
+    if (Aln::load(l2, fa2_.c_str())==0)
+      throw (fa2_+": Format error").c_str();
+    fa1=l1.front();
+    fa2=l2.front();
+  }
+ちゃんと確保されていないseqを代入していないだろうか
+----
+p cf
+$2 = (MixtureModel<Aln> &) @0x1006000b0: 
+{<FoldingEngine<Aln>> = {_vptr$FoldingEngine = 0x100166650 <vtable for MixtureModel<Aln>+16>, 
+mea_ = false, 
+bp_ = {bp_ = {table_ = {<std::__1::__vector_base<float, std::__1::allocator<float> >> = {<std::__1::__vector_base_common<true>> = {<No data fields>}, __begin_ = 0x0, __end_ = 0x0warning: (Internal error: pc 0x0 in read in psymtab, but not in symtab.),  __end_cap_ = {<std::__1::__libcpp_compressed_pair_imp<float*, std::__1::allocator<float>, 2>> = {<std::__1::allocator<float>> = {<No data fields>}, __first_ = 0x0warning: (Internal error: pc 0x0 in read in psymtab, but not in symtab.)}, <No data fields>}}, <No data fields>}, ptr_ = {<std::__1::__vector_base<float*, std::__1::allocator<float*> >> = {<std::__1::__vector_base_common<true>> = {<No data fields>}, 
+            __begin_ = 0x0warning: (Internal error: pc 0x0 in read in psymtab, but not in symtab.)
+
+, __end_ = 0x0warning: (Internal error: pc 0x0 in read in psymtab, but not in symtab.)
+
+, 
+            __end_cap_ = {<std::__1::__libcpp_compressed_pair_imp<float**, std::__1::allocator<float*>, 2>> = {<std::__1::allocator<float*>> = {<No data fields>}, __first_ = 0x0warning: (Internal error: pc 0x0 in read in psymtab, but not in symtab.)
+
+
+}, <No data fields>}}, <No data fields>}, size_ = 0, max_dist_ = 0}, size_ = 0, reserved_size_ = 0}, max_bp_dist_ = 0}, 
+  models_ = {<std::__1::__vector_base<std::__1::pair<FoldingEngine<Aln>*, float>, std::__1::allocator<std::__1::pair<FoldingEngine<Aln>*, float> > >> = {<std::__1::__vector_base_common<true>> = {<No data f
+
+cfが原因。cfがちゃんと確保されていない。
+cfのなかのbp_でエラー
+(FoldingEngine.h)
+protected:
+  bool mea_;
+  BPTable bp_;//
+  uint max_bp_dist_;
+(mixture.h)
+using FoldingEngine<SEQ>::bp_;
+
+bp_ = {bp_ = {table_ = 
+{<std::__1::__vector_base<float, std::__1::allocator<float> >> = {<std::__1::__vector_base_common<true>> = {<No data fields>}, 
+__begin_ = 0x0, __end_ = 0x0
+warning: (Internal error: pc 0x0 in read in psymtab, but not in symtab.), 
+
+
+
+
+ __end_cap_ = {<std::__1::__libcpp_compressed_pair_imp<float*, std::__1::allocator<float>, 2>> = {<std::__1::allocator<float>> = {<No data fields>}, __first_ = 0x0warning: (Internal error: pc 0x0 in read in psymtab, but not in symtab.)}, <No data fields>}}, <No data fields>}, ptr_ = {<std::__1::__vector_base<float*, std::__1::allocator<float*> >> = {<std::__1::__vector_base_common<true>> = {<No data fields>}, 
+
+これ、internal errorっていうのはgdbのバグなのか・・・・
+悲しくなってきたよ
+
+lldb使ってみるか
+lldbすごい!!!!!
+-
+x->first->calculate_posterior
+x->firstはテンプレート変数が一致していること
+cfのヴェクた要素のペア第一要素はcf_listを入れているわけだけど、
+cf_listが空だったらよくない
+cf_listが空でした(笑)
+ここに、pffoldとcontrafoldを入れよう。
+
+cf_list=[CONTRAfoldModel c, PfoldModel
+としたい。さぁ考えるぞ。
+(future workモデルを変えられるようにする。)
+-
+CONTRAfold:
+一行づつ書き換えていこう。
+問題は、contrafoldをincludeしたら問題になるというところ。
+大丈夫っぽい。centroidalifoldでそういう設計になっていると思う。
+  //if (gamma.empty()) gamma.push_back(vm.count("mea") ? 6.0 : 4.0);
+gammaとはなにか
+  src_list[i] = new CONTRAfoldModel(param, !vm.count("noncanonical"), max_bp_dist, seed, vm.count("mea"));
+vm系をすべて置換する
+gammaはいらない
+
+variables_map: オプション引数を格納したmap
+vm.countで、辞書的に指定したオプション引数を取り出すことができる。
+型を調べて、何をいれればいいか調べよう。
+  CONTRAfoldModel(const std::string& model, bool canonical_only, uint max_bp_dist,
+                  uint seed=0, bool run_as_mea=false);
+
+param
+    ("params", po::value<std::string>(&param), "use the parameter file");
+
+max_bp_dist
+    ("max-dist,d", po::value<uint>(&max_bp_dist)->default_value(0),
+     "the maximum distance of base-pairs");
+うーんどっちもなんで必要なのかわからないなー
+とりあえず適当に与えとくかなー
+cf_list
+src_list
+-
+Pfold:
+使えるか調べよう。
+getenv:cstdlib内、環境変数を取得する関数
+Pfold、何を落としてくればいいのかわからず。
+McCaskill & Alifoldでやってみよう。
+---
+McCaskillModelの実装
+  src_list[i] = new McCaskillModel(false, max_bp_dist,
+				   param.empty() ? NULL : param.c_str(),
+				   seed, vm.count("mea"));
+seed
+("seed",
+po::value<uint>(&seed)->default_value(0),
+"specify the seed for the random number generator (set this automatically if seed=0)")
+mea
+    ("mea", "run as an MEA estimator")
+実装した
+--
+ComputeRowOffsetでエラー
+引数に与えるiとbpsize+1が間違っている
+	for文でガードしているはずなんだけどな・・・
+Assertを真偽逆にとらえていた。修正。
+--
+	    {
+-> 210 	      offset[i] = ComputeRowOffset(i,bpsize+1,max_bp_dist);
+   211 
+offsetがオーバーランしたみたい
+bpsizeがうまく設定されていないのかな
+
+  int bpsize=bp_centroidfold.size();
+これが間違っているかもしれない
+bp_centroidfoldの中身を確認
+offsetの領域確保をわすれていたみたい
+書き換え:offset.push_back(ComputeRowOffset(i,bpsize+1,max_bp_dist));
+どうでしょう
+通過
+--
+rnaduplex_alnでSegmentation fault
+
+
+   1381	typename vector<_Tp, _Allocator>::reference
+   1382	vector<_Tp, _Allocator>::operator[](size_type __n)
+   1383	{
+-> 1384	    _LIBCPP_ASSERT(__n < size(), "vector[] index out of bounds");
+   1385	    return this->__begin_[__n];
+   1386	}
+   1387	
+frame #1: 0x0000000100003ab9 ractip`RactIP::rnaduplex_aln(this=0x00007fff5fbff868, a1=0x00007fff5fbfea20, a2=0x00007fff5fbfe9f0, hp=0x00007fff5fbfbee8) const + 3369 at ractip.cpp:451
+深いところまでいきすぎて、変数を確認できない。
+*it_vhpがポインタ演算だし、指定も[i][j]となっているし、いろいろと危ないことをやっているな・・・
+
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+Segmentation fault: 11
+(*it_vvhp).end()にいきつくまでに、確保されていないvectorが存在するということだろう
+-
+サイズの確保をもう一度ちゃんと確認する。
+型は大丈夫か
+入力は成功しているか
+--
+ int size1=a1.size();
+  int size2=a2.size();//
+Alnのsize関数が塩基配列の本数を表すか確認する
+  unsigned int size() const { return seq_.begin()->size(); }
+これは配列の長さですね。違います。
+  unsigned int num_aln() const { return name_.size(); }
+こっちをつかってみよう。　
+---
+結果まで到達した。
+>gca_bovine
+AGCCCUGUGGUGAAUUUACACGUUGAAUUGGGGGCUU
+>gca_chicken
+GACUCUGUAGUGAAGU-UCAUAAUGAGUUGGGGGUCU
+>gca_mouse
+GGUCUUAAGGUGAUA-UUCAUGUCGAAUUGGAGACUU
+>gca_rat
+AGCCUUAAGGUGAUU-AUCAUGUCGAAUUGAGGGCUU
+....
+>gca_bovine
+GAGGCCGGUCAAAUUCAGAUCAAU-CCGGCCA
+>gca_chicken
+GAGGCCCACCAAACUCGUUUAA-AGUGGGCCA
+>gca_mouse
+GGCGUUGGGCAAACUCGAAAAAU-CCCAACGU
+>gca_rat
+GGGGUUGGGCAAACUCGAAAAUCUACCAACUA
+....
+  std::cout<< r1 << std::endl;//r1=="...."
+結果変数r1に何も格納されていないでござる。。。
+確認する。
+  r1.resize(s1.size());// okasiikana
+  r2.resize(s2.size());
+  std::fill(r1.begin(), r1.end(), '.');
+  std::fill(r2.begin(), r2.end(), '.');
+確率計算のあとの部分を、アラインメント対応に切り替えなければいけない。
+どうしようかな
+--
+s1, s2が何に使われるか読む。
+size以外には使われていない。
+a1, a2で置換する
+長さの問題は解決した
+---
+中身の問題を解決したい
+bp, hpの中身をみてみよう
+どっちもちゃんと入っている。
+パラメータの与え方がおかしいのかもしれない。
+r1をつくるところ、つまりうしろからたどってみよう。
+-
+結果が毎回一定でない。なぜだろう。
+結果は3パターンにわかれる。
+bp,hpのどちらかが、おそらく変わっているのだろう。
+centroid_alifoldを使ってみる。
+bash-3.2$ centroid_alifold sample.clustal 
+>gca_bovine
+RRCCYURWRGUGAWWuwWCAYRWYGAAUUGRRGRCYU
+((((((.....((.........))......)))))). (g=2,th=0.333333,e=-1.89)
+bash-3.2$ centroid_alifold sample-2.clustal 
+>gca_bovine
+GRGGYYGGKCAAAYUCGDWWAWuugYSRRCBW
+..(((((((...............))))))). (g=2,th=0.333333,e=-6.2025)
+bash-3.2$ ./ractip sample.clustal sample-2.clustal 
+start
+both fa1 and fa2 are not empty
+inner for 1
+inner for 1
+>gca_bovine
+AGCCCUGUGGUGAAUUUACACGUUGAAUUGGGGGCUU
+>gca_chicken
+GACUCUGUAGUGAAGU-UCAUAAUGAGUUGGGGGUCU
+>gca_mouse
+GGUCUUAAGGUGAUA-UUCAUGUCGAAUUGGAGACUU
+>gca_rat
+AGCCUUAAGGUGAUU-AUCAUGUCGAAUUGAGGGCUU
+..............................((.))..
+>gca_bovine
+GAGGCCGGUCAAAUUCAGAUCAAU-CCGGCCA
+>gca_chicken
+GAGGCCCACCAAACUCGUUUAA-AGUGGGCCA
+>gca_mouse
+GGCGUUGGGCAAACUCGAAAAAU-CCCAACGU
+>gca_rat
+GGGGUUGGGCAAACUCGAAAAUCUACCAACUA
+................................
+もしや、フォーマットが違うかな?
+入力をテスト。
+入力テスト通過した。
+---
+毎回かわるところを見る。
+-
+max_bp_distを100に設定してみた。
+結果は変化したがよくわかっていない。
+-
+mix_w
+完全に確認していないが、とりあえず問題は考えられていない。
+-
+seed_model
+-
+use_alifold_modelなところ
+-
+
+basepair probabilityの問題か、それともその後の問題か確認しよう。
+solve関数を理解する。
+----
+結果があっているかの性能試験コードを作ったほうがいいなあ。
+---
+bp1,bp2,hpの中身を確認する。
+ちゃんと中身はあった。
+---
+	 if (x[i][j]>=0 && ip.get_value(x[i][j])>0.5)
+        {
+          assert(r1[i]=='.'); assert(r1[j]=='.');
+	  std::cout << "inner for 1" << std::endl;
+          r1[i]='('; r1[j]=')';
+        }
+この条件で中に入らないことがあったり、なかったり
+この原因を調べたいが、それにはとても時間がかかる
+ractipの実装を全部読むのは時間がかかりそうだ
+basepair probability についてよくみてみよう
+bp1, bp2, hpを出力させて、そのdiffがあるか調べる。
+-
+ベクタに対するイテレータ
+配列は全部ポインタだったが、
+vectorのポインタ型はその変数に[i]をつけてはいけない
+---
+base pair probabilityは一定である。
+solverに与えるパラメータでこの結果が出力されているとかんがえるのが妥当でしょう。
+パラメータ設定を理解する。
+---
+やること：
+パラメータ設定の理解
+先行論文のデータ・セットをダウンロード
+テスト
+---
+一本を入れてみよう
+interactionが増えたようだ
+でも、結果は安定しない
+-
+結果が安定しない問題について
+まず、もう一回アルゴリズムを理解する。
+確率を得たあとから
+自分のlatexと、ractipの論文を読む。
+-
+どの程度、ハイブリダイゼーションを重要視するか、というパラメータalpha
+-
+ip.make_variable
+  int make_variable(double coef)
+  {
+    int col = vars_.getSize();
+    vars_.add(IloBoolVar(env_));
+    obj_ += coef * vars_[col];
+    return col;
+  }
+
+----
+ハイブリダイゼーションの確率が本当にあっているか、確認する。
+(ギャップのところ)
+--
+安定について：
+最適解が複数あった場合、ランダムに選ばれるだろう
+---
+ハイブリダイゼーションの確率の修正
+現在：ViennaRNAの機能をそのままりようしている
+内部で何が起こっているかわからない。
+ViennaRNAにかける前に、その外側で例外処理を行う。
+ViennaRNAにかけるところを見る。
+    Vienna::co_pf_fold(const_cast<char*>(s.c_str()), const_cast<char*>(c.c_str()));
+
+/**
+ *  \brief Calculate partition function and base pair probabilities
+ *
+ *  This is the cofold partition function folding. The second molecule starts
+ *  at the #cut_point nucleotide.
+ *
+ *  \note OpenMP: Since this function relies on the global parameters
+ *        #do_backtrack, #dangles, #temperature and #pf_scale it is not
+ *        threadsafe according to concurrent changes in these variables!
+ *        Use co_pf_fold_par() instead to circumvent this issue.
+ *
+ *  \see co_pf_fold_par()
+ *
+ *  \param  sequence  Concatenated RNA sequences
+ *  \param  structure Will hold the structure or constraints
+ *  \return           cofoldF structure containing a set of energies needed for
+ *                    concentration computations.
+ */
+cofoldF co_pf_fold( char *sequence,
+                    char *structure)
+実装はない。コンパイルしたものしかない。
+どうしよっかなー
+帰ってきたあとのhpに対して、
+ギャップのときの確率を、
+定数probabilityforgapにする。0が妥当であろう。正確には統計のよって定めるのが次善策だ。
+そもそも0になっているか調べてみよう。
+なっていなかった。
+最後に治す形で修正する。
+---
+アラインメントの塩基確率を計算するところ
+誤差が大きくなってる可能性、（桁落ち）
+doubleで修正しよう。
+centroid_alifoldから流用してしまっているから、このことは大丈夫だろう（centroid_alifoldの精度)
+じゃあ何か
+hybridization probabilityを修正する。doubleで扱えるように。
+そうしてあった。
+---
+hp[i][j]の値を間違えて代入していた。
+修正した.
+---
+ハイブリダイゼーションのギャップ問題を解決する。
+---
+相変わらず結果が安定しない。
+確率が過小でないか確認する。
+ミスが起きるとしたら、transBPだろうか。
+transBPはpushbackしか行っていないので、変化はなさそうである。
+---
+    ("max-dist,d", po::value<uint>(&max_bp_dist)->default_value(0),
+     "the maximum distance of base-pairs");
+---
+rnaduplexの返り値
+上三角行列で十分なところ
+現行ではフルでとってるけど、返り値は違うのかもしれない
+---
+こういう結果であってるのかもしれない
+IPの安定性について議論したあと、テストデータでテストしてみよう。結果の出力にもなってちょうどよい。
+--
+seedについて調べる。
+solverはおかしいはずはないんだ。
+(一応、ractipについても実験して調べてみよう)
+安定している同じ結果が出てくる。
+---
+もしかして、毎回別のシークエンスセットに対して行っているとかはないか。
+単一のシークエンスしか含まないアラインメントに対して走らせてみよう。
+ときどきnumerical instabilityとか出てくる。
+確率行列は同じなはず。
+ということは、やはりIPの解き方がおかしい。
+  IP ip(IP::MAX, n_th_);// watching
+Warning: numerical instability (dual simplex, phase II)
+Warning: numerical instability (dual simplex, phase II)
+IPに入れる変数が毎回変わっている可能性と、
+IP自体が変な設定のせいで毎回違う値を返すようになっている可能性、
+２つに分けて調べよう。
+---
+IPに入れる変数の問題
+コメントアウトしたなかに変なものがはいっていないか
+up1, up2が何かわかっているか
+---
+up1について
+そのままコピーしただけになっている
+---
+CalculatePosteriorだけ走らせてもだめなんじゃないか
+  SStruct ss("unknown", seq);
+  ParameterManager<float> pm;
+  InferenceEngine<float> en(false);
+  VF w = GetDefaultComplementaryValues<float>();
+  bp.resize((seq.size()+1)*(seq.size()+2)/2);
+  std::fill(bp.begin(), bp.end(), 0.0);
+  en.RegisterParameters(pm);
+  en.LoadValues(w);
+  en.LoadSequence(ss);
+  en.ComputeInside();
+  en.ComputeOutside();
+  en.ComputePosterior();
+  en.GetPosterior(0, bp, offset);
+
+centroidalifoldでどう使われているか、本気で調べなければ
+set_constraint:制約条件を掛ける。任意
+
+    if (num_samples>0)
+    {
+      if (max_clusters>0)
+        cf->stochastic_fold(aln.name().front(), aln, num_samples, gamma, max_clusters, *out, p_outname, p_th);
+      else
+        cf->stochastic_fold(aln, num_samples, *out);
+      continue;
+    }
+
+("sampling,s", 
+po::value<uint>(&num_samples),
+"specify the number of samples)
+
+    ("max-clusters,c",
+     po::value<uint>(&max_clusters)->default_value(10),
+     "the maximum number of clusters for the stochastic sampling algorithm")
+
+    ("seed",
+     po::value<uint>(&seed)->default_value(0),
+     "specify the seed for the random number generator (set this automatically if seed=0)");
+    ("max-mcc", po::value<int>(&max_mcc), 
+     "predict secondary structure by maximizing pseudo-expected MCC (arg: # of sampling)")
+
+% centroid_alifold -g -1 RF00436.aln
+>AB029447-1/1210-1265
+--BCAHuUGYAVgUCGCUUUGGAYAaaAG--CGUCUGCUAAAUGM-VURwrukKAAAUDu-
+............................................................. (g=0.03125,th=0.969697)
+............................................................. (g=0.0625,th=0.941176)
+............................................................. (g=0.125,th=0.888889)
+............................................................. (g=0.25,th=0.8)
+...............(((.........))..)............................. (g=0.5,th=0.666667)
+..............(((((.......)))..))............................ (g=1,th=0.5)
+............(.((((((.....))))..)).).......................... (g=2,th=0.333333)
+........((..(.((((((.....))))..)).).))....................... (g=4,th=0.2)
+...((((.((.((.((((((.....))))..)).))))..))))................. (g=6,th=0.142857)
+...(((((((.((.((((((.....))))..)).)))).)))))................. (g=8,th=0.111111)
+..((((((((.((.((((((.....))))..)).)))).))))))................ (g=16,th=0.0588235)
+..((((((((.((.((((((.....))))..)).)))).))))))((.....))....... (g=32,th=0.030303)
+..((((((((.((.((((((.....))))..)).)))).))))))((.....))....... (g=64,th=0.0153846)
+..((((((((.((.((((((.....))))..)).)))).))))))((.....))....... (g=128,th=0.00775194)
+..((((((((.((.((((((.....))))..)).)))).))))))(((...)))....... (g=256,th=0.00389105)
+.(((((((((.((.((((((.....))))..)).)))).)))))).).((((....)))). (g=512,th=0.00194932)
+.(((((((((.((.((((((.....))))..)).)))).)))))).)(((((....))))) (g=1024,th=0.00097561)
+The first line of the result is the description of the first sequence in the given alignment. The second is the "most informative sequence" (Freyhult et al., 2005), which is similar to IUPAC ambiguity characters, produced by a library routine of the Vienna Package.
+
+      else
+        cf->stochastic_fold(aln, num_samples, *out);
+
+  virtual void stochastic_fold(const SEQ& seq, uint num_samples, std::ostream& out);
+  uint num_samples=0;
+
+  int max_mcc = -1;
+    ("max-mcc", po::value<int>(&max_mcc), 
+     "predict secondary structure by maximizing pseudo-expected MCC (arg: # of sampling)")
+
+    ("ea", po::value<int>(&num_ea_samples), 
+     "compute (pseudo-)expected accuracy (pseudo if arg==0, sampling if arg>0; arg: # of sampling)")
+
+うーん、やっぱり、違う気がする
+コンスタラクタで、すでに計算が済んでいて
+あとは、outを投げているし、これは出力上の問題ではないかな
+
+foldingengineのコンストラクタの確認
+MixtureModel(const std::vector<std::pair<FoldingEngine<SEQ>*,float> >& models,
+             bool run_as_mea /*=false*/)
+  : FoldingEngine<SEQ>(run_as_mea, 0), models_(models)
+{
+}
+
+cfを参照渡しではなく、値渡しとしてみよう。
+二回使うために、何かエラーが起きている気がする。
+値渡しにコードを変更して、うまくいかないなら、コピーしてやってみよう。
+コピーコンストラクタを使ったコードに変更した。
+---
+McCaskillModel(bool canonical_only, uint max_bp_dist,
+               const char* param /*=NULL*/, uint seed /*=0*/, bool run_as_mea /*=false*/)
+  : FoldingEngine<std::string>(run_as_mea, max_bp_dist),
+    canonical_only_(canonical_only), bk_st_back_(Vienna::st_back), str_()
+{
+  if (!canonical_only_)
+    Vienna::nonstandards = const_cast<char*>("AAACAGCACCCUGAGGUCUU");
+
+  if (seed==0)
+  {
+    timeval t;
+    gettimeofday(&t, NULL);
+    seed = t.tv_usec * t.tv_sec;
+  }
+  srand((uint)seed);
+
+  {
+    using namespace Vienna;
+    // copy from ViennaRNA-x.x.x/lib/utils.c
+    xsubi[0] = xsubi[1] = xsubi[2] = (unsigned short) seed;  /* lower 16 bit */
+    xsubi[1] += (unsigned short) ((unsigned)seed >> 6);
+    xsubi[2] += (unsigned short) ((unsigned)seed >> 12);
+  }
+
+  copy_boltzmann_parameters();
+  if (param) Vienna::read_parameter_file(param);
+}
+
+calculateposteriorがコンストラクタでは呼ばれないあたり、どうすればいいのかな、ッて思う。
+
+      cf->ps_plot(std::string(buf), aln, gamma[0], !vm.count("monochrome"));
+
+FoldingEngine<SEQ>::
+ps_plot(const std::string& name, const SEQ& seq, float g, bool color) const
+{
+  std::string paren;
+  decode_structure(g, paren);
+  if (color)
+    ::ps_color_plot(get_seq(seq).c_str(), paren.c_str(), bp_, name.c_str());
+  else
+    ::ps_plot(get_seq(seq).c_str(), paren.c_str(), name.c_str());
+計算後のプロット関数
+decode_structure(float gamma, std::string& paren) const
+{
+  float p=0.0;
+  paren.resize(bp_.size());
+  std::fill(paren.begin(), paren.end(), '.');
+  if (!mea_) {
+    if (max_bp_dist_==0)
+      p = Centroid::execute(bp_, paren, gamma);
+    else
+      p = Centroid::execute(bp_, paren, max_bp_dist_, gamma);
+  } else {
+    if (max_bp_dist_==0)
+      p = MEA::execute(bp_, paren, gamma);
+    else
+      p = MEA::execute(bp_, paren, max_bp_dist_, gamma);
+  }
+  return p;
+}
+
+mccaskillなど、個別のengineに実装されている関数が、塩基確率の計算関数であるはず
+  const BPTable& get_bp() const { return bp_; }
+
+
+template < class SEQ >
+void
+FoldingEngine<SEQ>::
+centroid_fold(const std::string& name, const SEQ& seq,
+              const std::vector<float>& gamma, std::ostream& out)
+{
+#ifdef HAVE_LIBRNA
+  Vienna::eos_debug = -1;
+#endif
+  calculate_posterior(seq);
+やっぱりcalculate_porteriorであっているっぽい
+---
+では、なぜ俺のでｈ
+mixtureの失敗か？
+全体的に確率が低くなっている気がする。
+入れているbp1, bp2, up1, up2のどれかがやっぱり違うんだろう。
+もとのractipを新しくコンパイルして、確率を出力させて、比べよう。
+-
+。
+------
+
+Numerical instability[edit]
+
+One user reports occasionally encountering the following console message when solving millions of tiny automatically generated LPs using the GLPK API:
+Warning: numerical instability (primal simplex, phase II)
+This means that the simplex solver detected that the current basic solution has became infeasible due to excessive round-off errors. In this case, the solver automatically switches to phase I to recover feasibility and then continues the search. If the solver routine returns 0, the solution can be considered accurate to within the current working precision. The GLPK routine lpx_check_kkt can subsequently be used to check whether the solution satisfies the various conditions for feasibility and optimality, as described here and here. See this thread for more information.
+Provisionally from GLPK 4.46 onward, a more robust strategy for dealing with numerical instability is planned. This new version will mean that these instability warnings will no longer occur. See this April 2011 posting for some details.
+Interior point solver[edit]
+Users should be aware that the interior point solver sometimes prematurely terminates its search for a solution due to numerical instabilities when solving a Newtonian system. In which case, the more robust simplex solver should be used. This 2011 posting contains more details.
+やはり確率が小さすぎるのだ
+hpの方をしらべてみよう。
+------
+まず、長さが違った。
+長さが違うということは、transBPで何か間違っている可能性がある。
+get_bpでちゃんと値が帰ってきているのか、
+長さはどのくらい違うのか
+調べよう
+33、違う。一行分です。
+1: 38違う。一行分です。
+もとのractipのほうが長いですね。ということは、
+一行分、どこかにおとしてきてしまっているということでしょうか。
+----
+transBPを調べる。対角成分を、落としてしまっていると思う。
+    std::vector<RealT> posterior, posterior2;
+//////////////////////////////////////////////////////////////////////
+// ComputeRowOffset()
+//
+// Consider an N x N upper triangular matrix whose elements are
+// stored in a one-dimensional flat array using the following
+// row-major indexing scheme:
+//
+//     0  1  2  3     <-- row 0
+//        4  5  6     <-- row 1
+//           7 [8]    <-- row 2
+//              9     <-- row 3
+//
+// Assuming 0-based indexing, this function computes offset[i]
+// for the ith row such that offset[i]+j is the index of the
+// (i,j)th element of the upper triangular matrix in the flat
+// array.
+//
+// For example, offset[2] = 5, so the (2,3)th element of the
+// upper triangular matrix (marked in the picture above) can be 
+// found at position offset[2]+3 = 5+3 = 8 in the flat array.
+//////////////////////////////////////////////////////////////////////
+これを可能にするにはどうすればよいか
+bpsizeが本当に正しいものか調べる。  uint size() const { return size_; }
+typedef BPTableTmpl<float> BPTable;// BPTable definition
+ためしに+1してみた。(一応これで数はあう。一致するかはわからない。 -> セグフォ)
+---
+アルファベット：26文字
+U:21
+O:15
+561
+38*38=1444
+----
+cutoffをちゃんとしよう。
+foldingの方ではなくて、modelの方。
+centroid_alifoldを見てみよう。
+cutoffをやります。
+
+      if (z[i][j]>=0 && ip.get_value(z[i][j])>0.5)
+     
+この条件がわからない
+なんで0.5以上なのか
+ip.get_valueとはなにか
+全然最適解になってない感じがある
+IPの試行回数を増やして、改善したい。
+---
+解決法
+頭が動いてない.....
+寝るのが怖い
+これは悪影響出ているから、最悪サボるとして、なんとかしよう。
+確率を与えるときに、ミスがでていると思われる。具体的には、
+一行分足りない。(それ以上の情報はまだ得ていない)
+hpについても調べる。
+それと、確率分布が大きく異なっているかもしれないので、それについては
+IPの試行回数を増やすことで、対応する。
+------------
+確率行列は、絶対にまちがっているのだから、まずこっちをちゃんとする。
+ギャップの扱い、Viennaがちゃんとできるのか、確認する。
+------------
+既存のbpの配合
+  en.GetPosterior(0, bp, offset);
+これは
+   p[i] = (posterior[i] >= posterior_cutoff ? posterior[i] : RealT(0));
+->  posterior.clear();
+    posterior.resize(SIZE, RealT(0));
+    
+->  L = sstruct.GetLength();
+#ifdef USE_EFFICIENT_WINDOW
+    if (max_bp_dist==0)
+        SIZE = (L+1)*(L+2) / 2;
+    else
+        SIZE = (L+1)*max_bp_dist;
+#else
+    SIZE = (L+1)*(L+2) / 2;
+#endif
+max_bp_distの意味が変わってくるので注意
+この通りに修正したら、うまく動いた。解決した。
+-------------
+正解・非正解をどうやって判定するか
+RactIPの基準：
+sensitivity= TP / (TP+FN)
+TP: 正しく予測された塩基対の数
+-> 塩基対についての評価
+正解データをどこから持ってくるか
+
+PETcofoldの基準：
+同じく塩基対ごとにあたり、はずれを評価している
+---
+・正解データの取得
+・評価のためのコード
+---
+正解データ
+PETcofold論文にしたがって、ダウンロードする。
+CyaR-luxS 間の塩基対アノテーションは、ハイブリダイゼーションペアがある
+(のみ)
+て計算はめんどくさいなー
+-
+他のannotationをあたってみよう。
+Sharma el al 2007のデータが明瞭でわかりやすい。
+これはそれぞれについての塩基対が記載されている。アラインメントむけじゃないな。
+---
+MCCの評価に使われているデータを参照する。
+-
+MicA-ompA Udekwu et al
+---
+見ていると、ハイブリダイゼーションのバインディングサイトが決まっているらしい。そこを正確に予測できたかどうかで評価すればよい。
+---
+評価のためのコード
+RactIPの評価コードがあるかもしれない。調べてみよう。
+wikiを見てみる。
+見当たらない。
+自分で書くか。
+２つの(...[[]]])))ファイルを受け取って、その間の[[]]のTP, NP, FP, FNを数える。
+---
+時間がないので、centroid_alifoldの時とかに先生が使ったコード見せてもらえないか頼んでみよう。
+---
+Future work: なんだっけ
+----
+(([[))..]]への変換ソフトと
+-------
+siRNAアラインメントに含まれる種の標的遺伝子をよういする。
+論文に全部書いてある通りに用意しよう。
+[標的遺伝子とそのオーソログによるアラインメントを用意するまでの段階]
+69種のゲノムをEMBLデータベースにしたがってとってくる
+それぞれのゲノムについてプロテインコーディング遺伝子をすべてとりだす
+orthoMCLを使ってオーソログ遺伝子をS.auresとその他に分離した。
+
+--------------------------
+homologous を利用するコードを作る。

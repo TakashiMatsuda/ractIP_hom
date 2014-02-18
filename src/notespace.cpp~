@@ -1,0 +1,10 @@
+    if (gamma.empty()) gamma.push_back(vm.count("mea") ? 6.0 : 1.0);
+    std::vector<std::pair<FoldingEngine<Aln>*,float> > models;//watching
+    for (uint i=0; i!=engine.size(); ++i)
+    {
+      if (engine.size()!=mix_w.size())
+        models.push_back(std::make_pair(cf_list[i], 1.0)e);
+      else
+        models.push_back(std::make_pair(cf_list[i], mix_w[i]));
+    }
+    cf = new MixtureModel<Aln>(models, vm.count("mea"));

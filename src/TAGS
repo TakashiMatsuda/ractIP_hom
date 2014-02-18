@@ -1,0 +1,906 @@
+
+boltzmann_param.c,1817
+#define DEF DEF17,348
+#define NST NST18,364
+static int stack37a[] = {stack37a21,400
+static int mismatchH37a[] = {mismatchH37a33,806
+static int mismatchI37a[] = {mismatchI37a72,1983
+static int dangle5_37a[] = {dangle5_37a111,3150
+static int dangle3_37a[] = {dangle3_37a124,3487
+static int int11_37a[] = {int11_37a137,3831
+static int int21_37a[] = {int21_37a435,12359
+static int int22_37a[] = {int22_37a1909,55285
+static int hairpin37a[] = {hairpin37a5833,149409
+static int bulge37a[] = {bulge37a5841,149646
+static int internal_loop37a[] = {internal_loop37a5849,149889
+static int MLparams_a[] = {MLparams_a5857,150136
+static int ninio_a[] = {ninio_a5864,150314
+struct tetra_loops {tetra_loops5871,150436
+  char *s;s5872,150457
+  int e;e5873,150468
+} tetraloops_a[] = {tetraloops_a5874,150477
+static void copy_stacks(int stack[NBPAIRS+1][NBPAIRS+1], const int array[])copy_stacks5908,151101
+static void copy_loop(int loop[31], const int array[])copy_loop5916,151291
+static void copy_mismatch(int mismatch[NBPAIRS+1][5][5], const int array[])copy_mismatch5923,151407
+static void copy_int11(int int11[NBPAIRS+1][NBPAIRS+1][5][5], const int array[])copy_int115932,151627
+static void copy_int21(int int21[NBPAIRS+1][NBPAIRS+1][5][5][5], const int array[])copy_int215942,151894
+static void copy_int22(int int22[NBPAIRS+1][NBPAIRS+1][5][5][5][5], const int array[])copy_int225953,152202
+static void copy_dangle(int dangle[NBPAIRS+1][5], const int array[])copy_dangle5965,152541
+static void copy_MLparams(const int values[])copy_MLparams5973,152720
+static void copy_ninio(const int values[])copy_ninio5985,152939
+static void copy_Tetra_loop(const struct tetra_loops tl[])copy_Tetra_loop5995,153097
+void copy_boltzmann_parameters()copy_boltzmann_parameters6010,153385
+
+boltzmann_param.h,65
+#define __INC_BOLTZMANN_PARAM_H____INC_BOLTZMANN_PARAM_H__2,34
+
+cmdline.c,2927
+#define FIX_UNUSED(FIX_UNUSED21,429
+const char *gengetopt_args_info_purpose = "RactIP: RNA-RNA interation prediction using integer programming.";gengetopt_args_info_purpose28,552
+const char *gengetopt_args_info_usage = "Usage: " CMDLINE_PARSER_PACKAGE " [OPTIONS]... [FILES]...";gengetopt_args_info_usage30,663
+const char *gengetopt_args_info_description = "";gengetopt_args_info_description32,765
+const char *gengetopt_args_info_full_help[] = {gengetopt_args_info_full_help34,816
+init_help_array(void)init_help_array58,2885
+const char *gengetopt_args_info_help[18];gengetopt_args_info_help81,4088
+typedef enum {ARG_NOARG_NO83,4131
+  , ARG_FLAGARG_FLAG84,4152
+  , ARG_STRINGARG_STRING85,4165
+  , ARG_INTARG_INT86,4180
+  , ARG_FLOATARG_FLOAT87,4192
+} cmdline_parser_arg_type;cmdline_parser_arg_type88,4206
+void clear_given (struct gengetopt_args_info *args_info)clear_given104,4613
+void clear_args (struct gengetopt_args_info *args_info)clear_args128,5315
+void init_args_info(struct gengetopt_args_info *args_info)init_args_info163,6326
+cmdline_parser_print_version (void)cmdline_parser_print_version190,7633
+static void print_help_common(void) {print_help_common197,7824
+cmdline_parser_print_help (void)cmdline_parser_print_help213,8223
+cmdline_parser_print_full_help (void)cmdline_parser_print_full_help222,8391
+cmdline_parser_init (struct gengetopt_args_info *args_info)cmdline_parser_init231,8574
+cmdline_parser_params_init(struct cmdline_parser_params *params)cmdline_parser_params_init242,8782
+cmdline_parser_params_create(void)cmdline_parser_params_create255,9069
+free_string_field (char **s)free_string_field264,9302
+cmdline_parser_release (struct gengetopt_args_info *args_info)cmdline_parser_release275,9402
+write_into_file(FILE *outfile, const char *opt, const char *arg, const char *values[])write_into_file305,10368
+cmdline_parser_dump(FILE *outfile, struct gengetopt_args_info *args_info)cmdline_parser_dump317,10598
+cmdline_parser_file_save(const char *filename, struct gengetopt_args_info *args_info)cmdline_parser_file_save372,12654
+cmdline_parser_free (struct gengetopt_args_info *args_info)cmdline_parser_free392,13052
+gengetopt_strdup (const char *s)gengetopt_strdup399,13221
+cmdline_parser (int argc, char **argv, struct gengetopt_args_info *args_info)cmdline_parser413,13439
+cmdline_parser_ext (int argc, char **argv, struct gengetopt_args_info *args_info,cmdline_parser_ext419,13585
+cmdline_parser2 (int argc, char **argv, struct gengetopt_args_info *args_info, int override, int initialize, int check_required)cmdline_parser2435,13947
+cmdline_parser_required (struct gengetopt_args_info *args_info, const char *prog_name)cmdline_parser_required458,14506
+static char *package_name = 0;package_name466,14674
+int update_arg(void *field, char **orig_field,update_arg487,15720
+cmdline_parser_internal (cmdline_parser_internal587,18294
+
+cmdline.h,8964
+#define CMDLINE_HCMDLINE_H9,295
+#define CMDLINE_PARSER_PACKAGE CMDLINE_PARSER_PACKAGE24,572
+#define CMDLINE_PARSER_PACKAGE_NAME CMDLINE_PARSER_PACKAGE_NAME30,743
+#define CMDLINE_PARSER_PACKAGE_NAME CMDLINE_PARSER_PACKAGE_NAME32,798
+#define CMDLINE_PARSER_VERSION CMDLINE_PARSER_VERSION38,922
+struct gengetopt_args_infogengetopt_args_info42,1025
+  const char *help_help; /**< @brief Print help and exit help description.  */help_help44,1054
+  const char *full_help_help; /**< @brief Print help, including hidden options, and exit help description.  */full_help_help45,1133
+  const char *version_help; /**< @brief Print version and exit help description.  */version_help46,1244
+  float alpha_arg;	/**< @brief weight for hybridization (default='0.5').  */alpha_arg47,1329
+  char * alpha_orig;	/**< @brief weight for hybridization original value given at command line.  */alpha_orig48,1406
+  const char *alpha_help; /**< @brief weight for hybridization help description.  */alpha_help49,1506
+  float beta_arg;	/**< @brief weight for unpaired bases (default='0.0').  */beta_arg50,1591
+  char * beta_orig;	/**< @brief weight for unpaired bases original value given at command line.  */beta_orig51,1668
+  const char *beta_help; /**< @brief weight for unpaired bases help description.  */beta_help52,1768
+  float fold_th_arg;	/**< @brief Threshold for base-pairing probabilities (default='0.5').  */fold_th_arg53,1853
+  char * fold_th_orig;	/**< @brief Threshold for base-pairing probabilities original value given at command line.  */fold_th_orig54,1948
+  const char *fold_th_help; /**< @brief Threshold for base-pairing probabilities help description.  */fold_th_help55,2066
+  float hybridize_th_arg;	/**< @brief Threshold for hybridazation probabilities (default='0.2').  */hybridize_th_arg56,2169
+  char * hybridize_th_orig;	/**< @brief Threshold for hybridazation probabilities original value given at command line.  */hybridize_th_orig57,2270
+  const char *hybridize_th_help; /**< @brief Threshold for hybridazation probabilities help description.  */hybridize_th_help58,2394
+  float acc_th_arg;	/**< @brief Threshold for accessible probabilities (default='0.0').  */acc_th_arg59,2503
+  char * acc_th_orig;	/**< @brief Threshold for accessible probabilities original value given at command line.  */acc_th_orig60,2595
+  const char *acc_th_help; /**< @brief Threshold for accessible probabilities help description.  */acc_th_help61,2710
+  int max_w_arg;	/**< @brief Maximum length of accessible regions (default='0').  */max_w_arg62,2810
+  char * max_w_orig;	/**< @brief Maximum length of accessible regions original value given at command line.  */max_w_orig63,2895
+  const char *max_w_help; /**< @brief Maximum length of accessible regions help description.  */max_w_help64,3007
+  int min_w_arg;	/**< @brief Minimum length of accessible regions (default='0').  */min_w_arg65,3104
+  char * min_w_orig;	/**< @brief Minimum length of accessible regions original value given at command line.  */min_w_orig66,3189
+  const char *min_w_help; /**< @brief Minimum length of accessible regions help description.  */min_w_help67,3301
+  int zscore_arg;	/**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) (default='0').  */zscore_arg68,3398
+  char * zscore_orig;	/**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) original value given at command line.  */zscore_orig69,3542
+  const char *zscore_help; /**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) help description.  */zscore_help70,3713
+  int num_shuffling_arg;	/**< @brief The number of shuffling (default='1000').  */num_shuffling_arg71,3869
+  char * num_shuffling_orig;	/**< @brief The number of shuffling original value given at command line.  */num_shuffling_orig72,3952
+  const char *num_shuffling_help; /**< @brief The number of shuffling help description.  */num_shuffling_help73,4059
+  int seed_arg;	/**< @brief Seed for random number generator (default='0').  */seed_arg74,4151
+  char * seed_orig;	/**< @brief Seed for random number generator original value given at command line.  */seed_orig75,4231
+  const char *seed_help; /**< @brief Seed for random number generator help description.  */seed_help76,4338
+  int mccaskill_flag;	/**< @brief Use McCaskill model for folding (default=off).  */mccaskill_flag77,4430
+  const char *mccaskill_help; /**< @brief Use McCaskill model for folding help description.  */mccaskill_help78,4515
+  int allow_isolated_flag;	/**< @brief Allow isolated base-pairs (default=off).  */allow_isolated_flag79,4611
+  const char *allow_isolated_help; /**< @brief Allow isolated base-pairs help description.  */allow_isolated_help80,4695
+  int show_energy_flag;	/**< @brief calculate the free energy of the predicted joint structure (default=off).  */show_energy_flag81,4790
+  const char *show_energy_help; /**< @brief calculate the free energy of the predicted joint structure help description.  */show_energy_help82,4904
+  char * param_file_arg;	/**< @brief Read the energy parameter file for Vienna RNA package.  */param_file_arg83,5029
+  char * param_file_orig;	/**< @brief Read the energy parameter file for Vienna RNA package original value given at command line.  */param_file_orig84,5125
+  const char *param_file_help; /**< @brief Read the energy parameter file for Vienna RNA package help description.  */param_file_help85,5259
+  int no_pk_flag;	/**< @brief do not use the constraints for interenal pseudoknots (default=off).  */no_pk_flag86,5378
+  const char *no_pk_help; /**< @brief do not use the constraints for interenal pseudoknots help description.  */no_pk_help87,5480
+  char * rip_arg;	/**< @brief Import posterior probabilities from the result of RIP.  */rip_arg88,5593
+  char * rip_orig;	/**< @brief Import posterior probabilities from the result of RIP original value given at command line.  */rip_orig89,5682
+  const char *rip_help; /**< @brief Import posterior probabilities from the result of RIP help description.  */rip_help90,5809
+  unsigned int help_given ;	/**< @brief Whether help was given.  */help_given92,5924
+  unsigned int full_help_given ;	/**< @brief Whether full-help was given.  */full_help_given93,5992
+  unsigned int version_given ;	/**< @brief Whether version was given.  */version_given94,6070
+  unsigned int alpha_given ;	/**< @brief Whether alpha was given.  */alpha_given95,6144
+  unsigned int beta_given ;	/**< @brief Whether beta was given.  */beta_given96,6214
+  unsigned int fold_th_given ;	/**< @brief Whether fold-th was given.  */fold_th_given97,6282
+  unsigned int hybridize_th_given ;	/**< @brief Whether hybridize-th was given.  */hybridize_th_given98,6356
+  unsigned int acc_th_given ;	/**< @brief Whether acc-th was given.  */acc_th_given99,6440
+  unsigned int max_w_given ;	/**< @brief Whether max-w was given.  */max_w_given100,6512
+  unsigned int min_w_given ;	/**< @brief Whether min-w was given.  */min_w_given101,6582
+  unsigned int zscore_given ;	/**< @brief Whether zscore was given.  */zscore_given102,6652
+  unsigned int num_shuffling_given ;	/**< @brief Whether num-shuffling was given.  */num_shuffling_given103,6724
+  unsigned int seed_given ;	/**< @brief Whether seed was given.  */seed_given104,6810
+  unsigned int mccaskill_given ;	/**< @brief Whether mccaskill was given.  */mccaskill_given105,6878
+  unsigned int allow_isolated_given ;	/**< @brief Whether allow-isolated was given.  */allow_isolated_given106,6956
+  unsigned int show_energy_given ;	/**< @brief Whether show-energy was given.  */show_energy_given107,7044
+  unsigned int param_file_given ;	/**< @brief Whether param-file was given.  */param_file_given108,7126
+  unsigned int no_pk_given ;	/**< @brief Whether no-pk was given.  */no_pk_given109,7206
+  unsigned int rip_given ;	/**< @brief Whether rip was given.  */rip_given110,7276
+  char **inputs ; /**< @brief unamed options (options without names) */inputs112,7343
+  unsigned inputs_num ; /**< @brief unamed options number */inputs_num113,7415
+struct cmdline_parser_paramscmdline_parser_params117,7549
+  int override; /**< @brief whether to override possibly already present options (default 0) */override119,7580
+  int initialize; /**< @brief whether to initialize the option structure gengetopt_args_info (default 1) */initialize120,7676
+  int check_required; /**< @brief whether to check that all required options were provided (default 1) */check_required121,7784
+  int check_ambiguity; /**< @brief whether to check for options already specified in the option structure gengetopt_args_info (default 0) */check_ambiguity122,7890
+  int print_errors; /**< @brief whether getopt_long should print an error message for a bad option (default 1) */print_errors123,8031
+
+contrafold/Config.hpp,4224
+#define CONFIG_HPPCONFIG_HPP8,209
+#define COMMENT COMMENT12,248
+const int SHARED_PARAMETER_SIZE = 5000;SHARED_PARAMETER_SIZE20,609
+#define SHOW_TIMINGS SHOW_TIMINGS27,875
+#define SIMPLE_FM2 SIMPLE_FM230,979
+#define CANDIDATE_LIST CANDIDATE_LIST33,1088
+#define FAST_SINGLE_BRANCH_LOOPS FAST_SINGLE_BRANCH_LOOPS36,1194
+#define FAST_HELIX_LENGTHS FAST_HELIX_LENGTHS39,1302
+#define STOCHASTIC_GRADIENT STOCHASTIC_GRADIENT45,1549
+const double NONCONVEX_MULTIPLIER = 0.0;NONCONVEX_MULTIPLIER62,2388
+const int NUM_CCCP_STEPS = 5;NUM_CCCP_STEPS67,2626
+#define SMOOTH_MAX_MARGIN SMOOTH_MAX_MARGIN71,2742
+#define SINGLE_HYPERPARAMETER SINGLE_HYPERPARAMETER77,2966
+#define MULTIPLE_HYPERPARAMETERS MULTIPLE_HYPERPARAMETERS78,3019
+#define ARD_HYPERPARAMETERS ARD_HYPERPARAMETERS79,3072
+#define HYPERPARAMETER_GRID_SEARCH HYPERPARAMETER_GRID_SEARCH90,3513
+#define HYPERPARAMETER_GRADIENT_OPTIMIZATION HYPERPARAMETER_GRADIENT_OPTIMIZATION91,3566
+#define HYPERPARAMETER_MAJORIZATION_MINIMIZATION HYPERPARAMETER_MAJORIZATION_MINIMIZATION92,3619
+#define CROSS_VALIDATE_USING_LOGLOSS CROSS_VALIDATE_USING_LOGLOSS99,3920
+const double INITIAL_LOG_C = 5.0;INITIAL_LOG_C106,4198
+const int NUM_ITERATIVE_RELINEARIZATION_STEPS = 5;NUM_ITERATIVE_RELINEARIZATION_STEPS114,4512
+const double MM_SMOOTHING = 1.0;MM_SMOOTHING117,4622
+#define PROFILE PROFILE123,4817
+#define PARAMS_BASE_PAIR PARAMS_BASE_PAIR156,6322
+#define PARAMS_BASE_PAIR_DIST PARAMS_BASE_PAIR_DIST157,6375
+#define PARAMS_TERMINAL_MISMATCH PARAMS_TERMINAL_MISMATCH158,6428
+#define PARAMS_HAIRPIN_LENGTH PARAMS_HAIRPIN_LENGTH159,6481
+#define PARAMS_HAIRPIN_3_NUCLEOTIDES PARAMS_HAIRPIN_3_NUCLEOTIDES160,6534
+#define PARAMS_HAIRPIN_4_NUCLEOTIDES PARAMS_HAIRPIN_4_NUCLEOTIDES161,6587
+#define PARAMS_HELIX_LENGTH PARAMS_HELIX_LENGTH162,6640
+#define PARAMS_ISOLATED_BASE_PAIR PARAMS_ISOLATED_BASE_PAIR163,6693
+#define PARAMS_INTERNAL_EXPLICIT PARAMS_INTERNAL_EXPLICIT164,6746
+#define PARAMS_BULGE_LENGTH PARAMS_BULGE_LENGTH165,6799
+#define PARAMS_INTERNAL_LENGTH PARAMS_INTERNAL_LENGTH166,6852
+#define PARAMS_INTERNAL_SYMMETRY PARAMS_INTERNAL_SYMMETRY167,6905
+#define PARAMS_INTERNAL_ASYMMETRY PARAMS_INTERNAL_ASYMMETRY168,6958
+#define PARAMS_BULGE_0x1_NUCLEOTIDES PARAMS_BULGE_0x1_NUCLEOTIDES169,7011
+#define PARAMS_BULGE_0x2_NUCLEOTIDES PARAMS_BULGE_0x2_NUCLEOTIDES170,7064
+#define PARAMS_BULGE_0x3_NUCLEOTIDES PARAMS_BULGE_0x3_NUCLEOTIDES171,7117
+#define PARAMS_INTERNAL_1x1_NUCLEOTIDES PARAMS_INTERNAL_1x1_NUCLEOTIDES172,7170
+#define PARAMS_INTERNAL_1x2_NUCLEOTIDES PARAMS_INTERNAL_1x2_NUCLEOTIDES173,7223
+#define PARAMS_INTERNAL_2x2_NUCLEOTIDES PARAMS_INTERNAL_2x2_NUCLEOTIDES174,7276
+#define PARAMS_HELIX_STACKING PARAMS_HELIX_STACKING175,7329
+#define PARAMS_HELIX_CLOSING PARAMS_HELIX_CLOSING176,7382
+#define PARAMS_MULTI_LENGTH PARAMS_MULTI_LENGTH177,7435
+#define PARAMS_DANGLE PARAMS_DANGLE178,7488
+#define PARAMS_EXTERNAL_LENGTH PARAMS_EXTERNAL_LENGTH179,7541
+const int C_MIN_HAIRPIN_LENGTH = 3;C_MIN_HAIRPIN_LENGTH212,9054
+const int C_MAX_SINGLE_LENGTH = 30;C_MAX_SINGLE_LENGTH213,9090
+const int D_MAX_HAIRPIN_LENGTH = 30;D_MAX_HAIRPIN_LENGTH215,9127
+const int D_MAX_BP_DIST_THRESHOLDS = 10;D_MAX_BP_DIST_THRESHOLDS216,9164
+const int D_MAX_BULGE_LENGTH = 30;D_MAX_BULGE_LENGTH217,9205
+const int D_MAX_INTERNAL_LENGTH = 30;D_MAX_INTERNAL_LENGTH218,9240
+const int D_MAX_INTERNAL_SYMMETRIC_LENGTH = 15;D_MAX_INTERNAL_SYMMETRIC_LENGTH219,9278
+const int D_MAX_INTERNAL_ASYMMETRY = 28;D_MAX_INTERNAL_ASYMMETRY220,9326
+const int D_MAX_INTERNAL_EXPLICIT_LENGTH = 4;D_MAX_INTERNAL_EXPLICIT_LENGTH221,9367
+const int D_MAX_HELIX_LENGTH = 30;D_MAX_HELIX_LENGTH222,9413
+const int BP_DIST_LAST_THRESHOLD = 132;BP_DIST_LAST_THRESHOLD224,9449
+const int BP_DIST_THRESHOLDS[D_MAX_BP_DIST_THRESHOLDS] = { 3, 9, 12, 16, 21, 26, 34, 47, 71, BP_DIST_LAST_THRESHOLD };BP_DIST_THRESHOLDS225,9489
+const std::string alphabet = "ACGU";    // allowed symbols -- all other letters ignoredalphabet227,9609
+const int M = 4;                        // number of alphabet symbolsM228,9697
+const int MAX_DIMENSIONS = 4;MAX_DIMENSIONS230,9768
+#define BMRM_AVAILABLE BMRM_AVAILABLE236,9959
+
+contrafold/DuplexEngine.hpp,5117
+#define DUPLEXENGINE_HPPDUPLEXENGINE_HPP6,188
+class DuplexEngineDuplexEngine22,581
+    const bool allow_noncomplementary;allow_noncomplementary24,602
+    unsigned char char_mapping[256];char_mapping25,641
+    int is_complementary[M+1][M+1];is_complementary26,678
+    bool cache_initialized;cache_initialized27,714
+    ParameterManager<RealT> *parameter_manager;parameter_manager28,742
+    int L1, L2, SIZE;L131,813
+    int L1, L2, SIZE;L231,813
+    int L1, L2, SIZE;SIZE31,813
+    std::vector<int> s1, s2;s134,857
+    std::vector<int> s1, s2;s234,857
+    std::vector<int> offset;offset35,886
+    std::vector<int> allow_unpaired, allow_paired;allow_unpaired36,915
+    std::vector<int> allow_unpaired, allow_paired;allow_paired36,915
+    std::vector<RealT> inside, outside;inside38,967
+    std::vector<RealT> inside, outside;outside38,967
+    std::vector<RealT> posterior, posterior2;posterior39,1007
+    std::vector<RealT> posterior, posterior2;posterior239,1007
+    RealT LogPartFunc;LogPartFunc40,1053
+    std::pair<RealT,RealT> score_base_pair[M+1][M+1];score_base_pair45,1117
+    std::pair<RealT,RealT> score_base_pair_dist_at_least[D_MAX_BP_DIST_THRESHOLDS];score_base_pair_dist_at_least48,1204
+    std::pair<RealT,RealT> cache_score_base_pair_dist[BP_DIST_LAST_THRESHOLD+1];cache_score_base_pair_dist49,1288
+    std::pair<RealT,RealT> score_terminal_mismatch[M+1][M+1][M+1][M+1];score_terminal_mismatch52,1405
+    std::pair<RealT,RealT> score_hairpin_length_at_least[D_MAX_HAIRPIN_LENGTH+1];score_hairpin_length_at_least55,1510
+    std::pair<RealT,RealT> cache_score_hairpin_length[D_MAX_HAIRPIN_LENGTH+1];cache_score_hairpin_length56,1592
+    std::pair<RealT,RealT> score_hairpin_3_nucleotides[M+1][M+1][M+1];score_hairpin_3_nucleotides59,1711
+    std::pair<RealT,RealT> score_hairpin_4_nucleotides[M+1][M+1][M+1][M+1];score_hairpin_4_nucleotides62,1822
+    std::pair<RealT,RealT> score_helix_length_at_least[D_MAX_HELIX_LENGTH+1];score_helix_length_at_least65,1929
+    std::pair<RealT,RealT> cache_score_helix_length[D_MAX_HELIX_LENGTH+1];cache_score_helix_length66,2007
+    std::pair<RealT,RealT> score_isolated_base_pair;score_isolated_base_pair69,2119
+    std::pair<RealT,RealT> score_internal_explicit[D_MAX_INTERNAL_EXPLICIT_LENGTH+1][D_MAX_INTERNAL_EXPLICIT_LENGTH+1];score_internal_explicit72,2208
+    std::pair<RealT,RealT> score_bulge_length_at_least[D_MAX_BULGE_LENGTH+1];score_bulge_length_at_least75,2359
+    std::pair<RealT,RealT> score_internal_length_at_least[D_MAX_INTERNAL_LENGTH+1];score_internal_length_at_least78,2471
+    std::pair<RealT,RealT> score_internal_symmetric_length_at_least[D_MAX_INTERNAL_SYMMETRIC_LENGTH+1];score_internal_symmetric_length_at_least81,2591
+    std::pair<RealT,RealT> score_internal_asymmetry_at_least[D_MAX_INTERNAL_ASYMMETRY+1];score_internal_asymmetry_at_least84,2732
+    std::pair<RealT,RealT> score_bulge_0x1_nucleotides[M+1];score_bulge_0x1_nucleotides87,2862
+    std::pair<RealT,RealT> score_bulge_1x0_nucleotides[M+1];score_bulge_1x0_nucleotides88,2923
+    std::pair<RealT,RealT> score_bulge_0x2_nucleotides[M+1][M+1];score_bulge_0x2_nucleotides91,3024
+    std::pair<RealT,RealT> score_bulge_2x0_nucleotides[M+1][M+1];score_bulge_2x0_nucleotides92,3090
+    std::pair<RealT,RealT> score_bulge_0x3_nucleotides[M+1][M+1][M+1];score_bulge_0x3_nucleotides95,3196
+    std::pair<RealT,RealT> score_bulge_3x0_nucleotides[M+1][M+1][M+1];score_bulge_3x0_nucleotides96,3267
+    std::pair<RealT,RealT> score_internal_1x1_nucleotides[M+1][M+1];score_internal_1x1_nucleotides99,3381
+    std::pair<RealT,RealT> score_internal_1x2_nucleotides[M+1][M+1][M+1];score_internal_1x2_nucleotides102,3493
+    std::pair<RealT,RealT> score_internal_2x1_nucleotides[M+1][M+1][M+1];score_internal_2x1_nucleotides103,3567
+    std::pair<RealT,RealT> score_internal_2x2_nucleotides[M+1][M+1][M+1][M+1];score_internal_2x2_nucleotides106,3684
+    std::pair<RealT,RealT> score_helix_stacking[M+1][M+1][M+1][M+1];score_helix_stacking109,3796
+    std::pair<RealT,RealT> score_helix_closing[M+1][M+1];score_helix_closing112,3897
+    std::pair<RealT,RealT> score_multi_base;score_multi_base115,3986
+    std::pair<RealT,RealT> score_multi_unpaired;score_multi_unpaired116,4031
+    std::pair<RealT,RealT> score_multi_paired;score_multi_paired117,4080
+    std::pair<RealT,RealT> score_dangle_left[M+1][M+1][M+1];score_dangle_left120,4152
+    std::pair<RealT,RealT> score_dangle_right[M+1][M+1][M+1];score_dangle_right121,4213
+    std::pair<RealT,RealT> score_external_unpaired;score_external_unpaired124,4309
+    std::pair<RealT,RealT> score_external_paired;score_external_paired125,4361
+    std::pair<RealT,RealT> cache_score_single[C_MAX_SINGLE_LENGTH+1][C_MAX_SINGLE_LENGTH+1];cache_score_single129,4436
+    std::vector<std::pair<RealT,RealT> > cache_score_helix_sums;cache_score_helix_sums131,4609
+    RealT ComputeLogPartitionCoefficient() const { return LogPartFunc; }ComputeLogPartitionCoefficient162,5768
+    int GetOffset(int i) { return offset[i]; }GetOffset170,6164
+
+contrafold/InferenceEngine.hpp,7697
+#define INFERENCEENGINE_HPPINFERENCEENGINE_HPP6,194
+class InferenceEngineInferenceEngine23,611
+    const bool allow_noncomplementary;allow_noncomplementary25,635
+    unsigned char char_mapping[256];char_mapping26,674
+    int is_complementary[M+1][M+1];is_complementary27,711
+    bool cache_initialized;cache_initialized28,747
+    ParameterManager<RealT> *parameter_manager;parameter_manager29,775
+    int max_bp_dist;max_bp_dist30,823
+    Die* die;die31,844
+    int L, SIZE;L34,881
+    int L, SIZE;SIZE34,881
+    std::vector<int> s, offset;s37,920
+    std::vector<int> s, offset;offset37,920
+    std::vector<int> allow_unpaired_position;allow_unpaired_position38,952
+    std::vector<int> allow_unpaired, allow_paired;allow_unpaired39,998
+    std::vector<int> allow_unpaired, allow_paired;allow_paired39,998
+    std::vector<RealT> loss_unpaired_position;loss_unpaired_position40,1049
+    std::vector<RealT> loss_unpaired, loss_paired;loss_unpaired41,1096
+    std::vector<RealT> loss_unpaired, loss_paired;loss_paired41,1096
+    enum TRACEBACK_TYPE {TRACEBACK_TYPE43,1148
+        TB_FN_HAIRPIN,TB_FN_HAIRPIN45,1227
+        TB_FN_SINGLE,TB_FN_SINGLE46,1250
+        TB_FN_BIFURCATION,TB_FN_BIFURCATION47,1272
+        TB_FE_STACKING,TB_FE_STACKING48,1299
+        TB_FE_FN,TB_FE_FN49,1323
+        TB_FC_FN,TB_FC_FN50,1341
+        TB_FC_HELIX,TB_FC_HELIX51,1359
+        TB_FC_FE,TB_FC_FE52,1380
+        TB_FM1_PAIRED,TB_FM1_PAIRED58,1483
+        TB_FM1_UNPAIRED,TB_FM1_UNPAIRED59,1506
+        TB_FM_BIFURCATION,TB_FM_BIFURCATION60,1531
+        TB_FM_UNPAIRED,TB_FM_UNPAIRED61,1558
+        TB_FM_FM1,TB_FM_FM162,1582
+        TB_F5_ZERO,TB_F5_ZERO63,1601
+        TB_F5_UNPAIRED,TB_F5_UNPAIRED64,1621
+        TB_F5_BIFURCATION,TB_F5_BIFURCATION65,1645
+        NUM_TRACEBACK_TYPESNUM_TRACEBACK_TYPES66,1672
+    std::vector<int> FCt, F5t, FMt, FM1t;            // tracebackFCt70,1748
+    std::vector<int> FCt, F5t, FMt, FM1t;            // tracebackF5t70,1748
+    std::vector<int> FCt, F5t, FMt, FM1t;            // tracebackFMt70,1748
+    std::vector<int> FCt, F5t, FMt, FM1t;            // tracebackFM1t70,1748
+    std::vector<RealT> FCv, F5v, FMv, FM1v;          // Viterbi  FCv71,1814
+    std::vector<RealT> FCv, F5v, FMv, FM1v;          // Viterbi  F5v71,1814
+    std::vector<RealT> FCv, F5v, FMv, FM1v;          // Viterbi  FMv71,1814
+    std::vector<RealT> FCv, F5v, FMv, FM1v;          // Viterbi  FM1v71,1814
+    std::vector<RealT> FCi, F5i, FMi, FM1i;          // insideFCi72,1880
+    std::vector<RealT> FCi, F5i, FMi, FM1i;          // insideF5i72,1880
+    std::vector<RealT> FCi, F5i, FMi, FM1i;          // insideFMi72,1880
+    std::vector<RealT> FCi, F5i, FMi, FM1i;          // insideFM1i72,1880
+    std::vector<RealT> FCo, F5o, FMo, FM1o;          // outsideFCo73,1943
+    std::vector<RealT> FCo, F5o, FMo, FM1o;          // outsideF5o73,1943
+    std::vector<RealT> FCo, F5o, FMo, FM1o;          // outsideFMo73,1943
+    std::vector<RealT> FCo, F5o, FMo, FM1o;          // outsideFM1o73,1943
+    std::vector<int> FEt, FNt;FEt76,2065
+    std::vector<int> FEt, FNt;FNt76,2065
+    std::vector<RealT> FEv, FNv;FEv77,2096
+    std::vector<RealT> FEv, FNv;FNv77,2096
+    std::vector<RealT> FEi, FNi;FEi78,2129
+    std::vector<RealT> FEi, FNi;FNi78,2129
+    std::vector<RealT> FEo, FNo;FEo79,2162
+    std::vector<RealT> FEo, FNo;FNo79,2162
+    std::vector<RealT> posterior, posterior2;posterior82,2207
+    std::vector<RealT> posterior, posterior2;posterior282,2207
+    std::pair<RealT,RealT> score_base_pair[M+1][M+1];score_base_pair87,2294
+    std::pair<RealT,RealT> score_base_pair_dist_at_least[D_MAX_BP_DIST_THRESHOLDS];score_base_pair_dist_at_least90,2381
+    std::pair<RealT,RealT> cache_score_base_pair_dist[BP_DIST_LAST_THRESHOLD+1];cache_score_base_pair_dist91,2465
+    std::pair<RealT,RealT> score_terminal_mismatch[M+1][M+1][M+1][M+1];score_terminal_mismatch94,2582
+    std::pair<RealT,RealT> score_hairpin_length_at_least[D_MAX_HAIRPIN_LENGTH+1];score_hairpin_length_at_least97,2687
+    std::pair<RealT,RealT> cache_score_hairpin_length[D_MAX_HAIRPIN_LENGTH+1];cache_score_hairpin_length98,2769
+    std::pair<RealT,RealT> score_hairpin_3_nucleotides[M+1][M+1][M+1];score_hairpin_3_nucleotides101,2888
+    std::pair<RealT,RealT> score_hairpin_4_nucleotides[M+1][M+1][M+1][M+1];score_hairpin_4_nucleotides104,2999
+    std::pair<RealT,RealT> score_helix_length_at_least[D_MAX_HELIX_LENGTH+1];score_helix_length_at_least107,3106
+    std::pair<RealT,RealT> cache_score_helix_length[D_MAX_HELIX_LENGTH+1];cache_score_helix_length108,3184
+    std::pair<RealT,RealT> score_isolated_base_pair;score_isolated_base_pair111,3296
+    std::pair<RealT,RealT> score_internal_explicit[D_MAX_INTERNAL_EXPLICIT_LENGTH+1][D_MAX_INTERNAL_EXPLICIT_LENGTH+1];score_internal_explicit114,3385
+    std::pair<RealT,RealT> score_bulge_length_at_least[D_MAX_BULGE_LENGTH+1];score_bulge_length_at_least117,3536
+    std::pair<RealT,RealT> score_internal_length_at_least[D_MAX_INTERNAL_LENGTH+1];score_internal_length_at_least120,3648
+    std::pair<RealT,RealT> score_internal_symmetric_length_at_least[D_MAX_INTERNAL_SYMMETRIC_LENGTH+1];score_internal_symmetric_length_at_least123,3768
+    std::pair<RealT,RealT> score_internal_asymmetry_at_least[D_MAX_INTERNAL_ASYMMETRY+1];score_internal_asymmetry_at_least126,3909
+    std::pair<RealT,RealT> score_bulge_0x1_nucleotides[M+1];score_bulge_0x1_nucleotides129,4039
+    std::pair<RealT,RealT> score_bulge_1x0_nucleotides[M+1];score_bulge_1x0_nucleotides130,4100
+    std::pair<RealT,RealT> score_bulge_0x2_nucleotides[M+1][M+1];score_bulge_0x2_nucleotides133,4201
+    std::pair<RealT,RealT> score_bulge_2x0_nucleotides[M+1][M+1];score_bulge_2x0_nucleotides134,4267
+    std::pair<RealT,RealT> score_bulge_0x3_nucleotides[M+1][M+1][M+1];score_bulge_0x3_nucleotides137,4373
+    std::pair<RealT,RealT> score_bulge_3x0_nucleotides[M+1][M+1][M+1];score_bulge_3x0_nucleotides138,4444
+    std::pair<RealT,RealT> score_internal_1x1_nucleotides[M+1][M+1];score_internal_1x1_nucleotides141,4558
+    std::pair<RealT,RealT> score_internal_1x2_nucleotides[M+1][M+1][M+1];score_internal_1x2_nucleotides144,4670
+    std::pair<RealT,RealT> score_internal_2x1_nucleotides[M+1][M+1][M+1];score_internal_2x1_nucleotides145,4744
+    std::pair<RealT,RealT> score_internal_2x2_nucleotides[M+1][M+1][M+1][M+1];score_internal_2x2_nucleotides148,4861
+    std::pair<RealT,RealT> score_helix_stacking[M+1][M+1][M+1][M+1];score_helix_stacking151,4973
+    std::pair<RealT,RealT> score_helix_closing[M+1][M+1];score_helix_closing154,5074
+    std::pair<RealT,RealT> score_multi_base;score_multi_base157,5163
+    std::pair<RealT,RealT> score_multi_unpaired;score_multi_unpaired158,5208
+    std::pair<RealT,RealT> score_multi_paired;score_multi_paired159,5257
+    std::pair<RealT,RealT> score_dangle_left[M+1][M+1][M+1];score_dangle_left162,5329
+    std::pair<RealT,RealT> score_dangle_right[M+1][M+1][M+1];score_dangle_right163,5390
+    std::pair<RealT,RealT> score_external_unpaired;score_external_unpaired166,5486
+    std::pair<RealT,RealT> score_external_paired;score_external_paired167,5538
+    std::pair<RealT,RealT> cache_score_single[C_MAX_SINGLE_LENGTH+1][C_MAX_SINGLE_LENGTH+1];cache_score_single171,5613
+    std::vector<std::pair<RealT,RealT> > cache_score_helix_sums;cache_score_helix_sums173,5786
+    RealT *GetPosterior(const RealT posterior_cutoff, std::vector<RealT>& p, std::vector<int>& o) constGetPosterior259,9500
+    int GetOffset(int i) const { return offset[i]; }GetOffset268,9870
+
+contrafold/LogSpace.hpp,1067
+#define LOGSPACE_HPPLOGSPACE_HPP8,234
+#define NEG_INF NEG_INF12,282
+inline double Fast_Exp(double x)Fast_Exp21,563
+inline float Fast_Exp(float x)Fast_Exp27,662
+inline double Fast_LogExpPlusOne(double x)Fast_LogExpPlusOne68,2834
+inline float Fast_LogExpPlusOne(float x){Fast_LogExpPlusOne74,2992
+inline double Fast_LogExpMinusOne(double x)Fast_LogExpMinusOne137,6912
+inline float Fast_LogExpMinusOne(float x)Fast_LogExpMinusOne143,7070
+inline double Fast_LogAdd(double x, double y)Fast_LogAdd218,12756
+inline float Fast_LogAdd(float x, float y)Fast_LogAdd225,12943
+inline void Fast_LogPlusEquals (double &x, double y)Fast_LogPlusEquals232,13136
+inline void Fast_LogPlusEquals (float &x, float y)Fast_LogPlusEquals239,13319
+inline double Fast_LogSubtract (double x, double y)Fast_LogSubtract253,13733
+inline float Fast_LogSubtract (float x, float y)Fast_LogSubtract260,13964
+inline void Fast_LogMinusEquals (double &x, double y)Fast_LogMinusEquals267,14201
+inline void Fast_LogMinusEquals (float &x, float y)Fast_LogMinusEquals274,14423
+
+contrafold/ParameterManager.hpp,1172
+#define PARAMETERMANAGER_HPPPARAMETERMANAGER_HPP46,1480
+struct ParameterGroupParameterGroup60,1991
+    std::string name;name62,2015
+    int begin, end;begin63,2037
+    int begin, end;end63,2037
+class ParameterManagerParameterManager76,2451
+    std::vector<std::string> names;names78,2476
+    std::vector<ParameterGroup> groups;groups79,2512
+    std::map<std::pair<RealT, RealT> *, int> physical_to_logical;physical_to_logical80,2552
+    std::vector<std::vector<std::pair<RealT, RealT> *> > logical_to_physical;logical_to_physical81,2618
+    std::map<std::string, int> logical_name_to_index;logical_name_to_index82,2696
+    const std::vector<std::string> GetNames() const { return names; }GetNames111,3928
+    const std::vector<ParameterGroup> &GetParameterGroups() const { return groups; }GetParameterGroups112,3998
+    size_t GetNumParameterGroups() const { return groups.size(); }GetNumParameterGroups113,4083
+    size_t GetNumPhysicalParameters() const { return physical_to_logical.size(); }GetNumPhysicalParameters114,4150
+    size_t GetNumLogicalParameters() const { return logical_to_physical.size(); }GetNumLogicalParameters115,4233
+
+contrafold/rand.h,481
+#define __INC_RAND_H____INC_RAND_H__4,33
+class DieDie12,147
+  Die(unsigned int seed)Die15,167
+  double operator()()operator ()20,218
+class DieDie29,321
+  typedef boost::mt19937 RNG;RNG31,333
+  typedef boost::uniform_real<> DST;DST32,363
+  typedef boost::variate_generator<RNG&, DST> DIE;DIE33,400
+  Die(unsigned int seed)Die36,460
+  double operator()() { return die_(); }operator ()40,539
+  RNG rng_;rng_43,590
+  DST dst_;dst_44,602
+  DIE die_;die_45,614
+
+contrafold/SStruct.cpp,2389
+enum FileFormatFileFormat7,182
+    FileFormat_FASTA,FileFormat_FASTA9,201
+    FileFormat_BPSEQ,FileFormat_BPSEQ10,223
+    FileFormat_RAWFileFormat_RAW11,245
+const int SStruct::UNPAIRED = 0;UNPAIRED14,286
+const int SStruct::UNKNOWN = -1;UNKNOWN15,319
+SStruct::SStruct()SStruct23,537
+SStruct::SStruct(const std::string &filename)SStruct32,756
+void SStruct::Load(const std::string &filename)Load44,1071
+int SStruct::AnalyzeFormat(const std::string &filename) constAnalyzeFormat69,1843
+void SStruct::LoadFASTA(const std::string &filename)LoadFASTA112,3057
+void SStruct::LoadRAW(const std::string &filename)LoadRAW197,5744
+void SStruct::LoadBPSEQ(const std::string &filename)LoadBPSEQ240,7101
+SStruct::SStruct(const SStruct &rhs) :SStruct290,8996
+SStruct::~SStruct()~SStruct302,9300
+const SStruct &SStruct::operator=(const SStruct &rhs)operator =311,9516
+std::string SStruct::FilterSequence(std::string sequence) constFilterSequence330,9978
+std::string SStruct::FilterParens(std::string sequence) constFilterParens365,10970
+std::vector<int> SStruct::ConvertParensToMapping(const std::string &parens) constConvertParensToMapping389,11709
+std::string SStruct::ConvertMappingToParens(const std::vector<int> &mapping) constConvertMappingToParens424,12874
+void SStruct::ValidateMapping(const std::vector<int> &mapping) constValidateMapping453,13762
+bool SStruct::ContainsPseudoknots() constContainsPseudoknots475,14663
+void SStruct::RemoveNoncomplementaryPairings(const int seq)RemoveNoncomplementaryPairings506,15550
+void SStruct::WriteBPSEQ(std::ostream &outfile, const int seq) constWriteBPSEQ528,16353
+void SStruct::WriteParens(std::ostream &outfile) constWriteParens545,17054
+double SStruct::ComputePercentIdentity() constComputePercentIdentity568,17865
+std::vector<double> SStruct::ComputePositionBasedSequenceWeights() constComputePositionBasedSequenceWeights607,19084
+void SStruct::SetMapping(const std::vector<int> &mapping)SetMapping637,19991
+SStruct::SStruct(const std::string& name, const std::string& seq)SStruct645,20141
+SStruct::SStruct(const std::string& name, const std::string& seq, const std::string& str)SStruct650,20233
+void SStruct::Assign(const std::string& name, const std::string& seq)Assign655,20354
+void SStruct::Assign(const std::string& name, const std::string& seq, const std::string& str)Assign671,20815
+
+contrafold/SStruct.hpp,758
+#define SSTRUCT_HPPSSTRUCT_HPP13,358
+class SStructSStruct25,639
+    std::vector<std::string> names;names27,655
+    std::vector<std::string> sequences;sequences28,691
+    std::vector<int> mapping;mapping29,731
+    static const int UNPAIRED;UNPAIRED54,1743
+    static const int UNKNOWN;UNKNOWN55,1774
+    const std::vector<std::string> &GetNames() const { return names; }GetNames98,3242
+    const std::vector<std::string> &GetSequences() const { return sequences; }GetSequences99,3313
+    const std::vector<int> &GetMapping() const { return mapping; }GetMapping100,3392
+    int GetLength() const { return int(mapping.size())-1; }GetLength101,3459
+    int GetNumSequences() const { return int(sequences.size()); }GetNumSequences102,3519
+
+contrafold/Utilities.cpp,1915
+#define HUGE_VALF HUGE_VALF9,223
+#define HUGE_VAL HUGE_VAL13,272
+bool toggle_error = false;toggle_error16,303
+int _ASSERT_FAILED(const char *fmt, ...)_ASSERT_FAILED24,559
+void Error(const char *fmt, ...)Error41,963
+void Warning(const char *fmt, ...)Warning59,1407
+bool ConvertToNumber(const std::string &s, int &val)ConvertToNumber76,1875
+bool ConvertToNumber(const std::string &s, unsigned int &val)ConvertToNumber90,2296
+bool ConvertToNumber(const std::string &s, long int &val)ConvertToNumber104,2697
+bool ConvertToNumber(const std::string &s, unsigned long int &val)ConvertToNumber115,3023
+bool ConvertToNumber(const std::string &s, long long int &val)ConvertToNumber128,3385
+bool ConvertToNumber(const std::string &s, unsigned long long int &val)ConvertToNumber143,3752
+bool ConvertToNumber(const std::string &s, float &val)ConvertToNumber157,4084
+bool ConvertToNumber(const std::string &s, double &val)ConvertToNumber168,4406
+bool ConvertToNumber(const std::string &s, long double &val)ConvertToNumber179,4727
+std::string ConvertToUpperCase(const std::string &s)ConvertToUpperCase200,5357
+std::string ConvertToLowerCase(const std::string &s)ConvertToLowerCase214,5752
+std::string Trim(const std::string &s){Trim228,6107
+std::string RemoveGaps(const std::string &s)RemoveGaps241,6554
+std::string SPrintF(const char *fmt, ...){SPrintF260,6972
+void WriteProgressMessage(const std::string &message)WriteProgressMessage305,8146
+double GetSystemTime()GetSystemTime320,8623
+void MakeDirectory(const std::string &directory)MakeDirectory333,8990
+std::vector<int> GetSequencePositions(const std::string &s)GetSequencePositions379,10363
+std::vector<int> GetSequenceMapping(const std::string &s)GetSequenceMapping395,10921
+std::string GetDirName(const std::string &filename)GetDirName419,11483
+std::string GetBaseName(const std::string &filename)GetBaseName427,11919
+
+contrafold/Utilities.hpp,555
+#define UTILITIES_HPPUTILITIES_HPP6,182
+typedef unsigned char BYTE;BYTE28,555
+const char DIR_SEPARATOR_CHAR = '/';DIR_SEPARATOR_CHAR29,583
+#define _level_2_str(_level_2_str32,641
+#define _level_1_str(_level_1_str33,681
+#define __LINESTR__ __LINESTR__34,708
+#define __FL__ __FL__35,751
+#define Assert(Assert46,1133
+#define Assert(Assert48,1168
+inline int Ind(bool condition){ return condition ? 1 : 0; }Ind102,3211
+struct triple {triple106,3337
+    T1 first;first107,3353
+    T2 second;second108,3367
+    T3 third;third109,3382
+
+fa.cpp,925
+struct fa_parser : public grammar< fa_parser >fa_parser31,941
+  fa_parser(std::string& n, std::string& s, std::string& st)fa_parser33,990
+  std::string& name;name36,1087
+  std::string& seq;seq37,1108
+  std::string& str;str38,1128
+  struct append_seqappend_seq40,1149
+    std::string& seq;seq42,1173
+    append_seq(std::string& s) : seq(s) { }append_seq44,1196
+    void operator()(Ite i1, Ite i2) constoperator ()47,1266
+  struct definitiondefinition56,1400
+    typedef rule<ScannerT> rule_t;rule_t58,1424
+    rule_t fa;fa59,1459
+    rule_t head;head60,1474
+    rule_t seq_l;seq_l61,1491
+    rule_t seq;seq62,1509
+    rule_t str;str63,1525
+    rule_t str_l;str_l64,1541
+    definition(const fa_parser& self)definition66,1560
+    const rule_t& start() const { return fa; }start76,1919
+load(file_iterator<>& fi)load82,1988
+load(std::list<Fasta>& data, const char* filename)load105,2444
+
+fa.h,725
+#define __INC_FA_H____INC_FA_H__22,795
+#define BOOST_SPIRIT_CLASSIC_NS BOOST_SPIRIT_CLASSIC_NS35,1045
+class FastaFasta38,1099
+  Fasta() : name_(), seq_(), str_() { }Fasta41,1121
+  Fasta(const std::string& name,Fasta43,1162
+  Fasta(const Fasta& fa)Fasta49,1295
+  operator=(const Fasta& fa)operator =54,1392
+  const std::string& name() const { return name_; }name64,1545
+  const std::string& seq() const { return seq_; }seq65,1597
+  std::string& seq() { return seq_; }seq66,1647
+  const std::string& str() const { return str_; }str67,1685
+  unsigned int size() const { return seq_.size(); }size68,1735
+  std::string name_;name_78,1936
+  std::string seq_;seq_79,1957
+  std::string str_;str_80,1977
+
+ip.cpp,2898
+class IPimplIPimpl38,966
+  IPimpl(IP::DirType dir, int n_th)IPimpl41,989
+  ~IPimpl()~IPimpl52,1248
+  int make_variable(double coef)make_variable57,1295
+  int make_constraint(IP::BoundType bnd, double l, double u)make_constraint66,1513
+  void add_constraint(int row, int col, double val)add_constraint80,2004
+  void update() {}update89,2177
+  double solve()solve91,2197
+  double get_value(int col) constget_value103,2526
+  glp_prob *ip_;ip_109,2616
+  std::vector<int> ia_;ia_110,2633
+  std::vector<int> ja_;ja_111,2657
+  std::vector<double> ar_;ar_112,2681
+class IPimplIPimpl117,2738
+  IPimpl(IP::DirType dir, int n_th)IPimpl120,2761
+  ~IPimpl()~IPimpl129,3054
+  int make_variable(double coef)make_variable135,3111
+  int make_constraint(IP::BoundType bnd, double l, double u)make_constraint141,3246
+  void add_constraint(int row, int col, double val)add_constraint150,3435
+  void update()update155,3545
+  double solve()solve160,3592
+  double get_value(int col) constget_value183,4244
+  GRBEnv* env_;env_189,4341
+  GRBModel* model_;model_190,4357
+  int dir_;dir_191,4377
+  std::vector<GRBVar> vars_;vars_193,4390
+  std::vector< std::vector< std::pair<int,double> > > m_;m_194,4419
+  std::vector<int> bnd_;bnd_195,4477
+  std::vector<double> l_;l_196,4502
+  std::vector<double> u_;u_197,4528
+class IPimplIPimpl202,4599
+  IPimpl(IP::DirType dir, int n_th)IPimpl205,4622
+  ~IPimpl()~IPimpl210,4757
+  int make_variable(double coef)make_variable216,4813
+  int make_constraint(IP::BoundType bnd, double l, double u)make_constraint224,4966
+  void add_constraint(int row, int col, double val)add_constraint233,5155
+  void update()update238,5265
+  double solve()solve247,5448
+  double get_value(int col) constget_value274,6183
+  IloEnv env_;env_280,6276
+  IloModel model_;model_281,6291
+  IloExpr obj_;obj_282,6310
+  IloBoolVarArray vars_;vars_283,6326
+  IloCplex* cplex_;cplex_284,6351
+  std::vector< std::vector< std::pair<int,double> > > m_;m_285,6371
+  std::vector<int> bnd_;bnd_286,6429
+  std::vector<double> l_;l_287,6454
+  std::vector<double> u_;u_288,6480
+  IP::DirType dir_;dir_289,6506
+  int n_th_;n_th_290,6526
+IP(DirType dir, int n_th)IP297,6641
+~IP()~IP303,6710
+make_variable(double coef)make_variable310,6746
+make_constraint(BoundType bnd, double l, double u)make_constraint317,6824
+add_constraint(int row, int col, double val)add_constraint324,6934
+update()update331,7041
+solve()solve338,7086
+get_value(int col) constget_value345,7136
+IP(DirType dir, int n_th)IP353,7210
+~IP()~IP359,7281
+make_variable(double coef)make_variable366,7336
+make_constraint(BoundType bnd, double l, double u)make_constraint374,7424
+add_constraint(int row, int col, double val)add_constraint382,7537
+update()update389,7632
+solve()solve396,7693
+get_value(int col) constget_value403,7753
+
+ip.h,582
+#define __INC_IP_H____INC_IP_H__21,720
+class IPIP25,757
+  typedef enum {MIN, MAX} DirType;MIN28,776
+  typedef enum {MIN, MAX} DirType;MAX28,776
+  typedef enum {MIN, MAX} DirType;DirType28,776
+  typedef enum {FR, LO, UP, DB, FX} BoundType;FR29,811
+  typedef enum {FR, LO, UP, DB, FX} BoundType;LO29,811
+  typedef enum {FR, LO, UP, DB, FX} BoundType;UP29,811
+  typedef enum {FR, LO, UP, DB, FX} BoundType;DB29,811
+  typedef enum {FR, LO, UP, DB, FX} BoundType;FX29,811
+  typedef enum {FR, LO, UP, DB, FX} BoundType;BoundType29,811
+  IPimpl* impl_;impl_42,1130
+
+Makefile,6877
+am__make_dryrun = \am__make_dryrun18,598
+pkgdatadir = $(datadir)/ractippkgdatadir35,1044
+pkgincludedir = $(includedir)/ractippkgincludedir36,1075
+pkglibdir = $(libdir)/ractippkglibdir37,1112
+pkglibexecdir = $(libexecdir)/ractippkglibexecdir38,1141
+am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cdam__cd39,1178
+install_sh_DATA = $(install_sh) -c -m 644install_sh_DATA40,1237
+install_sh_PROGRAM = $(install_sh) -cinstall_sh_PROGRAM41,1279
+install_sh_SCRIPT = $(install_sh) -cinstall_sh_SCRIPT42,1317
+INSTALL_HEADER = $(INSTALL_DATA)INSTALL_HEADER43,1354
+transform = $(program_transform_name)transform44,1387
+NORMAL_INSTALL = :NORMAL_INSTALL45,1425
+PRE_INSTALL = :PRE_INSTALL46,1444
+POST_INSTALL = :POST_INSTALL47,1460
+NORMAL_UNINSTALL = :NORMAL_UNINSTALL48,1477
+PRE_UNINSTALL = :PRE_UNINSTALL49,1498
+POST_UNINSTALL = :POST_UNINSTALL50,1516
+bin_PROGRAMS = ractip$(EXEEXT)bin_PROGRAMS51,1535
+subdir = srcsubdir52,1566
+DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \DIST_COMMON53,1579
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4ACLOCAL_M455,1662
+am__aclocal_m4_deps = $(top_srcdir)/configure.acam__aclocal_m4_deps56,1700
+am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \am__configure_deps57,1749
+mkinstalldirs = $(install_sh) -dmkinstalldirs59,1836
+CONFIG_HEADER = $(top_builddir)/config.hCONFIG_HEADER60,1869
+CONFIG_CLEAN_FILES =CONFIG_CLEAN_FILES61,1910
+CONFIG_CLEAN_VPATH_FILES =CONFIG_CLEAN_VPATH_FILES62,1931
+am__installdirs = "$(DESTDIR)$(bindir)"am__installdirs63,1958
+PROGRAMS = $(bin_PROGRAMS)PROGRAMS64,1998
+am_ractip_OBJECTS = ractip.$(OBJEXT) ip.$(OBJEXT) fa.$(OBJEXT) \am_ractip_OBJECTS65,2025
+ractip_OBJECTS = $(am_ractip_OBJECTS)ractip_OBJECTS69,2218
+ractip_LDADD = $(LDADD)ractip_LDADD70,2256
+DEFAULT_INCLUDES = -I. -I$(top_builddir)DEFAULT_INCLUDES71,2280
+depcomp = $(SHELL) $(top_srcdir)/depcompdepcomp72,2321
+am__depfiles_maybe = depfilesam__depfiles_maybe73,2362
+am__mv = mv -fam__mv74,2392
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \COMPILE75,2407
+CCLD = $(CC)CCLD77,2516
+LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@LINK78,2529
+CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \CXXCOMPILE79,2598
+CXXLD = $(CXX)CXXLD81,2715
+CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \CXXLINK82,2730
+SOURCES = $(ractip_SOURCES)SOURCES84,2810
+DIST_SOURCES = $(ractip_SOURCES)DIST_SOURCES85,2838
+am__can_run_installinfo = \am__can_run_installinfo86,2871
+ETAGS = etagsETAGS91,3014
+CTAGS = ctagsCTAGS92,3028
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)DISTFILES93,3042
+ACLOCAL = ${SHELL} /Users/takashi/cbrc/ractip-0.0.3/missing --run aclocal-1.12ACLOCAL94,3111
+AMTAR = $${TAR-tar}AMTAR95,3190
+AUTOCONF = ${SHELL} /Users/takashi/cbrc/ractip-0.0.3/missing --run autoconfAUTOCONF96,3210
+AUTOHEADER = ${SHELL} /Users/takashi/cbrc/ractip-0.0.3/missing --run autoheaderAUTOHEADER97,3286
+AUTOMAKE = ${SHELL} /Users/takashi/cbrc/ractip-0.0.3/missing --run automake-1.12AUTOMAKE98,3366
+AWK = awkAWK99,3447
+CC = gccCC100,3457
+CCDEPMODE = depmode=gcc3CCDEPMODE101,3466
+CFLAGS = -g -O2CFLAGS102,3491
+CPPFLAGS = CPPFLAGS103,3507
+CXX = g++CXX104,3519
+CXXCPP = g++ -ECXXCPP105,3529
+CXXDEPMODE = depmode=gcc3CXXDEPMODE106,3545
+CXXFLAGS = -g -O2CXXFLAGS107,3571
+CYGPATH_W = echoCYGPATH_W108,3589
+DEFS = -DHAVE_CONFIG_HDEFS109,3606
+DEPDIR = .depsDEPDIR110,3629
+ECHO_C = \cECHO_C111,3644
+ECHO_N = ECHO_N112,3656
+ECHO_T = ECHO_T113,3666
+EGREP = /usr/bin/grep -EEGREP114,3676
+EXEEXT = EXEEXT115,3701
+GREP = /usr/bin/grepGREP116,3711
+INSTALL = /usr/bin/install -cINSTALL117,3732
+INSTALL_DATA = ${INSTALL} -m 644INSTALL_DATA118,3762
+INSTALL_PROGRAM = ${INSTALL}INSTALL_PROGRAM119,3795
+INSTALL_SCRIPT = ${INSTALL}INSTALL_SCRIPT120,3824
+INSTALL_STRIP_PROGRAM = $(install_sh) -c -sINSTALL_STRIP_PROGRAM121,3852
+LDFLAGS = LDFLAGS122,3896
+LIBOBJS = LIBOBJS123,3907
+LIBS = -lRNA -lltdl -ldl -lz -lpthread LIBS124,3918
+LTLIBOBJS = LTLIBOBJS125,3958
+MAKEINFO = ${SHELL} /Users/takashi/cbrc/ractip-0.0.3/missing --run makeinfoMAKEINFO126,3971
+MKDIR_P = .././install-sh -c -dMKDIR_P127,4047
+OBJEXT = oOBJEXT128,4079
+PACKAGE = ractipPACKAGE129,4090
+PACKAGE_BUGREPORT = satoken@bio.keio.ac.jpPACKAGE_BUGREPORT130,4107
+PACKAGE_NAME = ractipPACKAGE_NAME131,4150
+PACKAGE_STRING = ractip 0.0.3PACKAGE_STRING132,4172
+PACKAGE_TARNAME = ractipPACKAGE_TARNAME133,4202
+PACKAGE_URL = PACKAGE_URL134,4227
+PACKAGE_VERSION = 0.0.3PACKAGE_VERSION135,4242
+PATH_SEPARATOR = :PATH_SEPARATOR136,4266
+SET_MAKE = SET_MAKE137,4285
+SHELL = /bin/shSHELL138,4297
+STRIP = STRIP139,4313
+VERSION = 0.0.3VERSION140,4322
+abs_builddir = /Users/takashi/cbrc/ractip-0.0.3/srcabs_builddir141,4338
+abs_srcdir = /Users/takashi/cbrc/ractip-0.0.3/srcabs_srcdir142,4390
+abs_top_builddir = /Users/takashi/cbrc/ractip-0.0.3abs_top_builddir143,4440
+abs_top_srcdir = /Users/takashi/cbrc/ractip-0.0.3abs_top_srcdir144,4492
+ac_ct_CC = gccac_ct_CC145,4542
+ac_ct_CXX = g++ac_ct_CXX146,4557
+am__include = includeam__include147,4573
+am__leading_dot = .am__leading_dot148,4595
+am__quote = am__quote149,4615
+am__tar = $${TAR-tar} chof - "$$tardir"am__tar150,4628
+am__untar = $${TAR-tar} xf -am__untar151,4668
+bindir = ${exec_prefix}/binbindir152,4697
+build_alias = build_alias153,4725
+builddir = .builddir154,4740
+datadir = ${datarootdir}datadir155,4753
+datarootdir = ${prefix}/sharedatarootdir156,4778
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}docdir157,4808
+dvidir = ${docdir}dvidir158,4855
+exec_prefix = ${prefix}exec_prefix159,4874
+host_alias = host_alias160,4898
+htmldir = ${docdir}htmldir161,4912
+includedir = ${prefix}/includeincludedir162,4932
+infodir = ${datarootdir}/infoinfodir163,4963
+install_sh = ${SHELL} /Users/takashi/cbrc/ractip-0.0.3/install-shinstall_sh164,4993
+libdir = ${exec_prefix}/liblibdir165,5059
+libexecdir = ${exec_prefix}/libexeclibexecdir166,5087
+localedir = ${datarootdir}/localelocaledir167,5123
+localstatedir = ${prefix}/varlocalstatedir168,5157
+mandir = ${datarootdir}/manmandir169,5187
+mkdir_p = $(MKDIR_P)mkdir_p170,5215
+oldincludedir = /usr/includeoldincludedir171,5236
+pdfdir = ${docdir}pdfdir172,5265
+prefix = /usr/localprefix173,5284
+program_transform_name = s,x,x,program_transform_name174,5304
+psdir = ${docdir}psdir175,5336
+sbindir = ${exec_prefix}/sbinsbindir176,5354
+sharedstatedir = ${prefix}/comsharedstatedir177,5384
+srcdir = .srcdir178,5415
+sysconfdir = ${prefix}/etcsysconfdir179,5426
+target_alias = target_alias180,5453
+top_build_prefix = ../top_build_prefix181,5469
+top_builddir = ..top_builddir182,5492
+top_srcdir = ..top_srcdir183,5510
+ractip_SOURCES = \ractip_SOURCES184,5526
+
+notespace.cpp,110
+alifold(const std::string& seq, VF& bp, VI& offset, VVF& up, engine, mix_w, cf_list, vm) constalifold21,534
+
+pf_duplex.c,1120
+#define MIN2(MIN232,865
+#define MAX2(MAX233,913
+#define PUBLICPUBLIC47,1428
+#define PRIVATE PRIVATE48,1443
+PRIVATE paramT *P = NULL;P53,1571
+PRIVATE double **fw;      /* energy array, given that i-j pair */fw55,1598
+PRIVATE double **bk;      /* energy array, given that i-j pair */bk56,1664
+PUBLIC double **pr_duplex;      /* energy array, given that i-j pair */pr_duplex57,1730
+PUBLIC double **pr_duplex2;pr_duplex258,1802
+PRIVATE short  *S1, *SS1, *S2, *SS2;S159,1830
+PRIVATE short  *S1, *SS1, *S2, *SS2;SS159,1830
+PRIVATE short  *S1, *SS1, *S2, *SS2;S259,1830
+PRIVATE short  *S1, *SS1, *S2, *SS2;SS259,1830
+PRIVATE int   n1,n2;    /* sequence lengths */n160,1867
+PRIVATE int   n1,n2;    /* sequence lengths */n260,1867
+LogAdd(double x, double y)LogAdd70,2143
+pf_duplex(const char *s1, const char *s2)pf_duplex78,2294
+free_pf_duplex()free_pf_duplex133,3680
+pf_duplex_fw()pf_duplex_fw144,3854
+pf_duplex_bk()pf_duplex_bk192,5174
+PRIVATE short * encode_seq(const char *sequence) {encode_seq242,6536
+PRIVATE void encode_seqs(const char *s1, const char *s2) {encode_seqs259,6924
+
+pf_duplex.h,55
+#define __INC_PF_DUPLEX_H____INC_PF_DUPLEX_H__23,747
+
+ractip.cpp,2423
+namespace Vienna {Vienna47,1215
+namespace uShuffle {uShuffle64,1610
+typedef unsigned int uint;uint74,1719
+typedef std::vector<float> VF;VF75,1746
+typedef std::vector<VF> VVF;VVF76,1777
+typedef std::vector<int> VI;VI77,1806
+typedef std::vector<VI> VVI;VVI78,1835
+typedef Vienna::plist pair_info;pair_info80,1885
+typedef Vienna::pair_info pair_info;pair_info82,1924
+class RactIPRactIP87,1971
+  RactIP()RactIP90,1994
+  ~RactIP()~RactIP117,2510
+  float alpha_;                // weight for the hybridization scorealpha_142,3545
+  float beta_;                 // weight for unpaired basesbeta_143,3614
+  float th_hy_;                // threshold for the hybridization probabilityth_hy_144,3674
+  float th_ss_;                // threshold for the base-pairing probabilityth_ss_145,3752
+  float th_ac_;                // threshold for the accessible probabilityth_ac_146,3829
+  int max_w_;                  // maximum length of accessible regionsmax_w_147,3904
+  int min_w_;                  // mimimum length of accessible regionsmin_w_148,3975
+  float mix_w;mix_w149,4046
+  int enable_zscore_;          // flag for calculating z-scoreenable_zscore_150,4061
+  int num_shuffling_;          // the number of shuffling for calculating z-scorenum_shuffling_151,4124
+  uint seed_;                  // seed for random()seed_152,4206
+  bool in_pk_;                 // allow internal pseudoknots or notin_pk_153,4258
+  bool use_contrafold_;        // use CONTRAfold model or notuse_contrafold_154,4326
+  bool use_pf_duplex_;use_pf_duplex_155,4388
+  bool stacking_constraints_;stacking_constraints_156,4411
+  bool show_energy_;show_energy_157,4441
+  bool allow_concat_;allow_concat_158,4462
+  bool run_with_modena_;run_with_modena_159,4484
+  int n_th_;                   // the number of threadsn_th_160,4509
+  std::string rip_file_;rip_file_161,4565
+  std::string param_file_;param_file_162,4590
+  std::string fa1_;fa1_163,4617
+  std::string fa2_;fa2_164,4637
+alifold(const std::string& seq, VF& bp, VI& offset, VVF& up, std::vector<str::string>>& engine, mix_w, std::vector<FoldingEngine<Aln>*> cf_list, vm) constalifold172,4690
+parse_options(int& argc, char**& argv)parse_options895,23673
+calculate_energy(const std::string s1, const std::string& s2,calculate_energy942,25198
+run()// script watchingrun990,26445
+main(int argc, char* argv[])main1082,29176
+
+ushuffle.c,1516
+static randfunc_t randfunc = random;randfunc43,1822
+void set_randfunc(randfunc_t func) {set_randfunc45,1860
+static const char *s_ = NULL;s_51,1966
+static int l_ = 0;l_52,1996
+static int k_ = 0;k_53,2015
+typedef struct vertex {vertex55,2035
+	int *indices;indices56,2059
+	int n_indices;n_indices57,2074
+	int i_indices;i_indices58,2090
+	int intree, next;intree59,2106
+	int intree, next;next59,2106
+	int i_sequence;i_sequence60,2125
+} vertex;vertex61,2142
+static vertex *vertices = NULL;vertices63,2153
+static int n_vertices;n_vertices64,2185
+static int *indices = NULL;indices65,2208
+static int root;root66,2236
+static void *malloc0(size_t size) {malloc070,2276
+typedef struct hentry {hentry82,2481
+	struct hentry *next;next83,2505
+	int i_sequence;i_sequence84,2527
+	int i_vertices;i_vertices85,2544
+} hentry;hentry86,2561
+static hentry *entries = NULL;entries88,2572
+static hentry **htable = NULL;htable89,2603
+static int htablesize = 0;htablesize90,2634
+static double hmagic;hmagic91,2661
+static int hcode(int i_sequence) {hcode93,2684
+static void hinit(int size) {hinit106,2894
+static void hcleanup() {hcleanup113,3069
+static void hinsert(int i_sequence) {hinsert121,3178
+void shuffle1(const char *s, int l, int k) {shuffle1139,3618
+void permutec(char *t, int l) {permutec192,4896
+static void permutei(int *t, int l) {permutei202,5069
+void shuffle2(char *t) {shuffle2212,5247
+void shuffle(const char *s, char *t, int l, int k) {shuffle272,6602
+
+ushuffle.h,49
+typedef long (*randfunc_t)();randfunc_t38,1799

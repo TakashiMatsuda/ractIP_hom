@@ -1,0 +1,25 @@
+# gengetopt script for ractIP with alighnemt
+args "-u"
+
+purpose "RactIP"
+
+option "alpha" a " weight for hybridization" float typestr="FLOAT" no default="0.5"
+option "beta" b  "weight for unpaired bases" float typestr="FLOAT" no default="0.0"
+option "fold-th" t "Threshold for base-pairing probabilities" float typestr="FLOAT" no default="0.5"
+option "hybridize-th" u "Threshold for hybridazation probabilities" float typestr="FLOAT" no default="0.2"
+option "acc-th" s "Threshold for accessible probabilities" float typestr="FLOAT" no default="0.0"
+option "max-w" -  "Maximum length of accessible regions" int typestr="INT" no default="0"
+option "min-w" - "Minimum length of accessible regions" int typestr="INT" no default="0"
+option "zscore" - "Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both)" int typestr="INT" no default="0"
+option "num-shuffling" - "The number of shuffling" int typestr="INT" no default="1000"
+option "seed" - "Seed for random number generator" int typestr="INT" no default="0"
+option "mccaskill" m "Use McCaskill model for folding" flag off
+option "allow-isolated" i "Allow isolated base-pairs" flag off
+option "show-energy" e "calculate the free energy of the predicted joint structure" flag off
+option "param-file" P "Read the energy parameter file for Vienna RNA package" string typestr="FILENAME" no
+option "no-pk" p "do not use the constraints for interenal pseudoknots" flag off
+option "rip" r "Import posterior probabilities from the result of RIP" string typestr="FILENAME" no
+# options from centroid_alifold
+option "mix-weight" w "mixture weights of inference engines" float typestr="FLOAT" no default="1.0"
+option "engine-seq" X "specify the inference engine for independent sequence" string typestr="ENGINENAME" no default="McCaskilll"
+option "engine-aln" A "specify the inference engine for independent Alignment" string typestr="ENGINENAME" no default="Alifold"

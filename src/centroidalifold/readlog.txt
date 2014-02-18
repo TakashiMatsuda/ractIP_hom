@@ -1,0 +1,62 @@
+目的：
+centroid_alifoldの、入力アラインメントから塩基対確率pijを返すまでの部分を抜き出して、ractIPに移植する。
+
+mix_w:pijの混合のための重み値
+modelsに入れているみたい
+vector::push_back(value_type contents)でvectorの末尾に要素を追加、
+MixtureModel<SEQ> mixture.cppの中で実装されている
+テンプレート
+models:vector<pair<FoldingEngine<Aln>*,float>>
+floatにはmix_wが入っている
+
+mix_wがmodelsの中に入れられたあと、どのように使われているのか:
+pairの内部コンテンツにアクセスする関数:firstもsecondもpublic
+
+modelsはcfというMixtureModel<Aln>に入る。
+cfに対して様々な操作を行なっているので、
+MixtureModelのメンバ関数を知った方がいい。
+
+MixtureModelはFoldingEngineを継承している。
+
+MixtureModel<SEQ>::calculate_posteriorでmix_wが使われている。
+MulAddに注目。bp_に注目。bp_はFoldingEngineのprotected member, BPTableという型
+MulAddのコンストラクタ:引数として入れているbp_はどこで獲得しているのか？<-FEのメンバ
+引数をひと通りstruct Muladdに入れたあと、opratorでpijを計算している。
+peratorはbp_.updateを呼び出して計算している。
+operatorが繰り返し呼ばれれば塩基対確率行列の計算は終了する。
+
+カッコのオーバーロードとかあるのか。。。。
+()は演算子呼出演算子。それをオーバーロードしている。
+uintは、unsigned intのこと。
+
+Muladd::operator()の動作について:
+{bp_.update(i, j, bp_(i, j)+w_*t_(i,j));}   ****
+
+BPTableの定義:
+typedef BPTableTmpl<float> BPTable;
+
+;;averaged.cppというコード、名前が怪しい
+
+BPTableTmpl<float>::updateについて
+void update(uint i, uint j, T v){bp_(i,j)=v;}
+BPTaleTmpl::CYKTable<T>bp_
+
+****をfor i ^ for j で回しているはず。というか回せばよい。
+
+そういう実装にしよう。
+
+まわしていた。
+inside_traverseという謎の関数があるのでそれを調べてみる。
+inside_traverse:
+(cyktable.h)
+template <class Update>
+void
+inside_traverse(uint from, uint to, Update& update)
+fromからtoまでupdateする。updateは関数。(ジェネリック関数)
+
+
+コード読みはほどほどにして、設計と実装を開始しよう。
+
+ractipに挿入する。
+Interfaceだけを挿入して、実行コードはそのまま輸入したい。
+出力をどうすればよいだろうか。

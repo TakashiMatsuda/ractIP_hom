@@ -1,0 +1,59 @@
+ractipのmainから順番にソースを読んでいこう。
+
+parse_optionsでパースしてractipクラスにデータを格納した。
+::このRactIPクラスの中のリード相当メンバをアラインメントに変える。
+
+string fa1_
+string fa2_
+の型を
+Alnに変更する。##
+変更しない。これはファイル名。その後ロードする場面があるので、そこの行き先を変更する。
+
+Alnの実装はaln.hに入っているのでinclude.
+
+args_info.inputs[0]とは
+gengetopt_args_info args_info
+
+Aln::loadが使えるようだ。
+
+loadしたので、次は処理の部分を入れる。
+
+loadまで完了した。
+solve関数の中の書き換えを行う。
+
+solveの中、//calculate posterior probability matrices以下を書き換えかと思われる。
+
+contrafold()がcontrafoldを使ったbasepair probability matrixの計算関数だと思われる。
+
+ここについて、自前のcentroidalifoldを利用する関数ですり替える。
+
+まず入力と出力（ここではどのようにbpmatrixをRactIPが格納しているか)について
+調べる。
+次に、その間をどう埋めるかについて、
+centroidalifoldの実装を参考にして決めて書きましょう。
+
+
+
+
+:::::
+alifold::入力について
+入力は(const std::string&seq, VF& bp, VI& offset, VVF& up) const
+"インターフェースがあったらやりやすかったのにな"
+
+VF, VVF, VIの定義
+typedef std::vector<float> VF;
+typedef std::vector<VF> VVF;
+typedef std::vector<int>VI
+typedef std::vector<VI> VVI;
+
+返り値、というか実行結果の格納はこれらbp,offset,upに対して行う。
+問題は、bp,offset,upが本当に予想しているようなものか、すなわち
+contrafold()等以前のコードがやっていることが今予想していることと本当に一致しているかの
+保証が無いことだ。
+
+
+実装だが、centroidalifoldで行われていた、呼び出されていたとおりに
+入れればいいと思う。
+
+
+centroidalifold.cppでの呼びだされかたに注目。
