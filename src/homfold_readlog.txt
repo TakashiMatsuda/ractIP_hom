@@ -11,7 +11,19 @@ engine_aはアラインメントに対しての確率行列モデル
 入力後のAln, Fastaの格納コードを書いた。
 ---
 入力のオプションを追加した。
+このままだと配列名の部分もT->Uが適用されてしまうな
 ---
 alifoldをhomfoldにした。
 ---
 centroid_homfoldからコードを移行した。
+---
+ggoファイルを書く。必要な引数は、engin_alnとengine
+inputの配列の順番:fa1 aln1 fa2 aln2の順番
+---
+engine_alnのデフォルト値はCONTRAlign
+---
+コード変更。~HomModelのオブジェクトを2個作る必要がある。
+2個作り、それをsolve関数に渡した。solve関数の引数も変更した。
+---
+homfold関数に投げるところまで書いた。この中身は変更する必要がないだろう。
+---

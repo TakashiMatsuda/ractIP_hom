@@ -126,7 +126,8 @@ public:
       fa1_(),
       fa2_(),
       mix_w(),
-      engine()
+      engine(),
+      engine_a()
 
   {
   }
@@ -137,7 +138,7 @@ public:
 
   RactIP& parse_options(int& argc, char**& argv);
   int run();
-  float solve(Aln& s1, Aln& s2, std::string& r1, std::string& r2, MixtureModel<Aln>& cf);
+  float solve(Aln& s1, Aln& s2, std::string& r1, std::string& r2, FoldingEngine<Fasta>& cf1, FoldingEngine<Fasta>& cf2);
 
   static void calculate_energy(const std::string s1, const std::string& s2,
                                const std::string r1, const std::string& r2,
@@ -260,7 +261,7 @@ void
 RactIP::
 homfold(const Fasta& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>& cf) const
 {
-  // centroid_alifoldのコードを流用して、塩基対確率を計算して取り出す関数を作っておいて、呼び出す。
+  // 塩基対確率を計算して取り出す関数を作っておいて、呼び出す。
   // basepair probabilityの計算
   //cf->stochastic_fold(seq, num_samples, *out)
   cf.calculate_posterior(seq);
@@ -586,10 +587,8 @@ load_from_rip(const char* filename,
 
 float
 RactIP::
-solve(Aln& a1, Aln& a2, std::string& r1, std::string& r2, MixtureModel<Aln>& cf)
+solve(Fasta& s1, Fasta& s2, std::string& r1, std::string& r2, FoldingEngine<Fasta>& cf1, FoldingEngine<Fasta>& cf2)
 {
-  Aln s1=a1;
-  Aln s2=a2;
   IP ip(IP::MAX, n_th_);// watching
   VF bp1, bp2;
   VI offset1, offset2;
@@ -597,18 +596,23 @@ solve(Aln& a1, Aln& a2, std::string& r1, std::string& r2, MixtureModel<Aln>& cf)
   VVF up1, up2;
   bool enable_accessibility = min_w_>1 && max_w_>=min_w_;
 
+
+  homfold(s1, bp1, offset1, up1, cf);
+  homfold(s2, bp2, offset2, up2, cf2);//kokomade
+  
   // calculate posterior probability matrices
   /**
    *  2013 Takashi Matsuda added the following (alifold) section.
    **/
   bool use_alifold=true;// temporary code
   if(use_alifold){
-    MixtureModel<Aln> cf2 = cf;
     alifold(a1, bp1, offset1, up1, cf);
     alifold(a2, bp2, offset2, up2, cf2);
     rnaduplex_aln(a1,a2,hp);// 1st structure base pairing probability
   }
-#if 1
+
+
+#if 0
   std::ofstream out_bp1("out_bp1_2.csv");
   VF::iterator it_bp1 = bp1.begin();
   for (it_bp1 = bp1.begin(); it_bp1 < bp1.end(); it_bp1++)
@@ -635,30 +639,8 @@ solve(Aln& a1, Aln& a2, std::string& r1, std::string& r2, MixtureModel<Aln>& cf)
   out_bp2.close();
   out_hp.close();
 #endif
-  FoldingEngine<TH>* cf=NULL;
- std::vector<FoldingEngine<TH>*> cf_list(engine.size(), NULL);
-  for (uint i=0; i!=engine.size(); ++i)
-  {
-    if (engine[i]=="CONTRAfold")
-    {
-      if (gamma.empty()) gamma.push_back(vm.count("mea") ? 6.0 : 2.0);
-      cf_list[i] = new CONTRAfoldHomModel(param, engine_a[0], !vm.count("noncanonical"), max_bp_dist, seed, vm.count("mea"));
-    }
-#ifdef HAVE_LIBRNA
-    else if (engine[i]=="McCaskill")
-    {
-      if (gamma.empty()) gamma.push_back(vm.count("mea") ? 6.0 : 1.0);
-      cf_list[i] = new McCaskillHomModel(engine_a[0], !vm.count("noncanonical"), max_bp_dist,
-					 param.empty() ? NULL : param.c_str(),
-                                         seed, vm.count("mea"));
-    }
-#endif
-    else
-    {
-      std::cerr << engine[i] << std::endl;
-      throw std::logic_error("unsupported inference engine");
-    }
-  }
+
+
   /**
    * Takashi Matsuda commented out below in 2014
   else if (!rip_file_.empty())
@@ -1116,6 +1098,8 @@ parse_options(int& argc, char**& argv)
   in_pk_ = args_info.no_pk_flag==0;
   use_contrafold_ = args_info.mccaskill_flag==0;
   hom_seqs = args_info.hom_;
+  engine = args_info.engine_seq;
+  engine_a = args_info.engine_aln;
   //models = args_info.models_arg // not yet implemented
   //use_pf_duplex_ = args_info.pf_duplex_flag;
   stacking_constraints_ = args_info.allow_isolated_flag==0;
@@ -1146,12 +1130,12 @@ parse_options(int& argc, char**& argv)
     std::replace(aln1_.seq().begin(), aln1_.seq().end(), 'T', 'U');
   }
   if (args_info.inputs_num>=3){
-    fa2_ = args.info.inputs[2];
+    fa2_ = args_info.inputs[2];
     std::replace(fa2_.seq().begin(), fa2_.seq().end(), 't', 'u');
     std::replace(fa2_.seq().begin(), fa2_.seq().end(), 'T', 'U');
   }
   if (args_info.inputs_num>=4){
-    aln2_ = args.info.inputs[3];
+    aln2_ = args_info.inputs[3];
     std::replace(aln2_.seq().begin(), aln2_.seq().end(), 't', 'u');
     std::replace(aln2_.seq().begin(), aln2_.seq().end(), 'T', 'U');
   }
@@ -1254,7 +1238,7 @@ run()
   else { throw "unreachable"; }
 
   
-  std::vector<FoldingEngine<Aln>*> cflist(engine.size(),NULL);
+  std::vector<FoldingEngine<Aln>*> cf_list(engine.size(),NULL);
   if (engine.empty())
     {// Default setting for Inference Engine
 #ifdef HAVE_LIBRNA
@@ -1279,8 +1263,17 @@ run()
     }
   }
 
-  FoldingEngine<TH>* cf=NULL;
-  std::vector<FoldingEngine<TH>*> cf_list(engine.size(), NULL);
+  FoldingEngine<TH>* cf1=NULL;
+  FoldingEngine<TH>* cf2=NULL;
+  std::vector<FoldingEngine<TH>*> cf_list_1(engine.size(), NULL);
+  std::vector<FoldingEngine<TH>*> cf_list_2(engine.size(), NULL);
+  
+  cf_list_1[0] == new McCaskillHomModel(engine_a[0], false, max_bp_dist, seed, false);
+  cf_list_2[0] == new McCaskillHomModel(engine_a[0], false, max_bp_dist, seed, false);
+
+
+  // とりあえずMcCaskillモデルで動かしてみる。以下はcentroidhomfoldからのコピーコード。
+  /**
   for (uint i=0; i!=engine.size(); ++i)
   {
     if (engine[i]=="CONTRAfold")
@@ -1303,6 +1296,7 @@ run()
       throw std::logic_error("unsupported inference engine");
     }
   }
+  **/
   
   if (engine.size()==1)
     cf=cf_list[0];
@@ -1391,7 +1385,7 @@ run()
 
   // predict the interation
   std::string r1, r2;
-  float ea = solve(fa1, fa2, r1, r2, *cf);
+  float ea = solve(fa1, fa2, r1, r2, *cf1, *cf2);
 
   // diplay the result
   const std::list<std::string> fa1_name=fa1.name();
