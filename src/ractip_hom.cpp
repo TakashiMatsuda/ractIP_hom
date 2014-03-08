@@ -22,7 +22,7 @@
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-#include "cmdline1.h"
+#include "cmdline.h"
 #include <unistd.h>
 #include <cstdlib>
 #include <sys/time.h>
@@ -138,16 +138,17 @@ public:
 
   RactIP& parse_options(int& argc, char**& argv);
   int run();
-  float solve(Aln& s1, Aln& s2, std::string& r1, std::string& r2, FoldingEngine<Fasta>& cf1, FoldingEngine<Fasta>& cf2);
+  float solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>& cf1, FoldingEngine<TH>& cf2);
 
   static void calculate_energy(const std::string s1, const std::string& s2,
                                const std::string r1, const std::string& r2,
                                float& e1, float& e2, float& e3);
 
 private:
-  void transBP_centroidfold_ractip(BPTable bp_centroidfold, VF& bp, VI& offset, const Aln& aln) const;
+  template <typename T> std::vector<T> change_l_v(std::list<T> list_seq) const;
+  void transBP_centroidfold_ractip(BPTable bp_centroidfold, VF& bp, VI& offset, const std::string& seq) const;
   int ComputeRowOffset(int i, int N, int w /*=0*/) const;
-  void alifold(const Aln& seq, VF& bp, VI& offset, VVF& up, MixtureModel<Aln>& cf) const;
+  void homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>& cf) const;
   //void contrafold(const std::string& seq, VF& bp, VI& offset, VVF& up) const;
   void rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const;
   //void contraduplex(const std::string& seq1, const std::string& seq2, VVF& hp) const;
@@ -182,21 +183,40 @@ private:
   std::string param_file_;
   std::string fa1_;
   std::string fa2_;
+  std::string aln1_;
+  std::string aln2_;
   
+
   /**
    * member for Alignment interaction
    **/
   std::vector<float> mix_w;   // mixture weights of inference engines
   std::vector<std::string> engine;
-};
+  std::vector<std::string> engine_a;
 
+  // instantiation
+  std::vector<std::string> change_l_v(std::list<std::string> list_seq) const;
+  };
+
+template 
+<typename T>
+std::vector<T>
+RactIP::
+change_l_v(std::list<T> list_seq) const{
+  std::vector<T> vt_seq;
+  typename std::list<T>::iterator itr_list;
+  for(itr_list=list_seq.begin(); itr_list!=list_seq.end; itr_list++){
+    vt_seq.push_back(*itr_list);
+  }
+  return vt_seq;
+}
 
 void
 RactIP::
-transBP_centroidfold_ractip(BPTable bp_centroidfold, VF& bp, VI& offset, const Aln& aln) const
+transBP_centroidfold_ractip(BPTable bp_centroidfold, VF& bp, VI& offset, const std::string& seq) const
 {
   int bpsize=bp_centroidfold.size();
-  uint L = aln.size();
+  uint L = seq.size();
   //std::cout << "bpsize: " << std::endl;
   bp.clear();
   bp.resize((L+1)*(L+2)/2);
@@ -259,7 +279,7 @@ RactIP::ComputeRowOffset(int i, int N, int w /*=0*/) const
 
 void
 RactIP::
-homfold(const Fasta& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>& cf) const
+homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>& cf) const
 {
   // 塩基対確率を計算して取り出す関数を作っておいて、呼び出す。
   // basepair probabilityの計算
@@ -268,7 +288,7 @@ homfold(const Fasta& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>& cf) co
   BPTable bp_centroidfold;
   bp_centroidfold=cf.get_bp();
   // bpの変換
-  transBP_centroidfold_ractip(bp_centroidfold, bp, offset, seq);
+  transBP_centroidfold_ractip(bp_centroidfold, bp, offset, seq.first);
 
   const uint L=seq.size();
   up.resize(L, VF(1, 1.0));
@@ -587,7 +607,7 @@ load_from_rip(const char* filename,
 
 float
 RactIP::
-solve(Fasta& s1, Fasta& s2, std::string& r1, std::string& r2, FoldingEngine<Fasta>& cf1, FoldingEngine<Fasta>& cf2)
+solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>& cf1, FoldingEngine<TH>& cf2)
 {
   IP ip(IP::MAX, n_th_);// watching
   VF bp1, bp2;
@@ -597,20 +617,21 @@ solve(Fasta& s1, Fasta& s2, std::string& r1, std::string& r2, FoldingEngine<Fast
   bool enable_accessibility = min_w_>1 && max_w_>=min_w_;
 
 
-  homfold(s1, bp1, offset1, up1, cf);
+  homfold(s1, bp1, offset1, up1, cf1);
   homfold(s2, bp2, offset2, up2, cf2);//kokomade
   
   // calculate posterior probability matrices
   /**
    *  2013 Takashi Matsuda added the following (alifold) section.
    **/
+  /**
   bool use_alifold=true;// temporary code
   if(use_alifold){
-    alifold(a1, bp1, offset1, up1, cf);
+    alifold(a1, bp1, offset1, up1, cf1);
     alifold(a2, bp2, offset2, up2, cf2);
     rnaduplex_aln(a1,a2,hp);// 1st structure base pairing probability
   }
-
+  **/
 
 #if 0
   std::ofstream out_bp1("out_bp1_2.csv");
@@ -673,7 +694,7 @@ solve(Fasta& s1, Fasta& s2, std::string& r1, std::string& r2, FoldingEngine<Fast
 #endif
     rnaduplex(s1, s2, hp);
     }**/
-  cf->
+  //cf->
   
   
   // make objective variables with their weights
@@ -1097,9 +1118,8 @@ parse_options(int& argc, char**& argv)
   seed_ = args_info.seed_arg;
   in_pk_ = args_info.no_pk_flag==0;
   use_contrafold_ = args_info.mccaskill_flag==0;
-  hom_seqs = args_info.hom_;
-  engine = args_info.engine_seq;
-  engine_a = args_info.engine_aln;
+  if (args_info.engine_seq_arg != NULL) engine.push_back(args_info.engine_seq_arg);
+  if (args_info.engine_aln_arg != NULL) engine_a.push_back(args_info.engine_aln_arg);
   //models = args_info.models_arg // not yet implemented
   //use_pf_duplex_ = args_info.pf_duplex_flag;
   stacking_constraints_ = args_info.allow_isolated_flag==0;
@@ -1118,26 +1138,21 @@ parse_options(int& argc, char**& argv)
     exit(1);
   }
 
-  // filename
   if (args_info.inputs_num>=1){
     fa1_ = args_info.inputs[0];
-    std::replace(fa1_.seq().begin(), fa1_.seq().end(), 't', 'u');
-    std::replace(fa1_.seq().begin(), fa1_.seq().end(), 'T', 'U');
+
   }
   if (args_info.inputs_num>=2){
     aln1_ = args_info.inputs[1];
-    std::replace(aln1_.seq().begin(), aln1_.seq().end(), 't', 'u');
-    std::replace(aln1_.seq().begin(), aln1_.seq().end(), 'T', 'U');
+
   }
   if (args_info.inputs_num>=3){
     fa2_ = args_info.inputs[2];
-    std::replace(fa2_.seq().begin(), fa2_.seq().end(), 't', 'u');
-    std::replace(fa2_.seq().begin(), fa2_.seq().end(), 'T', 'U');
+
   }
   if (args_info.inputs_num>=4){
     aln2_ = args_info.inputs[3];
-    std::replace(aln2_.seq().begin(), aln2_.seq().end(), 't', 'u');
-    std::replace(aln2_.seq().begin(), aln2_.seq().end(), 'T', 'U');
+
   }
 
   cmdline_parser_free(&args_info);
@@ -1205,7 +1220,7 @@ run()
   // Input Data
   Aln aln1, aln2;
   Fasta fa1, fa2;
-  if (!fa1_.empty() && !fa2_.empty() && !aln1_.empty() && !aln2_empty())
+  if (!fa1_.empty() && !fa2_.empty() && !aln1_.empty() && !aln2_.empty())
   {
     //std::cout<<"both fa1 and fa2 are not empty"<<std::endl;
     std::list<Fasta> l_fa1, l_fa2;
@@ -1218,12 +1233,22 @@ run()
     fa2=l_fa2.front();
     if (Aln::load(l1, aln1_.c_str())==0)
       throw (aln1_+": Format error").c_str();
-    if (Fasta::load(l2, aln2_.c_str())==0)
+    if (Aln::load(l2, aln2_.c_str())==0)
       throw (aln2_+": Format error").c_str();
     aln1=l1.front();
     aln2=l2.front();
     
   }
+  std::replace(fa1.seq().begin(), fa1.seq().end(), 't', 'u');
+  std::replace(fa1.seq().begin(), fa1.seq().end(), 'T', 'U');
+  std::replace(aln1.seq().begin(), aln1.seq().end(), 't', 'u');
+  std::replace(aln1.seq().begin(), aln1.seq().end(), 'T', 'U');
+  std::replace(fa2.seq().begin(), fa2.seq().end(), 't', 'u');
+  std::replace(fa2.seq().begin(), fa2.seq().end(), 'T', 'U');
+  std::replace(aln2.seq().begin(), aln2.seq().end(), 't', 'u');
+  std::replace(aln2.seq().begin(), aln2.seq().end(), 'T', 'U');
+
+
   /**
   else if (!fa1_.empty())
   {
@@ -1234,20 +1259,20 @@ run()
     fa1=*(x++);
     fa2=*(x++);
   }
-  **/
-  else { throw "unreachable"; }
 
+  else { throw "unreachable"; }
+  **/
   
   std::vector<FoldingEngine<Aln>*> cf_list(engine.size(),NULL);
   if (engine.empty())
     {// Default setting for Inference Engine
 #ifdef HAVE_LIBRNA
-    engine.push_back("McCaskill");
+      engine.push_back("McCaskill");
 #else
-    engine.push_back("CONTRAfold");
+      engine.push_back("CONTRAfold");
 #endif
     }
-
+  /**
   std::vector<std::string> homs;
   if (hom_seqs != "") {
     BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi2(hom_seqs.c_str());
@@ -1262,14 +1287,18 @@ run()
       } else break;
     }
   }
-
+  **/
   FoldingEngine<TH>* cf1=NULL;
   FoldingEngine<TH>* cf2=NULL;
   std::vector<FoldingEngine<TH>*> cf_list_1(engine.size(), NULL);
   std::vector<FoldingEngine<TH>*> cf_list_2(engine.size(), NULL);
+
+  // tmp code
+  uint max_bp_dist = 0;
+  char* param_tmp = NULL;
   
-  cf_list_1[0] == new McCaskillHomModel(engine_a[0], false, max_bp_dist, seed, false);
-  cf_list_2[0] == new McCaskillHomModel(engine_a[0], false, max_bp_dist, seed, false);
+  cf_list_1[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  cf_list_2[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
 
 
   // とりあえずMcCaskillモデルで動かしてみる。以下はcentroidhomfoldからのコピーコード。
@@ -1296,11 +1325,11 @@ run()
       throw std::logic_error("unsupported inference engine");
     }
   }
-  **/
+
   
   if (engine.size()==1)
     cf=cf_list[0];
-    
+  **/
   //std::vector<FoldingEngine<Aln>*> cf_list(engine.size(), NULL);
   //std::vector<FoldingEngine<std::string>*> src_list(engine.size(), NULL);
    /**
@@ -1385,32 +1414,25 @@ run()
 
   // predict the interation
   std::string r1, r2;
-  float ea = solve(fa1, fa2, r1, r2, *cf1, *cf2);
+  const std::string fa1_seq=fa1.seq();
+  const std::vector<std::string> aln1_seq = change_l_v(aln1.seq());
+  const std::string fa2_seq=fa2.seq();
+  const std::vector<std::string> aln2_seq = change_l_v(aln2.seq());
+  TH th1_ = TH(fa1_seq, aln1_seq);
+  TH th2_ = TH(fa2_seq, aln2_seq);
+  float ea = solve(th1_, th2_, r1, r2, *cf1, *cf2);
 
   // diplay the result
-  const std::list<std::string> fa1_name=fa1.name();
-  std::list<std::string> ::const_iterator itr1_name=fa1_name.begin();
-  const std::list<std::string> fa1_seq=fa1.seq();
-  std::list<std::string> ::const_iterator itr1_seq=fa1_seq.begin();
-  
-  for(; itr1_name!=fa1_name.end(); itr1_name++)
-    {
-      std::cout << ">" << (*itr1_name) << std::endl
-		<< (*itr1_seq) << std::endl;
-      itr1_seq++;
-    }
+  const std::string fa1_name=fa1.name();
+  std::cout << ">" << fa1_name << std::endl
+	    << fa1_seq << std::endl;
+
   std::cout<< r1 << std::endl;
   
-  const std::list<std::string> fa2_name=fa2.name();
-  std::list<std::string> ::const_iterator itr2_name=fa2_name.begin();
-  const std::list<std::string> fa2_seq=fa2.seq();
-  std::list<std::string> ::const_iterator itr2_seq=fa2_seq.begin();
-  for(; itr2_name!=fa2_name.end(); itr2_name++)
-    {
-      std::cout << ">" << (*itr2_name) << std::endl
-		<< (*itr2_seq) << std::endl;
-      itr2_seq++;
-    }
+  const std::string fa2_name=fa2.name();
+  std::cout << ">" << fa2_name << std::endl
+		<< fa2_seq << std::endl;
+ 
   std::cout<< r2 << std::endl;
   
   //////////////////////// by Takashi Matsuda ///////////////////////////////

@@ -27,3 +27,111 @@ engine_alnのデフォルト値はCONTRAlign
 ---
 homfold関数に投げるところまで書いた。この中身は変更する必要がないだろう。
 ---
+ハイブリダイゼーションの確率はアラインメントを利用していないが、とりあえずこれでやってみよう。
+---
+automakeを編集した。
+---
+make.コンパイル開始。
+---
+まだ出力コードを書いてない。
+出力はそのままでいいのか。
+---
+コンパイルエラーを見てコードを治していく。
+---
+automakeの書き方。
+サブディレクトリの中の書き方がよくわからない。
+---
+名前の重複を放置した。
+これを修正するには、
+まずサブディレクトリないで
+lib~.aを作る命令をMakefile.amに書いて、
+それを上の階層のMakefile.amに吸収させる。
+---
+engine_aでエラー、ほかコンパイル開始した。
+---
+hom版のfolding_eigineのコンストラクタを読み始めた
+---
+ractIPのリファレンスを見て、どんなデータがあるのかみてみよう。
+// target sequence and its homologous sequences (for CentroidHomfold)
+class TH : public std::pair<std::string, std::vector<std::string> >
+{
+ public:
+  TH (const std::string& seq, const std::vector<std::string>& hom) 
+    {
+      this->first = seq;
+      this->second = hom;
+    }
+  uint size () const { return this->first.size(); }
+};
+
+THの定義はこれ
+すこし修正するほうがいいかな？
+foldを走らせないと外側からは触れなさそう.
+calculateposteriorの使われ方を見てみよう
+
+calculateposteriorに投げる引数の型をTHに変更し、
+引数をTHでラップした。
+THでのラップの仕方は
+TH (const std::string& seq, const std::vector<std::string>& hom) 
+    {
+      this->first = seq;
+      this->second = hom;
+    }
+
+---
+transBPの書き換えを行った（引数の書き換え）
+---
+hom_seqs
+ファイルポインタの扱い
+---
+  std::vector<std::string> engine;
+---
+homのalnのengineの扱いってどうなってるんだろう
+（引数のオプションのCONTRAlignから思った）
+もしかして、昔のモデルを使ってるのかもしれない
+とりあえず書いたら、検証して、リファクタリングしよう。
+---
+  bool
+  load(BOOST_SPIRIT_CLASSIC_NS::file_iterator<>& fi);
+こういうのおもしろいね.
+---
+engineを１つしか選べないようにして、
+std::vector<std::string>からstd::stringに型を変更した影響が出た。
+もとにもどしてリストのgengetoptでの受け取り方をしらべるか、
+このさきを書き換えてstringでも動くようにするか考えよう。
+それか、オプション選択機能をオフにしてもよい。
+
+=>
+vectorに戻す。
+gengetoptの使い方がわからないので、
+とりあえずオプションは付けない。
+centroid_homfoldとオプションの付け方に互換性があるといいので、
+centroid_homfoldを少し覗いてみる。
+---
+max_bp_dist
+その他デフォルトを用いるようにコンストラクタを使った
+---
+THのconstructorの使い方を間違えているようだ
+class TH : public std::pair<std::string, std::vector<std::string> >
+{
+ public:
+  TH (const std::string& seq, const std::vector<std::string>& hom) 
+    {
+      this->first = seq;
+      this->second = hom;
+    }
+  uint size () const { return this->first.size(); }
+};
+
+である
+Alnでは
+  const std::list<std::string>& seq() const { return seq_; }
+であるから、listからvectorへの変換を行なった。
+---
+  std::replace(aln1.seq().begin(), aln1.seq().end(), 't', 'u');
+は間違い。引数がtemplate型を継承していない。
+alnに含まれるstringを一つ一つreplaceする。したがって
+----
+そもそもseq()の返り値はconst値なので修正できない。したがって、
+別のやり方を考えたほうがよさそう。
+centroid_homfoldでどうやっているのか調べる。

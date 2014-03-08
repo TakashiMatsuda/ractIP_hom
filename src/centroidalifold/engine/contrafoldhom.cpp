@@ -5,7 +5,7 @@
 #endif
 
 #include <sys/time.h>
-#include "engine/contrafoldhom.h"
+#include "contrafoldhom.h"
 #include "../contrafold/contrafold.h"
 
 #include "../util.h"

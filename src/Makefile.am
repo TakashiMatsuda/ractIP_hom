@@ -1,15 +1,14 @@
-bin_PROGRAMS = ractip
-
-ractip_SOURCES = \
-	ractip.cpp ip.cpp ip.h fa.cpp fa.h \
+bin_PROGRAMS = ractip_hom
+ractip_hom_SOURCES = \
+	ractip_hom.cpp ip.cpp ip.h fa.cpp fa.h \
 	boltzmann_param.c boltzmann_param.h \
-	cmdline1.c cmdline1.h pf_duplex.c pf_duplex.h ushuffle.c ushuffle.h \
+	cmdline.c cmdline.h pf_duplex.c pf_duplex.h ushuffle.c ushuffle.h \
 	contrafold/InferenceEngine.hpp contrafold/InferenceEngine.ipp \
 	contrafold/DuplexEngine.hpp contrafold/DuplexEngine.ipp \
 	contrafold/ParameterManager.hpp contrafold/ParameterManager.ipp \
 	contrafold/SStruct.hpp contrafold/SStruct.cpp \
 	contrafold/Utilities.hpp contrafold/Utilities.ipp contrafold/Utilities.cpp \
-	contrafold/Defaults.ipp contrafold/LogSpace.hpp contrafold/Config.hpp contrafold/rand.h \
+	contrafold/Defaults.ipp contrafold/LogSpace.hpp contrafold/Config.hpp contrafold/rand.h 
 	centroidalifold/engine/contrafold.h centroidalifold/engine/contrafold.cpp \
 	centroidalifold/engine/contrafoldm.h centroidalifold/engine/contrafoldm.cpp \
 	centroidalifold/engine/mccaskill.h centroidalifold/engine/mccaskill.cpp \
@@ -17,7 +16,7 @@ ractip_SOURCES = \
 	centroidalifold/engine/pfold.h centroidalifold/engine/pfold.cpp \
 	centroidalifold/engine/averaged.h centroidalifold/engine/averaged.cpp \
 	centroidalifold/engine/mixture.h centroidalifold/engine/mixture.cpp \
-	cenroidalifold/engine/aux.h centroidalifold/engine/aux.cpp \
+	centroidalifold/engine/aux.h centroidalifold/engine/aux.cpp \
 	centroidalifold/folding_engine.h centroidalifold/folding_engine.cpp \
 	centroidalifold/folding_engine.cpp centroidalifold/folding_engine.h \
 	centroidalifold/bp.cpp centroidalifold/bp.h \
@@ -30,4 +29,12 @@ ractip_SOURCES = \
 	centroidalifold/rule.h \
 	centroidalifold/contrafold/contrafold.h \
 	centroidalifold/contrafold/wrapper.cpp \
-	centroidalifold/contrafold/Defaults.ipp
+	centroidalifold/contrafold/Defaults.ipp \
+	centroidalifold/engine/contrafoldhom.h centroidalifold/engine/contrafoldhom.cpp \
+	centroidalifold/engine/mccaskillhom.h centroidalifold/engine/mccaskillhom.cpp \
+	centroidalifold/util.h \
+	centroidalifold/contralign/contralign.h \
+	centroidalifold/contralign/SparseMatrix.hpp \
+	centroidalifold/contralign/Config.hpp \
+	centroidalifold/contralign/Utilities.hpp \
+	centroidalifold/probconsRNA/probcons.h

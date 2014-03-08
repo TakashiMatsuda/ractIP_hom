@@ -8,7 +8,7 @@
 #include <cstdio>
 #include <cstring>
 #include <sys/time.h>
-#include "engine/mccaskillhom.h"
+#include "mccaskillhom.h"
 #include "../util.h"
 
 #ifdef HAVE_LIBRNA
