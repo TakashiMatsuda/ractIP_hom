@@ -127,11 +127,46 @@ class TH : public std::pair<std::string, std::vector<std::string> >
 Alnでは
   const std::list<std::string>& seq() const { return seq_; }
 であるから、listからvectorへの変換を行なった。
----
-  std::replace(aln1.seq().begin(), aln1.seq().end(), 't', 'u');
-は間違い。引数がtemplate型を継承していない。
+-
+  std::replace(aln1.se人であんまりまずいけどq().begin(), aln1.seq().end(), 't', 'u');
+は間違い。引数がtemplate型を継承していない。他にね私がなければ
 alnに含まれるstringを一つ一つreplaceする。したがって
 ----
 そもそもseq()の返り値はconst値なので修正できない。したがって、
 別のやり方を考えたほうがよさそう。
 centroid_homfoldでどうやっているのか調べる。
+->なぜかcentroid_homfoldでは動いている
+わからない、const修飾の仕様を読みたい
+とりあえずcentroid_homfold形式でやってしまう。
+---
+Undefined symbols for architecture x86_64:
+  "McCaskillHomModel::McCaskillHomModel(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, unsigned int, char const*, unsigned int, bool)", referenced from:
+      RactIP::run() in ractip_hom.o
+  "Aln::load(std::__1::list<Aln, std::__1::allocator<Aln> >&, char const*)", referenced from:
+      RactIP::run() in ractip_hom.o
+  "RactIP::change_l_v(std::__1::list<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >) const", referenced from:
+      RactIP::run() in ractip_hom.o
+---
+linkがうまくいかない
+automake周りを確認する。
+---
+#ifdef HAVE_LIBRNA
+HAVE_LIBRNAは定義されているか
+---
+Makefile.amの中に\がかけているところがあったので修正した。
+---
+階層的にMakefile.amを書く方法を調べる。
+---
+wrapper.cpp:
+#include "Defaults.ipp"
+#include "InferenceEngine.hpp"
+#include "ParameterManager.hpp"
+---
+名前空間が衝突した。サブディレクトリにライブラリを作らなければならない。
+---
+contralign完了
+probconsRNAのためのMakefile.amも終わった
+lib~.aを作って、AC_PROG_RANLIBのフラグをたてることによってできる。
+---
+change_l_vが起こられている。
+Undefined symbols for ~

@@ -60,10 +60,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/ractip
-pkgincludedir = $(includedir)/ractip
-pkglibdir = $(libdir)/ractip
-pkglibexecdir = $(libexecdir)/ractip
+pkgdatadir = $(datadir)/ractip_hom
+pkgincludedir = $(includedir)/ractip_hom
+pkglibdir = $(libdir)/ractip_hom
+pkglibexecdir = $(libexecdir)/ractip_hom
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -93,9 +93,16 @@ PROGRAMS = $(bin_PROGRAMS)
 am_ractip_hom_OBJECTS = ractip_hom.$(OBJEXT) ip.$(OBJEXT) fa.$(OBJEXT) \
 	boltzmann_param.$(OBJEXT) cmdline.$(OBJEXT) \
 	pf_duplex.$(OBJEXT) ushuffle.$(OBJEXT) SStruct.$(OBJEXT) \
-	Utilities.$(OBJEXT)
+	Utilities.$(OBJEXT) contrafold.$(OBJEXT) contrafoldm.$(OBJEXT) \
+	mccaskill.$(OBJEXT) alifold.$(OBJEXT) pfold.$(OBJEXT) \
+	averaged.$(OBJEXT) mixture.$(OBJEXT) aux.$(OBJEXT) \
+	folding_engine.$(OBJEXT) folding_engine.$(OBJEXT) bp.$(OBJEXT) \
+	aln.$(OBJEXT) centroid.$(OBJEXT) mea.$(OBJEXT) diana.$(OBJEXT) \
+	ps_plot.$(OBJEXT) wrapper.$(OBJEXT) contrafoldhom.$(OBJEXT) \
+	mccaskillhom.$(OBJEXT)
 ractip_hom_OBJECTS = $(am_ractip_hom_OBJECTS)
-ractip_hom_LDADD = $(LDADD)
+ractip_hom_DEPENDENCIES = centroidalifold/contralign/libcontralign.a \
+	centroidalifold/probconsRNA/libprobcons.a
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -143,11 +150,27 @@ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
 SOURCES = $(ractip_hom_SOURCES)
 DIST_SOURCES = $(ractip_hom_SOURCES)
+RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+	ctags-recursive dvi-recursive html-recursive info-recursive \
+	install-data-recursive install-dvi-recursive \
+	install-exec-recursive install-html-recursive \
+	install-info-recursive install-pdf-recursive \
+	install-ps-recursive install-recursive installcheck-recursive \
+	installdirs-recursive pdf-recursive ps-recursive \
+	tags-recursive uninstall-recursive
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
+RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+  distclean-recursive maintainer-clean-recursive
+am__recursive_targets = \
+  $(RECURSIVE_TARGETS) \
+  $(RECURSIVE_CLEAN_TARGETS) \
+  $(am__extra_recursive_targets)
+AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \
+	distdir
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -167,7 +190,33 @@ am__define_uniq_tagged_files = \
   done | $(am__uniquify_input)`
 ETAGS = etags
 CTAGS = ctags
+DIST_SUBDIRS = $(SUBDIRS)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+am__relativize = \
+  dir0=`pwd`; \
+  sed_first='s,^\([^/]*\)/.*$$,\1,'; \
+  sed_rest='s,^[^/]*/*,,'; \
+  sed_last='s,^.*/\([^/]*\)$$,\1,'; \
+  sed_butlast='s,/*[^/]*$$,,'; \
+  while test -n "$$dir1"; do \
+    first=`echo "$$dir1" | sed -e "$$sed_first"`; \
+    if test "$$first" != "."; then \
+      if test "$$first" = ".."; then \
+        dir2=`echo "$$dir0" | sed -e "$$sed_last"`/"$$dir2"; \
+        dir0=`echo "$$dir0" | sed -e "$$sed_butlast"`; \
+      else \
+        first2=`echo "$$dir2" | sed -e "$$sed_first"`; \
+        if test "$$first2" = "$$first"; then \
+          dir2=`echo "$$dir2" | sed -e "$$sed_rest"`; \
+        else \
+          dir2="../$$dir2"; \
+        fi; \
+        dir0="$$dir0"/"$$first"; \
+      fi; \
+    fi; \
+    dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
+  done; \
+  reldir="$$dir2"
 ACLOCAL = aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
@@ -204,18 +253,19 @@ LTLIBOBJS =
 MAKEINFO = makeinfo
 MKDIR_P = .././install-sh -c -d
 OBJEXT = o
-PACKAGE = ractip
+PACKAGE = ractip_hom
 PACKAGE_BUGREPORT = satoken@bio.keio.ac.jp
-PACKAGE_NAME = ractip
-PACKAGE_STRING = ractip 0.0.3
-PACKAGE_TARNAME = ractip
+PACKAGE_NAME = ractip_hom
+PACKAGE_STRING = ractip_hom 0.0.1
+PACKAGE_TARNAME = ractip_hom
 PACKAGE_URL = 
-PACKAGE_VERSION = 0.0.3
+PACKAGE_VERSION = 0.0.1
 PATH_SEPARATOR = :
+RANLIB = ranlib
 SET_MAKE = 
 SHELL = /bin/sh
 STRIP = 
-VERSION = 0.0.3
+VERSION = 0.0.1
 abs_builddir = /Users/takashi/cbrc/ractip_hom/src
 abs_srcdir = /Users/takashi/cbrc/ractip_hom/src
 abs_top_builddir = /Users/takashi/cbrc/ractip_hom
@@ -259,6 +309,7 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
+SUBDIRS = centroidalifold/contralign centroidalifold/probconsRNA
 ractip_hom_SOURCES = \
 	ractip_hom.cpp ip.cpp ip.h fa.cpp fa.h \
 	boltzmann_param.c boltzmann_param.h \
@@ -268,9 +319,34 @@ ractip_hom_SOURCES = \
 	contrafold/ParameterManager.hpp contrafold/ParameterManager.ipp \
 	contrafold/SStruct.hpp contrafold/SStruct.cpp \
 	contrafold/Utilities.hpp contrafold/Utilities.ipp contrafold/Utilities.cpp \
-	contrafold/Defaults.ipp contrafold/LogSpace.hpp contrafold/Config.hpp contrafold/rand.h 
+	contrafold/Defaults.ipp contrafold/LogSpace.hpp contrafold/Config.hpp contrafold/rand.h \
+	centroidalifold/engine/contrafold.h centroidalifold/engine/contrafold.cpp \
+	centroidalifold/engine/contrafoldm.h centroidalifold/engine/contrafoldm.cpp \
+	centroidalifold/engine/mccaskill.h centroidalifold/engine/mccaskill.cpp \
+	centroidalifold/engine/alifold.h centroidalifold/engine/alifold.cpp \
+	centroidalifold/engine/pfold.h centroidalifold/engine/pfold.cpp \
+	centroidalifold/engine/averaged.h centroidalifold/engine/averaged.cpp \
+	centroidalifold/engine/mixture.h centroidalifold/engine/mixture.cpp \
+	centroidalifold/engine/aux.h centroidalifold/engine/aux.cpp \
+	centroidalifold/folding_engine.h centroidalifold/folding_engine.cpp \
+	centroidalifold/folding_engine.cpp centroidalifold/folding_engine.h \
+	centroidalifold/bp.cpp centroidalifold/bp.h \
+	centroidalifold/aln.h centroidalifold/aln.cpp \
+	centroidalifold/cyktable.h \
+	centroidalifold/centroid.h centroidalifold/centroid.cpp \
+	centroidalifold/mea.h centroidalifold/mea.cpp \
+	centroidalifold/diana.h centroidalifold/diana.cpp \
+	centroidalifold/ps_plot.h centroidalifold/ps_plot.cpp \
+	centroidalifold/rule.h \
+	centroidalifold/contrafold/contrafold.h \
+	centroidalifold/contrafold/wrapper.cpp \
+	centroidalifold/contrafold/Defaults.ipp \
+	centroidalifold/engine/contrafoldhom.h centroidalifold/engine/contrafoldhom.cpp \
+	centroidalifold/engine/mccaskillhom.h centroidalifold/engine/mccaskillhom.cpp \
+	centroidalifold/util.h 
 
-all: all-am
+ractip_hom_LDADD = centroidalifold/contralign/libcontralign.a centroidalifold/probconsRNA/libprobcons.a
+all: all-recursive
 
 .SUFFIXES:
 .SUFFIXES: .c .cpp .o .obj
@@ -359,13 +435,31 @@ distclean-compile:
 
 include ./$(DEPDIR)/SStruct.Po
 include ./$(DEPDIR)/Utilities.Po
+include ./$(DEPDIR)/alifold.Po
+include ./$(DEPDIR)/aln.Po
+include ./$(DEPDIR)/aux.Po
+include ./$(DEPDIR)/averaged.Po
 include ./$(DEPDIR)/boltzmann_param.Po
+include ./$(DEPDIR)/bp.Po
+include ./$(DEPDIR)/centroid.Po
 include ./$(DEPDIR)/cmdline.Po
+include ./$(DEPDIR)/contrafold.Po
+include ./$(DEPDIR)/contrafoldhom.Po
+include ./$(DEPDIR)/contrafoldm.Po
+include ./$(DEPDIR)/diana.Po
 include ./$(DEPDIR)/fa.Po
+include ./$(DEPDIR)/folding_engine.Po
 include ./$(DEPDIR)/ip.Po
+include ./$(DEPDIR)/mccaskill.Po
+include ./$(DEPDIR)/mccaskillhom.Po
+include ./$(DEPDIR)/mea.Po
+include ./$(DEPDIR)/mixture.Po
 include ./$(DEPDIR)/pf_duplex.Po
+include ./$(DEPDIR)/pfold.Po
+include ./$(DEPDIR)/ps_plot.Po
 include ./$(DEPDIR)/ractip_hom.Po
 include ./$(DEPDIR)/ushuffle.Po
+include ./$(DEPDIR)/wrapper.Po
 
 .c.o:
 	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -423,14 +517,313 @@ Utilities.obj: contrafold/Utilities.cpp
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o Utilities.obj `if test -f 'contrafold/Utilities.cpp'; then $(CYGPATH_W) 'contrafold/Utilities.cpp'; else $(CYGPATH_W) '$(srcdir)/contrafold/Utilities.cpp'; fi`
 
+contrafold.o: centroidalifold/engine/contrafold.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT contrafold.o -MD -MP -MF $(DEPDIR)/contrafold.Tpo -c -o contrafold.o `test -f 'centroidalifold/engine/contrafold.cpp' || echo '$(srcdir)/'`centroidalifold/engine/contrafold.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/contrafold.Tpo $(DEPDIR)/contrafold.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/contrafold.cpp' object='contrafold.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o contrafold.o `test -f 'centroidalifold/engine/contrafold.cpp' || echo '$(srcdir)/'`centroidalifold/engine/contrafold.cpp
+
+contrafold.obj: centroidalifold/engine/contrafold.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT contrafold.obj -MD -MP -MF $(DEPDIR)/contrafold.Tpo -c -o contrafold.obj `if test -f 'centroidalifold/engine/contrafold.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/contrafold.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/contrafold.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/contrafold.Tpo $(DEPDIR)/contrafold.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/contrafold.cpp' object='contrafold.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o contrafold.obj `if test -f 'centroidalifold/engine/contrafold.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/contrafold.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/contrafold.cpp'; fi`
+
+contrafoldm.o: centroidalifold/engine/contrafoldm.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT contrafoldm.o -MD -MP -MF $(DEPDIR)/contrafoldm.Tpo -c -o contrafoldm.o `test -f 'centroidalifold/engine/contrafoldm.cpp' || echo '$(srcdir)/'`centroidalifold/engine/contrafoldm.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/contrafoldm.Tpo $(DEPDIR)/contrafoldm.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/contrafoldm.cpp' object='contrafoldm.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o contrafoldm.o `test -f 'centroidalifold/engine/contrafoldm.cpp' || echo '$(srcdir)/'`centroidalifold/engine/contrafoldm.cpp
+
+contrafoldm.obj: centroidalifold/engine/contrafoldm.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT contrafoldm.obj -MD -MP -MF $(DEPDIR)/contrafoldm.Tpo -c -o contrafoldm.obj `if test -f 'centroidalifold/engine/contrafoldm.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/contrafoldm.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/contrafoldm.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/contrafoldm.Tpo $(DEPDIR)/contrafoldm.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/contrafoldm.cpp' object='contrafoldm.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o contrafoldm.obj `if test -f 'centroidalifold/engine/contrafoldm.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/contrafoldm.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/contrafoldm.cpp'; fi`
+
+mccaskill.o: centroidalifold/engine/mccaskill.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mccaskill.o -MD -MP -MF $(DEPDIR)/mccaskill.Tpo -c -o mccaskill.o `test -f 'centroidalifold/engine/mccaskill.cpp' || echo '$(srcdir)/'`centroidalifold/engine/mccaskill.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mccaskill.Tpo $(DEPDIR)/mccaskill.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/mccaskill.cpp' object='mccaskill.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mccaskill.o `test -f 'centroidalifold/engine/mccaskill.cpp' || echo '$(srcdir)/'`centroidalifold/engine/mccaskill.cpp
+
+mccaskill.obj: centroidalifold/engine/mccaskill.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mccaskill.obj -MD -MP -MF $(DEPDIR)/mccaskill.Tpo -c -o mccaskill.obj `if test -f 'centroidalifold/engine/mccaskill.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/mccaskill.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/mccaskill.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mccaskill.Tpo $(DEPDIR)/mccaskill.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/mccaskill.cpp' object='mccaskill.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mccaskill.obj `if test -f 'centroidalifold/engine/mccaskill.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/mccaskill.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/mccaskill.cpp'; fi`
+
+alifold.o: centroidalifold/engine/alifold.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT alifold.o -MD -MP -MF $(DEPDIR)/alifold.Tpo -c -o alifold.o `test -f 'centroidalifold/engine/alifold.cpp' || echo '$(srcdir)/'`centroidalifold/engine/alifold.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/alifold.Tpo $(DEPDIR)/alifold.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/alifold.cpp' object='alifold.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o alifold.o `test -f 'centroidalifold/engine/alifold.cpp' || echo '$(srcdir)/'`centroidalifold/engine/alifold.cpp
+
+alifold.obj: centroidalifold/engine/alifold.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT alifold.obj -MD -MP -MF $(DEPDIR)/alifold.Tpo -c -o alifold.obj `if test -f 'centroidalifold/engine/alifold.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/alifold.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/alifold.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/alifold.Tpo $(DEPDIR)/alifold.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/alifold.cpp' object='alifold.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o alifold.obj `if test -f 'centroidalifold/engine/alifold.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/alifold.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/alifold.cpp'; fi`
+
+pfold.o: centroidalifold/engine/pfold.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT pfold.o -MD -MP -MF $(DEPDIR)/pfold.Tpo -c -o pfold.o `test -f 'centroidalifold/engine/pfold.cpp' || echo '$(srcdir)/'`centroidalifold/engine/pfold.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/pfold.Tpo $(DEPDIR)/pfold.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/pfold.cpp' object='pfold.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o pfold.o `test -f 'centroidalifold/engine/pfold.cpp' || echo '$(srcdir)/'`centroidalifold/engine/pfold.cpp
+
+pfold.obj: centroidalifold/engine/pfold.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT pfold.obj -MD -MP -MF $(DEPDIR)/pfold.Tpo -c -o pfold.obj `if test -f 'centroidalifold/engine/pfold.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/pfold.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/pfold.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/pfold.Tpo $(DEPDIR)/pfold.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/pfold.cpp' object='pfold.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o pfold.obj `if test -f 'centroidalifold/engine/pfold.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/pfold.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/pfold.cpp'; fi`
+
+averaged.o: centroidalifold/engine/averaged.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT averaged.o -MD -MP -MF $(DEPDIR)/averaged.Tpo -c -o averaged.o `test -f 'centroidalifold/engine/averaged.cpp' || echo '$(srcdir)/'`centroidalifold/engine/averaged.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/averaged.Tpo $(DEPDIR)/averaged.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/averaged.cpp' object='averaged.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o averaged.o `test -f 'centroidalifold/engine/averaged.cpp' || echo '$(srcdir)/'`centroidalifold/engine/averaged.cpp
+
+averaged.obj: centroidalifold/engine/averaged.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT averaged.obj -MD -MP -MF $(DEPDIR)/averaged.Tpo -c -o averaged.obj `if test -f 'centroidalifold/engine/averaged.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/averaged.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/averaged.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/averaged.Tpo $(DEPDIR)/averaged.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/averaged.cpp' object='averaged.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o averaged.obj `if test -f 'centroidalifold/engine/averaged.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/averaged.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/averaged.cpp'; fi`
+
+mixture.o: centroidalifold/engine/mixture.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mixture.o -MD -MP -MF $(DEPDIR)/mixture.Tpo -c -o mixture.o `test -f 'centroidalifold/engine/mixture.cpp' || echo '$(srcdir)/'`centroidalifold/engine/mixture.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mixture.Tpo $(DEPDIR)/mixture.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/mixture.cpp' object='mixture.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mixture.o `test -f 'centroidalifold/engine/mixture.cpp' || echo '$(srcdir)/'`centroidalifold/engine/mixture.cpp
+
+mixture.obj: centroidalifold/engine/mixture.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mixture.obj -MD -MP -MF $(DEPDIR)/mixture.Tpo -c -o mixture.obj `if test -f 'centroidalifold/engine/mixture.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/mixture.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/mixture.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mixture.Tpo $(DEPDIR)/mixture.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/mixture.cpp' object='mixture.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mixture.obj `if test -f 'centroidalifold/engine/mixture.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/mixture.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/mixture.cpp'; fi`
+
+aux.o: centroidalifold/engine/aux.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT aux.o -MD -MP -MF $(DEPDIR)/aux.Tpo -c -o aux.o `test -f 'centroidalifold/engine/aux.cpp' || echo '$(srcdir)/'`centroidalifold/engine/aux.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/aux.Tpo $(DEPDIR)/aux.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/aux.cpp' object='aux.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o aux.o `test -f 'centroidalifold/engine/aux.cpp' || echo '$(srcdir)/'`centroidalifold/engine/aux.cpp
+
+aux.obj: centroidalifold/engine/aux.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT aux.obj -MD -MP -MF $(DEPDIR)/aux.Tpo -c -o aux.obj `if test -f 'centroidalifold/engine/aux.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/aux.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/aux.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/aux.Tpo $(DEPDIR)/aux.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/aux.cpp' object='aux.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o aux.obj `if test -f 'centroidalifold/engine/aux.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/aux.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/aux.cpp'; fi`
+
+folding_engine.o: centroidalifold/folding_engine.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT folding_engine.o -MD -MP -MF $(DEPDIR)/folding_engine.Tpo -c -o folding_engine.o `test -f 'centroidalifold/folding_engine.cpp' || echo '$(srcdir)/'`centroidalifold/folding_engine.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/folding_engine.Tpo $(DEPDIR)/folding_engine.Po
+#	$(AM_V_CXX)source='centroidalifold/folding_engine.cpp' object='folding_engine.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o folding_engine.o `test -f 'centroidalifold/folding_engine.cpp' || echo '$(srcdir)/'`centroidalifold/folding_engine.cpp
+
+folding_engine.obj: centroidalifold/folding_engine.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT folding_engine.obj -MD -MP -MF $(DEPDIR)/folding_engine.Tpo -c -o folding_engine.obj `if test -f 'centroidalifold/folding_engine.cpp'; then $(CYGPATH_W) 'centroidalifold/folding_engine.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/folding_engine.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/folding_engine.Tpo $(DEPDIR)/folding_engine.Po
+#	$(AM_V_CXX)source='centroidalifold/folding_engine.cpp' object='folding_engine.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o folding_engine.obj `if test -f 'centroidalifold/folding_engine.cpp'; then $(CYGPATH_W) 'centroidalifold/folding_engine.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/folding_engine.cpp'; fi`
+
+bp.o: centroidalifold/bp.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bp.o -MD -MP -MF $(DEPDIR)/bp.Tpo -c -o bp.o `test -f 'centroidalifold/bp.cpp' || echo '$(srcdir)/'`centroidalifold/bp.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/bp.Tpo $(DEPDIR)/bp.Po
+#	$(AM_V_CXX)source='centroidalifold/bp.cpp' object='bp.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bp.o `test -f 'centroidalifold/bp.cpp' || echo '$(srcdir)/'`centroidalifold/bp.cpp
+
+bp.obj: centroidalifold/bp.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT bp.obj -MD -MP -MF $(DEPDIR)/bp.Tpo -c -o bp.obj `if test -f 'centroidalifold/bp.cpp'; then $(CYGPATH_W) 'centroidalifold/bp.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/bp.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/bp.Tpo $(DEPDIR)/bp.Po
+#	$(AM_V_CXX)source='centroidalifold/bp.cpp' object='bp.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o bp.obj `if test -f 'centroidalifold/bp.cpp'; then $(CYGPATH_W) 'centroidalifold/bp.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/bp.cpp'; fi`
+
+aln.o: centroidalifold/aln.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT aln.o -MD -MP -MF $(DEPDIR)/aln.Tpo -c -o aln.o `test -f 'centroidalifold/aln.cpp' || echo '$(srcdir)/'`centroidalifold/aln.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/aln.Tpo $(DEPDIR)/aln.Po
+#	$(AM_V_CXX)source='centroidalifold/aln.cpp' object='aln.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o aln.o `test -f 'centroidalifold/aln.cpp' || echo '$(srcdir)/'`centroidalifold/aln.cpp
+
+aln.obj: centroidalifold/aln.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT aln.obj -MD -MP -MF $(DEPDIR)/aln.Tpo -c -o aln.obj `if test -f 'centroidalifold/aln.cpp'; then $(CYGPATH_W) 'centroidalifold/aln.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/aln.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/aln.Tpo $(DEPDIR)/aln.Po
+#	$(AM_V_CXX)source='centroidalifold/aln.cpp' object='aln.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o aln.obj `if test -f 'centroidalifold/aln.cpp'; then $(CYGPATH_W) 'centroidalifold/aln.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/aln.cpp'; fi`
+
+centroid.o: centroidalifold/centroid.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT centroid.o -MD -MP -MF $(DEPDIR)/centroid.Tpo -c -o centroid.o `test -f 'centroidalifold/centroid.cpp' || echo '$(srcdir)/'`centroidalifold/centroid.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/centroid.Tpo $(DEPDIR)/centroid.Po
+#	$(AM_V_CXX)source='centroidalifold/centroid.cpp' object='centroid.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o centroid.o `test -f 'centroidalifold/centroid.cpp' || echo '$(srcdir)/'`centroidalifold/centroid.cpp
+
+centroid.obj: centroidalifold/centroid.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT centroid.obj -MD -MP -MF $(DEPDIR)/centroid.Tpo -c -o centroid.obj `if test -f 'centroidalifold/centroid.cpp'; then $(CYGPATH_W) 'centroidalifold/centroid.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/centroid.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/centroid.Tpo $(DEPDIR)/centroid.Po
+#	$(AM_V_CXX)source='centroidalifold/centroid.cpp' object='centroid.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o centroid.obj `if test -f 'centroidalifold/centroid.cpp'; then $(CYGPATH_W) 'centroidalifold/centroid.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/centroid.cpp'; fi`
+
+mea.o: centroidalifold/mea.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mea.o -MD -MP -MF $(DEPDIR)/mea.Tpo -c -o mea.o `test -f 'centroidalifold/mea.cpp' || echo '$(srcdir)/'`centroidalifold/mea.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mea.Tpo $(DEPDIR)/mea.Po
+#	$(AM_V_CXX)source='centroidalifold/mea.cpp' object='mea.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mea.o `test -f 'centroidalifold/mea.cpp' || echo '$(srcdir)/'`centroidalifold/mea.cpp
+
+mea.obj: centroidalifold/mea.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mea.obj -MD -MP -MF $(DEPDIR)/mea.Tpo -c -o mea.obj `if test -f 'centroidalifold/mea.cpp'; then $(CYGPATH_W) 'centroidalifold/mea.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/mea.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mea.Tpo $(DEPDIR)/mea.Po
+#	$(AM_V_CXX)source='centroidalifold/mea.cpp' object='mea.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mea.obj `if test -f 'centroidalifold/mea.cpp'; then $(CYGPATH_W) 'centroidalifold/mea.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/mea.cpp'; fi`
+
+diana.o: centroidalifold/diana.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT diana.o -MD -MP -MF $(DEPDIR)/diana.Tpo -c -o diana.o `test -f 'centroidalifold/diana.cpp' || echo '$(srcdir)/'`centroidalifold/diana.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/diana.Tpo $(DEPDIR)/diana.Po
+#	$(AM_V_CXX)source='centroidalifold/diana.cpp' object='diana.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o diana.o `test -f 'centroidalifold/diana.cpp' || echo '$(srcdir)/'`centroidalifold/diana.cpp
+
+diana.obj: centroidalifold/diana.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT diana.obj -MD -MP -MF $(DEPDIR)/diana.Tpo -c -o diana.obj `if test -f 'centroidalifold/diana.cpp'; then $(CYGPATH_W) 'centroidalifold/diana.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/diana.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/diana.Tpo $(DEPDIR)/diana.Po
+#	$(AM_V_CXX)source='centroidalifold/diana.cpp' object='diana.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o diana.obj `if test -f 'centroidalifold/diana.cpp'; then $(CYGPATH_W) 'centroidalifold/diana.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/diana.cpp'; fi`
+
+ps_plot.o: centroidalifold/ps_plot.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ps_plot.o -MD -MP -MF $(DEPDIR)/ps_plot.Tpo -c -o ps_plot.o `test -f 'centroidalifold/ps_plot.cpp' || echo '$(srcdir)/'`centroidalifold/ps_plot.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/ps_plot.Tpo $(DEPDIR)/ps_plot.Po
+#	$(AM_V_CXX)source='centroidalifold/ps_plot.cpp' object='ps_plot.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ps_plot.o `test -f 'centroidalifold/ps_plot.cpp' || echo '$(srcdir)/'`centroidalifold/ps_plot.cpp
+
+ps_plot.obj: centroidalifold/ps_plot.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT ps_plot.obj -MD -MP -MF $(DEPDIR)/ps_plot.Tpo -c -o ps_plot.obj `if test -f 'centroidalifold/ps_plot.cpp'; then $(CYGPATH_W) 'centroidalifold/ps_plot.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/ps_plot.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/ps_plot.Tpo $(DEPDIR)/ps_plot.Po
+#	$(AM_V_CXX)source='centroidalifold/ps_plot.cpp' object='ps_plot.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o ps_plot.obj `if test -f 'centroidalifold/ps_plot.cpp'; then $(CYGPATH_W) 'centroidalifold/ps_plot.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/ps_plot.cpp'; fi`
+
+wrapper.o: centroidalifold/contrafold/wrapper.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT wrapper.o -MD -MP -MF $(DEPDIR)/wrapper.Tpo -c -o wrapper.o `test -f 'centroidalifold/contrafold/wrapper.cpp' || echo '$(srcdir)/'`centroidalifold/contrafold/wrapper.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/wrapper.Tpo $(DEPDIR)/wrapper.Po
+#	$(AM_V_CXX)source='centroidalifold/contrafold/wrapper.cpp' object='wrapper.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o wrapper.o `test -f 'centroidalifold/contrafold/wrapper.cpp' || echo '$(srcdir)/'`centroidalifold/contrafold/wrapper.cpp
+
+wrapper.obj: centroidalifold/contrafold/wrapper.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT wrapper.obj -MD -MP -MF $(DEPDIR)/wrapper.Tpo -c -o wrapper.obj `if test -f 'centroidalifold/contrafold/wrapper.cpp'; then $(CYGPATH_W) 'centroidalifold/contrafold/wrapper.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/contrafold/wrapper.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/wrapper.Tpo $(DEPDIR)/wrapper.Po
+#	$(AM_V_CXX)source='centroidalifold/contrafold/wrapper.cpp' object='wrapper.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o wrapper.obj `if test -f 'centroidalifold/contrafold/wrapper.cpp'; then $(CYGPATH_W) 'centroidalifold/contrafold/wrapper.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/contrafold/wrapper.cpp'; fi`
+
+contrafoldhom.o: centroidalifold/engine/contrafoldhom.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT contrafoldhom.o -MD -MP -MF $(DEPDIR)/contrafoldhom.Tpo -c -o contrafoldhom.o `test -f 'centroidalifold/engine/contrafoldhom.cpp' || echo '$(srcdir)/'`centroidalifold/engine/contrafoldhom.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/contrafoldhom.Tpo $(DEPDIR)/contrafoldhom.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/contrafoldhom.cpp' object='contrafoldhom.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o contrafoldhom.o `test -f 'centroidalifold/engine/contrafoldhom.cpp' || echo '$(srcdir)/'`centroidalifold/engine/contrafoldhom.cpp
+
+contrafoldhom.obj: centroidalifold/engine/contrafoldhom.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT contrafoldhom.obj -MD -MP -MF $(DEPDIR)/contrafoldhom.Tpo -c -o contrafoldhom.obj `if test -f 'centroidalifold/engine/contrafoldhom.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/contrafoldhom.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/contrafoldhom.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/contrafoldhom.Tpo $(DEPDIR)/contrafoldhom.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/contrafoldhom.cpp' object='contrafoldhom.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o contrafoldhom.obj `if test -f 'centroidalifold/engine/contrafoldhom.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/contrafoldhom.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/contrafoldhom.cpp'; fi`
+
+mccaskillhom.o: centroidalifold/engine/mccaskillhom.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mccaskillhom.o -MD -MP -MF $(DEPDIR)/mccaskillhom.Tpo -c -o mccaskillhom.o `test -f 'centroidalifold/engine/mccaskillhom.cpp' || echo '$(srcdir)/'`centroidalifold/engine/mccaskillhom.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mccaskillhom.Tpo $(DEPDIR)/mccaskillhom.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/mccaskillhom.cpp' object='mccaskillhom.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mccaskillhom.o `test -f 'centroidalifold/engine/mccaskillhom.cpp' || echo '$(srcdir)/'`centroidalifold/engine/mccaskillhom.cpp
+
+mccaskillhom.obj: centroidalifold/engine/mccaskillhom.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mccaskillhom.obj -MD -MP -MF $(DEPDIR)/mccaskillhom.Tpo -c -o mccaskillhom.obj `if test -f 'centroidalifold/engine/mccaskillhom.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/mccaskillhom.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/mccaskillhom.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mccaskillhom.Tpo $(DEPDIR)/mccaskillhom.Po
+#	$(AM_V_CXX)source='centroidalifold/engine/mccaskillhom.cpp' object='mccaskillhom.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mccaskillhom.obj `if test -f 'centroidalifold/engine/mccaskillhom.cpp'; then $(CYGPATH_W) 'centroidalifold/engine/mccaskillhom.cpp'; else $(CYGPATH_W) '$(srcdir)/centroidalifold/engine/mccaskillhom.cpp'; fi`
+
+# This directory's subdirectories are mostly independent; you can cd
+# into them and run 'make' without going through this Makefile.
+# To change the values of 'make' variables: instead of editing Makefiles,
+# (1) if the variable is set in 'config.status', edit 'config.status'
+#     (which will cause the Makefiles to be regenerated when you run 'make');
+# (2) otherwise, pass the desired values on the 'make' command line.
+$(am__recursive_targets):
+	@fail=; \
+	if $(am__make_keepgoing); then \
+	  failcom='fail=yes'; \
+	else \
+	  failcom='exit 1'; \
+	fi; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  ($(am__cd) $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	  || eval $$failcom; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
-tags: tags-am
+tags: tags-recursive
 TAGS: tags
 
 tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
 	set x; \
 	here=`pwd`; \
+	if ($(ETAGS) --etags-include --version) >/dev/null 2>&1; then \
+	  include_option=--etags-include; \
+	  empty_fix=.; \
+	else \
+	  include_option=--include; \
+	  empty_fix=; \
+	fi; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test ! -f $$subdir/TAGS || \
+	      set "$$@" "$$include_option=$$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
 	$(am__define_uniq_tagged_files); \
 	shift; \
 	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
@@ -443,7 +836,7 @@ tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
 	      $$unique; \
 	  fi; \
 	fi
-ctags: ctags-am
+ctags: ctags-recursive
 
 CTAGS: ctags
 ctags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)
@@ -456,7 +849,7 @@ GTAGS:
 	here=`$(am__cd) $(top_builddir) && pwd` \
 	  && $(am__cd) $(top_srcdir) \
 	  && gtags -i $(GTAGS_ARGS) "$$here"
-cscopelist: cscopelist-am
+cscopelist: cscopelist-recursive
 
 cscopelist-am: $(am__tagged_files)
 	list='$(am__tagged_files)'; \
@@ -505,22 +898,48 @@ distdir: $(DISTFILES)
 	    || exit 1; \
 	  fi; \
 	done
+	@list='$(DIST_SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    $(am__make_dryrun) \
+	      || test -d "$(distdir)/$$subdir" \
+	      || $(MKDIR_P) "$(distdir)/$$subdir" \
+	      || exit 1; \
+	    dir1=$$subdir; dir2="$(distdir)/$$subdir"; \
+	    $(am__relativize); \
+	    new_distdir=$$reldir; \
+	    dir1=$$subdir; dir2="$(top_distdir)"; \
+	    $(am__relativize); \
+	    new_top_distdir=$$reldir; \
+	    echo " (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) top_distdir="$$new_top_distdir" distdir="$$new_distdir" \\"; \
+	    echo "     am__remove_distdir=: am__skip_length_check=: am__skip_mode_fix=: distdir)"; \
+	    ($(am__cd) $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$$new_top_distdir" \
+	        distdir="$$new_distdir" \
+		am__remove_distdir=: \
+		am__skip_length_check=: \
+		am__skip_mode_fix=: \
+	        distdir) \
+	      || exit 1; \
+	  fi; \
+	done
 check-am: all-am
-check: check-am
+check: check-recursive
 all-am: Makefile $(PROGRAMS)
-installdirs:
+installdirs: installdirs-recursive
+installdirs-am:
 	for dir in "$(DESTDIR)$(bindir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
-install: install-am
-install-exec: install-exec-am
-install-data: install-data-am
-uninstall: uninstall-am
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 
-installcheck: installcheck-am
+installcheck: installcheck-recursive
 install-strip:
 	if test -z '$(STRIP)'; then \
 	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
@@ -542,120 +961,91 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
-clean: clean-am
+clean: clean-recursive
 
 clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
-distclean: distclean-am
+distclean: distclean-recursive
 	-rm -rf ./$(DEPDIR)
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
 
-dvi: dvi-am
+dvi: dvi-recursive
 
 dvi-am:
 
-html: html-am
+html: html-recursive
 
 html-am:
 
-info: info-am
+info: info-recursive
 
 info-am:
 
 install-data-am:
 
-install-dvi: install-dvi-am
+install-dvi: install-dvi-recursive
 
 install-dvi-am:
 
 install-exec-am: install-binPROGRAMS
 
-install-html: install-html-am
+install-html: install-html-recursive
 
 install-html-am:
 
-install-info: install-info-am
+install-info: install-info-recursive
 
 install-info-am:
 
 install-man:
 
-install-pdf: install-pdf-am
+install-pdf: install-pdf-recursive
 
 install-pdf-am:
 
-install-ps: install-ps-am
+install-ps: install-ps-recursive
 
 install-ps-am:
 
 installcheck-am:
 
-maintainer-clean: maintainer-clean-am
+maintainer-clean: maintainer-clean-recursive
 	-rm -rf ./$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
-mostlyclean: mostlyclean-am
+mostlyclean: mostlyclean-recursive
 
 mostlyclean-am: mostlyclean-compile mostlyclean-generic
 
-pdf: pdf-am
+pdf: pdf-recursive
 
 pdf-am:
 
-ps: ps-am
+ps: ps-recursive
 
 ps-am:
 
 uninstall-am: uninstall-binPROGRAMS
 
-.MAKE: install-am install-strip
+.MAKE: $(am__recursive_targets) install-am install-strip
 
-.PHONY: CTAGS GTAGS TAGS all all-am check check-am clean \
-	clean-binPROGRAMS clean-generic cscopelist-am ctags ctags-am \
-	distclean distclean-compile distclean-generic distclean-tags \
-	distdir dvi dvi-am html html-am info info-am install \
-	install-am install-binPROGRAMS install-data install-data-am \
-	install-dvi install-dvi-am install-exec install-exec-am \
-	install-html install-html-am install-info install-info-am \
-	install-man install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
-	installdirs maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
-	ps ps-am tags tags-am uninstall uninstall-am \
-	uninstall-binPROGRAMS
+.PHONY: $(am__recursive_targets) CTAGS GTAGS TAGS all all-am check \
+	check-am clean clean-binPROGRAMS clean-generic cscopelist-am \
+	ctags ctags-am distclean distclean-compile distclean-generic \
+	distclean-tags distdir dvi dvi-am html html-am info info-am \
+	install install-am install-binPROGRAMS install-data \
+	install-data-am install-dvi install-dvi-am install-exec \
+	install-exec-am install-html install-html-am install-info \
+	install-info-am install-man install-pdf install-pdf-am \
+	install-ps install-ps-am install-strip installcheck \
+	installcheck-am installdirs installdirs-am maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
+	uninstall-am uninstall-binPROGRAMS
 
-	centroidalifold/engine/contrafold.h centroidalifold/engine/contrafold.cpp \
-	centroidalifold/engine/contrafoldm.h centroidalifold/engine/contrafoldm.cpp \
-	centroidalifold/engine/mccaskill.h centroidalifold/engine/mccaskill.cpp \
-	centroidalifold/engine/alifold.h centroidalifold/engine/alifold.cpp \
-	centroidalifold/engine/pfold.h centroidalifold/engine/pfold.cpp \
-	centroidalifold/engine/averaged.h centroidalifold/engine/averaged.cpp \
-	centroidalifold/engine/mixture.h centroidalifold/engine/mixture.cpp \
-	centroidalifold/engine/aux.h centroidalifold/engine/aux.cpp \
-	centroidalifold/folding_engine.h centroidalifold/folding_engine.cpp \
-	centroidalifold/folding_engine.cpp centroidalifold/folding_engine.h \
-	centroidalifold/bp.cpp centroidalifold/bp.h \
-	centroidalifold/aln.h centroidalifold/aln.cpp \
-	centroidalifold/cyktable.h \
-	centroidalifold/centroid.h centroidalifold/centroid.cpp \
-	centroidalifold/mea.h centroidalifold/mea.cpp \
-	centroidalifold/diana.h centroidalifold/diana.cpp \
-	centroidalifold/ps_plot.h centroidalifold/ps_plot.cpp \
-	centroidalifold/rule.h \
-	centroidalifold/contrafold/contrafold.h \
-	centroidalifold/contrafold/wrapper.cpp \
-	centroidalifold/contrafold/Defaults.ipp \
-	centroidalifold/engine/contrafoldhom.h centroidalifold/engine/contrafoldhom.cpp \
-	centroidalifold/engine/mccaskillhom.h centroidalifold/engine/mccaskillhom.cpp \
-	centroidalifold/util.h \
-	centroidalifold/contralign/contralign.h \
-	centroidalifold/contralign/SparseMatrix.hpp \
-	centroidalifold/contralign/Config.hpp \
-	centroidalifold/contralign/Utilities.hpp \
-	centroidalifold/probconsRNA/probcons.h
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

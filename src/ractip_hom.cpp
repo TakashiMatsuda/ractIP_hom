@@ -34,13 +34,6 @@
 #include <list>
 #include "fa.h"
 #include "ip.h"
-
-// (duplicate)
-//#include "contrafold/SStruct.hpp"
-//#include "contrafold/InferenceEngine.hpp"
-//#include "contrafold/DuplexEngine.hpp"
-//#include "contrafold/Defaults.ipp"
-
 #include "centroidalifold/aln.h"
 #include "centroidalifold/mea.h"
 #include "centroidalifold/folding_engine.h"
@@ -143,10 +136,10 @@ public:
   static void calculate_energy(const std::string s1, const std::string& s2,
                                const std::string r1, const std::string& r2,
                                float& e1, float& e2, float& e3);
+  template <typename T> typename std::vector<T> change_l_v(std::list<T> list_seq) const;
 
 private:
-  template <typename T> std::vector<T> change_l_v(std::list<T> list_seq) const;
-  void transBP_centroidfold_ractip(BPTable bp_centroidfold, VF& bp, VI& offset, const std::string& seq) const;
+    void transBP_centroidfold_ractip(BPTable bp_centroidfold, VF& bp, VI& offset, const std::string& seq) const;
   int ComputeRowOffset(int i, int N, int w /*=0*/) const;
   void homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>& cf) const;
   //void contrafold(const std::string& seq, VF& bp, VI& offset, VVF& up) const;
@@ -194,18 +187,18 @@ private:
   std::vector<std::string> engine;
   std::vector<std::string> engine_a;
 
-  // instantiation
-  std::vector<std::string> change_l_v(std::list<std::string> list_seq) const;
-  };
+
+};
+
 
 template 
 <typename T>
-std::vector<T>
+typename std::vector<T>
 RactIP::
 change_l_v(std::list<T> list_seq) const{
   std::vector<T> vt_seq;
   typename std::list<T>::iterator itr_list;
-  for(itr_list=list_seq.begin(); itr_list!=list_seq.end; itr_list++){
+  for(itr_list=list_seq.begin(); itr_list!=list_seq.end(); itr_list++){
     vt_seq.push_back(*itr_list);
   }
   return vt_seq;
@@ -1241,12 +1234,19 @@ run()
   }
   std::replace(fa1.seq().begin(), fa1.seq().end(), 't', 'u');
   std::replace(fa1.seq().begin(), fa1.seq().end(), 'T', 'U');
-  std::replace(aln1.seq().begin(), aln1.seq().end(), 't', 'u');
-  std::replace(aln1.seq().begin(), aln1.seq().end(), 'T', 'U');
+  typename std::list<std::string>::iterator it_aln1;
+  for (it_aln1 = aln1.seq().begin(); it_aln1 != aln1.seq().end(); it_aln1++){
+    std::replace((*it_aln1).begin(), (*it_aln1).end(), 't', 'u');
+    std::replace((*it_aln1).begin(), (*it_aln1).end(), 'T', 'U');
+  }
   std::replace(fa2.seq().begin(), fa2.seq().end(), 't', 'u');
   std::replace(fa2.seq().begin(), fa2.seq().end(), 'T', 'U');
-  std::replace(aln2.seq().begin(), aln2.seq().end(), 't', 'u');
-  std::replace(aln2.seq().begin(), aln2.seq().end(), 'T', 'U');
+
+  typename std::list<std::string>::iterator it_aln2;
+  for (it_aln2 = aln2.seq().begin(); it_aln2 != aln2.seq().end(); it_aln2++){
+    std::replace((*it_aln2).begin(), (*it_aln1).end(), 't', 'u');
+    std::replace((*it_aln2).begin(), (*it_aln2).end(), 'T', 'U');
+  }
 
 
   /**
@@ -1413,6 +1413,7 @@ run()
   **/
 
   // predict the interation
+  // template std::vector<std::string> change_l_v<std::string> (std::list<std::string>&);
   std::string r1, r2;
   const std::string fa1_seq=fa1.seq();
   const std::vector<std::string> aln1_seq = change_l_v(aln1.seq());
