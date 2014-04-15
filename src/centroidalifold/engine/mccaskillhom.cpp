@@ -80,7 +80,9 @@ calculate_posterior(const TH& th)
 
   typedef const CONTRALIGN::SparseMatrixEntry<float>* cIter;
   typedef CONTRALIGN::SparseMatrixEntry<float>* Iter;
-
+  
+  std::cout << "marker message" << std::endl;
+  
   //PROBCONS::Probcons pc;
   //CONTRALIGN::CONTRAlign<float> ca;
   //CONTRAfold<float> cf2;
@@ -105,7 +107,7 @@ calculate_posterior(const TH& th)
     //ap->PrintSparse (std::cout);
 
     CONTRALIGN::SparseMatrix<float>* bp2 = NULL;
-    pf_fold (bp2, hom[n], "", 0.01, param_);
+    pf_fold (bp2, hom[n], "", 0.01, param_);// Error at this point
 
     //bp2->PrintSparse (std::cout);
 

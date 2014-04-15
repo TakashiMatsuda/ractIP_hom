@@ -170,3 +170,113 @@ lib~.aを作って、AC_PROG_RANLIBのフラグをたてることによってで
 ---
 change_l_vが起こられている。
 Undefined symbols for ~
+
+---
+
+--1305-- ./ractip_hom:
+--1305-- dSYM directory is missing; consider using --dsymutil=yes
+==1305== Invalid read of size 8
+==1305==    at 0x10006223F: CONTRALIGN::SparseMatrix<float>::SparseMatrix(float const*, int, int, float) (in ./ractip_hom)
+==1305==    by 0x100062A17: McCaskillHomModel::calculate_posterior(TH const&) (in ./ractip_hom)
+==1305==    by 0x100000F9B: RactIP::homfold(TH const&, std::__1::vector<float, std::__1::allocator<float> >&, std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >&, FoldingEngine<TH>*) const (in ./ractip_hom)
+==1305==    by 0x1000030D4: RactIP::solve(TH&, TH&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, FoldingEngine<TH>*, FoldingEngine<TH>*) (in ./ractip_hom)
+==1305==    by 0x100006F46: RactIP::run() (in ./ractip_hom)
+==1305==    by 0x1000080A3: main (in ./ractip_hom)
+==1305==  Address 0x100383798 is 0 bytes after a block of size 5,624 alloc'd
+==1305==    at 0x70CB: malloc (in /usr/local/Cellar/valgrind/3.9.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==1305==    by 0x1A928D: operator new(unsigned long) (in /usr/lib/libc++.1.dylib)
+==1305==    by 0x10000C3E2: std::__1::vector<float, std::__1::allocator<float> >::__append(unsigned long) (in ./ractip_hom)
+==1305==    by 0x1000673D8: CONTRALIGN::CONTRAlign<float>::Impl::ComputePosterior(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::vector<float, std::__1::allocator<float> >&, float) (in ./ractip_hom)
+
+---
+コンパイラのバグを踏んでいるような気がしてならない
+とりあえず、該当箇所をチェックして、何が起こっているのかを調べる。
+--
+    CONTRALIGN::SparseMatrix<float>* bp2 = NULL;
+    pf_fold (bp2, hom[n], "", 0.01, param_);// Error at this point
+----
+バグが出た。ここを修正します。
+(lldb) run gca_bovine.fasta sample.clustal gca_bovine2.fasta sample-2.clustal
+Process 1494 launched: '../src/ractip_hom' (x86_64)
+marker message
+marker message
+Process 1494 stopped
+* thread #1: tid = 0x12462, 0x00000001000620a3 ractip_hom`SparseMatrix(this=0x00007fff5fbfef20, rhs=0x0000000100700980, (null)=25173168) + 339 at SparseMatrix.ipp:359, queue = 'com.apple.main-thread', stop reason = EXC_BAD_ACCESS (code=1, address=0xb5bf0ecc)
+    frame #0: 0x00000001000620a3 ractip_hom`SparseMatrix(this=0x00007fff5fbfef20, rhs=0x0000000100700980, (null)=25173168) + 339 at SparseMatrix.ipp:359
+   356 	    {
+   357 	        for (SparseMatrixEntry<T> *ptr = rhs.row_ptrs[i]; ptr != rhs.row_ptrs[i+1]; ++ptr)
+   358 	        {
+-> 359 		  ++(row_size[ptr->column]);// This line makes error.
+   360 	        }
+   361 	        
+   362 	    }
+
+--
+SparseMatrix.ippでエラー
+SparseMatrix.ippでエラーが起きるのはおかしい
+centroid_homfoldでは動いているのだから。。。
+・centorid_homfoldでどのように投げているか見る。
+・もっと深くbtしてみる
+    CONTRALIGN::SparseMatrix<float>* bp2 = NULL;<110>
+    pf_fold (bp2, hom[n], "", 0.01, param_);// Error at this point
+ここが原因
+pf_fold関数のなかでbp2に禁止した方法で渡している。
+---x
+const std::string fa1_seq=fa1.seq();
+  const std::vector<std::string> aln1_seq = change_l_v(aln1.seq());
+  const std::string fa2_seq=fa2.seq();
+  const std::vector<std::string> aln2_seq = change_l_v(aln2.seq());
+  TH th1_ = TH(fa1_seq, aln1_seq);
+  TH th2_ = TH(fa2_seq, aln2_seq);
+  float ea = solve(th1_, th2_, r1, r2, cf1, cf2);// here comes the error
+
+change_l_vが失敗しているのではないか
+---
+	  ++(row_size[ptr->column]);// This line makes error.
+ptrは
+SparseMatrixEntry<T> *ptr = rhs.row_ptrs[i];
+ptr->columnとは
+namespace CONTRALIGN {
+template<class T>
+struct SparseMatrixEntry
+{
+    int column;
+    T value;
+ptr->columnがrows+1を超えてしまってメモリアクセス違反を起こしている。
+rhs.row_ptrsがおかしいのかな？
+rhsは僕が渡したやつだ。
+
+バグが出る場所が二箇所ある。
+rhsの渡し方に注意。
+
+    
+    for (int i = 0; i < rhs.rows; i++)
+    {
+        for (SparseMatrixEntry<T> *ptr = rhs.row_ptrs[i]; ptr != rhs.row_ptrs[i+1]; ++ptr)
+        {
+            row_ptrs[ptr->column]->column = i;
+            row_ptrs[ptr->column]->value = ptr->value;
+            ++(row_ptrs[ptr->column]);
+        }
+    }
+
+
+    std::fill(row_size, row_size+rows+1, 0);  
+    for (int i = 0; i < rhs.rows; i++)
+    {
+        for (SparseMatrixEntry<T> *ptr = rhs.row_ptrs[i]; ptr != rhs.row_ptrs[i+1]; ++ptr)
+        {
+	  ++(row_size[ptr->column]);// This line makes error.
+        }
+        
+    }
+
+template<class T>
+SparseMatrix<T>::SparseMatrix(const SparseMatrix &rhs, ConversionType) :
+    rows(rhs.cols), cols(rhs.rows), entries(rhs.entries), zero(rhs.zero)
+{
+
+コンストラクタに渡す引数rhsを間違えているのかな。引数をチェック。
+pf_foldから呼び出されている？backtraceしてチェック。
+
+

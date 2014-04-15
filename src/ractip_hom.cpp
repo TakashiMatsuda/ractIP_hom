@@ -131,7 +131,7 @@ public:
 
   RactIP& parse_options(int& argc, char**& argv);
   int run();
-  float solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>& cf1, FoldingEngine<TH>& cf2);
+  float solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, FoldingEngine<TH>* cf2);
 
   static void calculate_energy(const std::string s1, const std::string& s2,
                                const std::string r1, const std::string& r2,
@@ -141,7 +141,7 @@ public:
 private:
     void transBP_centroidfold_ractip(BPTable bp_centroidfold, VF& bp, VI& offset, const std::string& seq) const;
   int ComputeRowOffset(int i, int N, int w /*=0*/) const;
-  void homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>& cf) const;
+  void homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const;
   //void contrafold(const std::string& seq, VF& bp, VI& offset, VVF& up) const;
   void rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const;
   //void contraduplex(const std::string& seq1, const std::string& seq2, VVF& hp) const;
@@ -193,7 +193,7 @@ private:
 
 template 
 <typename T>
-typename std::vector<T>
+std::vector<T>
 RactIP::
 change_l_v(std::list<T> list_seq) const{
   std::vector<T> vt_seq;
@@ -272,14 +272,14 @@ RactIP::ComputeRowOffset(int i, int N, int w /*=0*/) const
 
 void
 RactIP::
-homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>& cf) const
+homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const
 {
   // 塩基対確率を計算して取り出す関数を作っておいて、呼び出す。
   // basepair probabilityの計算
   //cf->stochastic_fold(seq, num_samples, *out)
-  cf.calculate_posterior(seq);
+  cf->calculate_posterior(seq);// segmentaion fault
   BPTable bp_centroidfold;
-  bp_centroidfold=cf.get_bp();
+  bp_centroidfold=cf->get_bp();
   // bpの変換
   transBP_centroidfold_ractip(bp_centroidfold, bp, offset, seq.first);
 
@@ -600,7 +600,7 @@ load_from_rip(const char* filename,
 
 float
 RactIP::
-solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>& cf1, FoldingEngine<TH>& cf2)
+solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, FoldingEngine<TH>* cf2)
 {
   IP ip(IP::MAX, n_th_);// watching
   VF bp1, bp2;
@@ -1244,7 +1244,7 @@ run()
 
   typename std::list<std::string>::iterator it_aln2;
   for (it_aln2 = aln2.seq().begin(); it_aln2 != aln2.seq().end(); it_aln2++){
-    std::replace((*it_aln2).begin(), (*it_aln1).end(), 't', 'u');
+    std::replace((*it_aln2).begin(), (*it_aln2).end(), 't', 'u');
     std::replace((*it_aln2).begin(), (*it_aln2).end(), 'T', 'U');
   }
 
@@ -1297,8 +1297,10 @@ run()
   uint max_bp_dist = 0;
   char* param_tmp = NULL;
   
-  cf_list_1[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  cf_list_2[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  //cf_list_1[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  //cf_list_2[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  cf2 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
 
 
   // とりあえずMcCaskillモデルで動かしてみる。以下はcentroidhomfoldからのコピーコード。
@@ -1421,7 +1423,7 @@ run()
   const std::vector<std::string> aln2_seq = change_l_v(aln2.seq());
   TH th1_ = TH(fa1_seq, aln1_seq);
   TH th2_ = TH(fa2_seq, aln2_seq);
-  float ea = solve(th1_, th2_, r1, r2, *cf1, *cf2);
+  float ea = solve(th1_, th2_, r1, r2, cf1, cf2);// here comes the error
 
   // diplay the result
   const std::string fa1_name=fa1.name();

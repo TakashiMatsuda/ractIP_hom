@@ -356,7 +356,7 @@ SparseMatrix<T>::SparseMatrix(const SparseMatrix &rhs, ConversionType) :
     {
         for (SparseMatrixEntry<T> *ptr = rhs.row_ptrs[i]; ptr != rhs.row_ptrs[i+1]; ++ptr)
         {
-            ++(row_size[ptr->column]);
+	  ++(row_size[ptr->column]);// This line makes error.
         }
         
     }
