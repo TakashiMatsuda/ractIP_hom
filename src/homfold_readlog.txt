@@ -279,4 +279,58 @@ SparseMatrix<T>::SparseMatrix(const SparseMatrix &rhs, ConversionType) :
 コンストラクタに渡す引数rhsを間違えているのかな。引数をチェック。
 pf_foldから呼び出されている？backtraceしてチェック。
 
+@centroid_homfold.cpp
+      cf_list[i] = new McCaskillHomModel(engine_a[0], !vm.count("noncanonical"), max_bp_dist,
+					 param.empty() ? NULL : param.c_str(),
+                                         seed, vm.count("mea"));
 
+@ractip_hom.cpp
+  cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+このなかでrhsに関係ある項:viennarnaはコンパイル済みなのでわからない
+hom[n], param_
+この２つの変数の由来を調べて、centroid_homfoldとの違いを見る
+param_はメンバ変数
+hom[n]は  const std::vector<std::string>& hom = th.second;
+thの入れ方が間違っている
+inline展開するイメージの方がデバッグしやすい？
+ractip_hom.cppで最初に投げたthの中身を、表示してみよう。
+  TH th1_ = TH(fa1_seq, aln1_seq);
+  TH th2_ = TH(fa2_seq, aln2_seq);
+aln1_seq, aln2_seqの中身が、想定と違うものになっている。
+フォーマットの違いかを確認する：
+Fastaにしてみよう
+---
+ギャップの扱いとか、結構面倒くさいのか・・・
+仕様に書いてあるかも。
+
+sequence information with the probabilistic consistency transformation
+
+ractip_homにfastaの構文解析器を追加する
+ractip_alnではAln型を用いたが、
+centroid_homfoldではAln型ではない型を採用しているみたい
+  std::vector<std::string> homs;
+としてある.
+  if (hom_seqs != "") {
+    BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi2(hom_seqs.c_str());
+    if (!fi2) {
+      perror(hom_seqs.c_str());
+      return 1;
+    }
+    while (1) {
+      Fasta fa;
+      if (fa.load(fi2)) {
+	homs.push_back (fa.seq());
+      } else break;
+    }
+  }
+
+hom_seqs:
+    ("homologous,H", po::value<std::string>(&hom_seqs), "fasta file containing homologous sequences (REQUIRED)")
+
+std::string hom_seqs = "";
+
+  std::string aln1_;
+  std::string aln2_;
+
+BOOST_SPIRIT_CLASSIC_NSの仕様にfile_iteratorの使い方が書いてあるかも
+Alnを使わない記述(centroid_homfoldでのコードに変更。)

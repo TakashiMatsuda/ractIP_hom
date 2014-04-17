@@ -32,6 +32,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <boost/algorithm/string.hpp>
 #include "fa.h"
 #include "ip.h"
 #include "centroidalifold/aln.h"
@@ -47,6 +48,7 @@
 #include "centroidalifold/engine/aux.h"
 #include "centroidalifold/engine/contrafoldhom.h"
 #include "centroidalifold/engine/mccaskillhom.h"
+
 
 
 
@@ -277,7 +279,7 @@ homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const
   // 塩基対確率を計算して取り出す関数を作っておいて、呼び出す。
   // basepair probabilityの計算
   //cf->stochastic_fold(seq, num_samples, *out)
-  cf->calculate_posterior(seq);// segmentaion fault
+  cf->calculate_posterior(seq);// segmentaion faults
   BPTable bp_centroidfold;
   bp_centroidfold=cf->get_bp();
   // bpの変換
@@ -1211,26 +1213,48 @@ run()
     Vienna::read_parameter_file(param_file_.c_str());
   
   // Input Data
-  Aln aln1, aln2;
   Fasta fa1, fa2;
   if (!fa1_.empty() && !fa2_.empty() && !aln1_.empty() && !aln2_.empty())
   {
     //std::cout<<"both fa1 and fa2 are not empty"<<std::endl;
     std::list<Fasta> l_fa1, l_fa2;
-    std::list<Aln> l1, l2;
     if (Fasta::load(l_fa1, fa1_.c_str())==0)
       throw (fa1_+": Format error").c_str();
     if (Fasta::load(l_fa2, fa2_.c_str())==0)
       throw (fa2_+": Format error").c_str();
     fa1=l_fa1.front();
     fa2=l_fa2.front();
-    if (Aln::load(l1, aln1_.c_str())==0)
-      throw (aln1_+": Format error").c_str();
-    if (Aln::load(l2, aln2_.c_str())==0)
-      throw (aln2_+": Format error").c_str();
-    aln1=l1.front();
-    aln2=l2.front();
-    
+    std::cout << "sequence file loaded" << std::endl;
+
+    std::vector<std::string> homs1;
+    if (aln1_ != "") {
+      BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi1(aln1_.c_str());
+      if (!fi1) {
+	perror(aln1_.c_str());
+	return 1;
+      }
+      while (1) {
+	Fasta fa;
+	if (fa.load(fi1)) {
+	  homs.push_back (fa.seq());
+	} else break;
+      }
+    }
+
+    std::vector<std::string> homs2;
+    if (aln2_ != "") {
+      BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi2(aln2_.c_str());
+      if (!fi2) {
+	perror(aln2_.c_str());
+	return 1;
+      }
+      while (1) {
+	Fasta fa;
+	if (fa.load(fi2)) {
+	  homs2.push_back (fa.seq());
+	} else break;
+      }
+    }
   }
   std::replace(fa1.seq().begin(), fa1.seq().end(), 't', 'u');
   std::replace(fa1.seq().begin(), fa1.seq().end(), 'T', 'U');
