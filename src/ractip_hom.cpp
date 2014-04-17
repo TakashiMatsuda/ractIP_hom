@@ -1214,6 +1214,8 @@ run()
   
   // Input Data
   Fasta fa1, fa2;
+  std::vector<std::string> homs1;
+  std::vector<std::string> homs2;
   if (!fa1_.empty() && !fa2_.empty() && !aln1_.empty() && !aln2_.empty())
   {
     //std::cout<<"both fa1 and fa2 are not empty"<<std::endl;
@@ -1226,7 +1228,6 @@ run()
     fa2=l_fa2.front();
     std::cout << "sequence file loaded" << std::endl;
 
-    std::vector<std::string> homs1;
     if (aln1_ != "") {
       BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi1(aln1_.c_str());
       if (!fi1) {
@@ -1236,12 +1237,10 @@ run()
       while (1) {
 	Fasta fa;
 	if (fa.load(fi1)) {
-	  homs.push_back (fa.seq());
+	  homs1.push_back (fa.seq());
 	} else break;
       }
     }
-
-    std::vector<std::string> homs2;
     if (aln2_ != "") {
       BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi2(aln2_.c_str());
       if (!fi2) {
@@ -1255,21 +1254,21 @@ run()
 	} else break;
       }
     }
-  }
-  std::replace(fa1.seq().begin(), fa1.seq().end(), 't', 'u');
-  std::replace(fa1.seq().begin(), fa1.seq().end(), 'T', 'U');
-  typename std::list<std::string>::iterator it_aln1;
-  for (it_aln1 = aln1.seq().begin(); it_aln1 != aln1.seq().end(); it_aln1++){
-    std::replace((*it_aln1).begin(), (*it_aln1).end(), 't', 'u');
-    std::replace((*it_aln1).begin(), (*it_aln1).end(), 'T', 'U');
-  }
-  std::replace(fa2.seq().begin(), fa2.seq().end(), 't', 'u');
-  std::replace(fa2.seq().begin(), fa2.seq().end(), 'T', 'U');
-
-  typename std::list<std::string>::iterator it_aln2;
-  for (it_aln2 = aln2.seq().begin(); it_aln2 != aln2.seq().end(); it_aln2++){
-    std::replace((*it_aln2).begin(), (*it_aln2).end(), 't', 'u');
-    std::replace((*it_aln2).begin(), (*it_aln2).end(), 'T', 'U');
+    
+    std::replace(fa1.seq().begin(), fa1.seq().end(), 't', 'u');
+    std::replace(fa1.seq().begin(), fa1.seq().end(), 'T', 'U');
+    typename std::vector<std::string>::iterator it_homs1;
+    for (it_homs1 = homs1.begin(); it_homs1 != homs1.end(); it_homs1++){
+      std::replace((*it_homs1).begin(), (*it_homs1).end(), 't', 'u');
+      std::replace((*it_homs1).begin(), (*it_homs1).end(), 'T', 'U');
+    }
+    std::replace(fa2.seq().begin(), fa2.seq().end(), 't', 'u');
+    std::replace(fa2.seq().begin(), fa2.seq().end(), 'T', 'U');
+    typename std::vector<std::string>::iterator it_homs2;
+    for (it_homs2 = homs2.begin(); it_homs2 != homs2.end(); it_homs2++){
+      std::replace((*it_homs2).begin(), (*it_homs2).end(), 't', 'u');
+      std::replace((*it_homs2).begin(), (*it_homs2).end(), 'T', 'U');
+    }
   }
 
 
@@ -1442,11 +1441,9 @@ run()
   // template std::vector<std::string> change_l_v<std::string> (std::list<std::string>&);
   std::string r1, r2;
   const std::string fa1_seq=fa1.seq();
-  const std::vector<std::string> aln1_seq = change_l_v(aln1.seq());
   const std::string fa2_seq=fa2.seq();
-  const std::vector<std::string> aln2_seq = change_l_v(aln2.seq());
-  TH th1_ = TH(fa1_seq, aln1_seq);
-  TH th2_ = TH(fa2_seq, aln2_seq);
+  TH th1_ = TH(fa1_seq, homs1);
+  TH th2_ = TH(fa2_seq, homs2);
   float ea = solve(th1_, th2_, r1, r2, cf1, cf2);// here comes the error
 
   // diplay the result
