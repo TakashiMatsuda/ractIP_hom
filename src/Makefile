@@ -231,7 +231,7 @@ CPPFLAGS = -I/usr/local/Cellar/viennarna/2.1.5/include -DWITH_GLPK
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+CXXFLAGS = -O0 -g
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps

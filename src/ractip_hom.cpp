@@ -284,8 +284,7 @@ homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const
   bp_centroidfold=cf->get_bp();
   // bpの変換
   transBP_centroidfold_ractip(bp_centroidfold, bp, offset, seq.first);
-
-  const uint L=seq.size();
+  const uint L=seq.first.size();// ここでミス
   up.resize(L, VF(1, 1.0));
   for (uint i=0; i!=L; ++i)
   {
@@ -604,7 +603,7 @@ float
 RactIP::
 solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, FoldingEngine<TH>* cf2)
 {
-  IP ip(IP::MAX, n_th_);// watching
+  IP ip(IP::MAX, n_th_);
   VF bp1, bp2;
   VI offset1, offset2;
   VVF hp;
@@ -613,12 +612,9 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
 
 
   homfold(s1, bp1, offset1, up1, cf1);
-  homfold(s2, bp2, offset2, up2, cf2);//kokomade
+  homfold(s2, bp2, offset2, up2, cf2);
+  rnaduplex(s1.first, s2.first, hp);
   
-  // calculate posterior probability matrices
-  /**
-   *  2013 Takashi Matsuda added the following (alifold) section.
-   **/
   /**
   bool use_alifold=true;// temporary code
   if(use_alifold){
@@ -693,6 +689,8 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   
   
   // make objective variables with their weights
+  uint s1LEN=s1.size();
+  uint s2LEN=s2.size();
   VVI x(s1.size(), VI(s1.size(), -1));
   VVI xx(s1.size());
   for (uint j=1; j!=s1.size(); ++j)
@@ -730,7 +728,7 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
     for (uint j=0; j!=s2.size(); ++j)
     {
       const float& p=hp[i+1][j+1];
-      if (p>th_hy_ && (min_w_==1 && up1[i][0]>th_ac_ && up2[j][0]>th_ac_ || min_w_!=1))
+      if (p>th_hy_ && (min_w_==1 && up1[i][0]>th_ac_ && up2[j][0]>th_ac_ || min_w_!=1))// error
       {
         z[i][j] = ip.make_variable(alpha_*p+beta_*(up1[i][0]+up2[j][0]));
         zz[i].push_back(j);
@@ -1227,6 +1225,8 @@ run()
     fa1=l_fa1.front();
     fa2=l_fa2.front();
     std::cout << "sequence file loaded" << std::endl;
+    std::cout << fa1.seq() << std::endl;
+    std::cout << fa2.seq() << std::endl;
 
     if (aln1_ != "") {
       BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi1(aln1_.c_str());

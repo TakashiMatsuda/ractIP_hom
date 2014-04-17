@@ -334,3 +334,25 @@ std::string hom_seqs = "";
 
 BOOST_SPIRIT_CLASSIC_NSの仕様にfile_iteratorの使い方が書いてあるかも
 Alnを使わない記述(centroid_homfoldでのコードに変更。)
+THの第一変数がおかしいか？
+  uint size () const { return this->first.size(); }// this line is not correct.
+このエラー
+おこりうる可能性を列挙してみよう
+firstに入っているものの型がおかしくなっている
+sizeが定義されていないものだったりするのかもしれない
+firstとsecondに何が履いているか見てみよう
+そのためにはlldbのコマンドを見てみる
+
+  for (uint i=0; i!=s1.size(); ++i)// error
+s1が何なのかによって変わってくるかもしれない
+>solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, FoldingEngine<TH>* cf2)
+>  float ea = solve(th1_, th2_, r1, r2, cf1, cf2);// here comes the error
+>  TH th1_ = TH(fa1_seq, homs1);
+であった。fa1_seqがおかしい。
+--------
+その直後のup1, up2がおかしいのかも
+  homfold(s1, bp1, offset1, up1, cf1);
+  homfold(s2, bp2, offset2, up2, cf2);
+
+homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const
+

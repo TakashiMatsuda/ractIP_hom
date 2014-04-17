@@ -81,8 +81,6 @@ calculate_posterior(const TH& th)
   typedef const CONTRALIGN::SparseMatrixEntry<float>* cIter;
   typedef CONTRALIGN::SparseMatrixEntry<float>* Iter;
   
-  std::cout << "marker message" << std::endl;
-  
   //PROBCONS::Probcons pc;
   //CONTRALIGN::CONTRAlign<float> ca;
   //CONTRAfold<float> cf2;
