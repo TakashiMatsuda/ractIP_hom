@@ -1863,3 +1863,57 @@ siRNAアラインメントに含まれる種の標的遺伝子をよういする
 69種のゲノムをEMBLデータベースにしたがってとってくる
 それぞれのゲノムについてプロテインコーディング遺伝子をすべてとりだす
 orthoMCLを使ってオーソログ遺伝子をS.auresとその他に分離した。
+
+
+
+
+
+
+---
+データは揃ったが、スクリプトの引数の投げ方がわからなくなってしまった。
+gengetopt, input.ggo, ractip.cppあたりを読む。
+
+  if (args_info.inputs_num==0 ||
+      (min_w_!=0 && max_w_!=0 && (min_w_>max_w_ || use_contrafold_)))
+  {
+    cmdline_parser_print_help();
+    cmdline_parser_free(&args_info);
+    exit(1);
+  }
+
+  if (args_info.inputs_num>=1){
+    fa1_ = args_info.inputs[0];
+
+  }
+  if (args_info.inputs_num>=2){
+    aln1_ = args_info.inputs[1];
+
+  }
+  if (args_info.inputs_num>=3){
+    fa2_ = args_info.inputs[2];
+
+  }
+  if (args_info.inputs_num>=4){
+    aln2_ = args_info.inputs[3];
+
+これからわかること：
+  ひとつめが一本、2つ目がアラインメント、みっつめが一本、　よっつめがアラインメントである。
+  これで解決した。
+-
+I found the lost in the script for mutation simulation.
+Uracyl(on RNA) is not condidered.
+This problem have been corrected.
+-
+The output file doesn't fit to the input format of RactIP_Hom.
+This problem have been corrected.
+-
+テストのためのシェルスクリプトを書く。
+ディレクトリ内のファイルを読み取り、それぞれについて順番にsimulationをしてサンプルを作成して、
+それぞれについてractip_homを実行する。
+-
+パーサーが書きにくかったのでrubyに変更。この辺をhaskellですらすらと書けるようになると素晴らしい。
+書いた。しかしsim2が出力するファイル名が良くない。
+この問題は修正した。
+-
+乱数の偏りを感じる。特に末尾の方に変異が入りやすくなっているようなきがする。
+乱数発生も無駄が多いかもしれない。実行速度が遅い。

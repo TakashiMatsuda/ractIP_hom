@@ -1224,9 +1224,6 @@ run()
       throw (fa2_+": Format error").c_str();
     fa1=l_fa1.front();
     fa2=l_fa2.front();
-    std::cout << "sequence file loaded" << std::endl;
-    std::cout << fa1.seq() << std::endl;
-    std::cout << fa2.seq() << std::endl;
 
     if (aln1_ != "") {
       BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi1(aln1_.c_str());
