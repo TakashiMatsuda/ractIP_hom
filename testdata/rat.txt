@@ -1,0 +1,6 @@
+>gca_rat
+AGCCUUAAGGUGAUU-AUCAUGUCGAAUUGAGGGCUU
+.(((.....[[(([[.....[[))........)))..
+>gca_rat
+GGGGUUGGGCAAACUCGAAAAUCUACCAACUA
+...((((..]]........]]...]]))))..

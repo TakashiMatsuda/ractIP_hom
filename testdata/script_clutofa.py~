@@ -1,0 +1,13 @@
+from Bio import SeqIO
+
+short_sequences = []
+
+for record in SeqIO.parse(open("sample-2.clustal", "rU"), "clustal") :
+    if len(record.seq) < 300 :
+        short_sequences.append(record)
+
+print "Found %i sequences" % len(short_sequences)
+
+output_handle = open("toysample2.fasta", "w")
+SeqIO.write(short_sequences, output_handle, "fasta")
+output_handle.close()

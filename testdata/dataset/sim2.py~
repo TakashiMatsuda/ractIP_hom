@@ -1,0 +1,94 @@
+#! /usr/bin/python
+#! -*- coding:utf-8 -*-
+
+import re 
+import random
+
+N = 20
+P = 0.4
+T = 10000
+
+
+## seq_list[0],set_list[1]に配列が格納された
+## それぞれに対して変異データを確率的に起こす。サンプリングを行う。
+def variationmaker(n, p, t, seq):
+	## nは要求するアラインメントに含まれる配列の本数
+	## pは単塩基変異が単位時間あたりに起こる確率
+	## tは経過する時間
+	alignment = []
+	##乱数を発生
+	NN = 1000000
+	random.seed()
+	for i in range(n):
+		print str(i)
+		str_changed=""
+		for j in range(t):
+			for count, s in enumerate(seq[:]):
+				r = random.random()
+				## 以下の書き方を変更して、意味のあるものにする。
+				if (p/3) > r:
+					if s=='A':
+						str_changed = seq[:count] + 'C' + seq[count+1 :]
+					else:
+						str_changed = seq[:count] + 'A' + seq[count+1 :]
+				elif (p/3) <= r and r < (p*2/3):
+					if s == 'C':
+						str_changed = seq[:count] + 'G' + seq[count+1 :]
+					elif s == 'A':
+						str_changed = seq[:count] + 'G' + seq[count+1 :]
+					else:
+                                                str_changed = seq[:count] + 'C' + seq[count+1 :]
+				elif (p*2/3) <= r and r < p :
+					if s == 'A':
+						seq[count] = 'T'
+                                                str_changed = seq[:count] + 'T' + seq[count+1 :]
+					elif s == 'C':
+						seq[count] = 'T'
+                                                str_changed = seq[:count] + 'T' + seq[count+1 :]
+					elif s == 'G':
+						seq[count] = 'T'
+                                                str_changed = seq[:count] + 'T' + seq[count+1 :]
+					elif s == 'T':
+						seq[count] = 'G'
+                                                str_changed = seq[:count] + 'G' + seq[count+1 :]
+		alignment.append(seq)
+	return alignment
+
+
+
+
+
+seq_name = 'RNA-RNAdata/CopA-CopTanswer.fa'
+seq_file=open(seq_name,'r')
+nametag_pattern = '^>'
+seq_pattern = '^A|^T|^G|^C|^N'
+nametag = []
+seq_list = []
+for line in seq_file:
+	## matching
+	match_tag = re.search(nametag_pattern, line)
+	if match_tag:
+		nametag.append(line)
+	else:
+		match_seq = re.search(seq_pattern, line)
+		if match_seq:
+			seq_list.append(line)
+
+seq_file.close()
+alignments=[]
+
+alignments.append(variationmaker(N, P, T, seq_list[0]))
+alignments.append(variationmaker(N, P, T, seq_list[1]))
+
+## write operation
+output_file = open(seq_name+"_simulation.fa", 'w')
+L = len(alignments)
+i=0
+for align in alignments:
+	output_file.write(seq_list[i])
+	for s in align :
+		output_file.write(s)
+	i += 1
+
+output_file.close()
+

@@ -1,0 +1,58 @@
+CLUSTAL X (1.81) multiple sequence alignment
+
+
+Arsenophonus_nasonia.1              GCAAGACGCG.AAAA.UUGUUAU........CAUCC.UAUUCU...CUA.
+Dickeya_dadantii_393.1              GAAAGACGCGCA...UUUAUUAUCA.....UCAUCCCUAUUAU....CAG
+Dickeya_zeae_Ech1591.1              GAAAGACGCGCA...UUUAUUAUCA.....UCAUCCCUAUUAU...C.AG
+Enterobacter_cloacae.1              GAAAGACGCGCA...UUUGUUAUCA.....UCAUCCCUGACUU....CAG
+Erwinia_pyrifoliae_D.1              GAAAGACGCGUA...UUUGUUAUCAUCAUCUCAUCCCUGACAA....CAG
+Escherichia_coli_str.1              GAAAGACGCGCA...UUUGUUAUCA.....UCAUCCCUGAAUU....CAG
+Klebsiella_pneumonia.1              GAAAGACGCGCA...UUUAUUAUCAU..CAUCAUCCCUGA.AU....CAG
+Pantoea.1                           GAAAGACGCGCA...UUUGUUAUCA.....UCAUCCCUGACAA....CAG
+P.mirabilis.1                       G.AAUACGCGCAAAA..UGUUAU........CAUCCCUAUUUCU..CUA.
+Providencia_rustigia.1              GAAAGACGCGCAAA..UUGUUAU........CAUCCCUAAUUCU.CUAAG
+Salmonella_enterica_.1              GAAAGACGCGCA...UUUGUUAUCA.....UCAUCCCUGUUUU....CAG
+Serratia.1                          GAAAGACGCGCA...UUUAUUAUCA.....UCAUCCCUAAUUAUCAUUAU
+S.glossinidius.1                    GAAAGAUGCGCA...UUUGUUAUCA.....UCAUCCCUGUUAA....CAG
+Xenorhabdus_nematoph.1              G.AAGAUGCGCAAAA.UUGUUAU.......U.AUCCCUAUUCU...CUA.
+Xenorhabdus_bovienii.1              G.AAGACGCGCAAAA.UUGUUAU........CAUCCCUAUUUU...CUA.
+Yersinia_enterocolit.1              GAAAGACGCGCA...UUUGUUAUCA.....UCAUCCCUGUUAU....CAG
+C.Regiella.1                        GCAAGACGCGCA...UUUGUUAU........CAUCCUUAGGUU...AUAC
+
+Arsenophonus_nasonia.1              .AGA..GAUUUU.A...UUUU.GGCCACU..UUAA.......AGUGGCCA
+Dickeya_dadantii_393.1              .AGA.UG.UUU......CUUU.GGCCACC.CGAUGACAAUCGAGUGGCC.
+Dickeya_zeae_Ech1591.1              .AGA.UG.UUU......CUUUC.GCCACCCGGUAACAA.UCGGGUGGC.A
+Enterobacter_cloacae.1              .AGA.UG......AAAUGUUU.GGCCACA..GU.GA......UGUGGCC.
+Erwinia_pyrifoliae_D.1              .AGA.UG.UU...AA...UUUAGGCCACA..GU.GA......CGUGGCC.
+Escherichia_coli_str.1              .AGA.UG......AAA.UUUU.GGCCACU..CA.CG......AGUGGCC.
+Klebsiella_pneumonia.1              .AGA.UG......AAA.GUUU.GGCCACA..GU.GA......UGUGGCC.
+Pantoea.1                           .AGA.UG.UU...AA....UUCGGCCACA..GU.GA......UGUGGCC.
+P.mirabilis.1                       UAGA...AUUU..A.....UUCAGCCACA..CAAAUUUU.AGUGUGGCU.
+Providencia_rustigia.1              .AGA.U..UUUUUA....UUU.GGCCAC...UUAAU.......GUGGCCA
+Salmonella_enterica_.1              .CGA.UG......AAA.UUUU.GGCCACU..CCGUG......AGUGGCC.
+Serratia.1                          CAGA.U.AUUU.....CUUUU.GGCCACAUUACUCA......UGUGGCC.
+S.glossinidius.1                    ..GAAUG.UU...AA...UUUA.GCCACA..GUUUC......UGUGGCC.
+Xenorhabdus_nematoph.1              .AGA.UACUUU..A.....UUCGGCCACC...UCC.......GGUGGCCA
+Xenorhabdus_bovienii.1              .AGA..GAUUUU.A....UUUCGGCCACC..ACU........GGUGGCCA
+Yersinia_enterocolit.1              .AGA.UG.UU...AA...UUU.GGCCACA..GC.AA......UGUGGCC.
+C.Regiella.1                        .AGA.UG.UUUU......UUU.GGCCACA..UA.AU......AGUGGCC.
+
+Arsenophonus_nasonia.1              .UUUU
+Dickeya_dadantii_393.1              .UUUU
+Dickeya_zeae_Ech1591.1              .UUUU
+Enterobacter_cloacae.1              .UUUU
+Erwinia_pyrifoliae_D.1              .UUUU
+Escherichia_coli_str.1              .UUUU
+Klebsiella_pneumonia.1              .UUUU
+Pantoea.1                           .UUUU
+P.mirabilis.1                       .UUUU
+Providencia_rustigia.1              CUUCU
+Salmonella_enterica_.1              .UUUU
+Serratia.1                          .UUUU
+S.glossinidius.1                    .UUUU
+Xenorhabdus_nematoph.1              .UUUU
+Xenorhabdus_bovienii.1              .UUUU
+Yersinia_enterocolit.1              .UUUU
+C.Regiella.1                        .UUUU
+
+
