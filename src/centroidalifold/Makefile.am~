@@ -1,0 +1,31 @@
+noinst_LIBRARIES = libcentroidfold.a
+libcentroidfold_a_SOURCES = \
+	engine/contrafold.h engine/contrafold.cpp \
+	engine/contrafoldm.h engine/contrafoldm.cpp \
+	engine/mccaskill.h engine/mccaskill.cpp \
+	engine/alifold.h engine/alifold.cpp \
+	engine/pfold.h engine/pfold.cpp \
+	engine/averaged.h engine/averaged.cpp \
+	engine/mixture.h engine/mixture.cpp \
+	engine/aux.h engine/aux.cpp \
+	folding_engine.h folding_engine.cpp \
+	folding_engine.cpp folding_engine.h \
+	bp.cpp bp.h \
+	aln.h aln.cpp \
+	cyktable.h \
+	centroid.h centroid.cpp \
+	mea.h mea.cpp \
+	diana.h diana.cpp \
+	ps_plot.h ps_plot.cpp \
+	rule.h \
+	contrafold/contrafold.h \
+	contrafold/wrapper.cpp \
+	contrafold/Defaults.ipp \
+	engine/contrafoldhom.h engine/contrafoldhom.cpp \
+	engine/mccaskillhom.h engine/mccaskillhom.cpp \
+	util.h \
+	contralign/contralign.h \
+	contralign/SparseMatrix.hpp \
+	contralign/Config.hpp \
+	contralign/Utilities.hpp \
+	probconsRNA/probcons.h

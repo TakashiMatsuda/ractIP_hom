@@ -1,0 +1,50 @@
+「サンプルデータをどうやって手に入れて来るか」
+たとえば
+・RactIPの論文中で使われているデータで、
+そのアラインメントを持ってくる
+
+「あるRNA配列aに対して、そのアラインメントAをとってくる方法」
+・NCBI BLASTを用いる
+・centroidhomfoldのサンプル収集方法と、ractIPのサンプル収集方法を合わせてみよう
+<centroidhomfoldのサンプル用意>
+dataset1
+kiryu(2010)bのdatasetを総当り的に用いる。
+referenceは共通構造をmappingしたものとする。Kiryu(2010)のデータはその論文の手法を用いて共通２次構造に基づいてseedアラインメントを行った結果である。
+"Kiryu et al. (2007b) contained only the manually curated seed alignments with the consensus structures published in literature"
+
+dataset2,3
+RNA STRAND databaseから採取
+このdatabaseは人の手で集められたRNA２次構造を保持している。
+よってその保持された配列・２次構造の対を正答とした。その総数は3704である。
+ただしこのdatasetに含まれるdataは次の条件をすべて満たすものである。
+1.単一分子である
+2.不決定延期が含まれない
+3.category'Other *', 'Synthetic RNA', 'Unknown'に属さない
+4.塩基長がdataset2では50~500. dataset3では500~1500である
+それぞれについてalignmentを適当に20程度収集して支援データとした。
+
+=============================
+RNA STRAND databaseでjoint secondary structureがないか探してみよう
+ぱっと見ない。というかjoint secondary structureを主に対象としたdatabaseがあるんじゃない？あったらそっちを使ったほうがよさそう。
+RactIPの資料を確認してみよう。
+<RactIPのサンプル用意>
+dataset1
+Kato(2009)のものを用いる。総数は5である。
+dataset2
+Busch(2008)のものを用いる。sRNA-target pairである。総数は18である。
+=============================
+あまりそういうdatabaseはないということだろうか.
+(petcofoldも参考になるかもしれない)
+RactIPのdatasetでやってみよう。
+とりあえずdataset1を用いる。->けっこう面倒くさそう
+dataset2, Busch(2008)で用いられているSharma(2007)のデータを用いると楽かも。
+=============================
+全部これ手で打ち込むのだろうか・・・・
+どうにかならないか、森さんとか、浜田さんとかに聞いてみよう。	
+============================
+datasetをいただいた。
+これのアラインメントを取ってくるには・・・・
+----
+とりあえず、同一種という制限を考えずにアラインメントをたくさんとってくることにする。
+----
+もらったデータをもとに、シミュレーションデータを作ってもよい。
