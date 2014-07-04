@@ -72,7 +72,7 @@ seq_name.append(p.split(tmp_list[1])[0])
 
 seq_file=open(file_name,'r')
 nametag_pattern = '^>'
-seq_pattern = '^A|^T|^G|^C|^N'
+seq_pattern = '^A|^U|^G|^C|^N'
 nametag = []
 seq_list = []
 for line in seq_file:

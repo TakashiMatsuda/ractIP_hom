@@ -1917,3 +1917,36 @@ This problem have been corrected.
 -
 乱数の偏りを感じる。特に末尾の方に変異が入りやすくなっているようなきがする。
 乱数発生も無駄が多いかもしれない。実行速度が遅い。
+-
+RactIPの結果が出力されていない。
+標準出力の結果を受けるコードでミスをしているんじゃないかと思う
+この問題は修正した。
+-
+RactIP, sRNAのdatasetでエラーが生じた。
+Traceback (most recent call last):
+  File "/Users/takashi/cbrc/ractip_hom/testdata/dataset/sim2.py", line 92, in <module>
+    alignments.append(variationmaker(N, P, T, seq_list[1], "RNA"))
+IndexError: list index out of range
+これはtest用のScriptの問題。
+この問題は修正した。
+-
+評価の方法について
+スコアをどうつけるか。
+あたったところかな？
+rnaduplexの良くない実装の結果が如実に反映されるようなら、切り替えよう。
+この問題について、正解数を算出するスクリプトを書いた。
+-
+当てたところに対する統計を取る。具体的には、
+positive negativeについて
+true, falseを順番に計算していく。
+実行し、結果を得た。
+-
+結果が悪い。
+よく考えたら、シミュレーションデータに対して成績が悪いのは当然
+2次構造を保存するようなmutationが起こるという仮定をシミュレーションで外してしまっているのだから。
+生物のデータがないか探してみよう。
+探す方法
+データベース
+複数種がそろっているもの
+
+あとはrnaduplexの使い方を変えると良くなるかもしれない。

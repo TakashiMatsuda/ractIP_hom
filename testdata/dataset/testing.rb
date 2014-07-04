@@ -5,7 +5,7 @@ files = Dir::entries(Dir::pwd)
 for filepath in files
 	if /fa$/ =~ filepath
 		puts filepath
-		#{}`/Users/takashi/cbrc/ractip_hom/testdata/dataset/sim2.py #{filepath}`
+		`/Users/takashi/cbrc/ractip_hom/testdata/dataset/sim2.py #{filepath}`
 		namelist = []
 		tmp_split = []
 		tmp_split = filepath.split(/-/)
