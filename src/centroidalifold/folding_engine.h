@@ -47,7 +47,7 @@ class TH : public std::pair<std::string, std::vector<std::string> >
       this->first = seq;
       this->second = hom;
     }
-  uint size () const { return this->first.size(); }// this line is not correct.
+  uint size () const { return this->first.size(); }
 };
 
 

@@ -1948,5 +1948,120 @@ true, falseを順番に計算していく。
 探す方法
 データベース
 複数種がそろっているもの
-
+-
 あとはrnaduplexの使い方を変えると良くなるかもしれない。
+データベースは難しい、浜田先生に聞いた方が楽そうだが
+コードの修正はやれるのでいまやるべきでしょう。
+-
+rnaduplexの結果の値の処理で間違いを発見した。
+かなり大きな値が出るようになっていた。
+この問題を修正した。テストしてみよう。
+結果がでなかった。
+
+-
+testを本格的に行うにあたって
+各種パラメータの意味と、その設定方法（コマンド）を確かめていかなければいけない。
+順番にソースコードと論文を見ながらテストをつぶしていこう。
+注目しているパラメタ以外の変数をどうやって固定すればいいのかは、先行論文を参考にしよう。
+-
+Alpha on homfold の値を変化させて実験する
+alphaの決めかた:
+
+-
+パラメータの一覧、クラスのメンバより
+{
+public:
+  RactIP()
+    : alpha_(0.5),
+      beta_(0.0),
+      th_hy_(0.2),// ここをいじると、逆にあとのconstraintで弾かれる。
+      th_ss_(0.5),
+      th_ac_(0.0),
+      max_w_(0),
+      min_w_(0),
+      enable_zscore_(0),
+      num_shuffling_(0),
+      seed_(0),
+      in_pk_(true),
+      use_contrafold_(true),
+      use_pf_duplex_(true),
+      stacking_constraints_(true),
+      show_energy_(false),
+      allow_concat_(true),
+      run_with_modena_(false),
+      n_th_(1),
+      rip_file_(),
+      param_file_(),
+      fa1_(),
+      fa2_(),
+      mix_w(),
+      engine(),
+      engine_a()
+-
+ -h, --help                   Print help and exit
+  -V, --version                Print version and 0_uda: ううう [twcc0]exit
+  -a, --alpha=FLOAT             weight for hybridization  (default=`0.5')
+  -b, --beta=FLOAT             weight for unpaired bases  (default=`0.0')
+  -t, --fold-th=FLOAT          Threshold for base-pairing probabilities
+                                 (default=`0.5')
+  -u, --hybridize-th=FLOAT     Threshold for hybridazation probabilities
+                                 (default=`0.2')
+  -s, --acc-th=FLOAT           Threshold for accessible probabilities
+                                 (default=`0.0')
+      --max-w=INT              Maximum length of accessible regions
+                                 (default=`0')
+      --min-w=INT              Minimum length of accessible regions
+                                 (default=`0')
+      --zscore=INT             Calculate z-score via dishuffling (0=no
+                                 shuffling, 1=1st seq only, 2=2nd seq only, or
+                                 12=both)  (default=`0')
+      --num-shuffling=INT      The number of shuffling  (default=`1000')
+      --seed=INT               Seed for random number generator  (default=`0')
+  -m, --mccaskill              Use McCaskill model for folding  (default=off)
+  -i, --allow-isolated         Allow isolated base-pairs  (default=off)
+  -e, --show-energy            calculate the free energy of the predicted joint
+                                 structure  (default=off)
+  -P, --param-file=FILENAME    Read the energy parameter file for Vienna RNA
+                                 package
+  -p, --no-pk                  do not use the constraints for interenal
+                                 pseudoknots  (default=off)
+  -r, --rip=FILENAME           Import posterior probabilities from the result
+                                 of RIP
+  -w, --mix-weight=FLOAT       mixture weights of inference engines
+                                 (default=`1.0')!`
+  -X, --engine-seq=ENGINENAME  specify the inference engine for independent
+                                 sequence  (default=`McCaskilll')
+  -A, --engine-aln=ENGINENAME  specify the inference engine for independent
+                                 Alignment  (default=`CONTRAlign')
+
+　↑パラメータの決め方。
+-
+シェルスクリプトを書いて、forでパラメータを変化させながら、走らせるのがよさそう。
+その結果を順番に別のわかりやすい名前で保管する。
+-
+rnaduplexの計算をアラインメントでやっていないことがわかった。
+-
+betaを変化させて実験。
+--
+ハイブリダイゼーションが過大評価されている傾向にある。
+そこの調整パラメータの変更と、
+そもそもの結合確率の実態を見て必要ならそおれぞれの」コードを修正したら
+きれいな結果が出るかも出るかもしれない。
+-
+まったく内部塩基対が出ないということから、
+homfold()から返されているbp matrixがおかしいのかもしれない。
+確認してみよう。
+大小関係が問題なのかな。
+だったらhpをおもいっきり小さくすれば変わるはず。実験してみるといいかも
+-
+  rnaduplex(s1.first, s2.first, hp);
+そもそも、実装していなかった。
+修正する。rnaduplex_alnを用いるようにする。
+
+とりあえずhomsの間でのrnaduplexの平均と、与えられたseqでのrnaduplexを、あるパラメータdcをもちいて
+足し合わせることにする。
+実装した。
+-
+
+
+

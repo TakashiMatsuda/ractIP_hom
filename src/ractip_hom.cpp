@@ -103,7 +103,8 @@ public:
       th_hy_(0.2),// ここをいじると、逆にあとのconstraintで弾かれる。
       th_ss_(0.5),
       th_ac_(0.0),
-      max_w_(0),
+      WH(0.5),
+      max_w_(100),
       min_w_(0),
       enable_zscore_(0),
       num_shuffling_(0),
@@ -146,6 +147,7 @@ private:
   void homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const;
   //void contrafold(const std::string& seq, VF& bp, VI& offset, VVF& up) const;
   void rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const;
+  void rnaduplex_hom(TH& a1, TH& a2, VVF& hp, double wh) const;
   //void contraduplex(const std::string& seq1, const std::string& seq2, VVF& hp) const;
   void rnafold(const std::string& seq, VF& bp, VI& offset) const;
   void rnafold(const std::string& seq, VF& bp, VI& offset, VVF& up, uint max_w) const;
@@ -161,6 +163,7 @@ private:
   float th_hy_;                // threshold for the hybridization probability
   float th_ss_;                // threshold for the base-pairing probability
   float th_ac_;                // threshold for the accessible probability
+  double WH; 
   int max_w_;                  // maximum length of accessible regions
   int min_w_;                  // mimimum length of accessible regions
   int enable_zscore_;          // flag for calculating z-score
@@ -284,7 +287,8 @@ homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const
   bp_centroidfold=cf->get_bp();
   // bpの変換
   transBP_centroidfold_ractip(bp_centroidfold, bp, offset, seq.first);
-  const uint L=seq.first.size();// ここでミス
+
+  const uint L=seq.first.size();
   up.resize(L, VF(1, 1.0));
   for (uint i=0; i!=L; ++i)
   {
@@ -433,10 +437,118 @@ rnafold(const std::string& seq, VF& bp, VI& offset, VVF& up, uint max_w) const
   Vienna::free_pf_arrays();
 }
 
+
+void
+RactIP::
+rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
+{
+  // アラインメントに含まれるタグが同じことを前提とする。
+  // 進化で構造が保存されるという考え方を利用するには、この条項が必要。
+  // forループを書き換える。
+  std::string owner1 = s1.first;
+  std::string owner2 = s2.first;
+  VVF hp_owner;
+  rnaduplex(owner1, owner2, hp_owner);
+
+  std::vector<std::string> a1 = s1.second;
+  std::vector<std::string> a2 = s2.second;
+  // hpに平均値を入れていく。
+  // hybridization probability
+  uint size1=a1.size();
+  uint size2=a2.size();
+  std::vector<std::string>::iterator it1=a1.begin();
+  std::vector<std::string>::iterator it2=a2.begin();
+  VVVVF vhp(size1);
+  int i=0;
+  ///////////
+  // gapの時の確率が未定義, 少なくとも想定をしていない
+  //////////
+
+  // アラインメントのネームタグが一致するとき
+  if (size1 == size2)
+  {
+    it1 = a1.begin();
+    it2 = a2.begin();
+    VVVF vtr_hp(size1);
+    for (int i = 0; i < size1; i++)
+    {
+      rnaduplex(*it1, *it2, vtr_hp[i]);
+      it1++;
+      it2++;
+    }
+    VVVF::iterator itr_vtr_hp;
+    int L = vtr_hp[0].size();
+    int M = vtr_hp[0][0].size();
+    hp.resize(L);
+    for (int i=0; i<L; i++)
+    {
+      hp[i].resize(M);
+      for (int j = 0; j < M; j++)
+      {
+        double sum = 0;
+        for (itr_vtr_hp = vtr_hp.begin(); itr_vtr_hp != vtr_hp.end(); itr_vtr_hp++)
+        {
+          sum += (*itr_vtr_hp)[i][j];
+        }
+        hp[i][j] = ((1 - wh) * sum / (double)size1) + wh * hp_owner[i][j];
+      }
+    }
+  }
+  else
+  {
+    for (it1=a1.begin(); it1 != a1.end(); it1++)
+    {
+      int j=0;
+      vhp[i].resize(size2);
+      for (it2=a2.begin(); it2!=a2.end(); it2++)
+      {
+       rnaduplex(*it1, *it2, vhp[i][j]);
+       // correct probability for gap !
+       int k=0;
+       int l=0;
+       if (false)
+       {
+        if (false)
+          vhp[i][j][k][l]=0;
+       }
+       j++;
+      }      
+      i++;
+    }
+    // 各塩基配列対について平均をとる
+    // 各要素doubleにしたほうがいいかも
+    VVVVF::iterator it_vvhp;
+    VVVF::iterator it_vhp;
+    int L=vhp[0][0].size();
+    int M=vhp[0][0][0].size();
+    hp.resize(L);
+    for(int i=0; i<L; i++)
+    {
+      hp[i].resize(M);
+      for (int j=0; j<M; j++)
+      {
+       double sum=0;
+       uint ucount=0;
+       for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
+       {
+         for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
+           sum+=(*it_vhp)[i][j];
+          //hp[i][j]=sum / (double)(size1+size2);// ここじゃなくない?
+       }
+       hp[i][j]=((1 - wh) * sum / (double)(size1*size2)) + wh * hp_owner[i][j];// 上から移動
+     }
+   }
+ }
+}
+
 void
 RactIP::
 rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
 {
+  // アラインメントに含まれるタグが同じことを前提とする。
+  // 進化で構造が保存されるという考え方を利用するには、この条項が必要。
+  // forループを書き換える。
+
   // hpに平均値を入れていく。
   // hybridization probability
   std::list<std::string> s1=a1.seq();
@@ -456,52 +568,80 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
 
   //////////
 
-  for (it1=s1.begin(); it1 != s1.end(); it1++)
+  if (size1 == size2)
+  {
+    it1 = s1.begin();
+    it2 = s2.begin();
+    VVVF vtr_hp(size1);
+    for (int i = 0; i < size1; i++)
+    {
+      rnaduplex(*it1, *it2, vtr_hp[i]);
+      it1++;
+      it2++;
+    }
+    VVVF::iterator itr_vtr_hp;
+    int L = vtr_hp[0].size();
+    int M = vtr_hp[0][0].size();
+    hp.resize(L);
+    for (int i=0; i<L; i++)
+    {
+      hp[i].resize(M);
+      for (int j = 0; j < M; j++)
+      {
+        double sum = 0;
+        for (itr_vtr_hp = vtr_hp.begin(); itr_vtr_hp != vtr_hp.end(); itr_vtr_hp++)
+        {
+          sum += (*itr_vtr_hp)[i][j];
+        }
+        hp[i][j] = sum / (double)size1;
+      }
+    }
+  }
+  else
+  {
+    for (it1=s1.begin(); it1 != s1.end(); it1++)
     {
       int j=0;
       vhp[i].resize(size2);
       for (it2=s2.begin(); it2!=s2.end(); it2++)
-	{
-	  rnaduplex(*it1, *it2, vhp[i][j]);
-	  // correct probability for gap 
-	  int k=0;
-	  int l=0;
-	  if (false)
-	    {
-	      if (false)
-		{
-		  vhp[i][j][k][l]=0;
-		}
-	    }
-	  j++;
-	}
+      {
+       rnaduplex(*it1, *it2, vhp[i][j]);
+       // correct probability for gap 
+       int k=0;
+       int l=0;
+       if (false)
+       {
+        if (false)
+          vhp[i][j][k][l]=0;
+       }
+       j++;
+      }      
       i++;
     }
-  // 各塩基配列対について平均をとる
-  // 各要素doubleにしたほうがいいかも
-  VVVVF::iterator it_vvhp;
-  VVVF::iterator it_vhp;
-  int L=vhp[0][0].size();
-  int M=vhp[0][0][0].size();
-  hp.resize(L);
-  for(int i=0; i<L; i++)
+    // 各塩基配列対について平均をとる
+    // 各要素doubleにしたほうがいいかも
+    VVVVF::iterator it_vvhp;
+    VVVF::iterator it_vhp;
+    int L=vhp[0][0].size();
+    int M=vhp[0][0][0].size();
+    hp.resize(L);
+    for(int i=0; i<L; i++)
     {
       hp[i].resize(M);
       for (int j=0; j<M; j++)
-	{
-	  double sum=0;
-	  uint ucount=0;
-	  for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
-	    {
-	      for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
-		{
-		  sum+=(*it_vhp)[i][j];
-		}
-	      //hp[i][j]=sum / (double)(size1+size2);// ここじゃなくない?
-	    }
-	  hp[i][j]=sum / (double)(size1+size2);// 上から移動
-	}
-    }
+      {
+       double sum=0;
+       uint ucount=0;
+       for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
+       {
+         for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
+           sum+=(*it_vhp)[i][j];
+	        //hp[i][j]=sum / (double)(size1+size2);// ここじゃなくない?
+       }
+	     hp[i][j]=sum / (double)(size1*size2);// 上から移動
+     }
+   }
+ }
 }
 
 
@@ -613,7 +753,9 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
 
   homfold(s1, bp1, offset1, up1, cf1);
   homfold(s2, bp2, offset2, up2, cf2);
-  rnaduplex(s1.first, s2.first, hp);
+  rnaduplex_hom(s1, s2, hp, WH);
+  //rnaduplex_aln(s1, s2, hp);
+
   
   /**
   bool use_alifold=true;// temporary code
@@ -723,9 +865,9 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
 
   VVI z(s1.size(), VI(s2.size(), -1));
   std::vector< std::vector<int> > zz(s1.size());
-  for (uint i=0; i!=s1.size(); ++i)
+  for (uint i=0; i!=s1.size(); i++)
   {
-    for (uint j=0; j!=s2.size(); ++j)
+    for (uint j=0; j!=s2.size(); j++)
     {
       const float& p=hp[i+1][j+1];
       if (p>th_hy_ && (min_w_==1 && up1[i][0]>th_ac_ && up2[j][0]>th_ac_ || min_w_!=1))// error
@@ -1441,7 +1583,7 @@ run()
   const std::string fa2_seq=fa2.seq();
   TH th1_ = TH(fa1_seq, homs1);
   TH th2_ = TH(fa2_seq, homs2);
-  float ea = solve(th1_, th2_, r1, r2, cf1, cf2);// here comes the error
+  float ea = solve(th1_, th2_, r1, r2, cf1, cf2);
 
   // diplay the result
   const std::string fa1_name=fa1.name();
@@ -1458,7 +1600,7 @@ run()
   
   //////////////////////// by Takashi Matsuda ///////////////////////////////
   //// future work: separate above code ///////
-  
+  //// future work: Revive the code below
   
   // display the result
   /**
