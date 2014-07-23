@@ -43,7 +43,7 @@ struct gengetopt_args_info
 {
   const char *help_help; /**< @brief Print help and exit help description.  */
   const char *version_help; /**< @brief Print version and exit help description.  */
-  float alpha_arg;	/**< @brief  weight for hybridization (default='0.5').  */
+  float alpha_arg;	/**< @brief  weight for hybridization (default='0.1').  */
   char * alpha_orig;	/**< @brief  weight for hybridization original value given at command line.  */
   const char *alpha_help; /**< @brief  weight for hybridization help description.  */
   float beta_arg;	/**< @brief weight for unpaired bases (default='0.0').  */
@@ -58,7 +58,7 @@ struct gengetopt_args_info
   float acc_th_arg;	/**< @brief Threshold for accessible probabilities (default='0.0').  */
   char * acc_th_orig;	/**< @brief Threshold for accessible probabilities original value given at command line.  */
   const char *acc_th_help; /**< @brief Threshold for accessible probabilities help description.  */
-  int max_w_arg;	/**< @brief Maximum length of accessible regions (default='0').  */
+  int max_w_arg;	/**< @brief Maximum length of accessible regions (default='100').  */
   char * max_w_orig;	/**< @brief Maximum length of accessible regions original value given at command line.  */
   const char *max_w_help; /**< @brief Maximum length of accessible regions help description.  */
   int min_w_arg;	/**< @brief Minimum length of accessible regions (default='0').  */
@@ -90,7 +90,7 @@ struct gengetopt_args_info
   float mix_weight_arg;	/**< @brief mixture weights of inference engines (default='1.0').  */
   char * mix_weight_orig;	/**< @brief mixture weights of inference engines original value given at command line.  */
   const char *mix_weight_help; /**< @brief mixture weights of inference engines help description.  */
-  char * engine_seq_arg;	/**< @brief specify the inference engine for independent sequence (default='McCaskilll').  */
+  char * engine_seq_arg;	/**< @brief specify the inference engine for independent sequence (default='McCaskill').  */
   char * engine_seq_orig;	/**< @brief specify the inference engine for independent sequence original value given at command line.  */
   const char *engine_seq_help; /**< @brief specify the inference engine for independent sequence help description.  */
   char * engine_aln_arg;	/**< @brief specify the inference engine for independent Alignment (default='CONTRAlign').  */

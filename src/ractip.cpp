@@ -604,7 +604,7 @@ solve(Aln& a1, Aln& a2, std::string& r1, std::string& r2, MixtureModel<Aln>& cf)
     alifold(a2, bp2, offset2, up2, cf2);
     rnaduplex_aln(a1,a2,hp);// 1st structure base pairing probability
   }
-#if 1
+#if 0
   std::ofstream out_bp1("out_bp1_2.csv");
   VF::iterator it_bp1 = bp1.begin();
   for (it_bp1 = bp1.begin(); it_bp1 < bp1.end(); it_bp1++)

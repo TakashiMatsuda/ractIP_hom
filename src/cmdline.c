@@ -36,12 +36,12 @@ const char *gengetopt_args_info_description = "";
 const char *gengetopt_args_info_help[] = {
   "  -h, --help                   Print help and exit",
   "  -V, --version                Print version and exit",
-  "  -a, --alpha=FLOAT             weight for hybridization  (default=`0.5')",
+  "  -a, --alpha=FLOAT             weight for hybridization  (default=`0.1')",
   "  -b, --beta=FLOAT             weight for unpaired bases  (default=`0.0')",
   "  -t, --fold-th=FLOAT          Threshold for base-pairing probabilities\n                                 (default=`0.5')",
   "  -u, --hybridize-th=FLOAT     Threshold for hybridazation probabilities\n                                 (default=`0.2')",
   "  -s, --acc-th=FLOAT           Threshold for accessible probabilities\n                                 (default=`0.0')",
-  "      --max-w=INT              Maximum length of accessible regions\n                                 (default=`0')",
+  "      --max-w=INT              Maximum length of accessible regions\n                                 (default=`100')",
   "      --min-w=INT              Minimum length of accessible regions\n                                 (default=`0')",
   "      --zscore=INT             Calculate z-score via dishuffling (0=no\n                                 shuffling, 1=1st seq only, 2=2nd seq only, or\n                                 12=both)  (default=`0')",
   "      --num-shuffling=INT      The number of shuffling  (default=`1000')",
@@ -53,7 +53,7 @@ const char *gengetopt_args_info_help[] = {
   "  -p, --no-pk                  do not use the constraints for interenal\n                                 pseudoknots  (default=off)",
   "  -r, --rip=FILENAME           Import posterior probabilities from the result\n                                 of RIP",
   "  -w, --mix-weight=FLOAT       mixture weights of inference engines\n                                 (default=`1.0')",
-  "  -X, --engine-seq=ENGINENAME  specify the inference engine for independent\n                                 sequence  (default=`McCaskilll')",
+  "  -X, --engine-seq=ENGINENAME  specify the inference engine for independent\n                                 sequence  (default=`McCaskill')",
   "  -A, --engine-aln=ENGINENAME  specify the inference engine for independent\n                                 Alignment  (default=`CONTRAlign')",
     0
 };
@@ -108,7 +108,7 @@ static
 void clear_args (struct gengetopt_args_info *args_info)
 {
   FIX_UNUSED (args_info);
-  args_info->alpha_arg = 0.5;
+  args_info->alpha_arg = 0.1;
   args_info->alpha_orig = NULL;
   args_info->beta_arg = 0.0;
   args_info->beta_orig = NULL;
@@ -118,7 +118,7 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->hybridize_th_orig = NULL;
   args_info->acc_th_arg = 0.0;
   args_info->acc_th_orig = NULL;
-  args_info->max_w_arg = 0;
+  args_info->max_w_arg = 100;
   args_info->max_w_orig = NULL;
   args_info->min_w_arg = 0;
   args_info->min_w_orig = NULL;
@@ -138,7 +138,7 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->rip_orig = NULL;
   args_info->mix_weight_arg = 1.0;
   args_info->mix_weight_orig = NULL;
-  args_info->engine_seq_arg = gengetopt_strdup ("McCaskilll");
+  args_info->engine_seq_arg = gengetopt_strdup ("McCaskill");
   args_info->engine_seq_orig = NULL;
   args_info->engine_aln_arg = gengetopt_strdup ("CONTRAlign");
   args_info->engine_aln_orig = NULL;
@@ -656,7 +656,7 @@ cmdline_parser_internal (
         
           if (update_arg( (void *)&(args_info->alpha_arg), 
                &(args_info->alpha_orig), &(args_info->alpha_given),
-              &(local_args_info.alpha_given), optarg, 0, "0.5", ARG_FLOAT,
+              &(local_args_info.alpha_given), optarg, 0, "0.1", ARG_FLOAT,
               check_ambiguity, override, 0, 0,
               "alpha", 'a',
               additional_error))
@@ -792,7 +792,7 @@ cmdline_parser_internal (
         
           if (update_arg( (void *)&(args_info->engine_seq_arg), 
                &(args_info->engine_seq_orig), &(args_info->engine_seq_given),
-              &(local_args_info.engine_seq_given), optarg, 0, "McCaskilll", ARG_STRING,
+              &(local_args_info.engine_seq_given), optarg, 0, "McCaskill", ARG_STRING,
               check_ambiguity, override, 0, 0,
               "engine-seq", 'X',
               additional_error))
@@ -820,7 +820,7 @@ cmdline_parser_internal (
           
             if (update_arg( (void *)&(args_info->max_w_arg), 
                  &(args_info->max_w_orig), &(args_info->max_w_given),
-                &(local_args_info.max_w_given), optarg, 0, "0", ARG_INT,
+                &(local_args_info.max_w_given), optarg, 0, "100", ARG_INT,
                 check_ambiguity, override, 0, 0,
                 "max-w", '-',
                 additional_error))

@@ -98,16 +98,16 @@ class RactIP
 {
 public:
   RactIP()
-    : alpha_(0.5),
+    : alpha_(0.1),
       beta_(0.0),
-      th_hy_(0.2),// ここをいじると、逆にあとのconstraintで弾かれる。
+      th_hy_(0.2),
       th_ss_(0.5),
       th_ac_(0.0),
       WH(0.5),
-      max_w_(100),
+      max_w_(0),
       min_w_(0),
       enable_zscore_(0),
-      num_shuffling_(0),
+      num_shuffling_(1000),
       seed_(0),
       in_pk_(true),
       use_contrafold_(true),
@@ -121,7 +121,7 @@ public:
       param_file_(),
       fa1_(),
       fa2_(),
-      mix_w(),
+      mix_w(0.5),
       engine(),
       engine_a()
 
@@ -285,10 +285,20 @@ homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const
   cf->calculate_posterior(seq);// segmentaion faults
   BPTable bp_centroidfold;
   bp_centroidfold=cf->get_bp();
+  // debug
+  // この上まででちゃんと動いているのか確かめる
+  for (VF::iterator itr_bp = bp.begin(); itr_bp != bp.end(); itr_bp++)
+  {
+    if (*itr_bp < 0.1)
+    (*itr_bp) = (*itr_bp) * 10;
+
+  }
+
+
   // bpの変換
   transBP_centroidfold_ractip(bp_centroidfold, bp, offset, seq.first);
 
-  const uint L=seq.first.size();
+  const uint L=seq.size();
   up.resize(L, VF(1, 1.0));
   for (uint i=0; i!=L; ++i)
   {
@@ -479,10 +489,10 @@ rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
     VVVF::iterator itr_vtr_hp;
     int L = vtr_hp[0].size();
     int M = vtr_hp[0][0].size();
-    hp.resize(L);
+    hp.resize(s1.size()+1, VF(s2.size()+1));
     for (int i=0; i<L; i++)
     {
-      hp[i].resize(M);
+      //hp[i].resize(M+1);
       for (int j = 0; j < M; j++)
       {
         double sum = 0;
@@ -521,10 +531,10 @@ rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
     VVVF::iterator it_vhp;
     int L=vhp[0][0].size();
     int M=vhp[0][0][0].size();
-    hp.resize(L);
+    hp.resize(s1.size()+1, VF(s2.size()+1));
     for(int i=0; i<L; i++)
     {
-      hp[i].resize(M);
+      //hp[i].resize(M+1);
       for (int j=0; j<M; j++)
       {
        double sum=0;
@@ -563,7 +573,8 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
   ///////////
   // gapの時の確率を見たい
   it1++;
-  it1++;
+  //it1++;
+  it2++;
   //std::cout << "S1[2][15]: " << (*it1)[15] << std::cout;// 2-15の塩基を取り出すコード
 
   //////////
@@ -582,10 +593,9 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
     VVVF::iterator itr_vtr_hp;
     int L = vtr_hp[0].size();
     int M = vtr_hp[0][0].size();
-    hp.resize(L);
+    hp.resize(L+1);// debug temporally
     for (int i=0; i<L; i++)
     {
-      hp[i].resize(M);
       for (int j = 0; j < M; j++)
       {
         double sum = 0;
@@ -624,10 +634,10 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
     VVVF::iterator it_vhp;
     int L=vhp[0][0].size();
     int M=vhp[0][0][0].size();
-    hp.resize(L);
+    hp.resize(L+1);// debug temporally
     for(int i=0; i<L; i++)
     {
-      hp[i].resize(M);
+      hp[i].resize(M+1);
       for (int j=0; j<M; j++)
       {
        double sum=0;
@@ -757,15 +767,15 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   //rnaduplex_aln(s1, s2, hp);
 
   
-  /**
-  bool use_alifold=true;// temporary code
+#if 0
+  bool use_alifold=false;// temporary code
   if(use_alifold){
     alifold(a1, bp1, offset1, up1, cf1);
     alifold(a2, bp2, offset2, up2, cf2);
     rnaduplex_aln(a1,a2,hp);// 1st structure base pairing probability
   }
-  **/
-
+#endif
+  
 #if 0
   std::ofstream out_bp1("out_bp1_2.csv");
   VF::iterator it_bp1 = bp1.begin();
@@ -827,12 +837,9 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
 #endif
     rnaduplex(s1, s2, hp);
     }**/
-  //cf->
   
   
   // make objective variables with their weights
-  uint s1LEN=s1.size();
-  uint s2LEN=s2.size();
   VVI x(s1.size(), VI(s1.size(), -1));
   VVI xx(s1.size());
   for (uint j=1; j!=s1.size(); ++j)
@@ -865,12 +872,12 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
 
   VVI z(s1.size(), VI(s2.size(), -1));
   std::vector< std::vector<int> > zz(s1.size());
-  for (uint i=0; i!=s1.size(); i++)
+  for (uint i=0; i!=s1.size(); ++i)
   {
-    for (uint j=0; j!=s2.size(); j++)
+    for (uint j=0; j!=s2.size(); ++j)
     {
       const float& p=hp[i+1][j+1];
-      if (p>th_hy_ && (min_w_==1 && up1[i][0]>th_ac_ && up2[j][0]>th_ac_ || min_w_!=1))// error
+      if (p>th_hy_ && ((min_w_==1 && up1[i][0]>th_ac_ && up2[j][0]>th_ac_ )|| min_w_!=1))// error
       {
         z[i][j] = ip.make_variable(alpha_*p+beta_*(up1[i][0]+up2[j][0]));
         zz[i].push_back(j);
@@ -1456,7 +1463,7 @@ run()
   std::vector<FoldingEngine<TH>*> cf_list_2(engine.size(), NULL);
 
   // tmp code
-  uint max_bp_dist = 0;
+  uint max_bp_dist = 1000;
   char* param_tmp = NULL;
   
   //cf_list_1[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
