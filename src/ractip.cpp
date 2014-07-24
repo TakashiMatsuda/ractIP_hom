@@ -469,21 +469,18 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
     {
       hp[i].resize(M);
       for (int j=0; j<M; j++)
-	{
-	  double sum=0;
-	  uint ucount=0;
-	  for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
-	    {
-	      for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
-		{
-		  sum+=(*it_vhp)[i][j];
-		}
-	      //hp[i][j]=sum / (double)(size1+size2);// ここじゃなくない?
-	    }
-	  hp[i][j]=sum / (double)(size1+size2);// 上から移動
-	}
+      {
+       double sum=0;
+       uint ucount=0;
+       for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
+       {
+         for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
+          sum+=(*it_vhp)[i][j];
+        }
+      }
+	    hp[i][j]=sum / (double)(size1*size2);// 上から移動
     }
-}
+  }
 
 
 void
@@ -1276,8 +1273,6 @@ run()
     //cf=cf_list[0];
   //else
   // 上は型の都合で潰しました　キャストがうまくできるなら復活させる（今はその方法を知らない）
-
-  
   // ここでモデルの設定を行う。
   // ゆくゆくは上で条件分岐できるように、コマンドラインを設計する。FUTURE work
   std::vector<FoldingEngine<Aln>*> cf_list(2, NULL);
@@ -1300,6 +1295,7 @@ run()
         models.push_back(std::make_pair(cf_list[i], 1.0));
       else
         models.push_back(std::make_pair(cf_list[i], mix_w[i]));
+      // mix_wを変えて実験する
     }
     //cf = new MixtureModel<Aln>(models, vm.count("mea"));
     cf = new MixtureModel<Aln>(models, 0);

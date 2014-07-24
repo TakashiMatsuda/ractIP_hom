@@ -2075,4 +2075,11 @@ McCaskillHomモデルに問題があるのかもしれない
 改善が必要かもしれない。
 cfを作るときにパラメータをどのように設定したかを確認する必要がある。
 
+  cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+falseとは何をさすのか、max_bp_distは適当に与えられているかなど
+
+th_ssを小さくしたら解決された。
+-
+
+
 

@@ -101,7 +101,7 @@ public:
     : alpha_(0.1),
       beta_(0.0),
       th_hy_(0.2),
-      th_ss_(0.5),
+      th_ss_(0.0),
       th_ac_(0.0),
       WH(0.5),
       max_w_(0),
@@ -282,18 +282,9 @@ homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const
   // 塩基対確率を計算して取り出す関数を作っておいて、呼び出す。
   // basepair probabilityの計算
   //cf->stochastic_fold(seq, num_samples, *out)
-  cf->calculate_posterior(seq);// segmentaion faults
+  cf->calculate_posterior(seq);
   BPTable bp_centroidfold;
   bp_centroidfold=cf->get_bp();
-  // debug
-  // この上まででちゃんと動いているのか確かめる
-  for (VF::iterator itr_bp = bp.begin(); itr_bp != bp.end(); itr_bp++)
-  {
-    if (*itr_bp < 0.1)
-    (*itr_bp) = (*itr_bp) * 10;
-
-  }
-
 
   // bpの変換
   transBP_centroidfold_ractip(bp_centroidfold, bp, offset, seq.first);
