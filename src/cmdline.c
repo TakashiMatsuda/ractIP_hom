@@ -50,7 +50,7 @@ const char *gengetopt_args_info_help[] = {
   "  -i, --allow-isolated         Allow isolated base-pairs  (default=off)",
   "  -e, --show-energy            calculate the free energy of the predicted joint\n                                 structure  (default=off)",
   "  -P, --param-file=FILENAME    Read the energy parameter file for Vienna RNA\n                                 package",
-  "  -p, --no-pk                  do not use the constraints for interenal\n                                 pseudoknots  (default=off)",
+  "  -p, --no-pk                  do not use the constraints for interenal\n                                 pseudoknots  (default=on)",
   "  -r, --rip=FILENAME           Import posterior probabilities from the result\n                                 of RIP",
   "  -w, --mix-weight=FLOAT       mixture weights of inference engines\n                                 (default=`1.0')",
   "  -X, --engine-seq=ENGINENAME  specify the inference engine for independent\n                                 sequence  (default=`McCaskill')",
@@ -133,7 +133,7 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->show_energy_flag = 0;
   args_info->param_file_arg = NULL;
   args_info->param_file_orig = NULL;
-  args_info->no_pk_flag = 0;
+  args_info->no_pk_flag = 1;
   args_info->rip_arg = NULL;
   args_info->rip_orig = NULL;
   args_info->mix_weight_arg = 1.0;

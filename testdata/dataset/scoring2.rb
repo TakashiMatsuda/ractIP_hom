@@ -1,5 +1,7 @@
 #! /usr/bin/ruby
 
+# f: filepointer
+# pick a RNA secondstructure
 def secondstrc(f)
 	c = 0
 	res = ""
@@ -12,11 +14,15 @@ def secondstrc(f)
 	return res
 end
 
+
+
+# Browse all files in the current directory
 files = Dir::entries(Dir::pwd)
 tcount = 0
 ncount = 0
 tot = 0
 for filepath in files
+	# find a answer file
 	if /answer.fa$/ =~ filepath
 		puts "File Open: #{filepath}"
 		ans_file = open(filepath, 'r')

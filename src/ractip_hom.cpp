@@ -50,8 +50,6 @@
 #include "centroidalifold/engine/mccaskillhom.h"
 
 
-
-
 namespace Vienna {
 extern "C" {
 #include <ViennaRNA/fold.h>
@@ -282,7 +280,7 @@ homfold(const TH& seq, VF& bp, VI& offset, VVF& up, FoldingEngine<TH>* cf) const
   // 塩基対確率を計算して取り出す関数を作っておいて、呼び出す。
   // basepair probabilityの計算
   //cf->stochastic_fold(seq, num_samples, *out)
-  cf->calculate_posterior(seq);
+  cf->calculate_posterior(seq);// error, ギャップ'-'を想定して改修したい
   BPTable bp_centroidfold;
   bp_centroidfold=cf->get_bp();
 
@@ -570,6 +568,9 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
 
   //////////
 
+
+  /*** RNAアラインメントのギャップ'-'を考慮してメモリを損傷しないようなコードにしなければならない。***/
+
   if (size1 == size2)
   {
     it1 = s1.begin();
@@ -637,7 +638,6 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
        {
          for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
            sum+=(*it_vhp)[i][j];
-	        //hp[i][j]=sum / (double)(size1+size2);// ここじゃなくない?
        }
 	     hp[i][j]=sum / (double)(size1*size2);// 上から移動
      }
@@ -856,7 +856,7 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
       if (p>th_ss_)
       {
         y[i][j] = ip.make_variable(p);
-        yy[i].push_back(j);
+        yy[i].push_back(j);// danger
       }
     }
   }
@@ -1368,34 +1368,35 @@ run()
     if (aln1_ != "") {
       BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi1(aln1_.c_str());
       if (!fi1) {
-	perror(aln1_.c_str());
-	return 1;
-      }
-      while (1) {
-	Fasta fa;
-	if (fa.load(fi1)) {
-	  homs1.push_back (fa.seq());
-	} else break;
-      }
-    }
+       perror(aln1_.c_str());
+       return 1;
+     }
+     while (1) {
+       Fasta fa;
+       if (fa.load(fi1)) {
+         homs1.push_back (fa.seq());
+       } else break;
+     }
+   }
     if (aln2_ != "") {
       BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi2(aln2_.c_str());
       if (!fi2) {
-	perror(aln2_.c_str());
-	return 1;
-      }
-      while (1) {
-	Fasta fa;
-	if (fa.load(fi2)) {
-	  homs2.push_back (fa.seq());
-	} else break;
-      }
-    }
-    
+       perror(aln2_.c_str());
+       return 1;
+     }
+     while (1) {
+       Fasta fa;
+       if (fa.load(fi2)) {
+         homs2.push_back (fa.seq());
+       } else break;
+     }
+   }
+
     std::replace(fa1.seq().begin(), fa1.seq().end(), 't', 'u');
     std::replace(fa1.seq().begin(), fa1.seq().end(), 'T', 'U');
     typename std::vector<std::string>::iterator it_homs1;
     for (it_homs1 = homs1.begin(); it_homs1 != homs1.end(); it_homs1++){
+      std::replace((*it_homs1).begin(), (*it_homs1).end(), '-', '.');
       std::replace((*it_homs1).begin(), (*it_homs1).end(), 't', 'u');
       std::replace((*it_homs1).begin(), (*it_homs1).end(), 'T', 'U');
     }
@@ -1403,6 +1404,7 @@ run()
     std::replace(fa2.seq().begin(), fa2.seq().end(), 'T', 'U');
     typename std::vector<std::string>::iterator it_homs2;
     for (it_homs2 = homs2.begin(); it_homs2 != homs2.end(); it_homs2++){
+      std::replace((*it_homs2).begin(), (*it_homs2).end(), '-', '.');
       std::replace((*it_homs2).begin(), (*it_homs2).end(), 't', 'u');
       std::replace((*it_homs2).begin(), (*it_homs2).end(), 'T', 'U');
     }
@@ -1456,12 +1458,15 @@ run()
   // tmp code
   uint max_bp_dist = 1000;
   char* param_tmp = NULL;
+  std::string param_tmp2;
   
   //cf_list_1[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
   //cf_list_2[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  cf2 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-
+  //cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  //cf2 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  cf1 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], false, max_bp_dist);// canonical=trueにするべきか
+  cf2 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], false, max_bp_dist);
+  // error
 
   // とりあえずMcCaskillモデルで動かしてみる。以下はcentroidhomfoldからのコピーコード。
   /**

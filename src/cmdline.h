@@ -82,7 +82,7 @@ struct gengetopt_args_info
   char * param_file_arg;	/**< @brief Read the energy parameter file for Vienna RNA package.  */
   char * param_file_orig;	/**< @brief Read the energy parameter file for Vienna RNA package original value given at command line.  */
   const char *param_file_help; /**< @brief Read the energy parameter file for Vienna RNA package help description.  */
-  int no_pk_flag;	/**< @brief do not use the constraints for interenal pseudoknots (default=off).  */
+  int no_pk_flag;	/**< @brief do not use the constraints for interenal pseudoknots (default=on).  */
   const char *no_pk_help; /**< @brief do not use the constraints for interenal pseudoknots help description.  */
   char * rip_arg;	/**< @brief Import posterior probabilities from the result of RIP.  */
   char * rip_orig;	/**< @brief Import posterior probabilities from the result of RIP original value given at command line.  */

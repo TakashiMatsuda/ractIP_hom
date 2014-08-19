@@ -226,7 +226,7 @@ AUTOMAKE = automake-1.14
 AWK = awk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2
+CFLAGS = -g -O0
 CPPFLAGS = -I/usr/local/Cellar/viennarna/2.1.5/include -DWITH_GLPK 
 CXX = g++
 CXXCPP = g++ -E

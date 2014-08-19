@@ -2086,6 +2086,93 @@ th_ssを小さくしたら解決された。
 それが一致しているか調べる。
 パラメータをすべて順番に動かして、結果スコアを計算しよう。
 -
+ギャップの扱いを忘れている。
+ギャップはどのような文字にすればいいだろうか。考えなければいけない。
+まず、自分が書いた方を疑う。具体的には、
+ハイブリダイゼーションの確率の計算のときに、'-'を考慮したコードにする。
+
+バグが出た箇所は、本来大丈夫なはずの場所(centroidfoldのバグ)
+contrafoldのalignmentモデルでやってみよう。
+
+-
+いい結果が出ていないように思える。
+contrafoldを使ったモデルも実装しよう。
 
 
 
+paramの中身を調べる。
+paramはparameterfileの名前かな？
+-
+thの2つ目が、centroidhomfoldの形式と合っていないかも
+---
+centroid_homfoldでもバグがでた。
+入力ファイルを変えよう。
+centroid_homfoldの正確な入力形式を調べよう。
+ギャップが.で表されるのかも.
+一行の文字数が20という縛りがあるのかも.
+
+ギャップを抜いたら動いた。
+ギャップは入れては行けないのかもしれない。
+.に置換して試してみよう。
+ced - .
+ドットにしたら動いた。これは仕様として微妙なので修正しよう。
+パーサの行に追加すればいいはず。
+-
+上記の改修を行ったが、なんかエラーがでる。
+とりあえず、ギャップなしのアラインメントのみ受け付ける仕様として、リリーズすることにする。
+contrafoldhommodelをデフォルトで用いることに決定した。
+---
+時折でるこのバグを解消したい。
+ractip_hom(16706,0x7fff7ed04310) malloc: *** error for object 0x101121fb8: incorrect checksum for freed object - object was probably modified after being freed.
+*** set a breakpoint in malloc_error_break to debug
+Process 16706 stopped
+* thread #1: tid = 0xb81fb, 0x00007fff90be5866 libsystem_kernel.dylib`__pthread_kill + 10, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
+    frame #0: 0x00007fff90be5866 libsystem_kernel.dylib`__pthread_kill + 10
+libsystem_kernel.dylib`__pthread_kill + 10:
+-> 0x7fff90be5866:  jae    0x7fff90be5870            ; __pthread_kill + 20
+   0x7fff90be5868:  movq   %rax, %rdi
+   0x7fff90be586b:  jmpq   0x7fff90be2175            ; cerror_nocancel
+   0x7fff90be5870:  ret    
+(lldb) bt
+* thread #1: tid = 0xb81fb, 0x00007fff90be5866 libsystem_kernel.dylib`__pthread_kill + 10, queue = 'com.apple.main-thread', stop reason = signal SIGABRT
+  * frame #0: 0x00007fff90be5866 libsystem_kernel.dylib`__pthread_kill + 10
+    frame #1: 0x00007fff98eff35c libsystem_pthread.dylib`pthread_kill + 92
+    frame #2: 0x00007fff9921cb1a libsystem_c.dylib`abort + 125
+    frame #3: 0x00007fff916e1690 libsystem_malloc.dylib`szone_error + 587
+    frame #4: 0x00007fff916e6218 libsystem_malloc.dylib`tiny_malloc_from_free_list + 1412
+    frame #5: 0x00007fff916e63c3 libsystem_malloc.dylib`szone_malloc_should_clear + 320
+    frame #6: 0x00007fff916e8868 libsystem_malloc.dylib`malloc_zone_malloc + 71
+    frame #7: 0x00007fff916e927c libsystem_malloc.dylib`malloc + 42
+    frame #8: 0x00007fff8e42c28e libc++.1.dylib`operator new(unsigned long) + 30
+    frame #9: 0x0000000100024fe8 ractip_hom`std::__1::__split_buffer<int, std::__1::allocator<int>&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<int>&) + 424
+    frame #10: 0x000000010002487d ractip_hom`std::__1::__split_buffer<int, std::__1::allocator<int>&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<int>&) + 45
+    frame #11: 0x0000000100024769 ractip_hom`void std::__1::vector<int, std::__1::allocator<int> >::__push_back_slow_path<int const>(int const&) + 553
+    frame #12: 0x000000010000accc ractip_hom`RactIP::solve(TH&, TH&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, FoldingEngine<TH>*, FoldingEngine<TH>*) + 6268
+    frame #13: 0x000000010001bbdd ractip_hom`RactIP::run() + 27485
+    frame #14: 0x000000010001c2b6 ractip_hom`main + 86
+
+
+
+
+
+上の情報だと埒があかない、時折出るエラーで追跡が難しいので
+valgrindを使って解析してみる。
+
+==18106== Invalid read of size 4
+==18106==    at 0x100003C67: RactIP::rnaduplex_hom(TH&, TH&, std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >&, double) const (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10000A343: RactIP::solve(TH&, TH&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, FoldingEngine<TH>*, FoldingEngine<TH>*) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10001BBDC: RactIP::run() (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10001C2B5: main (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==  Address 0x100b98350 is 0 bytes after a block of size 128 alloc'd
+==18106==    at 0x70CB: malloc (in /usr/local/Cellar/valgrind/3.9.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==18106==    by 0x1AD28D: operator new(unsigned long) (in /usr/lib/libc++.1.dylib)
+==18106==    by 0x10002D8C9: std::__1::vector<float, std::__1::allocator<float> >::allocate(unsigned long) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10002D7A6: std::__1::vector<float, std::__1::allocator<float> >::vector(std::__1::vector<float, std::__1::allocator<float> > const&) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10002D50C: std::__1::vector<float, std::__1::allocator<float> >::vector(std::__1::vector<float, std::__1::allocator<float> > const&) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10003134A: std::__1::__split_buffer<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > >&>::__construct_at_end(unsigned long, std::__1::vector<float, std::__1::allocator<float> > const&) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x100031238: std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >::__append(unsigned long, std::__1::vector<float, std::__1::allocator<float> > const&) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10001D8F4: std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >::resize(unsigned long, std::__1::vector<float, std::__1::allocator<float> > const&) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x100004FC1: RactIP::rnaduplex(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >&) const (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10000326E: RactIP::rnaduplex_hom(TH&, TH&, std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >&, double) const (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10000A343: RactIP::solve(TH&, TH&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, FoldingEngine<TH>*, FoldingEngine<TH>*) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+==18106==    by 0x10001BBDC: RactIP::run() (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)

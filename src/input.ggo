@@ -17,7 +17,7 @@ option "mccaskill" m "Use McCaskill model for folding" flag off
 option "allow-isolated" i "Allow isolated base-pairs" flag off
 option "show-energy" e "calculate the free energy of the predicted joint structure" flag off
 option "param-file" P "Read the energy parameter file for Vienna RNA package" string typestr="FILENAME" no
-option "no-pk" p "do not use the constraints for interenal pseudoknots" flag off
+option "no-pk" p "do not use the constraints for interenal pseudoknots" flag on
 option "rip" r "Import posterior probabilities from the result of RIP" string typestr="FILENAME" no
 
 # options from centroid_alifold

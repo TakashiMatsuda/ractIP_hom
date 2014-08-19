@@ -11,12 +11,17 @@ for filepath in files
 		tmp_split = filepath.split(/-/)
 		namelist << tmp_split[0]
 		namelist << ((tmp_split[1]).split(/answer/))[0]
-		puts namelist
-		result = `/Users/takashi/cbrc/ractip_hom/src/ractip_hom tmp/#{namelist[0]}.fa tmp/#{namelist[0]}_simulation.fa tmp/#{namelist[1]}.fa tmp/#{namelist[1]}_simulation.fa`
-		system("mkdir res")
-		res_file = open("res/#{namelist[0]}-#{namelist[1]}_res.fa", 'w')
-		res_file.write(result)
-		res_file.close()
+		paramlist = ["alpha", "beta", "mix-weight", "hyb-mix-weight"]
+		for param in paramlist
+			for i in 0..10
+				result = `/Users/takashi/cbrc/ractip_hom/src/ractip_hom --#{param}=#{i/10} tmp/#{namelist[0]}.fa tmp/#{namelist[0]}_simulation.fa tmp/#{namelist[1]}.fa tmp/#{namelist[1]}_simulation.fa`
+				puts result
+				system("mkdir res")
+				res_file = open("res/#{namelist[0]}-#{namelist[1]}_res_alpha_#{i/10}.fa", 'w')
+				res_file.write(result)
+				res_file.close()
+			end
+		end
 	end
 end
 puts "fin"

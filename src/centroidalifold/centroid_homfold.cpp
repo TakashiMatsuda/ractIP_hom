@@ -268,7 +268,7 @@ centroid_homfold(int argc, char* argv[])
     else
       cf->centroid_fold(fa.name(), TH (fa.seq(), homs), gamma, *out);
 
-    if (vm.count("posteriors")) cf->get_bp().save(*p_out, fa.seq(), p_th);
+    if (vm.count("posteriors")) cf->get_bp().save(*p_out, fa.seq(), p_th);// このコマンドでセーブ
 
     if (!ps_outname.empty())
     {
