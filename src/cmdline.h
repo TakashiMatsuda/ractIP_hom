@@ -43,13 +43,13 @@ struct gengetopt_args_info
 {
   const char *help_help; /**< @brief Print help and exit help description.  */
   const char *version_help; /**< @brief Print version and exit help description.  */
-  float alpha_arg;	/**< @brief  weight for hybridization (default='0.1').  */
+  float alpha_arg;	/**< @brief  weight for hybridization (default='0.5').  */
   char * alpha_orig;	/**< @brief  weight for hybridization original value given at command line.  */
   const char *alpha_help; /**< @brief  weight for hybridization help description.  */
   float beta_arg;	/**< @brief weight for unpaired bases (default='0.0').  */
   char * beta_orig;	/**< @brief weight for unpaired bases original value given at command line.  */
   const char *beta_help; /**< @brief weight for unpaired bases help description.  */
-  float fold_th_arg;	/**< @brief Threshold for base-pairing probabilities (default='0.1').  */
+  float fold_th_arg;	/**< @brief Threshold for base-pairing probabilities (default='0.0').  */
   char * fold_th_orig;	/**< @brief Threshold for base-pairing probabilities original value given at command line.  */
   const char *fold_th_help; /**< @brief Threshold for base-pairing probabilities help description.  */
   float hybridize_th_arg;	/**< @brief Threshold for hybridazation probabilities (default='0.2').  */
@@ -58,7 +58,7 @@ struct gengetopt_args_info
   float acc_th_arg;	/**< @brief Threshold for accessible probabilities (default='0.0').  */
   char * acc_th_orig;	/**< @brief Threshold for accessible probabilities original value given at command line.  */
   const char *acc_th_help; /**< @brief Threshold for accessible probabilities help description.  */
-  int max_w_arg;	/**< @brief Maximum length of accessible regions (default='100').  */
+  int max_w_arg;	/**< @brief Maximum length of accessible regions (default='0').  */
   char * max_w_orig;	/**< @brief Maximum length of accessible regions original value given at command line.  */
   const char *max_w_help; /**< @brief Maximum length of accessible regions help description.  */
   int min_w_arg;	/**< @brief Minimum length of accessible regions (default='0').  */
@@ -82,12 +82,12 @@ struct gengetopt_args_info
   char * param_file_arg;	/**< @brief Read the energy parameter file for Vienna RNA package.  */
   char * param_file_orig;	/**< @brief Read the energy parameter file for Vienna RNA package original value given at command line.  */
   const char *param_file_help; /**< @brief Read the energy parameter file for Vienna RNA package help description.  */
-  int no_pk_flag;	/**< @brief do not use the constraints for interenal pseudoknots (default=on).  */
+  int no_pk_flag;	/**< @brief do not use the constraints for interenal pseudoknots (default=off).  */
   const char *no_pk_help; /**< @brief do not use the constraints for interenal pseudoknots help description.  */
   char * rip_arg;	/**< @brief Import posterior probabilities from the result of RIP.  */
   char * rip_orig;	/**< @brief Import posterior probabilities from the result of RIP original value given at command line.  */
   const char *rip_help; /**< @brief Import posterior probabilities from the result of RIP help description.  */
-  float mix_weight_arg;	/**< @brief mixture weights of inference engines (default='1.0').  */
+  float mix_weight_arg;	/**< @brief mixture weights of inference engines (default='0.5').  */
   char * mix_weight_orig;	/**< @brief mixture weights of inference engines original value given at command line.  */
   const char *mix_weight_help; /**< @brief mixture weights of inference engines help description.  */
   char * engine_seq_arg;	/**< @brief specify the inference engine for independent sequence (default='McCaskill').  */

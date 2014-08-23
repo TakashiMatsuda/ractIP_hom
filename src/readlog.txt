@@ -2176,3 +2176,9 @@ valgrindを使って解析してみる。
 ==18106==    by 0x10000326E: RactIP::rnaduplex_hom(TH&, TH&, std::__1::vector<std::__1::vector<float, std::__1::allocator<float> >, std::__1::allocator<std::__1::vector<float, std::__1::allocator<float> > > >&, double) const (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
 ==18106==    by 0x10000A343: RactIP::solve(TH&, TH&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >&, FoldingEngine<TH>*, FoldingEngine<TH>*) (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
 ==18106==    by 0x10001BBDC: RactIP::run() (in /Users/takashi/cbrc/ractip_hom/src/ractip_hom)
+----
+CONTRAlignのモジュール、並列化できるか調べる。並列化して実行速度を早くしたい。
+---
+またinner塩基対が出力されなくなった。CONTRAlignに変えたことが原因か。CONTRAlignへのパラメータの渡し方で
+間違いをしているんだろう。
+とりあえずMcCaskillHomModelに戻して実験してみよう。

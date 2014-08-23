@@ -1462,11 +1462,10 @@ run()
   
   //cf_list_1[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
   //cf_list_2[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  //cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  //cf2 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  cf1 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], false, max_bp_dist);// canonical=trueにするべきか
-  cf2 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], false, max_bp_dist);
-  // error
+  cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  cf2 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  //cf1 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], false, max_bp_dist);// canonical=trueにするべきか
+  //cf2 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], false, max_bp_dist);
 
   // とりあえずMcCaskillモデルで動かしてみる。以下はcentroidhomfoldからのコピーコード。
   /**
