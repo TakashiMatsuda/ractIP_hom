@@ -2182,3 +2182,16 @@ CONTRAlignのモジュール、並列化できるか調べる。並列化して�
 またinner塩基対が出力されなくなった。CONTRAlignに変えたことが原因か。CONTRAlignへのパラメータの渡し方で
 間違いをしているんだろう。
 とりあえずMcCaskillHomModelに戻して実験してみよう。
+
+-no-pk をoffにしたらよくなった。　
+---
+さーてどうやってテストするかなー
+クロスバリデーションを行っていくんだろうな
+濱田先生の論文だとそういうことはやってないみたいだけど、
+やったほうがいい結果が出るだろう。
+---
+contrafolddhommodelの中身に何が入っているかちゃんと追っていなかった。
+CONTRAfoldhommodelの中身は、主配列にcontrafold, 支援配列群にcontralignかprobconsを使うモデルである。
+論文によると、probconsを用いるのが、良い結果につながるようだ。
+これらはengine_a[0]を与えて決める。
+---

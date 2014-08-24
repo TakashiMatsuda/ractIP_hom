@@ -96,7 +96,7 @@ class RactIP
 {
 public:
   RactIP()
-    : alpha_(0.1),
+    : alpha_(0.5),
       beta_(0.0),
       th_hy_(0.2),
       th_ss_(0.0),
@@ -1462,10 +1462,10 @@ run()
   
   //cf_list_1[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
   //cf_list_2[0] = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  cf2 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
-  //cf1 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], false, max_bp_dist);// canonical=trueにするべきか
-  //cf2 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], false, max_bp_dist);
+  //cf1 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  //cf2 = new McCaskillHomModel(engine_a[0], false, max_bp_dist);
+  cf1 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], true, max_bp_dist);// canonical=trueにするべきか
+  cf2 = new CONTRAfoldHomModel(param_tmp2, engine_a[0], true, max_bp_dist);
 
   // とりあえずMcCaskillモデルで動かしてみる。以下はcentroidhomfoldからのコピーコード。
   /**

@@ -5,7 +5,7 @@ purpose "RactIP_Hom"
 
 option "alpha" a " weight for hybridization" float typestr="FLOAT" no default="0.5"
 option "beta" b  "weight for unpaired bases" float typestr="FLOAT" no default="0.0"
-option "fold-th" t "Threshold for base-pairing probabilities" float typestr="FLOAT" no default="0.0"
+option "fold-th" t "Threshold for base-pairing probabilities" float typestr="FLOAT" no default="0.0001"
 option "hybridize-th" u "Threshold for hybridazation probabilities" float typestr="FLOAT" no default="0.2"
 option "acc-th" s "Threshold for accessible probabilities" float typestr="FLOAT" no default="0.0"
 option "max-w" -  "Maximum length of accessible regions" int typestr="INT" no default="0"
