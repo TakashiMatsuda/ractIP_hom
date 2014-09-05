@@ -11,7 +11,7 @@ RNAduplexHommodel(const std::string& engine_a){
 // アラインメントパターンについて総和をとる。
 //　結果として、各二次元座標の格子点ごとに、座標対が存在する確率が計算される。
 // 詳しくは降機後、ノートを見ながら実装しよう。
-void
+VVF
 RNAduplexHommodel::
 calculate_posterior(const TH&s1, const TH&s2, double min_aln){
 	std::vector<Alignment> a1_v = align_v(s1, min_aln);
@@ -28,8 +28,7 @@ calculate_posterior(const TH&s1, const TH&s2, double min_aln){
 			}
 		}
 	}
-
-
+	return hp;
 }
 
 std::vector<Alignment> 
@@ -38,7 +37,7 @@ align_v(const TH& seq, double min_aln){
 
 }
 
-VVF
+void
 RNAduplexHommodel::
 aln_duplex(Alignment a1, Alignment a2, VVF& hp) {
 	// アラインメントに含まれるタグが同じことを前提とする。
@@ -57,16 +56,9 @@ aln_duplex(Alignment a1, Alignment a2, VVF& hp) {
   VVVVF vhp(size1);
   int i=0;
   ///////////
-  // gapの時の確率を見たい
   it1++;
-  //it1++;
   it2++;
   //std::cout << "S1[2][15]: " << (*it1)[15] << std::cout;// 2-15の塩基を取り出すコード
-
-  //////////
-
-
-  /*** RNAアラインメントのギャップ'-'を考慮してメモリを損傷しないようなコードにしなければならない。***/
 
   if (size1 == size2)
   {
@@ -80,6 +72,7 @@ aln_duplex(Alignment a1, Alignment a2, VVF& hp) {
       it2++;
     }
     VVVF::iterator itr_vtr_hp;
+    // LとMはrnaduplexが決めている。確保したvectorの長さ。
     int L = vtr_hp[0].size();
     int M = vtr_hp[0][0].size();
     hp.resize(L+1);// debug temporally
@@ -130,14 +123,53 @@ aln_duplex(Alignment a1, Alignment a2, VVF& hp) {
       for (int j=0; j<M; j++)
       {
        double sum=0;
-       uint ucount=0;
        for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
        {
          for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
            sum+=(*it_vhp)[i][j];
        }
-	     hp[i][j]=sum / (double)(size1*size2);// 上から移動
+	     hp[i][j]=sum / (double)(size1*size2);
      }
    }
  }
+}
+
+
+// debug ギャップを想定したコードを追加する。
+void
+RNAduplexHommodel::
+rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const
+{
+  if (use_pf_duplex_)
+  {
+    Vienna::pf_scale = -1;
+    hp.resize(s1.size()+1, VF(s2.size()+1));
+    Vienna::pf_duplex(s1.c_str(), s2.c_str());
+    for (uint i=0; i!=s1.size(); ++i)
+      for (uint j=0; j!=s2.size(); ++j)
+        hp[i+1][j+1] = Vienna::pr_duplex[i+1][j+1];
+    Vienna::free_pf_duplex();
+  }
+  else
+  {
+    hp.clear();
+    hp.resize(s1.size()+1, VF(s2.size()+1, 0.0));
+    std::string s=s1+s2;
+    std::string c(s.size(), 'e');
+    Vienna::pf_scale = -1;
+    Vienna::cut_point = s1.size()+1;
+    Vienna::co_pf_fold(const_cast<char*>(s.c_str()), const_cast<char*>(c.c_str()));// reading
+    pair_info* pi = NULL;
+#ifdef HAVE_VIENNA20
+    Vienna::assign_plist_from_pr(&pi, Vienna::export_co_bppm(), s.size(), th_hy_);
+#else
+    pi = Vienna::get_plist((pair_info*)malloc(sizeof(*pi)*s.size()), s.size(), th_hy_);
+#endif
+    for (uint k=0; pi[k].i!=0; ++k)
+      if (pi[k].i<Vienna::cut_point && pi[k].j>=Vienna::cut_point && pi[k].p>th_hy_)
+        hp[pi[k].i][pi[k].j-Vienna::cut_point+1]=pi[k].p;
+    if (pi) free(pi);
+    Vienna::free_co_pf_arrays();
+    Vienna::cut_point = -1;
+  }
 }
