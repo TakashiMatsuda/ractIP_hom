@@ -3,7 +3,7 @@ SUBDIRS = centroidalifold/contralign centroidalifold/probconsRNA
 ractip_hom_SOURCES = \
 	ractip_hom.cpp ip.cpp ip.h fa.cpp fa.h \
 	boltzmann_param.c boltzmann_param.h \
-	cmdline.c cmdline.h pf_duplex.c pf_duplex.h ushuffle.c ushuffle.h \
+	cmdline.c cmdline.h pf_duplex.c pf_duplex.h ushuffle.c ushuffle.h vvf.h \
 	contrafold/InferenceEngine.hpp contrafold/InferenceEngine.ipp \
 	contrafold/DuplexEngine.hpp contrafold/DuplexEngine.ipp \
 	contrafold/ParameterManager.hpp contrafold/ParameterManager.ipp \

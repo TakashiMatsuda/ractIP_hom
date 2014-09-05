@@ -1,4 +1,4 @@
-/*
+  /*
  * $Id$
  * 
  * Copyright (C) 2010 Kengo Sato
@@ -77,20 +77,15 @@ extern "C" {
 #include "boltzmann_param.h"
 };
 
+
+#include "vvf.h"
+
 typedef unsigned int uint;
-typedef std::vector<float> VF;
-typedef std::vector<VF> VVF;
-typedef std::vector<VVF> VVVF;
-typedef std::vector<VVVF> VVVVF;
-typedef std::vector<int> VI;
-typedef std::vector<VI> VVI;
 #ifdef HAVE_VIENNA18
 typedef Vienna::plist pair_info;
 #else
 typedef Vienna::pair_info pair_info;
 #endif
-
-
 
 class RactIP
 {
@@ -119,7 +114,7 @@ public:
       param_file_(),
       fa1_(),
       fa2_(),
-      mix_w(0.5),
+      mix_w(),
       engine(),
       engine_a()
 
@@ -437,6 +432,7 @@ rnafold(const std::string& seq, VF& bp, VI& offset, VVF& up, uint max_w) const
 }
 
 
+// 
 void
 RactIP::
 rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
@@ -460,8 +456,12 @@ rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
   VVVVF vhp(size1);
   int i=0;
   ///////////
-  // gapの時の確率が未定義, 少なくとも想定をしていない
+  // gapの時の確率が未定義, 少なくとも想定をしていない<- ギャップの時は0にする。これを実装しよう。
+  // とりあえずrnaduplex任せにした。
+  // 
   //////////
+
+  // まずアラインメントする必要がある
 
   // アラインメントのネームタグが一致するとき
   if (size1 == size2)
@@ -489,7 +489,7 @@ rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
         {
           sum += (*itr_vtr_hp)[i][j];
         }
-        hp[i][j] = ((1 - wh) * sum / (double)size1) + wh * hp_owner[i][j];
+        hp[i][j] = ((1 - wh) * sum / (double)size1) + wh * hp_owner[i][j];// hp_ownerでのiが1つ分バッファオーバーラン
       }
     }
   }
@@ -501,7 +501,7 @@ rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
       vhp[i].resize(size2);
       for (it2=a2.begin(); it2!=a2.end(); it2++)
       {
-       rnaduplex(*it1, *it2, vhp[i][j]);
+       rnaduplex(*it1, *it2, vhp[i][j]);// すべての配列の長さが等しくないとエラーになる。
        // correct probability for gap !
        int k=0;
        int l=0;
@@ -518,8 +518,12 @@ rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
     // 各要素doubleにしたほうがいいかも
     VVVVF::iterator it_vvhp;
     VVVF::iterator it_vhp;
-    int L=vhp[0][0].size();
-    int M=vhp[0][0][0].size();
+    //int L=vhp[0][0].size();
+    //int L = hp_owner.size();
+    //int M=vhp[0][0][0].size();
+    //int M = hp_owner[0].size();
+    int L = s1.size()+1;
+    int M = s2.size()+1;
     hp.resize(s1.size()+1, VF(s2.size()+1));
     for(int i=0; i<L; i++)
     {
@@ -527,7 +531,6 @@ rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
       for (int j=0; j<M; j++)
       {
        double sum=0;
-       uint ucount=0;
        for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
        {
          for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
@@ -646,6 +649,7 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
 }
 
 
+// debug ギャップを想定したコードを追加する。
 void
 RactIP::
 rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const
@@ -662,14 +666,13 @@ rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const
   }
   else
   {
-    //reading
     hp.clear();
     hp.resize(s1.size()+1, VF(s2.size()+1, 0.0));
     std::string s=s1+s2;
     std::string c(s.size(), 'e');
     Vienna::pf_scale = -1;
     Vienna::cut_point = s1.size()+1;
-    Vienna::co_pf_fold(const_cast<char*>(s.c_str()), const_cast<char*>(c.c_str()));// reading, 
+    Vienna::co_pf_fold(const_cast<char*>(s.c_str()), const_cast<char*>(c.c_str()));// reading
     pair_info* pi = NULL;
 #ifdef HAVE_VIENNA20
     Vienna::assign_plist_from_pr(&pi, Vienna::export_co_bppm(), s.size(), th_hy_);
@@ -1222,7 +1225,7 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   for (uint i=0; i!=w.size(); ++i)
   {
     if (ip.get_value(w[i])>0.5)
-      std::cout << "(" << ww[i].first << "," << ww[i].second << ","
+      std::cout << "(" << ww[i].first << "," << ww[i].second << ","safa-
                 << up2[ww[i].first][ww[i].second-ww[i].first]<< "), ";
   }
   std::cout << std::endl;
@@ -1358,12 +1361,13 @@ run()
   {
     //std::cout<<"both fa1 and fa2 are not empty"<<std::endl;
     std::list<Fasta> l_fa1, l_fa2;
-    if (Fasta::load(l_fa1, fa1_.c_str())==0)
+    if (Fasta::load(l_fa1, fa1_.c_str())==0)// l_fa1にfa1_の中身を格納する。
       throw (fa1_+": Format error").c_str();
     if (Fasta::load(l_fa2, fa2_.c_str())==0)
       throw (fa2_+": Format error").c_str();
     fa1=l_fa1.front();
     fa2=l_fa2.front();
+    
 
     if (aln1_ != "") {
       BOOST_SPIRIT_CLASSIC_NS::file_iterator<> fi1(aln1_.c_str());
@@ -1391,6 +1395,7 @@ run()
        } else break;
      }
    }
+
 
     std::replace(fa1.seq().begin(), fa1.seq().end(), 't', 'u');
     std::replace(fa1.seq().begin(), fa1.seq().end(), 'T', 'U');

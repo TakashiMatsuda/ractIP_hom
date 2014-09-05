@@ -2195,3 +2195,58 @@ CONTRAfoldhommodelの中身は、主配列にcontrafold, 支援配列群にcontr
 論文によると、probconsを用いるのが、良い結果につながるようだ。
 これらはengine_a[0]を与えて決める。
 ---
+(lldb) run --fold-th=0.45 AE014075_1_1.fa U00096_MicA_sRNA_ompA_1.fa AE014075_1_2.fa U00096_MicA_sRNA_ompA_2.fa
+Process 27270 launched: '/Users/takashi/cbrc/ractip_hom/src/ractip_hom' (x86_64)
+Process 27270 stopped
+* thread #1: tid = 0x2ad087, 0x00000001000028cb ractip_hom`RactIP::rnaduplex_hom(this=<unavailable>, s1=<unavailable>, s2=<unavailable>, hp=0x00007fff5fbff1f0, wh=<unavailable>) const + 1371 at ractip_hom.cpp:490, queue = 'com.apple.main-thread', stop reason = EXC_BAD_ACCESS (code=EXC_I386_GPFLT)
+    frame #0: 0x00000001000028cb ractip_hom`RactIP::rnaduplex_hom(this=<unavailable>, s1=<unavailable>, s2=<unavailable>, hp=0x00007fff5fbff1f0, wh=<unavailable>) const + 1371 at ractip_hom.cpp:490
+   487          double sum = 0;
+   488          for (itr_vtr_hp = vtr_hp.begin(); itr_vtr_hp != vtr_hp.end(); itr_vtr_hp++)
+   489          {
+-> 490            sum += (*itr_vtr_hp)[i][j];
+   491          }
+   492          hp[i][j] = ((1 - wh) * sum / (double)size1) + wh * hp_owner[i][j];
+   493        }
+(lldb) bt
+* thread #1: tid = 0x2ad087, 0x00000001000028cb ractip_hom`RactIP::rnaduplex_hom(this=<unavailable>, s1=<unavailable>, s2=<unavailable>, hp=0x00007fff5fbff1f0, wh=<unavailable>) const + 1371 at ractip_hom.cpp:490, queue = 'com.apple.main-thread', stop reason = EXC_BAD_ACCESS (code=EXC_I386_GPFLT)
+  * frame #0: 0x00000001000028cb ractip_hom`RactIP::rnaduplex_hom(this=<unavailable>, s1=<unavailable>, s2=<unavailable>, hp=0x00007fff5fbff1f0, wh=<unavailable>) const + 1371 at ractip_hom.cpp:490
+    frame #1: 0x0000000100004793 ractip_hom`RactIP::solve(this=0x00007fff5fbff728, s1=0x00007fff5fbff340, s2=0x00007fff5fbff310, r1=0x00007fff5fbff3c0, r2=0x00007fff5fbff3a0, cf1=<unavailable>, cf2=<unavailable>) + 307 at ractip_hom.cpp:757
+    frame #2: 0x0000000100008d71 ractip_hom`RactIP::run(this=<unavailable>) + 3457 at ractip_hom.cpp:1588
+    frame #3: 0x00000001000098d0 ractip_hom`main(argc=6, argv=0x00007fff5fbff898) + 224 at ractip_hom.cpp:1673
+
+    ---
+    まーたsegmentation faultが出るようになってしまった。
+    MicA_ompAのデータで出る。
+    対応している時間がないので後日行うことにして、今は他のデータでバグを踏まないものを使う。
+    ---
+たとえばアラインメントが増えれば増えるほど、内部塩基対が強くなる、といったバグが潜んでないだろうか
+そんなのありそうな気がする
+---
+結構な割合でバグを踏んでいる。
+踏む時と踏まない時のデータの違いがわからない。
+デバッガでついせきして、何が起こっているかをもっと詳しくみて推理しよう。
+とりあえず、他に動いてくれる奴がないか調べてみる。4つぐらいテストできればそれでよい。
+
+---
+アラインメントの時と違って、今回はギャップなしでやっちゃってるから
+（アラインメントと2次構造推定を同時に行う)
+こっちがわでhybridization probabilityの計算時はアラインメントして位置を合わせなきゃいけないんだ。
+---
+そもそもハイブリダイゼーションでギャップを考慮するのを忘れていた。
+もとの関数rnaduplexを見て、うまく挿入できないかやってみよう。
+---
+rnaduplexはうまくやっているのかもしれない。
+そもそも、読み込みの時点でAUCG以外の文字を消している可能性もある
+それだったらあかんやろなあ
+-> 消してた。というか、変な文字になったらそこから先は読まないという方式やった。
+そこ変える。
+どんどん読むようにする。
+-
+faとかの、こんなに凝ったパーサはいらない。
+自分で読み込ませればいい。
+ractip_alnでは動いてた。
+---
+だめだ。これだとinner bpとhybrid bpでアラインメントが異なってしまう。
+Contralignで得られたアラインメントを元に、hybridbpを計算する様式にしよう。
+-
+

@@ -50,4 +50,4 @@ w, これは変えたほうが良い。
 
 ---
 パラメータをある程度fixしたら、これで(PPV, sensitivity)を計測してみる。
-各データに対して(PPV, sensitivity) が与えられる。
+各データに対して(PPV, sensitivity) が与えられる。ws

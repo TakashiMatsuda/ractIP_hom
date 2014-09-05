@@ -25,6 +25,7 @@ CONTRAfoldHomModel(const std::string& model, const std::string& engine_a, bool c
   }
   contrafold_->init_rand(seed);
   if (!model.empty()) contrafold_->SetParameters(model);
+  
   engine_a_ = engine_a;
 }
 
@@ -77,7 +78,7 @@ calculate_posterior(const TH& th)
     CONTRALIGN::SparseMatrix<float>* bp2 = NULL;
     contra_fold (bp2, cf2, hom[n], "", 0.01);
 
-    //bp2->PrintSparse (std::cout);
+    bp2->PrintSparse (std::cout);
 
     const CONTRALIGN::SparseMatrix<float> apt (*ap, CONTRALIGN::SparseMatrix<float>::TRANSPOSE);
     for (uint i=1; i<=seq.size(); ++i) {
@@ -90,7 +91,7 @@ calculate_posterior(const TH& th)
 	  for (cIter itr3 = apt.GetRowBegin (l); itr3 != apt.GetRowEnd(l); ++itr3) {
 	    const int j= itr3->column;
 	    const float plj = itr3->value;
-	    if ((int)i<j) tmp[i][j] += pik*pkl*plj; 
+	    if ((int)i<j) tmp[i][j] += pik*pkl*plj;
 	  }
 	}
       } // i
