@@ -636,7 +636,6 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
       for (int j=0; j<M; j++)
       {
        double sum=0;
-       uint ucount=0;
        for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
        {
          for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)

@@ -135,7 +135,7 @@ aln_duplex(Alignment a1, Alignment a2, VVF& hp) {
 }
 
 
-// debug ギャップを想定したコードを追加する。
+
 void
 RNAduplexHommodel::
 rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const
