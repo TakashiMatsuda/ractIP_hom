@@ -2249,4 +2249,4 @@ ractip_alnでは動いてた。
 だめだ。これだとinner bpとhybrid bpでアラインメントが異なってしまう。
 Contralignで得られたアラインメントを元に、hybridbpを計算する様式にしよう。
 -
-
+Probconsアルゴリズムで、後半のまだ読んでいないところを読む。

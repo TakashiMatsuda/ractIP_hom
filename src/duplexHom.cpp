@@ -1,4 +1,15 @@
 #include "duplexHom.h"
+namespace Vienna {
+	extern "C" {
+	#include <ViennaRNA/fold.h>
+	#include <ViennaRNA/fold_vars.h>
+	#include <ViennaRNA/part_func.h>
+	#include <ViennaRNA/part_func_up.h>
+	#include <ViennaRNA/part_func_co.h>
+	#include <ViennaRNA/utils.h>
+	#include "pf_duplex.h"
+	};
+};
 
 RNAduplexHommodel::
 RNAduplexHommodel(const std::string& engine_a){
@@ -34,8 +45,13 @@ calculate_posterior(const TH&s1, const TH&s2, double min_aln){
 std::vector<Alignment> 
 RNAduplexHommodel::
 align_v(const TH& seq, double min_aln){
+	std::vector<Alignment> res;
+	PROBCONS::Probcons* pc = new PROBCONS::Probcons();
 
+
+	return res;
 }
+
 
 void
 RNAduplexHommodel::
@@ -140,36 +156,11 @@ void
 RNAduplexHommodel::
 rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const
 {
-  if (use_pf_duplex_)
-  {
-    Vienna::pf_scale = -1;
-    hp.resize(s1.size()+1, VF(s2.size()+1));
-    Vienna::pf_duplex(s1.c_str(), s2.c_str());
+	Vienna::pf_scale = -1;
+	hp.resize(s1.size()+1, VF(s2.size()+1));
+	Vienna::pf_duplex(s1.c_str(), s2.c_str());
     for (uint i=0; i!=s1.size(); ++i)
       for (uint j=0; j!=s2.size(); ++j)
         hp[i+1][j+1] = Vienna::pr_duplex[i+1][j+1];
     Vienna::free_pf_duplex();
-  }
-  else
-  {
-    hp.clear();
-    hp.resize(s1.size()+1, VF(s2.size()+1, 0.0));
-    std::string s=s1+s2;
-    std::string c(s.size(), 'e');
-    Vienna::pf_scale = -1;
-    Vienna::cut_point = s1.size()+1;
-    Vienna::co_pf_fold(const_cast<char*>(s.c_str()), const_cast<char*>(c.c_str()));// reading
-    pair_info* pi = NULL;
-#ifdef HAVE_VIENNA20
-    Vienna::assign_plist_from_pr(&pi, Vienna::export_co_bppm(), s.size(), th_hy_);
-#else
-    pi = Vienna::get_plist((pair_info*)malloc(sizeof(*pi)*s.size()), s.size(), th_hy_);
-#endif
-    for (uint k=0; pi[k].i!=0; ++k)
-      if (pi[k].i<Vienna::cut_point && pi[k].j>=Vienna::cut_point && pi[k].p>th_hy_)
-        hp[pi[k].i][pi[k].j-Vienna::cut_point+1]=pi[k].p;
-    if (pi) free(pi);
-    Vienna::free_co_pf_arrays();
-    Vienna::cut_point = -1;
-  }
 }
