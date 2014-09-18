@@ -67,12 +67,12 @@ calculate_posterior(const TH& th)
   std::vector< std::vector<float> > tmp;
   tmp.resize (seq.size()+1);
   for (uint k=0; k<tmp.size(); ++k) tmp[k].resize (seq.size()+1, 0.0);
-
+//
   for (uint n=0; n<hom.size(); ++n) {
     CONTRALIGN::SparseMatrix<float>* ap = NULL;
     //probcons (ap, pc, seq, hom[n], 0.0001);
     if (ca != NULL) contra_align (ap, *ca, seq, hom[n], 0.0001);
-    else if (pc != NULL) probcons (ap, *pc, seq, hom[n], 0.0001);
+    else if (pc != NULL) probcons (ap, *pc, seq, hom[n], 0.0001);// alignment calculation
     //ap->PrintSparse (std::cout);
 
     CONTRALIGN::SparseMatrix<float>* bp2 = NULL;

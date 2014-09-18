@@ -55,7 +55,7 @@ void
 probcons (std::vector<T>& ap, PROBCONS::Probcons& pc,
 	  const std::string& seq1, const std::string& seq2, double th=0.0)
 {
-  pc.ComputePosterior (seq1, seq2, ap, th);
+  pc.ComputePosterior (seq1, seq2, ap, th);//wrapper ComputePosterior
 }
 
 template < class T >

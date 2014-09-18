@@ -1,4 +1,5 @@
 #include "duplexHom.h"
+#include "centroidalifold/util.h"
 namespace Vienna {
 	extern "C" {
 	#include <ViennaRNA/fold.h>
@@ -21,7 +22,6 @@ RNAduplexHommodel(const std::string& engine_a){
 // 二本の間のアラインメント間の座標対塩基対確率を計算し、
 // アラインメントパターンについて総和をとる。
 //　結果として、各二次元座標の格子点ごとに、座標対が存在する確率が計算される。
-// 詳しくは降機後、ノートを見ながら実装しよう。
 VVF
 RNAduplexHommodel::
 calculate_posterior(const TH&s1, const TH&s2, double min_aln){
@@ -42,14 +42,101 @@ calculate_posterior(const TH&s1, const TH&s2, double min_aln){
 	return hp;
 }
 
-std::vector<Alignment> 
+
+VVF
 RNAduplexHommodel::
-align_v(const TH& seq, double min_aln){
-	std::vector<Alignment> res;
+calculate_posterior(const TH &th1, const TH &th2){
+  const std::string& seq1 = th1.first;
+  const std::vector<std::string>& hom1 = th1.second;
+  const std::string& seq2 = th2.first;
+  const std::vector<std::string>& hom2 = th2.second;
+
+  VVF res;
+  res.resize(th1.first.length());
+  for (VVF::iterator itr = res.begin(); itr != res.end(); ++itr){
+    (*itr).resize(th2.first.length());
+  }
+
+  PROBCONS::Probcons* pc = new PROBCONS::Probcons();
+  VVVVF dup_matrix;
+  dup_matrix.resize(hom1.size());
+  for (VVVVF::iterator itr = dup_matrix.begin(); itr != dup_matrix.end(); ++itr){
+    (*itr).resize(hom2.size());
+  }
+  VVVF align_matrix1;
+  VVVF align_matrix2;
+
+  dup_matrix=rnaduplex_hom(th1, th2);
+  align_matrix1=align_v(th1, 0.0001);
+  align_matrix2=align_v(th2, 0.0001);
+
+  for (uint xi=0; xi<hom1.size(); ++xi){
+    for (uint eta=0; eta<hom2.size(); ++eta){
+      dup_matrix[xi][eta] = rnaduplex_hom(th1, th2);
+    }
+  }
+  for (uint xi=0; xi<hom1.size(); ++xi){
+    align_matrix1[xi] = align_v(th1, 0.0001);
+  }
+  for (uint eta=0; eta<hom2.size(); ++eta){
+    align_matrix2[eta] = align_v(th2, 0.0001);
+  }
+
+  for (int i = 0; i < res.size(); ++i){
+    for (int k = 0; k < res[i].size(); ++k){
+      double tmp = 0;
+      for (uint xi = 0; xi < hom1.size(); ++xi){
+        for (uint eta = 0; eta < hom2.size(); ++eta){
+          for (uint j = 0; j < hom1[xi].size(); ++j){
+            for (uint l = 0; l < hom2[eta].size(); ++l){
+              tmp = tmp + (double)dup_matrix[xi][eta][j][l]
+              *(double)align_matrix1[xi][i][j]
+              *(double)align_matrix2[eta][k][l];
+            }
+          }
+        }
+      }
+      res[i][k] = tmp;
+    }
+  }
+  return res;
+}
+
+
+
+VVVF
+RNAduplexHommodel::
+align_v(const TH& th, double min_aln){
+  const std::string& seq = th.first;
+  const std::vector<std::string>& hom = th.second;
+  VVVF res;
+  res.resize(hom.size());
+
+
 	PROBCONS::Probcons* pc = new PROBCONS::Probcons();
+  for (uint n=0; n<hom.size(); ++n) {
+
+    pc.ComputePosterior(seq, hom[n], min_aln);
+  }  
+  return res;
+}
+
+// caution::secondの中にfirstも入れておくこと
+VVVVF
+RNAduplexHommodel::
+rnaduplex_hom(const TH& th1, const TH& th2){
+  const std::string& seq1 = th1.first;
+  const std::vector<std::string>& hom1 = th1.second;
+  const std::string& seq2 = th2.first;
+  const std::vector<std::string>& hom2 = th2.second;
+
+  VVVVF dup_matrix;
+  dup_matrix.resize(hom1.size());
+  for (VVVVF::iterator itr = dup_matrix.begin(); itr != dup_matrix.end(); ++itr){
+    (*itr).resize(hom2.size());
+  }
 
 
-	return res;
 }
 
 
@@ -58,9 +145,6 @@ RNAduplexHommodel::
 aln_duplex(Alignment a1, Alignment a2, VVF& hp) {
 	// アラインメントに含まれるタグが同じことを前提とする。
   // 進化で構造が保存されるという考え方を利用するには、この条項が必要。
-  // forループを書き換える。
-
-  // hpに平均値を入れていく。
   // hybridization probability
   std::vector<std::string> s1=a1.get_seq();
   std::vector<std::string> s2=a2.get_seq();

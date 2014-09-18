@@ -2250,3 +2250,60 @@ ractip_alnでは動いてた。
 Contralignで得られたアラインメントを元に、hybridbpを計算する様式にしよう。
 -
 Probconsアルゴリズムで、後半のまだ読んでいないところを読む。
+読んだ。でも何のために読んでいたか忘れた。
+ノート見る。
+---
+ProbConsからアラインメントの確率を求めるためのコードをほしい
+CentroidHomfoldで実装されているコードは何なのか、読む。
+おそらくProbcons::Impl::ComputePosteriorがそのコードだと思われる。
+else if (pc != NULL) probcons (ap, *pc, seq, hom[n], 0.0001);// alignment calculation
+これで呼ぶ
+template< class T >
+static
+void
+probcons (std::vector<T>& ap, PROBCONS::Probcons& pc,
+    const std::string& seq1, const std::string& seq2, double th=0.0)
+{
+  pc.ComputePosterior (seq1, seq2, ap, th);
+}
+こんな感じ
+
+wrapperで書かれたものは、probconsのアルゴリズムの一部を再実装し、
+CONTRAfold::SparseMatrixに入れるようにうまくしたもの。
+
+  CONTRAfold<float> cf2;
+  std::vector< std::vector<float> > tmp;
+  tmp.resize (seq.size()+1);
+  for (uint k=0; k<tmp.size(); ++k) tmp[k].resize (seq.size()+1, 0.0);
+
+  for (uint n=0; n<hom.size(); ++n) {
+    CONTRALIGN::SparseMatrix<float>* ap = NULL;
+    //probcons (ap, pc, seq, hom[n], 0.0001);
+    if (ca != NULL) contra_align (ap, *ca, seq, hom[n], 0.0001);
+    else if (pc != NULL) probcons (ap, *pc, seq, hom[n], 0.0001);// alignment calculation
+    //ap->PrintSparse (std::cout);
+
+    CONTRALIGN::SparseMatrix<float>* bp2 = NULL;
+    contra_fold (bp2, cf2, hom[n], "", 0.01);
+
+    bp2->PrintSparse (std::cout);
+
+    const CONTRALIGN::SparseMatrix<float> apt (*ap, CONTRALIGN::SparseMatrix<float>::TRANSPOSE);
+    for (uint i=1; i<=seq.size(); ++i) {
+      for (cIter itr = ap->GetRowBegin (i); itr != ap->GetRowEnd (i); ++itr) {
+  const int k = itr->column;
+  const float pik = itr->value;
+  for (cIter itr2 = bp2->GetRowBegin (k); itr2 != bp2->GetRowEnd(k); ++itr2) {
+    const int l = itr2->column;
+    const float pkl = itr2->value;
+    for (cIter itr3 = apt.GetRowBegin (l); itr3 != apt.GetRowEnd(l); ++itr3) {
+      const int j= itr3->column;
+      const float plj = itr3->value;
+      if ((int)i<j) tmp[i][j] += pik*pkl*plj;
+    }
+  }
+      } // i
+    }// j
+    delete ap; delete bp2;
+  } // n
+
