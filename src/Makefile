@@ -92,12 +92,13 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_ractip_hom_OBJECTS = ractip_hom.$(OBJEXT) ip.$(OBJEXT) fa.$(OBJEXT) \
 	boltzmann_param.$(OBJEXT) cmdline.$(OBJEXT) \
-	pf_duplex.$(OBJEXT) ushuffle.$(OBJEXT) SStruct.$(OBJEXT) \
-	Utilities.$(OBJEXT) contrafold.$(OBJEXT) contrafoldm.$(OBJEXT) \
-	mccaskill.$(OBJEXT) alifold.$(OBJEXT) pfold.$(OBJEXT) \
-	averaged.$(OBJEXT) mixture.$(OBJEXT) aux.$(OBJEXT) \
-	folding_engine.$(OBJEXT) folding_engine.$(OBJEXT) bp.$(OBJEXT) \
-	aln.$(OBJEXT) centroid.$(OBJEXT) mea.$(OBJEXT) diana.$(OBJEXT) \
+	pf_duplex.$(OBJEXT) ushuffle.$(OBJEXT) duplexHom.$(OBJEXT) \
+	SStruct.$(OBJEXT) Utilities.$(OBJEXT) contrafold.$(OBJEXT) \
+	contrafoldm.$(OBJEXT) mccaskill.$(OBJEXT) alifold.$(OBJEXT) \
+	pfold.$(OBJEXT) averaged.$(OBJEXT) mixture.$(OBJEXT) \
+	aux.$(OBJEXT) folding_engine.$(OBJEXT) \
+	folding_engine.$(OBJEXT) bp.$(OBJEXT) aln.$(OBJEXT) \
+	centroid.$(OBJEXT) mea.$(OBJEXT) diana.$(OBJEXT) \
 	ps_plot.$(OBJEXT) wrapper.$(OBJEXT) contrafoldhom.$(OBJEXT) \
 	mccaskillhom.$(OBJEXT)
 ractip_hom_OBJECTS = $(am_ractip_hom_OBJECTS)
@@ -227,11 +228,11 @@ AWK = awk
 CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CPPFLAGS = -I/usr/local/Cellar/viennarna/2.1.5/include -DWITH_GLPK 
+CPPFLAGS = 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -O0 -g
+CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -246,7 +247,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS = -L/usr/local/Cellar/viennarna/2.1.5/lib 
+LDFLAGS = 
 LIBOBJS = 
 LIBS = -lRNA -lglpk -lltdl -ldl -lgmp -lz -lpthread 
 LTLIBOBJS = 
@@ -313,7 +314,8 @@ SUBDIRS = centroidalifold/contralign centroidalifold/probconsRNA
 ractip_hom_SOURCES = \
 	ractip_hom.cpp ip.cpp ip.h fa.cpp fa.h \
 	boltzmann_param.c boltzmann_param.h \
-	cmdline.c cmdline.h pf_duplex.c pf_duplex.h ushuffle.c ushuffle.h \
+	cmdline.c cmdline.h pf_duplex.c pf_duplex.h ushuffle.c ushuffle.h vvf.h \
+	duplexHom.cpp duplexHom.h \
 	contrafold/InferenceEngine.hpp contrafold/InferenceEngine.ipp \
 	contrafold/DuplexEngine.hpp contrafold/DuplexEngine.ipp \
 	contrafold/ParameterManager.hpp contrafold/ParameterManager.ipp \
@@ -447,6 +449,7 @@ include ./$(DEPDIR)/contrafold.Po
 include ./$(DEPDIR)/contrafoldhom.Po
 include ./$(DEPDIR)/contrafoldm.Po
 include ./$(DEPDIR)/diana.Po
+include ./$(DEPDIR)/duplexHom.Po
 include ./$(DEPDIR)/fa.Po
 include ./$(DEPDIR)/folding_engine.Po
 include ./$(DEPDIR)/ip.Po

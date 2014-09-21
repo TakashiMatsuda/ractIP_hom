@@ -24,27 +24,6 @@ RNAduplexHommodel(const std::string& engine_a){
 //　結果として、各二次元座標の格子点ごとに、座標対が存在する確率が計算される。
 VVF
 RNAduplexHommodel::
-calculate_posterior(const TH&s1, const TH&s2, double min_aln){
-	std::vector<Alignment> a1_v = align_v(s1, min_aln);
-	std::vector<Alignment> a2_v = align_v(s2, min_aln);
-	VVF hp;
-	for (std::vector<Alignment>::iterator itr_a1 = a1_v.begin(); itr_a1 != a1_v.end(); itr_a1++){
-		for (std::vector<Alignment>::iterator itr_a2 = a2_v.begin(); itr_a2 != a2_v.end(); itr_a2++){
-			VVF hp_tmp;
-			aln_duplex(*itr_a1, *itr_a2, hp_tmp);
-			for (int i = 0; i < hp.size(); i++){
-				for (int j = 0; j < hp[0].size(); j++){
-					hp[i][j] += hp_tmp[i][j] * (*itr_a1).get_prob() * (*itr_a2).get_prob();
-				}
-			}
-		}
-	}
-	return hp;
-}
-
-
-VVF
-RNAduplexHommodel::
 calculate_posterior(const TH &th1, const TH &th2){
   const std::string& seq1 = th1.first;
   const std::vector<std::string>& hom1 = th1.second;
@@ -57,7 +36,6 @@ calculate_posterior(const TH &th1, const TH &th2){
     (*itr).resize(th2.first.length());
   }
 
-  PROBCONS::Probcons* pc = new PROBCONS::Probcons();
   VVVVF dup_matrix;
   dup_matrix.resize(hom1.size());
   for (VVVVF::iterator itr = dup_matrix.begin(); itr != dup_matrix.end(); ++itr){
@@ -69,19 +47,6 @@ calculate_posterior(const TH &th1, const TH &th2){
   dup_matrix=rnaduplex_hom(th1, th2);
   align_matrix1=align_v(th1, 0.0001);
   align_matrix2=align_v(th2, 0.0001);
-
-  for (uint xi=0; xi<hom1.size(); ++xi){
-    for (uint eta=0; eta<hom2.size(); ++eta){
-      dup_matrix[xi][eta] = rnaduplex_hom(th1, th2);
-    }
-  }
-  for (uint xi=0; xi<hom1.size(); ++xi){
-    align_matrix1[xi] = align_v(th1, 0.0001);
-  }
-  for (uint eta=0; eta<hom2.size(); ++eta){
-    align_matrix2[eta] = align_v(th2, 0.0001);
-  }
-
   for (int i = 0; i < res.size(); ++i){
     for (int k = 0; k < res[i].size(); ++k){
       double tmp = 0;
@@ -111,15 +76,40 @@ align_v(const TH& th, double min_aln){
   const std::vector<std::string>& hom = th.second;
   VVVF res;
   res.resize(hom.size());
-
-
-	PROBCONS::Probcons* pc = new PROBCONS::Probcons();
+  PROBCONS::Probcons* pc = new PROBCONS::Probcons();
   for (uint n=0; n<hom.size(); ++n) {
-
-    pc.ComputePosterior(seq, hom[n], min_aln);
-  }  
+    //pc->ComputePosterior(seq, hom[n], min_aln);
+    // 型はfloat* 
+    // float* Probcson::Impl::ComputePosterior(...)を読んで、なぜ塩基ごとに確率が計算できているかを確認するところから。
+    // 確認できたら、それを参考にして、塩基ごとの確率を計算するコードをここに実装する。
+    res[n] = computeposterior(*pc, seq, hom[n]);
+    // res[n]の中の行列サイズは一定でない
+  }
   return res;
 }
+
+
+VVF
+RNAduplexHommodel::
+computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::string& seq2){
+  std::vector<float> ap;
+  double th = 0.0001;
+  pc.ComputePosterior(seq1, seq2, ap, th);
+
+  // transform from float* to Vector<Vector<float>>
+  int L = seq1.length();
+  int M = seq2.length();
+  VVF res;
+  res.resize(seq1.length());
+  for (int i = 0; i < L; ++i){
+    res[i].resize(M);
+    for (int j = 0; j < M; ++j){
+      res[i][j] = ap[(M+1)*(i+1-1) + j+1];
+    }
+  }
+  return res;
+}
+
 
 // caution::secondの中にfirstも入れておくこと
 VVVVF
@@ -132,11 +122,13 @@ rnaduplex_hom(const TH& th1, const TH& th2){
 
   VVVVF dup_matrix;
   dup_matrix.resize(hom1.size());
-  for (VVVVF::iterator itr = dup_matrix.begin(); itr != dup_matrix.end(); ++itr){
-    (*itr).resize(hom2.size());
+  for (uint xi = 0; xi < hom1.size(); ++xi){
+    dup_matrix[xi].resize(hom2.size());
+    for (uint eta = 0; eta < hom2.size(); ++eta){
+      rnaduplex(hom1[xi], hom2[eta], dup_matrix[xi][eta]);
+    }
   }
-
-
+  return dup_matrix;
 }
 
 

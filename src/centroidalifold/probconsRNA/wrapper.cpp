@@ -123,7 +123,7 @@ namespace PROBCONS {
     p.resize (s);
     //float* ret = new float[s];
     for (unsigned i=0; i<s; i++) {
-      p[i] = ( (*posterior)[i] >= th ? (*posterior)[i] : float(0) );
+      p[i] = ( (*posterior)[i] >= th ? (*posterior)[i] : float(0) );// これだとprobability consisitency transformationをする前の値
       assert (p[i]<=1);
     }
     delete posterior;

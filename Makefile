@@ -198,11 +198,11 @@ AWK = awk
 CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CPPFLAGS = -I/usr/local/Cellar/viennarna/2.1.5/include -DWITH_GLPK 
+CPPFLAGS = 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -O2 -g
+CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -217,7 +217,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS = -L/usr/local/Cellar/viennarna/2.1.5/lib 
+LDFLAGS = 
 LIBOBJS = 
 LIBS = -lRNA -lglpk -lltdl -ldl -lgmp -lz -lpthread 
 LTLIBOBJS = 

@@ -56,6 +56,8 @@ probcons (std::vector<T>& ap, PROBCONS::Probcons& pc,
 	  const std::string& seq1, const std::string& seq2, double th=0.0)
 {
   pc.ComputePosterior (seq1, seq2, ap, th);//wrapper ComputePosterior
+  // T is float(std::vector<float>& ap)
+  // apにposterior probabilityがはいっている。
 }
 
 template < class T >
@@ -86,7 +88,7 @@ contra_fold(CONTRALIGN::SparseMatrix<T>*& bp, CONTRAfold<U>& cf,
   uint k=0;
   for (uint i=0; i!=seq.size()+1; ++i) {
     for (uint j=i; j!=seq.size()+1; ++j) {
-      if (i!=0 && posterior[k] > th) elems[std::make_pair(i,j)]=posterior[k]; 
+      if (i!=0 && posterior[k] > th) elems[std::make_pair(i,j)]=posterior[k];
       ++k;
     }
   }

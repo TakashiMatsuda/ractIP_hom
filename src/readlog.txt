@@ -2307,3 +2307,136 @@ CONTRAfold::SparseMatrixに入れるようにうまくしたもの。
     delete ap; delete bp2;
   } // n
 
+probcons => probcons=> Probcons::ComputePosterior => Probcons::Impl::ComputePosterior
+
+
+  const float* Probcons::Impl::ComputePosterior (const std::string& seq1str, const std::string& seq2str,
+             std::vector<float>& p, float th)
+  {
+    SafeVector<char>* data1 = new SafeVector<char> ();
+    data1->resize (seq1str.size()+1);
+    (*data1)[0] = '@';
+    copy (seq1str.begin(), seq1str.end(), data1->begin()+1);
+    Sequence seq1 (data1, "", seq1str.size(), 0, 0);
+
+    SafeVector<char>* data2 = new SafeVector<char> ();
+    data2->resize (seq2str.size()+1);
+    (*data2)[0]='@';
+    copy (seq2str.begin(), seq2str.end(), data2->begin()+1);
+    Sequence seq2 (data2, "", seq2str.size(), 0, 0);
+
+    ProbabilisticModel model (initDistrib, gapOpen, gapExtend, emitPairs, emitSingle);
+    VF* forward  = model.ComputeForwardMatrix  (&seq1, &seq2); assert (forward);
+    VF* backward = model.ComputeBackwardMatrix (&seq1, &seq2); assert (backward);
+    VF* posterior = model.ComputePosteriorMatrix (&seq1, &seq2, *forward, *backward);
+    delete forward;
+    delete backward;
+    unsigned s = posterior->size();
+    p.resize (s);
+    //float* ret = new float[s];
+    for (unsigned i=0; i<s; i++) {
+      p[i] = ( (*posterior)[i] >= th ? (*posterior)[i] : float(0) );
+      assert (p[i]<=1);
+    }
+    delete posterior;
+    return &p[0];
+  }
+
+VF* forward  = model.ComputeForwardMatrix  (&seq1, &seq2); assert (forward);
+    VF* backward = model.ComputeBackwardMatrix (&seq1, &seq2); assert (backward);
+    VF* posterior = model.ComputePosteriorMatrix (&seq1, &seq2, *forward, *backward);
+    unsigned s = posterior->size();
+    p.resize (s);
+    //float* ret = new float[s];
+    for (unsigned i=0; i<s; i++) {
+      p[i] = ( (*posterior)[i] >= th ? (*posterior)[i] : float(0) );
+      assert (p[i]<=1);
+    }
+    return &p[0];
+
+pHMMのBaumWelchを忘れているので、確認する。それがわかれば見通しが明るくなると思う。
+BaumWelchではなかった。単なる事後確率最大化。
+
+VF *ComputePosteriorMatrix (Sequence *seq1, Sequence *seq2,
+        const VF &forward, const VF &backward) const {
+
+      assert (seq1);
+      assert (seq2);
+
+      const int seq1Length = seq1->GetLength();
+      const int seq2Length = seq2->GetLength();
+
+      float totalProb = ComputeTotalProbability (seq1Length, seq2Length,
+             forward, backward);
+
+      // compute posterior matrices
+      VF *posteriorPtr = new VF((seq1Length+1) * (seq2Length+1)); assert (posteriorPtr);
+      VF &posterior = *posteriorPtr;
+
+      int ij = 0;
+      VF::iterator ptr = posterior.begin();
+
+      for (int i = 0; i <= seq1Length; i++){
+  for (int j = 0; j <= seq2Length; j++){
+    *(ptr++) = EXP (min (LOG_ONE, forward[ij] + backward[ij] - totalProb));
+    ij += NumMatrixTypes;
+  }
+      }
+
+      posterior[0] = 0;
+
+      return posteriorPtr;
+    }
+
+
+  // see if we still want to do some alignments
+  else {
+
+    if (!enableViterbi){
+      
+      // perform the consistency transformation the desired number of times
+      for (int r = 0; r < numConsistencyReps; r++){
+  SafeVector<SafeVector<SparseMatrix *> > newSparseMatrices = DoRelaxation (sequences, sparseMatrices);
+
+  // now replace the old posterior matrices
+  for (int i = 0; i < numSeqs; i++){
+    for (int j = 0; j < numSeqs; j++){
+      delete sparseMatrices[i][j];
+      sparseMatrices[i][j] = newSparseMatrices[i][j];
+    }
+  }
+      }
+    }
+// ここでSparseMatricesに入っている値を用いればよい。
+SparseMatricesの型の仕様を見る。
+
+
+//
+自分でconsistency transformationのところは書いてしまおう。
+
+//
+情報は乗っているのだが、SparseMatrixを用いるための工夫がされているために、
+一筋縄ではいかない。
+選択肢は２つあって、ひとつはSparseMatrixに入れる前に、VVFに入れてしまうこと。
+後者は、SparseMatrixを用いるコードに修正する。
+
+前者でやったときのメモリ消費量：2 * hom.size * x1.length * h1.length * float.size(4 Byte)
+100 seqs
+100 bp
+-> 2 * 100 * 100 * 100 * 4(Byte) = 8000000(Byte) = 8MByte
+問題ない。
+
+しかし、コードを書くのが面倒くさそうだ。
+ComputeForwardMatrixから、もうSparseMatrixで書くことを前提にしてしまって実装されている。
+SparseMatrixを用いて実装することにしよう。
+全部終わってからVVFに戻してもよい。
+
+centroidalifold/contralign/SparseMatrix.hppにSparseMatrixの使い方が書いてあった。
+これを参考にして、やってみよう。
+あと、ComputePosteriorのコードも読んで、直接VVFに変換できないか調べよう。
+
+  // create sparse matrix from dense rectangular array
+    SparseMatrix(const T *source, int rows, int cols, T zero);
+
+これで変換してる。
+
