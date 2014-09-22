@@ -711,15 +711,15 @@ ractip_hom.o: ractip_hom.cpp ../config.h cmdline.h /usr/include/stdio.h \
   centroidalifold/engine/pfold.h centroidalifold/engine/mixture.h \
   centroidalifold/engine/aux.h centroidalifold/engine/contrafoldhom.h \
   centroidalifold/engine/mccaskillhom.h \
-  /usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/fold.h \
-  /usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/data_structures.h \
-  /usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/energy_const.h \
-  /usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/fold_vars.h \
-  /usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/part_func.h \
-  /usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/part_func_up.h \
-  /usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/part_func_co.h \
-  /usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/utils.h \
-  pf_duplex.h ushuffle.h boltzmann_param.h
+  /usr/local/include/ViennaRNA/fold.h \
+  /usr/local/include/ViennaRNA/data_structures.h \
+  /usr/local/include/ViennaRNA/energy_const.h \
+  /usr/local/include/ViennaRNA/fold_vars.h \
+  /usr/local/include/ViennaRNA/part_func.h \
+  /usr/local/include/ViennaRNA/part_func_up.h \
+  /usr/local/include/ViennaRNA/part_func_co.h \
+  /usr/local/include/ViennaRNA/utils.h pf_duplex.h ushuffle.h \
+  boltzmann_param.h vvf.h
 
 ../config.h:
 
@@ -2301,24 +2301,26 @@ centroidalifold/engine/contrafoldhom.h:
 
 centroidalifold/engine/mccaskillhom.h:
 
-/usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/fold.h:
+/usr/local/include/ViennaRNA/fold.h:
 
-/usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/data_structures.h:
+/usr/local/include/ViennaRNA/data_structures.h:
 
-/usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/energy_const.h:
+/usr/local/include/ViennaRNA/energy_const.h:
 
-/usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/fold_vars.h:
+/usr/local/include/ViennaRNA/fold_vars.h:
 
-/usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/part_func.h:
+/usr/local/include/ViennaRNA/part_func.h:
 
-/usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/part_func_up.h:
+/usr/local/include/ViennaRNA/part_func_up.h:
 
-/usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/part_func_co.h:
+/usr/local/include/ViennaRNA/part_func_co.h:
 
-/usr/local/Cellar/viennarna/2.1.5/include/ViennaRNA/utils.h:
+/usr/local/include/ViennaRNA/utils.h:
 
 pf_duplex.h:
 
 ushuffle.h:
 
 boltzmann_param.h:
+
+vvf.h:

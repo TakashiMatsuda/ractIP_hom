@@ -1,7 +1,7 @@
 // Copyright 2009, 2010 Michiaki Hamada
 
 #ifdef HAVE_CONFIG_H
-#include "../config.h"
+#include "../../../config.h"
 #endif
 
 #include <sys/time.h>

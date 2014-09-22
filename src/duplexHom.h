@@ -1,6 +1,10 @@
 #ifndef __INC_DUPLEXHOM_H__
 #define __INC_DUPLEXHOM_H__
 
+#ifdef HAVE_CONFIG_H
+#include "../config.h"
+#endif
+
 #include "centroidalifold/folding_engine.h"
 #include "vvf.h"
 #include "alignment.h"
