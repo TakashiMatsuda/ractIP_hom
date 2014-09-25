@@ -35,6 +35,7 @@
 #include <boost/algorithm/string.hpp>
 #include "fa.h"
 #include "ip.h"
+#include "duplexHom.h"
 #include "centroidalifold/aln.h"
 #include "centroidalifold/mea.h"
 #include "centroidalifold/folding_engine.h"
@@ -437,110 +438,8 @@ void
 RactIP::
 rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
 {
-  // アラインメントに含まれるタグが同じことを前提とする。
-  // 進化で構造が保存されるという考え方を利用するには、この条項が必要。
-  // forループを書き換える。
-  std::string owner1 = s1.first;
-  std::string owner2 = s2.first;
-  VVF hp_owner;
-  rnaduplex(owner1, owner2, hp_owner);
-
-  std::vector<std::string> a1 = s1.second;
-  std::vector<std::string> a2 = s2.second;
-  // hpに平均値を入れていく。
-  // hybridization probability
-  uint size1=a1.size();
-  uint size2=a2.size();
-  std::vector<std::string>::iterator it1=a1.begin();
-  std::vector<std::string>::iterator it2=a2.begin();
-  VVVVF vhp(size1);
-  int i=0;
-  ///////////
-  // gapの時の確率が未定義, 少なくとも想定をしていない<- ギャップの時は0にする。これを実装しよう。
-  // とりあえずrnaduplex任せにした。
-  // 
-  //////////
-
-  // まずアラインメントする必要がある
-
-  // アラインメントのネームタグが一致するとき
-  if (size1 == size2)
-  {
-    it1 = a1.begin();
-    it2 = a2.begin();
-    VVVF vtr_hp(size1);
-    for (int i = 0; i < size1; i++)
-    {
-      rnaduplex(*it1, *it2, vtr_hp[i]);
-      it1++;
-      it2++;
-    }
-    VVVF::iterator itr_vtr_hp;
-    int L = vtr_hp[0].size();
-    int M = vtr_hp[0][0].size();
-    hp.resize(s1.size()+1, VF(s2.size()+1));
-    for (int i=0; i<L; i++)
-    {
-      //hp[i].resize(M+1);
-      for (int j = 0; j < M; j++)
-      {
-        double sum = 0;
-        for (itr_vtr_hp = vtr_hp.begin(); itr_vtr_hp != vtr_hp.end(); itr_vtr_hp++)
-        {
-          sum += (*itr_vtr_hp)[i][j];
-        }
-        hp[i][j] = ((1 - wh) * sum / (double)size1) + wh * hp_owner[i][j];// hp_ownerでのiが1つ分バッファオーバーラン
-      }
-    }
-  }
-  else
-  {
-    for (it1=a1.begin(); it1 != a1.end(); it1++)
-    {
-      int j=0;
-      vhp[i].resize(size2);
-      for (it2=a2.begin(); it2!=a2.end(); it2++)
-      {
-       rnaduplex(*it1, *it2, vhp[i][j]);// すべての配列の長さが等しくないとエラーになる。
-       // correct probability for gap !
-       int k=0;
-       int l=0;
-       if (false)
-       {
-        if (false)
-          vhp[i][j][k][l]=0;
-       }
-       j++;
-      }      
-      i++;
-    }
-    // 各塩基配列対について平均をとる
-    // 各要素doubleにしたほうがいいかも
-    VVVVF::iterator it_vvhp;
-    VVVF::iterator it_vhp;
-    //int L=vhp[0][0].size();
-    //int L = hp_owner.size();
-    //int M=vhp[0][0][0].size();
-    //int M = hp_owner[0].size();
-    int L = s1.size()+1;
-    int M = s2.size()+1;
-    hp.resize(s1.size()+1, VF(s2.size()+1));
-    for(int i=0; i<L; i++)
-    {
-      //hp[i].resize(M+1);
-      for (int j=0; j<M; j++)
-      {
-       double sum=0;
-       for (it_vvhp=vhp.begin(); it_vvhp!=vhp.end();it_vvhp++)
-       {
-         for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
-           sum+=(*it_vhp)[i][j];
-          //hp[i][j]=sum / (double)(size1+size2);// ここじゃなくない?
-       }
-       hp[i][j]=((1 - wh) * sum / (double)(size1*size2)) + wh * hp_owner[i][j];// 上から移動
-     }
-   }
- }
+  RNAduplexHommodel rdh;
+  hp = rdh.calculate_posterior(s1, s2);
 }
 
 void
@@ -757,8 +656,6 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   homfold(s1, bp1, offset1, up1, cf1);
   homfold(s2, bp2, offset2, up2, cf2);
   rnaduplex_hom(s1, s2, hp, WH);
-  //rnaduplex_aln(s1, s2, hp);
-
   
 #if 0
   bool use_alifold=false;// temporary code

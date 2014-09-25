@@ -2439,4 +2439,37 @@ centroidalifold/contralign/SparseMatrix.hppにSparseMatrixの使い方が書い�
     SparseMatrix(const T *source, int rows, int cols, T zero);
 
 これで変換してる。
+変換コードを書いた。computeposterior.
+---
+IPsolver  がリンクされていないと出る。
+config.hをどこかで間違ってincludeしてるのかも
+---
+動いた。
+---
+hpのサイズが1たりないと言われた。
+もともとどういうふうに余らせていたか見てみよう。
+[i+1][j+1]しか使っていない。
+もともとは
+pr_duplex[i][j] = exp(fw[i][j]+bk[i][j]-Esum);
+PUBLIC double **pr_duplex;
+/* energy array, given that i-j pair */
+普通にenergyなのかな。エネルギーだったら困るけど。確率じゃないと。
 
+PRIVATE double **fw;      /* energy array, given that i-j pair */
+PRIVATE double **bk;      /* energy array, given that i-j pair */
+PUBLIC double **pr_duplex;      /* energy array, given that i-j pair */
+
+って書いてあって、どのコメントもあてにならない。
+
+align_vで、サイズの設定で、ミスをしているはず。
+サイズは一定でないのかも
+
+---
+ところで、hpはVVFでいいんだっけ
+上三角行列とか使って空間を節約している可能性もある
+---
+ for (int i = 0; i < res.size()-1; ++i){
+    for (int k = 0; k < res[i].size()-1; ++k){
+この部分ですでにもとのhpよりサイズを1大きくして計算するようにしてあったので
+(res.sizeはすでに+1されている)
+修正した。

@@ -17,6 +17,10 @@ RNAduplexHommodel(const std::string& engine_a){
 	engine_a_ = engine_a;
 }
 
+RNAduplexHommodel::
+~RNAduplexHommodel(){
+}
+
 
 // すべてのアラインメントパターンを計算して、それぞれについて
 // 二本の間のアラインメント間の座標対塩基対確率を計算し、
@@ -25,16 +29,16 @@ RNAduplexHommodel(const std::string& engine_a){
 VVF
 RNAduplexHommodel::
 calculate_posterior(const TH &th1, const TH &th2){
-  const std::string& seq1 = th1.first;
   const std::vector<std::string>& hom1 = th1.second;
-  const std::string& seq2 = th2.first;
   const std::vector<std::string>& hom2 = th2.second;
 
   VVF res;
-  res.resize(th1.first.length());
+  res.resize(th1.first.length()+1);
   for (VVF::iterator itr = res.begin(); itr != res.end(); ++itr){
-    (*itr).resize(th2.first.length());
+    (*itr).resize(th2.first.length()+1);
   }
+
+  std::cout << th2.first.length()+1 << std::endl;
 
   VVVVF dup_matrix;
   dup_matrix.resize(hom1.size());
@@ -47,28 +51,28 @@ calculate_posterior(const TH &th1, const TH &th2){
   dup_matrix=rnaduplex_hom(th1, th2);
   align_matrix1=align_v(th1, 0.0001);
   align_matrix2=align_v(th2, 0.0001);
-  for (int i = 0; i < res.size(); ++i){
-    for (int k = 0; k < res[i].size(); ++k){
+
+  for (int i = 0; i < res.size()-1; ++i){
+    for (int k = 0; k < res[i].size()-1; ++k){
+      std::cout << "seq-1: " << i << "/ seq-2:: " << k << std::endl;
       double tmp = 0;
       for (uint xi = 0; xi < hom1.size(); ++xi){
         for (uint eta = 0; eta < hom2.size(); ++eta){
           for (uint j = 0; j < hom1[xi].size(); ++j){
             for (uint l = 0; l < hom2[eta].size(); ++l){
-              tmp = tmp + (double)dup_matrix[xi][eta][j][l]
-              *(double)align_matrix1[xi][i][j]
-              *(double)align_matrix2[eta][k][l];
+              tmp = tmp + (double)dup_matrix[xi][eta][j][l]*(double)align_matrix1[xi][i][j]*(double)align_matrix2[eta][k][l];
             }
           }
         }
       }
-      res[i][k] = tmp;
+      res[i+1][k+1] = tmp / ((double)hom1.size() * (double)hom2.size());
     }
   }
   return res;
 }
 
 
-
+// alignment probability
 VVVF
 RNAduplexHommodel::
 align_v(const TH& th, double min_aln){
@@ -82,18 +86,18 @@ align_v(const TH& th, double min_aln){
     // 型はfloat* 
     // float* Probcson::Impl::ComputePosterior(...)を読んで、なぜ塩基ごとに確率が計算できているかを確認するところから。
     // 確認できたら、それを参考にして、塩基ごとの確率を計算するコードをここに実装する。
-    res[n] = computeposterior(*pc, seq, hom[n]);
-    // res[n]の中の行列サイズは一定でない
+    res[n] = computeposterior(*pc, seq, hom[n]);// probcons alignment prob
+
   }
   return res;
 }
 
-
+// outputtting alignment probability by base
 VVF
 RNAduplexHommodel::
 computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::string& seq2){
   std::vector<float> ap;
-  double th = 0.0001;
+  double th = 0.0004;
   pc.ComputePosterior(seq1, seq2, ap, th);
 
   // transform from float* to Vector<Vector<float>>
@@ -104,9 +108,10 @@ computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::str
   for (int i = 0; i < L; ++i){
     res[i].resize(M);
     for (int j = 0; j < M; ++j){
-      res[i][j] = ap[(M+1)*(i+1-1) + j+1];
+      res[i][j] = ap[(M+1)*(i+1-1) + j+1];// 合っているか確認する。
     }
   }
+
   return res;
 }
 
@@ -115,9 +120,7 @@ computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::str
 VVVVF
 RNAduplexHommodel::
 rnaduplex_hom(const TH& th1, const TH& th2){
-  const std::string& seq1 = th1.first;
   const std::vector<std::string>& hom1 = th1.second;
-  const std::string& seq2 = th2.first;
   const std::vector<std::string>& hom2 = th2.second;
 
   VVVVF dup_matrix;

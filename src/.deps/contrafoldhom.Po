@@ -614,18 +614,18 @@ contrafoldhom.o: centroidalifold/engine/contrafoldhom.cpp \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1/stack \
   centroidalifold/engine/../contralign/Utilities.ipp \
   centroidalifold/engine/../contralign/SparseMatrix.ipp \
-  /usr/local/include/ViennaRNA/fold.h \
-  /usr/local/include/ViennaRNA/data_structures.h \
-  /usr/local/include/ViennaRNA/energy_const.h \
-  /usr/local/include/ViennaRNA/fold_vars.h \
-  /usr/local/include/ViennaRNA/part_func.h \
-  /usr/local/include/ViennaRNA/alifold.h \
-  /usr/local/include/ViennaRNA/LPfold.h \
-  /usr/local/include/ViennaRNA/PS_dot.h \
-  /usr/local/include/ViennaRNA/plot_layouts.h \
-  /usr/local/include/ViennaRNA/naview.h \
-  /usr/local/include/ViennaRNA/aln_util.h \
-  /usr/local/include/ViennaRNA/utils.h
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold_vars.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/part_func.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/alifold.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/LPfold.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/PS_dot.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/plot_layouts.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/naview.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/aln_util.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/utils.h
 
 centroidalifold/engine/../../../config.h:
 
@@ -1993,26 +1993,26 @@ centroidalifold/engine/../contralign/Utilities.ipp:
 
 centroidalifold/engine/../contralign/SparseMatrix.ipp:
 
-/usr/local/include/ViennaRNA/fold.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h:
 
-/usr/local/include/ViennaRNA/data_structures.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h:
 
-/usr/local/include/ViennaRNA/energy_const.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h:
 
-/usr/local/include/ViennaRNA/fold_vars.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold_vars.h:
 
-/usr/local/include/ViennaRNA/part_func.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/part_func.h:
 
-/usr/local/include/ViennaRNA/alifold.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/alifold.h:
 
-/usr/local/include/ViennaRNA/LPfold.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/LPfold.h:
 
-/usr/local/include/ViennaRNA/PS_dot.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/PS_dot.h:
 
-/usr/local/include/ViennaRNA/plot_layouts.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/plot_layouts.h:
 
-/usr/local/include/ViennaRNA/naview.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/naview.h:
 
-/usr/local/include/ViennaRNA/aln_util.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/aln_util.h:
 
-/usr/local/include/ViennaRNA/utils.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/utils.h:

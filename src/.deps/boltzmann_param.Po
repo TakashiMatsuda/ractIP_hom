@@ -10,11 +10,12 @@ boltzmann_param.o: boltzmann_param.c ../config.h /usr/include/stdio.h \
   /usr/include/string.h /usr/include/sys/_types/_rsize_t.h \
   /usr/include/sys/_types/_errno_t.h /usr/include/strings.h \
   /usr/include/secure/_string.h /usr/include/assert.h \
-  /usr/local/include/ViennaRNA/energy_const.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/include/limits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
-  /usr/include/sys/syslimits.h /usr/local/include/ViennaRNA/energy_par.h
+  /usr/include/sys/syslimits.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_par.h
 
 ../config.h:
 
@@ -64,7 +65,7 @@ boltzmann_param.o: boltzmann_param.c ../config.h /usr/include/stdio.h \
 
 /usr/include/assert.h:
 
-/usr/local/include/ViennaRNA/energy_const.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/include/limits.h:
 
@@ -78,4 +79,4 @@ boltzmann_param.o: boltzmann_param.c ../config.h /usr/include/stdio.h \
 
 /usr/include/sys/syslimits.h:
 
-/usr/local/include/ViennaRNA/energy_par.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_par.h:

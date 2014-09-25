@@ -37,18 +37,20 @@ pf_duplex.o: pf_duplex.c ../config.h /usr/include/stdio.h \
   /usr/include/sys/_types/_wint_t.h /usr/include/string.h \
   /usr/include/sys/_types/_rsize_t.h /usr/include/sys/_types/_errno_t.h \
   /usr/include/strings.h /usr/include/secure/_string.h \
-  /usr/local/include/ViennaRNA/energy_par.h \
-  /usr/local/include/ViennaRNA/energy_const.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_par.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/include/limits.h \
   /usr/include/limits.h /usr/include/machine/limits.h \
   /usr/include/i386/limits.h /usr/include/i386/_limits.h \
-  /usr/include/sys/syslimits.h /usr/local/include/ViennaRNA/fold_vars.h \
-  /usr/local/include/ViennaRNA/data_structures.h \
-  /usr/local/include/ViennaRNA/fold.h \
-  /usr/local/include/ViennaRNA/pair_mat.h \
-  /usr/local/include/ViennaRNA/utils.h \
-  /usr/local/include/ViennaRNA/params.h \
-  /usr/local/include/ViennaRNA/loop_energies.h pf_duplex.h
+  /usr/include/sys/syslimits.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold_vars.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/pair_mat.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/utils.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/params.h \
+  /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/loop_energies.h \
+  pf_duplex.h
 
 ../config.h:
 
@@ -196,9 +198,9 @@ pf_duplex.o: pf_duplex.c ../config.h /usr/include/stdio.h \
 
 /usr/include/secure/_string.h:
 
-/usr/local/include/ViennaRNA/energy_par.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_par.h:
 
-/usr/local/include/ViennaRNA/energy_const.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/5.1/include/limits.h:
 
@@ -212,18 +214,18 @@ pf_duplex.o: pf_duplex.c ../config.h /usr/include/stdio.h \
 
 /usr/include/sys/syslimits.h:
 
-/usr/local/include/ViennaRNA/fold_vars.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold_vars.h:
 
-/usr/local/include/ViennaRNA/data_structures.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h:
 
-/usr/local/include/ViennaRNA/fold.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h:
 
-/usr/local/include/ViennaRNA/pair_mat.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/pair_mat.h:
 
-/usr/local/include/ViennaRNA/utils.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/utils.h:
 
-/usr/local/include/ViennaRNA/params.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/params.h:
 
-/usr/local/include/ViennaRNA/loop_energies.h:
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/loop_energies.h:
 
 pf_duplex.h:

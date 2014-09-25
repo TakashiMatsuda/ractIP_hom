@@ -74,7 +74,7 @@ ip.o: ip.cpp ../config.h ip.h \
   /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
   /usr/include/machine/types.h /usr/include/i386/types.h \
   /usr/include/sys/_types/___offsetof.h /usr/include/sys/_types/_dev_t.h \
-  /usr/include/sys/_types/_mode_t.h
+  /usr/include/sys/_types/_mode_t.h /usr/local/include/glpk.h
 
 ../config.h:
 
@@ -307,3 +307,5 @@ ip.h:
 /usr/include/sys/_types/_dev_t.h:
 
 /usr/include/sys/_types/_mode_t.h:
+
+/usr/local/include/glpk.h:

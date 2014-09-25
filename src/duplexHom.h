@@ -13,7 +13,8 @@
 class RNAduplexHommodel
 {
 public:
-	RNAduplexHommodel(const std::string& engine_a);
+	~RNAduplexHommodel();
+	RNAduplexHommodel(const std::string& engine_a="probcons");
 	VVF calculate_posterior(const TH& s1, const TH& s2);
 private:
 	std::string engine_a_;

@@ -198,7 +198,7 @@ AWK = awk
 CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
-CPPFLAGS = -I/usr/local/Veller/viennarna/2.1.8/include -DWITH_GLPK 
+CPPFLAGS = -I/usr/local/Cellar/viennarna/2.1.8/include -DWITH_GLPK 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
@@ -217,7 +217,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS = -L/usr/local/Veller/viennarna/2.1.8/lib 
+LDFLAGS = -L/usr/local/Cellar/viennarna/2.1.8/lib 
 LIBOBJS = 
 LIBS = -lRNA -lglpk -lltdl -ldl -lgmp -lz -lpthread 
 LTLIBOBJS = 
