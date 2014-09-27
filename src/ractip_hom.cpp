@@ -50,6 +50,9 @@
 #include "centroidalifold/engine/contrafoldhom.h"
 #include "centroidalifold/engine/mccaskillhom.h"
 
+#include "gtest/gtest.h"
+
+
 
 namespace Vienna {
 extern "C" {
@@ -1567,6 +1570,7 @@ run()
 int
 main(int argc, char* argv[])
 {
+  return RUN_ALL_TESTS();
   try
   {
     RactIP ractip;

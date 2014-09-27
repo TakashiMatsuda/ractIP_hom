@@ -87,7 +87,6 @@ align_v(const TH& th, double min_aln){
     // float* Probcson::Impl::ComputePosterior(...)を読んで、なぜ塩基ごとに確率が計算できているかを確認するところから。
     // 確認できたら、それを参考にして、塩基ごとの確率を計算するコードをここに実装する。
     res[n] = computeposterior(*pc, seq, hom[n]);// probcons alignment prob
-
   }
   return res;
 }
@@ -97,7 +96,7 @@ VVF
 RNAduplexHommodel::
 computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::string& seq2){
   std::vector<float> ap;
-  double th = 0.0004;
+  double th = 0.01;
   pc.ComputePosterior(seq1, seq2, ap, th);
 
   // transform from float* to Vector<Vector<float>>
@@ -108,10 +107,9 @@ computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::str
   for (int i = 0; i < L; ++i){
     res[i].resize(M);
     for (int j = 0; j < M; ++j){
-      res[i][j] = ap[(M+1)*(i+1-1) + j+1];// 合っているか確認する。
+      res[i][j] = ap[(M+1)*(i+1-1) + j+1];
     }
   }
-
   return res;
 }
 

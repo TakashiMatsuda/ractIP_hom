@@ -20,7 +20,6 @@ ractip_hom_SOURCES = \
 	centroidalifold/engine/mixture.h centroidalifold/engine/mixture.cpp \
 	centroidalifold/engine/aux.h centroidalifold/engine/aux.cpp \
 	centroidalifold/folding_engine.h centroidalifold/folding_engine.cpp \
-	centroidalifold/folding_engine.cpp centroidalifold/folding_engine.h \
 	centroidalifold/bp.cpp centroidalifold/bp.h \
 	centroidalifold/aln.h centroidalifold/aln.cpp \
 	centroidalifold/cyktable.h \
