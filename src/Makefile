@@ -116,19 +116,6 @@ DUPLEXHOM/fast:
 .PHONY : DUPLEXHOM/fast
 
 #=============================================================================
-# Target rules for targets named PFDUPLEX
-
-# Build rule for target.
-PFDUPLEX: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 PFDUPLEX
-.PHONY : PFDUPLEX
-
-# fast build rule for target.
-PFDUPLEX/fast:
-	$(MAKE) -f CMakeFiles/PFDUPLEX.dir/build.make CMakeFiles/PFDUPLEX.dir/build
-.PHONY : PFDUPLEX/fast
-
-#=============================================================================
 # Target rules for targets named Test
 
 # Build rule for target.
@@ -153,6 +140,19 @@ centroidalifold: cmake_check_build_system
 centroidalifold/fast:
 	$(MAKE) -f centroidalifold/CMakeFiles/centroidalifold.dir/build.make centroidalifold/CMakeFiles/centroidalifold.dir/build
 .PHONY : centroidalifold/fast
+
+#=============================================================================
+# Target rules for targets named Probcons
+
+# Build rule for target.
+Probcons: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Probcons
+.PHONY : Probcons
+
+# fast build rule for target.
+Probcons/fast:
+	$(MAKE) -f centroidalifold/probconsRNA/CMakeFiles/Probcons.dir/build.make centroidalifold/probconsRNA/CMakeFiles/Probcons.dir/build
+.PHONY : Probcons/fast
 
 #=============================================================================
 # Target rules for targets named gtest
@@ -209,7 +209,7 @@ pf_duplex.o: pf_duplex.c.o
 
 # target to build an object file
 pf_duplex.c.o:
-	$(MAKE) -f CMakeFiles/PFDUPLEX.dir/build.make CMakeFiles/PFDUPLEX.dir/pf_duplex.c.o
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/pf_duplex.c.o
 .PHONY : pf_duplex.c.o
 
 pf_duplex.i: pf_duplex.c.i
@@ -217,7 +217,7 @@ pf_duplex.i: pf_duplex.c.i
 
 # target to preprocess a source file
 pf_duplex.c.i:
-	$(MAKE) -f CMakeFiles/PFDUPLEX.dir/build.make CMakeFiles/PFDUPLEX.dir/pf_duplex.c.i
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/pf_duplex.c.i
 .PHONY : pf_duplex.c.i
 
 pf_duplex.s: pf_duplex.c.s
@@ -225,7 +225,7 @@ pf_duplex.s: pf_duplex.c.s
 
 # target to generate assembly for a file
 pf_duplex.c.s:
-	$(MAKE) -f CMakeFiles/PFDUPLEX.dir/build.make CMakeFiles/PFDUPLEX.dir/pf_duplex.c.s
+	$(MAKE) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/pf_duplex.c.s
 .PHONY : pf_duplex.c.s
 
 test.o: test.cpp.o
@@ -259,11 +259,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... DUPLEXHOM"
-	@echo "... PFDUPLEX"
 	@echo "... Test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... centroidalifold"
+	@echo "... Probcons"
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... duplexhom.o"

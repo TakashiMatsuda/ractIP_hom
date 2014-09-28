@@ -18,6 +18,7 @@
 
 
 #include "centroidalifold/folding_engine.h"
+#include "centroidalifold/probconsRNA/probcons.h"
 #include "vvf.h"
 #include "alignment.h"
 #include "centroidalifold/util.h"

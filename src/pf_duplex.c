@@ -65,7 +65,8 @@ extern  int  LoopEnergy(int n1, int n2, int type, int type_2,
 PRIVATE double pf_duplex_fw();
 PRIVATE double pf_duplex_bk();
 
-inline
+// Matsuda changed "inline" to "static inline"
+static inline
 double
 LogAdd(double x, double y)
 {

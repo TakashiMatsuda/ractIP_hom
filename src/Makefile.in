@@ -96,9 +96,8 @@ am_ractip_hom_OBJECTS = ractip_hom.$(OBJEXT) ip.$(OBJEXT) fa.$(OBJEXT) \
 	SStruct.$(OBJEXT) Utilities.$(OBJEXT) contrafold.$(OBJEXT) \
 	contrafoldm.$(OBJEXT) mccaskill.$(OBJEXT) alifold.$(OBJEXT) \
 	pfold.$(OBJEXT) averaged.$(OBJEXT) mixture.$(OBJEXT) \
-	aux.$(OBJEXT) folding_engine.$(OBJEXT) \
-	folding_engine.$(OBJEXT) bp.$(OBJEXT) aln.$(OBJEXT) \
-	centroid.$(OBJEXT) mea.$(OBJEXT) diana.$(OBJEXT) \
+	aux.$(OBJEXT) folding_engine.$(OBJEXT) bp.$(OBJEXT) \
+	aln.$(OBJEXT) centroid.$(OBJEXT) mea.$(OBJEXT) diana.$(OBJEXT) \
 	ps_plot.$(OBJEXT) wrapper.$(OBJEXT) contrafoldhom.$(OBJEXT) \
 	mccaskillhom.$(OBJEXT)
 ractip_hom_OBJECTS = $(am_ractip_hom_OBJECTS)
@@ -331,7 +330,6 @@ ractip_hom_SOURCES = \
 	centroidalifold/engine/mixture.h centroidalifold/engine/mixture.cpp \
 	centroidalifold/engine/aux.h centroidalifold/engine/aux.cpp \
 	centroidalifold/folding_engine.h centroidalifold/folding_engine.cpp \
-	centroidalifold/folding_engine.cpp centroidalifold/folding_engine.h \
 	centroidalifold/bp.cpp centroidalifold/bp.h \
 	centroidalifold/aln.h centroidalifold/aln.cpp \
 	centroidalifold/cyktable.h \

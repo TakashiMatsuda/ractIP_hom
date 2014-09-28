@@ -1,6 +1,3 @@
-#include "duplexHom.h"
-
-
 #include <unistd.h>
 #include <cstdlib>
 #include <sys/time.h>
@@ -12,6 +9,7 @@
 #include <list>
 #include <boost/algorithm/string.hpp>
 
+#include "duplexHom.h"
 // include guard maybe necessary
 namespace Vienna {
   extern "C" {
@@ -26,6 +24,7 @@ namespace Vienna {
 };
 
 #include "centroidalifold/util.h"
+#include "centroidalifold/probconsRNA/probcons.h"
 
 RNAduplexHommodel::
 RNAduplexHommodel(const std::string& engine_a){

@@ -2483,3 +2483,14 @@ cmakeの書き方を勉強してまとめよう。
 ---
 namespace Vienna がかぶっている。
 ractip側を変更する。
+結局必要なし。wrapper.cppのリンク忘れ。
+---
+matsudatakashi-no-MacBook-Air:ractip_hom takashi$ ./configure --with-vienna-rna=/usr/local/Cellar/viennarna/2.1.8 --with-glpk
+(configureの時のコマンド)
+---
+googletestができた。-lRNAとか、付いているのを確認したから。
+configureの方に書いてある、リンクオプションとか、その他コンパイルオプションを
+入れてなかった。今回の場合は、-lRNAを忘れていたので、動かなかった。
+バンザーイ!!!
+
+
