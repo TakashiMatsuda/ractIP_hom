@@ -142,43 +142,43 @@ Test/fast:
 .PHONY : Test/fast
 
 #=============================================================================
-# Target rules for targets named ALN
+# Target rules for targets named centroidalifold
 
 # Build rule for target.
-ALN: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ALN
-.PHONY : ALN
+centroidalifold: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 centroidalifold
+.PHONY : centroidalifold
 
 # fast build rule for target.
-ALN/fast:
-	$(MAKE) -f centroidalifold/CMakeFiles/ALN.dir/build.make centroidalifold/CMakeFiles/ALN.dir/build
-.PHONY : ALN/fast
+centroidalifold/fast:
+	$(MAKE) -f centroidalifold/CMakeFiles/centroidalifold.dir/build.make centroidalifold/CMakeFiles/centroidalifold.dir/build
+.PHONY : centroidalifold/fast
 
 #=============================================================================
-# Target rules for targets named BP
+# Target rules for targets named gtest
 
 # Build rule for target.
-BP: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 BP
-.PHONY : BP
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
 
 # fast build rule for target.
-BP/fast:
-	$(MAKE) -f centroidalifold/CMakeFiles/BP.dir/build.make centroidalifold/CMakeFiles/BP.dir/build
-.PHONY : BP/fast
+gtest/fast:
+	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named FOLDING_ENGINE
+# Target rules for targets named gtest_main
 
 # Build rule for target.
-FOLDING_ENGINE: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FOLDING_ENGINE
-.PHONY : FOLDING_ENGINE
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
 
 # fast build rule for target.
-FOLDING_ENGINE/fast:
-	$(MAKE) -f centroidalifold/CMakeFiles/FOLDING_ENGINE.dir/build.make centroidalifold/CMakeFiles/FOLDING_ENGINE.dir/build
-.PHONY : FOLDING_ENGINE/fast
+gtest_main/fast:
+	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 duplexhom.o: duplexhom.cpp.o
 .PHONY : duplexhom.o
@@ -263,9 +263,9 @@ help:
 	@echo "... Test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ALN"
-	@echo "... BP"
-	@echo "... FOLDING_ENGINE"
+	@echo "... centroidalifold"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... duplexhom.o"
 	@echo "... duplexhom.i"
 	@echo "... duplexhom.s"

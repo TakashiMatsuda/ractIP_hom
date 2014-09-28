@@ -5,6 +5,18 @@
 #include "../config.h"
 #endif
 
+#include <unistd.h>
+#include <cstdlib>
+#include <sys/time.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <list>
+#include <boost/algorithm/string.hpp>
+
+
 #include "centroidalifold/folding_engine.h"
 #include "vvf.h"
 #include "alignment.h"

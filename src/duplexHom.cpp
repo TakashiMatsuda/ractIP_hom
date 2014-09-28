@@ -1,16 +1,31 @@
 #include "duplexHom.h"
-#include "centroidalifold/util.h"
+
+
+#include <unistd.h>
+#include <cstdlib>
+#include <sys/time.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
+#include <list>
+#include <boost/algorithm/string.hpp>
+
+// include guard maybe necessary
 namespace Vienna {
-	extern "C" {
-	#include <ViennaRNA/fold.h>
-	#include <ViennaRNA/fold_vars.h>
-	#include <ViennaRNA/part_func.h>
-	#include <ViennaRNA/part_func_up.h>
-	#include <ViennaRNA/part_func_co.h>
-	#include <ViennaRNA/utils.h>
-	#include "pf_duplex.h"
-	};
+  extern "C" {
+  #include <ViennaRNA/fold.h>
+  #include <ViennaRNA/fold_vars.h>
+  #include <ViennaRNA/part_func.h>
+  #include <ViennaRNA/part_func_up.h>
+  #include <ViennaRNA/part_func_co.h>
+  #include <ViennaRNA/utils.h>
+  #include "pf_duplex.h"
+  };
 };
+
+#include "centroidalifold/util.h"
 
 RNAduplexHommodel::
 RNAduplexHommodel(const std::string& engine_a){

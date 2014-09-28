@@ -2479,3 +2479,7 @@ gtestのEXPECT_*を使って、align_vとcomputeposteriorをテストする。
 test.cpp内のmainと、googletestを静的リンクするmakeを書かなきゃいけないだろう。
 cmakeでかけたらすばらしい。
 cmakeの書き方を勉強してまとめよう。
+
+---
+namespace Vienna がかぶっている。
+ractip側を変更する。

@@ -7,7 +7,7 @@
 #include "contrafold/contrafold.h"
 
 
-#ifdef HAVE_LIBRNA
+//#ifdef HAVE_LIBRNA
 #ifndef __INC_LIBRNA_H
 #define __INC_LIBRNA_H
 namespace Vienna {
@@ -26,7 +26,7 @@ extern "C" {
 };
 };
 #endif //__INC_LIBRNA_H
-#endif
+//#endif
 
 template < class T >
 static 
