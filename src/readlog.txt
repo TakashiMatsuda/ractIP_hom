@@ -2492,5 +2492,15 @@ googletestができた。-lRNAとか、付いているのを確認したから�
 configureの方に書いてある、リンクオプションとか、その他コンパイルオプションを
 入れてなかった。今回の場合は、-lRNAを忘れていたので、動かなかった。
 バンザーイ!!!
-
-
+---
+static inlineに変えた。
+---
+ p[i] = ( (*posterior)[i] >= th ? (*posterior)[i] : float(0) );
+pc.ComputePosteriorの出力されるベクタの値の並び方の規則を知りたい
+(*posterior)をに書いてある。
+model.ComputePosteriorMatrix(..)に書いてある。
+  inline ScoreType EXP (ScoreType x){
+    //return exp(x);
+前向き・後ろ向きに事後確率の計算式を復習した。
+事後確率はアラインメント確率とは違うので、各アラインメントについて
+総和をとらなきゃいけない。

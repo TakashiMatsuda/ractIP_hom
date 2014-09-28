@@ -58,6 +58,7 @@ probcons (std::vector<T>& ap, PROBCONS::Probcons& pc,
   pc.ComputePosterior (seq1, seq2, ap, th);//wrapper ComputePosterior
   // T is float(std::vector<float>& ap)
   // apにposterior probabilityがはいっている。
+  // pcは空のPROBCONS::Probcons
 }
 
 template < class T >

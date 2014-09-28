@@ -121,7 +121,7 @@ computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::str
   for (int i = 0; i < L; ++i){
     res[i].resize(M);
     for (int j = 0; j < M; ++j){
-      res[i][j] = ap[(M+1)*(i+1-1) + j+1];
+      res[i][j] = ap[(M+1)*(i+1) + j+1];
     }
   }
   return res;
