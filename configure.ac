@@ -8,10 +8,12 @@ AM_CONFIG_HEADER(config.h)
 AC_CONFIG_SRCDIR([src/ractip_hom.cpp])
 
 # Checks for programs.
-AC_PROG_CXX
-AC_PROG_CC
+AC_PROG_CXX(g++-4.8)
+AC_PROG_CC(gcc-4.8)
 AC_LANG(C++)
 AC_PROG_RANLIB
+AC_OPENMP
+AC_SUBST(AC_CXXFLAGS, "$OPENMP_CXXFLAGS")
 
 # Checks for libraries.
 
@@ -23,7 +25,7 @@ AC_HEADER_STDBOOL
 AC_C_INLINE
 
 # Checks for library functions.
-AC_CHECK_LIB([pthread], [pthread_create])
+AC_CHECK_LIB([pthread], [pthread_create], [gomp])
 
 # glpk
 AC_ARG_WITH([glpk], AS_HELP_STRING([--with-glpk], [support GNU linear programming kit]),

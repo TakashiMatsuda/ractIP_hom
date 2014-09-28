@@ -50,9 +50,6 @@
 #include "centroidalifold/engine/contrafoldhom.h"
 #include "centroidalifold/engine/mccaskillhom.h"
 
-#include "gtest/gtest.h"
-
-
 
 namespace Vienna {
 extern "C" {
@@ -442,7 +439,7 @@ RactIP::
 rnaduplex_hom(TH& s1, TH& s2, VVF& hp, double wh) const
 {
   RNAduplexHommodel rdh;
-  hp = rdh.calculate_posterior(s1, s2);
+  hp = rdh.calculate_posterior(s1, s2, wh);
 }
 
 void
@@ -465,16 +462,9 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
   VVVVF vhp(size1);
   int i=0;
   ///////////
-  // gapの時の確率を見たい
   it1++;
   //it1++;
   it2++;
-  //std::cout << "S1[2][15]: " << (*it1)[15] << std::cout;// 2-15の塩基を取り出すコード
-
-  //////////
-
-
-  /*** RNAアラインメントのギャップ'-'を考慮してメモリを損傷しないようなコードにしなければならない。***/
 
   if (size1 == size2)
   {
@@ -543,23 +533,23 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
          for(it_vhp=(*it_vvhp).begin(); it_vhp!=(*it_vvhp).end(); it_vhp++)
            sum+=(*it_vhp)[i][j];
        }
-	     hp[i][j]=sum / (double)(size1*size2);// 上から移動
+	     hp[i][j]=sum / (double)(size1*size2);
      }
    }
  }
 }
 
 
-// debug ギャップを想定したコードを追加する。
 void
 RactIP::
 rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const
 {
-  if (use_pf_duplex_)
+  if (use_pf_duplex_)//true
   {
     Vienna::pf_scale = -1;
     hp.resize(s1.size()+1, VF(s2.size()+1));
-    Vienna::pf_duplex(s1.c_str(), s2.c_str());
+
+    Vienna::pf_duplex(s1.c_str(), s2.c_str());// reading
     for (uint i=0; i!=s1.size(); ++i)
       for (uint j=0; j!=s2.size(); ++j)
         hp[i+1][j+1] = Vienna::pr_duplex[i+1][j+1];
@@ -730,7 +720,6 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
 #endif
     rnaduplex(s1, s2, hp);
     }**/
-  
   
   // make objective variables with their weights
   VVI x(s1.size(), VI(s1.size(), -1));
@@ -1064,8 +1053,9 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   }
 
   // execute optimization
+  std::cout << "execute optimization" << std::endl;
   float ea = ip.solve();
-
+  std::cout << "finished optimization" << std::endl;
   // build the resultant structure
   r1.resize(s1.size());
   r2.resize(s2.size());
@@ -1298,7 +1288,7 @@ run()
 
     std::replace(fa1.seq().begin(), fa1.seq().end(), 't', 'u');
     std::replace(fa1.seq().begin(), fa1.seq().end(), 'T', 'U');
-    typename std::vector<std::string>::iterator it_homs1;
+    std::vector<std::string>::iterator it_homs1;
     for (it_homs1 = homs1.begin(); it_homs1 != homs1.end(); it_homs1++){
       std::replace((*it_homs1).begin(), (*it_homs1).end(), '-', '.');
       std::replace((*it_homs1).begin(), (*it_homs1).end(), 't', 'u');
@@ -1306,7 +1296,7 @@ run()
     }
     std::replace(fa2.seq().begin(), fa2.seq().end(), 't', 'u');
     std::replace(fa2.seq().begin(), fa2.seq().end(), 'T', 'U');
-    typename std::vector<std::string>::iterator it_homs2;
+    std::vector<std::string>::iterator it_homs2;
     for (it_homs2 = homs2.begin(); it_homs2 != homs2.end(); it_homs2++){
       std::replace((*it_homs2).begin(), (*it_homs2).end(), '-', '.');
       std::replace((*it_homs2).begin(), (*it_homs2).end(), 't', 'u');
@@ -1332,7 +1322,7 @@ run()
   std::vector<FoldingEngine<Aln>*> cf_list(engine.size(),NULL);
   if (engine.empty())
     {// Default setting for Inference Engine
-#ifdef HAVE_LIBRNA
+#ifdef HAVE_LIB
       engine.push_back("McCaskill");
 #else
       engine.push_back("CONTRAfold");
@@ -1570,7 +1560,6 @@ run()
 int
 main(int argc, char* argv[])
 {
-  return RUN_ALL_TESTS();
   try
   {
     RactIP ractip;

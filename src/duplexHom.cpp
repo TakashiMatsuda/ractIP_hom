@@ -26,6 +26,8 @@ namespace Vienna {
 #include "centroidalifold/util.h"
 #include "centroidalifold/probconsRNA/probcons.h"
 
+#include <omp.h>
+
 RNAduplexHommodel::
 RNAduplexHommodel(const std::string& engine_a){
 	engine_a_ = engine_a;
@@ -42,7 +44,7 @@ RNAduplexHommodel::
 //　結果として、各二次元座標の格子点ごとに、座標対が存在する確率が計算される。
 VVF
 RNAduplexHommodel::
-calculate_posterior(const TH &th1, const TH &th2){
+calculate_posterior(const TH &th1, const TH &th2, double wh){
   const std::vector<std::string>& hom1 = th1.second;
   const std::vector<std::string>& hom2 = th2.second;
 
@@ -51,8 +53,6 @@ calculate_posterior(const TH &th1, const TH &th2){
   for (VVF::iterator itr = res.begin(); itr != res.end(); ++itr){
     (*itr).resize(th2.first.length()+1);
   }
-
-  std::cout << th2.first.length()+1 << std::endl;
 
   VVVVF dup_matrix;
   dup_matrix.resize(hom1.size());
@@ -63,25 +63,42 @@ calculate_posterior(const TH &th1, const TH &th2){
   VVVF align_matrix2;
 
   dup_matrix=rnaduplex_hom(th1, th2);
-  align_matrix1=align_v(th1, 0.0001);
-  align_matrix2=align_v(th2, 0.0001);
+  align_matrix1=align_v(th1, 0.000001);
+  align_matrix2=align_v(th2, 0.000001);
 
+  VVF no_hom_hp;
+  rnaduplex(th1.first, th2.first, no_hom_hp);
+
+  long double tmp = 0;
+#pragma omp parallel
+{
+  std::cout << "thread_num= " << omp_get_max_threads() << std::endl;
+  #pragma omp for
   for (int i = 0; i < res.size()-1; ++i){
-    for (int k = 0; k < res[i].size()-1; ++k){
-      std::cout << "seq-1: " << i << "/ seq-2:: " << k << std::endl;
-      double tmp = 0;
+    #pragma omp for
+    for (int k = 0; k < res[i].size()-1; ++k){// openMPで高速化したい
+      tmp = 0;
       for (uint xi = 0; xi < hom1.size(); ++xi){
         for (uint eta = 0; eta < hom2.size(); ++eta){
           for (uint j = 0; j < hom1[xi].size(); ++j){
             for (uint l = 0; l < hom2[eta].size(); ++l){
-              tmp = tmp + (double)dup_matrix[xi][eta][j][l]*(double)align_matrix1[xi][i][j]*(double)align_matrix2[eta][k][l];
+              res[i+1][k+1] += (double)dup_matrix[xi][eta][j+1][l+1]*(double)align_matrix1[xi][i][j]*(double)align_matrix2[eta][k][l];
+              // 桁あふれ?
             }
           }
         }
       }
-      res[i+1][k+1] = tmp / ((double)hom1.size() * (double)hom2.size());
+      res[i+1][k+1] = res[i+1][k+1] / ((double)hom1.size() * (double)hom2.size());
+      if (res[i+1][k+1] > 0.005)
+        std::cout << res[i+1][k+1] << std::endl;
+      //res[i+1][k+1] = tmp;
+      // whの比にしたがって、no_hom_hp(hom未考慮のhp)とres(考慮したhp)を混合
+      //debug
+      //res[i+1][k+1] = 0 * (double) no_hom_hp[i+1][k+1] + (1 - 0) * (double) res[i+1][k+1];
     }
   }
+}
+
   return res;
 }
 
@@ -110,7 +127,7 @@ VVF
 RNAduplexHommodel::
 computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::string& seq2){
   std::vector<float> ap;
-  double th = 0.01;
+  double th = 0.001;
   pc.ComputePosterior(seq1, seq2, ap, th);
 
   // transform from float* to Vector<Vector<float>>
@@ -146,7 +163,7 @@ rnaduplex_hom(const TH& th1, const TH& th2){
   return dup_matrix;
 }
 
-
+#if 0
 void
 RNAduplexHommodel::
 aln_duplex(Alignment a1, Alignment a2, VVF& hp) {
@@ -240,7 +257,7 @@ aln_duplex(Alignment a1, Alignment a2, VVF& hp) {
    }
  }
 }
-
+#endif
 
 
 void

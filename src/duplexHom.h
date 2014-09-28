@@ -28,7 +28,7 @@ class RNAduplexHommodel
 public:
 	~RNAduplexHommodel();
 	RNAduplexHommodel(const std::string& engine_a="probcons");
-	VVF calculate_posterior(const TH& s1, const TH& s2);
+	VVF calculate_posterior(const TH& s1, const TH& s2, double wh);
 
 	// These functions are temporally publiciated for the test.
 	VVF computeposterior(PROBCONS::Probcons& pc, const std::string& seq1, const std::string& seq2);
