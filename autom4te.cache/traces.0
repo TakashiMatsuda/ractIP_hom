@@ -434,6 +434,10 @@ m4trace:configure.ac:25: -1- AH_OUTPUT([inline], [/* Define to `__inline__\' or 
 #ifndef __cplusplus
 #undef inline
 #endif])
+m4trace:configure.ac:28: -1- AH_OUTPUT([HAVE_LIBPTHREAD], [/* Define to 1 if you have the `pthread\' library (-lpthread). */
+@%:@undef HAVE_LIBPTHREAD])
+m4trace:configure.ac:28: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LIBPTHREAD])
+m4trace:configure.ac:28: -1- m4_pattern_allow([^HAVE_LIBPTHREAD$])
 m4trace:configure.ac:36: -1- AC_CHECK_HEADERS([glpk.h])
 m4trace:configure.ac:36: -1- AH_OUTPUT([HAVE_GLPK_H], [/* Define to 1 if you have the <glpk.h> header file. */
 @%:@undef HAVE_GLPK_H])

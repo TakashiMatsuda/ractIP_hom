@@ -72,7 +72,7 @@ calculate_posterior(const TH &th1, const TH &th2, double wh){
   long double tmp = 0;
 #pragma omp parallel
 {
-  std::cout << "thread_num= " << omp_get_max_threads() << std::endl;
+//  std::cout << "thread_num= " << omp_get_max_threads() << std::endl;
   #pragma omp for
   for (int i = 0; i < res.size()-1; ++i){
     #pragma omp for

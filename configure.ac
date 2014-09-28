@@ -25,7 +25,7 @@ AC_HEADER_STDBOOL
 AC_C_INLINE
 
 # Checks for library functions.
-AC_CHECK_LIB([pthread], [pthread_create], [gomp])
+AC_CHECK_LIB([pthread], [pthread_create])
 
 # glpk
 AC_ARG_WITH([glpk], AS_HELP_STRING([--with-glpk], [support GNU linear programming kit]),
