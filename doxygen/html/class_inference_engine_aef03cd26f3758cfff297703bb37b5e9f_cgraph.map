@@ -1,0 +1,6 @@
+<map id="InferenceEngine::ComputePosterior" name="InferenceEngine::ComputePosterior">
+<area shape="rect" id="node2" href="$centroidalifold_2contrafold_2_log_space_8hpp.html#aa048cc23fc8e92d6b0bfb89dd077bc64" title="Fast_LogPlusEquals" alt="" coords="235,5,379,32"/>
+<area shape="rect" id="node4" href="$centroidalifold_2contrafold_2_log_space_8hpp.html#ab3f4623c7793ce8f35dc2472f9399f44" title="Fast_Exp" alt="" coords="267,56,346,83"/>
+<area shape="rect" id="node5" href="$centroidalifold_2contrafold_2_utilities_8hpp.html#a320ef704643929c4107b9cf524fbef6c" title="Clip" alt="" coords="284,107,329,133"/>
+<area shape="rect" id="node3" href="$centroidalifold_2contrafold_2_log_space_8hpp.html#ade80135cfdbd997d76d71c8747db3873" title="Fast_LogExpPlusOne" alt="" coords="427,5,579,32"/>
+</map>

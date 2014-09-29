@@ -1,0 +1,458 @@
+\hypertarget{pf__duplex_8c}{\section{src/pf\+\_\+duplex.c File Reference}
+\label{pf__duplex_8c}\index{src/pf\+\_\+duplex.\+c@{src/pf\+\_\+duplex.\+c}}
+}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/energy\+\_\+par.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/fold\+\_\+vars.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/fold.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/pair\+\_\+mat.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/params.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}pf\+\_\+duplex.\+h\char`\"{}}\\*
+Include dependency graph for pf\+\_\+duplex.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf__duplex_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pf__duplex_8c_ae0b9cd0ce090bd69b951aa73e8fa4f7d}{M\+I\+N2}(A, B)~((A) $<$ (B) ? (A) \+: (B))
+\item 
+\#define \hyperlink{pf__duplex_8c_a33297b3679c713b0c4d897cd0fe3b122}{M\+A\+X2}(A, B)~((A) $>$ (B) ? (A) \+: (B))
+\item 
+\#define \hyperlink{pf__duplex_8c_ad17d551e31d1828c68acf40684849b7e}{P\+U\+B\+L\+I\+C}
+\item 
+\#define \hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E}~static
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \hyperlink{pf__duplex_8c_ad7e1e137b3bf1f7108933d302a7f0177}{space} (unsigned size)
+\item 
+void $\ast$ \hyperlink{pf__duplex_8c_a9037ada838835b1b9db41581a021b0c8}{xrealloc} (void $\ast$p, unsigned size)
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} void \hyperlink{pf__duplex_8c_a2c499774799976d65e1085d3150803c6}{encode\+\_\+seqs} (const char $\ast$s1, const char $\ast$s2)
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} short $\ast$ \hyperlink{pf__duplex_8c_af5eeb35514887f1d1d5e257c5511eec8}{encode\+\_\+seq} (const char $\ast$seq)
+\item 
+int \hyperlink{pf__duplex_8c_a2163034a25c6115d894b199e97e03f6c}{Loop\+Energy} (int \hyperlink{pf__duplex_8c_a7082bbd3bfd909c17043e488209e890e}{n1}, int \hyperlink{pf__duplex_8c_a4c283cf4bcf619b392dfc36a1e86e142}{n2}, int type, int type\+\_\+2, int si1, int sj1, int sp1, int sq1)
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} double \hyperlink{pf__duplex_8c_a18f7e06d96a2968369bd535b8e037270}{pf\+\_\+duplex\+\_\+fw} ()
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} double \hyperlink{pf__duplex_8c_a1f5f67a5c8f86d975b13706e00a9aa83}{pf\+\_\+duplex\+\_\+bk} ()
+\item 
+double \hyperlink{pf__duplex_8c_a5908fd066a944e8de0fc837096b1f532}{Log\+Add} (double x, double y)
+\item 
+double \hyperlink{pf__duplex_8c_acbc5353fd34e53e1945c6a4ea7a06211}{pf\+\_\+duplex} (const char $\ast$s1, const char $\ast$s2)
+\item 
+void \hyperlink{pf__duplex_8c_aa4984dbff0e5a0c10030b56c01d77e84}{free\+\_\+pf\+\_\+duplex} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} param\+T $\ast$ \hyperlink{pf__duplex_8c_a54f9e847235c2061dfd403c5869b5e2d}{P} = N\+U\+L\+L
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} double $\ast$$\ast$ \hyperlink{pf__duplex_8c_aae6a7ea84499d49d7b3131dddde4ac32}{fw}
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} double $\ast$$\ast$ \hyperlink{pf__duplex_8c_a096e8bb6eb49ed54c54245a265fae371}{bk}
+\item 
+\hyperlink{pf__duplex_8c_ad17d551e31d1828c68acf40684849b7e}{P\+U\+B\+L\+I\+C} double $\ast$$\ast$ \hyperlink{pf__duplex_8c_a30652cc3162c74967e8080bb39abc583}{pr\+\_\+duplex}
+\item 
+\hyperlink{pf__duplex_8c_ad17d551e31d1828c68acf40684849b7e}{P\+U\+B\+L\+I\+C} double $\ast$$\ast$ \hyperlink{pf__duplex_8c_ade5cba4cf15a4e769d2e623254a99640}{pr\+\_\+duplex2}
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} short $\ast$ \hyperlink{pf__duplex_8c_a3c5ecf83c8000b96ce2a9b2279183b42}{S1}
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} short $\ast$ \hyperlink{pf__duplex_8c_a67be9c09f5e316f650f2dc0efd1b6c88}{S\+S1}
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} short $\ast$ \hyperlink{pf__duplex_8c_aaef72f916fdaf88e8130d8954b4a3700}{S2}
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} short $\ast$ \hyperlink{pf__duplex_8c_a94d3dfe87e33c1d56c8775872617023a}{S\+S2}
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} int \hyperlink{pf__duplex_8c_a7082bbd3bfd909c17043e488209e890e}{n1}
+\item 
+\hyperlink{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{P\+R\+I\+V\+A\+T\+E} int \hyperlink{pf__duplex_8c_a4c283cf4bcf619b392dfc36a1e86e142}{n2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pf__duplex_8c_a33297b3679c713b0c4d897cd0fe3b122}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!M\+A\+X2@{M\+A\+X2}}
+\index{M\+A\+X2@{M\+A\+X2}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{M\+A\+X2}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X2(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)~((A) $>$ (B) ? (A) \+: (B))}}\label{pf__duplex_8c_a33297b3679c713b0c4d897cd0fe3b122}
+
+
+Definition at line 33 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_ae0b9cd0ce090bd69b951aa73e8fa4f7d}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!M\+I\+N2@{M\+I\+N2}}
+\index{M\+I\+N2@{M\+I\+N2}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{M\+I\+N2}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+I\+N2(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)~((A) $<$ (B) ? (A) \+: (B))}}\label{pf__duplex_8c_ae0b9cd0ce090bd69b951aa73e8fa4f7d}
+
+
+Definition at line 32 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!P\+R\+I\+V\+A\+T\+E@{P\+R\+I\+V\+A\+T\+E}}
+\index{P\+R\+I\+V\+A\+T\+E@{P\+R\+I\+V\+A\+T\+E}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{P\+R\+I\+V\+A\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+I\+V\+A\+T\+E~static}}\label{pf__duplex_8c_a5e151c615eda34903514212f05a5ccf8}
+
+
+Definition at line 48 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_ad17d551e31d1828c68acf40684849b7e}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!P\+U\+B\+L\+I\+C@{P\+U\+B\+L\+I\+C}}
+\index{P\+U\+B\+L\+I\+C@{P\+U\+B\+L\+I\+C}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{P\+U\+B\+L\+I\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+U\+B\+L\+I\+C}}\label{pf__duplex_8c_ad17d551e31d1828c68acf40684849b7e}
+
+
+Definition at line 47 of file pf\+\_\+duplex.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{pf__duplex_8c_af5eeb35514887f1d1d5e257c5511eec8}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!encode\+\_\+seq@{encode\+\_\+seq}}
+\index{encode\+\_\+seq@{encode\+\_\+seq}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{encode\+\_\+seq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} short $\ast$ encode\+\_\+seq (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{seq}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_af5eeb35514887f1d1d5e257c5511eec8}
+
+
+Definition at line 242 of file pf\+\_\+duplex.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{pf__duplex_8c_af5eeb35514887f1d1d5e257c5511eec8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf__duplex_8c_af5eeb35514887f1d1d5e257c5511eec8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pf__duplex_8c_a2c499774799976d65e1085d3150803c6}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!encode\+\_\+seqs@{encode\+\_\+seqs}}
+\index{encode\+\_\+seqs@{encode\+\_\+seqs}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{encode\+\_\+seqs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} void encode\+\_\+seqs (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s1, }
+\item[{const char $\ast$}]{s2}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_a2c499774799976d65e1085d3150803c6}
+
+
+Definition at line 259 of file pf\+\_\+duplex.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{pf__duplex_8c_a2c499774799976d65e1085d3150803c6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{pf__duplex_8c_a2c499774799976d65e1085d3150803c6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pf__duplex_8c_aa4984dbff0e5a0c10030b56c01d77e84}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!free\+\_\+pf\+\_\+duplex@{free\+\_\+pf\+\_\+duplex}}
+\index{free\+\_\+pf\+\_\+duplex@{free\+\_\+pf\+\_\+duplex}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{free\+\_\+pf\+\_\+duplex}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+pf\+\_\+duplex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_aa4984dbff0e5a0c10030b56c01d77e84}
+
+
+Definition at line 133 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a5908fd066a944e8de0fc837096b1f532}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!Log\+Add@{Log\+Add}}
+\index{Log\+Add@{Log\+Add}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{Log\+Add}]{\setlength{\rightskip}{0pt plus 5cm}double Log\+Add (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{pf__duplex_8c_a5908fd066a944e8de0fc837096b1f532}
+
+
+Definition at line 70 of file pf\+\_\+duplex.\+c.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{pf__duplex_8c_a5908fd066a944e8de0fc837096b1f532_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pf__duplex_8c_a2163034a25c6115d894b199e97e03f6c}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!Loop\+Energy@{Loop\+Energy}}
+\index{Loop\+Energy@{Loop\+Energy}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{Loop\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}int Loop\+Energy (
+\begin{DoxyParamCaption}
+\item[{int}]{n1, }
+\item[{int}]{n2, }
+\item[{int}]{type, }
+\item[{int}]{type\+\_\+2, }
+\item[{int}]{si1, }
+\item[{int}]{sj1, }
+\item[{int}]{sp1, }
+\item[{int}]{sq1}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_a2163034a25c6115d894b199e97e03f6c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf__duplex_8c_a2163034a25c6115d894b199e97e03f6c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pf__duplex_8c_acbc5353fd34e53e1945c6a4ea7a06211}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!pf\+\_\+duplex@{pf\+\_\+duplex}}
+\index{pf\+\_\+duplex@{pf\+\_\+duplex}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{pf\+\_\+duplex}]{\setlength{\rightskip}{0pt plus 5cm}double pf\+\_\+duplex (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s1, }
+\item[{const char $\ast$}]{s2}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_acbc5353fd34e53e1945c6a4ea7a06211}
+
+
+Definition at line 78 of file pf\+\_\+duplex.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf__duplex_8c_acbc5353fd34e53e1945c6a4ea7a06211_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pf__duplex_8c_a1f5f67a5c8f86d975b13706e00a9aa83}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!pf\+\_\+duplex\+\_\+bk@{pf\+\_\+duplex\+\_\+bk}}
+\index{pf\+\_\+duplex\+\_\+bk@{pf\+\_\+duplex\+\_\+bk}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{pf\+\_\+duplex\+\_\+bk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} double pf\+\_\+duplex\+\_\+bk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_a1f5f67a5c8f86d975b13706e00a9aa83}
+
+
+Definition at line 192 of file pf\+\_\+duplex.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{pf__duplex_8c_a1f5f67a5c8f86d975b13706e00a9aa83_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{pf__duplex_8c_a1f5f67a5c8f86d975b13706e00a9aa83_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pf__duplex_8c_a18f7e06d96a2968369bd535b8e037270}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!pf\+\_\+duplex\+\_\+fw@{pf\+\_\+duplex\+\_\+fw}}
+\index{pf\+\_\+duplex\+\_\+fw@{pf\+\_\+duplex\+\_\+fw}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{pf\+\_\+duplex\+\_\+fw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} double pf\+\_\+duplex\+\_\+fw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_a18f7e06d96a2968369bd535b8e037270}
+
+
+Definition at line 144 of file pf\+\_\+duplex.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{pf__duplex_8c_a18f7e06d96a2968369bd535b8e037270_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{pf__duplex_8c_a18f7e06d96a2968369bd535b8e037270_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pf__duplex_8c_ad7e1e137b3bf1f7108933d302a7f0177}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!space@{space}}
+\index{space@{space}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{space}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ space (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{size}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_ad7e1e137b3bf1f7108933d302a7f0177}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pf__duplex_8c_ad7e1e137b3bf1f7108933d302a7f0177_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{pf__duplex_8c_a9037ada838835b1b9db41581a021b0c8}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!xrealloc@{xrealloc}}
+\index{xrealloc@{xrealloc}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{xrealloc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ xrealloc (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p, }
+\item[{unsigned}]{size}
+\end{DoxyParamCaption}
+)}}\label{pf__duplex_8c_a9037ada838835b1b9db41581a021b0c8}
+
+
+\subsection{Variable Documentation}
+\hypertarget{pf__duplex_8c_a096e8bb6eb49ed54c54245a265fae371}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!bk@{bk}}
+\index{bk@{bk}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{bk}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} double$\ast$$\ast$ bk}}\label{pf__duplex_8c_a096e8bb6eb49ed54c54245a265fae371}
+
+
+Definition at line 56 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_aae6a7ea84499d49d7b3131dddde4ac32}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!fw@{fw}}
+\index{fw@{fw}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{fw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} double$\ast$$\ast$ fw}}\label{pf__duplex_8c_aae6a7ea84499d49d7b3131dddde4ac32}
+
+
+Definition at line 55 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a7082bbd3bfd909c17043e488209e890e}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!n1@{n1}}
+\index{n1@{n1}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{n1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} int n1}}\label{pf__duplex_8c_a7082bbd3bfd909c17043e488209e890e}
+
+
+Definition at line 60 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a4c283cf4bcf619b392dfc36a1e86e142}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!n2@{n2}}
+\index{n2@{n2}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{n2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} int n2}}\label{pf__duplex_8c_a4c283cf4bcf619b392dfc36a1e86e142}
+
+
+Definition at line 60 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a54f9e847235c2061dfd403c5869b5e2d}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!P@{P}}
+\index{P@{P}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} param\+T$\ast$ P = N\+U\+L\+L}}\label{pf__duplex_8c_a54f9e847235c2061dfd403c5869b5e2d}
+
+
+Definition at line 53 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a30652cc3162c74967e8080bb39abc583}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!pr\+\_\+duplex@{pr\+\_\+duplex}}
+\index{pr\+\_\+duplex@{pr\+\_\+duplex}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{pr\+\_\+duplex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+U\+B\+L\+I\+C} double$\ast$$\ast$ pr\+\_\+duplex}}\label{pf__duplex_8c_a30652cc3162c74967e8080bb39abc583}
+
+
+Definition at line 57 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_ade5cba4cf15a4e769d2e623254a99640}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!pr\+\_\+duplex2@{pr\+\_\+duplex2}}
+\index{pr\+\_\+duplex2@{pr\+\_\+duplex2}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{pr\+\_\+duplex2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+U\+B\+L\+I\+C} double$\ast$$\ast$ pr\+\_\+duplex2}}\label{pf__duplex_8c_ade5cba4cf15a4e769d2e623254a99640}
+
+
+Definition at line 58 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a3c5ecf83c8000b96ce2a9b2279183b42}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!S1@{S1}}
+\index{S1@{S1}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{S1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} short$\ast$ S1}}\label{pf__duplex_8c_a3c5ecf83c8000b96ce2a9b2279183b42}
+
+
+Definition at line 59 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_aaef72f916fdaf88e8130d8954b4a3700}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!S2@{S2}}
+\index{S2@{S2}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{S2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} short $\ast$ S2}}\label{pf__duplex_8c_aaef72f916fdaf88e8130d8954b4a3700}
+
+
+Definition at line 59 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a67be9c09f5e316f650f2dc0efd1b6c88}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!S\+S1@{S\+S1}}
+\index{S\+S1@{S\+S1}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{S\+S1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} short $\ast$ S\+S1}}\label{pf__duplex_8c_a67be9c09f5e316f650f2dc0efd1b6c88}
+
+
+Definition at line 59 of file pf\+\_\+duplex.\+c.
+
+\hypertarget{pf__duplex_8c_a94d3dfe87e33c1d56c8775872617023a}{\index{pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}!S\+S2@{S\+S2}}
+\index{S\+S2@{S\+S2}!pf\+\_\+duplex.\+c@{pf\+\_\+duplex.\+c}}
+\subsubsection[{S\+S2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+R\+I\+V\+A\+T\+E} short $\ast$ S\+S2}}\label{pf__duplex_8c_a94d3dfe87e33c1d56c8775872617023a}
+
+
+Definition at line 59 of file pf\+\_\+duplex.\+c.
+

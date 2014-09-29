@@ -1,0 +1,10 @@
+<map id="Fast_LogExpPlusOne" name="Fast_LogExpPlusOne">
+<area shape="rect" id="node2" href="$centroidalifold_2contrafold_2_log_space_8hpp.html#a35e8836fb593b6fbb74aa5321003b564" title="Fast_LogAdd" alt="" coords="227,56,328,83"/>
+<area shape="rect" id="node5" href="$centroidalifold_2contrafold_2_log_space_8hpp.html#aa048cc23fc8e92d6b0bfb89dd077bc64" title="Fast_LogPlusEquals" alt="" coords="205,180,349,207"/>
+<area shape="rect" id="node3" href="$class_duplex_engine.html#a1d6a1a3e4890fd62802392fb4928f4fb" title="DuplexEngine::ComputeInside" alt="" coords="403,5,605,32"/>
+<area shape="rect" id="node4" href="$class_duplex_engine.html#a48585f0f515bf7ad3335e9f9b5efb1f4" title="DuplexEngine::ComputeOutside" alt="" coords="398,56,610,83"/>
+<area shape="rect" id="node6" href="$class_inference_engine.html#ad76e23c8323b050b23e8c1c7e8046f0e" title="InferenceEngine::Compute\lInside" alt="" coords="414,107,594,149"/>
+<area shape="rect" id="node7" href="$class_inference_engine.html#a2d0abf6db99cfd61b703d8e567bee09d" title="InferenceEngine::Compute\lOutside" alt="" coords="414,173,594,214"/>
+<area shape="rect" id="node8" href="$class_inference_engine.html#a6d8a78e3c1a7dcffffa26d3ea7ddd92b" title="InferenceEngine::Compute\lFeatureCountExpectations" alt="" coords="414,238,594,279"/>
+<area shape="rect" id="node9" href="$class_inference_engine.html#aef03cd26f3758cfff297703bb37b5e9f" title="InferenceEngine::Compute\lPosterior" alt="" coords="414,303,594,345"/>
+</map>

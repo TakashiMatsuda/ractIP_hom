@@ -1,0 +1,1445 @@
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp}{\section{src/centroidalifold/contrafold/\+Utilities.hpp File Reference}
+\label{centroidalifold_2contrafold_2_utilities_8hpp}\index{src/centroidalifold/contrafold/\+Utilities.\+hpp@{src/centroidalifold/contrafold/\+Utilities.\+hpp}}
+}
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$cerrno$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$cstdarg$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$numeric$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$queue$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$stack$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}Utilities.\+ipp\char`\"{}}\\*
+Include dependency graph for Utilities.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{centroidalifold_2contrafold_2_utilities_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{centroidalifold_2contrafold_2_utilities_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtriple}{triple$<$ T1, T2, T3 $>$}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a060f01dff93e683cf78598476058aa7f}{\+\_\+level\+\_\+2\+\_\+str}(s)~\hyperlink{contrafold_2_utilities_8hpp_ab041d05d6b186895ba96002efbb14c80}{\+\_\+level\+\_\+1\+\_\+str}(s)
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_ab041d05d6b186895ba96002efbb14c80}{\+\_\+level\+\_\+1\+\_\+str}(s)~\#s
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_ac8c8ba070a2efab7d65ae86173a039da}{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}~\hyperlink{contrafold_2_utilities_8hpp_a060f01dff93e683cf78598476058aa7f}{\+\_\+level\+\_\+2\+\_\+str}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_ae74c7c31ab970b8638d26006a782e9ab}{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+}~\char`\"{}Assertion failed in file \textbackslash{}\char`\"{}\char`\"{} \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ \char`\"{}\textbackslash{}\char`\"{}, line \char`\"{} \+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af8a39cb14d8eca76bb0a7cece4103f15}{Assert}(\hyperlink{errortest_8hpp_ac8da963855e09bf929c085486f4a3b47}{test}, fmt,...)~(\hyperlink{errortest_8hpp_ac8da963855e09bf929c085486f4a3b47}{test} ? 0 \+: \hyperlink{contrafold_2_utilities_8hpp_a431e93b8e953409b87c47ea4e94cfb44}{\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D}(\hyperlink{contrafold_2_utilities_8hpp_ae74c7c31ab970b8638d26006a782e9ab}{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+} \char`\"{}\+: \char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \#\# \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+T\+E}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a431e93b8e953409b87c47ea4e94cfb44}{\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D} (const char $\ast$fmt,...)
+\item 
+void \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a01f9573b30587e671a962985420c3fb3}{Error} (const char $\ast$fmt,...)
+\item 
+void \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a35d1dac76ff69b37f992a7c9678f179c}{Warning} (const char $\ast$fmt,...)
+\item 
+bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_ae6480ac70897987e446addec45c6e2e0}{Convert\+To\+Number} (const std\+::string \&s, int \&val)
+\item 
+bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a9905883e52b509431a99814231b7fc41}{Convert\+To\+Number} (const std\+::string \&s, unsigned int \&val)
+\item 
+bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a06809f3078ebbcf4081f005ad91e0fdb}{Convert\+To\+Number} (const std\+::string \&s, long int \&val)
+\item 
+bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a6da9a07cfea6ef1581095707ffebb587}{Convert\+To\+Number} (const std\+::string \&s, unsigned long int \&val)
+\item 
+bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_aaf654965fdba651d206e42284984514d}{Convert\+To\+Number} (const std\+::string \&s, float \&val)
+\item 
+bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a2aa304a94460e24a5adf13c71698b653}{Convert\+To\+Number} (const std\+::string \&s, double \&val)
+\item 
+bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a7e77203cd2449bac687e29838984f185}{Convert\+To\+Number} (const std\+::string \&s, long double \&val)
+\item 
+std\+::string \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a3d4bb640b181d2ec1bb14e320198c109}{Convert\+To\+Upper\+Case} (const std\+::string \&s)
+\item 
+std\+::string \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a8bea4804e4d1fce95605925f22141bbb}{Convert\+To\+Lower\+Case} (const std\+::string \&s)
+\item 
+std\+::string \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a955fe002c80dd4ed5f5fd9d0e931fbff}{Trim} (const std\+::string \&s)
+\item 
+std\+::string \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_ae8646271ba222c5f29c23bfdccf110b6}{Remove\+Gaps} (const std\+::string \&s)
+\item 
+std\+::string \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a4c52a5bbab81d5c97fbc903284642594}{S\+Print\+F} (const char $\ast$fmt,...)
+\item 
+void \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a222b547a786d46ebcbad7231c3af743c}{Write\+Progress\+Message} (const std\+::string \&message)
+\item 
+double \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a62b9190657de437bedb3be30fff39e6a}{Get\+System\+Time} ()
+\item 
+void \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_aae122388877970559c4a8b32f245f227}{Make\+Directory} (const std\+::string \&directory)
+\item 
+std\+::string \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a060e483e55448669e8cdef48e0529bb3}{Make\+Temp\+Directory} ()
+\item 
+std\+::vector$<$ int $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_aeae75bc47e8497488083213808296640}{Get\+Sequence\+Positions} (const std\+::string \&s)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a48e4221f1227ca8ada5be24e41d8627e}{Get\+Sequence\+Mapping} (const std\+::string \&s)
+\item 
+int \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a6ac32413ccb310e6433d4df87971d735}{Ind} (bool condition)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a9e90b0cdf49405cc0f56918fbeecae47}{operator==} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af53bc7b3a1cb11396c78145a19591b23}{operator$<$} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a14c9410b6dcc41a0f69c1479f30f164f}{operator!=} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a593a75c25abcb081665eb3e13e138db0}{operator$>$} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a8546112ccb3887f55cccb11caecbca4f}{operator$<$=} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af2dfb1bb3969d1ba0df470c8ce42c7fa}{operator$>$=} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\\hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a765162c27da3c4c997099267c3d3fe07}{make\+\_\+triple} (T1 first, T2 second, T3 third)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\std\+::ostream \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a90330689e9660b8e3f4720211e99792a}{operator$<$$<$} (std\+::ostream \&out, const std\+::pair$<$ T1, T2 $>$ \&x)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\std\+::ostream \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a3d51e9fcc4b545214345eef0c3ecf3e8}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_aa90c5d3d66b2b35db48b34890bbdb7d3}{Sqrt} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a2df326fe48188544ee93212a13f701c4}{Exp} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a657a891c7cc358c740baa9b45e367800}{Log} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af21ff311f27de47c06f0c69a505fd846}{Pow} (const T x, const T p)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_adb7f6afd45b2037d2c12aebbe3e8bf49}{Tanh} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a532adade448b1abc086796699a33befe}{Floor} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a7fcac3e38289713cf582d13f42b0cd3f}{Ceil} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_afaa054e15f31737d6061c62a24c9ad54}{Abs} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a797eeaa74fbdca4a7644e4c0f306f1dc}{Sign} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a320ef704643929c4107b9cf524fbef6c}{Clip} (const T x, const T lower, const T upper)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a4bb1be5baf8e6b84d08b0d3a6f19ec60}{Dot\+Product} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a84154107c2a94a052bf6e096e947746c}{Norm} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af7c1cc7b0896db3c539b96deb7180fa6}{Sqrt} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_abc9676247707551f952b0fa97656939b}{Exp} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a466966e2539438481f776b9439ba9f78}{Log} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af855c94a7de5278e38bcdb7f92a5c269}{Pow} (const std\+::vector$<$ T $>$ \&x, const T p)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a06f06e0b783488133ecf5ec215364c5e}{Tanh} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_ab937f6ab2d41fa4dfbeb67b8d3be0a5e}{Abs} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_ad703b4b46a29bf917575e22f84d8d199}{Sign} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T , typename P $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af04cb7317628b0438926fb652ac41e2d}{Test} (const std\+::vector$<$ T $>$ \&x, \hyperlink{pf__duplex_8c_a54f9e847235c2061dfd403c5869b5e2d}{P} pred)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a727bddb8389af19f389a42b5117a7328}{Sum} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a7ad28d2b759a85d7d7ad2b1839965f11}{Prod} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_afb34320e7191fcfe6a715bdebcbdc00c}{Min} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af841c8c9a54b2630ae1358106e935d53}{Max} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a288a761be65529c192ec9789756c48e2}{Clip} (const std\+::vector$<$ T $>$ \&x, const T \&lower, const T \&upper)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af4d253c4343fceb20b2c92bbcff8badd}{Min} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a5f6f45fe7c9e63a2596082df4dddee75}{Max} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a2dd62e43a08f8d50213d9fdb3dbe2a6b}{Min} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af7b575076b6bd5018f1b2681f09770a3}{Max} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a3cab2f565c065835d243beabab3c2337}{Arg\+Min} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a98578538a8ce83b01d3973a1a171d4ec}{Arg\+Max} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a568eb68e84ad744ccb15f88abf2db1a3}{operator-\/} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a39ede280ac0ede640abe16fae764c3ff}{operator$\ast$} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a48c7b9167c56e63b4acc2594f220bb4b}{operator/} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a1334f27e41c96504343e1ac33dcff63b}{operator+} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a836b51b046bfe8e04dae3d2528bf6795}{operator-\/} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a3653a21d9593e7501f638b10ef5bf85f}{operator$\ast$} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a13cceb369f762a265498f2cc5c181aae}{operator/} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a592ff9916895c92e5553df7e3185f49f}{operator+} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_abda54a09ef34c2781d786368b6248835}{operator-\/} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_afa57077fa69a822dfe1938396c307b81}{operator$\ast$} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a223c655adedf1f1fe2acb0bf852a49a6}{operator/} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a9980cc43673f8c9f685c500a1ea6e89c}{operator+} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a088dbb8065fc5c3752f74d372370640b}{operator-\/} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_aed2c5cbeefc6e8d3166c406f581a8654}{operator$\ast$=} (std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_aa2459c271ecf612a026ad273d183fb21}{operator/=} (std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a8a1d708250dbef941e052cfbab978587}{operator+=} (std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a83468849cdd5d53237c8e59d477d66d9}{operator-\/=} (std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a8a39142b83e4405e96095bb4ea56f5e4}{operator$\ast$=} (std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a93647e730c315e23104a566b3378b579}{operator/=} (std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a3d01d5a3402946045dd14ec2747d804a}{operator+=} (std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_aaa19f8f84602aebf0399a95eacc57f75}{operator-\/=} (std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_af49746185f37a374b3443aac9437a813}{operator$<$$<$} (std\+::ostream \&out, const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a203b94ca459c645a42ff19c0e32f9d8f}{Convert\+Vector} (const std\+::vector$<$ U $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a699f9c877b339b8c0b945fdef29e33af}{Concatenate} (const std\+::vector$<$ T $>$ \&u, const std\+::vector$<$ T $>$ \&v)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_aca360a2e2018322c9ac6139cbafe3827}{Transpose} (const std\+::vector$<$ T $>$ \&m, const int rows, const int cols)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a4e494eed0ce3dbde725c013438efc02c}{Expand\+Matrix} (const std\+::vector$<$ T $>$ \&mat, const int new\+\_\+rows, const int new\+\_\+cols, const std\+::vector$<$ int $>$ \&positions\+\_\+rows, const std\+::vector$<$ int $>$ \&positions\+\_\+cols)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a3e4092b22afa5a8df86dcdafaefa74d0}{Expand\+Vector} (const std\+::vector$<$ T $>$ \&v, const int new\+\_\+length, const std\+::vector$<$ int $>$ \&positions)
+\item 
+bool \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a97de122064ef1c636d8aa78953df68e1}{Is\+Complementary} (char c, char d)
+\item 
+std\+::string \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a1d732ffb3254f02d7db6aad39b338d44}{Get\+Dir\+Name} (const std\+::string \&path)
+\item 
+std\+::string \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a5d65936c7ceec59fea0d943d5cd1e85d}{Get\+Base\+Name} (const std\+::string \&path)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \hyperlink{centroidalifold_2contrafold_2_utilities_8hpp_a20fbb16d9f17b40cac6c9a1a4ddab5ec}{D\+I\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R} = '/'
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_ae74c7c31ab970b8638d26006a782e9ab}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+@{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+@{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+F\+L\+\_\+\+\_\+~\char`\"{}Assertion failed in file \textbackslash{}\char`\"{}\char`\"{} \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ \char`\"{}\textbackslash{}\char`\"{}, line \char`\"{} \+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}}\label{centroidalifold_2contrafold_2_utilities_8hpp_ae74c7c31ab970b8638d26006a782e9ab}
+
+
+Definition at line 35 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_ac8c8ba070a2efab7d65ae86173a039da}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+@{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+@{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+~{\bf \+\_\+level\+\_\+2\+\_\+str}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_ac8c8ba070a2efab7d65ae86173a039da}
+
+
+Definition at line 34 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_ab041d05d6b186895ba96002efbb14c80}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!\+\_\+level\+\_\+1\+\_\+str@{\+\_\+level\+\_\+1\+\_\+str}}
+\index{\+\_\+level\+\_\+1\+\_\+str@{\+\_\+level\+\_\+1\+\_\+str}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+level\+\_\+1\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+level\+\_\+1\+\_\+str(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~\#s}}\label{centroidalifold_2contrafold_2_utilities_8hpp_ab041d05d6b186895ba96002efbb14c80}
+
+
+Definition at line 33 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a060f01dff93e683cf78598476058aa7f}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!\+\_\+level\+\_\+2\+\_\+str@{\+\_\+level\+\_\+2\+\_\+str}}
+\index{\+\_\+level\+\_\+2\+\_\+str@{\+\_\+level\+\_\+2\+\_\+str}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+level\+\_\+2\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+level\+\_\+2\+\_\+str(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+level\+\_\+1\+\_\+str}(s)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a060f01dff93e683cf78598476058aa7f}
+
+
+Definition at line 32 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af8a39cb14d8eca76bb0a7cece4103f15}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Assert@{Assert}}
+\index{Assert@{Assert}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Assert}]{\setlength{\rightskip}{0pt plus 5cm}\#define Assert(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf test}, }
+\item[{}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~({\bf test} ? 0 \+: {\bf \+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D}({\bf \+\_\+\+\_\+\+F\+L\+\_\+\+\_\+} \char`\"{}\+: \char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \#\# \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+))}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af8a39cb14d8eca76bb0a7cece4103f15}
+
+
+Definition at line 48 of file Utilities.\+hpp.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!B\+Y\+T\+E@{B\+Y\+T\+E}}
+\index{B\+Y\+T\+E@{B\+Y\+T\+E}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{B\+Y\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf B\+Y\+T\+E}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a4ae1dab0fb4b072a66584546209e7d58}
+
+
+Definition at line 28 of file Utilities.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a431e93b8e953409b87c47ea4e94cfb44}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D@{\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D}}
+\index{\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D@{\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}int \+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a431e93b8e953409b87c47ea4e94cfb44}
+
+
+Definition at line 24 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_afaa054e15f31737d6061c62a24c9ad54}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Abs@{Abs}}
+\index{Abs@{Abs}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Abs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Abs (
+\begin{DoxyParamCaption}
+\item[{const T}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_afaa054e15f31737d6061c62a24c9ad54}
+
+
+Definition at line 149 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_ab937f6ab2d41fa4dfbeb67b8d3be0a5e}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Abs@{Abs}}
+\index{Abs@{Abs}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Abs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Abs (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_ab937f6ab2d41fa4dfbeb67b8d3be0a5e}
+
+
+Definition at line 207 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a98578538a8ce83b01d3973a1a171d4ec}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Arg\+Max@{Arg\+Max}}
+\index{Arg\+Max@{Arg\+Max}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Arg\+Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int Arg\+Max (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a98578538a8ce83b01d3973a1a171d4ec}
+
+
+Definition at line 312 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a3cab2f565c065835d243beabab3c2337}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Arg\+Min@{Arg\+Min}}
+\index{Arg\+Min@{Arg\+Min}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Arg\+Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ int Arg\+Min (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a3cab2f565c065835d243beabab3c2337}
+
+
+Definition at line 304 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a7fcac3e38289713cf582d13f42b0cd3f}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Ceil@{Ceil}}
+\index{Ceil@{Ceil}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Ceil}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Ceil (
+\begin{DoxyParamCaption}
+\item[{const T}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a7fcac3e38289713cf582d13f42b0cd3f}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a320ef704643929c4107b9cf524fbef6c}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Clip@{Clip}}
+\index{Clip@{Clip}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Clip}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Clip (
+\begin{DoxyParamCaption}
+\item[{const T}]{x, }
+\item[{const T}]{lower, }
+\item[{const T}]{upper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a320ef704643929c4107b9cf524fbef6c}
+
+
+Definition at line 136 of file Utilities.\+ipp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{centroidalifold_2contrafold_2_utilities_8hpp_a320ef704643929c4107b9cf524fbef6c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a288a761be65529c192ec9789756c48e2}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Clip@{Clip}}
+\index{Clip@{Clip}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Clip}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ Clip (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{lower, }
+\item[{const T \&}]{upper}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a288a761be65529c192ec9789756c48e2}
+
+
+Definition at line 263 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a699f9c877b339b8c0b945fdef29e33af}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Concatenate@{Concatenate}}
+\index{Concatenate@{Concatenate}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Concatenate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Concatenate (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{u, }
+\item[{const std\+::vector$<$ T $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a699f9c877b339b8c0b945fdef29e33af}
+
+
+Definition at line 500 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a8bea4804e4d1fce95605925f22141bbb}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Lower\+Case@{Convert\+To\+Lower\+Case}}
+\index{Convert\+To\+Lower\+Case@{Convert\+To\+Lower\+Case}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Lower\+Case}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Convert\+To\+Lower\+Case (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a8bea4804e4d1fce95605925f22141bbb}
+
+
+Definition at line 214 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_ae6480ac70897987e446addec45c6e2e0}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Number@{Convert\+To\+Number}}
+\index{Convert\+To\+Number@{Convert\+To\+Number}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}bool Convert\+To\+Number (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s, }
+\item[{int \&}]{val}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_ae6480ac70897987e446addec45c6e2e0}
+
+
+Definition at line 76 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a9905883e52b509431a99814231b7fc41}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Number@{Convert\+To\+Number}}
+\index{Convert\+To\+Number@{Convert\+To\+Number}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}bool Convert\+To\+Number (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s, }
+\item[{unsigned int \&}]{val}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a9905883e52b509431a99814231b7fc41}
+
+
+Definition at line 90 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a06809f3078ebbcf4081f005ad91e0fdb}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Number@{Convert\+To\+Number}}
+\index{Convert\+To\+Number@{Convert\+To\+Number}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}bool Convert\+To\+Number (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s, }
+\item[{long int \&}]{val}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a06809f3078ebbcf4081f005ad91e0fdb}
+
+
+Definition at line 104 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a6da9a07cfea6ef1581095707ffebb587}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Number@{Convert\+To\+Number}}
+\index{Convert\+To\+Number@{Convert\+To\+Number}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}bool Convert\+To\+Number (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s, }
+\item[{unsigned long int \&}]{val}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a6da9a07cfea6ef1581095707ffebb587}
+
+
+Definition at line 115 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_aaf654965fdba651d206e42284984514d}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Number@{Convert\+To\+Number}}
+\index{Convert\+To\+Number@{Convert\+To\+Number}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}bool Convert\+To\+Number (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s, }
+\item[{float \&}]{val}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_aaf654965fdba651d206e42284984514d}
+
+
+Definition at line 157 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a2aa304a94460e24a5adf13c71698b653}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Number@{Convert\+To\+Number}}
+\index{Convert\+To\+Number@{Convert\+To\+Number}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}bool Convert\+To\+Number (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s, }
+\item[{double \&}]{val}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a2aa304a94460e24a5adf13c71698b653}
+
+
+Definition at line 168 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a7e77203cd2449bac687e29838984f185}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Number@{Convert\+To\+Number}}
+\index{Convert\+To\+Number@{Convert\+To\+Number}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Number}]{\setlength{\rightskip}{0pt plus 5cm}bool Convert\+To\+Number (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s, }
+\item[{long double \&}]{val}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a7e77203cd2449bac687e29838984f185}
+
+
+Definition at line 179 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a3d4bb640b181d2ec1bb14e320198c109}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+To\+Upper\+Case@{Convert\+To\+Upper\+Case}}
+\index{Convert\+To\+Upper\+Case@{Convert\+To\+Upper\+Case}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+To\+Upper\+Case}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Convert\+To\+Upper\+Case (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a3d4bb640b181d2ec1bb14e320198c109}
+
+
+Definition at line 200 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a203b94ca459c645a42ff19c0e32f9d8f}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Convert\+Vector@{Convert\+Vector}}
+\index{Convert\+Vector@{Convert\+Vector}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Convert\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U $>$ std\+::vector$<$T$>$ Convert\+Vector (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ U $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a203b94ca459c645a42ff19c0e32f9d8f}
+
+
+Definition at line 490 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a4bb1be5baf8e6b84d08b0d3a6f19ec60}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Dot\+Product@{Dot\+Product}}
+\index{Dot\+Product@{Dot\+Product}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Dot\+Product}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Dot\+Product (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a4bb1be5baf8e6b84d08b0d3a6f19ec60}
+
+
+Definition at line 141 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a01f9573b30587e671a962985420c3fb3}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Error@{Error}}
+\index{Error@{Error}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}void Error (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a01f9573b30587e671a962985420c3fb3}
+
+
+Definition at line 41 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a2df326fe48188544ee93212a13f701c4}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Exp@{Exp}}
+\index{Exp@{Exp}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Exp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Exp (
+\begin{DoxyParamCaption}
+\item[{const T}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a2df326fe48188544ee93212a13f701c4}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{centroidalifold_2contrafold_2_utilities_8hpp_a2df326fe48188544ee93212a13f701c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_abc9676247707551f952b0fa97656939b}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Exp@{Exp}}
+\index{Exp@{Exp}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Exp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Exp (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_abc9676247707551f952b0fa97656939b}
+
+
+Definition at line 175 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a4e494eed0ce3dbde725c013438efc02c}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Expand\+Matrix@{Expand\+Matrix}}
+\index{Expand\+Matrix@{Expand\+Matrix}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Expand\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::vector$<$T$>$ Expand\+Matrix (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{mat, }
+\item[{const int}]{new\+\_\+rows, }
+\item[{const int}]{new\+\_\+cols, }
+\item[{const std\+::vector$<$ int $>$ \&}]{positions\+\_\+rows, }
+\item[{const std\+::vector$<$ int $>$ \&}]{positions\+\_\+cols}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a4e494eed0ce3dbde725c013438efc02c}
+
+
+Definition at line 527 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a3e4092b22afa5a8df86dcdafaefa74d0}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Expand\+Vector@{Expand\+Vector}}
+\index{Expand\+Vector@{Expand\+Vector}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Expand\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::vector$<$T$>$ Expand\+Vector (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{v, }
+\item[{const int}]{new\+\_\+length, }
+\item[{const std\+::vector$<$ int $>$ \&}]{positions}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a3e4092b22afa5a8df86dcdafaefa74d0}
+
+
+Definition at line 562 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a532adade448b1abc086796699a33befe}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Floor@{Floor}}
+\index{Floor@{Floor}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Floor}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Floor (
+\begin{DoxyParamCaption}
+\item[{const T}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a532adade448b1abc086796699a33befe}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a5d65936c7ceec59fea0d943d5cd1e85d}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Get\+Base\+Name@{Get\+Base\+Name}}
+\index{Get\+Base\+Name@{Get\+Base\+Name}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Get\+Base\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Get\+Base\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{path}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a5d65936c7ceec59fea0d943d5cd1e85d}
+
+
+Definition at line 427 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a1d732ffb3254f02d7db6aad39b338d44}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Get\+Dir\+Name@{Get\+Dir\+Name}}
+\index{Get\+Dir\+Name@{Get\+Dir\+Name}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Get\+Dir\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Get\+Dir\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{path}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a1d732ffb3254f02d7db6aad39b338d44}
+
+
+Definition at line 419 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a48e4221f1227ca8ada5be24e41d8627e}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Get\+Sequence\+Mapping@{Get\+Sequence\+Mapping}}
+\index{Get\+Sequence\+Mapping@{Get\+Sequence\+Mapping}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Get\+Sequence\+Mapping}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ Get\+Sequence\+Mapping (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a48e4221f1227ca8ada5be24e41d8627e}
+
+
+Definition at line 395 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_aeae75bc47e8497488083213808296640}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Get\+Sequence\+Positions@{Get\+Sequence\+Positions}}
+\index{Get\+Sequence\+Positions@{Get\+Sequence\+Positions}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Get\+Sequence\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ Get\+Sequence\+Positions (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_aeae75bc47e8497488083213808296640}
+
+
+Definition at line 379 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a62b9190657de437bedb3be30fff39e6a}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Get\+System\+Time@{Get\+System\+Time}}
+\index{Get\+System\+Time@{Get\+System\+Time}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Get\+System\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double Get\+System\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a62b9190657de437bedb3be30fff39e6a}
+
+
+Definition at line 320 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a6ac32413ccb310e6433d4df87971d735}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Ind@{Ind}}
+\index{Ind@{Ind}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Ind}]{\setlength{\rightskip}{0pt plus 5cm}int Ind (
+\begin{DoxyParamCaption}
+\item[{bool}]{condition}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a6ac32413ccb310e6433d4df87971d735}
+
+
+Definition at line 102 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a97de122064ef1c636d8aa78953df68e1}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Is\+Complementary@{Is\+Complementary}}
+\index{Is\+Complementary@{Is\+Complementary}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Is\+Complementary}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Complementary (
+\begin{DoxyParamCaption}
+\item[{char}]{c, }
+\item[{char}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a97de122064ef1c636d8aa78953df68e1}
+
+
+Definition at line 587 of file Utilities.\+ipp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{centroidalifold_2contrafold_2_utilities_8hpp_a97de122064ef1c636d8aa78953df68e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a657a891c7cc358c740baa9b45e367800}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Log@{Log}}
+\index{Log@{Log}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Log}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Log (
+\begin{DoxyParamCaption}
+\item[{const T}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a657a891c7cc358c740baa9b45e367800}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{centroidalifold_2contrafold_2_utilities_8hpp_a657a891c7cc358c740baa9b45e367800_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a466966e2539438481f776b9439ba9f78}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Log@{Log}}
+\index{Log@{Log}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Log}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Log (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a466966e2539438481f776b9439ba9f78}
+
+
+Definition at line 183 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a765162c27da3c4c997099267c3d3fe07}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!make\+\_\+triple@{make\+\_\+triple}}
+\index{make\+\_\+triple@{make\+\_\+triple}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{make\+\_\+triple}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ {\bf triple}$<$T1,T2,T3$>$ make\+\_\+triple (
+\begin{DoxyParamCaption}
+\item[{T1}]{first, }
+\item[{T2}]{second, }
+\item[{T3}]{third}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a765162c27da3c4c997099267c3d3fe07}
+
+
+Definition at line 67 of file Utilities.\+ipp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{centroidalifold_2contrafold_2_utilities_8hpp_a765162c27da3c4c997099267c3d3fe07_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_aae122388877970559c4a8b32f245f227}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Make\+Directory@{Make\+Directory}}
+\index{Make\+Directory@{Make\+Directory}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Make\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}void Make\+Directory (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{directory}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_aae122388877970559c4a8b32f245f227}
+
+
+Definition at line 333 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a060e483e55448669e8cdef48e0529bb3}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Make\+Temp\+Directory@{Make\+Temp\+Directory}}
+\index{Make\+Temp\+Directory@{Make\+Temp\+Directory}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Make\+Temp\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Make\+Temp\+Directory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a060e483e55448669e8cdef48e0529bb3}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af841c8c9a54b2630ae1358106e935d53}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Max@{Max}}
+\index{Max@{Max}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ Max (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af841c8c9a54b2630ae1358106e935d53}
+
+
+Definition at line 255 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a5f6f45fe7c9e63a2596082df4dddee75}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Max@{Max}}
+\index{Max@{Max}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ Max (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a5f6f45fe7c9e63a2596082df4dddee75}
+
+
+Definition at line 280 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af7b575076b6bd5018f1b2681f09770a3}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Max@{Max}}
+\index{Max@{Max}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Max (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af7b575076b6bd5018f1b2681f09770a3}
+
+
+Definition at line 296 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_afb34320e7191fcfe6a715bdebcbdc00c}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Min@{Min}}
+\index{Min@{Min}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ Min (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_afb34320e7191fcfe6a715bdebcbdc00c}
+
+
+Definition at line 247 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af4d253c4343fceb20b2c92bbcff8badd}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Min@{Min}}
+\index{Min@{Min}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ Min (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af4d253c4343fceb20b2c92bbcff8badd}
+
+
+Definition at line 272 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a2dd62e43a08f8d50213d9fdb3dbe2a6b}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Min@{Min}}
+\index{Min@{Min}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Min (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a2dd62e43a08f8d50213d9fdb3dbe2a6b}
+
+
+Definition at line 288 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a84154107c2a94a052bf6e096e947746c}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Norm@{Norm}}
+\index{Norm@{Norm}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Norm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Norm (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a84154107c2a94a052bf6e096e947746c}
+
+
+Definition at line 161 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a14c9410b6dcc41a0f69c1479f30f164f}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{x, }
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a14c9410b6dcc41a0f69c1479f30f164f}
+
+
+Definition at line 43 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a39ede280ac0ede640abe16fae764c3ff}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a39ede280ac0ede640abe16fae764c3ff}
+
+
+Definition at line 328 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a3653a21d9593e7501f638b10ef5bf85f}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a3653a21d9593e7501f638b10ef5bf85f}
+
+
+Definition at line 360 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_afa57077fa69a822dfe1938396c307b81}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_afa57077fa69a822dfe1938396c307b81}
+
+
+Definition at line 392 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_aed2c5cbeefc6e8d3166c406f581a8654}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$\& operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_aed2c5cbeefc6e8d3166c406f581a8654}
+
+
+Definition at line 424 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a8a39142b83e4405e96095bb4ea56f5e4}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$\& operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a8a39142b83e4405e96095bb4ea56f5e4}
+
+
+Definition at line 452 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a1334f27e41c96504343e1ac33dcff63b}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator+ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a1334f27e41c96504343e1ac33dcff63b}
+
+
+Definition at line 344 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a592ff9916895c92e5553df7e3185f49f}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator+ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a592ff9916895c92e5553df7e3185f49f}
+
+
+Definition at line 376 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a9980cc43673f8c9f685c500a1ea6e89c}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator+@{operator+}}
+\index{operator+@{operator+}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator+ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a9980cc43673f8c9f685c500a1ea6e89c}
+
+
+Definition at line 408 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a8a1d708250dbef941e052cfbab978587}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$\& operator+= (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a8a1d708250dbef941e052cfbab978587}
+
+
+Definition at line 438 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a3d01d5a3402946045dd14ec2747d804a}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$\& operator+= (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a3d01d5a3402946045dd14ec2747d804a}
+
+
+Definition at line 466 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a568eb68e84ad744ccb15f88abf2db1a3}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a568eb68e84ad744ccb15f88abf2db1a3}
+
+
+Definition at line 320 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a836b51b046bfe8e04dae3d2528bf6795}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a836b51b046bfe8e04dae3d2528bf6795}
+
+
+Definition at line 352 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_abda54a09ef34c2781d786368b6248835}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_abda54a09ef34c2781d786368b6248835}
+
+
+Definition at line 384 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a088dbb8065fc5c3752f74d372370640b}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a088dbb8065fc5c3752f74d372370640b}
+
+
+Definition at line 416 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a83468849cdd5d53237c8e59d477d66d9}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$\& operator-\/= (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a83468849cdd5d53237c8e59d477d66d9}
+
+
+Definition at line 445 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_aaa19f8f84602aebf0399a95eacc57f75}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$\& operator-\/= (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_aaa19f8f84602aebf0399a95eacc57f75}
+
+
+Definition at line 473 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a48c7b9167c56e63b4acc2594f220bb4b}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator/@{operator/}}
+\index{operator/@{operator/}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator/ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a48c7b9167c56e63b4acc2594f220bb4b}
+
+
+Definition at line 336 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a13cceb369f762a265498f2cc5c181aae}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator/@{operator/}}
+\index{operator/@{operator/}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator/ (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a13cceb369f762a265498f2cc5c181aae}
+
+
+Definition at line 368 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a223c655adedf1f1fe2acb0bf852a49a6}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator/@{operator/}}
+\index{operator/@{operator/}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const std\+::vector$<$T$>$ operator/ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a223c655adedf1f1fe2acb0bf852a49a6}
+
+
+Definition at line 400 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_aa2459c271ecf612a026ad273d183fb21}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$\& operator/= (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const std\+::vector$<$ T $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_aa2459c271ecf612a026ad273d183fb21}
+
+
+Definition at line 431 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a93647e730c315e23104a566b3378b579}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$\& operator/= (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T \&}]{y}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a93647e730c315e23104a566b3378b579}
+
+
+Definition at line 459 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af53bc7b3a1cb11396c78145a19591b23}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{x, }
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af53bc7b3a1cb11396c78145a19591b23}
+
+
+Definition at line 31 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a90330689e9660b8e3f4720211e99792a}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 $>$ std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const std\+::pair$<$ T1, T2 $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a90330689e9660b8e3f4720211e99792a}
+
+
+Definition at line 73 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a3d51e9fcc4b545214345eef0c3ecf3e8}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a3d51e9fcc4b545214345eef0c3ecf3e8}
+
+
+Definition at line 80 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af49746185f37a374b3443aac9437a813}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af49746185f37a374b3443aac9437a813}
+
+
+Definition at line 480 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a8546112ccb3887f55cccb11caecbca4f}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{x, }
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a8546112ccb3887f55cccb11caecbca4f}
+
+
+Definition at line 55 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a9e90b0cdf49405cc0f56918fbeecae47}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator==@{operator==}}
+\index{operator==@{operator==}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{x, }
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a9e90b0cdf49405cc0f56918fbeecae47}
+
+
+Definition at line 21 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a593a75c25abcb081665eb3e13e138db0}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{x, }
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a593a75c25abcb081665eb3e13e138db0}
+
+
+Definition at line 49 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af2dfb1bb3969d1ba0df470c8ce42c7fa}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{x, }
+\item[{const {\bf triple}$<$ T1, T2, T3 $>$ \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af2dfb1bb3969d1ba0df470c8ce42c7fa}
+
+
+Definition at line 61 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af21ff311f27de47c06f0c69a505fd846}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Pow@{Pow}}
+\index{Pow@{Pow}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Pow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Pow (
+\begin{DoxyParamCaption}
+\item[{const T}]{x, }
+\item[{const T}]{p}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af21ff311f27de47c06f0c69a505fd846}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af855c94a7de5278e38bcdb7f92a5c269}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Pow@{Pow}}
+\index{Pow@{Pow}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Pow}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Pow (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{const T}]{p}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af855c94a7de5278e38bcdb7f92a5c269}
+
+
+Definition at line 191 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a7ad28d2b759a85d7d7ad2b1839965f11}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Prod@{Prod}}
+\index{Prod@{Prod}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Prod}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Prod (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a7ad28d2b759a85d7d7ad2b1839965f11}
+
+
+Definition at line 239 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_ae8646271ba222c5f29c23bfdccf110b6}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Remove\+Gaps@{Remove\+Gaps}}
+\index{Remove\+Gaps@{Remove\+Gaps}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Remove\+Gaps}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Remove\+Gaps (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_ae8646271ba222c5f29c23bfdccf110b6}
+
+
+Definition at line 241 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a797eeaa74fbdca4a7644e4c0f306f1dc}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Sign@{Sign}}
+\index{Sign@{Sign}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Sign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Sign (
+\begin{DoxyParamCaption}
+\item[{const T}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a797eeaa74fbdca4a7644e4c0f306f1dc}
+
+
+Definition at line 155 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_ad703b4b46a29bf917575e22f84d8d199}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Sign@{Sign}}
+\index{Sign@{Sign}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Sign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Sign (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_ad703b4b46a29bf917575e22f84d8d199}
+
+
+Definition at line 215 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a4c52a5bbab81d5c97fbc903284642594}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!S\+Print\+F@{S\+Print\+F}}
+\index{S\+Print\+F@{S\+Print\+F}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{S\+Print\+F}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string S\+Print\+F (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a4c52a5bbab81d5c97fbc903284642594}
+
+
+Definition at line 260 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_aa90c5d3d66b2b35db48b34890bbdb7d3}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Sqrt@{Sqrt}}
+\index{Sqrt@{Sqrt}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Sqrt}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Sqrt (
+\begin{DoxyParamCaption}
+\item[{const T}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_aa90c5d3d66b2b35db48b34890bbdb7d3}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af7c1cc7b0896db3c539b96deb7180fa6}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Sqrt@{Sqrt}}
+\index{Sqrt@{Sqrt}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Sqrt}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Sqrt (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af7c1cc7b0896db3c539b96deb7180fa6}
+
+
+Definition at line 167 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a727bddb8389af19f389a42b5117a7328}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Sum@{Sum}}
+\index{Sum@{Sum}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Sum}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Sum (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a727bddb8389af19f389a42b5117a7328}
+
+
+Definition at line 231 of file Utilities.\+ipp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{centroidalifold_2contrafold_2_utilities_8hpp_a727bddb8389af19f389a42b5117a7328_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_adb7f6afd45b2037d2c12aebbe3e8bf49}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Tanh@{Tanh}}
+\index{Tanh@{Tanh}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Tanh}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Tanh (
+\begin{DoxyParamCaption}
+\item[{const T}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_adb7f6afd45b2037d2c12aebbe3e8bf49}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a06f06e0b783488133ecf5ec215364c5e}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Tanh@{Tanh}}
+\index{Tanh@{Tanh}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Tanh}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Tanh (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a06f06e0b783488133ecf5ec215364c5e}
+
+
+Definition at line 199 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_af04cb7317628b0438926fb652ac41e2d}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Test@{Test}}
+\index{Test@{Test}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Test}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename P $>$ std\+::vector$<$T$>$ Test (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{x, }
+\item[{{\bf P}}]{pred}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_af04cb7317628b0438926fb652ac41e2d}
+
+
+Definition at line 223 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_aca360a2e2018322c9ac6139cbafe3827}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Transpose@{Transpose}}
+\index{Transpose@{Transpose}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Transpose}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::vector$<$T$>$ Transpose (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ T $>$ \&}]{m, }
+\item[{const int}]{rows, }
+\item[{const int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_aca360a2e2018322c9ac6139cbafe3827}
+
+
+Definition at line 508 of file Utilities.\+ipp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a955fe002c80dd4ed5f5fd9d0e931fbff}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Trim@{Trim}}
+\index{Trim@{Trim}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Trim}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Trim (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a955fe002c80dd4ed5f5fd9d0e931fbff}
+
+
+Definition at line 228 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a35d1dac76ff69b37f992a7c9678f179c}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Warning@{Warning}}
+\index{Warning@{Warning}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Warning}]{\setlength{\rightskip}{0pt plus 5cm}void Warning (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a35d1dac76ff69b37f992a7c9678f179c}
+
+
+Definition at line 59 of file Utilities.\+cpp.
+
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a222b547a786d46ebcbad7231c3af743c}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!Write\+Progress\+Message@{Write\+Progress\+Message}}
+\index{Write\+Progress\+Message@{Write\+Progress\+Message}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{Write\+Progress\+Message}]{\setlength{\rightskip}{0pt plus 5cm}void Write\+Progress\+Message (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a222b547a786d46ebcbad7231c3af743c}
+
+
+Definition at line 305 of file Utilities.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{centroidalifold_2contrafold_2_utilities_8hpp_a20fbb16d9f17b40cac6c9a1a4ddab5ec}{\index{centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}!D\+I\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R@{D\+I\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R}}
+\index{D\+I\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R@{D\+I\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R}!centroidalifold/contrafold/\+Utilities.\+hpp@{centroidalifold/contrafold/\+Utilities.\+hpp}}
+\subsubsection[{D\+I\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}const char D\+I\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R = '/'}}\label{centroidalifold_2contrafold_2_utilities_8hpp_a20fbb16d9f17b40cac6c9a1a4ddab5ec}
+
+
+Definition at line 29 of file Utilities.\+hpp.
+

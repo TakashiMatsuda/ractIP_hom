@@ -89,8 +89,6 @@ calculate_posterior(const TH &th1, const TH &th2, double wh){
         }
       }
       res[i+1][k+1] = res[i+1][k+1] / ((double)hom1.size() * (double)hom2.size());
-      if (res[i+1][k+1] > 0.005)
-        std::cout << res[i+1][k+1] << std::endl;
       //res[i+1][k+1] = tmp;
       // whの比にしたがって、no_hom_hp(hom未考慮のhp)とres(考慮したhp)を混合
       //debug

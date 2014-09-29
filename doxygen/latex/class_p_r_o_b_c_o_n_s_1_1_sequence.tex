@@ -1,0 +1,430 @@
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence}{\section{P\+R\+O\+B\+C\+O\+N\+S\+:\+:Sequence Class Reference}
+\label{class_p_r_o_b_c_o_n_s_1_1_sequence}\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+}
+
+
+{\ttfamily \#include $<$Sequence.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a9801d0fba973339d9bab22e59ca5eac9}{Sequence} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_file_buffer}{File\+Buffer} \&infile, bool strip\+Gaps=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_acaaab4af7c958907f65e1380a9913c36}{Sequence} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ char $>$ $\ast$data, string header, int length, int sequence\+Label, int input\+Label)
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a9310a86e4003df91cabcb6b5f84395ac}{$\sim$\+Sequence} ()
+\item 
+string \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a2696e70c9f86e3fb3baa8ace97f675a7}{Get\+Header} () const 
+\item 
+string \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a12b45d448fcceb9c91e8a80fa35048b2}{Get\+Name} () const 
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ char $>$\+::iterator \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_adb434994650702ccbe742a603d874bec}{Get\+Data\+Ptr} ()
+\item 
+char \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a12af9505775abf0752141ef9f309b06f}{Get\+Position} (int i) const 
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_ad6067bb8d47b8a7e3959590f46b42840}{Set\+Label} (int i)
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a5787f4c8c1baed6b62a8f6fd2bd74846}{Set\+Sort\+Label} (int i)
+\item 
+int \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a9bbde5145481309d5ea40ad87d7fda22}{Get\+Label} () const 
+\item 
+int \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_ac6457a791587730ec84a37c2c282b293}{Get\+Sort\+Label} () const 
+\item 
+bool \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_aa8f82350156d0a936607de8143ceec9f}{Fail} () const 
+\item 
+int \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_af5ceae645f42aac617f6917ab83505ae}{Get\+Length} () const 
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a1cc32e85eb6efd4772e7072a7bdf4b43}{Write\+M\+F\+A} (ostream \&outfile, int num\+Columns, bool use\+Index=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false}) const 
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a10cc0709238283137a74acd8e16f07e1}{Clone} () const 
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a818e8bce38326ec0b605bf17df0fc5f8}{Get\+Range} (int start, int end) const 
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a801feb329a2d5f5f6e89ec1dbeb5a4d5}{Add\+Gaps} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ char $>$ $\ast$alignment, char id)
+\item 
+string \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a43e75de0a16168e4c5a97c4638149c98}{Get\+String} ()
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ int $>$ $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_a4af4f994f698e665510154d4c727cf26}{Get\+Mapping} () const 
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence_aa1954078d6043b31cb73db5c69449d67}{Highlight} (const \hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ float $>$ \&scores, const float cutoff)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file Sequence.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a9801d0fba973339d9bab22e59ca5eac9}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Sequence@{Sequence}}
+\index{Sequence@{Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Sequence}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf File\+Buffer} \&}]{infile, }
+\item[{bool}]{strip\+Gaps = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a9801d0fba973339d9bab22e59ca5eac9}
+
+
+Definition at line 51 of file Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_a9801d0fba973339d9bab22e59ca5eac9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_acaaab4af7c958907f65e1380a9913c36}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Sequence@{Sequence}}
+\index{Sequence@{Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Sequence}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf Safe\+Vector}$<$ char $>$ $\ast$}]{data, }
+\item[{string}]{header, }
+\item[{int}]{length, }
+\item[{int}]{sequence\+Label, }
+\item[{int}]{input\+Label}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_acaaab4af7c958907f65e1380a9913c36}
+
+
+Definition at line 116 of file Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a9310a86e4003df91cabcb6b5f84395ac}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!````~Sequence@{$\sim$\+Sequence}}
+\index{````~Sequence@{$\sim$\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{$\sim$\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::$\sim$\+Sequence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a9310a86e4003df91cabcb6b5f84395ac}
+
+
+Definition at line 128 of file Sequence.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a801feb329a2d5f5f6e89ec1dbeb5a4d5}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Add\+Gaps@{Add\+Gaps}}
+\index{Add\+Gaps@{Add\+Gaps}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Add\+Gaps}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sequence}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Add\+Gaps (
+\begin{DoxyParamCaption}
+\item[{{\bf Safe\+Vector}$<$ char $>$ $\ast$}]{alignment, }
+\item[{char}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a801feb329a2d5f5f6e89ec1dbeb5a4d5}
+
+
+Definition at line 344 of file Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a10cc0709238283137a74acd8e16f07e1}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Clone@{Clone}}
+\index{Clone@{Clone}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sequence}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a10cc0709238283137a74acd8e16f07e1}
+
+
+Definition at line 287 of file Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_aa8f82350156d0a936607de8143ceec9f}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Fail@{Fail}}
+\index{Fail@{Fail}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Fail}]{\setlength{\rightskip}{0pt plus 5cm}bool P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Fail (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_aa8f82350156d0a936607de8143ceec9f}
+
+
+Definition at line 236 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_aa8f82350156d0a936607de8143ceec9f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_adb434994650702ccbe742a603d874bec}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Data\+Ptr@{Get\+Data\+Ptr}}
+\index{Get\+Data\+Ptr@{Get\+Data\+Ptr}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Data\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Safe\+Vector}$<$char$>$\+::iterator P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Data\+Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_adb434994650702ccbe742a603d874bec}
+
+
+Definition at line 165 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_adb434994650702ccbe742a603d874bec_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a2696e70c9f86e3fb3baa8ace97f675a7}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Header@{Get\+Header}}
+\index{Get\+Header@{Get\+Header}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Header}]{\setlength{\rightskip}{0pt plus 5cm}string P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a2696e70c9f86e3fb3baa8ace97f675a7}
+
+
+Definition at line 143 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_a2696e70c9f86e3fb3baa8ace97f675a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a9bbde5145481309d5ea40ad87d7fda22}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Label@{Get\+Label}}
+\index{Get\+Label@{Get\+Label}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Label}]{\setlength{\rightskip}{0pt plus 5cm}int P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a9bbde5145481309d5ea40ad87d7fda22}
+
+
+Definition at line 214 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_a9bbde5145481309d5ea40ad87d7fda22_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_af5ceae645f42aac617f6917ab83505ae}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Length@{Get\+Length}}
+\index{Get\+Length@{Get\+Length}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Length}]{\setlength{\rightskip}{0pt plus 5cm}int P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_af5ceae645f42aac617f6917ab83505ae}
+
+
+Definition at line 246 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_af5ceae645f42aac617f6917ab83505ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a4af4f994f698e665510154d4c727cf26}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Mapping@{Get\+Mapping}}
+\index{Get\+Mapping@{Get\+Mapping}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Mapping}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Safe\+Vector}$<$int$>$$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Mapping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a4af4f994f698e665510154d4c727cf26}
+
+
+Definition at line 392 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_a4af4f994f698e665510154d4c727cf26_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a12b45d448fcceb9c91e8a80fa35048b2}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Name@{Get\+Name}}
+\index{Get\+Name@{Get\+Name}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}string P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a12b45d448fcceb9c91e8a80fa35048b2}
+
+
+Definition at line 153 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_a12b45d448fcceb9c91e8a80fa35048b2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a12af9505775abf0752141ef9f309b06f}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}char P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Position (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a12af9505775abf0752141ef9f309b06f}
+
+
+Definition at line 178 of file Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a818e8bce38326ec0b605bf17df0fc5f8}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Range@{Get\+Range}}
+\index{Get\+Range@{Get\+Range}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Range}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sequence}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Range (
+\begin{DoxyParamCaption}
+\item[{int}]{start, }
+\item[{int}]{end}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a818e8bce38326ec0b605bf17df0fc5f8}
+
+
+Definition at line 309 of file Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_ac6457a791587730ec84a37c2c282b293}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+Sort\+Label@{Get\+Sort\+Label}}
+\index{Get\+Sort\+Label@{Get\+Sort\+Label}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+Sort\+Label}]{\setlength{\rightskip}{0pt plus 5cm}int P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+Sort\+Label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_ac6457a791587730ec84a37c2c282b293}
+
+
+Definition at line 225 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_ac6457a791587730ec84a37c2c282b293_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a43e75de0a16168e4c5a97c4638149c98}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Get\+String@{Get\+String}}
+\index{Get\+String@{Get\+String}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Get\+String}]{\setlength{\rightskip}{0pt plus 5cm}string P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Get\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a43e75de0a16168e4c5a97c4638149c98}
+
+
+Definition at line 375 of file Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_aa1954078d6043b31cb73db5c69449d67}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Highlight@{Highlight}}
+\index{Highlight@{Highlight}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Highlight}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Highlight (
+\begin{DoxyParamCaption}
+\item[{const {\bf Safe\+Vector}$<$ float $>$ \&}]{scores, }
+\item[{const float}]{cutoff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_aa1954078d6043b31cb73db5c69449d67}
+
+
+Definition at line 407 of file Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_ad6067bb8d47b8a7e3959590f46b42840}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Set\+Label@{Set\+Label}}
+\index{Set\+Label@{Set\+Label}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Set\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Set\+Label (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_ad6067bb8d47b8a7e3959590f46b42840}
+
+
+Definition at line 191 of file Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_ad6067bb8d47b8a7e3959590f46b42840_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a5787f4c8c1baed6b62a8f6fd2bd74846}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Set\+Sort\+Label@{Set\+Sort\+Label}}
+\index{Set\+Sort\+Label@{Set\+Sort\+Label}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Set\+Sort\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Set\+Sort\+Label (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a5787f4c8c1baed6b62a8f6fd2bd74846}
+
+
+Definition at line 203 of file Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sequence_a1cc32e85eb6efd4772e7072a7bdf4b43}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}!Write\+M\+F\+A@{Write\+M\+F\+A}}
+\index{Write\+M\+F\+A@{Write\+M\+F\+A}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence}}
+\subsubsection[{Write\+M\+F\+A}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Sequence\+::\+Write\+M\+F\+A (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{outfile, }
+\item[{int}]{num\+Columns, }
+\item[{bool}]{use\+Index = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sequence_a1cc32e85eb6efd4772e7072a7bdf4b43}
+
+
+Definition at line 261 of file Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_sequence_a1cc32e85eb6efd4772e7072a7bdf4b43_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/probcons\+R\+N\+A/\hyperlink{_sequence_8h}{Sequence.\+h}\end{DoxyCompactItemize}

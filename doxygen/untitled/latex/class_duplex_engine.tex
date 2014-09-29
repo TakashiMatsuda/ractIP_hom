@@ -1,0 +1,151 @@
+\hypertarget{class_duplex_engine}{\section{Duplex\+Engine$<$ Real\+T $>$ Class Template Reference}
+\label{class_duplex_engine}\index{Duplex\+Engine$<$ Real\+T $>$@{Duplex\+Engine$<$ Real\+T $>$}}
+}
+
+
+{\ttfamily \#include $<$Duplex\+Engine.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_duplex_engine_a269c4e5b7aa77a75263980fc5a495ac1}{Duplex\+Engine} (bool allow\+\_\+noncomplementary)
+\item 
+\hyperlink{class_duplex_engine_a18c61a437957eba7f4d52e7ea6338ab9}{$\sim$\+Duplex\+Engine} ()
+\item 
+void \hyperlink{class_duplex_engine_a4c46b854fc495da118e7b2f6b969593b}{Register\+Parameters} (\hyperlink{class_parameter_manager}{Parameter\+Manager}$<$ Real\+T $>$ \&parameter\+\_\+manager)
+\item 
+void \hyperlink{class_duplex_engine_ad37f512741fa0bc7f3aeb295d94ac17a}{Load\+Sequence} (const \hyperlink{class_s_struct}{S\+Struct} \&str1, const \hyperlink{class_s_struct}{S\+Struct} \&str2)
+\item 
+void \hyperlink{class_duplex_engine_a70e2faa723fc6e59007f17df9220b2de}{Load\+Values} (const std\+::vector$<$ Real\+T $>$ \&values)
+\item 
+Real\+T \hyperlink{class_duplex_engine_a1d6a1a3e4890fd62802392fb4928f4fb}{Compute\+Inside} ()
+\item 
+Real\+T \hyperlink{class_duplex_engine_a48585f0f515bf7ad3335e9f9b5efb1f4}{Compute\+Outside} ()
+\item 
+Real\+T \hyperlink{class_duplex_engine_a1ae8e94a77aa4551e94b4f8f5eec1a28}{Compute\+Log\+Partition\+Coefficient} () const 
+\item 
+void \hyperlink{class_duplex_engine_a9f863ddf131bccd4c1d9b902b4875dbc}{Compute\+Posterior} ()
+\item 
+Real\+T $\ast$ \hyperlink{class_duplex_engine_aea11650f89b2c9081ca206261f0b0e14}{Get\+Posterior} (const Real\+T posterior\+\_\+cutoff) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_duplex_engine_a019d1cc1a5ba82799b51bcad4a267cf2}{Get\+Posterior} (const Real\+T posterior\+\_\+cutoff, std\+::vector$<$ Real\+T $>$ \&p) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_duplex_engine_a17a01513a22bfdc76cbf2fb79eb0fa33}{Get\+Posterior2} (const Real\+T posterior\+\_\+cutoff) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_duplex_engine_a32c8d8dde69945097e1c6d408e9953db}{Get\+Posterior2} (const Real\+T posterior\+\_\+cutoff, std\+::vector$<$ Real\+T $>$ \&p) const 
+\item 
+int \hyperlink{class_duplex_engine_afaba7c8d1bb9ac099c4d897f77dfaf80}{Get\+Offset} (int i)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_duplex_engine_a269c4e5b7aa77a75263980fc5a495ac1}{\index{Duplex\+Engine@{Duplex\+Engine}!Duplex\+Engine@{Duplex\+Engine}}
+\index{Duplex\+Engine@{Duplex\+Engine}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Duplex\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Duplex\+Engine}$<$ Real\+T $>$\+::{\bf Duplex\+Engine} (
+\begin{DoxyParamCaption}
+\item[{bool}]{allow\+\_\+noncomplementary}
+\end{DoxyParamCaption}
+)}}\label{class_duplex_engine_a269c4e5b7aa77a75263980fc5a495ac1}
+\hypertarget{class_duplex_engine_a18c61a437957eba7f4d52e7ea6338ab9}{\index{Duplex\+Engine@{Duplex\+Engine}!````~Duplex\+Engine@{$\sim$\+Duplex\+Engine}}
+\index{````~Duplex\+Engine@{$\sim$\+Duplex\+Engine}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{$\sim$\+Duplex\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Duplex\+Engine}$<$ Real\+T $>$\+::$\sim${\bf Duplex\+Engine} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_duplex_engine_a18c61a437957eba7f4d52e7ea6338ab9}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_duplex_engine_a1d6a1a3e4890fd62802392fb4928f4fb}{\index{Duplex\+Engine@{Duplex\+Engine}!Compute\+Inside@{Compute\+Inside}}
+\index{Compute\+Inside@{Compute\+Inside}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Compute\+Inside}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Compute\+Inside (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_duplex_engine_a1d6a1a3e4890fd62802392fb4928f4fb}
+\hypertarget{class_duplex_engine_a1ae8e94a77aa4551e94b4f8f5eec1a28}{\index{Duplex\+Engine@{Duplex\+Engine}!Compute\+Log\+Partition\+Coefficient@{Compute\+Log\+Partition\+Coefficient}}
+\index{Compute\+Log\+Partition\+Coefficient@{Compute\+Log\+Partition\+Coefficient}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Compute\+Log\+Partition\+Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Compute\+Log\+Partition\+Coefficient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_duplex_engine_a1ae8e94a77aa4551e94b4f8f5eec1a28}
+\hypertarget{class_duplex_engine_a48585f0f515bf7ad3335e9f9b5efb1f4}{\index{Duplex\+Engine@{Duplex\+Engine}!Compute\+Outside@{Compute\+Outside}}
+\index{Compute\+Outside@{Compute\+Outside}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Compute\+Outside}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Compute\+Outside (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_duplex_engine_a48585f0f515bf7ad3335e9f9b5efb1f4}
+\hypertarget{class_duplex_engine_a9f863ddf131bccd4c1d9b902b4875dbc}{\index{Duplex\+Engine@{Duplex\+Engine}!Compute\+Posterior@{Compute\+Posterior}}
+\index{Compute\+Posterior@{Compute\+Posterior}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Compute\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Compute\+Posterior (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_duplex_engine_a9f863ddf131bccd4c1d9b902b4875dbc}
+\hypertarget{class_duplex_engine_afaba7c8d1bb9ac099c4d897f77dfaf80}{\index{Duplex\+Engine@{Duplex\+Engine}!Get\+Offset@{Get\+Offset}}
+\index{Get\+Offset@{Get\+Offset}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Get\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ int {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Get\+Offset (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_duplex_engine_afaba7c8d1bb9ac099c4d897f77dfaf80}
+\hypertarget{class_duplex_engine_aea11650f89b2c9081ca206261f0b0e14}{\index{Duplex\+Engine@{Duplex\+Engine}!Get\+Posterior@{Get\+Posterior}}
+\index{Get\+Posterior@{Get\+Posterior}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Get\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T $\ast$ {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Get\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff}
+\end{DoxyParamCaption}
+) const}}\label{class_duplex_engine_aea11650f89b2c9081ca206261f0b0e14}
+\hypertarget{class_duplex_engine_a019d1cc1a5ba82799b51bcad4a267cf2}{\index{Duplex\+Engine@{Duplex\+Engine}!Get\+Posterior@{Get\+Posterior}}
+\index{Get\+Posterior@{Get\+Posterior}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Get\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T $\ast$ {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Get\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff, }
+\item[{std\+::vector$<$ Real\+T $>$ \&}]{p}
+\end{DoxyParamCaption}
+) const}}\label{class_duplex_engine_a019d1cc1a5ba82799b51bcad4a267cf2}
+\hypertarget{class_duplex_engine_a17a01513a22bfdc76cbf2fb79eb0fa33}{\index{Duplex\+Engine@{Duplex\+Engine}!Get\+Posterior2@{Get\+Posterior2}}
+\index{Get\+Posterior2@{Get\+Posterior2}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Get\+Posterior2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T $\ast$ {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Get\+Posterior2 (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff}
+\end{DoxyParamCaption}
+) const}}\label{class_duplex_engine_a17a01513a22bfdc76cbf2fb79eb0fa33}
+\hypertarget{class_duplex_engine_a32c8d8dde69945097e1c6d408e9953db}{\index{Duplex\+Engine@{Duplex\+Engine}!Get\+Posterior2@{Get\+Posterior2}}
+\index{Get\+Posterior2@{Get\+Posterior2}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Get\+Posterior2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T $\ast$ {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Get\+Posterior2 (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff, }
+\item[{std\+::vector$<$ Real\+T $>$ \&}]{p}
+\end{DoxyParamCaption}
+) const}}\label{class_duplex_engine_a32c8d8dde69945097e1c6d408e9953db}
+\hypertarget{class_duplex_engine_ad37f512741fa0bc7f3aeb295d94ac17a}{\index{Duplex\+Engine@{Duplex\+Engine}!Load\+Sequence@{Load\+Sequence}}
+\index{Load\+Sequence@{Load\+Sequence}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Load\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Load\+Sequence (
+\begin{DoxyParamCaption}
+\item[{const {\bf S\+Struct} \&}]{str1, }
+\item[{const {\bf S\+Struct} \&}]{str2}
+\end{DoxyParamCaption}
+)}}\label{class_duplex_engine_ad37f512741fa0bc7f3aeb295d94ac17a}
+\hypertarget{class_duplex_engine_a70e2faa723fc6e59007f17df9220b2de}{\index{Duplex\+Engine@{Duplex\+Engine}!Load\+Values@{Load\+Values}}
+\index{Load\+Values@{Load\+Values}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Load\+Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Load\+Values (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ Real\+T $>$ \&}]{values}
+\end{DoxyParamCaption}
+)}}\label{class_duplex_engine_a70e2faa723fc6e59007f17df9220b2de}
+\hypertarget{class_duplex_engine_a4c46b854fc495da118e7b2f6b969593b}{\index{Duplex\+Engine@{Duplex\+Engine}!Register\+Parameters@{Register\+Parameters}}
+\index{Register\+Parameters@{Register\+Parameters}!Duplex\+Engine@{Duplex\+Engine}}
+\subsubsection[{Register\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Duplex\+Engine}$<$ Real\+T $>$\+::Register\+Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Manager}$<$ Real\+T $>$ \&}]{parameter\+\_\+manager}
+\end{DoxyParamCaption}
+)}}\label{class_duplex_engine_a4c46b854fc495da118e7b2f6b969593b}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/contrafold/\hyperlink{_duplex_engine_8hpp}{Duplex\+Engine.\+hpp}\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/contrafold/\hyperlink{_duplex_engine_8ipp}{Duplex\+Engine.\+ipp}\end{DoxyCompactItemize}

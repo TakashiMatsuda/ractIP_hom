@@ -1,0 +1,180 @@
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager}{\section{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+:\+:Parameter\+Manager$<$ Real\+T $>$ Class Template Reference}
+\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager}\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager$<$ Real\+T $>$@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager$<$ Real\+T $>$}}
+}
+
+
+{\ttfamily \#include $<$Parameter\+Manager.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_acf5761f5c6da3ccf6dadcc32ddab086d}{Parameter\+Manager} ()
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a28319548992949339ec13489b72bc6cc}{Parameter\+Manager} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager}{Parameter\+Manager} \&rhs)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager}{Parameter\+Manager} \& \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0eb5b3c2915e7af6ed0dd46cd0006fc5}{operator=} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager}{Parameter\+Manager} \&rhs)
+\item 
+virtual \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_aff6601bbafb934a2ee82650048062906}{$\sim$\+Parameter\+Manager} ()
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a2548d6948a60b5c0e5f8c8bf4674631f}{Clear\+Parameters} ()
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a5dd422fe934ddee56934324e00c54d5c}{Add\+Parameter\+Group} (const std\+::string \&name)
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ac10b74d055f4fddf68870a1a21e95fb3}{Add\+Parameter\+Mapping} (const std\+::string \&logical\+\_\+name, std\+::pair$<$ Real\+T, Real\+T $>$ $\ast$physical\+\_\+ptr)
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a252dfb04145a875f2ea6d0a66c021a97}{Read\+From\+File} (const std\+::string \&filename, std\+::vector$<$ Real\+T $>$ \&values)
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a836ef691153cf1c440da8cd3933395ad}{Write\+To\+File} (const std\+::string \&filename, const std\+::vector$<$ Real\+T $>$ \&values)
+\item 
+const std\+::vector$<$ Real\+T $>$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0d879c87e8f22ade271707a3f5d1dd2a}{Expand\+Parameter\+Group\+Values} (const std\+::vector$<$ Real\+T $>$ \&values) const 
+\item 
+std\+::vector$<$ std\+::pair$<$ Real\+T, \\*
+Real\+T $>$ $\ast$ $>$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ab417ba3f49ef3db98a9c357cde607a79}{Get\+Physical\+Parameters} (int logical\+\_\+index) const 
+\item 
+int \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a46dea3ed20a97d19ff4ddecf1b37d6cd}{Get\+Logical\+Index} (const std\+::pair$<$ Real\+T, Real\+T $>$ $\ast$physical\+\_\+ptr) const 
+\item 
+const std\+::vector$<$ std\+::string $>$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a16fcaa7317cd17ee128365d6cee0d966}{Get\+Names} () const 
+\item 
+const std\+::vector\\*
+$<$ \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_parameter_group}{Parameter\+Group} $>$ \& \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a6cfd4bf74ee61548e56d8d6027c74f83}{Get\+Parameter\+Groups} () const 
+\item 
+size\+\_\+t \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0cec15e02161732c6e6a5a74cd95ff2b}{Get\+Num\+Parameter\+Groups} () const 
+\item 
+size\+\_\+t \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a7ec472071d84c62721664b2f78e97731}{Get\+Num\+Physical\+Parameters} () const 
+\item 
+size\+\_\+t \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ae71a84aa15b18cd85e52a5b4b455e199}{Get\+Num\+Logical\+Parameters} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_acf5761f5c6da3ccf6dadcc32ddab086d}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Parameter\+Manager@{Parameter\+Manager}}
+\index{Parameter\+Manager@{Parameter\+Manager}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Parameter\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Parameter\+Manager}$<$ Real\+T $>$\+::{\bf Parameter\+Manager} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_acf5761f5c6da3ccf6dadcc32ddab086d}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a28319548992949339ec13489b72bc6cc}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Parameter\+Manager@{Parameter\+Manager}}
+\index{Parameter\+Manager@{Parameter\+Manager}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Parameter\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Parameter\+Manager}$<$ Real\+T $>$\+::{\bf Parameter\+Manager} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Parameter\+Manager}$<$ Real\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a28319548992949339ec13489b72bc6cc}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_aff6601bbafb934a2ee82650048062906}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!````~Parameter\+Manager@{$\sim$\+Parameter\+Manager}}
+\index{````~Parameter\+Manager@{$\sim$\+Parameter\+Manager}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{$\sim$\+Parameter\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Parameter\+Manager}$<$ Real\+T $>$\+::$\sim${\bf Parameter\+Manager} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_aff6601bbafb934a2ee82650048062906}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a5dd422fe934ddee56934324e00c54d5c}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Add\+Parameter\+Group@{Add\+Parameter\+Group}}
+\index{Add\+Parameter\+Group@{Add\+Parameter\+Group}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Add\+Parameter\+Group}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Parameter\+Manager}$<$ Real\+T $>$\+::Add\+Parameter\+Group (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a5dd422fe934ddee56934324e00c54d5c}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ac10b74d055f4fddf68870a1a21e95fb3}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Add\+Parameter\+Mapping@{Add\+Parameter\+Mapping}}
+\index{Add\+Parameter\+Mapping@{Add\+Parameter\+Mapping}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Add\+Parameter\+Mapping}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Parameter\+Manager}$<$ Real\+T $>$\+::Add\+Parameter\+Mapping (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{logical\+\_\+name, }
+\item[{std\+::pair$<$ Real\+T, Real\+T $>$ $\ast$}]{physical\+\_\+ptr}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ac10b74d055f4fddf68870a1a21e95fb3}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a2548d6948a60b5c0e5f8c8bf4674631f}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Clear\+Parameters@{Clear\+Parameters}}
+\index{Clear\+Parameters@{Clear\+Parameters}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Clear\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Parameter\+Manager}$<$ Real\+T $>$\+::Clear\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a2548d6948a60b5c0e5f8c8bf4674631f}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0d879c87e8f22ade271707a3f5d1dd2a}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Expand\+Parameter\+Group\+Values@{Expand\+Parameter\+Group\+Values}}
+\index{Expand\+Parameter\+Group\+Values@{Expand\+Parameter\+Group\+Values}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Expand\+Parameter\+Group\+Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ const std\+::vector$<$ Real\+T $>$ {\bf Parameter\+Manager}$<$ Real\+T $>$\+::Expand\+Parameter\+Group\+Values (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ Real\+T $>$ \&}]{values}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0d879c87e8f22ade271707a3f5d1dd2a}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a46dea3ed20a97d19ff4ddecf1b37d6cd}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Get\+Logical\+Index@{Get\+Logical\+Index}}
+\index{Get\+Logical\+Index@{Get\+Logical\+Index}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Get\+Logical\+Index}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ int {\bf Parameter\+Manager}$<$ Real\+T $>$\+::Get\+Logical\+Index (
+\begin{DoxyParamCaption}
+\item[{const std\+::pair$<$ Real\+T, Real\+T $>$ $\ast$}]{physical\+\_\+ptr}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a46dea3ed20a97d19ff4ddecf1b37d6cd}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a16fcaa7317cd17ee128365d6cee0d966}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Get\+Names@{Get\+Names}}
+\index{Get\+Names@{Get\+Names}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Get\+Names}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ const std\+::vector$<$std\+::string$>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}$<$ Real\+T $>$\+::Get\+Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a16fcaa7317cd17ee128365d6cee0d966}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ae71a84aa15b18cd85e52a5b4b455e199}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Get\+Num\+Logical\+Parameters@{Get\+Num\+Logical\+Parameters}}
+\index{Get\+Num\+Logical\+Parameters@{Get\+Num\+Logical\+Parameters}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Get\+Num\+Logical\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ size\+\_\+t {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}$<$ Real\+T $>$\+::Get\+Num\+Logical\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ae71a84aa15b18cd85e52a5b4b455e199}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0cec15e02161732c6e6a5a74cd95ff2b}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Get\+Num\+Parameter\+Groups@{Get\+Num\+Parameter\+Groups}}
+\index{Get\+Num\+Parameter\+Groups@{Get\+Num\+Parameter\+Groups}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Get\+Num\+Parameter\+Groups}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ size\+\_\+t {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}$<$ Real\+T $>$\+::Get\+Num\+Parameter\+Groups (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0cec15e02161732c6e6a5a74cd95ff2b}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a7ec472071d84c62721664b2f78e97731}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Get\+Num\+Physical\+Parameters@{Get\+Num\+Physical\+Parameters}}
+\index{Get\+Num\+Physical\+Parameters@{Get\+Num\+Physical\+Parameters}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Get\+Num\+Physical\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ size\+\_\+t {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}$<$ Real\+T $>$\+::Get\+Num\+Physical\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a7ec472071d84c62721664b2f78e97731}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a6cfd4bf74ee61548e56d8d6027c74f83}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Get\+Parameter\+Groups@{Get\+Parameter\+Groups}}
+\index{Get\+Parameter\+Groups@{Get\+Parameter\+Groups}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Get\+Parameter\+Groups}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ const std\+::vector$<${\bf Parameter\+Group}$>$\& {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}$<$ Real\+T $>$\+::Get\+Parameter\+Groups (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a6cfd4bf74ee61548e56d8d6027c74f83}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ab417ba3f49ef3db98a9c357cde607a79}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Get\+Physical\+Parameters@{Get\+Physical\+Parameters}}
+\index{Get\+Physical\+Parameters@{Get\+Physical\+Parameters}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Get\+Physical\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ std\+::vector$<$ std\+::pair$<$ Real\+T, Real\+T $>$ $\ast$ $>$ {\bf Parameter\+Manager}$<$ Real\+T $>$\+::Get\+Physical\+Parameters (
+\begin{DoxyParamCaption}
+\item[{int}]{logical\+\_\+index}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_ab417ba3f49ef3db98a9c357cde607a79}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0eb5b3c2915e7af6ed0dd46cd0006fc5}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!operator=@{operator=}}
+\index{operator=@{operator=}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Parameter\+Manager}$<$ Real\+T $>$ \& {\bf Parameter\+Manager}$<$ Real\+T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Parameter\+Manager}$<$ Real\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a0eb5b3c2915e7af6ed0dd46cd0006fc5}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a252dfb04145a875f2ea6d0a66c021a97}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Read\+From\+File@{Read\+From\+File}}
+\index{Read\+From\+File@{Read\+From\+File}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Read\+From\+File}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Parameter\+Manager}$<$ Real\+T $>$\+::Read\+From\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{std\+::vector$<$ Real\+T $>$ \&}]{values}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a252dfb04145a875f2ea6d0a66c021a97}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a836ef691153cf1c440da8cd3933395ad}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}!Write\+To\+File@{Write\+To\+File}}
+\index{Write\+To\+File@{Write\+To\+File}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parameter\+Manager}}
+\subsubsection[{Write\+To\+File}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Parameter\+Manager}$<$ Real\+T $>$\+::Write\+To\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{const std\+::vector$<$ Real\+T $>$ \&}]{values}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_parameter_manager_a836ef691153cf1c440da8cd3933395ad}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/contralign/\hyperlink{centroidalifold_2contralign_2_parameter_manager_8hpp}{Parameter\+Manager.\+hpp}\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/contralign/\hyperlink{centroidalifold_2contralign_2_parameter_manager_8ipp}{Parameter\+Manager.\+ipp}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="pf_duplex" name="pf_duplex">
+<area shape="rect" id="node2" href="$pf__duplex_8c.html#a2c499774799976d65e1085d3150803c6" title="encode_seqs" alt="" coords="133,250,235,276"/>
+<area shape="rect" id="node4" href="$pf__duplex_8c.html#ad7e1e137b3bf1f7108933d302a7f0177" title="space" alt="" coords="427,199,485,226"/>
+<area shape="rect" id="node5" href="$pf__duplex_8c.html#a18f7e06d96a2968369bd535b8e037270" title="pf_duplex_fw" alt="" coords="134,148,234,175"/>
+<area shape="rect" id="node6" href="$pf__duplex_8c.html#a2163034a25c6115d894b199e97e03f6c" title="LoopEnergy" alt="" coords="284,98,377,124"/>
+<area shape="rect" id="node8" href="$pf__duplex_8c.html#a1f5f67a5c8f86d975b13706e00a9aa83" title="pf_duplex_bk" alt="" coords="133,47,235,74"/>
+<area shape="rect" id="node3" href="$pf__duplex_8c.html#af5eeb35514887f1d1d5e257c5511eec8" title="encode_seq" alt="" coords="283,250,378,276"/>
+<area shape="rect" id="node7" href="$pf__duplex_8c.html#a5908fd066a944e8de0fc837096b1f532" title="LogAdd" alt="" coords="297,148,365,175"/>
+</map>

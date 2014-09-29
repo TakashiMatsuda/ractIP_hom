@@ -1,0 +1,5 @@
+<map id="PROBCONS::MultiSequence::GetNumSequences" name="PROBCONS::MultiSequence::GetNumSequences">
+<area shape="rect" id="node2" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#a1b48c7ac2f959bcf478868bfe7772b7d" title="PROBCONS::MultiSequence\l::WriteALN" alt="" coords="277,5,470,46"/>
+<area shape="rect" id="node3" href="$class_p_r_o_b_c_o_n_s_1_1_probabilistic_model.html#a67de41318f83963dbb18344c13922362" title="PROBCONS::ProbabilisticModel\l::ComputeAlignmentWithGapPenalties" alt="" coords="249,70,498,111"/>
+<area shape="rect" id="node4" href="$class_p_r_o_b_c_o_n_s_1_1_probabilistic_model.html#a6c9642a3fe71c427a54d5edceeaedcba" title="PROBCONS::ProbabilisticModel\l::BuildPosterior" alt="" coords="267,135,480,177"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="BPTableTmpl::resize" name="BPTableTmpl::resize">
+<area shape="rect" id="node2" href="$class_averaged_model.html#ab594bb3e99a3e07efcdda8cf5ca001ab" title="AveragedModel::calculate\l_posterior" alt="" coords="211,37,387,78"/>
+<area shape="rect" id="node5" href="$class_c_o_n_t_r_afold_model.html#af9b44d34a59607ba105bd1e57b3f5c6f" title="CONTRAfoldModel::calculate\l_posterior" alt="" coords="201,102,397,143"/>
+<area shape="rect" id="node6" href="$class_c_o_n_t_r_afold_hom_model.html#a5274d9b038e5d213d4ec8900713d820e" title="CONTRAfoldHomModel\l::calculate_posterior" alt="" coords="217,167,381,209"/>
+<area shape="rect" id="node3" href="$class_averaged_model.html#a4844fe73e623329659ab409d8acede57" title="AveragedModel::max\l_mcc_fold" alt="" coords="454,5,602,46"/>
+<area shape="rect" id="node4" href="$class_c_o_n_t_r_afold_multi_model.html#af408693a48cfcf28aca97853098e4111" title="CONTRAfoldMultiModel\l::calculate_posterior" alt="" coords="446,70,610,111"/>
+</map>

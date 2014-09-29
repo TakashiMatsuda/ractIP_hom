@@ -1,0 +1,339 @@
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model}{\section{P\+R\+O\+B\+C\+O\+N\+S\+:\+:Probabilistic\+Model Class Reference}
+\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model}\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+}
+
+
+{\ttfamily \#include $<$Probabilistic\+Model.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a3da5411c372c68eb4733229d597fe721}{Probabilistic\+Model} (const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&init\+Distrib\+Mat, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&\hyperlink{namespace_p_r_o_b_c_o_n_s_aad90cbdf21742e0d50a23be886afbffe}{gap\+Open}, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&\hyperlink{namespace_p_r_o_b_c_o_n_s_ae1d3cf6541679992bb3dc1a89e0347d5}{gap\+Extend}, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a64c77882f700f0f6e9426241c7d7ba1c}{V\+V\+F} \&\hyperlink{namespace_p_r_o_b_c_o_n_s_ae28575916501eeab36245ba0624d0640}{emit\+Pairs}, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&\hyperlink{namespace_p_r_o_b_c_o_n_s_a60ce52cd8ccb26631e13fecca788f13e}{emit\+Single})
+\item 
+\hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a7cc73f2599d62d9ab5df9625a67a8899}{Compute\+Forward\+Matrix} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq1, \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq2) const 
+\item 
+\hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_ab6fc9a73a06abe1f3597f0bc7a073263}{Compute\+Backward\+Matrix} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq1, \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq2) const 
+\item 
+\hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a05f8a657309caed13c791eb327abebf4}{Compute\+Intermediate\+Matrix} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq1, \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq2, int ind1, int ind2) const 
+\item 
+float \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_acf67af3c07e223879b13d89e08da3cd1}{Compute\+Total\+Probability} (int seq1\+Length, int seq2\+Length, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&forward, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&backward) const 
+\item 
+\hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a2b4661797664c99b8b3cd67a50c250ca}{Compute\+Posterior\+Matrix} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq1, \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq2, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&forward, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&backward) const 
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a551adb86abad67818abf72f514e18a95}{Compute\+New\+Parameters} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq1, \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq2, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&forward, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&backward, \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&init\+Distrib\+Mat, \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&\hyperlink{namespace_p_r_o_b_c_o_n_s_aad90cbdf21742e0d50a23be886afbffe}{gap\+Open}, \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&\hyperlink{namespace_p_r_o_b_c_o_n_s_ae1d3cf6541679992bb3dc1a89e0347d5}{gap\+Extend}, \hyperlink{namespace_p_r_o_b_c_o_n_s_a64c77882f700f0f6e9426241c7d7ba1c}{V\+V\+F} \&\hyperlink{namespace_p_r_o_b_c_o_n_s_ae28575916501eeab36245ba0624d0640}{emit\+Pairs}, \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&\hyperlink{namespace_p_r_o_b_c_o_n_s_a60ce52cd8ccb26631e13fecca788f13e}{emit\+Single}, bool enable\+Train\+Emissions) const 
+\item 
+pair$<$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ char $>$ $\ast$, float $>$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a9233c1d04f152e972f33b311cc3e734f}{Compute\+Alignment} (int seq1\+Length, int seq2\+Length, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&posterior) const 
+\item 
+pair$<$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ char $>$ $\ast$, float $>$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a67de41318f83963dbb18344c13922362}{Compute\+Alignment\+With\+Gap\+Penalties} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence}{Multi\+Sequence} $\ast$align1, \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence}{Multi\+Sequence} $\ast$align2, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&posterior, int num\+Seqs1, int num\+Seqs2, float gap\+Open\+Penalty, float gap\+Continue\+Penalty) const 
+\item 
+pair$<$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ char $>$ $\ast$, float $>$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a0a97c9cbf1a085021d5f9c432e292847}{Compute\+Viterbi\+Alignment} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq1, \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$seq2) const 
+\item 
+\hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a6c9642a3fe71c427a54d5edceeaedcba}{Build\+Posterior} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence}{Multi\+Sequence} $\ast$align1, \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence}{Multi\+Sequence} $\ast$align2, const \hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix}{Sparse\+Matrix} $\ast$ $>$ $>$ \&sparse\+Matrices, float cutoff=0.\+0f) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file Probabilistic\+Model.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a3da5411c372c68eb4733229d597fe721}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Probabilistic\+Model@{Probabilistic\+Model}}
+\index{Probabilistic\+Model@{Probabilistic\+Model}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Probabilistic\+Model}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Probabilistic\+Model (
+\begin{DoxyParamCaption}
+\item[{const {\bf V\+F} \&}]{init\+Distrib\+Mat, }
+\item[{const {\bf V\+F} \&}]{gap\+Open, }
+\item[{const {\bf V\+F} \&}]{gap\+Extend, }
+\item[{const {\bf V\+V\+F} \&}]{emit\+Pairs, }
+\item[{const {\bf V\+F} \&}]{emit\+Single}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a3da5411c372c68eb4733229d597fe721}
+
+
+Definition at line 55 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a3da5411c372c68eb4733229d597fe721_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a6c9642a3fe71c427a54d5edceeaedcba}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Build\+Posterior@{Build\+Posterior}}
+\index{Build\+Posterior@{Build\+Posterior}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Build\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+F}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Build\+Posterior (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\+Sequence} $\ast$}]{align1, }
+\item[{{\bf Multi\+Sequence} $\ast$}]{align2, }
+\item[{const {\bf Safe\+Vector}$<$ {\bf Safe\+Vector}$<$ {\bf Sparse\+Matrix} $\ast$ $>$ $>$ \&}]{sparse\+Matrices, }
+\item[{float}]{cutoff = {\ttfamily 0.0f}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a6c9642a3fe71c427a54d5edceeaedcba}
+
+
+Definition at line 1090 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a6c9642a3fe71c427a54d5edceeaedcba_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a9233c1d04f152e972f33b311cc3e734f}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+Alignment@{Compute\+Alignment}}
+\index{Compute\+Alignment@{Compute\+Alignment}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+Alignment}]{\setlength{\rightskip}{0pt plus 5cm}pair$<${\bf Safe\+Vector}$<$char$>$ $\ast$, float$>$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+Alignment (
+\begin{DoxyParamCaption}
+\item[{int}]{seq1\+Length, }
+\item[{int}]{seq2\+Length, }
+\item[{const {\bf V\+F} \&}]{posterior}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a9233c1d04f152e972f33b311cc3e734f}
+
+
+Definition at line 713 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a9233c1d04f152e972f33b311cc3e734f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a67de41318f83963dbb18344c13922362}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+Alignment\+With\+Gap\+Penalties@{Compute\+Alignment\+With\+Gap\+Penalties}}
+\index{Compute\+Alignment\+With\+Gap\+Penalties@{Compute\+Alignment\+With\+Gap\+Penalties}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+Alignment\+With\+Gap\+Penalties}]{\setlength{\rightskip}{0pt plus 5cm}pair$<${\bf Safe\+Vector}$<$char$>$ $\ast$, float$>$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+Alignment\+With\+Gap\+Penalties (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\+Sequence} $\ast$}]{align1, }
+\item[{{\bf Multi\+Sequence} $\ast$}]{align2, }
+\item[{const {\bf V\+F} \&}]{posterior, }
+\item[{int}]{num\+Seqs1, }
+\item[{int}]{num\+Seqs2, }
+\item[{float}]{gap\+Open\+Penalty, }
+\item[{float}]{gap\+Continue\+Penalty}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a67de41318f83963dbb18344c13922362}
+
+
+Definition at line 781 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a67de41318f83963dbb18344c13922362_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_ab6fc9a73a06abe1f3597f0bc7a073263}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+Backward\+Matrix@{Compute\+Backward\+Matrix}}
+\index{Compute\+Backward\+Matrix@{Compute\+Backward\+Matrix}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+Backward\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+F}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+Backward\+Matrix (
+\begin{DoxyParamCaption}
+\item[{{\bf Sequence} $\ast$}]{seq1, }
+\item[{{\bf Sequence} $\ast$}]{seq2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_ab6fc9a73a06abe1f3597f0bc7a073263}
+
+
+Definition at line 197 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_ab6fc9a73a06abe1f3597f0bc7a073263_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a7cc73f2599d62d9ab5df9625a67a8899}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+Forward\+Matrix@{Compute\+Forward\+Matrix}}
+\index{Compute\+Forward\+Matrix@{Compute\+Forward\+Matrix}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+Forward\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+F}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+Forward\+Matrix (
+\begin{DoxyParamCaption}
+\item[{{\bf Sequence} $\ast$}]{seq1, }
+\item[{{\bf Sequence} $\ast$}]{seq2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a7cc73f2599d62d9ab5df9625a67a8899}
+
+
+Definition at line 105 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a7cc73f2599d62d9ab5df9625a67a8899_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a05f8a657309caed13c791eb327abebf4}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+Intermediate\+Matrix@{Compute\+Intermediate\+Matrix}}
+\index{Compute\+Intermediate\+Matrix@{Compute\+Intermediate\+Matrix}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+Intermediate\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+F}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+Intermediate\+Matrix (
+\begin{DoxyParamCaption}
+\item[{{\bf Sequence} $\ast$}]{seq1, }
+\item[{{\bf Sequence} $\ast$}]{seq2, }
+\item[{int}]{ind1, }
+\item[{int}]{ind2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a05f8a657309caed13c791eb327abebf4}
+
+
+Definition at line 262 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a05f8a657309caed13c791eb327abebf4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a551adb86abad67818abf72f514e18a95}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+New\+Parameters@{Compute\+New\+Parameters}}
+\index{Compute\+New\+Parameters@{Compute\+New\+Parameters}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+New\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+New\+Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf Sequence} $\ast$}]{seq1, }
+\item[{{\bf Sequence} $\ast$}]{seq2, }
+\item[{const {\bf V\+F} \&}]{forward, }
+\item[{const {\bf V\+F} \&}]{backward, }
+\item[{{\bf V\+F} \&}]{init\+Distrib\+Mat, }
+\item[{{\bf V\+F} \&}]{gap\+Open, }
+\item[{{\bf V\+F} \&}]{gap\+Extend, }
+\item[{{\bf V\+V\+F} \&}]{emit\+Pairs, }
+\item[{{\bf V\+F} \&}]{emit\+Single, }
+\item[{bool}]{enable\+Train\+Emissions}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a551adb86abad67818abf72f514e18a95}
+
+
+Definition at line 496 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a551adb86abad67818abf72f514e18a95_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a2b4661797664c99b8b3cd67a50c250ca}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+Posterior\+Matrix@{Compute\+Posterior\+Matrix}}
+\index{Compute\+Posterior\+Matrix@{Compute\+Posterior\+Matrix}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+Posterior\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+F}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+Posterior\+Matrix (
+\begin{DoxyParamCaption}
+\item[{{\bf Sequence} $\ast$}]{seq1, }
+\item[{{\bf Sequence} $\ast$}]{seq2, }
+\item[{const {\bf V\+F} \&}]{forward, }
+\item[{const {\bf V\+F} \&}]{backward}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a2b4661797664c99b8b3cd67a50c250ca}
+
+
+Definition at line 374 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a2b4661797664c99b8b3cd67a50c250ca_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_acf67af3c07e223879b13d89e08da3cd1}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+Total\+Probability@{Compute\+Total\+Probability}}
+\index{Compute\+Total\+Probability@{Compute\+Total\+Probability}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+Total\+Probability}]{\setlength{\rightskip}{0pt plus 5cm}float P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+Total\+Probability (
+\begin{DoxyParamCaption}
+\item[{int}]{seq1\+Length, }
+\item[{int}]{seq2\+Length, }
+\item[{const {\bf V\+F} \&}]{forward, }
+\item[{const {\bf V\+F} \&}]{backward}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_acf67af3c07e223879b13d89e08da3cd1}
+
+
+Definition at line 337 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_acf67af3c07e223879b13d89e08da3cd1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a0a97c9cbf1a085021d5f9c432e292847}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}!Compute\+Viterbi\+Alignment@{Compute\+Viterbi\+Alignment}}
+\index{Compute\+Viterbi\+Alignment@{Compute\+Viterbi\+Alignment}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model}}
+\subsubsection[{Compute\+Viterbi\+Alignment}]{\setlength{\rightskip}{0pt plus 5cm}pair$<${\bf Safe\+Vector}$<$char$>$ $\ast$, float$>$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Probabilistic\+Model\+::\+Compute\+Viterbi\+Alignment (
+\begin{DoxyParamCaption}
+\item[{{\bf Sequence} $\ast$}]{seq1, }
+\item[{{\bf Sequence} $\ast$}]{seq2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a0a97c9cbf1a085021d5f9c432e292847}
+
+
+Definition at line 951 of file Probabilistic\+Model.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_probabilistic_model_a0a97c9cbf1a085021d5f9c432e292847_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/probcons\+R\+N\+A/\hyperlink{_probabilistic_model_8h}{Probabilistic\+Model.\+h}\end{DoxyCompactItemize}

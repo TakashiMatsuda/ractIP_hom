@@ -1,0 +1,7 @@
+<map id="ParameterManager::AddParameterMapping" name="ParameterManager::AddParameterMapping">
+<area shape="rect" id="node2" href="$class_inference_engine.html#a5f4b92138aaa9a45fcc045f818286bd8" title="InferenceEngine::Register\lParameters" alt="" coords="313,49,489,90"/>
+<area shape="rect" id="node6" href="$class_duplex_engine.html#a4c46b854fc495da118e7b2f6b969593b" title="DuplexEngine::RegisterParameters" alt="" coords="286,115,517,141"/>
+<area shape="rect" id="node3" href="$struct_c_o_n_t_r_afold_1_1_impl.html#a312d688c6e7568435fa35d0a624ce94e" title="CONTRAfold::Impl::Impl" alt="" coords="580,5,745,32"/>
+<area shape="rect" id="node4" href="$struct_c_o_n_t_r_afold_m_1_1_impl.html#a770a0ab7aebe80a4d453a8faf1696248" title="CONTRAfoldM::Impl::Impl" alt="" coords="575,56,751,83"/>
+<area shape="rect" id="node5" href="$struct_c_o_n_t_r_afold_m_1_1_impl.html#a060e2cc0363e787e67e6110e5ff06d03" title="CONTRAfoldM::Impl::\lPrepareStochasticTraceback" alt="" coords="566,107,759,149"/>
+</map>

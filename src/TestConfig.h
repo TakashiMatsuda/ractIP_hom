@@ -1,0 +1,4 @@
+#define Test_VERSION_MAJOR 1
+#define Test_VERSION_MINOR 0
+
+// これでマクロを定義できる。

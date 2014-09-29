@@ -1,0 +1,315 @@
+\hypertarget{class_c_o_n_t_r_afold}{\section{C\+O\+N\+T\+R\+Afold$<$ T $>$ Singleton Reference}
+\label{class_c_o_n_t_r_afold}\index{C\+O\+N\+T\+R\+Afold$<$ T $>$@{C\+O\+N\+T\+R\+Afold$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$contrafold.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_c_o_n_t_r_afold_1_1_impl}{Impl}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_o_n_t_r_afold_ab83a77022cefb1b447f57c6ea23d3c3b}{C\+O\+N\+T\+R\+Afold} (bool canonical\+\_\+only=\hyperlink{naview_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}, int \hyperlink{class_c_o_n_t_r_afold_a4cd8f0e5b42ac575ffc1f360bc27a963}{max\+\_\+bp\+\_\+dist}=0)
+\item 
+\hyperlink{class_c_o_n_t_r_afold_a5e4a90a78a8075dd6c669d86382b8d11}{$\sim$\+C\+O\+N\+T\+R\+Afold} ()
+\item 
+void \hyperlink{class_c_o_n_t_r_afold_af8a600b8a027da44534b16e0229d79cf}{Set\+Parameters} (const std\+::string \&params)
+\item 
+void \hyperlink{class_c_o_n_t_r_afold_a5d0d69ae72d4c928c2f0313eaed6ce00}{Set\+Constraint} (const std\+::string \&paren)
+\item 
+const T $\ast$ \hyperlink{class_c_o_n_t_r_afold_aceffa898e7a022f7e69d4564b6f3dea3}{Compute\+Posterior} (const std\+::string \&seq)
+\item 
+const T $\ast$ \hyperlink{class_c_o_n_t_r_afold_a5149ede490256e49b3d834670d323510}{Compute\+Posterior} (const std\+::string \&seq, std\+::vector$<$ T $>$ \&p)
+\item 
+T \hyperlink{class_c_o_n_t_r_afold_ad4f8ceaf30fbbef67dd49bc669ea3b8a}{Compute\+Inside} (const std\+::string \&seq)
+\item 
+T \hyperlink{class_c_o_n_t_r_afold_a2a4b769fb11ce06fe98362fd7875ac67}{Compute\+Log\+Partition\+Coefficient} () const 
+\item 
+T \hyperlink{class_c_o_n_t_r_afold_aa802871684214b6283c7a6c28d6a1279}{Compute\+Viterbi} (const std\+::string \&seq)
+\item 
+void \hyperlink{class_c_o_n_t_r_afold_a18d1d6fb3a0cf52c4e382a9e8e22c811}{Prepare\+Stochastic\+Traceback} (const std\+::string \&seq)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_c_o_n_t_r_afold_a069969c68122c7e050b5c9b8f2ec07ff}{Stochastic\+Traceback} () const 
+\item 
+int \hyperlink{class_c_o_n_t_r_afold_a4cd8f0e5b42ac575ffc1f360bc27a963}{max\+\_\+bp\+\_\+dist} () const 
+\item 
+void \hyperlink{class_c_o_n_t_r_afold_a8ccf12e145cbe362f4363e6ecf351542}{init\+\_\+rand} (unsigned long seed)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$singleton C\+O\+N\+T\+R\+Afold$<$ T $>$}
+
+
+
+Definition at line 27 of file contrafold.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_o_n_t_r_afold_ab83a77022cefb1b447f57c6ea23d3c3b}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{C\+O\+N\+T\+R\+Afold}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::{\bf C\+O\+N\+T\+R\+Afold} (
+\begin{DoxyParamCaption}
+\item[{bool}]{canonical\+\_\+only = {\ttfamily {\bf true}}, }
+\item[{int}]{max\+\_\+bp\+\_\+dist = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_ab83a77022cefb1b447f57c6ea23d3c3b}
+
+
+Definition at line 41 of file wrapper.\+cpp.
+
+\hypertarget{class_c_o_n_t_r_afold_a5e4a90a78a8075dd6c669d86382b8d11}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!````~C\+O\+N\+T\+R\+Afold@{$\sim$\+C\+O\+N\+T\+R\+Afold}}
+\index{````~C\+O\+N\+T\+R\+Afold@{$\sim$\+C\+O\+N\+T\+R\+Afold}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{$\sim$\+C\+O\+N\+T\+R\+Afold}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::$\sim${\bf C\+O\+N\+T\+R\+Afold} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_a5e4a90a78a8075dd6c669d86382b8d11}
+
+
+Definition at line 48 of file wrapper.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_o_n_t_r_afold_ad4f8ceaf30fbbef67dd49bc669ea3b8a}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Compute\+Inside@{Compute\+Inside}}
+\index{Compute\+Inside@{Compute\+Inside}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Compute\+Inside}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Compute\+Inside (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_ad4f8ceaf30fbbef67dd49bc669ea3b8a}
+
+
+Definition at line 88 of file wrapper.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_c_o_n_t_r_afold_ad4f8ceaf30fbbef67dd49bc669ea3b8a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_a2a4b769fb11ce06fe98362fd7875ac67}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Compute\+Log\+Partition\+Coefficient@{Compute\+Log\+Partition\+Coefficient}}
+\index{Compute\+Log\+Partition\+Coefficient@{Compute\+Log\+Partition\+Coefficient}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Compute\+Log\+Partition\+Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Compute\+Log\+Partition\+Coefficient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_afold_a2a4b769fb11ce06fe98362fd7875ac67}
+
+
+Definition at line 96 of file wrapper.\+cpp.
+
+\hypertarget{class_c_o_n_t_r_afold_aceffa898e7a022f7e69d4564b6f3dea3}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Compute\+Posterior@{Compute\+Posterior}}
+\index{Compute\+Posterior@{Compute\+Posterior}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Compute\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T $\ast$ {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Compute\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_aceffa898e7a022f7e69d4564b6f3dea3}
+
+
+Definition at line 72 of file wrapper.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_aceffa898e7a022f7e69d4564b6f3dea3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_a5149ede490256e49b3d834670d323510}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Compute\+Posterior@{Compute\+Posterior}}
+\index{Compute\+Posterior@{Compute\+Posterior}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Compute\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T $\ast$ {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Compute\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq, }
+\item[{std\+::vector$<$ T $>$ \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_a5149ede490256e49b3d834670d323510}
+
+
+Definition at line 80 of file wrapper.\+cpp.
+
+\hypertarget{class_c_o_n_t_r_afold_aa802871684214b6283c7a6c28d6a1279}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Compute\+Viterbi@{Compute\+Viterbi}}
+\index{Compute\+Viterbi@{Compute\+Viterbi}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Compute\+Viterbi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Compute\+Viterbi (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_aa802871684214b6283c7a6c28d6a1279}
+
+
+Definition at line 104 of file wrapper.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_c_o_n_t_r_afold_aa802871684214b6283c7a6c28d6a1279_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_a8ccf12e145cbe362f4363e6ecf351542}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!init\+\_\+rand@{init\+\_\+rand}}
+\index{init\+\_\+rand@{init\+\_\+rand}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{init\+\_\+rand}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::init\+\_\+rand (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{seed}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_a8ccf12e145cbe362f4363e6ecf351542}
+
+
+Definition at line 113 of file wrapper.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_a8ccf12e145cbe362f4363e6ecf351542_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_a4cd8f0e5b42ac575ffc1f360bc27a963}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!max\+\_\+bp\+\_\+dist@{max\+\_\+bp\+\_\+dist}}
+\index{max\+\_\+bp\+\_\+dist@{max\+\_\+bp\+\_\+dist}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{max\+\_\+bp\+\_\+dist}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::max\+\_\+bp\+\_\+dist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_afold_a4cd8f0e5b42ac575ffc1f360bc27a963}
+
+
+Definition at line 48 of file contrafold.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_a4cd8f0e5b42ac575ffc1f360bc27a963_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_a18d1d6fb3a0cf52c4e382a9e8e22c811}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Prepare\+Stochastic\+Traceback@{Prepare\+Stochastic\+Traceback}}
+\index{Prepare\+Stochastic\+Traceback@{Prepare\+Stochastic\+Traceback}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Prepare\+Stochastic\+Traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Prepare\+Stochastic\+Traceback (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_a18d1d6fb3a0cf52c4e382a9e8e22c811}
+
+
+Definition at line 121 of file wrapper.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_a18d1d6fb3a0cf52c4e382a9e8e22c811_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_a5d0d69ae72d4c928c2f0313eaed6ce00}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Set\+Constraint@{Set\+Constraint}}
+\index{Set\+Constraint@{Set\+Constraint}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Set\+Constraint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Set\+Constraint (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{paren}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_a5d0d69ae72d4c928c2f0313eaed6ce00}
+
+
+Definition at line 64 of file wrapper.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_a5d0d69ae72d4c928c2f0313eaed6ce00_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_af8a600b8a027da44534b16e0229d79cf}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Set\+Parameters@{Set\+Parameters}}
+\index{Set\+Parameters@{Set\+Parameters}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Set\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Set\+Parameters (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{params}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_af8a600b8a027da44534b16e0229d79cf}
+
+
+Definition at line 56 of file wrapper.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_af8a600b8a027da44534b16e0229d79cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_a069969c68122c7e050b5c9b8f2ec07ff}{\index{C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}!Stochastic\+Traceback@{Stochastic\+Traceback}}
+\index{Stochastic\+Traceback@{Stochastic\+Traceback}!C\+O\+N\+T\+R\+Afold@{C\+O\+N\+T\+R\+Afold}}
+\subsubsection[{Stochastic\+Traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::vector$<$ int $>$ {\bf C\+O\+N\+T\+R\+Afold}$<$ T $>$\+::Stochastic\+Traceback (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_afold_a069969c68122c7e050b5c9b8f2ec07ff}
+
+
+Definition at line 129 of file wrapper.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_a069969c68122c7e050b5c9b8f2ec07ff_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this singleton was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/contrafold/\hyperlink{contrafold_2contrafold_8h}{contrafold.\+h}\item 
+src/centroidalifold/contrafold/\hyperlink{contrafold_2wrapper_8cpp}{wrapper.\+cpp}\end{DoxyCompactItemize}

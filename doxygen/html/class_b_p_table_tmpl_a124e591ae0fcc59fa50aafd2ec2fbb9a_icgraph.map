@@ -1,0 +1,8 @@
+<map id="BPTableTmpl::update" name="BPTableTmpl::update">
+<area shape="rect" id="node2" href="$struct_average_b_p.html#a1b54bbf8a9300ab110f829bc111e9e4c" title="AverageBP::operator()" alt="" coords="226,5,382,32"/>
+<area shape="rect" id="node3" href="$class_c_o_n_t_r_afold_model.html#af9b44d34a59607ba105bd1e57b3f5c6f" title="CONTRAfoldModel::calculate\l_posterior" alt="" coords="206,57,402,98"/>
+<area shape="rect" id="node4" href="$class_c_o_n_t_r_afold_hom_model.html#a5274d9b038e5d213d4ec8900713d820e" title="CONTRAfoldHomModel\l::calculate_posterior" alt="" coords="222,122,386,163"/>
+<area shape="rect" id="node5" href="$struct_mul_add.html#a200f76dbb10df766e99a5ee9e8485e02" title="MulAdd::operator()" alt="" coords="237,188,371,215"/>
+<area shape="rect" id="node6" href="$struct_div.html#a32c6fd1ea5034e8951b713d0eff713df" title="Div::operator()" alt="" coords="251,239,357,265"/>
+<area shape="rect" id="node7" href="$struct_count_b_p.html#af0d579ca3bf03a8d60a5a82d074f636d" title="CountBP::operator()" alt="" coords="233,289,375,316"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="centroid_alifold" name="centroid_alifold">
+<area shape="rect" id="node2" href="$class_aln.html#a4e7552a5bf54c3a7304fd2d4ca5a14e2" title="Aln::load" alt="" coords="230,29,303,56"/>
+<area shape="rect" id="node3" href="$class_aln.html#a07ac4d997bee9b73c5d2da5fd8e0102a" title="Aln::seq" alt="" coords="231,80,302,107"/>
+<area shape="rect" id="node4" href="$class_folding_engine.html#aa979adbd342b75eb947927e6ff7bcb8c" title="FoldingEngine::set\l_constraint" alt="" coords="201,131,333,173"/>
+<area shape="rect" id="node5" href="$class_folding_engine.html#af42fb74e518d56eaddaab33696b0d32f" title="FoldingEngine::stochastic_fold" alt="" coords="165,197,368,224"/>
+<area shape="rect" id="node6" href="$class_aln.html#a1ab21509801bad54f735c9fd547c0a04" title="Aln::name" alt="" coords="225,248,308,275"/>
+<area shape="rect" id="node7" href="$class_folding_engine.html#a387a1625b31056030998eddcada4c036" title="FoldingEngine::max\l_mcc_fold" alt="" coords="197,299,337,341"/>
+<area shape="rect" id="node8" href="$class_folding_engine.html#a0edbd0f9184ab489f04d415f3d259983" title="FoldingEngine::centroid_fold" alt="" coords="171,365,362,392"/>
+<area shape="rect" id="node9" href="$class_folding_engine.html#ab704de409c6dd7a674bf624335e68cc1" title="FoldingEngine::get_bp" alt="" coords="189,416,345,443"/>
+<area shape="rect" id="node10" href="$class_b_p_table_tmpl.html#a5295132679f6dcf43a3a127354b27f8f" title="BPTableTmpl::save" alt="" coords="197,467,336,493"/>
+<area shape="rect" id="node11" href="$class_aln.html#a45fb6b8dcfcf254836bacabbbebe4ce8" title="Aln::consensus" alt="" coords="211,517,323,544"/>
+<area shape="rect" id="node12" href="$class_folding_engine.html#ad7357925081147af2582df825ac42425" title="FoldingEngine::ps_plot" alt="" coords="188,568,345,595"/>
+<area shape="rect" id="node13" href="$ps__plot_8cpp.html#a1a7bff2a76a83ee518cfe8498fa1c757" title="ps_color_plot" alt="" coords="416,543,517,569"/>
+<area shape="rect" id="node17" href="$ps__plot_8cpp.html#ab439b344496970b54629f4bd3dcb4da6" title="ps_plot" alt="" coords="434,593,499,620"/>
+<area shape="rect" id="node14" href="$class_b_p_table_tmpl.html#a81db1970843637bd9202fa0688c01bc7" title="BPTableTmpl::calc_nonbp_prob" alt="" coords="566,543,778,569"/>
+<area shape="rect" id="node16" href="$ps__plot_8cpp.html#a948111b910926f0405a3fa920c790816" title="naview_xy_coordinates" alt="" coords="592,593,752,620"/>
+<area shape="rect" id="node15" href="$cyktable_8h.html#a181b043e226aeef951b922db3395fe34" title="inside_traverse" alt="" coords="827,543,939,569"/>
+</map>

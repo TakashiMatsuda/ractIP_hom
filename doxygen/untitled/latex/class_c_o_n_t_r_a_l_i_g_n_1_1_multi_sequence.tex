@@ -1,0 +1,256 @@
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence}{\section{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+:\+:Multi\+Sequence Class Reference}
+\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence}\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+}
+
+
+{\ttfamily \#include $<$Multi\+Sequence.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_afc3a4a7ef8d8a76369e1206319601730}{Multi\+Sequence} ()
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a6a67ce64d529b7464282dd31c8746dd8}{Multi\+Sequence} (const std\+::string \&filename, bool ignore\+\_\+gaps)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a810607a265158676ab7c8d8f2a2f2852}{Multi\+Sequence} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence}{Multi\+Sequence} \&rhs)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a1269476d72bea0e935915599dca05ede}{Multi\+Sequence} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence}{Multi\+Sequence} \&rhs, const std\+::vector$<$ int $>$ \&subset)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a7096657bee43706ba528786840ce22c4}{$\sim$\+Multi\+Sequence} ()
+\item 
+const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence}{Multi\+Sequence} \& \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a7b06f7ae3d4d08fa74849b371e1b6896}{operator=} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence}{Multi\+Sequence} \&rhs)
+\item 
+bool \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a6ae3658b56c6a314b0286b55ac26666e}{operator==} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence}{Multi\+Sequence} \&rhs) const 
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a20c9deb692ae0314c18b20de88543bc5}{Add\+Sequence} (\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sequence}{Sequence} $\ast$seq)
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ab61280b0de5269dd4516951b10919deb}{Sort} ()
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae146b1733c2a83f00af69bdbbc241ab1}{Load\+M\+F\+A} (const std\+::string \&filename, bool ignore\+\_\+gaps)
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a71e2977045e4e2f62fc33890b5f31835}{Load\+M\+F\+A} (std\+::istream \&infile, bool ignore\+\_\+gaps)
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9153b19620cf8e9446b02c6417f04e9a}{Write\+M\+F\+A} (std\+::ostream \&outfile, const int num\+\_\+columns=1000000000) const 
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a0a7fe6ed9037c94191b82795a246a203}{Compute\+Occupied\+Columns} (const std\+::vector$<$ int $>$ \&subset) const 
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae0c12ddf72523780198d657f7852d6de}{Compute\+Core\+Block\+Columns} (const std\+::vector$<$ int $>$ \&subset) const 
+\item 
+std\+::string \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9e9e6c805eae30fa551d6d341c200ed7}{Get\+Consensus} () const 
+\item 
+std\+::string \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a2c4b0d29f1c7679a5792819878dc5ef1}{Compute\+Edit\+String} (const std\+::vector$<$ int $>$ \&subset1, const std\+::vector$<$ int $>$ \&subset2) const 
+\item 
+char \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_aa7228ed5e1a18a617184dfb4d76a4b76}{Get\+Annotation\+Char} (const std\+::vector$<$ char $>$ \&column) const 
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a560348bac0478c3fe65728088c3a88ef}{Write\+C\+L\+U\+S\+T\+A\+L\+W} (std\+::ostream \&outfile, const int num\+\_\+columns=60) const 
+\item 
+bool \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9d7fec20b636d56e575a30393ff2c1c3}{Is\+Alignment} () const 
+\item 
+int \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ac02a6ce3398828a4895156affdb0bbed}{Get\+Num\+Sequences} () const 
+\item 
+int \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_acc8a3efcaae6a0a8f0994527a9632714}{Get\+Length} () const 
+\item 
+int \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae974fd25f36b1c7b826373e5311e7df8}{Get\+Length} (const std\+::vector$<$ int $>$ \&subset) const 
+\item 
+const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sequence}{Sequence} \& \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a5418c9c34fde46833954d10aa4b44238}{Get\+Sequence} (int index) const 
+\item 
+std\+::pair$<$ std\+::vector$<$ int $>$\\*
+, std\+::vector$<$ int $>$ $>$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a5ef64b62dc8abdb0f1b3a4257551845f}{Get\+Aligned\+To} () const 
+\item 
+double \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a33f9b701d1ac5a1594d7e3fd84d3a372}{Get\+Pair\+Weight} (int i, int j) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_afc3a4a7ef8d8a76369e1206319601730}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Multi\+Sequence@{Multi\+Sequence}}
+\index{Multi\+Sequence@{Multi\+Sequence}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_afc3a4a7ef8d8a76369e1206319601730}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a6a67ce64d529b7464282dd31c8746dd8}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Multi\+Sequence@{Multi\+Sequence}}
+\index{Multi\+Sequence@{Multi\+Sequence}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{bool}]{ignore\+\_\+gaps}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a6a67ce64d529b7464282dd31c8746dd8}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a810607a265158676ab7c8d8f2a2f2852}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Multi\+Sequence@{Multi\+Sequence}}
+\index{Multi\+Sequence@{Multi\+Sequence}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+\item[{const {\bf Multi\+Sequence} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a810607a265158676ab7c8d8f2a2f2852}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a1269476d72bea0e935915599dca05ede}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Multi\+Sequence@{Multi\+Sequence}}
+\index{Multi\+Sequence@{Multi\+Sequence}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+\item[{const {\bf Multi\+Sequence} \&}]{rhs, }
+\item[{const std\+::vector$<$ int $>$ \&}]{subset}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a1269476d72bea0e935915599dca05ede}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a7096657bee43706ba528786840ce22c4}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!````~Multi\+Sequence@{$\sim$\+Multi\+Sequence}}
+\index{````~Multi\+Sequence@{$\sim$\+Multi\+Sequence}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{$\sim$\+Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::$\sim$\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a7096657bee43706ba528786840ce22c4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a20c9deb692ae0314c18b20de88543bc5}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Add\+Sequence@{Add\+Sequence}}
+\index{Add\+Sequence@{Add\+Sequence}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Add\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Add\+Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf Sequence} $\ast$}]{seq}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a20c9deb692ae0314c18b20de88543bc5}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae0c12ddf72523780198d657f7852d6de}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Compute\+Core\+Block\+Columns@{Compute\+Core\+Block\+Columns}}
+\index{Compute\+Core\+Block\+Columns@{Compute\+Core\+Block\+Columns}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Compute\+Core\+Block\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Compute\+Core\+Block\+Columns (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{subset}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae0c12ddf72523780198d657f7852d6de}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a2c4b0d29f1c7679a5792819878dc5ef1}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Compute\+Edit\+String@{Compute\+Edit\+String}}
+\index{Compute\+Edit\+String@{Compute\+Edit\+String}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Compute\+Edit\+String}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Compute\+Edit\+String (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{subset1, }
+\item[{const std\+::vector$<$ int $>$ \&}]{subset2}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a2c4b0d29f1c7679a5792819878dc5ef1}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a0a7fe6ed9037c94191b82795a246a203}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Compute\+Occupied\+Columns@{Compute\+Occupied\+Columns}}
+\index{Compute\+Occupied\+Columns@{Compute\+Occupied\+Columns}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Compute\+Occupied\+Columns}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Compute\+Occupied\+Columns (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{subset}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a0a7fe6ed9037c94191b82795a246a203}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a5ef64b62dc8abdb0f1b3a4257551845f}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Get\+Aligned\+To@{Get\+Aligned\+To}}
+\index{Get\+Aligned\+To@{Get\+Aligned\+To}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Aligned\+To}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ std\+::vector$<$ int $>$, std\+::vector$<$ int $>$ $>$ C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Get\+Aligned\+To (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a5ef64b62dc8abdb0f1b3a4257551845f}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_aa7228ed5e1a18a617184dfb4d76a4b76}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Get\+Annotation\+Char@{Get\+Annotation\+Char}}
+\index{Get\+Annotation\+Char@{Get\+Annotation\+Char}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Annotation\+Char}]{\setlength{\rightskip}{0pt plus 5cm}char C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Get\+Annotation\+Char (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ char $>$ \&}]{column}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_aa7228ed5e1a18a617184dfb4d76a4b76}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9e9e6c805eae30fa551d6d341c200ed7}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Get\+Consensus@{Get\+Consensus}}
+\index{Get\+Consensus@{Get\+Consensus}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Consensus}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Get\+Consensus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9e9e6c805eae30fa551d6d341c200ed7}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_acc8a3efcaae6a0a8f0994527a9632714}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Get\+Length@{Get\+Length}}
+\index{Get\+Length@{Get\+Length}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Length}]{\setlength{\rightskip}{0pt plus 5cm}int C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Get\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_acc8a3efcaae6a0a8f0994527a9632714}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae974fd25f36b1c7b826373e5311e7df8}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Get\+Length@{Get\+Length}}
+\index{Get\+Length@{Get\+Length}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Length}]{\setlength{\rightskip}{0pt plus 5cm}int C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Get\+Length (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{subset}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae974fd25f36b1c7b826373e5311e7df8}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ac02a6ce3398828a4895156affdb0bbed}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Get\+Num\+Sequences@{Get\+Num\+Sequences}}
+\index{Get\+Num\+Sequences@{Get\+Num\+Sequences}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Num\+Sequences}]{\setlength{\rightskip}{0pt plus 5cm}int C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Get\+Num\+Sequences (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ac02a6ce3398828a4895156affdb0bbed}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a33f9b701d1ac5a1594d7e3fd84d3a372}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Get\+Pair\+Weight@{Get\+Pair\+Weight}}
+\index{Get\+Pair\+Weight@{Get\+Pair\+Weight}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Pair\+Weight}]{\setlength{\rightskip}{0pt plus 5cm}double C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Get\+Pair\+Weight (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a33f9b701d1ac5a1594d7e3fd84d3a372}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a5418c9c34fde46833954d10aa4b44238}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Get\+Sequence@{Get\+Sequence}}
+\index{Get\+Sequence@{Get\+Sequence}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Sequence} \& C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Get\+Sequence (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a5418c9c34fde46833954d10aa4b44238}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9d7fec20b636d56e575a30393ff2c1c3}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Is\+Alignment@{Is\+Alignment}}
+\index{Is\+Alignment@{Is\+Alignment}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Is\+Alignment}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Is\+Alignment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9d7fec20b636d56e575a30393ff2c1c3}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae146b1733c2a83f00af69bdbbc241ab1}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Load\+M\+F\+A@{Load\+M\+F\+A}}
+\index{Load\+M\+F\+A@{Load\+M\+F\+A}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Load\+M\+F\+A}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Load\+M\+F\+A (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{bool}]{ignore\+\_\+gaps}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ae146b1733c2a83f00af69bdbbc241ab1}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a71e2977045e4e2f62fc33890b5f31835}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Load\+M\+F\+A@{Load\+M\+F\+A}}
+\index{Load\+M\+F\+A@{Load\+M\+F\+A}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Load\+M\+F\+A}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Load\+M\+F\+A (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{infile, }
+\item[{bool}]{ignore\+\_\+gaps}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a71e2977045e4e2f62fc33890b5f31835}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a7b06f7ae3d4d08fa74849b371e1b6896}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!operator=@{operator=}}
+\index{operator=@{operator=}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Multi\+Sequence} \& C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Multi\+Sequence} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a7b06f7ae3d4d08fa74849b371e1b6896}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a6ae3658b56c6a314b0286b55ac26666e}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!operator==@{operator==}}
+\index{operator==@{operator==}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Multi\+Sequence} \&}]{rhs}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a6ae3658b56c6a314b0286b55ac26666e}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ab61280b0de5269dd4516951b10919deb}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Sort@{Sort}}
+\index{Sort@{Sort}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Sort}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Sort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_ab61280b0de5269dd4516951b10919deb}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a560348bac0478c3fe65728088c3a88ef}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Write\+C\+L\+U\+S\+T\+A\+L\+W@{Write\+C\+L\+U\+S\+T\+A\+L\+W}}
+\index{Write\+C\+L\+U\+S\+T\+A\+L\+W@{Write\+C\+L\+U\+S\+T\+A\+L\+W}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Write\+C\+L\+U\+S\+T\+A\+L\+W}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Write\+C\+L\+U\+S\+T\+A\+L\+W (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{outfile, }
+\item[{const int}]{num\+\_\+columns = {\ttfamily 60}}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a560348bac0478c3fe65728088c3a88ef}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9153b19620cf8e9446b02c6417f04e9a}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}!Write\+M\+F\+A@{Write\+M\+F\+A}}
+\index{Write\+M\+F\+A@{Write\+M\+F\+A}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence}}
+\subsubsection[{Write\+M\+F\+A}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Multi\+Sequence\+::\+Write\+M\+F\+A (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{outfile, }
+\item[{const int}]{num\+\_\+columns = {\ttfamily 1000000000}}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_multi_sequence_a9153b19620cf8e9446b02c6417f04e9a}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/contralign/\hyperlink{_multi_sequence_8hpp}{Multi\+Sequence.\+hpp}\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/contralign/\hyperlink{_multi_sequence_8cpp}{Multi\+Sequence.\+cpp}\end{DoxyCompactItemize}

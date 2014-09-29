@@ -1,0 +1,11 @@
+<map id="AveragedModel::compute_expected_accuracy_sampling" name="AveragedModel::compute_expected_accuracy_sampling">
+<area shape="rect" id="node2" href="$class_aln.html#a07ac4d997bee9b73c5d2da5fd8e0102a" title="Aln::seq" alt="" coords="310,5,381,32"/>
+<area shape="rect" id="node3" href="$class_folding_engine.html#aa979adbd342b75eb947927e6ff7bcb8c" title="FoldingEngine::set\l_constraint" alt="" coords="279,57,411,98"/>
+<area shape="rect" id="node4" href="$class_folding_engine.html#a22db64fbf81030b83316c7ca12431ee4" title="FoldingEngine::prepare\l_stochastic_traceback" alt="" coords="265,122,425,163"/>
+<area shape="rect" id="node5" href="$class_aln.html#ababa37dc4967c06b20c4af1b7a42a789" title="Aln::num_aln" alt="" coords="295,188,395,215"/>
+<area shape="rect" id="node6" href="$class_aln.html#a2e473685aac8dc4c5bf58a2013254907" title="Aln::size" alt="" coords="309,239,381,265"/>
+<area shape="rect" id="node7" href="$class_folding_engine.html#a1e4bc1f100ea5bf8d957a1b20139e6f1" title="FoldingEngine::stochastic\l_traceback" alt="" coords="259,290,432,331"/>
+<area shape="rect" id="node8" href="$class_c_y_k_table.html#a7eb0344925e5f2de65981bbcd18a5041" title="CYKTable::size" alt="" coords="289,356,402,383"/>
+<area shape="rect" id="node9" href="$class_folding_engine.html#af5d717e06dbd56b724f4c77292d533b0" title="FoldingEngine\&lt; Aln\l \&gt;::get_TP_TN_FP_FN" alt="" coords="266,407,425,449"/>
+<area shape="rect" id="node10" href="$class_folding_engine.html#a15027401822de5e57efbf131c214c2c7" title="FoldingEngine::clean\l_stochastic_traceback" alt="" coords="269,473,422,514"/>
+</map>

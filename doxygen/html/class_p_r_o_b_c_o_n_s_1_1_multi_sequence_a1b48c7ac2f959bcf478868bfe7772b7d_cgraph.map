@@ -1,0 +1,8 @@
+<map id="PROBCONS::MultiSequence::WriteALN" name="PROBCONS::MultiSequence::WriteALN">
+<area shape="rect" id="node2" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#a08c1adcbbd476649046724bf644c3286" title="PROBCONS::MultiSequence\l::GetNumSequences" alt="" coords="249,5,442,46"/>
+<area shape="rect" id="node3" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#a1ec546f0396cf54133920716ca27cd63" title="PROBCONS::MultiSequence\l::GetSequence" alt="" coords="249,70,442,111"/>
+<area shape="rect" id="node4" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#adb434994650702ccbe742a603d874bec" title="PROBCONS::Sequence\l::GetDataPtr" alt="" coords="263,135,428,177"/>
+<area shape="rect" id="node5" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#af5ceae645f42aac617f6917ab83505ae" title="PROBCONS::Sequence\l::GetLength" alt="" coords="263,201,428,242"/>
+<area shape="rect" id="node6" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#a12b45d448fcceb9c91e8a80fa35048b2" title="PROBCONS::Sequence\l::GetName" alt="" coords="263,266,428,307"/>
+<area shape="rect" id="node7" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#aa39e095e71feef8649a8cc9c29ddc3ae" title="PROBCONS::MultiSequence\l::GetAnnotationChar" alt="" coords="249,331,442,373"/>
+</map>

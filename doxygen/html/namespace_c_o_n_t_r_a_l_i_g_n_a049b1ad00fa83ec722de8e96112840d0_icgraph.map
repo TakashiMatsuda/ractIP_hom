@@ -1,0 +1,6 @@
+<map id="CONTRALIGN::Fast_LogPlusEquals" name="CONTRALIGN::Fast_LogPlusEquals">
+<area shape="rect" id="node2" href="$class_c_o_n_t_r_a_l_i_g_n_1_1_inference_engine.html#a701b7f613c68f76862026669e88b3b5f" title="CONTRALIGN::InferenceEngine\l::ComputeForward" alt="" coords="285,5,499,46"/>
+<area shape="rect" id="node3" href="$class_c_o_n_t_r_a_l_i_g_n_1_1_inference_engine.html#a52aa2f5fe909f3873fe4613f3caabb2c" title="CONTRALIGN::InferenceEngine\l::ComputeBackward" alt="" coords="285,70,499,111"/>
+<area shape="rect" id="node4" href="$class_c_o_n_t_r_a_l_i_g_n_1_1_inference_engine.html#ae3957a178187854f9b7e3812630cee5e" title="CONTRALIGN::InferenceEngine\l::ComputeForwardLogPartitionCoefficient" alt="" coords="259,135,525,177"/>
+<area shape="rect" id="node5" href="$class_c_o_n_t_r_a_l_i_g_n_1_1_inference_engine.html#a366a06d30a6e179448c3a09b9a776550" title="CONTRALIGN::InferenceEngine\l::ComputeBackwardLogPartitionCoefficient" alt="" coords="254,201,530,242"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="make_triple" name="make_triple">
+<area shape="rect" id="node2" href="$class_inference_engine.html#a09ba49b0dc0d9161d48a13f9948cbeea" title="InferenceEngine::Predict\lPairingsViterbi" alt="" coords="163,5,331,46"/>
+<area shape="rect" id="node3" href="$class_inference_engine.html#af033e32a3d67b565b59aa632dae0152c" title="InferenceEngine::Compute\lViterbiFeatureCounts" alt="" coords="157,70,337,111"/>
+<area shape="rect" id="node4" href="$class_inference_engine.html#a3355c30e213b3a6277141faeeb8dc5f1" title="InferenceEngine::Predict\lPairingsStochasticTraceback" alt="" coords="150,135,343,177"/>
+<area shape="rect" id="node5" href="$class_inference_engine.html#a346acfcaf989aed397b5d1433c925e4a" title="InferenceEngine::Predict\lPairingsStochasticTracebackM" alt="" coords="144,201,349,242"/>
+</map>

@@ -1,0 +1,339 @@
+\hypertarget{contrafold_2_log_space_8hpp}{\section{src/contrafold/\+Log\+Space.hpp File Reference}
+\label{contrafold_2_log_space_8hpp}\index{src/contrafold/\+Log\+Space.\+hpp@{src/contrafold/\+Log\+Space.\+hpp}}
+}
+{\ttfamily \#include \char`\"{}Utilities.\+hpp\char`\"{}}\\*
+Include dependency graph for Log\+Space.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{contrafold_2_log_space_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{contrafold_2_log_space_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{contrafold_2_log_space_8hpp_a98e3e165debaf418b6b285ff7538d3f3}{N\+E\+G\+\_\+\+I\+N\+F}~-\/2e20
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{contrafold_2_log_space_8hpp_ab3f4623c7793ce8f35dc2472f9399f44}{Fast\+\_\+\+Exp} (double x)
+\item 
+float \hyperlink{contrafold_2_log_space_8hpp_ab04d0cbb388837e492fb1ceef57b6f6d}{Fast\+\_\+\+Exp} (float x)
+\item 
+double \hyperlink{contrafold_2_log_space_8hpp_ade80135cfdbd997d76d71c8747db3873}{Fast\+\_\+\+Log\+Exp\+Plus\+One} (double x)
+\item 
+float \hyperlink{contrafold_2_log_space_8hpp_a617ddcf7f97449b925273974762ea397}{Fast\+\_\+\+Log\+Exp\+Plus\+One} (float x)
+\item 
+double \hyperlink{contrafold_2_log_space_8hpp_a611537af804846e5ad42ea08657b4b1f}{Fast\+\_\+\+Log\+Exp\+Minus\+One} (double x)
+\item 
+float \hyperlink{contrafold_2_log_space_8hpp_a0ba727966508b27f5ae3cefd415e86ee}{Fast\+\_\+\+Log\+Exp\+Minus\+One} (float x)
+\item 
+double \hyperlink{contrafold_2_log_space_8hpp_a35e8836fb593b6fbb74aa5321003b564}{Fast\+\_\+\+Log\+Add} (double x, double y)
+\item 
+float \hyperlink{contrafold_2_log_space_8hpp_a31a2772d1d9cafdd94d57ba591bd4b92}{Fast\+\_\+\+Log\+Add} (float x, float y)
+\item 
+void \hyperlink{contrafold_2_log_space_8hpp_aa048cc23fc8e92d6b0bfb89dd077bc64}{Fast\+\_\+\+Log\+Plus\+Equals} (double \&x, double y)
+\item 
+void \hyperlink{contrafold_2_log_space_8hpp_a0a87b2fbb8b4340f66a98acabc123466}{Fast\+\_\+\+Log\+Plus\+Equals} (float \&x, float y)
+\item 
+double \hyperlink{contrafold_2_log_space_8hpp_a33a9468b2278affcbd4f9ea4ef65f8c4}{Fast\+\_\+\+Log\+Subtract} (double x, double y)
+\item 
+float \hyperlink{contrafold_2_log_space_8hpp_a394c66098784f99cd355cdeeb7be1201}{Fast\+\_\+\+Log\+Subtract} (float x, float y)
+\item 
+void \hyperlink{contrafold_2_log_space_8hpp_a541ef9b61a52179a87e136dc088bce79}{Fast\+\_\+\+Log\+Minus\+Equals} (double \&x, double y)
+\item 
+void \hyperlink{contrafold_2_log_space_8hpp_ae991625cc327fa982b9b0396dfbbc8ac}{Fast\+\_\+\+Log\+Minus\+Equals} (float \&x, float y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{contrafold_2_log_space_8hpp_a98e3e165debaf418b6b285ff7538d3f3}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!N\+E\+G\+\_\+\+I\+N\+F@{N\+E\+G\+\_\+\+I\+N\+F}}
+\index{N\+E\+G\+\_\+\+I\+N\+F@{N\+E\+G\+\_\+\+I\+N\+F}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{N\+E\+G\+\_\+\+I\+N\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+G\+\_\+\+I\+N\+F~-\/2e20}}\label{contrafold_2_log_space_8hpp_a98e3e165debaf418b6b285ff7538d3f3}
+
+
+Definition at line 12 of file Log\+Space.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{contrafold_2_log_space_8hpp_ab3f4623c7793ce8f35dc2472f9399f44}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Exp@{Fast\+\_\+\+Exp}}
+\index{Fast\+\_\+\+Exp@{Fast\+\_\+\+Exp}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Exp}]{\setlength{\rightskip}{0pt plus 5cm}double Fast\+\_\+\+Exp (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_ab3f4623c7793ce8f35dc2472f9399f44}
+
+
+Definition at line 21 of file Log\+Space.\+hpp.
+
+\hypertarget{contrafold_2_log_space_8hpp_ab04d0cbb388837e492fb1ceef57b6f6d}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Exp@{Fast\+\_\+\+Exp}}
+\index{Fast\+\_\+\+Exp@{Fast\+\_\+\+Exp}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Exp}]{\setlength{\rightskip}{0pt plus 5cm}float Fast\+\_\+\+Exp (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_ab04d0cbb388837e492fb1ceef57b6f6d}
+
+
+Definition at line 27 of file Log\+Space.\+hpp.
+
+\hypertarget{contrafold_2_log_space_8hpp_a35e8836fb593b6fbb74aa5321003b564}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Add@{Fast\+\_\+\+Log\+Add}}
+\index{Fast\+\_\+\+Log\+Add@{Fast\+\_\+\+Log\+Add}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Add}]{\setlength{\rightskip}{0pt plus 5cm}double Fast\+\_\+\+Log\+Add (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a35e8836fb593b6fbb74aa5321003b564}
+
+
+Definition at line 218 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{contrafold_2_log_space_8hpp_a35e8836fb593b6fbb74aa5321003b564_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{contrafold_2_log_space_8hpp_a31a2772d1d9cafdd94d57ba591bd4b92}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Add@{Fast\+\_\+\+Log\+Add}}
+\index{Fast\+\_\+\+Log\+Add@{Fast\+\_\+\+Log\+Add}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Add}]{\setlength{\rightskip}{0pt plus 5cm}float Fast\+\_\+\+Log\+Add (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a31a2772d1d9cafdd94d57ba591bd4b92}
+
+
+Definition at line 225 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{contrafold_2_log_space_8hpp_a31a2772d1d9cafdd94d57ba591bd4b92_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{contrafold_2_log_space_8hpp_a611537af804846e5ad42ea08657b4b1f}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Exp\+Minus\+One@{Fast\+\_\+\+Log\+Exp\+Minus\+One}}
+\index{Fast\+\_\+\+Log\+Exp\+Minus\+One@{Fast\+\_\+\+Log\+Exp\+Minus\+One}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Exp\+Minus\+One}]{\setlength{\rightskip}{0pt plus 5cm}double Fast\+\_\+\+Log\+Exp\+Minus\+One (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a611537af804846e5ad42ea08657b4b1f}
+
+
+Definition at line 137 of file Log\+Space.\+hpp.
+
+\hypertarget{contrafold_2_log_space_8hpp_a0ba727966508b27f5ae3cefd415e86ee}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Exp\+Minus\+One@{Fast\+\_\+\+Log\+Exp\+Minus\+One}}
+\index{Fast\+\_\+\+Log\+Exp\+Minus\+One@{Fast\+\_\+\+Log\+Exp\+Minus\+One}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Exp\+Minus\+One}]{\setlength{\rightskip}{0pt plus 5cm}float Fast\+\_\+\+Log\+Exp\+Minus\+One (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a0ba727966508b27f5ae3cefd415e86ee}
+
+
+Definition at line 143 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{contrafold_2_log_space_8hpp_a0ba727966508b27f5ae3cefd415e86ee_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{contrafold_2_log_space_8hpp_ade80135cfdbd997d76d71c8747db3873}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Exp\+Plus\+One@{Fast\+\_\+\+Log\+Exp\+Plus\+One}}
+\index{Fast\+\_\+\+Log\+Exp\+Plus\+One@{Fast\+\_\+\+Log\+Exp\+Plus\+One}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Exp\+Plus\+One}]{\setlength{\rightskip}{0pt plus 5cm}double Fast\+\_\+\+Log\+Exp\+Plus\+One (
+\begin{DoxyParamCaption}
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_ade80135cfdbd997d76d71c8747db3873}
+
+
+Definition at line 68 of file Log\+Space.\+hpp.
+
+\hypertarget{contrafold_2_log_space_8hpp_a617ddcf7f97449b925273974762ea397}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Exp\+Plus\+One@{Fast\+\_\+\+Log\+Exp\+Plus\+One}}
+\index{Fast\+\_\+\+Log\+Exp\+Plus\+One@{Fast\+\_\+\+Log\+Exp\+Plus\+One}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Exp\+Plus\+One}]{\setlength{\rightskip}{0pt plus 5cm}float Fast\+\_\+\+Log\+Exp\+Plus\+One (
+\begin{DoxyParamCaption}
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a617ddcf7f97449b925273974762ea397}
+
+
+Definition at line 74 of file Log\+Space.\+hpp.
+
+\hypertarget{contrafold_2_log_space_8hpp_a541ef9b61a52179a87e136dc088bce79}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Minus\+Equals@{Fast\+\_\+\+Log\+Minus\+Equals}}
+\index{Fast\+\_\+\+Log\+Minus\+Equals@{Fast\+\_\+\+Log\+Minus\+Equals}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Minus\+Equals}]{\setlength{\rightskip}{0pt plus 5cm}void Fast\+\_\+\+Log\+Minus\+Equals (
+\begin{DoxyParamCaption}
+\item[{double \&}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a541ef9b61a52179a87e136dc088bce79}
+
+
+Definition at line 267 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{contrafold_2_log_space_8hpp_a541ef9b61a52179a87e136dc088bce79_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{contrafold_2_log_space_8hpp_ae991625cc327fa982b9b0396dfbbc8ac}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Minus\+Equals@{Fast\+\_\+\+Log\+Minus\+Equals}}
+\index{Fast\+\_\+\+Log\+Minus\+Equals@{Fast\+\_\+\+Log\+Minus\+Equals}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Minus\+Equals}]{\setlength{\rightskip}{0pt plus 5cm}void Fast\+\_\+\+Log\+Minus\+Equals (
+\begin{DoxyParamCaption}
+\item[{float \&}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_ae991625cc327fa982b9b0396dfbbc8ac}
+
+
+Definition at line 274 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{contrafold_2_log_space_8hpp_ae991625cc327fa982b9b0396dfbbc8ac_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{contrafold_2_log_space_8hpp_aa048cc23fc8e92d6b0bfb89dd077bc64}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Plus\+Equals@{Fast\+\_\+\+Log\+Plus\+Equals}}
+\index{Fast\+\_\+\+Log\+Plus\+Equals@{Fast\+\_\+\+Log\+Plus\+Equals}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Plus\+Equals}]{\setlength{\rightskip}{0pt plus 5cm}void Fast\+\_\+\+Log\+Plus\+Equals (
+\begin{DoxyParamCaption}
+\item[{double \&}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_aa048cc23fc8e92d6b0bfb89dd077bc64}
+
+
+Definition at line 232 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{contrafold_2_log_space_8hpp_aa048cc23fc8e92d6b0bfb89dd077bc64_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{contrafold_2_log_space_8hpp_a0a87b2fbb8b4340f66a98acabc123466}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Plus\+Equals@{Fast\+\_\+\+Log\+Plus\+Equals}}
+\index{Fast\+\_\+\+Log\+Plus\+Equals@{Fast\+\_\+\+Log\+Plus\+Equals}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Plus\+Equals}]{\setlength{\rightskip}{0pt plus 5cm}void Fast\+\_\+\+Log\+Plus\+Equals (
+\begin{DoxyParamCaption}
+\item[{float \&}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a0a87b2fbb8b4340f66a98acabc123466}
+
+
+Definition at line 239 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{contrafold_2_log_space_8hpp_a0a87b2fbb8b4340f66a98acabc123466_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{contrafold_2_log_space_8hpp_a33a9468b2278affcbd4f9ea4ef65f8c4}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Subtract@{Fast\+\_\+\+Log\+Subtract}}
+\index{Fast\+\_\+\+Log\+Subtract@{Fast\+\_\+\+Log\+Subtract}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Subtract}]{\setlength{\rightskip}{0pt plus 5cm}double Fast\+\_\+\+Log\+Subtract (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a33a9468b2278affcbd4f9ea4ef65f8c4}
+
+
+Definition at line 253 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{contrafold_2_log_space_8hpp_a33a9468b2278affcbd4f9ea4ef65f8c4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{contrafold_2_log_space_8hpp_a394c66098784f99cd355cdeeb7be1201}{\index{contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}!Fast\+\_\+\+Log\+Subtract@{Fast\+\_\+\+Log\+Subtract}}
+\index{Fast\+\_\+\+Log\+Subtract@{Fast\+\_\+\+Log\+Subtract}!contrafold/\+Log\+Space.\+hpp@{contrafold/\+Log\+Space.\+hpp}}
+\subsubsection[{Fast\+\_\+\+Log\+Subtract}]{\setlength{\rightskip}{0pt plus 5cm}float Fast\+\_\+\+Log\+Subtract (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{contrafold_2_log_space_8hpp_a394c66098784f99cd355cdeeb7be1201}
+
+
+Definition at line 260 of file Log\+Space.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{contrafold_2_log_space_8hpp_a394c66098784f99cd355cdeeb7be1201_cgraph}
+\end{center}
+\end{figure}
+
+

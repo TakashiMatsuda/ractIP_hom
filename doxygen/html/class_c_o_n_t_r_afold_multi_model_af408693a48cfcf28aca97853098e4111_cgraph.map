@@ -1,0 +1,11 @@
+<map id="CONTRAfoldMultiModel::calculate_posterior" name="CONTRAfoldMultiModel::calculate_posterior">
+<area shape="rect" id="node2" href="$class_averaged_model.html#ab594bb3e99a3e07efcdda8cf5ca001ab" title="AveragedModel::calculate\l_posterior" alt="" coords="219,181,395,222"/>
+<area shape="rect" id="node6" href="$class_folding_engine.html#ab704de409c6dd7a674bf624335e68cc1" title="FoldingEngine::get_bp" alt="" coords="449,289,605,316"/>
+<area shape="rect" id="node3" href="$class_aln.html#a07ac4d997bee9b73c5d2da5fd8e0102a" title="Aln::seq" alt="" coords="491,5,562,32"/>
+<area shape="rect" id="node4" href="$class_folding_engine.html#aa979adbd342b75eb947927e6ff7bcb8c" title="FoldingEngine::set\l_constraint" alt="" coords="461,57,593,98"/>
+<area shape="rect" id="node5" href="$class_folding_engine.html#a314c78e5fe35d5a1b5f441604c58e8f1" title="FoldingEngine::calculate\l_posterior" alt="" coords="443,122,610,163"/>
+<area shape="rect" id="node7" href="$class_b_p_table_tmpl.html#a5689d5a1a149cb5e063408879ce707c0" title="BPTableTmpl::resize" alt="" coords="454,188,599,215"/>
+<area shape="rect" id="node8" href="$struct_average_b_p.html#aafec28a98d39cda263b9912eae89d4fc" title="AverageBP::make" alt="" coords="462,239,591,265"/>
+<area shape="rect" id="node9" href="$cyktable_8h.html#a181b043e226aeef951b922db3395fe34" title="inside_traverse" alt="" coords="669,213,781,240"/>
+<area shape="rect" id="node10" href="$class_b_p_table_tmpl.html#a82b234179a0f31ed29c1a4c81ac5067c" title="BPTableTmpl::size" alt="" coords="659,264,792,291"/>
+</map>

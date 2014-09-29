@@ -1,0 +1,5 @@
+<map id="FoldingEngine::stochastic_traceback" name="FoldingEngine::stochastic_traceback">
+<area shape="rect" id="node2" href="$class_averaged_model.html#a8b07acaf0d63c249cdc78dc1b2df7307" title="AveragedModel::stochastic_fold" alt="" coords="227,5,437,32"/>
+<area shape="rect" id="node3" href="$class_averaged_model.html#a4844fe73e623329659ab409d8acede57" title="AveragedModel::max\l_mcc_fold" alt="" coords="258,57,406,98"/>
+<area shape="rect" id="node4" href="$class_averaged_model.html#a45c8b5f77c83da55a8f19660b9319e03" title="AveragedModel::compute\l_expected_accuracy_sampling" alt="" coords="229,122,435,163"/>
+</map>

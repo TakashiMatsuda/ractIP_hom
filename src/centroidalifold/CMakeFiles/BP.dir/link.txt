@@ -1,0 +1,2 @@
+/usr/bin/ar cr libBP.a  CMakeFiles/BP.dir/bp.cpp.o
+/usr/bin/ranlib libBP.a

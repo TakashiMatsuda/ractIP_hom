@@ -1,0 +1,148 @@
+\hypertarget{ractip_8cpp}{\section{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/ractip.cpp File Reference}
+\label{ractip_8cpp}\index{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/ractip.\+cpp@{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/ractip.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}cmdline1.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include \char`\"{}fa.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ip.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/aln.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/mea.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/folding\+\_\+engine.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/engine/contrafold.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/engine/contrafoldm.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/engine/mccaskill.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/engine/alifold.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/engine/pfold.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/engine/averaged.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/engine/mixture.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}centroidalifold/engine/aux.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/fold.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/fold\+\_\+vars.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/part\+\_\+func.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/part\+\_\+func\+\_\+up.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/part\+\_\+func\+\_\+co.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/utils.\+h$>$}\\*
+{\ttfamily \#include $<$Vienna\+R\+N\+A/\+P\+S\+\_\+dot.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}pf\+\_\+duplex.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ushuffle.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}boltzmann\+\_\+param.\+h\char`\"{}}\\*
+Include dependency graph for ractip.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ractip_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_ract_i_p}{Ract\+I\+P}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_vienna}{Vienna}
+\item 
+ \hyperlink{namespaceu_shuffle}{u\+Shuffle}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ractip_8cpp_a7e408bb5a1389bf6eeded11b1b863d5d}{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long($\ast$ \hyperlink{namespaceu_shuffle_a3b089f1b2acf469c922fea2c90ca4533}{u\+Shuffle\+::randfunc\+\_\+t} )()
+\item 
+typedef unsigned int \hyperlink{ractip_8cpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}
+\item 
+typedef std\+::vector$<$ float $>$ \hyperlink{ractip_8cpp_ae8c47ef991d29814e7ebe7be9725a35f}{V\+F}
+\item 
+typedef std\+::vector$<$ \hyperlink{ractip_8cpp_ae8c47ef991d29814e7ebe7be9725a35f}{V\+F} $>$ \hyperlink{ractip_8cpp_a3896909496dd0365dc9a3c6d1c6dc0e9}{V\+V\+F}
+\item 
+typedef std\+::vector$<$ \hyperlink{ractip_8cpp_a3896909496dd0365dc9a3c6d1c6dc0e9}{V\+V\+F} $>$ \hyperlink{ractip_8cpp_a78399aceb8f4fb149347c61a0f7706d6}{V\+V\+V\+F}
+\item 
+typedef std\+::vector$<$ \hyperlink{ractip_8cpp_a78399aceb8f4fb149347c61a0f7706d6}{V\+V\+V\+F} $>$ \hyperlink{ractip_8cpp_a5fe6f9950ce6e9bc4236b91ae6e16e8e}{V\+V\+V\+V\+F}
+\item 
+typedef std\+::vector$<$ int $>$ \hyperlink{ractip_8cpp_a261c43f62da89b5538899eb1b1a4e2d7}{V\+I}
+\item 
+typedef std\+::vector$<$ \hyperlink{ractip_8cpp_a261c43f62da89b5538899eb1b1a4e2d7}{V\+I} $>$ \hyperlink{ractip_8cpp_acf9af78df8ccca1be09cc31c77554622}{V\+V\+I}
+\item 
+typedef Vienna\+::pair\+\_\+info \hyperlink{ractip_8cpp_af291b5b571abd5ca44aaf838f6813c14}{pair\+\_\+info}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_vienna_a3a7190f15cb9b57ffc30919582986631}{Vienna\+::read\+\_\+parameter\+\_\+file} (const char fname\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{namespaceu_shuffle_a56a75029d26fb72eb38a0507ffa81004}{u\+Shuffle\+::shuffle} (const char $\ast$s, char $\ast$t, int l, int k)
+\item 
+void \hyperlink{namespaceu_shuffle_a6304bc6726442bc49c051b0866b7c204}{u\+Shuffle\+::shuffle1} (const char $\ast$s, int l, int k)
+\item 
+void \hyperlink{namespaceu_shuffle_a458a8c1af77095bdac74bbe4b66f0faf}{u\+Shuffle\+::shuffle2} (char $\ast$t)
+\item 
+void \hyperlink{namespaceu_shuffle_a0756dd29ebbd612e256b692e23fd12fe}{u\+Shuffle\+::set\+\_\+randfunc} (\hyperlink{ushuffle_8h_af2c32fe194edfc9f9415279452a83064}{randfunc\+\_\+t} randfunc)
+\item 
+void \hyperlink{namespaceu_shuffle_a39fe0293043edf4e375a0a2985302456}{u\+Shuffle\+::permutec} (char $\ast$t, int l)
+\item 
+int \hyperlink{ractip_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespace_vienna_a24d3b842931ab2ed27b801a9ea14b77f}{Vienna\+::eos\+\_\+debug}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ractip_8cpp_a7e408bb5a1389bf6eeded11b1b863d5d}{\index{ractip.\+cpp@{ractip.\+cpp}!U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W@{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}}
+\index{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W@{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}}\label{ractip_8cpp_a7e408bb5a1389bf6eeded11b1b863d5d}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{ractip_8cpp_af291b5b571abd5ca44aaf838f6813c14}{\index{ractip.\+cpp@{ractip.\+cpp}!pair\+\_\+info@{pair\+\_\+info}}
+\index{pair\+\_\+info@{pair\+\_\+info}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{pair\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}typedef Vienna\+::pair\+\_\+info {\bf pair\+\_\+info}}}\label{ractip_8cpp_af291b5b571abd5ca44aaf838f6813c14}
+\hypertarget{ractip_8cpp_a91ad9478d81a7aaf2593e8d9c3d06a14}{\index{ractip.\+cpp@{ractip.\+cpp}!uint@{uint}}
+\index{uint@{uint}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{uint}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf uint}}}\label{ractip_8cpp_a91ad9478d81a7aaf2593e8d9c3d06a14}
+\hypertarget{ractip_8cpp_ae8c47ef991d29814e7ebe7be9725a35f}{\index{ractip.\+cpp@{ractip.\+cpp}!V\+F@{V\+F}}
+\index{V\+F@{V\+F}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{V\+F}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$float$>$ {\bf V\+F}}}\label{ractip_8cpp_ae8c47ef991d29814e7ebe7be9725a35f}
+\hypertarget{ractip_8cpp_a261c43f62da89b5538899eb1b1a4e2d7}{\index{ractip.\+cpp@{ractip.\+cpp}!V\+I@{V\+I}}
+\index{V\+I@{V\+I}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{V\+I}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$int$>$ {\bf V\+I}}}\label{ractip_8cpp_a261c43f62da89b5538899eb1b1a4e2d7}
+\hypertarget{ractip_8cpp_a3896909496dd0365dc9a3c6d1c6dc0e9}{\index{ractip.\+cpp@{ractip.\+cpp}!V\+V\+F@{V\+V\+F}}
+\index{V\+V\+F@{V\+V\+F}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{V\+V\+F}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf V\+F}$>$ {\bf V\+V\+F}}}\label{ractip_8cpp_a3896909496dd0365dc9a3c6d1c6dc0e9}
+\hypertarget{ractip_8cpp_acf9af78df8ccca1be09cc31c77554622}{\index{ractip.\+cpp@{ractip.\+cpp}!V\+V\+I@{V\+V\+I}}
+\index{V\+V\+I@{V\+V\+I}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{V\+V\+I}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf V\+I}$>$ {\bf V\+V\+I}}}\label{ractip_8cpp_acf9af78df8ccca1be09cc31c77554622}
+\hypertarget{ractip_8cpp_a78399aceb8f4fb149347c61a0f7706d6}{\index{ractip.\+cpp@{ractip.\+cpp}!V\+V\+V\+F@{V\+V\+V\+F}}
+\index{V\+V\+V\+F@{V\+V\+V\+F}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{V\+V\+V\+F}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf V\+V\+F}$>$ {\bf V\+V\+V\+F}}}\label{ractip_8cpp_a78399aceb8f4fb149347c61a0f7706d6}
+\hypertarget{ractip_8cpp_a5fe6f9950ce6e9bc4236b91ae6e16e8e}{\index{ractip.\+cpp@{ractip.\+cpp}!V\+V\+V\+V\+F@{V\+V\+V\+V\+F}}
+\index{V\+V\+V\+V\+F@{V\+V\+V\+V\+F}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{V\+V\+V\+V\+F}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf V\+V\+V\+F}$>$ {\bf V\+V\+V\+V\+F}}}\label{ractip_8cpp_a5fe6f9950ce6e9bc4236b91ae6e16e8e}
+
+
+\subsection{Function Documentation}
+\hypertarget{ractip_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{\index{ractip.\+cpp@{ractip.\+cpp}!main@{main}}
+\index{main@{main}!ractip.\+cpp@{ractip.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{ractip_8cpp_a0ddf1224851353fc92bfbff6f499fa97}

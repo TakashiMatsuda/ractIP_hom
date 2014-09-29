@@ -1,0 +1,9 @@
+<map id="CONTRAfoldHomModel::calculate_posterior" name="CONTRAfoldHomModel::calculate_posterior">
+<area shape="rect" id="node2" href="$class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix.html#a3db5914e4a3da5f5a05cf66ca4c281e1" title="CONTRALIGN::SparseMatrix\l::PrintSparse" alt="" coords="229,5,425,46"/>
+<area shape="rect" id="node3" href="$class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix.html#a62f88485914392b5328e46d3ae358ae0" title="CONTRALIGN::SparseMatrix\l::GetRowBegin" alt="" coords="229,70,425,111"/>
+<area shape="rect" id="node4" href="$class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix.html#a3647f286c1e3eeeb942a9e40bf987c16" title="CONTRALIGN::SparseMatrix\l::GetRowEnd" alt="" coords="229,135,425,177"/>
+<area shape="rect" id="node5" href="$class_b_p_table_tmpl.html#a5689d5a1a149cb5e063408879ce707c0" title="BPTableTmpl::resize" alt="" coords="254,201,399,228"/>
+<area shape="rect" id="node6" href="$class_c_o_n_t_r_afold.html#a4cd8f0e5b42ac575ffc1f360bc27a963" title="CONTRAfold::max_bp_dist" alt="" coords="235,252,418,279"/>
+<area shape="rect" id="node7" href="$class_c_o_n_t_r_afold.html#aceffa898e7a022f7e69d4564b6f3dea3" title="CONTRAfold::ComputePosterior" alt="" coords="219,303,434,329"/>
+<area shape="rect" id="node8" href="$class_b_p_table_tmpl.html#a124e591ae0fcc59fa50aafd2ec2fbb9a" title="BPTableTmpl::update" alt="" coords="251,353,402,380"/>
+</map>

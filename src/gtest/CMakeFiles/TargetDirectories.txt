@@ -1,0 +1,2 @@
+/Users/takashi/local/gtest-1.7.0/CMakeFiles/gtest.dir
+/Users/takashi/local/gtest-1.7.0/CMakeFiles/gtest_main.dir

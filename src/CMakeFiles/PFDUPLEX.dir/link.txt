@@ -1,0 +1,2 @@
+/usr/bin/ar cr libPFDUPLEX.a  CMakeFiles/PFDUPLEX.dir/pf_duplex.c.o
+/usr/bin/ranlib libPFDUPLEX.a

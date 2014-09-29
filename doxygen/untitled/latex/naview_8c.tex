@@ -1,0 +1,153 @@
+\hypertarget{naview_8c}{\section{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/naview.c File Reference}
+\label{naview_8c}\index{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/naview.\+c@{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/naview.\+c}}
+}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+Include dependency graph for naview.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{naview_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries base}
+\item 
+struct \hyperlink{structregion}{region}
+\item 
+struct \hyperlink{structloop}{loop}
+\item 
+struct \hyperlink{structconnection}{connection}
+\item 
+struct \hyperlink{structradloop}{radloop}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{naview_8c_aa2627246f9b7e4e41ceaa21c3ce4d035}{logical}~\hyperlink{naview_8c_ae5370bbc8e6d4c528067dcd15adabf90}{L\+O\+G\+I\+C\+A\+L}
+\item 
+\#define \hyperlink{naview_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}~1
+\item 
+\#define \hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false}~0
+\item 
+\#define \hyperlink{naview_8c_af41a9ff7aaa8efeae193ef7c2ffd5474}{F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+O\+R}~1
+\item 
+\#define \hyperlink{naview_8c_aa90cac659d18e8ef6294c7ae337f6b58}{S\+U\+C\+C\+E\+S\+S}~0
+\item 
+\#define \hyperlink{naview_8c_a18384400cb9c135f484bb0a96f01847f}{type\+\_\+alloc}(type)~(type $\ast$) malloc(sizeof(type))
+\item 
+\#define \hyperlink{naview_8c_a8b01e2b42a573a5e2e9e5aff5d5198af}{struct\+\_\+alloc}(structure\+\_\+name)~\hyperlink{naview_8c_a18384400cb9c135f484bb0a96f01847f}{type\+\_\+alloc}(struct structure\+\_\+name)
+\item 
+\#define \hyperlink{naview_8c_afe42e78a6eb4dc101682403532e18dba}{add\+\_\+double\+\_\+list}(head, tail, newp)
+\item 
+\#define \hyperlink{naview_8c_a54255ce018c5dbd8d20bea451a646988}{minf2}(x1, x2)~((x1)$<$(x2))?(x1)\+:(x2)
+\item 
+\#define \hyperlink{naview_8c_ad0d611240f2b5a4d13d22d5d6b04249b}{maxf2}(x1, x2)~((x1)$>$(x2))?(x1)\+:(x2)
+\item 
+\#define \hyperlink{naview_8c_a7124222c9d33e5ccfb2aca8d29b38b56}{maxiter}~500
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \hyperlink{naview_8c_ae5370bbc8e6d4c528067dcd15adabf90}{L\+O\+G\+I\+C\+A\+L}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{naview_8c_a948111b910926f0405a3fa920c790816}{naview\+\_\+xy\+\_\+coordinates} (short $\ast$pair\+\_\+table, float $\ast$X, float $\ast$Y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{naview_8c_afe42e78a6eb4dc101682403532e18dba}{\index{naview.\+c@{naview.\+c}!add\+\_\+double\+\_\+list@{add\+\_\+double\+\_\+list}}
+\index{add\+\_\+double\+\_\+list@{add\+\_\+double\+\_\+list}!naview.\+c@{naview.\+c}}
+\subsubsection[{add\+\_\+double\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}\#define add\+\_\+double\+\_\+list(
+\begin{DoxyParamCaption}
+\item[{}]{head, }
+\item[{}]{tail, }
+\item[{}]{newp}
+\end{DoxyParamCaption}
+)}}\label{naview_8c_afe42e78a6eb4dc101682403532e18dba}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{\(\backslash\)
+    (newp)->next = (newp)->prev = NULL; \(\backslash\)
+        if ((head) == NULL) (head) = (tail) = (newp); \(\backslash\)
+    else \{ \(\backslash\)
+         (tail)->next = (newp); \(\backslash\)
+         (newp)->prev = (tail); \(\backslash\)
+         (tail) = (newp); \(\backslash\)
+         \} \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{naview_8c_a65e9886d74aaee76545e83dd09011727}{\index{naview.\+c@{naview.\+c}!false@{false}}
+\index{false@{false}!naview.\+c@{naview.\+c}}
+\subsubsection[{false}]{\setlength{\rightskip}{0pt plus 5cm}\#define false~0}}\label{naview_8c_a65e9886d74aaee76545e83dd09011727}
+\hypertarget{naview_8c_af41a9ff7aaa8efeae193ef7c2ffd5474}{\index{naview.\+c@{naview.\+c}!F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+O\+R@{F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+O\+R}}
+\index{F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+O\+R@{F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+O\+R}!naview.\+c@{naview.\+c}}
+\subsubsection[{F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+A\+T\+A\+L\+\_\+\+E\+R\+R\+O\+R~1}}\label{naview_8c_af41a9ff7aaa8efeae193ef7c2ffd5474}
+\hypertarget{naview_8c_aa2627246f9b7e4e41ceaa21c3ce4d035}{\index{naview.\+c@{naview.\+c}!logical@{logical}}
+\index{logical@{logical}!naview.\+c@{naview.\+c}}
+\subsubsection[{logical}]{\setlength{\rightskip}{0pt plus 5cm}\#define logical~{\bf L\+O\+G\+I\+C\+A\+L}}}\label{naview_8c_aa2627246f9b7e4e41ceaa21c3ce4d035}
+\hypertarget{naview_8c_ad0d611240f2b5a4d13d22d5d6b04249b}{\index{naview.\+c@{naview.\+c}!maxf2@{maxf2}}
+\index{maxf2@{maxf2}!naview.\+c@{naview.\+c}}
+\subsubsection[{maxf2}]{\setlength{\rightskip}{0pt plus 5cm}\#define maxf2(
+\begin{DoxyParamCaption}
+\item[{}]{x1, }
+\item[{}]{x2}
+\end{DoxyParamCaption}
+)~((x1)$>$(x2))?(x1)\+:(x2)}}\label{naview_8c_ad0d611240f2b5a4d13d22d5d6b04249b}
+\hypertarget{naview_8c_a7124222c9d33e5ccfb2aca8d29b38b56}{\index{naview.\+c@{naview.\+c}!maxiter@{maxiter}}
+\index{maxiter@{maxiter}!naview.\+c@{naview.\+c}}
+\subsubsection[{maxiter}]{\setlength{\rightskip}{0pt plus 5cm}\#define maxiter~500}}\label{naview_8c_a7124222c9d33e5ccfb2aca8d29b38b56}
+\hypertarget{naview_8c_a54255ce018c5dbd8d20bea451a646988}{\index{naview.\+c@{naview.\+c}!minf2@{minf2}}
+\index{minf2@{minf2}!naview.\+c@{naview.\+c}}
+\subsubsection[{minf2}]{\setlength{\rightskip}{0pt plus 5cm}\#define minf2(
+\begin{DoxyParamCaption}
+\item[{}]{x1, }
+\item[{}]{x2}
+\end{DoxyParamCaption}
+)~((x1)$<$(x2))?(x1)\+:(x2)}}\label{naview_8c_a54255ce018c5dbd8d20bea451a646988}
+\hypertarget{naview_8c_a8b01e2b42a573a5e2e9e5aff5d5198af}{\index{naview.\+c@{naview.\+c}!struct\+\_\+alloc@{struct\+\_\+alloc}}
+\index{struct\+\_\+alloc@{struct\+\_\+alloc}!naview.\+c@{naview.\+c}}
+\subsubsection[{struct\+\_\+alloc}]{\setlength{\rightskip}{0pt plus 5cm}\#define struct\+\_\+alloc(
+\begin{DoxyParamCaption}
+\item[{}]{structure\+\_\+name}
+\end{DoxyParamCaption}
+)~{\bf type\+\_\+alloc}(struct structure\+\_\+name)}}\label{naview_8c_a8b01e2b42a573a5e2e9e5aff5d5198af}
+\hypertarget{naview_8c_aa90cac659d18e8ef6294c7ae337f6b58}{\index{naview.\+c@{naview.\+c}!S\+U\+C\+C\+E\+S\+S@{S\+U\+C\+C\+E\+S\+S}}
+\index{S\+U\+C\+C\+E\+S\+S@{S\+U\+C\+C\+E\+S\+S}!naview.\+c@{naview.\+c}}
+\subsubsection[{S\+U\+C\+C\+E\+S\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+U\+C\+C\+E\+S\+S~0}}\label{naview_8c_aa90cac659d18e8ef6294c7ae337f6b58}
+\hypertarget{naview_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{\index{naview.\+c@{naview.\+c}!true@{true}}
+\index{true@{true}!naview.\+c@{naview.\+c}}
+\subsubsection[{true}]{\setlength{\rightskip}{0pt plus 5cm}\#define true~1}}\label{naview_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}
+\hypertarget{naview_8c_a18384400cb9c135f484bb0a96f01847f}{\index{naview.\+c@{naview.\+c}!type\+\_\+alloc@{type\+\_\+alloc}}
+\index{type\+\_\+alloc@{type\+\_\+alloc}!naview.\+c@{naview.\+c}}
+\subsubsection[{type\+\_\+alloc}]{\setlength{\rightskip}{0pt plus 5cm}\#define type\+\_\+alloc(
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~(type $\ast$) malloc(sizeof(type))}}\label{naview_8c_a18384400cb9c135f484bb0a96f01847f}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{naview_8c_ae5370bbc8e6d4c528067dcd15adabf90}{\index{naview.\+c@{naview.\+c}!L\+O\+G\+I\+C\+A\+L@{L\+O\+G\+I\+C\+A\+L}}
+\index{L\+O\+G\+I\+C\+A\+L@{L\+O\+G\+I\+C\+A\+L}!naview.\+c@{naview.\+c}}
+\subsubsection[{L\+O\+G\+I\+C\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf L\+O\+G\+I\+C\+A\+L}}}\label{naview_8c_ae5370bbc8e6d4c528067dcd15adabf90}
+
+
+\subsection{Function Documentation}
+\hypertarget{naview_8c_a948111b910926f0405a3fa920c790816}{\index{naview.\+c@{naview.\+c}!naview\+\_\+xy\+\_\+coordinates@{naview\+\_\+xy\+\_\+coordinates}}
+\index{naview\+\_\+xy\+\_\+coordinates@{naview\+\_\+xy\+\_\+coordinates}!naview.\+c@{naview.\+c}}
+\subsubsection[{naview\+\_\+xy\+\_\+coordinates}]{\setlength{\rightskip}{0pt plus 5cm}int naview\+\_\+xy\+\_\+coordinates (
+\begin{DoxyParamCaption}
+\item[{short $\ast$}]{pair\+\_\+table, }
+\item[{float $\ast$}]{X, }
+\item[{float $\ast$}]{Y}
+\end{DoxyParamCaption}
+)}}\label{naview_8c_a948111b910926f0405a3fa920c790816}

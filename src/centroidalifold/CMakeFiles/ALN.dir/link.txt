@@ -1,0 +1,2 @@
+/usr/bin/ar cr libALN.a  CMakeFiles/ALN.dir/aln.cpp.o
+/usr/bin/ranlib libALN.a

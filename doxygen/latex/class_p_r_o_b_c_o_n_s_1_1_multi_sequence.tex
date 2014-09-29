@@ -1,0 +1,450 @@
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence}{\section{P\+R\+O\+B\+C\+O\+N\+S\+:\+:Multi\+Sequence Class Reference}
+\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence}\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+}
+
+
+{\ttfamily \#include $<$Multi\+Sequence.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aed52d4ebab4d87735ddde9aa683f4320}{Multi\+Sequence} ()
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a0cd5e44071400d79055894d4f8558cc6}{Multi\+Sequence} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_file_buffer}{File\+Buffer} \&infile)
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a741ade6a9f236eb2aadf44d470a2080a}{Multi\+Sequence} (const string \&filename)
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a20f9c7a0160accf486fd2b8f9c43df15}{$\sim$\+Multi\+Sequence} ()
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_ab79150d9a4fe884edd526a1e10a4b2f5}{Load\+M\+F\+A} (const string \&filename, bool strip\+Gaps=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a038aaf086505d203933df6c4dca52532}{Parse\+M\+S\+F} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_file_buffer}{File\+Buffer} \&infile, string header, bool strip\+Gaps=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a0b795e672b92aa15093cde66f9cfe114}{Load\+M\+F\+A} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_file_buffer}{File\+Buffer} \&infile, bool strip\+Gaps=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a36f54bcbd04cdc76b8210c78f3450c1c}{Add\+Sequence} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$sequence)
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a544a359ed76ce9b68e9d0e0ea575119c}{Remove\+Sequence} (int index)
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aec1123b3ca086c39514a8b58948a4628}{Write\+M\+F\+A} (ostream \&outfile, int num\+Columns=60, bool use\+Indices=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+char \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aa39e095e71feef8649a8cc9c29ddc3ae}{Get\+Annotation\+Char} (\hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ char $>$ \&column)
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a1b48c7ac2f959bcf478868bfe7772b7d}{Write\+A\+L\+N} (ostream \&outfile, int num\+Columns=60)
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a1ec546f0396cf54133920716ca27cd63}{Get\+Sequence} (int i)
+\item 
+const \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sequence}{Sequence} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_add6302060d0dabe5c3ed52b13d13037f}{Get\+Sequence} (int i) const 
+\item 
+int \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a08c1adcbbd476649046724bf644c3286}{Get\+Num\+Sequences} () const 
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a37a441969876f74058c8ee7bc218141b}{Sort\+By\+Header} ()
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a65c41317536f201c1d0df9d03e9be5e3}{Sort\+By\+Label} ()
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_ab0f074425a9fe4c5c81913d862276343}{Save\+Ordering} ()
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence}{Multi\+Sequence} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a67e3a9501aee86f5e17dd24133c0679e}{Project} (const set$<$ int $>$ \&indices)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file Multi\+Sequence.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aed52d4ebab4d87735ddde9aa683f4320}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Multi\+Sequence@{Multi\+Sequence}}
+\index{Multi\+Sequence@{Multi\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aed52d4ebab4d87735ddde9aa683f4320}
+
+
+Definition at line 40 of file Multi\+Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aed52d4ebab4d87735ddde9aa683f4320_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a0cd5e44071400d79055894d4f8558cc6}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Multi\+Sequence@{Multi\+Sequence}}
+\index{Multi\+Sequence@{Multi\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf File\+Buffer} \&}]{infile}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a0cd5e44071400d79055894d4f8558cc6}
+
+
+Definition at line 48 of file Multi\+Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a0cd5e44071400d79055894d4f8558cc6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a741ade6a9f236eb2aadf44d470a2080a}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Multi\+Sequence@{Multi\+Sequence}}
+\index{Multi\+Sequence@{Multi\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a741ade6a9f236eb2aadf44d470a2080a}
+
+
+Definition at line 58 of file Multi\+Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a741ade6a9f236eb2aadf44d470a2080a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a20f9c7a0160accf486fd2b8f9c43df15}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!````~Multi\+Sequence@{$\sim$\+Multi\+Sequence}}
+\index{````~Multi\+Sequence@{$\sim$\+Multi\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{$\sim$\+Multi\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::$\sim$\+Multi\+Sequence (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a20f9c7a0160accf486fd2b8f9c43df15}
+
+
+Definition at line 69 of file Multi\+Sequence.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a36f54bcbd04cdc76b8210c78f3450c1c}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Add\+Sequence@{Add\+Sequence}}
+\index{Add\+Sequence@{Add\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Add\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Add\+Sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf Sequence} $\ast$}]{sequence}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a36f54bcbd04cdc76b8210c78f3450c1c}
+
+
+Definition at line 299 of file Multi\+Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a36f54bcbd04cdc76b8210c78f3450c1c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a36f54bcbd04cdc76b8210c78f3450c1c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aa39e095e71feef8649a8cc9c29ddc3ae}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Get\+Annotation\+Char@{Get\+Annotation\+Char}}
+\index{Get\+Annotation\+Char@{Get\+Annotation\+Char}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Annotation\+Char}]{\setlength{\rightskip}{0pt plus 5cm}char P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Get\+Annotation\+Char (
+\begin{DoxyParamCaption}
+\item[{{\bf Safe\+Vector}$<$ char $>$ \&}]{column}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aa39e095e71feef8649a8cc9c29ddc3ae}
+
+
+Definition at line 348 of file Multi\+Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aa39e095e71feef8649a8cc9c29ddc3ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a08c1adcbbd476649046724bf644c3286}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Get\+Num\+Sequences@{Get\+Num\+Sequences}}
+\index{Get\+Num\+Sequences@{Get\+Num\+Sequences}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Num\+Sequences}]{\setlength{\rightskip}{0pt plus 5cm}int P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Get\+Num\+Sequences (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a08c1adcbbd476649046724bf644c3286}
+
+
+Definition at line 586 of file Multi\+Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a08c1adcbbd476649046724bf644c3286_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a1ec546f0396cf54133920716ca27cd63}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Get\+Sequence@{Get\+Sequence}}
+\index{Get\+Sequence@{Get\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sequence}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Get\+Sequence (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a1ec546f0396cf54133920716ca27cd63}
+
+
+Definition at line 559 of file Multi\+Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a1ec546f0396cf54133920716ca27cd63_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_add6302060d0dabe5c3ed52b13d13037f}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Get\+Sequence@{Get\+Sequence}}
+\index{Get\+Sequence@{Get\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Get\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Sequence}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Get\+Sequence (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_add6302060d0dabe5c3ed52b13d13037f}
+
+
+Definition at line 573 of file Multi\+Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_ab79150d9a4fe884edd526a1e10a4b2f5}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Load\+M\+F\+A@{Load\+M\+F\+A}}
+\index{Load\+M\+F\+A@{Load\+M\+F\+A}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Load\+M\+F\+A}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Load\+M\+F\+A (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filename, }
+\item[{bool}]{strip\+Gaps = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_ab79150d9a4fe884edd526a1e10a4b2f5}
+
+
+Definition at line 93 of file Multi\+Sequence.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_ab79150d9a4fe884edd526a1e10a4b2f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a0b795e672b92aa15093cde66f9cfe114}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Load\+M\+F\+A@{Load\+M\+F\+A}}
+\index{Load\+M\+F\+A@{Load\+M\+F\+A}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Load\+M\+F\+A}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Load\+M\+F\+A (
+\begin{DoxyParamCaption}
+\item[{{\bf File\+Buffer} \&}]{infile, }
+\item[{bool}]{strip\+Gaps = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a0b795e672b92aa15093cde66f9cfe114}
+
+
+Definition at line 246 of file Multi\+Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a0b795e672b92aa15093cde66f9cfe114_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a038aaf086505d203933df6c4dca52532}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Parse\+M\+S\+F@{Parse\+M\+S\+F}}
+\index{Parse\+M\+S\+F@{Parse\+M\+S\+F}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Parse\+M\+S\+F}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Parse\+M\+S\+F (
+\begin{DoxyParamCaption}
+\item[{{\bf File\+Buffer} \&}]{infile, }
+\item[{string}]{header, }
+\item[{bool}]{strip\+Gaps = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a038aaf086505d203933df6c4dca52532}
+
+
+Definition at line 115 of file Multi\+Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a038aaf086505d203933df6c4dca52532_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a038aaf086505d203933df6c4dca52532_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a67e3a9501aee86f5e17dd24133c0679e}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Project@{Project}}
+\index{Project@{Project}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Project}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Multi\+Sequence}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Project (
+\begin{DoxyParamCaption}
+\item[{const set$<$ int $>$ \&}]{indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a67e3a9501aee86f5e17dd24133c0679e}
+
+
+Definition at line 652 of file Multi\+Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a67e3a9501aee86f5e17dd24133c0679e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a544a359ed76ce9b68e9d0e0ea575119c}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Remove\+Sequence@{Remove\+Sequence}}
+\index{Remove\+Sequence@{Remove\+Sequence}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Remove\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Remove\+Sequence (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a544a359ed76ce9b68e9d0e0ea575119c}
+
+
+Definition at line 314 of file Multi\+Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_ab0f074425a9fe4c5c81913d862276343}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Save\+Ordering@{Save\+Ordering}}
+\index{Save\+Ordering@{Save\+Ordering}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Save\+Ordering}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Save\+Ordering (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_ab0f074425a9fe4c5c81913d862276343}
+
+
+Definition at line 635 of file Multi\+Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a37a441969876f74058c8ee7bc218141b}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Sort\+By\+Header@{Sort\+By\+Header}}
+\index{Sort\+By\+Header@{Sort\+By\+Header}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Sort\+By\+Header}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Sort\+By\+Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a37a441969876f74058c8ee7bc218141b}
+
+
+Definition at line 598 of file Multi\+Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a65c41317536f201c1d0df9d03e9be5e3}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Sort\+By\+Label@{Sort\+By\+Label}}
+\index{Sort\+By\+Label@{Sort\+By\+Label}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Sort\+By\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Sort\+By\+Label (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a65c41317536f201c1d0df9d03e9be5e3}
+
+
+Definition at line 617 of file Multi\+Sequence.\+h.
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a1b48c7ac2f959bcf478868bfe7772b7d}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Write\+A\+L\+N@{Write\+A\+L\+N}}
+\index{Write\+A\+L\+N@{Write\+A\+L\+N}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Write\+A\+L\+N}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Write\+A\+L\+N (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{outfile, }
+\item[{int}]{num\+Columns = {\ttfamily 60}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a1b48c7ac2f959bcf478868bfe7772b7d}
+
+
+Definition at line 490 of file Multi\+Sequence.\+h.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_a1b48c7ac2f959bcf478868bfe7772b7d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aec1123b3ca086c39514a8b58948a4628}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}!Write\+M\+F\+A@{Write\+M\+F\+A}}
+\index{Write\+M\+F\+A@{Write\+M\+F\+A}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence}}
+\subsubsection[{Write\+M\+F\+A}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Multi\+Sequence\+::\+Write\+M\+F\+A (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{outfile, }
+\item[{int}]{num\+Columns = {\ttfamily 60}, }
+\item[{bool}]{use\+Indices = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_multi_sequence_aec1123b3ca086c39514a8b58948a4628}
+
+
+Definition at line 333 of file Multi\+Sequence.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/probcons\+R\+N\+A/\hyperlink{_multi_sequence_8h}{Multi\+Sequence.\+h}\end{DoxyCompactItemize}

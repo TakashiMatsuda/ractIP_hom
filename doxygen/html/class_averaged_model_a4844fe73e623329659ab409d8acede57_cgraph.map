@@ -1,0 +1,18 @@
+<map id="AveragedModel::max_mcc_fold" name="AveragedModel::max_mcc_fold">
+<area shape="rect" id="node2" href="$class_averaged_model.html#ab594bb3e99a3e07efcdda8cf5ca001ab" title="AveragedModel::calculate\l_posterior" alt="" coords="203,115,379,157"/>
+<area shape="rect" id="node3" href="$class_aln.html#a07ac4d997bee9b73c5d2da5fd8e0102a" title="Aln::seq" alt="" coords="475,5,546,32"/>
+<area shape="rect" id="node4" href="$class_folding_engine.html#aa979adbd342b75eb947927e6ff7bcb8c" title="FoldingEngine::set\l_constraint" alt="" coords="445,57,577,98"/>
+<area shape="rect" id="node11" href="$class_folding_engine.html#a22db64fbf81030b83316c7ca12431ee4" title="FoldingEngine::prepare\l_stochastic_traceback" alt="" coords="211,181,371,222"/>
+<area shape="rect" id="node12" href="$class_aln.html#ababa37dc4967c06b20c4af1b7a42a789" title="Aln::num_aln" alt="" coords="241,247,341,273"/>
+<area shape="rect" id="node13" href="$class_aln.html#a2e473685aac8dc4c5bf58a2013254907" title="Aln::size" alt="" coords="255,297,327,324"/>
+<area shape="rect" id="node14" href="$class_folding_engine.html#a1e4bc1f100ea5bf8d957a1b20139e6f1" title="FoldingEngine::stochastic\l_traceback" alt="" coords="204,349,377,390"/>
+<area shape="rect" id="node15" href="$class_folding_engine.html#a4e5f3dde4398e3ad2b9f014d5254e3dd" title="FoldingEngine\&lt; Aln\l \&gt;::compute_expected\l_accuracy" alt="" coords="214,415,367,471"/>
+<area shape="rect" id="node16" href="$class_folding_engine.html#a15027401822de5e57efbf131c214c2c7" title="FoldingEngine::clean\l_stochastic_traceback" alt="" coords="214,495,367,537"/>
+<area shape="rect" id="node17" href="$class_aln.html#a45fb6b8dcfcf254836bacabbbebe4ce8" title="Aln::consensus" alt="" coords="235,561,347,588"/>
+<area shape="rect" id="node5" href="$class_folding_engine.html#a314c78e5fe35d5a1b5f441604c58e8f1" title="FoldingEngine::calculate\l_posterior" alt="" coords="427,225,594,266"/>
+<area shape="rect" id="node6" href="$class_folding_engine.html#ab704de409c6dd7a674bf624335e68cc1" title="FoldingEngine::get_bp" alt="" coords="433,291,589,317"/>
+<area shape="rect" id="node7" href="$class_b_p_table_tmpl.html#a5689d5a1a149cb5e063408879ce707c0" title="BPTableTmpl::resize" alt="" coords="438,123,583,149"/>
+<area shape="rect" id="node8" href="$struct_average_b_p.html#aafec28a98d39cda263b9912eae89d4fc" title="AverageBP::make" alt="" coords="446,173,575,200"/>
+<area shape="rect" id="node9" href="$cyktable_8h.html#a181b043e226aeef951b922db3395fe34" title="inside_traverse" alt="" coords="653,148,765,175"/>
+<area shape="rect" id="node10" href="$class_b_p_table_tmpl.html#a82b234179a0f31ed29c1a4c81ac5067c" title="BPTableTmpl::size" alt="" coords="643,199,776,225"/>
+</map>

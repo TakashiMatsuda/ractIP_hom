@@ -1,0 +1,6 @@
+/Users/takashi/cbrc/ractip_hom/src/CMakeFiles/DUPLEXHOM.dir
+/Users/takashi/cbrc/ractip_hom/src/centroidalifold/probconsRNA/CMakeFiles/Probcons.dir
+/Users/takashi/cbrc/ractip_hom/src/CMakeFiles/Test.dir
+/Users/takashi/cbrc/ractip_hom/src/centroidalifold/CMakeFiles/centroidalifold.dir
+/Users/takashi/cbrc/ractip_hom/src/gtest/CMakeFiles/gtest.dir
+/Users/takashi/cbrc/ractip_hom/src/gtest/CMakeFiles/gtest_main.dir

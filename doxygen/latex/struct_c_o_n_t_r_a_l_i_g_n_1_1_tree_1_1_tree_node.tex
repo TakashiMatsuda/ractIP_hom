@@ -1,0 +1,183 @@
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node}{\section{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+:\+:Tree$<$ Real\+T $>$\+:\+:Tree\+Node Struct Reference}
+\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node}\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree$<$ Real\+T $>$\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree$<$ Real\+T $>$\+::\+Tree\+Node}}
+}
+
+
+{\ttfamily \#include $<$Tree.\+hpp$>$}
+
+
+
+Collaboration diagram for C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+:\+:Tree$<$ Real\+T $>$\+:\+:Tree\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a5dae7f5370988a8d3ac290d64535f5c3}{Tree\+Node} ()
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a98abbaa188f6b68747d62b3117474c97}{Tree\+Node} (const \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node}{Tree\+Node} \&rhs)
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node}{Tree\+Node} \& \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_af83f5e9417422d9738f861c0521dfb15}{operator=} (const \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node}{Tree\+Node} \&rhs)
+\item 
+virtual \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a58da699ad7112fd46a0a1bc3cf05029f}{$\sim$\+Tree\+Node} ()
+\item 
+void \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a86f165d26dab0e4916f2a9d487ba6f49}{Print} (std\+::ostream \&outfile, bool root=\hyperlink{naview_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_af0ba8bc52781c6857f116f17f8c5ca14}{ids}
+\item 
+Real\+T \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a0ab61d516eb4bba0c92d77f793e22103}{left\+\_\+dist}
+\item 
+Real\+T \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_ab216db550a42f2a12765635b113d07b4}{right\+\_\+dist}
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node}{Tree\+Node} $\ast$ \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_acf53eb4bc788a05fa2f53d61ec7384e9}{left\+\_\+child}
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node}{Tree\+Node} $\ast$ \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a89df07cf7699c58d8b4ef594322a0e1a}{right\+\_\+child}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Real\+T$>$struct C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree$<$ Real\+T $>$\+::\+Tree\+Node}
+
+
+
+Definition at line 26 of file Tree.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a5dae7f5370988a8d3ac290d64535f5c3}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!Tree\+Node@{Tree\+Node}}
+\index{Tree\+Node@{Tree\+Node}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{Tree\+Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::\+Tree\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a5dae7f5370988a8d3ac290d64535f5c3}
+
+
+Definition at line 38 of file Tree.\+cpp.
+
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a98abbaa188f6b68747d62b3117474c97}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!Tree\+Node@{Tree\+Node}}
+\index{Tree\+Node@{Tree\+Node}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{Tree\+Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::\+Tree\+Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tree\+Node} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a98abbaa188f6b68747d62b3117474c97}
+
+
+Definition at line 48 of file Tree.\+cpp.
+
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a58da699ad7112fd46a0a1bc3cf05029f}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!````~Tree\+Node@{$\sim$\+Tree\+Node}}
+\index{````~Tree\+Node@{$\sim$\+Tree\+Node}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{$\sim$\+Tree\+Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::$\sim$\+Tree\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a58da699ad7112fd46a0a1bc3cf05029f}
+
+
+Definition at line 78 of file Tree.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_af83f5e9417422d9738f861c0521dfb15}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!operator=@{operator=}}
+\index{operator=@{operator=}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Tree}$<$ Real\+T $>$\+::{\bf Tree\+Node} \& {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tree\+Node} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_af83f5e9417422d9738f861c0521dfb15}
+
+
+Definition at line 59 of file Tree.\+cpp.
+
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a86f165d26dab0e4916f2a9d487ba6f49}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!Print@{Print}}
+\index{Print@{Print}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::\+Print (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{outfile, }
+\item[{bool}]{root = {\ttfamily {\bf true}}}
+\end{DoxyParamCaption}
+) const}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a86f165d26dab0e4916f2a9d487ba6f49}
+
+
+Definition at line 15 of file Tree.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a86f165d26dab0e4916f2a9d487ba6f49_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a86f165d26dab0e4916f2a9d487ba6f49_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_af0ba8bc52781c6857f116f17f8c5ca14}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!ids@{ids}}
+\index{ids@{ids}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{ids}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ std\+::vector$<$int$>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::ids}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_af0ba8bc52781c6857f116f17f8c5ca14}
+
+
+Definition at line 28 of file Tree.\+hpp.
+
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_acf53eb4bc788a05fa2f53d61ec7384e9}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!left\+\_\+child@{left\+\_\+child}}
+\index{left\+\_\+child@{left\+\_\+child}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{left\+\_\+child}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Tree\+Node}$\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::left\+\_\+child}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_acf53eb4bc788a05fa2f53d61ec7384e9}
+
+
+Definition at line 32 of file Tree.\+hpp.
+
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a0ab61d516eb4bba0c92d77f793e22103}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!left\+\_\+dist@{left\+\_\+dist}}
+\index{left\+\_\+dist@{left\+\_\+dist}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{left\+\_\+dist}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::left\+\_\+dist}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a0ab61d516eb4bba0c92d77f793e22103}
+
+
+Definition at line 30 of file Tree.\+hpp.
+
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a89df07cf7699c58d8b4ef594322a0e1a}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!right\+\_\+child@{right\+\_\+child}}
+\index{right\+\_\+child@{right\+\_\+child}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{right\+\_\+child}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Tree\+Node}$\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::right\+\_\+child}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_a89df07cf7699c58d8b4ef594322a0e1a}
+
+
+Definition at line 33 of file Tree.\+hpp.
+
+\hypertarget{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_ab216db550a42f2a12765635b113d07b4}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}!right\+\_\+dist@{right\+\_\+dist}}
+\index{right\+\_\+dist@{right\+\_\+dist}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree\+::\+Tree\+Node}}
+\subsubsection[{right\+\_\+dist}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tree}$<$ Real\+T $>$\+::Tree\+Node\+::right\+\_\+dist}}\label{struct_c_o_n_t_r_a_l_i_g_n_1_1_tree_1_1_tree_node_ab216db550a42f2a12765635b113d07b4}
+
+
+Definition at line 31 of file Tree.\+hpp.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/contralign/\hyperlink{_tree_8hpp}{Tree.\+hpp}\item 
+src/centroidalifold/contralign/\hyperlink{_tree_8cpp}{Tree.\+cpp}\item 
+src/centroidalifold/contralign/\hyperlink{_tree_8ipp}{Tree.\+ipp}\end{DoxyCompactItemize}

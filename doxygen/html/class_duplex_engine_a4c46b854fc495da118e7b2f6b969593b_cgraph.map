@@ -1,0 +1,5 @@
+<map id="DuplexEngine::RegisterParameters" name="DuplexEngine::RegisterParameters">
+<area shape="rect" id="node2" href="$class_parameter_manager.html#a2548d6948a60b5c0e5f8c8bf4674631f" title="ParameterManager::ClearParameters" alt="" coords="285,5,531,32"/>
+<area shape="rect" id="node3" href="$class_parameter_manager.html#a5dd422fe934ddee56934324e00c54d5c" title="ParameterManager::AddParameter\lGroup" alt="" coords="293,57,523,98"/>
+<area shape="rect" id="node4" href="$class_parameter_manager.html#ac10b74d055f4fddf68870a1a21e95fb3" title="ParameterManager::AddParameter\lMapping" alt="" coords="293,122,523,163"/>
+</map>

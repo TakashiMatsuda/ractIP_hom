@@ -1,0 +1,2 @@
+/usr/bin/ar cr libcentroidalifold.a  CMakeFiles/centroidalifold.dir/folding_engine.cpp.o CMakeFiles/centroidalifold.dir/bp.cpp.o CMakeFiles/centroidalifold.dir/aln.cpp.o
+/usr/bin/ranlib libcentroidalifold.a

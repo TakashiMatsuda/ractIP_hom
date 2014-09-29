@@ -1,0 +1,10 @@
+<map id="BPTableTmpl::size" name="BPTableTmpl::size">
+<area shape="rect" id="node2" href="$class_b_p_table_tmpl.html#a5689d5a1a149cb5e063408879ce707c0" title="BPTableTmpl\&lt; float\l \&gt;::resize" alt="" coords="187,5,327,46"/>
+<area shape="rect" id="node3" href="$struct_average_b_p.html#aafec28a98d39cda263b9912eae89d4fc" title="AverageBP::make" alt="" coords="193,71,322,97"/>
+<area shape="rect" id="node7" href="$namespace_m_e_a.html#ac4c2f8f5f874e59fa6137637247cb535" title="MEA::execute" alt="" coords="205,128,310,155"/>
+<area shape="rect" id="node4" href="$class_averaged_model.html#ab594bb3e99a3e07efcdda8cf5ca001ab" title="AveragedModel::calculate\l_posterior" alt="" coords="376,55,552,97"/>
+<area shape="rect" id="node5" href="$class_averaged_model.html#a4844fe73e623329659ab409d8acede57" title="AveragedModel::max\l_mcc_fold" alt="" coords="609,22,757,63"/>
+<area shape="rect" id="node6" href="$class_c_o_n_t_r_afold_multi_model.html#af408693a48cfcf28aca97853098e4111" title="CONTRAfoldMultiModel\l::calculate_posterior" alt="" coords="601,87,765,129"/>
+<area shape="rect" id="node8" href="$class_folding_engine.html#a54a44538dec848ce74ef84e162cb885b" title="FoldingEngine::decode\l_structure" alt="" coords="385,121,543,162"/>
+<area shape="rect" id="node9" href="$namespace_m_e_a.html#ac823e44d792ae66236b84a5d661236a5" title="MEA::execute" alt="" coords="411,187,517,213"/>
+</map>

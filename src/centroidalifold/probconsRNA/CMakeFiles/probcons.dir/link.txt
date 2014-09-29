@@ -1,0 +1,2 @@
+/usr/bin/ar cr libProbcons.a  CMakeFiles/Probcons.dir/wrapper.cpp.o
+/usr/bin/ranlib libProbcons.a

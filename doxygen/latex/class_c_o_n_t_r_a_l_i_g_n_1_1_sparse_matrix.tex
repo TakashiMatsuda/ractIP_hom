@@ -1,0 +1,456 @@
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix}{\section{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+:\+:Sparse\+Matrix$<$ T $>$ Class Template Reference}
+\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix}\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix$<$ T $>$@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$Sparse\+Matrix.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a33a2e14b850b1767494ef115a660cf1c}{Conversion\+Type} \{ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a33a2e14b850b1767494ef115a660cf1ca8c1a1a563278991caa877ce886ca29c9}{T\+R\+A\+N\+S\+P\+O\+S\+E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a7da65ce6bc06d6891d20c237819e3483}{Sparse\+Matrix} ()
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a552763656a10a538472c300c98b852ae}{Sparse\+Matrix} (const std\+::vector$<$ int $>$ \&row\+\_\+sizes, int rows, int cols, T zero)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af2fce5a9705d04673d9799d07dc0504d}{Sparse\+Matrix} (const std\+::map$<$ std\+::pair$<$ int, int $>$, T $>$ \&source, int rows, int cols, T zero)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a80e3faa4c63484dd0870db0096d3d7d1}{Sparse\+Matrix} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix}{Sparse\+Matrix}$<$ T $>$ \&mask, const T $\ast$source)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_aa465ecbc49b7788ef01383de2dd58baa}{Sparse\+Matrix} (const T $\ast$source, int rows, int cols, T zero)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_abd2bc99d47991f738b20707adfd38599}{Sparse\+Matrix} (const T $\ast$source, int size, T zero)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a355d82dc2ed5df858c5e6d49a91d660b}{Sparse\+Matrix} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix}{Sparse\+Matrix} \&rhs)
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a7ba7f34a389de19e3b087502238c7de2}{Sparse\+Matrix} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix}{Sparse\+Matrix} \&rhs, \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a33a2e14b850b1767494ef115a660cf1c}{Conversion\+Type})
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a36a131a4a059fa9f6103c3877b392303}{$\sim$\+Sparse\+Matrix} ()
+\item 
+\hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix}{Sparse\+Matrix} \& \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a97eb74b6bbf93d9092838651da4f0cb7}{operator=} (const \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix}{Sparse\+Matrix} \&rhs)
+\item 
+int \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a714352a00d4aa1f849a5963718313962}{Get\+Num\+Rows} () const 
+\item 
+int \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a563216fb1b9832c227409a805af7194f}{Get\+Num\+Cols} () const 
+\item 
+int \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af7c8fe173731a321431ab96e5c52bd2d}{Get\+Num\+Entries} () const 
+\item 
+const \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_entry}{Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a62f88485914392b5328e46d3ae358ae0}{Get\+Row\+Begin} (int row) const 
+\item 
+const \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_entry}{Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a3647f286c1e3eeeb942a9e40bf987c16}{Get\+Row\+End} (int row) const 
+\item 
+const \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_entry}{Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_aa7ee8b9e02eb3ea217c3e8e407539412}{Get\+Row\+R\+Begin} (int row) const 
+\item 
+const \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_entry}{Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a037d8f2e5a24d500ea37ce07a42f5dd9}{Get\+Row\+R\+End} (int row) const 
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_entry}{Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af602f644ea2e56ab36cc37380531a55c}{Get\+Row\+Begin} (int row)
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_entry}{Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_ae0b45ab5e80634422808fb0c08c2a76d}{Get\+Row\+End} (int row)
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_entry}{Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a4bb14a437aa387953c85f9fb3d01ccee}{Get\+Row\+R\+Begin} (int row)
+\item 
+\hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_entry}{Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a080e58b866e9cba745e1da5b0105991d}{Get\+Row\+R\+End} (int row)
+\item 
+T \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_ad8053dc37c78543b50b9f72ac0628e50}{operator()} (int row, int col) const 
+\item 
+T \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a02b62e846e2410a66932b340ea7d7305}{Get\+Sum} () const 
+\item 
+std\+::vector$<$ T $>$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a253f2ead727aa10eb74d0e1beab66bdd}{Get\+Unsparse} () const 
+\item 
+std\+::vector$<$ T $>$ \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a44399ef13fa7df1d42226013f1c6d453}{Get\+Unsparse\+Mask} () const 
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a3db5914e4a3da5f5a05cf66ca4c281e1}{Print\+Sparse} (std\+::ostream \&outfile) const 
+\item 
+void \hyperlink{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a899db1a83f5d4882a26c61b3644db0f0}{Print\+Sparse\+B\+P\+S\+E\+Q} (std\+::ostream \&outfile, const std\+::string \&s) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix$<$ T $>$}
+
+
+
+Definition at line 38 of file Sparse\+Matrix.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a33a2e14b850b1767494ef115a660cf1c}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Conversion\+Type@{Conversion\+Type}}
+\index{Conversion\+Type@{Conversion\+Type}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Conversion\+Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ enum {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix\+::\+Conversion\+Type}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a33a2e14b850b1767494ef115a660cf1c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+R\+A\+N\+S\+P\+O\+S\+E@{T\+R\+A\+N\+S\+P\+O\+S\+E}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!T\+R\+A\+N\+S\+P\+O\+S\+E@{T\+R\+A\+N\+S\+P\+O\+S\+E}}\item[{\em 
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a33a2e14b850b1767494ef115a660cf1ca8c1a1a563278991caa877ce886ca29c9}{T\+R\+A\+N\+S\+P\+O\+S\+E}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a33a2e14b850b1767494ef115a660cf1ca8c1a1a563278991caa877ce886ca29c9}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 46 of file Sparse\+Matrix.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a7da65ce6bc06d6891d20c237819e3483}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::{\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a7da65ce6bc06d6891d20c237819e3483}
+
+
+Definition at line 49 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a552763656a10a538472c300c98b852ae}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::{\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{row\+\_\+sizes, }
+\item[{int}]{rows, }
+\item[{int}]{cols, }
+\item[{T}]{zero}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a552763656a10a538472c300c98b852ae}
+
+
+Definition at line 60 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af2fce5a9705d04673d9799d07dc0504d}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::{\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+\item[{const std\+::map$<$ std\+::pair$<$ int, int $>$, T $>$ \&}]{source, }
+\item[{int}]{rows, }
+\item[{int}]{cols, }
+\item[{T}]{zero}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af2fce5a9705d04673d9799d07dc0504d}
+
+
+Definition at line 93 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a80e3faa4c63484dd0870db0096d3d7d1}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::{\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sparse\+Matrix}$<$ T $>$ \&}]{mask, }
+\item[{const T $\ast$}]{source}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a80e3faa4c63484dd0870db0096d3d7d1}
+
+
+Definition at line 151 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_aa465ecbc49b7788ef01383de2dd58baa}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::{\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$}]{source, }
+\item[{int}]{rows, }
+\item[{int}]{cols, }
+\item[{T}]{zero}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_aa465ecbc49b7788ef01383de2dd58baa}
+
+
+Definition at line 194 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_abd2bc99d47991f738b20707adfd38599}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::{\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$}]{source, }
+\item[{int}]{size, }
+\item[{T}]{zero}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_abd2bc99d47991f738b20707adfd38599}
+
+
+Definition at line 244 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a355d82dc2ed5df858c5e6d49a91d660b}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::{\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sparse\+Matrix}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a355d82dc2ed5df858c5e6d49a91d660b}
+
+
+Definition at line 302 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a7ba7f34a389de19e3b087502238c7de2}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::{\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sparse\+Matrix}$<$ T $>$ \&}]{rhs, }
+\item[{{\bf Conversion\+Type}}]{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a7ba7f34a389de19e3b087502238c7de2}
+
+
+Definition at line 340 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a36a131a4a059fa9f6103c3877b392303}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!````~Sparse\+Matrix@{$\sim$\+Sparse\+Matrix}}
+\index{````~Sparse\+Matrix@{$\sim$\+Sparse\+Matrix}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{$\sim$\+Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::$\sim${\bf Sparse\+Matrix} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a36a131a4a059fa9f6103c3877b392303}
+
+
+Definition at line 398 of file Sparse\+Matrix.\+ipp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a563216fb1b9832c227409a805af7194f}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Num\+Cols@{Get\+Num\+Cols}}
+\index{Get\+Num\+Cols@{Get\+Num\+Cols}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Num\+Cols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ int {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Num\+Cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a563216fb1b9832c227409a805af7194f}
+
+
+Definition at line 462 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af7c8fe173731a321431ab96e5c52bd2d}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Num\+Entries@{Get\+Num\+Entries}}
+\index{Get\+Num\+Entries@{Get\+Num\+Entries}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Num\+Entries}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ int {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Num\+Entries (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af7c8fe173731a321431ab96e5c52bd2d}
+
+
+Definition at line 465 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a714352a00d4aa1f849a5963718313962}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Num\+Rows@{Get\+Num\+Rows}}
+\index{Get\+Num\+Rows@{Get\+Num\+Rows}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Num\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ int {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Num\+Rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a714352a00d4aa1f849a5963718313962}
+
+
+Definition at line 459 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a62f88485914392b5328e46d3ae358ae0}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Row\+Begin@{Get\+Row\+Begin}}
+\index{Get\+Row\+Begin@{Get\+Row\+Begin}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+Begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const {\bf Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Row\+Begin (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a62f88485914392b5328e46d3ae358ae0}
+
+
+Definition at line 496 of file Sparse\+Matrix.\+ipp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a62f88485914392b5328e46d3ae358ae0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af602f644ea2e56ab36cc37380531a55c}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Row\+Begin@{Get\+Row\+Begin}}
+\index{Get\+Row\+Begin@{Get\+Row\+Begin}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+Begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Row\+Begin (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_af602f644ea2e56ab36cc37380531a55c}
+
+
+Definition at line 468 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a3647f286c1e3eeeb942a9e40bf987c16}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Row\+End@{Get\+Row\+End}}
+\index{Get\+Row\+End@{Get\+Row\+End}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+End}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const {\bf Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Row\+End (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a3647f286c1e3eeeb942a9e40bf987c16}
+
+
+Definition at line 503 of file Sparse\+Matrix.\+ipp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a3647f286c1e3eeeb942a9e40bf987c16_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_ae0b45ab5e80634422808fb0c08c2a76d}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Row\+End@{Get\+Row\+End}}
+\index{Get\+Row\+End@{Get\+Row\+End}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+End}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Row\+End (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_ae0b45ab5e80634422808fb0c08c2a76d}
+
+
+Definition at line 475 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_aa7ee8b9e02eb3ea217c3e8e407539412}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Row\+R\+Begin@{Get\+Row\+R\+Begin}}
+\index{Get\+Row\+R\+Begin@{Get\+Row\+R\+Begin}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+R\+Begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const {\bf Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Row\+R\+Begin (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_aa7ee8b9e02eb3ea217c3e8e407539412}
+
+
+Definition at line 510 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a4bb14a437aa387953c85f9fb3d01ccee}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Row\+R\+Begin@{Get\+Row\+R\+Begin}}
+\index{Get\+Row\+R\+Begin@{Get\+Row\+R\+Begin}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+R\+Begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Row\+R\+Begin (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a4bb14a437aa387953c85f9fb3d01ccee}
+
+
+Definition at line 482 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a037d8f2e5a24d500ea37ce07a42f5dd9}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Row\+R\+End@{Get\+Row\+R\+End}}
+\index{Get\+Row\+R\+End@{Get\+Row\+R\+End}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+R\+End}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const {\bf Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Row\+R\+End (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a037d8f2e5a24d500ea37ce07a42f5dd9}
+
+
+Definition at line 517 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a080e58b866e9cba745e1da5b0105991d}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Row\+R\+End@{Get\+Row\+R\+End}}
+\index{Get\+Row\+R\+End@{Get\+Row\+R\+End}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+R\+End}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Sparse\+Matrix\+Entry}$<$ T $>$ $\ast$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Row\+R\+End (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a080e58b866e9cba745e1da5b0105991d}
+
+
+Definition at line 489 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a02b62e846e2410a66932b340ea7d7305}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Sum@{Get\+Sum}}
+\index{Get\+Sum@{Get\+Sum}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Sum}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Sum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a02b62e846e2410a66932b340ea7d7305}
+
+
+Definition at line 547 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a253f2ead727aa10eb74d0e1beab66bdd}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Unsparse@{Get\+Unsparse}}
+\index{Get\+Unsparse@{Get\+Unsparse}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Unsparse}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::vector$<$ T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Unsparse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a253f2ead727aa10eb74d0e1beab66bdd}
+
+
+Definition at line 562 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a44399ef13fa7df1d42226013f1c6d453}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Get\+Unsparse\+Mask@{Get\+Unsparse\+Mask}}
+\index{Get\+Unsparse\+Mask@{Get\+Unsparse\+Mask}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Unsparse\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::vector$<$ T $>$ {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Get\+Unsparse\+Mask (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a44399ef13fa7df1d42226013f1c6d453}
+
+
+Definition at line 580 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_ad8053dc37c78543b50b9f72ac0628e50}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::operator() (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_ad8053dc37c78543b50b9f72ac0628e50}
+
+
+Definition at line 524 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a97eb74b6bbf93d9092838651da4f0cb7}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Sparse\+Matrix}$<$ T $>$ \& {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Sparse\+Matrix}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a97eb74b6bbf93d9092838651da4f0cb7}
+
+
+Definition at line 412 of file Sparse\+Matrix.\+ipp.
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a3db5914e4a3da5f5a05cf66ca4c281e1}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Print\+Sparse@{Print\+Sparse}}
+\index{Print\+Sparse@{Print\+Sparse}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Print\+Sparse}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Print\+Sparse (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{outfile}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a3db5914e4a3da5f5a05cf66ca4c281e1}
+
+
+Definition at line 598 of file Sparse\+Matrix.\+ipp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a3db5914e4a3da5f5a05cf66ca4c281e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a899db1a83f5d4882a26c61b3644db0f0}{\index{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}!Print\+Sparse\+B\+P\+S\+E\+Q@{Print\+Sparse\+B\+P\+S\+E\+Q}}
+\index{Print\+Sparse\+B\+P\+S\+E\+Q@{Print\+Sparse\+B\+P\+S\+E\+Q}!C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix@{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}}
+\subsubsection[{Print\+Sparse\+B\+P\+S\+E\+Q}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sparse\+Matrix}$<$ T $>$\+::Print\+Sparse\+B\+P\+S\+E\+Q (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{outfile, }
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+) const}}\label{class_c_o_n_t_r_a_l_i_g_n_1_1_sparse_matrix_a899db1a83f5d4882a26c61b3644db0f0}
+
+
+Definition at line 617 of file Sparse\+Matrix.\+ipp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/contralign/\hyperlink{_sparse_matrix_8hpp}{Sparse\+Matrix.\+hpp}\item 
+src/centroidalifold/contralign/\hyperlink{_sparse_matrix_8ipp}{Sparse\+Matrix.\+ipp}\end{DoxyCompactItemize}

@@ -1,0 +1,124 @@
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp}{\section{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/contrafold/\+Inference\+Engine.ipp File Reference}
+\label{centroidalifold_2contrafold_2_inference_engine_8ipp}\index{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+}
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$cassert$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+Include dependency graph for Inference\+Engine.\+ipp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{centroidalifold_2contrafold_2_inference_engine_8ipp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{centroidalifold_2contrafold_2_inference_engine_8ipp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_roulette}{Roulette$<$ T, Real\+T $>$}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_a666eda33d91985654878e47d2ae946f9}{Score\+Unpaired\+Position}(i)~(Real\+T(0))
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_ad1a5e921b0e92db551f427174caf4a17}{Count\+Unpaired\+Position}(i, v)
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_a60bcc697793ce883a656595cf9732373}{Score\+Unpaired}(i, j)~(Real\+T(0))
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_a1056d51ce4855d6c744d64cb4414889e}{Count\+Unpaired}(i, j, v)
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_ac7f880303691dec46142c5aa8ea7a874}{Score\+Isolated}()~Real\+T(0)
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_ac58980ba92ea9f88ce315d81b41b4788}{Count\+Isolated}(v)
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_aa442846731fffbfb508207db22742336}{U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+X}(bs, bt, s, t)~\{ Real\+T work(s); if ((work)$>$(bs)) \{ (bs)=(work); (bt)=(t); \} \}
+\item 
+\#define \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_a7e408bb5a1389bf6eeded11b1b863d5d}{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp_aba62640e476eb86ecd383e1519e9b310}{genrand\+\_\+real2} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_ac58980ba92ea9f88ce315d81b41b4788}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!Count\+Isolated@{Count\+Isolated}}
+\index{Count\+Isolated@{Count\+Isolated}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{Count\+Isolated}]{\setlength{\rightskip}{0pt plus 5cm}\#define Count\+Isolated(
+\begin{DoxyParamCaption}
+\item[{}]{v}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_ac58980ba92ea9f88ce315d81b41b4788}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_a1056d51ce4855d6c744d64cb4414889e}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!Count\+Unpaired@{Count\+Unpaired}}
+\index{Count\+Unpaired@{Count\+Unpaired}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{Count\+Unpaired}]{\setlength{\rightskip}{0pt plus 5cm}\#define Count\+Unpaired(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{j, }
+\item[{}]{v}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_a1056d51ce4855d6c744d64cb4414889e}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_ad1a5e921b0e92db551f427174caf4a17}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!Count\+Unpaired\+Position@{Count\+Unpaired\+Position}}
+\index{Count\+Unpaired\+Position@{Count\+Unpaired\+Position}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{Count\+Unpaired\+Position}]{\setlength{\rightskip}{0pt plus 5cm}\#define Count\+Unpaired\+Position(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{v}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_ad1a5e921b0e92db551f427174caf4a17}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_ac7f880303691dec46142c5aa8ea7a874}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!Score\+Isolated@{Score\+Isolated}}
+\index{Score\+Isolated@{Score\+Isolated}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{Score\+Isolated}]{\setlength{\rightskip}{0pt plus 5cm}\#define Score\+Isolated(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~Real\+T(0)}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_ac7f880303691dec46142c5aa8ea7a874}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_a60bcc697793ce883a656595cf9732373}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!Score\+Unpaired@{Score\+Unpaired}}
+\index{Score\+Unpaired@{Score\+Unpaired}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{Score\+Unpaired}]{\setlength{\rightskip}{0pt plus 5cm}\#define Score\+Unpaired(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(Real\+T(0))}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_a60bcc697793ce883a656595cf9732373}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_a666eda33d91985654878e47d2ae946f9}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!Score\+Unpaired\+Position@{Score\+Unpaired\+Position}}
+\index{Score\+Unpaired\+Position@{Score\+Unpaired\+Position}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{Score\+Unpaired\+Position}]{\setlength{\rightskip}{0pt plus 5cm}\#define Score\+Unpaired\+Position(
+\begin{DoxyParamCaption}
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~(Real\+T(0))}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_a666eda33d91985654878e47d2ae946f9}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_aa442846731fffbfb508207db22742336}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+X@{U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+X}}
+\index{U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+X@{U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+X}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+X(
+\begin{DoxyParamCaption}
+\item[{}]{bs, }
+\item[{}]{bt, }
+\item[{}]{s, }
+\item[{}]{t}
+\end{DoxyParamCaption}
+)~\{ Real\+T work(s); if ((work)$>$(bs)) \{ (bs)=(work); (bt)=(t); \} \}}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_aa442846731fffbfb508207db22742336}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_a7e408bb5a1389bf6eeded11b1b863d5d}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W@{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}}
+\index{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W@{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+\_\+\+E\+F\+F\+I\+C\+I\+E\+N\+T\+\_\+\+W\+I\+N\+D\+O\+W}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_a7e408bb5a1389bf6eeded11b1b863d5d}
+
+
+\subsection{Function Documentation}
+\hypertarget{centroidalifold_2contrafold_2_inference_engine_8ipp_aba62640e476eb86ecd383e1519e9b310}{\index{centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}!genrand\+\_\+real2@{genrand\+\_\+real2}}
+\index{genrand\+\_\+real2@{genrand\+\_\+real2}!centroidalifold/contrafold/\+Inference\+Engine.\+ipp@{centroidalifold/contrafold/\+Inference\+Engine.\+ipp}}
+\subsubsection[{genrand\+\_\+real2}]{\setlength{\rightskip}{0pt plus 5cm}double genrand\+\_\+real2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{centroidalifold_2contrafold_2_inference_engine_8ipp_aba62640e476eb86ecd383e1519e9b310}

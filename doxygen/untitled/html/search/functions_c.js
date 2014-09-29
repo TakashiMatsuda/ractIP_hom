@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['name',['name',['../class_aln.html#a1ab21509801bad54f735c9fd547c0a04',1,'Aln::name()'],['../class_fasta.html#a0a0ce3f7b5f250952584263352cc5ebe',1,'Fasta::name() const '],['../class_fasta.html#a0a0ce3f7b5f250952584263352cc5ebe',1,'Fasta::name() const ']]],
+  ['naview_5fxy_5fcoordinates',['naview_xy_coordinates',['../naview_8c.html#a948111b910926f0405a3fa920c790816',1,'naview_xy_coordinates(short *pair_table, float *X, float *Y):&#160;naview.c'],['../ps__plot_8cpp.html#a948111b910926f0405a3fa920c790816',1,'naview_xy_coordinates(short *pair_table, float *X, float *Y):&#160;naview.c']]],
+  ['norm',['Norm',['../centroidalifold_2contrafold_2_utilities_8hpp.html#a84154107c2a94a052bf6e096e947746c',1,'Norm(const std::vector&lt; T &gt; &amp;x):&#160;Utilities.ipp'],['../centroidalifold_2contrafold_2_utilities_8ipp.html#a84154107c2a94a052bf6e096e947746c',1,'Norm(const std::vector&lt; T &gt; &amp;x):&#160;Utilities.ipp'],['../namespace_c_o_n_t_r_a_l_i_g_n.html#aea939de28045df5b9199ff4bf6a93b49',1,'CONTRALIGN::Norm()'],['../contrafold_2_utilities_8hpp.html#a84154107c2a94a052bf6e096e947746c',1,'Norm(const std::vector&lt; T &gt; &amp;x):&#160;Utilities.ipp'],['../contrafold_2_utilities_8ipp.html#a84154107c2a94a052bf6e096e947746c',1,'Norm(const std::vector&lt; T &gt; &amp;x):&#160;Utilities.ipp']]],
+  ['num_5faln',['num_aln',['../class_aln.html#ababa37dc4967c06b20c4af1b7a42a789',1,'Aln']]]
+];

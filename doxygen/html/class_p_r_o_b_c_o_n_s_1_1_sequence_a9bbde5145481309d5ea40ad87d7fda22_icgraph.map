@@ -1,0 +1,5 @@
+<map id="PROBCONS::Sequence::GetLabel" name="PROBCONS::Sequence::GetLabel">
+<area shape="rect" id="node2" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#a67e3a9501aee86f5e17dd24133c0679e" title="PROBCONS::MultiSequence\l::Project" alt="" coords="229,5,422,46"/>
+<area shape="rect" id="node3" href="$class_p_r_o_b_c_o_n_s_1_1_probabilistic_model.html#a6c9642a3fe71c427a54d5edceeaedcba" title="PROBCONS::ProbabilisticModel\l::BuildPosterior" alt="" coords="219,70,432,111"/>
+<area shape="rect" id="node4" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#a1cc32e85eb6efd4772e7072a7bdf4b43" title="PROBCONS::Sequence\l::WriteMFA" alt="" coords="243,135,408,177"/>
+</map>

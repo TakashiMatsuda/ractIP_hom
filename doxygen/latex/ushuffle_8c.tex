@@ -1,0 +1,177 @@
+\hypertarget{ushuffle_8c}{\section{src/ushuffle.c File Reference}
+\label{ushuffle_8c}\index{src/ushuffle.\+c@{src/ushuffle.\+c}}
+}
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}ushuffle.\+h\char`\"{}}\\*
+Include dependency graph for ushuffle.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ushuffle_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structvertex}{vertex}
+\item 
+struct \hyperlink{structhentry}{hentry}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structvertex}{vertex} \hyperlink{ushuffle_8c_aa10a28e071c5f0d24f7496bca82499b7}{vertex}
+\item 
+typedef struct \hyperlink{structhentry}{hentry} \hyperlink{ushuffle_8c_a150d7c45f388acef810a01fe32930e0b}{hentry}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ushuffle_8c_a2c08cfa0e29c47dfe7e80b3df07dfd05}{set\+\_\+randfunc} (\hyperlink{ushuffle_8h_af2c32fe194edfc9f9415279452a83064}{randfunc\+\_\+t} func)
+\item 
+void \hyperlink{ushuffle_8c_acefdbc77528ccc7dc6e6bb94217afbcb}{shuffle1} (const char $\ast$s, int l, int k)
+\item 
+void \hyperlink{ushuffle_8c_a81daa788ea5f24eae3b000e2ff8132c3}{permutec} (char $\ast$t, int l)
+\item 
+void \hyperlink{ushuffle_8c_a3330dfbeba48e9e046b2444de5d47e19}{shuffle2} (char $\ast$t)
+\item 
+void \hyperlink{ushuffle_8c_a0155d2256d061ce5d73a4973b58a69d6}{shuffle} (const char $\ast$s, char $\ast$t, int l, int k)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{ushuffle_8c_a150d7c45f388acef810a01fe32930e0b}{\index{ushuffle.\+c@{ushuffle.\+c}!hentry@{hentry}}
+\index{hentry@{hentry}!ushuffle.\+c@{ushuffle.\+c}}
+\subsubsection[{hentry}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hentry}  {\bf hentry}}}\label{ushuffle_8c_a150d7c45f388acef810a01fe32930e0b}
+\hypertarget{ushuffle_8c_aa10a28e071c5f0d24f7496bca82499b7}{\index{ushuffle.\+c@{ushuffle.\+c}!vertex@{vertex}}
+\index{vertex@{vertex}!ushuffle.\+c@{ushuffle.\+c}}
+\subsubsection[{vertex}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf vertex}  {\bf vertex}}}\label{ushuffle_8c_aa10a28e071c5f0d24f7496bca82499b7}
+
+
+\subsection{Function Documentation}
+\hypertarget{ushuffle_8c_a81daa788ea5f24eae3b000e2ff8132c3}{\index{ushuffle.\+c@{ushuffle.\+c}!permutec@{permutec}}
+\index{permutec@{permutec}!ushuffle.\+c@{ushuffle.\+c}}
+\subsubsection[{permutec}]{\setlength{\rightskip}{0pt plus 5cm}void permutec (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{t, }
+\item[{int}]{l}
+\end{DoxyParamCaption}
+)}}\label{ushuffle_8c_a81daa788ea5f24eae3b000e2ff8132c3}
+
+
+Definition at line 192 of file ushuffle.\+c.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{ushuffle_8c_a81daa788ea5f24eae3b000e2ff8132c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ushuffle_8c_a2c08cfa0e29c47dfe7e80b3df07dfd05}{\index{ushuffle.\+c@{ushuffle.\+c}!set\+\_\+randfunc@{set\+\_\+randfunc}}
+\index{set\+\_\+randfunc@{set\+\_\+randfunc}!ushuffle.\+c@{ushuffle.\+c}}
+\subsubsection[{set\+\_\+randfunc}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+randfunc (
+\begin{DoxyParamCaption}
+\item[{{\bf randfunc\+\_\+t}}]{func}
+\end{DoxyParamCaption}
+)}}\label{ushuffle_8c_a2c08cfa0e29c47dfe7e80b3df07dfd05}
+
+
+Definition at line 45 of file ushuffle.\+c.
+
+\hypertarget{ushuffle_8c_a0155d2256d061ce5d73a4973b58a69d6}{\index{ushuffle.\+c@{ushuffle.\+c}!shuffle@{shuffle}}
+\index{shuffle@{shuffle}!ushuffle.\+c@{ushuffle.\+c}}
+\subsubsection[{shuffle}]{\setlength{\rightskip}{0pt plus 5cm}void shuffle (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{char $\ast$}]{t, }
+\item[{int}]{l, }
+\item[{int}]{k}
+\end{DoxyParamCaption}
+)}}\label{ushuffle_8c_a0155d2256d061ce5d73a4973b58a69d6}
+
+
+Definition at line 272 of file ushuffle.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{ushuffle_8c_a0155d2256d061ce5d73a4973b58a69d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ushuffle_8c_acefdbc77528ccc7dc6e6bb94217afbcb}{\index{ushuffle.\+c@{ushuffle.\+c}!shuffle1@{shuffle1}}
+\index{shuffle1@{shuffle1}!ushuffle.\+c@{ushuffle.\+c}}
+\subsubsection[{shuffle1}]{\setlength{\rightskip}{0pt plus 5cm}void shuffle1 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s, }
+\item[{int}]{l, }
+\item[{int}]{k}
+\end{DoxyParamCaption}
+)}}\label{ushuffle_8c_acefdbc77528ccc7dc6e6bb94217afbcb}
+
+
+Definition at line 139 of file ushuffle.\+c.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{ushuffle_8c_acefdbc77528ccc7dc6e6bb94217afbcb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ushuffle_8c_a3330dfbeba48e9e046b2444de5d47e19}{\index{ushuffle.\+c@{ushuffle.\+c}!shuffle2@{shuffle2}}
+\index{shuffle2@{shuffle2}!ushuffle.\+c@{ushuffle.\+c}}
+\subsubsection[{shuffle2}]{\setlength{\rightskip}{0pt plus 5cm}void shuffle2 (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{ushuffle_8c_a3330dfbeba48e9e046b2444de5d47e19}
+
+
+Definition at line 212 of file ushuffle.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{ushuffle_8c_a3330dfbeba48e9e046b2444de5d47e19_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{ushuffle_8c_a3330dfbeba48e9e046b2444de5d47e19_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,84 @@
+\hypertarget{_contralign_8cpp}{\section{src/centroidalifold/contralign/\+Contralign.cpp File Reference}
+\label{_contralign_8cpp}\index{src/centroidalifold/contralign/\+Contralign.\+cpp@{src/centroidalifold/contralign/\+Contralign.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}Config.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Options.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Utilities.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Computation\+Wrapper.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}File\+Description.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Inference\+Engine.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Parameter\+Manager.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Optimization\+Wrapper.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Defaults.\+ipp\char`\"{}}\\*
+Include dependency graph for Contralign.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_contralign_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a66c65550f4f2eb3b394af028bd34ff9d}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Usage} (const Options \&options)
+\item 
+void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_afe20ba6958ee01585cc59f5561ec7d17}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Version} ()
+\item 
+void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a2d13a8e4ad05e8d6e2eb17d2b0a5850d}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Parse\+Arguments} (int argc, char $\ast$$\ast$argv, Options \&options, std\+::vector$<$ std\+::string $>$ \&filenames)
+\item 
+void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a749642fa4b12d011d9c7d00e0ceb6f0c}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Make\+File\+Descriptions} (const Options \&options, const std\+::vector$<$ std\+::string $>$ \&filenames, std\+::vector$<$ File\+Description $>$ \&descriptions)
+\item 
+{\footnotesize template$<$class Real\+T $>$ }\\void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a3bb2b00a11ab75abcaa97365ed5b4e60}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Run\+Gradient\+Sanity\+Check} (const Options \&options, const std\+::vector$<$ File\+Description $>$ \&descriptions)
+\item 
+{\footnotesize template$<$class Real\+T $>$ }\\void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a4ac70c3821db72a2c91f310a3d9ed454}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Run\+Training\+Mode} (const Options \&options, const std\+::vector$<$ File\+Description $>$ \&descriptions)
+\item 
+{\footnotesize template$<$class Real\+T $>$ }\\void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_adcd53b6a98750eadf9d1a2230d0cab18}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Run\+Prediction\+Mode} (const Options \&options, const std\+::vector$<$ File\+Description $>$ \&descriptions)
+\item 
+int \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aafc1edb6cd98e5858af45afee8327797}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+\_\+main} (int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{_contralign_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_acc27a8d5de00a0e2b28341a554b1671e}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+G\+A\+M\+M\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T} = 100000
+\item 
+const double \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ab8d1796ab4c3172fefb62e6551fc0e6a}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+R\+E\+G\+U\+L\+A\+R\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T} = 0
+\item 
+const int \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a7eae27d13bfe8d19d465e4e02325b7ca}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+P\+C\+\_\+\+I\+T\+E\+R\+S\+\_\+\+D\+E\+F\+A\+U\+L\+T} = 2
+\item 
+const int \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a5d28e8f24c1100580fce7418871aab48}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+S\+C\+\_\+\+I\+T\+E\+R\+S\+\_\+\+D\+E\+F\+A\+U\+L\+T} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_contralign_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{Contralign.\+cpp@{Contralign.\+cpp}!main@{main}}
+\index{main@{main}!Contralign.\+cpp@{Contralign.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{_contralign_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 619 of file Contralign.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_contralign_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+

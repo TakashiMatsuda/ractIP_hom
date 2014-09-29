@@ -1,0 +1,225 @@
+\hypertarget{class_c_o_n_t_r_afold_model}{\section{C\+O\+N\+T\+R\+Afold\+Model Class Reference}
+\label{class_c_o_n_t_r_afold_model}\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+}
+
+
+{\ttfamily \#include $<$contrafold.\+h$>$}
+
+
+
+Inheritance diagram for C\+O\+N\+T\+R\+Afold\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{class_c_o_n_t_r_afold_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+O\+N\+T\+R\+Afold\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_c_o_n_t_r_afold_model__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_o_n_t_r_afold_model_a00838b8ab522f71f5287071104bd6ffd}{C\+O\+N\+T\+R\+Afold\+Model} (const std\+::string \&model, bool canonical\+\_\+only, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} max\+\_\+bp\+\_\+dist, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} seed=0, bool run\+\_\+as\+\_\+mea=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+virtual \hyperlink{class_c_o_n_t_r_afold_model_adfc8268ab44289421a36e3327f5f6434}{$\sim$\+C\+O\+N\+T\+R\+Afold\+Model} ()
+\item 
+virtual void \hyperlink{class_c_o_n_t_r_afold_model_aa1d31567da78c2c621d62675a8f326ae}{set\+\_\+constraint} (const std\+::string \&str)
+\item 
+virtual void \hyperlink{class_c_o_n_t_r_afold_model_af9b44d34a59607ba105bd1e57b3f5c6f}{calculate\+\_\+posterior} (const std\+::string \&seq)
+\item 
+virtual void \hyperlink{class_c_o_n_t_r_afold_model_a677989ea8d48f3d3217d1d4fabef034c}{prepare\+\_\+stochastic\+\_\+traceback} (const std\+::string \&seq)
+\item 
+virtual std\+::vector$<$ int $>$ \hyperlink{class_c_o_n_t_r_afold_model_a759a5951561c3bc350d030fe34e760bb}{stochastic\+\_\+traceback} (const std\+::string \&seq)
+\item 
+virtual void \hyperlink{class_c_o_n_t_r_afold_model_a0588b069b4c61786217ec9878991130b}{clean\+\_\+stochastic\+\_\+traceback} (const std\+::string \&seq)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file contrafold.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_o_n_t_r_afold_model_a00838b8ab522f71f5287071104bd6ffd}{\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}!C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}!C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+\subsubsection[{C\+O\+N\+T\+R\+Afold\+Model}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+N\+T\+R\+Afold\+Model\+::\+C\+O\+N\+T\+R\+Afold\+Model (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{model, }
+\item[{bool}]{canonical\+\_\+only, }
+\item[{{\bf uint}}]{max\+\_\+bp\+\_\+dist, }
+\item[{{\bf uint}}]{seed = {\ttfamily 0}, }
+\item[{bool}]{run\+\_\+as\+\_\+mea = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+)}}\label{class_c_o_n_t_r_afold_model_a00838b8ab522f71f5287071104bd6ffd}
+
+
+Definition at line 33 of file contrafold.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_model_a00838b8ab522f71f5287071104bd6ffd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_model_adfc8268ab44289421a36e3327f5f6434}{\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}!````~C\+O\+N\+T\+R\+Afold\+Model@{$\sim$\+C\+O\+N\+T\+R\+Afold\+Model}}
+\index{````~C\+O\+N\+T\+R\+Afold\+Model@{$\sim$\+C\+O\+N\+T\+R\+Afold\+Model}!C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+\subsubsection[{$\sim$\+C\+O\+N\+T\+R\+Afold\+Model}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+N\+T\+R\+Afold\+Model\+::$\sim$\+C\+O\+N\+T\+R\+Afold\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_c_o_n_t_r_afold_model_adfc8268ab44289421a36e3327f5f6434}
+
+
+Definition at line 50 of file contrafold.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_o_n_t_r_afold_model_af9b44d34a59607ba105bd1e57b3f5c6f}{\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}!calculate\+\_\+posterior@{calculate\+\_\+posterior}}
+\index{calculate\+\_\+posterior@{calculate\+\_\+posterior}!C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+\subsubsection[{calculate\+\_\+posterior}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+Afold\+Model\+::calculate\+\_\+posterior (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_c_o_n_t_r_afold_model_af9b44d34a59607ba105bd1e57b3f5c6f}
+
+
+Implements \hyperlink{class_folding_engine_a314c78e5fe35d5a1b5f441604c58e8f1}{Folding\+Engine$<$ std\+::string $>$}.
+
+
+
+Definition at line 65 of file contrafold.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_model_af9b44d34a59607ba105bd1e57b3f5c6f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_model_a0588b069b4c61786217ec9878991130b}{\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}!clean\+\_\+stochastic\+\_\+traceback@{clean\+\_\+stochastic\+\_\+traceback}}
+\index{clean\+\_\+stochastic\+\_\+traceback@{clean\+\_\+stochastic\+\_\+traceback}!C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+\subsubsection[{clean\+\_\+stochastic\+\_\+traceback}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+O\+N\+T\+R\+Afold\+Model\+::clean\+\_\+stochastic\+\_\+traceback (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_c_o_n_t_r_afold_model_a0588b069b4c61786217ec9878991130b}
+
+
+Reimplemented from \hyperlink{class_folding_engine_a15027401822de5e57efbf131c214c2c7}{Folding\+Engine$<$ std\+::string $>$}.
+
+
+
+Definition at line 48 of file contrafold.\+h.
+
+\hypertarget{class_c_o_n_t_r_afold_model_a677989ea8d48f3d3217d1d4fabef034c}{\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}!prepare\+\_\+stochastic\+\_\+traceback@{prepare\+\_\+stochastic\+\_\+traceback}}
+\index{prepare\+\_\+stochastic\+\_\+traceback@{prepare\+\_\+stochastic\+\_\+traceback}!C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+\subsubsection[{prepare\+\_\+stochastic\+\_\+traceback}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+Afold\+Model\+::prepare\+\_\+stochastic\+\_\+traceback (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_c_o_n_t_r_afold_model_a677989ea8d48f3d3217d1d4fabef034c}
+
+
+Reimplemented from \hyperlink{class_folding_engine_a22db64fbf81030b83316c7ca12431ee4}{Folding\+Engine$<$ std\+::string $>$}.
+
+
+
+Definition at line 92 of file contrafold.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_model_a677989ea8d48f3d3217d1d4fabef034c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_model_aa1d31567da78c2c621d62675a8f326ae}{\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}!set\+\_\+constraint@{set\+\_\+constraint}}
+\index{set\+\_\+constraint@{set\+\_\+constraint}!C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+\subsubsection[{set\+\_\+constraint}]{\setlength{\rightskip}{0pt plus 5cm}void C\+O\+N\+T\+R\+Afold\+Model\+::set\+\_\+constraint (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_c_o_n_t_r_afold_model_aa1d31567da78c2c621d62675a8f326ae}
+
+
+Reimplemented from \hyperlink{class_folding_engine_aa979adbd342b75eb947927e6ff7bcb8c}{Folding\+Engine$<$ std\+::string $>$}.
+
+
+
+Definition at line 57 of file contrafold.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_model_aa1d31567da78c2c621d62675a8f326ae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_o_n_t_r_afold_model_a759a5951561c3bc350d030fe34e760bb}{\index{C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}!stochastic\+\_\+traceback@{stochastic\+\_\+traceback}}
+\index{stochastic\+\_\+traceback@{stochastic\+\_\+traceback}!C\+O\+N\+T\+R\+Afold\+Model@{C\+O\+N\+T\+R\+Afold\+Model}}
+\subsubsection[{stochastic\+\_\+traceback}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ C\+O\+N\+T\+R\+Afold\+Model\+::stochastic\+\_\+traceback (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{seq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_c_o_n_t_r_afold_model_a759a5951561c3bc350d030fe34e760bb}
+
+
+Reimplemented from \hyperlink{class_folding_engine_a1e4bc1f100ea5bf8d957a1b20139e6f1}{Folding\+Engine$<$ std\+::string $>$}.
+
+
+
+Definition at line 99 of file contrafold.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_o_n_t_r_afold_model_a759a5951561c3bc350d030fe34e760bb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/engine/\hyperlink{engine_2contrafold_8h}{contrafold.\+h}\item 
+src/centroidalifold/engine/\hyperlink{contrafold_8cpp}{contrafold.\+cpp}\end{DoxyCompactItemize}

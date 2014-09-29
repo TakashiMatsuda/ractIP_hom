@@ -1,0 +1,162 @@
+\hypertarget{ps__plot_8cpp}{\section{src/centroidalifold/ps\+\_\+plot.cpp File Reference}
+\label{ps__plot_8cpp}\index{src/centroidalifold/ps\+\_\+plot.\+cpp@{src/centroidalifold/ps\+\_\+plot.\+cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$cerrno$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include \char`\"{}ps\+\_\+plot.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bp.\+h\char`\"{}}\\*
+Include dependency graph for ps\+\_\+plot.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ps__plot_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ps__plot_8cpp_ad935f1ff1a50822e317bdb321ce991ad}{M\+A\+X}(A, B)~(A)$>$(B)?(A)\+:(B)
+\item 
+\#define \hyperlink{ps__plot_8cpp_a1c6d5de492ac61ad29aec7aa9a436bbf}{V\+E\+R\+S\+I\+O\+N}~\char`\"{}1.\+8.\+3\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ps__plot_8cpp_a948111b910926f0405a3fa920c790816}{naview\+\_\+xy\+\_\+coordinates} (short $\ast$pair\+\_\+table, float $\ast$X, float $\ast$Y)
+\item 
+int \hyperlink{ps__plot_8cpp_ab439b344496970b54629f4bd3dcb4da6}{ps\+\_\+plot} (const char $\ast$string, const char $\ast$structure, const char $\ast$ssfile)
+\item 
+{\footnotesize template$<$class B\+P\+Table $>$ }\\int \hyperlink{ps__plot_8cpp_a1a7bff2a76a83ee518cfe8498fa1c757}{ps\+\_\+color\+\_\+plot} (const char $\ast$string, const char $\ast$structure, const \hyperlink{folding__engine_8h_a065821fb17bbd8df315f2435c973e3c1}{B\+P\+Table} \&bp, const char $\ast$ssfile)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ps__plot_8cpp_ad935f1ff1a50822e317bdb321ce991ad}{\index{ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}!M\+A\+X@{M\+A\+X}}
+\index{M\+A\+X@{M\+A\+X}!ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}}
+\subsubsection[{M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)~(A)$>$(B)?(A)\+:(B)}}\label{ps__plot_8cpp_ad935f1ff1a50822e317bdb321ce991ad}
+
+
+Definition at line 11 of file ps\+\_\+plot.\+cpp.
+
+\hypertarget{ps__plot_8cpp_a1c6d5de492ac61ad29aec7aa9a436bbf}{\index{ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}!V\+E\+R\+S\+I\+O\+N@{V\+E\+R\+S\+I\+O\+N}}
+\index{V\+E\+R\+S\+I\+O\+N@{V\+E\+R\+S\+I\+O\+N}!ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}}
+\subsubsection[{V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\+E\+R\+S\+I\+O\+N~\char`\"{}1.\+8.\+3\char`\"{}}}\label{ps__plot_8cpp_a1c6d5de492ac61ad29aec7aa9a436bbf}
+
+
+Definition at line 12 of file ps\+\_\+plot.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{ps__plot_8cpp_a948111b910926f0405a3fa920c790816}{\index{ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}!naview\+\_\+xy\+\_\+coordinates@{naview\+\_\+xy\+\_\+coordinates}}
+\index{naview\+\_\+xy\+\_\+coordinates@{naview\+\_\+xy\+\_\+coordinates}!ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}}
+\subsubsection[{naview\+\_\+xy\+\_\+coordinates}]{\setlength{\rightskip}{0pt plus 5cm}int naview\+\_\+xy\+\_\+coordinates (
+\begin{DoxyParamCaption}
+\item[{short $\ast$}]{pair\+\_\+table, }
+\item[{float $\ast$}]{X, }
+\item[{float $\ast$}]{Y}
+\end{DoxyParamCaption}
+)}}\label{ps__plot_8cpp_a948111b910926f0405a3fa920c790816}
+
+
+Definition at line 142 of file naview.\+c.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ps__plot_8cpp_a948111b910926f0405a3fa920c790816_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ps__plot_8cpp_a1a7bff2a76a83ee518cfe8498fa1c757}{\index{ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}!ps\+\_\+color\+\_\+plot@{ps\+\_\+color\+\_\+plot}}
+\index{ps\+\_\+color\+\_\+plot@{ps\+\_\+color\+\_\+plot}!ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}}
+\subsubsection[{ps\+\_\+color\+\_\+plot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class B\+P\+Table $>$ template int ps\+\_\+color\+\_\+plot (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{structure, }
+\item[{const {\bf B\+P\+Table} \&}]{bp, }
+\item[{const char $\ast$}]{ssfile}
+\end{DoxyParamCaption}
+)}}\label{ps__plot_8cpp_a1a7bff2a76a83ee518cfe8498fa1c757}
+
+
+Definition at line 255 of file ps\+\_\+plot.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ps__plot_8cpp_a1a7bff2a76a83ee518cfe8498fa1c757_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ps__plot_8cpp_a1a7bff2a76a83ee518cfe8498fa1c757_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ps__plot_8cpp_ab439b344496970b54629f4bd3dcb4da6}{\index{ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}!ps\+\_\+plot@{ps\+\_\+plot}}
+\index{ps\+\_\+plot@{ps\+\_\+plot}!ps\+\_\+plot.\+cpp@{ps\+\_\+plot.\+cpp}}
+\subsubsection[{ps\+\_\+plot}]{\setlength{\rightskip}{0pt plus 5cm}int ps\+\_\+plot (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{string, }
+\item[{const char $\ast$}]{structure, }
+\item[{const char $\ast$}]{ssfile}
+\end{DoxyParamCaption}
+)}}\label{ps__plot_8cpp_ab439b344496970b54629f4bd3dcb4da6}
+
+
+Definition at line 139 of file ps\+\_\+plot.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{ps__plot_8cpp_ab439b344496970b54629f4bd3dcb4da6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ps__plot_8cpp_ab439b344496970b54629f4bd3dcb4da6_icgraph}
+\end{center}
+\end{figure}
+
+

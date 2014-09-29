@@ -1,0 +1,572 @@
+\hypertarget{cmdline1_8c}{\section{src/cmdline1.c File Reference}
+\label{cmdline1_8c}\index{src/cmdline1.\+c@{src/cmdline1.\+c}}
+}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$getopt.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}cmdline1.\+h\char`\"{}}\\*
+Include dependency graph for cmdline1.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cmdline1_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cmdline1_8c_a8db449d7b07c45ef8a58716e09eba04e}{F\+I\+X\+\_\+\+U\+N\+U\+S\+E\+D}(X)~(void) (X) /$\ast$ avoid warnings \hyperlink{notespace_8cpp_a17985d9263a9dbd2bd5fcc6de10ae2f8}{for} unused params $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1}{cmdline\+\_\+parser\+\_\+arg\+\_\+type} \{ \\*
+\hyperlink{cmdline_8c_a88e31a859f36efa57ad64e6ae13332a1a67dd250fb3e23862523b667407868ada}{A\+R\+G\+\_\+\+N\+O}, 
+\hyperlink{cmdline_8c_a88e31a859f36efa57ad64e6ae13332a1afd135f03243c33991ef507f4410718f7}{A\+R\+G\+\_\+\+F\+L\+A\+G}, 
+\hyperlink{cmdline_8c_a88e31a859f36efa57ad64e6ae13332a1a1e0904ee5e3baf2aa4070ab0718a3afa}{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G}, 
+\hyperlink{cmdline_8c_a88e31a859f36efa57ad64e6ae13332a1a58393752406d163205fa18f450909993}{A\+R\+G\+\_\+\+I\+N\+T}, 
+\\*
+\hyperlink{cmdline_8c_a88e31a859f36efa57ad64e6ae13332a1a5875de3e892eb32ed41e4d60ef7d99ca}{A\+R\+G\+\_\+\+F\+L\+O\+A\+T}, 
+\hyperlink{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a67dd250fb3e23862523b667407868ada}{A\+R\+G\+\_\+\+N\+O}, 
+\hyperlink{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1afd135f03243c33991ef507f4410718f7}{A\+R\+G\+\_\+\+F\+L\+A\+G}, 
+\hyperlink{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a1e0904ee5e3baf2aa4070ab0718a3afa}{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G}, 
+\\*
+\hyperlink{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a58393752406d163205fa18f450909993}{A\+R\+G\+\_\+\+I\+N\+T}, 
+\hyperlink{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a5875de3e892eb32ed41e4d60ef7d99ca}{A\+R\+G\+\_\+\+F\+L\+O\+A\+T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cmdline1_8c_a96f27bf35ce0ab8eea7a1f6e6b59a5e2}{cmdline\+\_\+parser\+\_\+print\+\_\+version} (void)
+\item 
+void \hyperlink{cmdline1_8c_ad4f7db2fa4002379eb30e5206f3b7492}{cmdline\+\_\+parser\+\_\+print\+\_\+help} (void)
+\item 
+void \hyperlink{cmdline1_8c_aca62b50d03d0d082968eeb1940f98650}{cmdline\+\_\+parser\+\_\+init} (struct \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} $\ast$args\+\_\+info)
+\item 
+void \hyperlink{cmdline1_8c_af72b814611cffc706b2135ccdfe7e997}{cmdline\+\_\+parser\+\_\+params\+\_\+init} (struct \hyperlink{structcmdline__parser__params}{cmdline\+\_\+parser\+\_\+params} $\ast$params)
+\item 
+struct \hyperlink{structcmdline__parser__params}{cmdline\+\_\+parser\+\_\+params} $\ast$ \hyperlink{cmdline1_8c_afd778af110fe0ee1ea5eac7aa9939d92}{cmdline\+\_\+parser\+\_\+params\+\_\+create} (void)
+\item 
+int \hyperlink{cmdline1_8c_a1f73418092a6e6eb3706aa0de2785e11}{cmdline\+\_\+parser\+\_\+dump} (F\+I\+L\+E $\ast$outfile, struct \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} $\ast$args\+\_\+info)
+\item 
+int \hyperlink{cmdline1_8c_a5f3e9412f88f1058a31ac28ad2ea2818}{cmdline\+\_\+parser\+\_\+file\+\_\+save} (const char $\ast$filename, struct \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} $\ast$args\+\_\+info)
+\item 
+void \hyperlink{cmdline1_8c_af1b97c4e92b88f736e350b3902266ba4}{cmdline\+\_\+parser\+\_\+free} (struct \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} $\ast$args\+\_\+info)
+\item 
+int \hyperlink{cmdline1_8c_a3c3df73307452c51fee0a34640d92196}{cmdline\+\_\+parser} (int argc, char $\ast$$\ast$argv, struct \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} $\ast$args\+\_\+info)
+\item 
+int \hyperlink{cmdline1_8c_ac7bb5d76f3f56d1c0b3b531f11ac6f07}{cmdline\+\_\+parser\+\_\+ext} (int argc, char $\ast$$\ast$argv, struct \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} $\ast$args\+\_\+info, struct \hyperlink{structcmdline__parser__params}{cmdline\+\_\+parser\+\_\+params} $\ast$params)
+\item 
+int \hyperlink{cmdline1_8c_a78a0cd581698415a62f68214603b1a30}{cmdline\+\_\+parser2} (int argc, char $\ast$$\ast$argv, struct \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} $\ast$args\+\_\+info, int override, int initialize, int check\+\_\+required)
+\item 
+int \hyperlink{cmdline1_8c_a83651e5be280d60aed58fdb72456a030}{cmdline\+\_\+parser\+\_\+required} (struct \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} $\ast$args\+\_\+info, const char $\ast$prog\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{cmdline1_8c_a610c3307abce5a8fd304b86b018ae60b}{gengetopt\+\_\+args\+\_\+info\+\_\+purpose} = \char`\"{}Ract\+I\+P\+\_\+\+Hom\char`\"{}
+\begin{DoxyCompactList}\small\item\em the purpose string of the program \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{cmdline1_8c_a9f397a306f363bfdebb611e86acf36d5}{gengetopt\+\_\+args\+\_\+info\+\_\+usage} = \char`\"{}Usage\+: \char`\"{} C\+M\+D\+L\+I\+N\+E\+\_\+\+P\+A\+R\+S\+E\+R\+\_\+\+P\+A\+C\+K\+A\+G\+E \char`\"{} \mbox{[}O\+P\+T\+I\+O\+N\+S\mbox{]}... \mbox{[}F\+I\+L\+E\+S\mbox{]}...\char`\"{}
+\begin{DoxyCompactList}\small\item\em the usage string of the program \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{cmdline1_8c_a0dbb0b6cf7e5cbb9804a9075bcefa68a}{gengetopt\+\_\+args\+\_\+info\+\_\+versiontext} = \char`\"{}\char`\"{}
+\item 
+const char $\ast$ \hyperlink{cmdline1_8c_accad6107ca685f6eba555f6ce63d355d}{gengetopt\+\_\+args\+\_\+info\+\_\+description} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em the description string of the program \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{cmdline1_8c_a6af7a6b7fb37c0abaa916ee1cfa0a41f}{gengetopt\+\_\+args\+\_\+info\+\_\+help} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em all the lines making the help output \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cmdline1_8c_a8db449d7b07c45ef8a58716e09eba04e}{\index{cmdline1.\+c@{cmdline1.\+c}!F\+I\+X\+\_\+\+U\+N\+U\+S\+E\+D@{F\+I\+X\+\_\+\+U\+N\+U\+S\+E\+D}}
+\index{F\+I\+X\+\_\+\+U\+N\+U\+S\+E\+D@{F\+I\+X\+\_\+\+U\+N\+U\+S\+E\+D}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{F\+I\+X\+\_\+\+U\+N\+U\+S\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+X\+\_\+\+U\+N\+U\+S\+E\+D(
+\begin{DoxyParamCaption}
+\item[{}]{X}
+\end{DoxyParamCaption}
+)~(void) (X) /$\ast$ avoid warnings {\bf for} unused params $\ast$/}}\label{cmdline1_8c_a8db449d7b07c45ef8a58716e09eba04e}
+
+
+Definition at line 21 of file cmdline1.\+c.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+arg\+\_\+type@{cmdline\+\_\+parser\+\_\+arg\+\_\+type}}
+\index{cmdline\+\_\+parser\+\_\+arg\+\_\+type@{cmdline\+\_\+parser\+\_\+arg\+\_\+type}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+arg\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cmdline\+\_\+parser\+\_\+arg\+\_\+type}}}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+R\+G\+\_\+\+N\+O@{A\+R\+G\+\_\+\+N\+O}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+N\+O@{A\+R\+G\+\_\+\+N\+O}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a67dd250fb3e23862523b667407868ada}{A\+R\+G\+\_\+\+N\+O}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a67dd250fb3e23862523b667407868ada}
+}]\index{A\+R\+G\+\_\+\+F\+L\+A\+G@{A\+R\+G\+\_\+\+F\+L\+A\+G}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+F\+L\+A\+G@{A\+R\+G\+\_\+\+F\+L\+A\+G}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1afd135f03243c33991ef507f4410718f7}{A\+R\+G\+\_\+\+F\+L\+A\+G}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1afd135f03243c33991ef507f4410718f7}
+}]\index{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G@{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G@{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a1e0904ee5e3baf2aa4070ab0718a3afa}{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a1e0904ee5e3baf2aa4070ab0718a3afa}
+}]\index{A\+R\+G\+\_\+\+I\+N\+T@{A\+R\+G\+\_\+\+I\+N\+T}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+I\+N\+T@{A\+R\+G\+\_\+\+I\+N\+T}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a58393752406d163205fa18f450909993}{A\+R\+G\+\_\+\+I\+N\+T}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a58393752406d163205fa18f450909993}
+}]\index{A\+R\+G\+\_\+\+F\+L\+O\+A\+T@{A\+R\+G\+\_\+\+F\+L\+O\+A\+T}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+F\+L\+O\+A\+T@{A\+R\+G\+\_\+\+F\+L\+O\+A\+T}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a5875de3e892eb32ed41e4d60ef7d99ca}{A\+R\+G\+\_\+\+F\+L\+O\+A\+T}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a5875de3e892eb32ed41e4d60ef7d99ca}
+}]\index{A\+R\+G\+\_\+\+N\+O@{A\+R\+G\+\_\+\+N\+O}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+N\+O@{A\+R\+G\+\_\+\+N\+O}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a67dd250fb3e23862523b667407868ada}{A\+R\+G\+\_\+\+N\+O}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a67dd250fb3e23862523b667407868ada}
+}]\index{A\+R\+G\+\_\+\+F\+L\+A\+G@{A\+R\+G\+\_\+\+F\+L\+A\+G}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+F\+L\+A\+G@{A\+R\+G\+\_\+\+F\+L\+A\+G}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1afd135f03243c33991ef507f4410718f7}{A\+R\+G\+\_\+\+F\+L\+A\+G}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1afd135f03243c33991ef507f4410718f7}
+}]\index{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G@{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G@{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a1e0904ee5e3baf2aa4070ab0718a3afa}{A\+R\+G\+\_\+\+S\+T\+R\+I\+N\+G}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a1e0904ee5e3baf2aa4070ab0718a3afa}
+}]\index{A\+R\+G\+\_\+\+I\+N\+T@{A\+R\+G\+\_\+\+I\+N\+T}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+I\+N\+T@{A\+R\+G\+\_\+\+I\+N\+T}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a58393752406d163205fa18f450909993}{A\+R\+G\+\_\+\+I\+N\+T}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a58393752406d163205fa18f450909993}
+}]\index{A\+R\+G\+\_\+\+F\+L\+O\+A\+T@{A\+R\+G\+\_\+\+F\+L\+O\+A\+T}!cmdline1.\+c@{cmdline1.\+c}}\index{cmdline1.\+c@{cmdline1.\+c}!A\+R\+G\+\_\+\+F\+L\+O\+A\+T@{A\+R\+G\+\_\+\+F\+L\+O\+A\+T}}\item[{\em 
+\hypertarget{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a5875de3e892eb32ed41e4d60ef7d99ca}{A\+R\+G\+\_\+\+F\+L\+O\+A\+T}\label{cmdline1_8c_a88e31a859f36efa57ad64e6ae13332a1a5875de3e892eb32ed41e4d60ef7d99ca}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 61 of file cmdline1.\+c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{cmdline1_8c_a3c3df73307452c51fee0a34640d92196}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser@{cmdline\+\_\+parser}}
+\index{cmdline\+\_\+parser@{cmdline\+\_\+parser}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser}]{\setlength{\rightskip}{0pt plus 5cm}int cmdline\+\_\+parser (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{struct {\bf gengetopt\+\_\+args\+\_\+info} $\ast$}]{args\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_a3c3df73307452c51fee0a34640d92196}
+The command line parser 
+\begin{DoxyParams}{Parameters}
+{\em argc} & the number of command line options \\
+\hline
+{\em argv} & the command line options \\
+\hline
+{\em args\+\_\+info} & the structure where option information will be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if everything went fine, N\+O\+N 0 if an error took place 
+\end{DoxyReturn}
+
+
+Definition at line 404 of file cmdline1.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{cmdline1_8c_a3c3df73307452c51fee0a34640d92196_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cmdline1_8c_a78a0cd581698415a62f68214603b1a30}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser2@{cmdline\+\_\+parser2}}
+\index{cmdline\+\_\+parser2@{cmdline\+\_\+parser2}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser2}]{\setlength{\rightskip}{0pt plus 5cm}int cmdline\+\_\+parser2 (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{struct {\bf gengetopt\+\_\+args\+\_\+info} $\ast$}]{args\+\_\+info, }
+\item[{int}]{override, }
+\item[{int}]{initialize, }
+\item[{int}]{check\+\_\+required}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_a78a0cd581698415a62f68214603b1a30}
+The command line parser (version with additional parameters -\/ deprecated) 
+\begin{DoxyParams}{Parameters}
+{\em argc} & the number of command line options \\
+\hline
+{\em argv} & the command line options \\
+\hline
+{\em args\+\_\+info} & the structure where option information will be stored \\
+\hline
+{\em override} & whether to override possibly already present options \\
+\hline
+{\em initialize} & whether to initialize the option structure my\+\_\+args\+\_\+info \\
+\hline
+{\em check\+\_\+required} & whether to check that all required options were provided \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if everything went fine, N\+O\+N 0 if an error took place 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]use \hyperlink{cmdline_8h_ac7bb5d76f3f56d1c0b3b531f11ac6f07}{cmdline\+\_\+parser\+\_\+ext()} instead \end{DoxyRefDesc}
+
+
+Definition at line 426 of file cmdline1.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{cmdline1_8c_a78a0cd581698415a62f68214603b1a30_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{cmdline1_8c_a78a0cd581698415a62f68214603b1a30_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cmdline1_8c_a1f73418092a6e6eb3706aa0de2785e11}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+dump@{cmdline\+\_\+parser\+\_\+dump}}
+\index{cmdline\+\_\+parser\+\_\+dump@{cmdline\+\_\+parser\+\_\+dump}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+dump}]{\setlength{\rightskip}{0pt plus 5cm}int cmdline\+\_\+parser\+\_\+dump (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{outfile, }
+\item[{struct {\bf gengetopt\+\_\+args\+\_\+info} $\ast$}]{args\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_a1f73418092a6e6eb3706aa0de2785e11}
+Save the contents of the option struct into an already open F\+I\+L\+E stream. 
+\begin{DoxyParams}{Parameters}
+{\em outfile} & the stream where to dump options \\
+\hline
+{\em args\+\_\+info} & the option struct to dump \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if everything went fine, N\+O\+N 0 if an error took place 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file cmdline1.\+c.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cmdline1_8c_a1f73418092a6e6eb3706aa0de2785e11_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cmdline1_8c_ac7bb5d76f3f56d1c0b3b531f11ac6f07}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+ext@{cmdline\+\_\+parser\+\_\+ext}}
+\index{cmdline\+\_\+parser\+\_\+ext@{cmdline\+\_\+parser\+\_\+ext}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+ext}]{\setlength{\rightskip}{0pt plus 5cm}int cmdline\+\_\+parser\+\_\+ext (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv, }
+\item[{struct {\bf gengetopt\+\_\+args\+\_\+info} $\ast$}]{args\+\_\+info, }
+\item[{struct {\bf cmdline\+\_\+parser\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_ac7bb5d76f3f56d1c0b3b531f11ac6f07}
+The command line parser (version with additional parameters) 
+\begin{DoxyParams}{Parameters}
+{\em argc} & the number of command line options \\
+\hline
+{\em argv} & the command line options \\
+\hline
+{\em args\+\_\+info} & the structure where option information will be stored \\
+\hline
+{\em params} & additional parameters for the parser \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if everything went fine, N\+O\+N 0 if an error took place 
+\end{DoxyReturn}
+
+
+Definition at line 410 of file cmdline1.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{cmdline1_8c_ac7bb5d76f3f56d1c0b3b531f11ac6f07_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cmdline1_8c_a5f3e9412f88f1058a31ac28ad2ea2818}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+file\+\_\+save@{cmdline\+\_\+parser\+\_\+file\+\_\+save}}
+\index{cmdline\+\_\+parser\+\_\+file\+\_\+save@{cmdline\+\_\+parser\+\_\+file\+\_\+save}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+file\+\_\+save}]{\setlength{\rightskip}{0pt plus 5cm}int cmdline\+\_\+parser\+\_\+file\+\_\+save (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename, }
+\item[{struct {\bf gengetopt\+\_\+args\+\_\+info} $\ast$}]{args\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_a5f3e9412f88f1058a31ac28ad2ea2818}
+Save the contents of the option struct into a (text) file. This file can be read by the config file parser (if generated by gengetopt) 
+\begin{DoxyParams}{Parameters}
+{\em filename} & the file where to save \\
+\hline
+{\em args\+\_\+info} & the option struct to save \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if everything went fine, N\+O\+N 0 if an error took place 
+\end{DoxyReturn}
+
+
+Definition at line 363 of file cmdline1.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cmdline1_8c_a5f3e9412f88f1058a31ac28ad2ea2818_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cmdline1_8c_af1b97c4e92b88f736e350b3902266ba4}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+free@{cmdline\+\_\+parser\+\_\+free}}
+\index{cmdline\+\_\+parser\+\_\+free@{cmdline\+\_\+parser\+\_\+free}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void cmdline\+\_\+parser\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gengetopt\+\_\+args\+\_\+info} $\ast$}]{args\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_af1b97c4e92b88f736e350b3902266ba4}
+Deallocates the string fields of the \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} structure (but does not deallocate the structure itself) 
+\begin{DoxyParams}{Parameters}
+{\em args\+\_\+info} & the structure to deallocate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 383 of file cmdline1.\+c.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cmdline1_8c_af1b97c4e92b88f736e350b3902266ba4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cmdline1_8c_aca62b50d03d0d082968eeb1940f98650}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+init@{cmdline\+\_\+parser\+\_\+init}}
+\index{cmdline\+\_\+parser\+\_\+init@{cmdline\+\_\+parser\+\_\+init}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void cmdline\+\_\+parser\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gengetopt\+\_\+args\+\_\+info} $\ast$}]{args\+\_\+info}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_aca62b50d03d0d082968eeb1940f98650}
+Initializes the passed \hyperlink{structgengetopt__args__info}{gengetopt\+\_\+args\+\_\+info} structure's fields (also set default values for options that have a default) 
+\begin{DoxyParams}{Parameters}
+{\em args\+\_\+info} & the structure to initialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file cmdline1.\+c.
+
+\hypertarget{cmdline1_8c_afd778af110fe0ee1ea5eac7aa9939d92}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+params\+\_\+create@{cmdline\+\_\+parser\+\_\+params\+\_\+create}}
+\index{cmdline\+\_\+parser\+\_\+params\+\_\+create@{cmdline\+\_\+parser\+\_\+params\+\_\+create}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+params\+\_\+create}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf cmdline\+\_\+parser\+\_\+params}$\ast$ cmdline\+\_\+parser\+\_\+params\+\_\+create (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_afd778af110fe0ee1ea5eac7aa9939d92}
+Allocates dynamically a \hyperlink{structcmdline__parser__params}{cmdline\+\_\+parser\+\_\+params} structure and initializes all its fields to their default values \begin{DoxyReturn}{Returns}
+the created and initialized \hyperlink{structcmdline__parser__params}{cmdline\+\_\+parser\+\_\+params} structure 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file cmdline1.\+c.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cmdline1_8c_afd778af110fe0ee1ea5eac7aa9939d92_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cmdline1_8c_af72b814611cffc706b2135ccdfe7e997}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+params\+\_\+init@{cmdline\+\_\+parser\+\_\+params\+\_\+init}}
+\index{cmdline\+\_\+parser\+\_\+params\+\_\+init@{cmdline\+\_\+parser\+\_\+params\+\_\+init}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+params\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void cmdline\+\_\+parser\+\_\+params\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{struct {\bf cmdline\+\_\+parser\+\_\+params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_af72b814611cffc706b2135ccdfe7e997}
+Initializes all the fields a \hyperlink{structcmdline__parser__params}{cmdline\+\_\+parser\+\_\+params} structure to their default values 
+\begin{DoxyParams}{Parameters}
+{\em params} & the structure to initialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file cmdline1.\+c.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cmdline1_8c_af72b814611cffc706b2135ccdfe7e997_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cmdline1_8c_ad4f7db2fa4002379eb30e5206f3b7492}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+print\+\_\+help@{cmdline\+\_\+parser\+\_\+print\+\_\+help}}
+\index{cmdline\+\_\+parser\+\_\+print\+\_\+help@{cmdline\+\_\+parser\+\_\+print\+\_\+help}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+print\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}void cmdline\+\_\+parser\+\_\+print\+\_\+help (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_ad4f7db2fa4002379eb30e5206f3b7492}
+Print the help 
+
+Definition at line 204 of file cmdline1.\+c.
+
+\hypertarget{cmdline1_8c_a96f27bf35ce0ab8eea7a1f6e6b59a5e2}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+print\+\_\+version@{cmdline\+\_\+parser\+\_\+print\+\_\+version}}
+\index{cmdline\+\_\+parser\+\_\+print\+\_\+version@{cmdline\+\_\+parser\+\_\+print\+\_\+version}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+print\+\_\+version}]{\setlength{\rightskip}{0pt plus 5cm}void cmdline\+\_\+parser\+\_\+print\+\_\+version (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_a96f27bf35ce0ab8eea7a1f6e6b59a5e2}
+Print the version 
+
+Definition at line 178 of file cmdline1.\+c.
+
+\hypertarget{cmdline1_8c_a83651e5be280d60aed58fdb72456a030}{\index{cmdline1.\+c@{cmdline1.\+c}!cmdline\+\_\+parser\+\_\+required@{cmdline\+\_\+parser\+\_\+required}}
+\index{cmdline\+\_\+parser\+\_\+required@{cmdline\+\_\+parser\+\_\+required}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{cmdline\+\_\+parser\+\_\+required}]{\setlength{\rightskip}{0pt plus 5cm}int cmdline\+\_\+parser\+\_\+required (
+\begin{DoxyParamCaption}
+\item[{struct {\bf gengetopt\+\_\+args\+\_\+info} $\ast$}]{args\+\_\+info, }
+\item[{const char $\ast$}]{prog\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{cmdline1_8c_a83651e5be280d60aed58fdb72456a030}
+Checks that all the required options were specified 
+\begin{DoxyParams}{Parameters}
+{\em args\+\_\+info} & the structure to check \\
+\hline
+{\em prog\+\_\+name} & the name of the program that will be used to print possible errors \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 449 of file cmdline1.\+c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{cmdline1_8c_accad6107ca685f6eba555f6ce63d355d}{\index{cmdline1.\+c@{cmdline1.\+c}!gengetopt\+\_\+args\+\_\+info\+\_\+description@{gengetopt\+\_\+args\+\_\+info\+\_\+description}}
+\index{gengetopt\+\_\+args\+\_\+info\+\_\+description@{gengetopt\+\_\+args\+\_\+info\+\_\+description}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{gengetopt\+\_\+args\+\_\+info\+\_\+description}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gengetopt\+\_\+args\+\_\+info\+\_\+description = \char`\"{}\char`\"{}}}\label{cmdline1_8c_accad6107ca685f6eba555f6ce63d355d}
+
+
+the description string of the program 
+
+
+
+Definition at line 34 of file cmdline1.\+c.
+
+\hypertarget{cmdline1_8c_a6af7a6b7fb37c0abaa916ee1cfa0a41f}{\index{cmdline1.\+c@{cmdline1.\+c}!gengetopt\+\_\+args\+\_\+info\+\_\+help@{gengetopt\+\_\+args\+\_\+info\+\_\+help}}
+\index{gengetopt\+\_\+args\+\_\+info\+\_\+help@{gengetopt\+\_\+args\+\_\+info\+\_\+help}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{gengetopt\+\_\+args\+\_\+info\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gengetopt\+\_\+args\+\_\+info\+\_\+help\mbox{[}$\,$\mbox{]}}}\label{cmdline1_8c_a6af7a6b7fb37c0abaa916ee1cfa0a41f}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"  -h, --help                   Print help and exit"},
+  \textcolor{stringliteral}{"  -V, --version                Print version and exit"},
+  \textcolor{stringliteral}{"  -a, --alpha=FLOAT             weight for hybridization  (default=`0.1')"},
+  \textcolor{stringliteral}{"  -b, --beta=FLOAT             weight for unpaired bases  (default=`0.0')"},
+  \textcolor{stringliteral}{"  -t, --fold-th=FLOAT          Threshold for base-pairing probabilities\(\backslash\)n                               
+        (default=`0.5')"},
+  \textcolor{stringliteral}{"  -u, --hybridize-th=FLOAT     Threshold for hybridazation probabilities\(\backslash\)n                              
+         (default=`0.2')"},
+  \textcolor{stringliteral}{"  -s, --acc-th=FLOAT           Threshold for accessible probabilities\(\backslash\)n                                
+       (default=`0.0')"},
+  \textcolor{stringliteral}{"      --max-w=INT              Maximum length of accessible regions\(\backslash\)n                                
+       (default=`100')"},
+  \textcolor{stringliteral}{"      --min-w=INT              Minimum length of accessible regions\(\backslash\)n                                
+       (default=`0')"},
+  \textcolor{stringliteral}{"      --zscore=INT             Calculate z-score via dishuffling (0=no\(\backslash\)n                                
+       shuffling, 1=1st seq only, 2=2nd seq only, or\(\backslash\)n                                 12=both)  (default=`0')"},
+  \textcolor{stringliteral}{"      --num-shuffling=INT      The number of shuffling  (default=`1000')"},
+  \textcolor{stringliteral}{"      --seed=INT               Seed for random number generator  (default=`0')"},
+  \textcolor{stringliteral}{"  -m, --mccaskill              Use McCaskill model for folding  (default=off)"},
+  \textcolor{stringliteral}{"  -i, --allow-isolated         Allow isolated base-pairs  (default=off)"},
+  \textcolor{stringliteral}{"  -e, --show-energy            calculate the free energy of the predicted joint\(\backslash\)n                       
+                structure  (default=off)"},
+  \textcolor{stringliteral}{"  -P, --param-file=FILENAME    Read the energy parameter file for Vienna RNA\(\backslash\)n                          
+             package"},
+  \textcolor{stringliteral}{"  -p, --no-pk                  do not use the constraints for interenal\(\backslash\)n                               
+        pseudoknots  (default=off)"},
+  \textcolor{stringliteral}{"  -r, --rip=FILENAME           Import posterior probabilities from the result\(\backslash\)n                         
+              of RIP"},
+  \textcolor{stringliteral}{"  -w, --mix-weight=FLOAT       mixture weights of inference engines\(\backslash\)n                                
+       (default=`1.0')"},
+  \textcolor{stringliteral}{"  -X, --engine-seq=ENGINENAME  specify the inference engine for independent\(\backslash\)n                           
+            sequence  (default=`McCaskill')"},
+  \textcolor{stringliteral}{"  -A, --engine-aln=ENGINENAME  specify the inference engine for independent\(\backslash\)n                           
+            Alignment  (default=`CONTRAlign')"},
+    0
+\}
+\end{DoxyCode}
+
+
+all the lines making the help output 
+
+
+
+Definition at line 36 of file cmdline1.\+c.
+
+\hypertarget{cmdline1_8c_a610c3307abce5a8fd304b86b018ae60b}{\index{cmdline1.\+c@{cmdline1.\+c}!gengetopt\+\_\+args\+\_\+info\+\_\+purpose@{gengetopt\+\_\+args\+\_\+info\+\_\+purpose}}
+\index{gengetopt\+\_\+args\+\_\+info\+\_\+purpose@{gengetopt\+\_\+args\+\_\+info\+\_\+purpose}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{gengetopt\+\_\+args\+\_\+info\+\_\+purpose}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gengetopt\+\_\+args\+\_\+info\+\_\+purpose = \char`\"{}Ract\+I\+P\+\_\+\+Hom\char`\"{}}}\label{cmdline1_8c_a610c3307abce5a8fd304b86b018ae60b}
+
+
+the purpose string of the program 
+
+
+
+Definition at line 28 of file cmdline1.\+c.
+
+\hypertarget{cmdline1_8c_a9f397a306f363bfdebb611e86acf36d5}{\index{cmdline1.\+c@{cmdline1.\+c}!gengetopt\+\_\+args\+\_\+info\+\_\+usage@{gengetopt\+\_\+args\+\_\+info\+\_\+usage}}
+\index{gengetopt\+\_\+args\+\_\+info\+\_\+usage@{gengetopt\+\_\+args\+\_\+info\+\_\+usage}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{gengetopt\+\_\+args\+\_\+info\+\_\+usage}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gengetopt\+\_\+args\+\_\+info\+\_\+usage = \char`\"{}Usage\+: \char`\"{} C\+M\+D\+L\+I\+N\+E\+\_\+\+P\+A\+R\+S\+E\+R\+\_\+\+P\+A\+C\+K\+A\+G\+E \char`\"{} \mbox{[}O\+P\+T\+I\+O\+N\+S\mbox{]}... \mbox{[}F\+I\+L\+E\+S\mbox{]}...\char`\"{}}}\label{cmdline1_8c_a9f397a306f363bfdebb611e86acf36d5}
+
+
+the usage string of the program 
+
+
+
+Definition at line 30 of file cmdline1.\+c.
+
+\hypertarget{cmdline1_8c_a0dbb0b6cf7e5cbb9804a9075bcefa68a}{\index{cmdline1.\+c@{cmdline1.\+c}!gengetopt\+\_\+args\+\_\+info\+\_\+versiontext@{gengetopt\+\_\+args\+\_\+info\+\_\+versiontext}}
+\index{gengetopt\+\_\+args\+\_\+info\+\_\+versiontext@{gengetopt\+\_\+args\+\_\+info\+\_\+versiontext}!cmdline1.\+c@{cmdline1.\+c}}
+\subsubsection[{gengetopt\+\_\+args\+\_\+info\+\_\+versiontext}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gengetopt\+\_\+args\+\_\+info\+\_\+versiontext = \char`\"{}\char`\"{}}}\label{cmdline1_8c_a0dbb0b6cf7e5cbb9804a9075bcefa68a}
+
+
+Definition at line 32 of file cmdline1.\+c.
+

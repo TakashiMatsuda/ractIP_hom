@@ -1,0 +1,6 @@
+<map id="Fast_LogPlusEquals" name="Fast_LogPlusEquals">
+<area shape="rect" id="node2" href="$class_inference_engine.html#ad76e23c8323b050b23e8c1c7e8046f0e" title="InferenceEngine::Compute\lInside" alt="" coords="198,5,378,46"/>
+<area shape="rect" id="node3" href="$class_inference_engine.html#a2d0abf6db99cfd61b703d8e567bee09d" title="InferenceEngine::Compute\lOutside" alt="" coords="198,70,378,111"/>
+<area shape="rect" id="node4" href="$class_inference_engine.html#a6d8a78e3c1a7dcffffa26d3ea7ddd92b" title="InferenceEngine::Compute\lFeatureCountExpectations" alt="" coords="198,135,378,177"/>
+<area shape="rect" id="node5" href="$class_inference_engine.html#aef03cd26f3758cfff297703bb37b5e9f" title="InferenceEngine::Compute\lPosterior" alt="" coords="198,201,378,242"/>
+</map>

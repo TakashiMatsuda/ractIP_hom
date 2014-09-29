@@ -1,0 +1,1045 @@
+\hypertarget{structgengetopt__args__info}{\section{gengetopt\+\_\+args\+\_\+info Struct Reference}
+\label{structgengetopt__args__info}\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+}
+
+
+Where the command line options are stored.  
+
+
+
+
+{\ttfamily \#include $<$cmdline.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a6497d9a5edee41da66eb109f093781a7}{help\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Print help and exit help description. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_adb4fc9ee66c499d4225d6f6eefbd8c09}{version\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Print version and exit help description. \end{DoxyCompactList}\item 
+float \hyperlink{structgengetopt__args__info_a502d24814b53a2197444e3ef7f5af837}{alpha\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em weight for hybridization (default='0.\+5'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a764f3e0a251f142ad756912a7f8e43a2}{alpha\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em weight for hybridization original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a9c0b0c04fb015f10016df0054a8ce4f6}{alpha\+\_\+help}
+\begin{DoxyCompactList}\small\item\em weight for hybridization help description. \end{DoxyCompactList}\item 
+float \hyperlink{structgengetopt__args__info_af10d11b97a09ce5f90816f475f099383}{beta\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em weight for unpaired bases (default='0.\+0'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a13737dc4f85cd3276f8cbb66e796a11d}{beta\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em weight for unpaired bases original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a4a10c9f1eac9e95ee84071c2c42924ac}{beta\+\_\+help}
+\begin{DoxyCompactList}\small\item\em weight for unpaired bases help description. \end{DoxyCompactList}\item 
+float \hyperlink{structgengetopt__args__info_a7b854a8200daa4d15745ae98b20f30f6}{fold\+\_\+th\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Threshold for base-\/pairing probabilities (default='0.\+0001'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a281837484d9e42893a583d0a850cd610}{fold\+\_\+th\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Threshold for base-\/pairing probabilities original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a91fb17190d2ee0c11ba6c6ac16a8be5e}{fold\+\_\+th\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Threshold for base-\/pairing probabilities help description. \end{DoxyCompactList}\item 
+float \hyperlink{structgengetopt__args__info_ae8618e9bfeb0de8e9b095ecec22af5c5}{hybridize\+\_\+th\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Threshold for hybridazation probabilities (default='0.\+2'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_af5ad30ce558e2a362b45f25eac7c2d8a}{hybridize\+\_\+th\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Threshold for hybridazation probabilities original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a80b3003903fe0c9bfe6cacffcff587ae}{hybridize\+\_\+th\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Threshold for hybridazation probabilities help description. \end{DoxyCompactList}\item 
+float \hyperlink{structgengetopt__args__info_add7c709ed6c1601e389c7373250e4117}{acc\+\_\+th\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Threshold for accessible probabilities (default='0.\+0'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_ae8040a2293d3668f9afd87c7cc487591}{acc\+\_\+th\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Threshold for accessible probabilities original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a6c25c2ca04d50ecd361603514540046b}{acc\+\_\+th\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Threshold for accessible probabilities help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_a9bc5ef56f828d6fb7ce0525884d6ed07}{max\+\_\+w\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Maximum length of accessible regions (default='0'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a13203309b03664cded43fc7c50065c15}{max\+\_\+w\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Maximum length of accessible regions original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a84421172a52bd1de77c3a500fddb731b}{max\+\_\+w\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Maximum length of accessible regions help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_ab0d4deed1d0424a4131eaa7b40b9e4ab}{min\+\_\+w\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Minimum length of accessible regions (default='0'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a65ff1a2d7368adda94e83864d5d8c399}{min\+\_\+w\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Minimum length of accessible regions original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_aaf033ec8b1593d0f2f6f6d28a9709622}{min\+\_\+w\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Minimum length of accessible regions help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_a74d8c0d931f3466ef58a09fbabe05fa3}{zscore\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Calculate z-\/score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) (default='0'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_aab048214690b4bb2aef5468cf1f796c8}{zscore\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Calculate z-\/score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a34d3e383d7098991098429f67eeb331b}{zscore\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Calculate z-\/score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_a715feb4a7b63112c0029aca5bc3e0e15}{num\+\_\+shuffling\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em The number of shuffling (default='1000'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_aca977068885436242d4094af483060d7}{num\+\_\+shuffling\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em The number of shuffling original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a8fa7a97053908512f7fb0078b95a7b8f}{num\+\_\+shuffling\+\_\+help}
+\begin{DoxyCompactList}\small\item\em The number of shuffling help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_a607715b9c4184c391b4738d5f70512e7}{seed\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Seed for random number generator (default='0'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a9b36d9a37ede1d3c6cca9d13a45c3cae}{seed\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Seed for random number generator original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_ab4344caee458766e8bb69c200668de97}{seed\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Seed for random number generator help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_a2c35d30cec02884776c507be1f1c22ed}{mccaskill\+\_\+flag}
+\begin{DoxyCompactList}\small\item\em Use Mc\+Caskill model for folding (default=off). \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a153efa81aed0fc8be8e0e793cb62ffd7}{mccaskill\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Use Mc\+Caskill model for folding help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_a7253dcfc654558789f9bdd5b6e29a3bb}{allow\+\_\+isolated\+\_\+flag}
+\begin{DoxyCompactList}\small\item\em Allow isolated base-\/pairs (default=off). \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_accb0df971eca4af7ced072388135ed2b}{allow\+\_\+isolated\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Allow isolated base-\/pairs help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_a53618c4b58a0f0c1ebc48f773878ae03}{show\+\_\+energy\+\_\+flag}
+\begin{DoxyCompactList}\small\item\em calculate the free energy of the predicted joint structure (default=off). \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a2deb60524353a2560c25fd0883cd225f}{show\+\_\+energy\+\_\+help}
+\begin{DoxyCompactList}\small\item\em calculate the free energy of the predicted joint structure help description. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_aa68408ac76065d32115a6517d1dc084f}{param\+\_\+file\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Read the energy parameter file for \hyperlink{namespace_vienna}{Vienna} R\+N\+A package. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_af063ce92f6e760b3edfd61e488221afb}{param\+\_\+file\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Read the energy parameter file for \hyperlink{namespace_vienna}{Vienna} R\+N\+A package original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a9f45df949ae710b164262b66c4982498}{param\+\_\+file\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Read the energy parameter file for \hyperlink{namespace_vienna}{Vienna} R\+N\+A package help description. \end{DoxyCompactList}\item 
+int \hyperlink{structgengetopt__args__info_a656b35ad9dd3f8f39444ec2684fcf47c}{no\+\_\+pk\+\_\+flag}
+\begin{DoxyCompactList}\small\item\em do not use the constraints for interenal pseudoknots (default=off). \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_ab2409525071e5bcc073637b7e252fea8}{no\+\_\+pk\+\_\+help}
+\begin{DoxyCompactList}\small\item\em do not use the constraints for interenal pseudoknots help description. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_aa613330dba372001de2dfa178b161a1a}{rip\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em Import posterior probabilities from the result of R\+I\+P. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a152b3fd65570a82ac6effec4c8f78317}{rip\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em Import posterior probabilities from the result of R\+I\+P original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a41b61f6fe469c862d765c45879591857}{rip\+\_\+help}
+\begin{DoxyCompactList}\small\item\em Import posterior probabilities from the result of R\+I\+P help description. \end{DoxyCompactList}\item 
+float \hyperlink{structgengetopt__args__info_a5453c7d90806e2c130485e8d45e4b2bb}{mix\+\_\+weight\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em mixture weights of inference engines (default='0.\+5'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a4c5708197ebf9d7e52ea2a2b7988b5b8}{mix\+\_\+weight\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em mixture weights of inference engines original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_ab851e0e7b97a8147581e5ef2407d000b}{mix\+\_\+weight\+\_\+help}
+\begin{DoxyCompactList}\small\item\em mixture weights of inference engines help description. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a1a3510547af7d7dd9e238d147fb3bbf7}{engine\+\_\+seq\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em specify the inference engine for independent sequence (default='Mc\+Caskill'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_abe98c49189906e22b3050266037b7a60}{engine\+\_\+seq\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em specify the inference engine for independent sequence original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_a49e17a823ee81349a2a9ae841c4efa37}{engine\+\_\+seq\+\_\+help}
+\begin{DoxyCompactList}\small\item\em specify the inference engine for independent sequence help description. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_a80b9792246c023eb1ddd04336b226c1a}{engine\+\_\+aln\+\_\+arg}
+\begin{DoxyCompactList}\small\item\em specify the inference engine for independent \hyperlink{class_alignment}{Alignment} (default='C\+O\+N\+T\+R\+Align'). \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{structgengetopt__args__info_aefc2d0fce93eea31fcad7240368fc488}{engine\+\_\+aln\+\_\+orig}
+\begin{DoxyCompactList}\small\item\em specify the inference engine for independent \hyperlink{class_alignment}{Alignment} original value given at command line. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{structgengetopt__args__info_ac82fc1aba0c9785c9484b68abe875fba}{engine\+\_\+aln\+\_\+help}
+\begin{DoxyCompactList}\small\item\em specify the inference engine for independent \hyperlink{class_alignment}{Alignment} help description. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_ab9fd677f890731fd7d6f6c62e6dfc99c}{help\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether help was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_ad4953a2130b2f8b94a3a687014f278e1}{version\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether version was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a2843ef7fb6a39e43eccc1088e4d63f6f}{alpha\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether alpha was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a78fbc9190ccaddb0718c66b5ea3f16d1}{beta\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether beta was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a0a5f7a2dde96bfe36799ed2d38282f75}{fold\+\_\+th\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether fold-\/th was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a8cfc0b8596b61b015d998df7255326a2}{hybridize\+\_\+th\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether hybridize-\/th was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_aceb5489e00facac0f7469af450fecc5f}{acc\+\_\+th\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether acc-\/th was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_aa982c2dc155c088dfd006708ce04c5ed}{max\+\_\+w\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether max-\/w was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_aeb19a366901b0fa59385722ed8c69747}{min\+\_\+w\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether min-\/w was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_ae7d88b70fcb65c4b63f1f026c8cfa47e}{zscore\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether zscore was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a39aafdd42c0bbbd0cf11b6e6506aa6fe}{num\+\_\+shuffling\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether num-\/shuffling was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a5628cfc09082e40b5e095f52c05098ac}{seed\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether seed was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_abdb41a52bf90de52d706f3a4b768fff1}{mccaskill\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether mccaskill was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a8b05ab428edea135b106a9bcf40344ae}{allow\+\_\+isolated\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether allow-\/isolated was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a0d4a4466189dbba0719c55a398fb30fa}{show\+\_\+energy\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether show-\/energy was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_acb50657bd03e25460c0fc7b2eda21c3a}{param\+\_\+file\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether param-\/file was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_a6aa44a52828faad6c6d8ec6b4ab5494e}{no\+\_\+pk\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether no-\/pk was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_ac307b1ec217df5ef31616c14a77627b3}{rip\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether rip was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_ab6cdb68b59a319ba28d96f0e1899f720}{mix\+\_\+weight\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether mix-\/weight was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_ab3cefd9fb1ccec8f27e55a6ab1c9acfb}{engine\+\_\+seq\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether engine-\/seq was given. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structgengetopt__args__info_aabfb2ac097b504732bb06e9fec3ab25c}{engine\+\_\+aln\+\_\+given}
+\begin{DoxyCompactList}\small\item\em Whether engine-\/aln was given. \end{DoxyCompactList}\item 
+char $\ast$$\ast$ \hyperlink{structgengetopt__args__info_a6fe9c1a32bc4c64a2ca4e3cfce05b147}{inputs}
+\begin{DoxyCompactList}\small\item\em unamed options (options without names) \end{DoxyCompactList}\item 
+unsigned \hyperlink{structgengetopt__args__info_a3d69c180d5ac0b1124fd9a6fe680706c}{inputs\+\_\+num}
+\begin{DoxyCompactList}\small\item\em unamed options number \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Where the command line options are stored. 
+
+Definition at line 42 of file cmdline.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structgengetopt__args__info_add7c709ed6c1601e389c7373250e4117}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!acc\+\_\+th\+\_\+arg@{acc\+\_\+th\+\_\+arg}}
+\index{acc\+\_\+th\+\_\+arg@{acc\+\_\+th\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{acc\+\_\+th\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}float gengetopt\+\_\+args\+\_\+info\+::acc\+\_\+th\+\_\+arg}}\label{structgengetopt__args__info_add7c709ed6c1601e389c7373250e4117}
+
+
+Threshold for accessible probabilities (default='0.\+0'). 
+
+
+
+Definition at line 58 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aceb5489e00facac0f7469af450fecc5f}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!acc\+\_\+th\+\_\+given@{acc\+\_\+th\+\_\+given}}
+\index{acc\+\_\+th\+\_\+given@{acc\+\_\+th\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{acc\+\_\+th\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::acc\+\_\+th\+\_\+given}}\label{structgengetopt__args__info_aceb5489e00facac0f7469af450fecc5f}
+
+
+Whether acc-\/th was given. 
+
+
+
+Definition at line 106 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a6c25c2ca04d50ecd361603514540046b}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!acc\+\_\+th\+\_\+help@{acc\+\_\+th\+\_\+help}}
+\index{acc\+\_\+th\+\_\+help@{acc\+\_\+th\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{acc\+\_\+th\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::acc\+\_\+th\+\_\+help}}\label{structgengetopt__args__info_a6c25c2ca04d50ecd361603514540046b}
+
+
+Threshold for accessible probabilities help description. 
+
+
+
+Definition at line 60 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ae8040a2293d3668f9afd87c7cc487591}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!acc\+\_\+th\+\_\+orig@{acc\+\_\+th\+\_\+orig}}
+\index{acc\+\_\+th\+\_\+orig@{acc\+\_\+th\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{acc\+\_\+th\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::acc\+\_\+th\+\_\+orig}}\label{structgengetopt__args__info_ae8040a2293d3668f9afd87c7cc487591}
+
+
+Threshold for accessible probabilities original value given at command line. 
+
+
+
+Definition at line 59 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a7253dcfc654558789f9bdd5b6e29a3bb}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!allow\+\_\+isolated\+\_\+flag@{allow\+\_\+isolated\+\_\+flag}}
+\index{allow\+\_\+isolated\+\_\+flag@{allow\+\_\+isolated\+\_\+flag}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{allow\+\_\+isolated\+\_\+flag}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::allow\+\_\+isolated\+\_\+flag}}\label{structgengetopt__args__info_a7253dcfc654558789f9bdd5b6e29a3bb}
+
+
+Allow isolated base-\/pairs (default=off). 
+
+
+
+Definition at line 78 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a8b05ab428edea135b106a9bcf40344ae}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!allow\+\_\+isolated\+\_\+given@{allow\+\_\+isolated\+\_\+given}}
+\index{allow\+\_\+isolated\+\_\+given@{allow\+\_\+isolated\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{allow\+\_\+isolated\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::allow\+\_\+isolated\+\_\+given}}\label{structgengetopt__args__info_a8b05ab428edea135b106a9bcf40344ae}
+
+
+Whether allow-\/isolated was given. 
+
+
+
+Definition at line 113 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_accb0df971eca4af7ced072388135ed2b}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!allow\+\_\+isolated\+\_\+help@{allow\+\_\+isolated\+\_\+help}}
+\index{allow\+\_\+isolated\+\_\+help@{allow\+\_\+isolated\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{allow\+\_\+isolated\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::allow\+\_\+isolated\+\_\+help}}\label{structgengetopt__args__info_accb0df971eca4af7ced072388135ed2b}
+
+
+Allow isolated base-\/pairs help description. 
+
+
+
+Definition at line 79 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a502d24814b53a2197444e3ef7f5af837}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!alpha\+\_\+arg@{alpha\+\_\+arg}}
+\index{alpha\+\_\+arg@{alpha\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{alpha\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}float gengetopt\+\_\+args\+\_\+info\+::alpha\+\_\+arg}}\label{structgengetopt__args__info_a502d24814b53a2197444e3ef7f5af837}
+
+
+weight for hybridization (default='0.\+5'). 
+
+weight for hybridization (default='0.\+1'). 
+
+Definition at line 46 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a2843ef7fb6a39e43eccc1088e4d63f6f}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!alpha\+\_\+given@{alpha\+\_\+given}}
+\index{alpha\+\_\+given@{alpha\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{alpha\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::alpha\+\_\+given}}\label{structgengetopt__args__info_a2843ef7fb6a39e43eccc1088e4d63f6f}
+
+
+Whether alpha was given. 
+
+
+
+Definition at line 102 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a9c0b0c04fb015f10016df0054a8ce4f6}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!alpha\+\_\+help@{alpha\+\_\+help}}
+\index{alpha\+\_\+help@{alpha\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{alpha\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::alpha\+\_\+help}}\label{structgengetopt__args__info_a9c0b0c04fb015f10016df0054a8ce4f6}
+
+
+weight for hybridization help description. 
+
+
+
+Definition at line 48 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a764f3e0a251f142ad756912a7f8e43a2}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!alpha\+\_\+orig@{alpha\+\_\+orig}}
+\index{alpha\+\_\+orig@{alpha\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{alpha\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::alpha\+\_\+orig}}\label{structgengetopt__args__info_a764f3e0a251f142ad756912a7f8e43a2}
+
+
+weight for hybridization original value given at command line. 
+
+
+
+Definition at line 47 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_af10d11b97a09ce5f90816f475f099383}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!beta\+\_\+arg@{beta\+\_\+arg}}
+\index{beta\+\_\+arg@{beta\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{beta\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}float gengetopt\+\_\+args\+\_\+info\+::beta\+\_\+arg}}\label{structgengetopt__args__info_af10d11b97a09ce5f90816f475f099383}
+
+
+weight for unpaired bases (default='0.\+0'). 
+
+
+
+Definition at line 49 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a78fbc9190ccaddb0718c66b5ea3f16d1}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!beta\+\_\+given@{beta\+\_\+given}}
+\index{beta\+\_\+given@{beta\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{beta\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::beta\+\_\+given}}\label{structgengetopt__args__info_a78fbc9190ccaddb0718c66b5ea3f16d1}
+
+
+Whether beta was given. 
+
+
+
+Definition at line 103 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a4a10c9f1eac9e95ee84071c2c42924ac}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!beta\+\_\+help@{beta\+\_\+help}}
+\index{beta\+\_\+help@{beta\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{beta\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::beta\+\_\+help}}\label{structgengetopt__args__info_a4a10c9f1eac9e95ee84071c2c42924ac}
+
+
+weight for unpaired bases help description. 
+
+
+
+Definition at line 51 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a13737dc4f85cd3276f8cbb66e796a11d}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!beta\+\_\+orig@{beta\+\_\+orig}}
+\index{beta\+\_\+orig@{beta\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{beta\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::beta\+\_\+orig}}\label{structgengetopt__args__info_a13737dc4f85cd3276f8cbb66e796a11d}
+
+
+weight for unpaired bases original value given at command line. 
+
+
+
+Definition at line 50 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a80b9792246c023eb1ddd04336b226c1a}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!engine\+\_\+aln\+\_\+arg@{engine\+\_\+aln\+\_\+arg}}
+\index{engine\+\_\+aln\+\_\+arg@{engine\+\_\+aln\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{engine\+\_\+aln\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::engine\+\_\+aln\+\_\+arg}}\label{structgengetopt__args__info_a80b9792246c023eb1ddd04336b226c1a}
+
+
+specify the inference engine for independent \hyperlink{class_alignment}{Alignment} (default='C\+O\+N\+T\+R\+Align'). 
+
+
+
+Definition at line 96 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aabfb2ac097b504732bb06e9fec3ab25c}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!engine\+\_\+aln\+\_\+given@{engine\+\_\+aln\+\_\+given}}
+\index{engine\+\_\+aln\+\_\+given@{engine\+\_\+aln\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{engine\+\_\+aln\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::engine\+\_\+aln\+\_\+given}}\label{structgengetopt__args__info_aabfb2ac097b504732bb06e9fec3ab25c}
+
+
+Whether engine-\/aln was given. 
+
+
+
+Definition at line 120 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ac82fc1aba0c9785c9484b68abe875fba}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!engine\+\_\+aln\+\_\+help@{engine\+\_\+aln\+\_\+help}}
+\index{engine\+\_\+aln\+\_\+help@{engine\+\_\+aln\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{engine\+\_\+aln\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::engine\+\_\+aln\+\_\+help}}\label{structgengetopt__args__info_ac82fc1aba0c9785c9484b68abe875fba}
+
+
+specify the inference engine for independent \hyperlink{class_alignment}{Alignment} help description. 
+
+
+
+Definition at line 98 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aefc2d0fce93eea31fcad7240368fc488}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!engine\+\_\+aln\+\_\+orig@{engine\+\_\+aln\+\_\+orig}}
+\index{engine\+\_\+aln\+\_\+orig@{engine\+\_\+aln\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{engine\+\_\+aln\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::engine\+\_\+aln\+\_\+orig}}\label{structgengetopt__args__info_aefc2d0fce93eea31fcad7240368fc488}
+
+
+specify the inference engine for independent \hyperlink{class_alignment}{Alignment} original value given at command line. 
+
+
+
+Definition at line 97 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a1a3510547af7d7dd9e238d147fb3bbf7}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!engine\+\_\+seq\+\_\+arg@{engine\+\_\+seq\+\_\+arg}}
+\index{engine\+\_\+seq\+\_\+arg@{engine\+\_\+seq\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{engine\+\_\+seq\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::engine\+\_\+seq\+\_\+arg}}\label{structgengetopt__args__info_a1a3510547af7d7dd9e238d147fb3bbf7}
+
+
+specify the inference engine for independent sequence (default='Mc\+Caskill'). 
+
+
+
+Definition at line 93 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ab3cefd9fb1ccec8f27e55a6ab1c9acfb}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!engine\+\_\+seq\+\_\+given@{engine\+\_\+seq\+\_\+given}}
+\index{engine\+\_\+seq\+\_\+given@{engine\+\_\+seq\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{engine\+\_\+seq\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::engine\+\_\+seq\+\_\+given}}\label{structgengetopt__args__info_ab3cefd9fb1ccec8f27e55a6ab1c9acfb}
+
+
+Whether engine-\/seq was given. 
+
+
+
+Definition at line 119 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a49e17a823ee81349a2a9ae841c4efa37}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!engine\+\_\+seq\+\_\+help@{engine\+\_\+seq\+\_\+help}}
+\index{engine\+\_\+seq\+\_\+help@{engine\+\_\+seq\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{engine\+\_\+seq\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::engine\+\_\+seq\+\_\+help}}\label{structgengetopt__args__info_a49e17a823ee81349a2a9ae841c4efa37}
+
+
+specify the inference engine for independent sequence help description. 
+
+
+
+Definition at line 95 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_abe98c49189906e22b3050266037b7a60}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!engine\+\_\+seq\+\_\+orig@{engine\+\_\+seq\+\_\+orig}}
+\index{engine\+\_\+seq\+\_\+orig@{engine\+\_\+seq\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{engine\+\_\+seq\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::engine\+\_\+seq\+\_\+orig}}\label{structgengetopt__args__info_abe98c49189906e22b3050266037b7a60}
+
+
+specify the inference engine for independent sequence original value given at command line. 
+
+
+
+Definition at line 94 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a7b854a8200daa4d15745ae98b20f30f6}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!fold\+\_\+th\+\_\+arg@{fold\+\_\+th\+\_\+arg}}
+\index{fold\+\_\+th\+\_\+arg@{fold\+\_\+th\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{fold\+\_\+th\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}float gengetopt\+\_\+args\+\_\+info\+::fold\+\_\+th\+\_\+arg}}\label{structgengetopt__args__info_a7b854a8200daa4d15745ae98b20f30f6}
+
+
+Threshold for base-\/pairing probabilities (default='0.\+0001'). 
+
+Threshold for base-\/pairing probabilities (default='0.\+5'). 
+
+Definition at line 52 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a0a5f7a2dde96bfe36799ed2d38282f75}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!fold\+\_\+th\+\_\+given@{fold\+\_\+th\+\_\+given}}
+\index{fold\+\_\+th\+\_\+given@{fold\+\_\+th\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{fold\+\_\+th\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::fold\+\_\+th\+\_\+given}}\label{structgengetopt__args__info_a0a5f7a2dde96bfe36799ed2d38282f75}
+
+
+Whether fold-\/th was given. 
+
+
+
+Definition at line 104 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a91fb17190d2ee0c11ba6c6ac16a8be5e}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!fold\+\_\+th\+\_\+help@{fold\+\_\+th\+\_\+help}}
+\index{fold\+\_\+th\+\_\+help@{fold\+\_\+th\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{fold\+\_\+th\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::fold\+\_\+th\+\_\+help}}\label{structgengetopt__args__info_a91fb17190d2ee0c11ba6c6ac16a8be5e}
+
+
+Threshold for base-\/pairing probabilities help description. 
+
+
+
+Definition at line 54 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a281837484d9e42893a583d0a850cd610}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!fold\+\_\+th\+\_\+orig@{fold\+\_\+th\+\_\+orig}}
+\index{fold\+\_\+th\+\_\+orig@{fold\+\_\+th\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{fold\+\_\+th\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::fold\+\_\+th\+\_\+orig}}\label{structgengetopt__args__info_a281837484d9e42893a583d0a850cd610}
+
+
+Threshold for base-\/pairing probabilities original value given at command line. 
+
+
+
+Definition at line 53 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ab9fd677f890731fd7d6f6c62e6dfc99c}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!help\+\_\+given@{help\+\_\+given}}
+\index{help\+\_\+given@{help\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{help\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::help\+\_\+given}}\label{structgengetopt__args__info_ab9fd677f890731fd7d6f6c62e6dfc99c}
+
+
+Whether help was given. 
+
+
+
+Definition at line 100 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a6497d9a5edee41da66eb109f093781a7}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!help\+\_\+help@{help\+\_\+help}}
+\index{help\+\_\+help@{help\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{help\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::help\+\_\+help}}\label{structgengetopt__args__info_a6497d9a5edee41da66eb109f093781a7}
+
+
+Print help and exit help description. 
+
+
+
+Definition at line 44 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ae8618e9bfeb0de8e9b095ecec22af5c5}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!hybridize\+\_\+th\+\_\+arg@{hybridize\+\_\+th\+\_\+arg}}
+\index{hybridize\+\_\+th\+\_\+arg@{hybridize\+\_\+th\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{hybridize\+\_\+th\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}float gengetopt\+\_\+args\+\_\+info\+::hybridize\+\_\+th\+\_\+arg}}\label{structgengetopt__args__info_ae8618e9bfeb0de8e9b095ecec22af5c5}
+
+
+Threshold for hybridazation probabilities (default='0.\+2'). 
+
+
+
+Definition at line 55 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a8cfc0b8596b61b015d998df7255326a2}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!hybridize\+\_\+th\+\_\+given@{hybridize\+\_\+th\+\_\+given}}
+\index{hybridize\+\_\+th\+\_\+given@{hybridize\+\_\+th\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{hybridize\+\_\+th\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::hybridize\+\_\+th\+\_\+given}}\label{structgengetopt__args__info_a8cfc0b8596b61b015d998df7255326a2}
+
+
+Whether hybridize-\/th was given. 
+
+
+
+Definition at line 105 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a80b3003903fe0c9bfe6cacffcff587ae}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!hybridize\+\_\+th\+\_\+help@{hybridize\+\_\+th\+\_\+help}}
+\index{hybridize\+\_\+th\+\_\+help@{hybridize\+\_\+th\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{hybridize\+\_\+th\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::hybridize\+\_\+th\+\_\+help}}\label{structgengetopt__args__info_a80b3003903fe0c9bfe6cacffcff587ae}
+
+
+Threshold for hybridazation probabilities help description. 
+
+
+
+Definition at line 57 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_af5ad30ce558e2a362b45f25eac7c2d8a}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!hybridize\+\_\+th\+\_\+orig@{hybridize\+\_\+th\+\_\+orig}}
+\index{hybridize\+\_\+th\+\_\+orig@{hybridize\+\_\+th\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{hybridize\+\_\+th\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::hybridize\+\_\+th\+\_\+orig}}\label{structgengetopt__args__info_af5ad30ce558e2a362b45f25eac7c2d8a}
+
+
+Threshold for hybridazation probabilities original value given at command line. 
+
+
+
+Definition at line 56 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a6fe9c1a32bc4c64a2ca4e3cfce05b147}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!inputs@{inputs}}
+\index{inputs@{inputs}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{inputs}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$$\ast$ gengetopt\+\_\+args\+\_\+info\+::inputs}}\label{structgengetopt__args__info_a6fe9c1a32bc4c64a2ca4e3cfce05b147}
+
+
+unamed options (options without names) 
+
+
+
+Definition at line 122 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a3d69c180d5ac0b1124fd9a6fe680706c}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!inputs\+\_\+num@{inputs\+\_\+num}}
+\index{inputs\+\_\+num@{inputs\+\_\+num}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{inputs\+\_\+num}]{\setlength{\rightskip}{0pt plus 5cm}unsigned gengetopt\+\_\+args\+\_\+info\+::inputs\+\_\+num}}\label{structgengetopt__args__info_a3d69c180d5ac0b1124fd9a6fe680706c}
+
+
+unamed options number 
+
+
+
+Definition at line 123 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a9bc5ef56f828d6fb7ce0525884d6ed07}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!max\+\_\+w\+\_\+arg@{max\+\_\+w\+\_\+arg}}
+\index{max\+\_\+w\+\_\+arg@{max\+\_\+w\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{max\+\_\+w\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::max\+\_\+w\+\_\+arg}}\label{structgengetopt__args__info_a9bc5ef56f828d6fb7ce0525884d6ed07}
+
+
+Maximum length of accessible regions (default='0'). 
+
+Maximum length of accessible regions (default='100'). 
+
+Definition at line 61 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aa982c2dc155c088dfd006708ce04c5ed}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!max\+\_\+w\+\_\+given@{max\+\_\+w\+\_\+given}}
+\index{max\+\_\+w\+\_\+given@{max\+\_\+w\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{max\+\_\+w\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::max\+\_\+w\+\_\+given}}\label{structgengetopt__args__info_aa982c2dc155c088dfd006708ce04c5ed}
+
+
+Whether max-\/w was given. 
+
+
+
+Definition at line 107 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a84421172a52bd1de77c3a500fddb731b}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!max\+\_\+w\+\_\+help@{max\+\_\+w\+\_\+help}}
+\index{max\+\_\+w\+\_\+help@{max\+\_\+w\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{max\+\_\+w\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::max\+\_\+w\+\_\+help}}\label{structgengetopt__args__info_a84421172a52bd1de77c3a500fddb731b}
+
+
+Maximum length of accessible regions help description. 
+
+
+
+Definition at line 63 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a13203309b03664cded43fc7c50065c15}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!max\+\_\+w\+\_\+orig@{max\+\_\+w\+\_\+orig}}
+\index{max\+\_\+w\+\_\+orig@{max\+\_\+w\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{max\+\_\+w\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::max\+\_\+w\+\_\+orig}}\label{structgengetopt__args__info_a13203309b03664cded43fc7c50065c15}
+
+
+Maximum length of accessible regions original value given at command line. 
+
+
+
+Definition at line 62 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a2c35d30cec02884776c507be1f1c22ed}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!mccaskill\+\_\+flag@{mccaskill\+\_\+flag}}
+\index{mccaskill\+\_\+flag@{mccaskill\+\_\+flag}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{mccaskill\+\_\+flag}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::mccaskill\+\_\+flag}}\label{structgengetopt__args__info_a2c35d30cec02884776c507be1f1c22ed}
+
+
+Use Mc\+Caskill model for folding (default=off). 
+
+
+
+Definition at line 76 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_abdb41a52bf90de52d706f3a4b768fff1}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!mccaskill\+\_\+given@{mccaskill\+\_\+given}}
+\index{mccaskill\+\_\+given@{mccaskill\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{mccaskill\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::mccaskill\+\_\+given}}\label{structgengetopt__args__info_abdb41a52bf90de52d706f3a4b768fff1}
+
+
+Whether mccaskill was given. 
+
+
+
+Definition at line 112 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a153efa81aed0fc8be8e0e793cb62ffd7}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!mccaskill\+\_\+help@{mccaskill\+\_\+help}}
+\index{mccaskill\+\_\+help@{mccaskill\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{mccaskill\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::mccaskill\+\_\+help}}\label{structgengetopt__args__info_a153efa81aed0fc8be8e0e793cb62ffd7}
+
+
+Use Mc\+Caskill model for folding help description. 
+
+
+
+Definition at line 77 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ab0d4deed1d0424a4131eaa7b40b9e4ab}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!min\+\_\+w\+\_\+arg@{min\+\_\+w\+\_\+arg}}
+\index{min\+\_\+w\+\_\+arg@{min\+\_\+w\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{min\+\_\+w\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::min\+\_\+w\+\_\+arg}}\label{structgengetopt__args__info_ab0d4deed1d0424a4131eaa7b40b9e4ab}
+
+
+Minimum length of accessible regions (default='0'). 
+
+
+
+Definition at line 64 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aeb19a366901b0fa59385722ed8c69747}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!min\+\_\+w\+\_\+given@{min\+\_\+w\+\_\+given}}
+\index{min\+\_\+w\+\_\+given@{min\+\_\+w\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{min\+\_\+w\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::min\+\_\+w\+\_\+given}}\label{structgengetopt__args__info_aeb19a366901b0fa59385722ed8c69747}
+
+
+Whether min-\/w was given. 
+
+
+
+Definition at line 108 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aaf033ec8b1593d0f2f6f6d28a9709622}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!min\+\_\+w\+\_\+help@{min\+\_\+w\+\_\+help}}
+\index{min\+\_\+w\+\_\+help@{min\+\_\+w\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{min\+\_\+w\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::min\+\_\+w\+\_\+help}}\label{structgengetopt__args__info_aaf033ec8b1593d0f2f6f6d28a9709622}
+
+
+Minimum length of accessible regions help description. 
+
+
+
+Definition at line 66 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a65ff1a2d7368adda94e83864d5d8c399}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!min\+\_\+w\+\_\+orig@{min\+\_\+w\+\_\+orig}}
+\index{min\+\_\+w\+\_\+orig@{min\+\_\+w\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{min\+\_\+w\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::min\+\_\+w\+\_\+orig}}\label{structgengetopt__args__info_a65ff1a2d7368adda94e83864d5d8c399}
+
+
+Minimum length of accessible regions original value given at command line. 
+
+
+
+Definition at line 65 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a5453c7d90806e2c130485e8d45e4b2bb}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!mix\+\_\+weight\+\_\+arg@{mix\+\_\+weight\+\_\+arg}}
+\index{mix\+\_\+weight\+\_\+arg@{mix\+\_\+weight\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{mix\+\_\+weight\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}float gengetopt\+\_\+args\+\_\+info\+::mix\+\_\+weight\+\_\+arg}}\label{structgengetopt__args__info_a5453c7d90806e2c130485e8d45e4b2bb}
+
+
+mixture weights of inference engines (default='0.\+5'). 
+
+mixture weights of inference engines (default='1.\+0'). 
+
+Definition at line 90 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ab6cdb68b59a319ba28d96f0e1899f720}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!mix\+\_\+weight\+\_\+given@{mix\+\_\+weight\+\_\+given}}
+\index{mix\+\_\+weight\+\_\+given@{mix\+\_\+weight\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{mix\+\_\+weight\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::mix\+\_\+weight\+\_\+given}}\label{structgengetopt__args__info_ab6cdb68b59a319ba28d96f0e1899f720}
+
+
+Whether mix-\/weight was given. 
+
+
+
+Definition at line 118 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ab851e0e7b97a8147581e5ef2407d000b}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!mix\+\_\+weight\+\_\+help@{mix\+\_\+weight\+\_\+help}}
+\index{mix\+\_\+weight\+\_\+help@{mix\+\_\+weight\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{mix\+\_\+weight\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::mix\+\_\+weight\+\_\+help}}\label{structgengetopt__args__info_ab851e0e7b97a8147581e5ef2407d000b}
+
+
+mixture weights of inference engines help description. 
+
+
+
+Definition at line 92 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a4c5708197ebf9d7e52ea2a2b7988b5b8}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!mix\+\_\+weight\+\_\+orig@{mix\+\_\+weight\+\_\+orig}}
+\index{mix\+\_\+weight\+\_\+orig@{mix\+\_\+weight\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{mix\+\_\+weight\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::mix\+\_\+weight\+\_\+orig}}\label{structgengetopt__args__info_a4c5708197ebf9d7e52ea2a2b7988b5b8}
+
+
+mixture weights of inference engines original value given at command line. 
+
+
+
+Definition at line 91 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a656b35ad9dd3f8f39444ec2684fcf47c}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!no\+\_\+pk\+\_\+flag@{no\+\_\+pk\+\_\+flag}}
+\index{no\+\_\+pk\+\_\+flag@{no\+\_\+pk\+\_\+flag}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{no\+\_\+pk\+\_\+flag}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::no\+\_\+pk\+\_\+flag}}\label{structgengetopt__args__info_a656b35ad9dd3f8f39444ec2684fcf47c}
+
+
+do not use the constraints for interenal pseudoknots (default=off). 
+
+
+
+Definition at line 85 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a6aa44a52828faad6c6d8ec6b4ab5494e}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!no\+\_\+pk\+\_\+given@{no\+\_\+pk\+\_\+given}}
+\index{no\+\_\+pk\+\_\+given@{no\+\_\+pk\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{no\+\_\+pk\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::no\+\_\+pk\+\_\+given}}\label{structgengetopt__args__info_a6aa44a52828faad6c6d8ec6b4ab5494e}
+
+
+Whether no-\/pk was given. 
+
+
+
+Definition at line 116 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ab2409525071e5bcc073637b7e252fea8}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!no\+\_\+pk\+\_\+help@{no\+\_\+pk\+\_\+help}}
+\index{no\+\_\+pk\+\_\+help@{no\+\_\+pk\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{no\+\_\+pk\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::no\+\_\+pk\+\_\+help}}\label{structgengetopt__args__info_ab2409525071e5bcc073637b7e252fea8}
+
+
+do not use the constraints for interenal pseudoknots help description. 
+
+
+
+Definition at line 86 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a715feb4a7b63112c0029aca5bc3e0e15}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!num\+\_\+shuffling\+\_\+arg@{num\+\_\+shuffling\+\_\+arg}}
+\index{num\+\_\+shuffling\+\_\+arg@{num\+\_\+shuffling\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{num\+\_\+shuffling\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::num\+\_\+shuffling\+\_\+arg}}\label{structgengetopt__args__info_a715feb4a7b63112c0029aca5bc3e0e15}
+
+
+The number of shuffling (default='1000'). 
+
+
+
+Definition at line 70 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a39aafdd42c0bbbd0cf11b6e6506aa6fe}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!num\+\_\+shuffling\+\_\+given@{num\+\_\+shuffling\+\_\+given}}
+\index{num\+\_\+shuffling\+\_\+given@{num\+\_\+shuffling\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{num\+\_\+shuffling\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::num\+\_\+shuffling\+\_\+given}}\label{structgengetopt__args__info_a39aafdd42c0bbbd0cf11b6e6506aa6fe}
+
+
+Whether num-\/shuffling was given. 
+
+
+
+Definition at line 110 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a8fa7a97053908512f7fb0078b95a7b8f}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!num\+\_\+shuffling\+\_\+help@{num\+\_\+shuffling\+\_\+help}}
+\index{num\+\_\+shuffling\+\_\+help@{num\+\_\+shuffling\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{num\+\_\+shuffling\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::num\+\_\+shuffling\+\_\+help}}\label{structgengetopt__args__info_a8fa7a97053908512f7fb0078b95a7b8f}
+
+
+The number of shuffling help description. 
+
+
+
+Definition at line 72 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aca977068885436242d4094af483060d7}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!num\+\_\+shuffling\+\_\+orig@{num\+\_\+shuffling\+\_\+orig}}
+\index{num\+\_\+shuffling\+\_\+orig@{num\+\_\+shuffling\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{num\+\_\+shuffling\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::num\+\_\+shuffling\+\_\+orig}}\label{structgengetopt__args__info_aca977068885436242d4094af483060d7}
+
+
+The number of shuffling original value given at command line. 
+
+
+
+Definition at line 71 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aa68408ac76065d32115a6517d1dc084f}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!param\+\_\+file\+\_\+arg@{param\+\_\+file\+\_\+arg}}
+\index{param\+\_\+file\+\_\+arg@{param\+\_\+file\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{param\+\_\+file\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::param\+\_\+file\+\_\+arg}}\label{structgengetopt__args__info_aa68408ac76065d32115a6517d1dc084f}
+
+
+Read the energy parameter file for \hyperlink{namespace_vienna}{Vienna} R\+N\+A package. 
+
+
+
+Definition at line 82 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_acb50657bd03e25460c0fc7b2eda21c3a}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!param\+\_\+file\+\_\+given@{param\+\_\+file\+\_\+given}}
+\index{param\+\_\+file\+\_\+given@{param\+\_\+file\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{param\+\_\+file\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::param\+\_\+file\+\_\+given}}\label{structgengetopt__args__info_acb50657bd03e25460c0fc7b2eda21c3a}
+
+
+Whether param-\/file was given. 
+
+
+
+Definition at line 115 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a9f45df949ae710b164262b66c4982498}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!param\+\_\+file\+\_\+help@{param\+\_\+file\+\_\+help}}
+\index{param\+\_\+file\+\_\+help@{param\+\_\+file\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{param\+\_\+file\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::param\+\_\+file\+\_\+help}}\label{structgengetopt__args__info_a9f45df949ae710b164262b66c4982498}
+
+
+Read the energy parameter file for \hyperlink{namespace_vienna}{Vienna} R\+N\+A package help description. 
+
+
+
+Definition at line 84 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_af063ce92f6e760b3edfd61e488221afb}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!param\+\_\+file\+\_\+orig@{param\+\_\+file\+\_\+orig}}
+\index{param\+\_\+file\+\_\+orig@{param\+\_\+file\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{param\+\_\+file\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::param\+\_\+file\+\_\+orig}}\label{structgengetopt__args__info_af063ce92f6e760b3edfd61e488221afb}
+
+
+Read the energy parameter file for \hyperlink{namespace_vienna}{Vienna} R\+N\+A package original value given at command line. 
+
+
+
+Definition at line 83 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aa613330dba372001de2dfa178b161a1a}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!rip\+\_\+arg@{rip\+\_\+arg}}
+\index{rip\+\_\+arg@{rip\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{rip\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::rip\+\_\+arg}}\label{structgengetopt__args__info_aa613330dba372001de2dfa178b161a1a}
+
+
+Import posterior probabilities from the result of R\+I\+P. 
+
+
+
+Definition at line 87 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ac307b1ec217df5ef31616c14a77627b3}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!rip\+\_\+given@{rip\+\_\+given}}
+\index{rip\+\_\+given@{rip\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{rip\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::rip\+\_\+given}}\label{structgengetopt__args__info_ac307b1ec217df5ef31616c14a77627b3}
+
+
+Whether rip was given. 
+
+
+
+Definition at line 117 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a41b61f6fe469c862d765c45879591857}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!rip\+\_\+help@{rip\+\_\+help}}
+\index{rip\+\_\+help@{rip\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{rip\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::rip\+\_\+help}}\label{structgengetopt__args__info_a41b61f6fe469c862d765c45879591857}
+
+
+Import posterior probabilities from the result of R\+I\+P help description. 
+
+
+
+Definition at line 89 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a152b3fd65570a82ac6effec4c8f78317}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!rip\+\_\+orig@{rip\+\_\+orig}}
+\index{rip\+\_\+orig@{rip\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{rip\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::rip\+\_\+orig}}\label{structgengetopt__args__info_a152b3fd65570a82ac6effec4c8f78317}
+
+
+Import posterior probabilities from the result of R\+I\+P original value given at command line. 
+
+
+
+Definition at line 88 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a607715b9c4184c391b4738d5f70512e7}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!seed\+\_\+arg@{seed\+\_\+arg}}
+\index{seed\+\_\+arg@{seed\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{seed\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::seed\+\_\+arg}}\label{structgengetopt__args__info_a607715b9c4184c391b4738d5f70512e7}
+
+
+Seed for random number generator (default='0'). 
+
+
+
+Definition at line 73 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a5628cfc09082e40b5e095f52c05098ac}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!seed\+\_\+given@{seed\+\_\+given}}
+\index{seed\+\_\+given@{seed\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{seed\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::seed\+\_\+given}}\label{structgengetopt__args__info_a5628cfc09082e40b5e095f52c05098ac}
+
+
+Whether seed was given. 
+
+
+
+Definition at line 111 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ab4344caee458766e8bb69c200668de97}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!seed\+\_\+help@{seed\+\_\+help}}
+\index{seed\+\_\+help@{seed\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{seed\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::seed\+\_\+help}}\label{structgengetopt__args__info_ab4344caee458766e8bb69c200668de97}
+
+
+Seed for random number generator help description. 
+
+
+
+Definition at line 75 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a9b36d9a37ede1d3c6cca9d13a45c3cae}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!seed\+\_\+orig@{seed\+\_\+orig}}
+\index{seed\+\_\+orig@{seed\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{seed\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::seed\+\_\+orig}}\label{structgengetopt__args__info_a9b36d9a37ede1d3c6cca9d13a45c3cae}
+
+
+Seed for random number generator original value given at command line. 
+
+
+
+Definition at line 74 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a53618c4b58a0f0c1ebc48f773878ae03}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!show\+\_\+energy\+\_\+flag@{show\+\_\+energy\+\_\+flag}}
+\index{show\+\_\+energy\+\_\+flag@{show\+\_\+energy\+\_\+flag}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{show\+\_\+energy\+\_\+flag}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::show\+\_\+energy\+\_\+flag}}\label{structgengetopt__args__info_a53618c4b58a0f0c1ebc48f773878ae03}
+
+
+calculate the free energy of the predicted joint structure (default=off). 
+
+
+
+Definition at line 80 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a0d4a4466189dbba0719c55a398fb30fa}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!show\+\_\+energy\+\_\+given@{show\+\_\+energy\+\_\+given}}
+\index{show\+\_\+energy\+\_\+given@{show\+\_\+energy\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{show\+\_\+energy\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::show\+\_\+energy\+\_\+given}}\label{structgengetopt__args__info_a0d4a4466189dbba0719c55a398fb30fa}
+
+
+Whether show-\/energy was given. 
+
+
+
+Definition at line 114 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a2deb60524353a2560c25fd0883cd225f}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!show\+\_\+energy\+\_\+help@{show\+\_\+energy\+\_\+help}}
+\index{show\+\_\+energy\+\_\+help@{show\+\_\+energy\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{show\+\_\+energy\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::show\+\_\+energy\+\_\+help}}\label{structgengetopt__args__info_a2deb60524353a2560c25fd0883cd225f}
+
+
+calculate the free energy of the predicted joint structure help description. 
+
+
+
+Definition at line 81 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ad4953a2130b2f8b94a3a687014f278e1}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!version\+\_\+given@{version\+\_\+given}}
+\index{version\+\_\+given@{version\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{version\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::version\+\_\+given}}\label{structgengetopt__args__info_ad4953a2130b2f8b94a3a687014f278e1}
+
+
+Whether version was given. 
+
+
+
+Definition at line 101 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_adb4fc9ee66c499d4225d6f6eefbd8c09}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!version\+\_\+help@{version\+\_\+help}}
+\index{version\+\_\+help@{version\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{version\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::version\+\_\+help}}\label{structgengetopt__args__info_adb4fc9ee66c499d4225d6f6eefbd8c09}
+
+
+Print version and exit help description. 
+
+
+
+Definition at line 45 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a74d8c0d931f3466ef58a09fbabe05fa3}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!zscore\+\_\+arg@{zscore\+\_\+arg}}
+\index{zscore\+\_\+arg@{zscore\+\_\+arg}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{zscore\+\_\+arg}]{\setlength{\rightskip}{0pt plus 5cm}int gengetopt\+\_\+args\+\_\+info\+::zscore\+\_\+arg}}\label{structgengetopt__args__info_a74d8c0d931f3466ef58a09fbabe05fa3}
+
+
+Calculate z-\/score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) (default='0'). 
+
+
+
+Definition at line 67 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_ae7d88b70fcb65c4b63f1f026c8cfa47e}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!zscore\+\_\+given@{zscore\+\_\+given}}
+\index{zscore\+\_\+given@{zscore\+\_\+given}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{zscore\+\_\+given}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int gengetopt\+\_\+args\+\_\+info\+::zscore\+\_\+given}}\label{structgengetopt__args__info_ae7d88b70fcb65c4b63f1f026c8cfa47e}
+
+
+Whether zscore was given. 
+
+
+
+Definition at line 109 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_a34d3e383d7098991098429f67eeb331b}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!zscore\+\_\+help@{zscore\+\_\+help}}
+\index{zscore\+\_\+help@{zscore\+\_\+help}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{zscore\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ gengetopt\+\_\+args\+\_\+info\+::zscore\+\_\+help}}\label{structgengetopt__args__info_a34d3e383d7098991098429f67eeb331b}
+
+
+Calculate z-\/score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) help description. 
+
+
+
+Definition at line 69 of file cmdline.\+h.
+
+\hypertarget{structgengetopt__args__info_aab048214690b4bb2aef5468cf1f796c8}{\index{gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}!zscore\+\_\+orig@{zscore\+\_\+orig}}
+\index{zscore\+\_\+orig@{zscore\+\_\+orig}!gengetopt\+\_\+args\+\_\+info@{gengetopt\+\_\+args\+\_\+info}}
+\subsubsection[{zscore\+\_\+orig}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gengetopt\+\_\+args\+\_\+info\+::zscore\+\_\+orig}}\label{structgengetopt__args__info_aab048214690b4bb2aef5468cf1f796c8}
+
+
+Calculate z-\/score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) original value given at command line. 
+
+
+
+Definition at line 68 of file cmdline.\+h.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{cmdline_8h}{cmdline.\+h}\item 
+src/\hyperlink{cmdline1_8h}{cmdline1.\+h}\end{DoxyCompactItemize}

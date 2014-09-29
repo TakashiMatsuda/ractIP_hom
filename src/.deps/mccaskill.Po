@@ -792,20 +792,7 @@ mccaskill.o: centroidalifold/engine/mccaskill.cpp ../config.h \
  /usr/local/include/boost/spirit/home/classic/phoenix/casts.hpp \
  /usr/local/include/boost/spirit/home/classic/phoenix/composite.hpp \
  /usr/local/include/boost/spirit/home/classic/phoenix/operators.hpp \
- /usr/local/include/boost/spirit/home/classic/phoenix/tuple_helpers.hpp \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold_vars.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/part_func.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/alifold.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/LPfold.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/PS_dot.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/plot_layouts.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/naview.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/aln_util.h \
- /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/utils.h ../config.h \
- centroidalifold/engine/../../boltzmann_param.h
+ /usr/local/include/boost/spirit/home/classic/phoenix/tuple_helpers.hpp
 
 ../config.h:
 
@@ -2522,31 +2509,3 @@ centroidalifold/engine/../aln.h:
 /usr/local/include/boost/spirit/home/classic/phoenix/operators.hpp:
 
 /usr/local/include/boost/spirit/home/classic/phoenix/tuple_helpers.hpp:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold_vars.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/part_func.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/alifold.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/LPfold.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/PS_dot.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/plot_layouts.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/naview.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/aln_util.h:
-
-/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/utils.h:
-
-../config.h:
-
-centroidalifold/engine/../../boltzmann_param.h:

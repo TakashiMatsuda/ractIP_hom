@@ -1,0 +1,392 @@
+\hypertarget{class_c_y_k_table}{\section{C\+Y\+K\+Table$<$ T $>$ Class Template Reference}
+\label{class_c_y_k_table}\index{C\+Y\+K\+Table$<$ T $>$@{C\+Y\+K\+Table$<$ T $>$}}
+}
+
+
+A templete class of C\+Y\+K tables used for Cocke-\/\+Younger-\/\+Kasami (C\+Y\+K) algorithm.  
+
+
+
+
+{\ttfamily \#include $<$cyktable.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{class_c_y_k_table_af0e11c1238d77d508d04eca433b25393}{value\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_y_k_table_ae087f9a450a3e0a8778aa8491d5ac83f}{C\+Y\+K\+Table} ()
+\item 
+\hyperlink{class_c_y_k_table_a0fb4c5883e6459502d12a352560da940}{C\+Y\+K\+Table} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a7eb0344925e5f2de65981bbcd18a5041}{size}, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a991f65b53855208ab089aae65929b1a2}{max\+\_\+dist}=0)
+\item 
+\hyperlink{class_c_y_k_table_a4910d17db0bbef63967fa4545c931d18}{C\+Y\+K\+Table} (const \hyperlink{class_c_y_k_table}{C\+Y\+K\+Table} \&x)
+\item 
+\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a38de7de088768a2a4bc1042bbdf5a576}{estimate\+\_\+size} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a7eb0344925e5f2de65981bbcd18a5041}{size}, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a991f65b53855208ab089aae65929b1a2}{max\+\_\+dist})
+\item 
+void \hyperlink{class_c_y_k_table_a44dd37f322b6e3dc7feaa64d1029feaf}{setup} ()
+\item 
+\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a7eb0344925e5f2de65981bbcd18a5041}{size} () const 
+\item 
+\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_afcd890262b7d4ee4423f62c7c8434f39}{table\+\_\+size} () const 
+\item 
+\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a991f65b53855208ab089aae65929b1a2}{max\+\_\+dist} () const 
+\item 
+void \hyperlink{class_c_y_k_table_a0c393dc840e05a40f563024e0b5f7d21}{resize} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a7eb0344925e5f2de65981bbcd18a5041}{size}, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_c_y_k_table_a991f65b53855208ab089aae65929b1a2}{max\+\_\+dist}=0)
+\item 
+void \hyperlink{class_c_y_k_table_ae170769ead1b09dc504803aab6bb5023}{fill} (const T \&val)
+\item 
+void \hyperlink{class_c_y_k_table_a5cc925d718856e222bb34aa49776c0cb}{put} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} i, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} j, const T \&val)
+\item 
+void \hyperlink{class_c_y_k_table_af2a184bbe308fe59b8f8e0c08819ac8e}{put} (const \hyperlink{cyktable_8h_a7e9574c432ee134e818aee14852c4532}{Pos} \&pos, const T \&val)
+\item 
+const T \& \hyperlink{class_c_y_k_table_a512c868395342a2317adcd9bf334bf05}{get} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} i, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} j) const 
+\item 
+const T \& \hyperlink{class_c_y_k_table_a7a58d79459d2b1f49e8d27e847c3ffd5}{get} (const \hyperlink{cyktable_8h_a7e9574c432ee134e818aee14852c4532}{Pos} \&pos) const 
+\item 
+T \& \hyperlink{class_c_y_k_table_a1c7e159574311ea59aa25891daa3c745}{get} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} i, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} j)
+\item 
+T \& \hyperlink{class_c_y_k_table_a41b444512bf9af6f583322cc6f1e933e}{get} (const \hyperlink{cyktable_8h_a7e9574c432ee134e818aee14852c4532}{Pos} \&pos)
+\item 
+const T \& \hyperlink{class_c_y_k_table_a6690bdb72d2fa0a6a504c2aead843a22}{operator()} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} i, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} j) const 
+\item 
+const T \& \hyperlink{class_c_y_k_table_aa922f21c12edf59ff8da637ad4d6c646}{operator()} (const \hyperlink{cyktable_8h_a7e9574c432ee134e818aee14852c4532}{Pos} \&pos) const 
+\item 
+T \& \hyperlink{class_c_y_k_table_a3ec3e00e3a1159630bf1390d3a09e8f7}{operator()} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} i, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} j)
+\item 
+T \& \hyperlink{class_c_y_k_table_a15dcf3e14b7306640328c613512a73b0}{operator()} (const \hyperlink{cyktable_8h_a7e9574c432ee134e818aee14852c4532}{Pos} \&pos)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class C\+Y\+K\+Table$<$ T $>$}
+
+A templete class of C\+Y\+K tables used for Cocke-\/\+Younger-\/\+Kasami (C\+Y\+K) algorithm. 
+
+Definition at line 38 of file cyktable.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_c_y_k_table_af0e11c1238d77d508d04eca433b25393}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{value\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T {\bf C\+Y\+K\+Table}$<$ T $>$\+::{\bf value\+\_\+type}}}\label{class_c_y_k_table_af0e11c1238d77d508d04eca433b25393}
+
+
+Definition at line 41 of file cyktable.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_y_k_table_ae087f9a450a3e0a8778aa8491d5ac83f}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{C\+Y\+K\+Table}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf C\+Y\+K\+Table}$<$ T $>$\+::{\bf C\+Y\+K\+Table} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_ae087f9a450a3e0a8778aa8491d5ac83f}
+
+
+Definition at line 49 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a0fb4c5883e6459502d12a352560da940}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{C\+Y\+K\+Table}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf C\+Y\+K\+Table}$<$ T $>$\+::{\bf C\+Y\+K\+Table} (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{size, }
+\item[{{\bf uint}}]{max\+\_\+dist = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a0fb4c5883e6459502d12a352560da940}
+
+
+Definition at line 54 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a4910d17db0bbef63967fa4545c931d18}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{C\+Y\+K\+Table}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf C\+Y\+K\+Table}$<$ T $>$\+::{\bf C\+Y\+K\+Table} (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Y\+K\+Table}$<$ T $>$ \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a4910d17db0bbef63967fa4545c931d18}
+
+
+Definition at line 60 of file cyktable.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_y_k_table_a38de7de088768a2a4bc1042bbdf5a576}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!estimate\+\_\+size@{estimate\+\_\+size}}
+\index{estimate\+\_\+size@{estimate\+\_\+size}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{estimate\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf uint} {\bf C\+Y\+K\+Table}$<$ T $>$\+::estimate\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{size, }
+\item[{{\bf uint}}]{max\+\_\+dist}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a38de7de088768a2a4bc1042bbdf5a576}
+
+
+Definition at line 67 of file cyktable.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_y_k_table_a38de7de088768a2a4bc1042bbdf5a576_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_y_k_table_ae170769ead1b09dc504803aab6bb5023}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!fill@{fill}}
+\index{fill@{fill}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf C\+Y\+K\+Table}$<$ T $>$\+::fill (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_ae170769ead1b09dc504803aab6bb5023}
+
+
+Definition at line 104 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a512c868395342a2317adcd9bf334bf05}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!get@{get}}
+\index{get@{get}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T\& {\bf C\+Y\+K\+Table}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{i, }
+\item[{{\bf uint}}]{j}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a512c868395342a2317adcd9bf334bf05}
+
+
+Definition at line 126 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a7a58d79459d2b1f49e8d27e847c3ffd5}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!get@{get}}
+\index{get@{get}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T\& {\bf C\+Y\+K\+Table}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{const {\bf Pos} \&}]{pos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a7a58d79459d2b1f49e8d27e847c3ffd5}
+
+
+Definition at line 135 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a1c7e159574311ea59aa25891daa3c745}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!get@{get}}
+\index{get@{get}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T\& {\bf C\+Y\+K\+Table}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{i, }
+\item[{{\bf uint}}]{j}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a1c7e159574311ea59aa25891daa3c745}
+
+
+Definition at line 141 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a41b444512bf9af6f583322cc6f1e933e}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!get@{get}}
+\index{get@{get}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T\& {\bf C\+Y\+K\+Table}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{const {\bf Pos} \&}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a41b444512bf9af6f583322cc6f1e933e}
+
+
+Definition at line 149 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a991f65b53855208ab089aae65929b1a2}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!max\+\_\+dist@{max\+\_\+dist}}
+\index{max\+\_\+dist@{max\+\_\+dist}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{max\+\_\+dist}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf uint} {\bf C\+Y\+K\+Table}$<$ T $>$\+::max\+\_\+dist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a991f65b53855208ab089aae65929b1a2}
+
+
+Definition at line 95 of file cyktable.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_y_k_table_a991f65b53855208ab089aae65929b1a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_y_k_table_a6690bdb72d2fa0a6a504c2aead843a22}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!operator()@{operator()}}
+\index{operator()@{operator()}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T\& {\bf C\+Y\+K\+Table}$<$ T $>$\+::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{i, }
+\item[{{\bf uint}}]{j}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a6690bdb72d2fa0a6a504c2aead843a22}
+
+
+Definition at line 156 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_aa922f21c12edf59ff8da637ad4d6c646}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!operator()@{operator()}}
+\index{operator()@{operator()}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T\& {\bf C\+Y\+K\+Table}$<$ T $>$\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const {\bf Pos} \&}]{pos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_aa922f21c12edf59ff8da637ad4d6c646}
+
+
+Definition at line 162 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a3ec3e00e3a1159630bf1390d3a09e8f7}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!operator()@{operator()}}
+\index{operator()@{operator()}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T\& {\bf C\+Y\+K\+Table}$<$ T $>$\+::operator() (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{i, }
+\item[{{\bf uint}}]{j}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a3ec3e00e3a1159630bf1390d3a09e8f7}
+
+
+Definition at line 168 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a15dcf3e14b7306640328c613512a73b0}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!operator()@{operator()}}
+\index{operator()@{operator()}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T\& {\bf C\+Y\+K\+Table}$<$ T $>$\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const {\bf Pos} \&}]{pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a15dcf3e14b7306640328c613512a73b0}
+
+
+Definition at line 174 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a5cc925d718856e222bb34aa49776c0cb}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!put@{put}}
+\index{put@{put}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf C\+Y\+K\+Table}$<$ T $>$\+::put (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{i, }
+\item[{{\bf uint}}]{j, }
+\item[{const T \&}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a5cc925d718856e222bb34aa49776c0cb}
+
+
+Definition at line 111 of file cyktable.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_c_y_k_table_a5cc925d718856e222bb34aa49776c0cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_y_k_table_af2a184bbe308fe59b8f8e0c08819ac8e}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!put@{put}}
+\index{put@{put}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{put}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf C\+Y\+K\+Table}$<$ T $>$\+::put (
+\begin{DoxyParamCaption}
+\item[{const {\bf Pos} \&}]{pos, }
+\item[{const T \&}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_af2a184bbe308fe59b8f8e0c08819ac8e}
+
+
+Definition at line 120 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a0c393dc840e05a40f563024e0b5f7d21}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!resize@{resize}}
+\index{resize@{resize}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf C\+Y\+K\+Table}$<$ T $>$\+::resize (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{size, }
+\item[{{\bf uint}}]{max\+\_\+dist = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a0c393dc840e05a40f563024e0b5f7d21}
+
+
+Definition at line 97 of file cyktable.\+h.
+
+\hypertarget{class_c_y_k_table_a44dd37f322b6e3dc7feaa64d1029feaf}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!setup@{setup}}
+\index{setup@{setup}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf C\+Y\+K\+Table}$<$ T $>$\+::setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a44dd37f322b6e3dc7feaa64d1029feaf}
+
+
+Definition at line 75 of file cyktable.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_y_k_table_a44dd37f322b6e3dc7feaa64d1029feaf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_y_k_table_a7eb0344925e5f2de65981bbcd18a5041}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!size@{size}}
+\index{size@{size}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf uint} {\bf C\+Y\+K\+Table}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_a7eb0344925e5f2de65981bbcd18a5041}
+
+
+Definition at line 91 of file cyktable.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_y_k_table_a7eb0344925e5f2de65981bbcd18a5041_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_y_k_table_afcd890262b7d4ee4423f62c7c8434f39}{\index{C\+Y\+K\+Table@{C\+Y\+K\+Table}!table\+\_\+size@{table\+\_\+size}}
+\index{table\+\_\+size@{table\+\_\+size}!C\+Y\+K\+Table@{C\+Y\+K\+Table}}
+\subsubsection[{table\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf uint} {\bf C\+Y\+K\+Table}$<$ T $>$\+::table\+\_\+size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_c_y_k_table_afcd890262b7d4ee4423f62c7c8434f39}
+
+
+Definition at line 93 of file cyktable.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_y_k_table_afcd890262b7d4ee4423f62c7c8434f39_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/\hyperlink{cyktable_8h}{cyktable.\+h}\end{DoxyCompactItemize}

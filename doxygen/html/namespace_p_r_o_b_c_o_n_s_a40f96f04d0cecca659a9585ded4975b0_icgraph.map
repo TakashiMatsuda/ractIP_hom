@@ -1,0 +1,4 @@
+<map id="PROBCONS::ChooseBestOfThree" name="PROBCONS::ChooseBestOfThree">
+<area shape="rect" id="node2" href="$class_p_r_o_b_c_o_n_s_1_1_probabilistic_model.html#a9233c1d04f152e972f33b311cc3e734f" title="PROBCONS::ProbabilisticModel\l::ComputeAlignment" alt="" coords="299,5,512,46"/>
+<area shape="rect" id="node3" href="$class_p_r_o_b_c_o_n_s_1_1_probabilistic_model.html#a67de41318f83963dbb18344c13922362" title="PROBCONS::ProbabilisticModel\l::ComputeAlignmentWithGapPenalties" alt="" coords="281,70,530,111"/>
+</map>

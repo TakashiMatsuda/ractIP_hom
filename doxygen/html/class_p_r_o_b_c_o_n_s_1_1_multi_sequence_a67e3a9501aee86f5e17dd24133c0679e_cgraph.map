@@ -1,0 +1,10 @@
+<map id="PROBCONS::MultiSequence::Project" name="PROBCONS::MultiSequence::Project">
+<area shape="rect" id="node2" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#a1ec546f0396cf54133920716ca27cd63" title="PROBCONS::MultiSequence\l::GetSequence" alt="" coords="249,5,442,46"/>
+<area shape="rect" id="node3" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#adb434994650702ccbe742a603d874bec" title="PROBCONS::Sequence\l::GetDataPtr" alt="" coords="263,70,428,111"/>
+<area shape="rect" id="node4" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#aed52d4ebab4d87735ddde9aa683f4320" title="PROBCONS::MultiSequence\l::MultiSequence" alt="" coords="249,135,442,177"/>
+<area shape="rect" id="node5" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#a36f54bcbd04cdc76b8210c78f3450c1c" title="PROBCONS::MultiSequence\l::AddSequence" alt="" coords="249,201,442,242"/>
+<area shape="rect" id="node7" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#a2696e70c9f86e3fb3baa8ace97f675a7" title="PROBCONS::Sequence\l::GetHeader" alt="" coords="263,266,428,307"/>
+<area shape="rect" id="node8" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#ac6457a791587730ec84a37c2c282b293" title="PROBCONS::Sequence\l::GetSortLabel" alt="" coords="263,331,428,373"/>
+<area shape="rect" id="node9" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#a9bbde5145481309d5ea40ad87d7fda22" title="PROBCONS::Sequence\l::GetLabel" alt="" coords="263,397,428,438"/>
+<area shape="rect" id="node6" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#aa8f82350156d0a936607de8143ceec9f" title="PROBCONS::Sequence\l::Fail" alt="" coords="491,201,656,242"/>
+</map>

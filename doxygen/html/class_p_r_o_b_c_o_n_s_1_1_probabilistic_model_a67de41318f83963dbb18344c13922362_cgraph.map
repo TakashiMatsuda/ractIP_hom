@@ -1,0 +1,7 @@
+<map id="PROBCONS::ProbabilisticModel::ComputeAlignmentWithGapPenalties" name="PROBCONS::ProbabilisticModel::ComputeAlignmentWithGapPenalties">
+<area shape="rect" id="node2" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#a1ec546f0396cf54133920716ca27cd63" title="PROBCONS::MultiSequence\l::GetSequence" alt="" coords="321,5,514,46"/>
+<area shape="rect" id="node3" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#af5ceae645f42aac617f6917ab83505ae" title="PROBCONS::Sequence\l::GetLength" alt="" coords="335,70,500,111"/>
+<area shape="rect" id="node4" href="$class_p_r_o_b_c_o_n_s_1_1_multi_sequence.html#a08c1adcbbd476649046724bf644c3286" title="PROBCONS::MultiSequence\l::GetNumSequences" alt="" coords="321,135,514,177"/>
+<area shape="rect" id="node5" href="$class_p_r_o_b_c_o_n_s_1_1_sequence.html#adb434994650702ccbe742a603d874bec" title="PROBCONS::Sequence\l::GetDataPtr" alt="" coords="335,201,500,242"/>
+<area shape="rect" id="node6" href="$namespace_p_r_o_b_c_o_n_s.html#a40f96f04d0cecca659a9585ded4975b0" title="PROBCONS::ChooseBestOfThree" alt="" coords="304,267,531,293"/>
+</map>

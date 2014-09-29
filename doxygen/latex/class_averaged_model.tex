@@ -1,0 +1,264 @@
+\hypertarget{class_averaged_model}{\section{Averaged\+Model Class Reference}
+\label{class_averaged_model}\index{Averaged\+Model@{Averaged\+Model}}
+}
+
+
+{\ttfamily \#include $<$averaged.\+h$>$}
+
+
+
+Inheritance diagram for Averaged\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_averaged_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Averaged\+Model\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_averaged_model__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_averaged_model_a3d502ea18660e17aba329747eafd84a9}{Averaged\+Model} (\hyperlink{class_folding_engine}{Folding\+Engine}$<$ std\+::string $>$ $\ast$\hyperlink{notespace_8cpp_ace32c53d52804f2843ccfe220db6038c}{cf}, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} max\+\_\+bp\+\_\+dist, bool run\+\_\+as\+\_\+mea=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false})
+\item 
+virtual \hyperlink{class_averaged_model_a2539e2282f0f4bb70145f9fb19bc2567}{$\sim$\+Averaged\+Model} ()
+\item 
+virtual void \hyperlink{class_averaged_model_a8b07acaf0d63c249cdc78dc1b2df7307}{stochastic\+\_\+fold} (const \hyperlink{class_aln}{Aln} \&aln, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+samples, std\+::ostream \&out)
+\item 
+virtual void \hyperlink{class_averaged_model_a65ce78340130f4ddb19b0b5782244a1b}{stochastic\+\_\+fold} (const \hyperlink{class_aln}{Aln} \&aln, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+samples, std\+::vector$<$ \hyperlink{folding__engine_8h_ad0a64ba9a92681778af5917fd1bbd40c}{B\+Pvec\+Ptr} $>$ \&bpv)
+\item 
+virtual void \hyperlink{class_averaged_model_a4844fe73e623329659ab409d8acede57}{max\+\_\+mcc\+\_\+fold} (const std\+::string \&name, const \hyperlink{class_aln}{Aln} \&aln, std\+::ostream \&out, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+samples)
+\item 
+virtual void \hyperlink{class_averaged_model_a45c8b5f77c83da55a8f19660b9319e03}{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling} (const std\+::string \&paren, const \hyperlink{class_aln}{Aln} \&aln, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+ea\+\_\+samples, double \&sen, double \&ppv, double \&mcc)
+\item 
+virtual void \hyperlink{class_averaged_model_a0a261a8fe29b8b7bd00acf7eaeecf396}{set\+\_\+constraint} (const std\+::string \&str)
+\item 
+virtual void \hyperlink{class_averaged_model_ab594bb3e99a3e07efcdda8cf5ca001ab}{calculate\+\_\+posterior} (const \hyperlink{class_aln}{Aln} \&aln)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file averaged.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_averaged_model_a3d502ea18660e17aba329747eafd84a9}{\index{Averaged\+Model@{Averaged\+Model}!Averaged\+Model@{Averaged\+Model}}
+\index{Averaged\+Model@{Averaged\+Model}!Averaged\+Model@{Averaged\+Model}}
+\subsubsection[{Averaged\+Model}]{\setlength{\rightskip}{0pt plus 5cm}Averaged\+Model\+::\+Averaged\+Model (
+\begin{DoxyParamCaption}
+\item[{{\bf Folding\+Engine}$<$ std\+::string $>$ $\ast$}]{cf, }
+\item[{{\bf uint}}]{max\+\_\+bp\+\_\+dist, }
+\item[{bool}]{run\+\_\+as\+\_\+mea = {\ttfamily {\bf false}}}
+\end{DoxyParamCaption}
+)}}\label{class_averaged_model_a3d502ea18660e17aba329747eafd84a9}
+
+
+Definition at line 110 of file averaged.\+cpp.
+
+\hypertarget{class_averaged_model_a2539e2282f0f4bb70145f9fb19bc2567}{\index{Averaged\+Model@{Averaged\+Model}!````~Averaged\+Model@{$\sim$\+Averaged\+Model}}
+\index{````~Averaged\+Model@{$\sim$\+Averaged\+Model}!Averaged\+Model@{Averaged\+Model}}
+\subsubsection[{$\sim$\+Averaged\+Model}]{\setlength{\rightskip}{0pt plus 5cm}virtual Averaged\+Model\+::$\sim$\+Averaged\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_averaged_model_a2539e2282f0f4bb70145f9fb19bc2567}
+
+
+Definition at line 33 of file averaged.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_averaged_model_ab594bb3e99a3e07efcdda8cf5ca001ab}{\index{Averaged\+Model@{Averaged\+Model}!calculate\+\_\+posterior@{calculate\+\_\+posterior}}
+\index{calculate\+\_\+posterior@{calculate\+\_\+posterior}!Averaged\+Model@{Averaged\+Model}}
+\subsubsection[{calculate\+\_\+posterior}]{\setlength{\rightskip}{0pt plus 5cm}void Averaged\+Model\+::calculate\+\_\+posterior (
+\begin{DoxyParamCaption}
+\item[{const {\bf Aln} \&}]{aln}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_averaged_model_ab594bb3e99a3e07efcdda8cf5ca001ab}
+
+
+Implements \hyperlink{class_folding_engine_a314c78e5fe35d5a1b5f441604c58e8f1}{Folding\+Engine$<$ Aln $>$}.
+
+
+
+Definition at line 317 of file averaged.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_averaged_model_ab594bb3e99a3e07efcdda8cf5ca001ab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_averaged_model_ab594bb3e99a3e07efcdda8cf5ca001ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_averaged_model_a45c8b5f77c83da55a8f19660b9319e03}{\index{Averaged\+Model@{Averaged\+Model}!compute\+\_\+expected\+\_\+accuracy\+\_\+sampling@{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling}}
+\index{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling@{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling}!Averaged\+Model@{Averaged\+Model}}
+\subsubsection[{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling}]{\setlength{\rightskip}{0pt plus 5cm}void Averaged\+Model\+::compute\+\_\+expected\+\_\+accuracy\+\_\+sampling (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{paren, }
+\item[{const {\bf Aln} \&}]{aln, }
+\item[{{\bf uint}}]{num\+\_\+ea\+\_\+samples, }
+\item[{double \&}]{sen, }
+\item[{double \&}]{ppv, }
+\item[{double \&}]{mcc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_averaged_model_a45c8b5f77c83da55a8f19660b9319e03}
+
+
+Reimplemented from \hyperlink{class_folding_engine_ae6cbbe3009c8ff7dae235ca98ccb18c2}{Folding\+Engine$<$ Aln $>$}.
+
+
+
+Definition at line 236 of file averaged.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_averaged_model_a45c8b5f77c83da55a8f19660b9319e03_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_averaged_model_a4844fe73e623329659ab409d8acede57}{\index{Averaged\+Model@{Averaged\+Model}!max\+\_\+mcc\+\_\+fold@{max\+\_\+mcc\+\_\+fold}}
+\index{max\+\_\+mcc\+\_\+fold@{max\+\_\+mcc\+\_\+fold}!Averaged\+Model@{Averaged\+Model}}
+\subsubsection[{max\+\_\+mcc\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}void Averaged\+Model\+::max\+\_\+mcc\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const {\bf Aln} \&}]{aln, }
+\item[{std\+::ostream \&}]{out, }
+\item[{{\bf uint}}]{num\+\_\+samples}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_averaged_model_a4844fe73e623329659ab409d8acede57}
+
+
+Reimplemented from \hyperlink{class_folding_engine_a387a1625b31056030998eddcada4c036}{Folding\+Engine$<$ Aln $>$}.
+
+
+
+Definition at line 187 of file averaged.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_averaged_model_a4844fe73e623329659ab409d8acede57_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_averaged_model_a0a261a8fe29b8b7bd00acf7eaeecf396}{\index{Averaged\+Model@{Averaged\+Model}!set\+\_\+constraint@{set\+\_\+constraint}}
+\index{set\+\_\+constraint@{set\+\_\+constraint}!Averaged\+Model@{Averaged\+Model}}
+\subsubsection[{set\+\_\+constraint}]{\setlength{\rightskip}{0pt plus 5cm}void Averaged\+Model\+::set\+\_\+constraint (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_averaged_model_a0a261a8fe29b8b7bd00acf7eaeecf396}
+
+
+Reimplemented from \hyperlink{class_folding_engine_aa979adbd342b75eb947927e6ff7bcb8c}{Folding\+Engine$<$ Aln $>$}.
+
+
+
+Definition at line 294 of file averaged.\+cpp.
+
+\hypertarget{class_averaged_model_a8b07acaf0d63c249cdc78dc1b2df7307}{\index{Averaged\+Model@{Averaged\+Model}!stochastic\+\_\+fold@{stochastic\+\_\+fold}}
+\index{stochastic\+\_\+fold@{stochastic\+\_\+fold}!Averaged\+Model@{Averaged\+Model}}
+\subsubsection[{stochastic\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}void Averaged\+Model\+::stochastic\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const {\bf Aln} \&}]{aln, }
+\item[{{\bf uint}}]{num\+\_\+samples, }
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_averaged_model_a8b07acaf0d63c249cdc78dc1b2df7307}
+
+
+Reimplemented from \hyperlink{class_folding_engine_af42fb74e518d56eaddaab33696b0d32f}{Folding\+Engine$<$ Aln $>$}.
+
+
+
+Definition at line 117 of file averaged.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_averaged_model_a8b07acaf0d63c249cdc78dc1b2df7307_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_averaged_model_a65ce78340130f4ddb19b0b5782244a1b}{\index{Averaged\+Model@{Averaged\+Model}!stochastic\+\_\+fold@{stochastic\+\_\+fold}}
+\index{stochastic\+\_\+fold@{stochastic\+\_\+fold}!Averaged\+Model@{Averaged\+Model}}
+\subsubsection[{stochastic\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}void Averaged\+Model\+::stochastic\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const {\bf Aln} \&}]{aln, }
+\item[{{\bf uint}}]{num\+\_\+samples, }
+\item[{std\+::vector$<$ {\bf B\+Pvec\+Ptr} $>$ \&}]{bpv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_averaged_model_a65ce78340130f4ddb19b0b5782244a1b}
+
+
+Reimplemented from \hyperlink{class_folding_engine_a3a83796b8f2eba402e90fb726c167680}{Folding\+Engine$<$ Aln $>$}.
+
+
+
+Definition at line 153 of file averaged.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_averaged_model_a65ce78340130f4ddb19b0b5782244a1b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/engine/\hyperlink{averaged_8h}{averaged.\+h}\item 
+src/centroidalifold/engine/\hyperlink{averaged_8cpp}{averaged.\+cpp}\end{DoxyCompactItemize}

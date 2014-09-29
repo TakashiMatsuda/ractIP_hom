@@ -1,0 +1,95 @@
+\hypertarget{cyktable_8h}{\section{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/cyktable.h File Reference}
+\label{cyktable_8h}\index{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/cyktable.\+h@{/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/cyktable.\+h}}
+}
+{\ttfamily \#include $<$cassert$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+Include dependency graph for cyktable.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{cyktable_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cyktable_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_y_k_table}{C\+Y\+K\+Table$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A templete class of C\+Y\+K tables used for Cocke-\/\+Younger-\/\+Kasami (C\+Y\+K) algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}
+\item 
+typedef std\+::pair$<$ \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} $>$ \hyperlink{cyktable_8h_a7e9574c432ee134e818aee14852c4532}{Pos}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Update $>$ }\\void \hyperlink{cyktable_8h_a181b043e226aeef951b922db3395fe34}{inside\+\_\+traverse} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} from, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} to, Update \&update)
+\item 
+{\footnotesize template$<$class Update $>$ }\\void \hyperlink{cyktable_8h_a1c4180686d2ae89ff4a7292d371ed5b9}{inside\+\_\+traverse} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} from, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} to, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} width, Update \&update)
+\item 
+{\footnotesize template$<$class Update $>$ }\\void \hyperlink{cyktable_8h_a752d8eda6e6e2f2490ded2747cadf1cf}{outside\+\_\+traverse} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} from, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} to, Update \&update)
+\item 
+{\footnotesize template$<$class Update $>$ }\\void \hyperlink{cyktable_8h_ac3e38f2c056e7914018afdbe2f613b01}{outside\+\_\+traverse} (\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} from, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} to, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} width, Update \&update)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{cyktable_8h_a7e9574c432ee134e818aee14852c4532}{\index{cyktable.\+h@{cyktable.\+h}!Pos@{Pos}}
+\index{Pos@{Pos}!cyktable.\+h@{cyktable.\+h}}
+\subsubsection[{Pos}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::pair$<${\bf uint},{\bf uint}$>$ {\bf Pos}}}\label{cyktable_8h_a7e9574c432ee134e818aee14852c4532}
+\hypertarget{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{\index{cyktable.\+h@{cyktable.\+h}!uint@{uint}}
+\index{uint@{uint}!cyktable.\+h@{cyktable.\+h}}
+\subsubsection[{uint}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf uint}}}\label{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}
+
+
+\subsection{Function Documentation}
+\hypertarget{cyktable_8h_a181b043e226aeef951b922db3395fe34}{\index{cyktable.\+h@{cyktable.\+h}!inside\+\_\+traverse@{inside\+\_\+traverse}}
+\index{inside\+\_\+traverse@{inside\+\_\+traverse}!cyktable.\+h@{cyktable.\+h}}
+\subsubsection[{inside\+\_\+traverse}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Update $>$ void inside\+\_\+traverse (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{from, }
+\item[{{\bf uint}}]{to, }
+\item[{Update \&}]{update}
+\end{DoxyParamCaption}
+)}}\label{cyktable_8h_a181b043e226aeef951b922db3395fe34}
+\hypertarget{cyktable_8h_a1c4180686d2ae89ff4a7292d371ed5b9}{\index{cyktable.\+h@{cyktable.\+h}!inside\+\_\+traverse@{inside\+\_\+traverse}}
+\index{inside\+\_\+traverse@{inside\+\_\+traverse}!cyktable.\+h@{cyktable.\+h}}
+\subsubsection[{inside\+\_\+traverse}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Update $>$ void inside\+\_\+traverse (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{from, }
+\item[{{\bf uint}}]{to, }
+\item[{{\bf uint}}]{width, }
+\item[{Update \&}]{update}
+\end{DoxyParamCaption}
+)}}\label{cyktable_8h_a1c4180686d2ae89ff4a7292d371ed5b9}
+\hypertarget{cyktable_8h_a752d8eda6e6e2f2490ded2747cadf1cf}{\index{cyktable.\+h@{cyktable.\+h}!outside\+\_\+traverse@{outside\+\_\+traverse}}
+\index{outside\+\_\+traverse@{outside\+\_\+traverse}!cyktable.\+h@{cyktable.\+h}}
+\subsubsection[{outside\+\_\+traverse}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Update $>$ void outside\+\_\+traverse (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{from, }
+\item[{{\bf uint}}]{to, }
+\item[{Update \&}]{update}
+\end{DoxyParamCaption}
+)}}\label{cyktable_8h_a752d8eda6e6e2f2490ded2747cadf1cf}
+\hypertarget{cyktable_8h_ac3e38f2c056e7914018afdbe2f613b01}{\index{cyktable.\+h@{cyktable.\+h}!outside\+\_\+traverse@{outside\+\_\+traverse}}
+\index{outside\+\_\+traverse@{outside\+\_\+traverse}!cyktable.\+h@{cyktable.\+h}}
+\subsubsection[{outside\+\_\+traverse}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Update $>$ void outside\+\_\+traverse (
+\begin{DoxyParamCaption}
+\item[{{\bf uint}}]{from, }
+\item[{{\bf uint}}]{to, }
+\item[{{\bf uint}}]{width, }
+\item[{Update \&}]{update}
+\end{DoxyParamCaption}
+)}}\label{cyktable_8h_ac3e38f2c056e7914018afdbe2f613b01}

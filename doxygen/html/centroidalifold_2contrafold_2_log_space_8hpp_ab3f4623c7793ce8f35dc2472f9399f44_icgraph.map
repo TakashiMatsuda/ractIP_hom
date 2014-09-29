@@ -1,0 +1,8 @@
+<map id="Fast_Exp" name="Fast_Exp">
+<area shape="rect" id="node2" href="$class_inference_engine.html#a6d8a78e3c1a7dcffffa26d3ea7ddd92b" title="InferenceEngine::Compute\lFeatureCountExpectations" alt="" coords="154,5,334,46"/>
+<area shape="rect" id="node3" href="$class_inference_engine.html#aef03cd26f3758cfff297703bb37b5e9f" title="InferenceEngine::Compute\lPosterior" alt="" coords="154,70,334,111"/>
+<area shape="rect" id="node4" href="$class_roulette.html#acf830e32e8bbde521eda0882fe80093d" title="Roulette::choose" alt="" coords="183,136,305,163"/>
+<area shape="rect" id="node7" href="$class_duplex_engine.html#a9f863ddf131bccd4c1d9b902b4875dbc" title="DuplexEngine::ComputePosterior" alt="" coords="134,187,354,213"/>
+<area shape="rect" id="node5" href="$class_inference_engine.html#a3355c30e213b3a6277141faeeb8dc5f1" title="InferenceEngine::Predict\lPairingsStochasticTraceback" alt="" coords="409,95,602,137"/>
+<area shape="rect" id="node6" href="$class_inference_engine.html#a346acfcaf989aed397b5d1433c925e4a" title="InferenceEngine::Predict\lPairingsStochasticTracebackM" alt="" coords="403,161,608,202"/>
+</map>

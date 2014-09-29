@@ -1,0 +1,771 @@
+\hypertarget{class_inference_engine}{\section{Inference\+Engine$<$ Real\+T $>$ Class Template Reference}
+\label{class_inference_engine}\index{Inference\+Engine$<$ Real\+T $>$@{Inference\+Engine$<$ Real\+T $>$}}
+}
+
+
+{\ttfamily \#include $<$Inference\+Engine.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_inference_engine_ad8ecaebd1482737444c6ff701fde74de}{Inference\+Engine} (bool allow\+\_\+noncomplementary, int max\+\_\+bp\+\_\+dist=0)
+\item 
+\hyperlink{class_inference_engine_ab79efe41385aeef2e1703dc9335a4941}{$\sim$\+Inference\+Engine} ()
+\item 
+void \hyperlink{class_inference_engine_a5f4b92138aaa9a45fcc045f818286bd8}{Register\+Parameters} (\hyperlink{class_parameter_manager}{Parameter\+Manager}$<$ Real\+T $>$ \&parameter\+\_\+manager)
+\item 
+void \hyperlink{class_inference_engine_a092dc8818603fbc358e2226f3e743d62}{Load\+Sequence} (const \hyperlink{class_s_struct}{S\+Struct} \&sstruct)
+\item 
+void \hyperlink{class_inference_engine_abd2764fab807200098b69141b0d1eaca}{Load\+Values} (const std\+::vector$<$ Real\+T $>$ \&values)
+\item 
+void \hyperlink{class_inference_engine_a1c4ff1f7f65a76fa1111ef554ae17ed2}{Use\+Loss} (const std\+::vector$<$ int $>$ \&true\+\_\+mapping, Real\+T example\+\_\+loss)
+\item 
+void \hyperlink{class_inference_engine_a6a1c5eeb8bfb91e8562d9e937c7c46aa}{Use\+Constraints} (const std\+::vector$<$ int $>$ \&true\+\_\+mapping)
+\item 
+void \hyperlink{class_inference_engine_ad31521433bc7ca8747f42313571dca0d}{Compute\+Viterbi} ()
+\item 
+Real\+T \hyperlink{class_inference_engine_a12a4e655e8f06f81a06564f8f81499dc}{Get\+Viterbi\+Score} () const 
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_inference_engine_a09ba49b0dc0d9161d48a13f9948cbeea}{Predict\+Pairings\+Viterbi} () const 
+\item 
+std\+::vector$<$ Real\+T $>$ \hyperlink{class_inference_engine_af033e32a3d67b565b59aa632dae0152c}{Compute\+Viterbi\+Feature\+Counts} ()
+\item 
+void \hyperlink{class_inference_engine_ad76e23c8323b050b23e8c1c7e8046f0e}{Compute\+Inside} ()
+\item 
+Real\+T \hyperlink{class_inference_engine_a2e11e84d4854b492fc3ab4eda0c7aa84}{Compute\+Log\+Partition\+Coefficient} () const 
+\item 
+void \hyperlink{class_inference_engine_a2d0abf6db99cfd61b703d8e567bee09d}{Compute\+Outside} ()
+\item 
+std\+::vector$<$ Real\+T $>$ \hyperlink{class_inference_engine_a6d8a78e3c1a7dcffffa26d3ea7ddd92b}{Compute\+Feature\+Count\+Expectations} ()
+\item 
+void \hyperlink{class_inference_engine_aef03cd26f3758cfff297703bb37b5e9f}{Compute\+Posterior} ()
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_inference_engine_ab134b79d7b409072bb51a40fcd2fbcce}{Predict\+Pairings\+Posterior} (const Real\+T gamma) const 
+\item 
+void \hyperlink{class_inference_engine_a1d4f39be3bdae1bc9e10e2e6c5c92958}{Init\+Rand} (unsigned int seed)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_inference_engine_a3355c30e213b3a6277141faeeb8dc5f1}{Predict\+Pairings\+Stochastic\+Traceback} () const 
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_inference_engine_a346acfcaf989aed397b5d1433c925e4a}{Predict\+Pairings\+Stochastic\+Traceback\+M} (const std\+::vector$<$ std\+::vector$<$ unsigned int $>$ $>$ \&idx, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&rev, const std\+::vector$<$ \hyperlink{class_inference_engine}{Inference\+Engine}$<$ Real\+T $>$ $\ast$ $>$ \&en) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_inference_engine_a7eacc75414f604df8f894e864f8dfae9}{Get\+Posterior} (const Real\+T posterior\+\_\+cutoff) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_inference_engine_a2d53131fbdb1963dcdc56cfffa3d2be5}{Get\+Posterior} (const Real\+T posterior\+\_\+cutoff, std\+::vector$<$ Real\+T $>$ \&p) const 
+\item 
+\hyperlink{class_inference_engine_ad8ecaebd1482737444c6ff701fde74de}{Inference\+Engine} (bool allow\+\_\+noncomplementary, int max\+\_\+bp\+\_\+dist=0)
+\item 
+\hyperlink{class_inference_engine_ab79efe41385aeef2e1703dc9335a4941}{$\sim$\+Inference\+Engine} ()
+\item 
+int \hyperlink{class_inference_engine_af76662221c72e5cbe17d9432fda80e03}{Compute\+Row\+Offset} (int i, int N, int w) const 
+\item 
+void \hyperlink{class_inference_engine_a5f4b92138aaa9a45fcc045f818286bd8}{Register\+Parameters} (\hyperlink{class_parameter_manager}{Parameter\+Manager}$<$ Real\+T $>$ \&parameter\+\_\+manager)
+\item 
+void \hyperlink{class_inference_engine_a092dc8818603fbc358e2226f3e743d62}{Load\+Sequence} (const \hyperlink{class_s_struct}{S\+Struct} \&sstruct)
+\item 
+void \hyperlink{class_inference_engine_abd2764fab807200098b69141b0d1eaca}{Load\+Values} (const std\+::vector$<$ Real\+T $>$ \&values)
+\item 
+void \hyperlink{class_inference_engine_a1c4ff1f7f65a76fa1111ef554ae17ed2}{Use\+Loss} (const std\+::vector$<$ int $>$ \&true\+\_\+mapping, Real\+T example\+\_\+loss)
+\item 
+void \hyperlink{class_inference_engine_a6a1c5eeb8bfb91e8562d9e937c7c46aa}{Use\+Constraints} (const std\+::vector$<$ int $>$ \&true\+\_\+mapping)
+\item 
+void \hyperlink{class_inference_engine_ad31521433bc7ca8747f42313571dca0d}{Compute\+Viterbi} ()
+\item 
+Real\+T \hyperlink{class_inference_engine_a12a4e655e8f06f81a06564f8f81499dc}{Get\+Viterbi\+Score} () const 
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_inference_engine_a8fc558a64e5896672b6d2a3ad94e3d92}{Predict\+Pairings\+Viterbi} () const 
+\item 
+std\+::vector$<$ Real\+T $>$ \hyperlink{class_inference_engine_a10481c5b1496d8bbb5a6703711a8b5ef}{Compute\+Viterbi\+Feature\+Counts} ()
+\item 
+void \hyperlink{class_inference_engine_ad76e23c8323b050b23e8c1c7e8046f0e}{Compute\+Inside} ()
+\item 
+Real\+T \hyperlink{class_inference_engine_a2e11e84d4854b492fc3ab4eda0c7aa84}{Compute\+Log\+Partition\+Coefficient} () const 
+\item 
+void \hyperlink{class_inference_engine_a2d0abf6db99cfd61b703d8e567bee09d}{Compute\+Outside} ()
+\item 
+std\+::vector$<$ Real\+T $>$ \hyperlink{class_inference_engine_a96c95e8a56ce6048ddf2f148f2b45c65}{Compute\+Feature\+Count\+Expectations} ()
+\item 
+void \hyperlink{class_inference_engine_aef03cd26f3758cfff297703bb37b5e9f}{Compute\+Posterior} ()
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_inference_engine_a11dda913fd2fd805a5262b662f53903f}{Predict\+Pairings\+Posterior} (const Real\+T gamma) const 
+\item 
+void \hyperlink{class_inference_engine_a1d4f39be3bdae1bc9e10e2e6c5c92958}{Init\+Rand} (unsigned int seed)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_inference_engine_a0dd5cd1e780cf45b9f8cbe425f8cd924}{Predict\+Pairings\+Stochastic\+Traceback} () const 
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_inference_engine_aeb97e13498894ed68d38ab298bb8cbc9}{Predict\+Pairings\+Stochastic\+Traceback\+M} (const std\+::vector$<$ std\+::vector$<$ unsigned int $>$ $>$ \&idx, const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&rev, const std\+::vector$<$ \hyperlink{class_inference_engine}{Inference\+Engine}$<$ Real\+T $>$ $\ast$ $>$ \&en) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_inference_engine_ac554dcc770a4a700726ca26ae499b2da}{Get\+Posterior} (const Real\+T posterior\+\_\+cutoff) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_inference_engine_acd84174fb4e866c3d83cdc43484ac6c8}{Get\+Posterior} (const Real\+T posterior\+\_\+cutoff, std\+::vector$<$ Real\+T $>$ \&p) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_inference_engine_abdc92a839529f9075eb8220ab00e5152}{Get\+Posterior} (const Real\+T posterior\+\_\+cutoff, std\+::vector$<$ Real\+T $>$ \&p, std\+::vector$<$ int $>$ \&o) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_inference_engine_a6d8d2be0e035900e7d9ee0f68eedfb06}{Get\+Posterior2} (const Real\+T posterior\+\_\+cutoff) const 
+\item 
+Real\+T $\ast$ \hyperlink{class_inference_engine_a09efab11b1a1e44813785ed23cda914e}{Get\+Posterior2} (const Real\+T posterior\+\_\+cutoff, std\+::vector$<$ Real\+T $>$ \&p) const 
+\item 
+int \hyperlink{class_inference_engine_ab696518de694f07a25b5c5af4ba66312}{Get\+Offset} (int i) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Real\+T$>$class Inference\+Engine$<$ Real\+T $>$}
+
+
+
+Definition at line 23 of file Inference\+Engine.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_inference_engine_ad8ecaebd1482737444c6ff701fde74de}{\index{Inference\+Engine@{Inference\+Engine}!Inference\+Engine@{Inference\+Engine}}
+\index{Inference\+Engine@{Inference\+Engine}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Inference\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::{\bf Inference\+Engine} (
+\begin{DoxyParamCaption}
+\item[{bool}]{allow\+\_\+noncomplementary, }
+\item[{int}]{max\+\_\+bp\+\_\+dist = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_ad8ecaebd1482737444c6ff701fde74de}
+
+
+Definition at line 364 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_ab79efe41385aeef2e1703dc9335a4941}{\index{Inference\+Engine@{Inference\+Engine}!````~Inference\+Engine@{$\sim$\+Inference\+Engine}}
+\index{````~Inference\+Engine@{$\sim$\+Inference\+Engine}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{$\sim$\+Inference\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::$\sim${\bf Inference\+Engine} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_ab79efe41385aeef2e1703dc9335a4941}
+
+
+Definition at line 406 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_ad8ecaebd1482737444c6ff701fde74de}{\index{Inference\+Engine@{Inference\+Engine}!Inference\+Engine@{Inference\+Engine}}
+\index{Inference\+Engine@{Inference\+Engine}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Inference\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::{\bf Inference\+Engine} (
+\begin{DoxyParamCaption}
+\item[{bool}]{allow\+\_\+noncomplementary, }
+\item[{int}]{max\+\_\+bp\+\_\+dist = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_ad8ecaebd1482737444c6ff701fde74de}
+\hypertarget{class_inference_engine_ab79efe41385aeef2e1703dc9335a4941}{\index{Inference\+Engine@{Inference\+Engine}!````~Inference\+Engine@{$\sim$\+Inference\+Engine}}
+\index{````~Inference\+Engine@{$\sim$\+Inference\+Engine}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{$\sim$\+Inference\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::$\sim${\bf Inference\+Engine} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_ab79efe41385aeef2e1703dc9335a4941}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_inference_engine_a96c95e8a56ce6048ddf2f148f2b45c65}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Feature\+Count\+Expectations@{Compute\+Feature\+Count\+Expectations}}
+\index{Compute\+Feature\+Count\+Expectations@{Compute\+Feature\+Count\+Expectations}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Feature\+Count\+Expectations}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ std\+::vector$<$Real\+T$>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Feature\+Count\+Expectations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a96c95e8a56ce6048ddf2f148f2b45c65}
+\hypertarget{class_inference_engine_a6d8a78e3c1a7dcffffa26d3ea7ddd92b}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Feature\+Count\+Expectations@{Compute\+Feature\+Count\+Expectations}}
+\index{Compute\+Feature\+Count\+Expectations@{Compute\+Feature\+Count\+Expectations}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Feature\+Count\+Expectations}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ std\+::vector$<$ Real\+T $>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Feature\+Count\+Expectations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a6d8a78e3c1a7dcffffa26d3ea7ddd92b}
+
+
+Definition at line 4104 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_a6d8a78e3c1a7dcffffa26d3ea7ddd92b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_ad76e23c8323b050b23e8c1c7e8046f0e}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Inside@{Compute\+Inside}}
+\index{Compute\+Inside@{Compute\+Inside}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Inside}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Inside (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_ad76e23c8323b050b23e8c1c7e8046f0e}
+\hypertarget{class_inference_engine_ad76e23c8323b050b23e8c1c7e8046f0e}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Inside@{Compute\+Inside}}
+\index{Compute\+Inside@{Compute\+Inside}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Inside}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Inside (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_ad76e23c8323b050b23e8c1c7e8046f0e}
+
+
+Definition at line 3356 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_ad76e23c8323b050b23e8c1c7e8046f0e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_a2e11e84d4854b492fc3ab4eda0c7aa84}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Log\+Partition\+Coefficient@{Compute\+Log\+Partition\+Coefficient}}
+\index{Compute\+Log\+Partition\+Coefficient@{Compute\+Log\+Partition\+Coefficient}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Log\+Partition\+Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Log\+Partition\+Coefficient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a2e11e84d4854b492fc3ab4eda0c7aa84}
+\hypertarget{class_inference_engine_a2e11e84d4854b492fc3ab4eda0c7aa84}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Log\+Partition\+Coefficient@{Compute\+Log\+Partition\+Coefficient}}
+\index{Compute\+Log\+Partition\+Coefficient@{Compute\+Log\+Partition\+Coefficient}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Log\+Partition\+Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Log\+Partition\+Coefficient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_inference_engine_a2e11e84d4854b492fc3ab4eda0c7aa84}
+
+
+Definition at line 4089 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_a2d0abf6db99cfd61b703d8e567bee09d}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Outside@{Compute\+Outside}}
+\index{Compute\+Outside@{Compute\+Outside}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Outside}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Outside (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a2d0abf6db99cfd61b703d8e567bee09d}
+\hypertarget{class_inference_engine_a2d0abf6db99cfd61b703d8e567bee09d}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Outside@{Compute\+Outside}}
+\index{Compute\+Outside@{Compute\+Outside}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Outside}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Outside (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a2d0abf6db99cfd61b703d8e567bee09d}
+
+
+Definition at line 3731 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_a2d0abf6db99cfd61b703d8e567bee09d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_aef03cd26f3758cfff297703bb37b5e9f}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Posterior@{Compute\+Posterior}}
+\index{Compute\+Posterior@{Compute\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Posterior (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_aef03cd26f3758cfff297703bb37b5e9f}
+\hypertarget{class_inference_engine_aef03cd26f3758cfff297703bb37b5e9f}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Posterior@{Compute\+Posterior}}
+\index{Compute\+Posterior@{Compute\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Posterior (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_aef03cd26f3758cfff297703bb37b5e9f}
+
+
+Definition at line 4498 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_aef03cd26f3758cfff297703bb37b5e9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_af76662221c72e5cbe17d9432fda80e03}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Row\+Offset@{Compute\+Row\+Offset}}
+\index{Compute\+Row\+Offset@{Compute\+Row\+Offset}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Row\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ int {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Row\+Offset (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{N, }
+\item[{int}]{w}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_af76662221c72e5cbe17d9432fda80e03}
+\hypertarget{class_inference_engine_ad31521433bc7ca8747f42313571dca0d}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Viterbi@{Compute\+Viterbi}}
+\index{Compute\+Viterbi@{Compute\+Viterbi}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Viterbi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Viterbi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_ad31521433bc7ca8747f42313571dca0d}
+\hypertarget{class_inference_engine_ad31521433bc7ca8747f42313571dca0d}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Viterbi@{Compute\+Viterbi}}
+\index{Compute\+Viterbi@{Compute\+Viterbi}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Viterbi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Viterbi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_ad31521433bc7ca8747f42313571dca0d}
+
+
+Definition at line 2519 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_inference_engine_ad31521433bc7ca8747f42313571dca0d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_a10481c5b1496d8bbb5a6703711a8b5ef}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Viterbi\+Feature\+Counts@{Compute\+Viterbi\+Feature\+Counts}}
+\index{Compute\+Viterbi\+Feature\+Counts@{Compute\+Viterbi\+Feature\+Counts}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Viterbi\+Feature\+Counts}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ std\+::vector$<$Real\+T$>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Viterbi\+Feature\+Counts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a10481c5b1496d8bbb5a6703711a8b5ef}
+\hypertarget{class_inference_engine_af033e32a3d67b565b59aa632dae0152c}{\index{Inference\+Engine@{Inference\+Engine}!Compute\+Viterbi\+Feature\+Counts@{Compute\+Viterbi\+Feature\+Counts}}
+\index{Compute\+Viterbi\+Feature\+Counts@{Compute\+Viterbi\+Feature\+Counts}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Compute\+Viterbi\+Feature\+Counts}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ std\+::vector$<$ Real\+T $>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Compute\+Viterbi\+Feature\+Counts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_af033e32a3d67b565b59aa632dae0152c}
+
+
+Definition at line 3185 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_inference_engine_af033e32a3d67b565b59aa632dae0152c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_ab696518de694f07a25b5c5af4ba66312}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Offset@{Get\+Offset}}
+\index{Get\+Offset@{Get\+Offset}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ int {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Offset (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_ab696518de694f07a25b5c5af4ba66312}
+
+
+Definition at line 5658 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_ac554dcc770a4a700726ca26ae499b2da}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Posterior@{Get\+Posterior}}
+\index{Get\+Posterior@{Get\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T$\ast$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_ac554dcc770a4a700726ca26ae499b2da}
+\hypertarget{class_inference_engine_acd84174fb4e866c3d83cdc43484ac6c8}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Posterior@{Get\+Posterior}}
+\index{Get\+Posterior@{Get\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T$\ast$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff, }
+\item[{std\+::vector$<$ Real\+T $>$ \&}]{p}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_acd84174fb4e866c3d83cdc43484ac6c8}
+\hypertarget{class_inference_engine_abdc92a839529f9075eb8220ab00e5152}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Posterior@{Get\+Posterior}}
+\index{Get\+Posterior@{Get\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T $\ast$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff, }
+\item[{std\+::vector$<$ Real\+T $>$ \&}]{p, }
+\item[{std\+::vector$<$ int $>$ \&}]{o}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_abdc92a839529f9075eb8220ab00e5152}
+
+
+Definition at line 5612 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_a7eacc75414f604df8f894e864f8dfae9}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Posterior@{Get\+Posterior}}
+\index{Get\+Posterior@{Get\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T $\ast$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a7eacc75414f604df8f894e864f8dfae9}
+
+
+Definition at line 5605 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_a2d53131fbdb1963dcdc56cfffa3d2be5}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Posterior@{Get\+Posterior}}
+\index{Get\+Posterior@{Get\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T $\ast$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff, }
+\item[{std\+::vector$<$ Real\+T $>$ \&}]{p}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a2d53131fbdb1963dcdc56cfffa3d2be5}
+
+
+Definition at line 5614 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_a6d8d2be0e035900e7d9ee0f68eedfb06}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Posterior2@{Get\+Posterior2}}
+\index{Get\+Posterior2@{Get\+Posterior2}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Posterior2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T $\ast$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Posterior2 (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a6d8d2be0e035900e7d9ee0f68eedfb06}
+
+
+Definition at line 5639 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_a09efab11b1a1e44813785ed23cda914e}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Posterior2@{Get\+Posterior2}}
+\index{Get\+Posterior2@{Get\+Posterior2}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Posterior2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T $\ast$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Posterior2 (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{posterior\+\_\+cutoff, }
+\item[{std\+::vector$<$ Real\+T $>$ \&}]{p}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a09efab11b1a1e44813785ed23cda914e}
+
+
+Definition at line 5648 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_a12a4e655e8f06f81a06564f8f81499dc}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Viterbi\+Score@{Get\+Viterbi\+Score}}
+\index{Get\+Viterbi\+Score@{Get\+Viterbi\+Score}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Viterbi\+Score}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ Real\+T {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Viterbi\+Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a12a4e655e8f06f81a06564f8f81499dc}
+\hypertarget{class_inference_engine_a12a4e655e8f06f81a06564f8f81499dc}{\index{Inference\+Engine@{Inference\+Engine}!Get\+Viterbi\+Score@{Get\+Viterbi\+Score}}
+\index{Get\+Viterbi\+Score@{Get\+Viterbi\+Score}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Get\+Viterbi\+Score}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ Real\+T {\bf Inference\+Engine}$<$ Real\+T $>$\+::Get\+Viterbi\+Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_inference_engine_a12a4e655e8f06f81a06564f8f81499dc}
+
+
+Definition at line 3011 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_a1d4f39be3bdae1bc9e10e2e6c5c92958}{\index{Inference\+Engine@{Inference\+Engine}!Init\+Rand@{Init\+Rand}}
+\index{Init\+Rand@{Init\+Rand}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Init\+Rand}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Init\+Rand (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{seed}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a1d4f39be3bdae1bc9e10e2e6c5c92958}
+\hypertarget{class_inference_engine_a1d4f39be3bdae1bc9e10e2e6c5c92958}{\index{Inference\+Engine@{Inference\+Engine}!Init\+Rand@{Init\+Rand}}
+\index{Init\+Rand@{Init\+Rand}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Init\+Rand}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Init\+Rand (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{seed}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a1d4f39be3bdae1bc9e10e2e6c5c92958}
+
+
+Definition at line 5591 of file Inference\+Engine.\+ipp.
+
+\hypertarget{class_inference_engine_a092dc8818603fbc358e2226f3e743d62}{\index{Inference\+Engine@{Inference\+Engine}!Load\+Sequence@{Load\+Sequence}}
+\index{Load\+Sequence@{Load\+Sequence}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Load\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Load\+Sequence (
+\begin{DoxyParamCaption}
+\item[{const {\bf S\+Struct} \&}]{sstruct}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a092dc8818603fbc358e2226f3e743d62}
+\hypertarget{class_inference_engine_a092dc8818603fbc358e2226f3e743d62}{\index{Inference\+Engine@{Inference\+Engine}!Load\+Sequence@{Load\+Sequence}}
+\index{Load\+Sequence@{Load\+Sequence}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Load\+Sequence}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Load\+Sequence (
+\begin{DoxyParamCaption}
+\item[{const {\bf S\+Struct} \&}]{sstruct}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a092dc8818603fbc358e2226f3e743d62}
+
+
+Definition at line 947 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_a092dc8818603fbc358e2226f3e743d62_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_abd2764fab807200098b69141b0d1eaca}{\index{Inference\+Engine@{Inference\+Engine}!Load\+Values@{Load\+Values}}
+\index{Load\+Values@{Load\+Values}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Load\+Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Load\+Values (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ Real\+T $>$ \&}]{values}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_abd2764fab807200098b69141b0d1eaca}
+\hypertarget{class_inference_engine_abd2764fab807200098b69141b0d1eaca}{\index{Inference\+Engine@{Inference\+Engine}!Load\+Values@{Load\+Values}}
+\index{Load\+Values@{Load\+Values}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Load\+Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Load\+Values (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ Real\+T $>$ \&}]{values}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_abd2764fab807200098b69141b0d1eaca}
+
+
+Definition at line 1386 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_inference_engine_abd2764fab807200098b69141b0d1eaca_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_a11dda913fd2fd805a5262b662f53903f}{\index{Inference\+Engine@{Inference\+Engine}!Predict\+Pairings\+Posterior@{Predict\+Pairings\+Posterior}}
+\index{Predict\+Pairings\+Posterior@{Predict\+Pairings\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Predict\+Pairings\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ std\+::vector$<$int$>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Predict\+Pairings\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{gamma}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a11dda913fd2fd805a5262b662f53903f}
+\hypertarget{class_inference_engine_ab134b79d7b409072bb51a40fcd2fbcce}{\index{Inference\+Engine@{Inference\+Engine}!Predict\+Pairings\+Posterior@{Predict\+Pairings\+Posterior}}
+\index{Predict\+Pairings\+Posterior@{Predict\+Pairings\+Posterior}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Predict\+Pairings\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ std\+::vector$<$ int $>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Predict\+Pairings\+Posterior (
+\begin{DoxyParamCaption}
+\item[{const Real\+T}]{gamma}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_ab134b79d7b409072bb51a40fcd2fbcce}
+
+
+Definition at line 4830 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_inference_engine_ab134b79d7b409072bb51a40fcd2fbcce_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_a0dd5cd1e780cf45b9f8cbe425f8cd924}{\index{Inference\+Engine@{Inference\+Engine}!Predict\+Pairings\+Stochastic\+Traceback@{Predict\+Pairings\+Stochastic\+Traceback}}
+\index{Predict\+Pairings\+Stochastic\+Traceback@{Predict\+Pairings\+Stochastic\+Traceback}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Predict\+Pairings\+Stochastic\+Traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ std\+::vector$<$int$>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Predict\+Pairings\+Stochastic\+Traceback (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a0dd5cd1e780cf45b9f8cbe425f8cd924}
+\hypertarget{class_inference_engine_a3355c30e213b3a6277141faeeb8dc5f1}{\index{Inference\+Engine@{Inference\+Engine}!Predict\+Pairings\+Stochastic\+Traceback@{Predict\+Pairings\+Stochastic\+Traceback}}
+\index{Predict\+Pairings\+Stochastic\+Traceback@{Predict\+Pairings\+Stochastic\+Traceback}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Predict\+Pairings\+Stochastic\+Traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ std\+::vector$<$ int $>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Predict\+Pairings\+Stochastic\+Traceback (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a3355c30e213b3a6277141faeeb8dc5f1}
+
+
+Definition at line 5005 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_a3355c30e213b3a6277141faeeb8dc5f1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_aeb97e13498894ed68d38ab298bb8cbc9}{\index{Inference\+Engine@{Inference\+Engine}!Predict\+Pairings\+Stochastic\+Traceback\+M@{Predict\+Pairings\+Stochastic\+Traceback\+M}}
+\index{Predict\+Pairings\+Stochastic\+Traceback\+M@{Predict\+Pairings\+Stochastic\+Traceback\+M}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Predict\+Pairings\+Stochastic\+Traceback\+M}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ std\+::vector$<$int$>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Predict\+Pairings\+Stochastic\+Traceback\+M (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::vector$<$ unsigned int $>$ $>$ \&}]{idx, }
+\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{rev, }
+\item[{const std\+::vector$<$ {\bf Inference\+Engine}$<$ Real\+T $>$ $\ast$ $>$ \&}]{en}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_aeb97e13498894ed68d38ab298bb8cbc9}
+\hypertarget{class_inference_engine_a346acfcaf989aed397b5d1433c925e4a}{\index{Inference\+Engine@{Inference\+Engine}!Predict\+Pairings\+Stochastic\+Traceback\+M@{Predict\+Pairings\+Stochastic\+Traceback\+M}}
+\index{Predict\+Pairings\+Stochastic\+Traceback\+M@{Predict\+Pairings\+Stochastic\+Traceback\+M}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Predict\+Pairings\+Stochastic\+Traceback\+M}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ std\+::vector$<$ int $>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Predict\+Pairings\+Stochastic\+Traceback\+M (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::vector$<$ unsigned int $>$ $>$ \&}]{idx, }
+\item[{const std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{rev, }
+\item[{const std\+::vector$<$ {\bf Inference\+Engine}$<$ Real\+T $>$ $\ast$ $>$ \&}]{en}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a346acfcaf989aed397b5d1433c925e4a}
+
+
+Definition at line 5249 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_a346acfcaf989aed397b5d1433c925e4a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_a8fc558a64e5896672b6d2a3ad94e3d92}{\index{Inference\+Engine@{Inference\+Engine}!Predict\+Pairings\+Viterbi@{Predict\+Pairings\+Viterbi}}
+\index{Predict\+Pairings\+Viterbi@{Predict\+Pairings\+Viterbi}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Predict\+Pairings\+Viterbi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ std\+::vector$<$int$>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Predict\+Pairings\+Viterbi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a8fc558a64e5896672b6d2a3ad94e3d92}
+\hypertarget{class_inference_engine_a09ba49b0dc0d9161d48a13f9948cbeea}{\index{Inference\+Engine@{Inference\+Engine}!Predict\+Pairings\+Viterbi@{Predict\+Pairings\+Viterbi}}
+\index{Predict\+Pairings\+Viterbi@{Predict\+Pairings\+Viterbi}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Predict\+Pairings\+Viterbi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ std\+::vector$<$ int $>$ {\bf Inference\+Engine}$<$ Real\+T $>$\+::Predict\+Pairings\+Viterbi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_inference_engine_a09ba49b0dc0d9161d48a13f9948cbeea}
+
+
+Definition at line 3023 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_inference_engine_a09ba49b0dc0d9161d48a13f9948cbeea_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_a5f4b92138aaa9a45fcc045f818286bd8}{\index{Inference\+Engine@{Inference\+Engine}!Register\+Parameters@{Register\+Parameters}}
+\index{Register\+Parameters@{Register\+Parameters}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Register\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Register\+Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Manager}$<$ Real\+T $>$ \&}]{parameter\+\_\+manager}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a5f4b92138aaa9a45fcc045f818286bd8}
+\hypertarget{class_inference_engine_a5f4b92138aaa9a45fcc045f818286bd8}{\index{Inference\+Engine@{Inference\+Engine}!Register\+Parameters@{Register\+Parameters}}
+\index{Register\+Parameters@{Register\+Parameters}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Register\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Register\+Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Manager}$<$ Real\+T $>$ \&}]{parameter\+\_\+manager}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a5f4b92138aaa9a45fcc045f818286bd8}
+
+
+Definition at line 419 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_a5f4b92138aaa9a45fcc045f818286bd8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_a5f4b92138aaa9a45fcc045f818286bd8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_a6a1c5eeb8bfb91e8562d9e937c7c46aa}{\index{Inference\+Engine@{Inference\+Engine}!Use\+Constraints@{Use\+Constraints}}
+\index{Use\+Constraints@{Use\+Constraints}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Use\+Constraints}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Use\+Constraints (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{true\+\_\+mapping}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a6a1c5eeb8bfb91e8562d9e937c7c46aa}
+\hypertarget{class_inference_engine_a6a1c5eeb8bfb91e8562d9e937c7c46aa}{\index{Inference\+Engine@{Inference\+Engine}!Use\+Constraints@{Use\+Constraints}}
+\index{Use\+Constraints@{Use\+Constraints}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Use\+Constraints}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T $>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Use\+Constraints (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{true\+\_\+mapping}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a6a1c5eeb8bfb91e8562d9e937c7c46aa}
+
+
+Definition at line 1870 of file Inference\+Engine.\+ipp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inference_engine_a6a1c5eeb8bfb91e8562d9e937c7c46aa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_inference_engine_a1c4ff1f7f65a76fa1111ef554ae17ed2}{\index{Inference\+Engine@{Inference\+Engine}!Use\+Loss@{Use\+Loss}}
+\index{Use\+Loss@{Use\+Loss}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Use\+Loss}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Use\+Loss (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{true\+\_\+mapping, }
+\item[{Real\+T}]{example\+\_\+loss}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a1c4ff1f7f65a76fa1111ef554ae17ed2}
+\hypertarget{class_inference_engine_a1c4ff1f7f65a76fa1111ef554ae17ed2}{\index{Inference\+Engine@{Inference\+Engine}!Use\+Loss@{Use\+Loss}}
+\index{Use\+Loss@{Use\+Loss}!Inference\+Engine@{Inference\+Engine}}
+\subsubsection[{Use\+Loss}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Real\+T$>$ void {\bf Inference\+Engine}$<$ Real\+T $>$\+::Use\+Loss (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ int $>$ \&}]{true\+\_\+mapping, }
+\item[{Real\+T}]{example\+\_\+loss}
+\end{DoxyParamCaption}
+)}}\label{class_inference_engine_a1c4ff1f7f65a76fa1111ef554ae17ed2}
+
+
+Definition at line 1824 of file Inference\+Engine.\+ipp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/contrafold/\hyperlink{centroidalifold_2contrafold_2_inference_engine_8hpp}{Inference\+Engine.\+hpp}\item 
+src/centroidalifold/contrafold/\hyperlink{centroidalifold_2contrafold_2_inference_engine_8ipp}{Inference\+Engine.\+ipp}\end{DoxyCompactItemize}

@@ -1,0 +1,590 @@
+\hypertarget{class_folding_engine}{\section{Folding\+Engine$<$ S\+E\+Q $>$ Class Template Reference}
+\label{class_folding_engine}\index{Folding\+Engine$<$ S\+E\+Q $>$@{Folding\+Engine$<$ S\+E\+Q $>$}}
+}
+
+
+{\ttfamily \#include $<$folding\+\_\+engine.\+h$>$}
+
+
+
+Inheritance diagram for Folding\+Engine$<$ S\+E\+Q $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_folding_engine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Folding\+Engine$<$ S\+E\+Q $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_folding_engine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_folding_engine_1_1_encode_b_p}{Encode\+B\+P}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_folding_engine_a9a6458e4e231eec0ec99dbb1911f5c31}{Folding\+Engine} (bool run\+\_\+as\+\_\+mea=\hyperlink{naview_8c_a65e9886d74aaee76545e83dd09011727}{false}, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} max\+\_\+bp\+\_\+dist=0)
+\item 
+virtual \hyperlink{class_folding_engine_afdd152a5f4e1b5d75b6387ee3e54e425}{$\sim$\+Folding\+Engine} ()
+\item 
+void \hyperlink{class_folding_engine_a0edbd0f9184ab489f04d415f3d259983}{centroid\+\_\+fold} (const std\+::string \&name, const S\+E\+Q \&seq, const std\+::vector$<$ float $>$ \&gamma, std\+::ostream \&out)
+\item 
+void \hyperlink{class_folding_engine_af45d59fc27e028e19a053a539c7e4254}{centroid\+\_\+fold} (const std\+::string \&name, const S\+E\+Q \&seq, const std\+::vector$<$ float $>$ \&gamma, std\+::ostream \&out, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+ea\+\_\+samples)
+\item 
+virtual void \hyperlink{class_folding_engine_af42fb74e518d56eaddaab33696b0d32f}{stochastic\+\_\+fold} (const S\+E\+Q \&seq, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+samples, std\+::ostream \&out)
+\item 
+virtual void \hyperlink{class_folding_engine_a3a83796b8f2eba402e90fb726c167680}{stochastic\+\_\+fold} (const S\+E\+Q \&seq, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+samples, std\+::vector$<$ \hyperlink{folding__engine_8h_ad0a64ba9a92681778af5917fd1bbd40c}{B\+Pvec\+Ptr} $>$ \&bpv)
+\item 
+void \hyperlink{class_folding_engine_a4c379f7308f4aae89369301fbc1d396a}{stochastic\+\_\+fold} (const std\+::string \&name, const S\+E\+Q \&seq, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+samples, const std\+::vector$<$ float $>$ \&gamma, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} max\+\_\+clusters, std\+::ostream \&out, const std\+::string \&p\+\_\+outname, float th)
+\item 
+virtual void \hyperlink{class_folding_engine_a387a1625b31056030998eddcada4c036}{max\+\_\+mcc\+\_\+fold} (const std\+::string \&name, const S\+E\+Q \&seq, std\+::ostream \&out, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+samples)
+\item 
+void \hyperlink{class_folding_engine_a4e5f3dde4398e3ad2b9f014d5254e3dd}{compute\+\_\+expected\+\_\+accuracy} (const std\+::string \&paren, double \&sen, double \&ppv, double \&mcc) const 
+\item 
+virtual void \hyperlink{class_folding_engine_ae6cbbe3009c8ff7dae235ca98ccb18c2}{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling} (const std\+::string \&paren, const S\+E\+Q \&seq, \hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} num\+\_\+ea\+\_\+samples, double \&sen, double \&ppv, double \&mcc)
+\item 
+float \hyperlink{class_folding_engine_a54a44538dec848ce74ef84e162cb885b}{decode\+\_\+structure} (float gamma, std\+::string \&paren) const 
+\item 
+const \hyperlink{folding__engine_8h_a065821fb17bbd8df315f2435c973e3c1}{B\+P\+Table} \& \hyperlink{class_folding_engine_ab704de409c6dd7a674bf624335e68cc1}{get\+\_\+bp} () const 
+\item 
+void \hyperlink{class_folding_engine_ad7357925081147af2582df825ac42425}{ps\+\_\+plot} (const std\+::string \&name, const S\+E\+Q \&seq, float g, bool color=\hyperlink{naview_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}) const 
+\item 
+virtual void \hyperlink{class_folding_engine_aa979adbd342b75eb947927e6ff7bcb8c}{set\+\_\+constraint} (const std\+::string \&str)
+\item 
+virtual void \hyperlink{class_folding_engine_a314c78e5fe35d5a1b5f441604c58e8f1}{calculate\+\_\+posterior} (const S\+E\+Q \&seq)=0
+\item 
+virtual void \hyperlink{class_folding_engine_a22db64fbf81030b83316c7ca12431ee4}{prepare\+\_\+stochastic\+\_\+traceback} (const S\+E\+Q \&seq)
+\item 
+virtual std\+::vector$<$ int $>$ \hyperlink{class_folding_engine_a1e4bc1f100ea5bf8d957a1b20139e6f1}{stochastic\+\_\+traceback} (const S\+E\+Q \&seq)
+\item 
+virtual void \hyperlink{class_folding_engine_a15027401822de5e57efbf131c214c2c7}{clean\+\_\+stochastic\+\_\+traceback} (const S\+E\+Q \&seq)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_folding_engine_af5d717e06dbd56b724f4c77292d533b0}{get\+\_\+\+T\+P\+\_\+\+T\+N\+\_\+\+F\+P\+\_\+\+F\+N} (const \hyperlink{folding__engine_8h_acbc65f98baf8c83dfb372fe16181981d}{B\+Pvec} \&ref, const \hyperlink{folding__engine_8h_acbc65f98baf8c83dfb372fe16181981d}{B\+Pvec} \&pre, double \&T\+P, double \&T\+N, double \&F\+P, double \&F\+N)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_folding_engine_a73c7910614a8894d3334dbebd1fe1b35}{mea\+\_\+}
+\item 
+\hyperlink{folding__engine_8h_a065821fb17bbd8df315f2435c973e3c1}{B\+P\+Table} \hyperlink{class_folding_engine_a9b9bda82bd46da0a8a41e22be459e559}{bp\+\_\+}
+\item 
+\hyperlink{cyktable_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint} \hyperlink{class_folding_engine_a9f810b5b55a05965f5421b201185e5fa}{max\+\_\+bp\+\_\+dist\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class S\+E\+Q$>$class Folding\+Engine$<$ S\+E\+Q $>$}
+
+
+
+Definition at line 55 of file folding\+\_\+engine.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_folding_engine_a9a6458e4e231eec0ec99dbb1911f5c31}{\index{Folding\+Engine@{Folding\+Engine}!Folding\+Engine@{Folding\+Engine}}
+\index{Folding\+Engine@{Folding\+Engine}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{Folding\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::{\bf Folding\+Engine} (
+\begin{DoxyParamCaption}
+\item[{bool}]{run\+\_\+as\+\_\+mea = {\ttfamily {\bf false}}, }
+\item[{{\bf uint}}]{max\+\_\+bp\+\_\+dist = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_folding_engine_a9a6458e4e231eec0ec99dbb1911f5c31}
+
+
+Definition at line 58 of file folding\+\_\+engine.\+h.
+
+\hypertarget{class_folding_engine_afdd152a5f4e1b5d75b6387ee3e54e425}{\index{Folding\+Engine@{Folding\+Engine}!````~Folding\+Engine@{$\sim$\+Folding\+Engine}}
+\index{````~Folding\+Engine@{$\sim$\+Folding\+Engine}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{$\sim$\+Folding\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ virtual {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::$\sim${\bf Folding\+Engine} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_folding_engine_afdd152a5f4e1b5d75b6387ee3e54e425}
+
+
+Definition at line 60 of file folding\+\_\+engine.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_folding_engine_a314c78e5fe35d5a1b5f441604c58e8f1}{\index{Folding\+Engine@{Folding\+Engine}!calculate\+\_\+posterior@{calculate\+\_\+posterior}}
+\index{calculate\+\_\+posterior@{calculate\+\_\+posterior}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{calculate\+\_\+posterior}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ virtual void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::calculate\+\_\+posterior (
+\begin{DoxyParamCaption}
+\item[{const S\+E\+Q \&}]{seq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_folding_engine_a314c78e5fe35d5a1b5f441604c58e8f1}
+
+
+Implemented in \hyperlink{class_c_o_n_t_r_afold_model_af9b44d34a59607ba105bd1e57b3f5c6f}{C\+O\+N\+T\+R\+Afold\+Model}, \hyperlink{class_averaged_model_ab594bb3e99a3e07efcdda8cf5ca001ab}{Averaged\+Model}, \hyperlink{class_pfold_model_a049dd223a8aae36e6e3b9d1c6e9c3b6f}{Pfold\+Model$<$ S\+E\+Q $>$}, \hyperlink{class_c_o_n_t_r_afold_multi_model_af408693a48cfcf28aca97853098e4111}{C\+O\+N\+T\+R\+Afold\+Multi\+Model}, \hyperlink{class_mixture_model_a7388c028012e7058a601b0b32c924d9f}{Mixture\+Model$<$ S\+E\+Q $>$}, \hyperlink{class_aux_model_aa0351133a58e0038f55580dbf4f925c8}{Aux\+Model}, and \hyperlink{class_c_o_n_t_r_afold_hom_model_a5274d9b038e5d213d4ec8900713d820e}{C\+O\+N\+T\+R\+Afold\+Hom\+Model}.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a314c78e5fe35d5a1b5f441604c58e8f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_a0edbd0f9184ab489f04d415f3d259983}{\index{Folding\+Engine@{Folding\+Engine}!centroid\+\_\+fold@{centroid\+\_\+fold}}
+\index{centroid\+\_\+fold@{centroid\+\_\+fold}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{centroid\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::centroid\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const S\+E\+Q \&}]{seq, }
+\item[{const std\+::vector$<$ float $>$ \&}]{gamma, }
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}}\label{class_folding_engine_a0edbd0f9184ab489f04d415f3d259983}
+
+
+Definition at line 127 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a0edbd0f9184ab489f04d415f3d259983_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_af45d59fc27e028e19a053a539c7e4254}{\index{Folding\+Engine@{Folding\+Engine}!centroid\+\_\+fold@{centroid\+\_\+fold}}
+\index{centroid\+\_\+fold@{centroid\+\_\+fold}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{centroid\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::centroid\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const S\+E\+Q \&}]{seq, }
+\item[{const std\+::vector$<$ float $>$ \&}]{gamma, }
+\item[{std\+::ostream \&}]{out, }
+\item[{{\bf uint}}]{num\+\_\+ea\+\_\+samples}
+\end{DoxyParamCaption}
+)}}\label{class_folding_engine_af45d59fc27e028e19a053a539c7e4254}
+
+
+Definition at line 187 of file folding\+\_\+engine.\+cpp.
+
+\hypertarget{class_folding_engine_a15027401822de5e57efbf131c214c2c7}{\index{Folding\+Engine@{Folding\+Engine}!clean\+\_\+stochastic\+\_\+traceback@{clean\+\_\+stochastic\+\_\+traceback}}
+\index{clean\+\_\+stochastic\+\_\+traceback@{clean\+\_\+stochastic\+\_\+traceback}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{clean\+\_\+stochastic\+\_\+traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::clean\+\_\+stochastic\+\_\+traceback (
+\begin{DoxyParamCaption}
+\item[{const S\+E\+Q \&}]{seq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_folding_engine_a15027401822de5e57efbf131c214c2c7}
+
+
+Reimplemented in \hyperlink{class_c_o_n_t_r_afold_model_a0588b069b4c61786217ec9878991130b}{C\+O\+N\+T\+R\+Afold\+Model}, and \hyperlink{class_c_o_n_t_r_afold_multi_model_adc88dbc34243d5e0bd1c713a25cf5a34}{C\+O\+N\+T\+R\+Afold\+Multi\+Model}.
+
+
+
+Definition at line 628 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a15027401822de5e57efbf131c214c2c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_a4e5f3dde4398e3ad2b9f014d5254e3dd}{\index{Folding\+Engine@{Folding\+Engine}!compute\+\_\+expected\+\_\+accuracy@{compute\+\_\+expected\+\_\+accuracy}}
+\index{compute\+\_\+expected\+\_\+accuracy@{compute\+\_\+expected\+\_\+accuracy}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{compute\+\_\+expected\+\_\+accuracy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q $>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::compute\+\_\+expected\+\_\+accuracy (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{paren, }
+\item[{double \&}]{sen, }
+\item[{double \&}]{ppv, }
+\item[{double \&}]{mcc}
+\end{DoxyParamCaption}
+) const}}\label{class_folding_engine_a4e5f3dde4398e3ad2b9f014d5254e3dd}
+
+
+Definition at line 440 of file folding\+\_\+engine.\+cpp.
+
+\hypertarget{class_folding_engine_ae6cbbe3009c8ff7dae235ca98ccb18c2}{\index{Folding\+Engine@{Folding\+Engine}!compute\+\_\+expected\+\_\+accuracy\+\_\+sampling@{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling}}
+\index{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling@{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{compute\+\_\+expected\+\_\+accuracy\+\_\+sampling}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::compute\+\_\+expected\+\_\+accuracy\+\_\+sampling (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{paren, }
+\item[{const S\+E\+Q \&}]{seq, }
+\item[{{\bf uint}}]{num\+\_\+ea\+\_\+samples, }
+\item[{double \&}]{sen, }
+\item[{double \&}]{ppv, }
+\item[{double \&}]{mcc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_folding_engine_ae6cbbe3009c8ff7dae235ca98ccb18c2}
+
+
+Reimplemented in \hyperlink{class_averaged_model_a45c8b5f77c83da55a8f19660b9319e03}{Averaged\+Model}.
+
+
+
+Definition at line 508 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_ae6cbbe3009c8ff7dae235ca98ccb18c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_a54a44538dec848ce74ef84e162cb885b}{\index{Folding\+Engine@{Folding\+Engine}!decode\+\_\+structure@{decode\+\_\+structure}}
+\index{decode\+\_\+structure@{decode\+\_\+structure}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{decode\+\_\+structure}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q $>$ float {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::decode\+\_\+structure (
+\begin{DoxyParamCaption}
+\item[{float}]{gamma, }
+\item[{std\+::string \&}]{paren}
+\end{DoxyParamCaption}
+) const}}\label{class_folding_engine_a54a44538dec848ce74ef84e162cb885b}
+
+
+Definition at line 554 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a54a44538dec848ce74ef84e162cb885b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_ab704de409c6dd7a674bf624335e68cc1}{\index{Folding\+Engine@{Folding\+Engine}!get\+\_\+bp@{get\+\_\+bp}}
+\index{get\+\_\+bp@{get\+\_\+bp}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{get\+\_\+bp}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ const {\bf B\+P\+Table}\& {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::get\+\_\+bp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_folding_engine_ab704de409c6dd7a674bf624335e68cc1}
+
+
+Definition at line 80 of file folding\+\_\+engine.\+h.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_ab704de409c6dd7a674bf624335e68cc1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_af5d717e06dbd56b724f4c77292d533b0}{\index{Folding\+Engine@{Folding\+Engine}!get\+\_\+\+T\+P\+\_\+\+T\+N\+\_\+\+F\+P\+\_\+\+F\+N@{get\+\_\+\+T\+P\+\_\+\+T\+N\+\_\+\+F\+P\+\_\+\+F\+N}}
+\index{get\+\_\+\+T\+P\+\_\+\+T\+N\+\_\+\+F\+P\+\_\+\+F\+N@{get\+\_\+\+T\+P\+\_\+\+T\+N\+\_\+\+F\+P\+\_\+\+F\+N}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{get\+\_\+\+T\+P\+\_\+\+T\+N\+\_\+\+F\+P\+\_\+\+F\+N}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q $>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::get\+\_\+\+T\+P\+\_\+\+T\+N\+\_\+\+F\+P\+\_\+\+F\+N (
+\begin{DoxyParamCaption}
+\item[{const {\bf B\+Pvec} \&}]{ref, }
+\item[{const {\bf B\+Pvec} \&}]{pre, }
+\item[{double \&}]{T\+P, }
+\item[{double \&}]{T\+N, }
+\item[{double \&}]{F\+P, }
+\item[{double \&}]{F\+N}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{class_folding_engine_af5d717e06dbd56b724f4c77292d533b0}
+
+
+Definition at line 496 of file folding\+\_\+engine.\+cpp.
+
+\hypertarget{class_folding_engine_a387a1625b31056030998eddcada4c036}{\index{Folding\+Engine@{Folding\+Engine}!max\+\_\+mcc\+\_\+fold@{max\+\_\+mcc\+\_\+fold}}
+\index{max\+\_\+mcc\+\_\+fold@{max\+\_\+mcc\+\_\+fold}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{max\+\_\+mcc\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::max\+\_\+mcc\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const S\+E\+Q \&}]{seq, }
+\item[{std\+::ostream \&}]{out, }
+\item[{{\bf uint}}]{num\+\_\+samples}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_folding_engine_a387a1625b31056030998eddcada4c036}
+
+
+Reimplemented in \hyperlink{class_averaged_model_a4844fe73e623329659ab409d8acede57}{Averaged\+Model}.
+
+
+
+Definition at line 405 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a387a1625b31056030998eddcada4c036_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_a22db64fbf81030b83316c7ca12431ee4}{\index{Folding\+Engine@{Folding\+Engine}!prepare\+\_\+stochastic\+\_\+traceback@{prepare\+\_\+stochastic\+\_\+traceback}}
+\index{prepare\+\_\+stochastic\+\_\+traceback@{prepare\+\_\+stochastic\+\_\+traceback}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{prepare\+\_\+stochastic\+\_\+traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::prepare\+\_\+stochastic\+\_\+traceback (
+\begin{DoxyParamCaption}
+\item[{const S\+E\+Q \&}]{seq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_folding_engine_a22db64fbf81030b83316c7ca12431ee4}
+
+
+Reimplemented in \hyperlink{class_c_o_n_t_r_afold_model_a677989ea8d48f3d3217d1d4fabef034c}{C\+O\+N\+T\+R\+Afold\+Model}, and \hyperlink{class_c_o_n_t_r_afold_multi_model_acbfb06ede76be8e8b5709f62c5089b60}{C\+O\+N\+T\+R\+Afold\+Multi\+Model}.
+
+
+
+Definition at line 611 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a22db64fbf81030b83316c7ca12431ee4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_ad7357925081147af2582df825ac42425}{\index{Folding\+Engine@{Folding\+Engine}!ps\+\_\+plot@{ps\+\_\+plot}}
+\index{ps\+\_\+plot@{ps\+\_\+plot}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{ps\+\_\+plot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::ps\+\_\+plot (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const S\+E\+Q \&}]{seq, }
+\item[{float}]{g, }
+\item[{bool}]{color = {\ttfamily {\bf true}}}
+\end{DoxyParamCaption}
+) const}}\label{class_folding_engine_ad7357925081147af2582df825ac42425}
+
+
+Definition at line 576 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_ad7357925081147af2582df825ac42425_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_ad7357925081147af2582df825ac42425_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_aa979adbd342b75eb947927e6ff7bcb8c}{\index{Folding\+Engine@{Folding\+Engine}!set\+\_\+constraint@{set\+\_\+constraint}}
+\index{set\+\_\+constraint@{set\+\_\+constraint}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{set\+\_\+constraint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q $>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::set\+\_\+constraint (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_folding_engine_aa979adbd342b75eb947927e6ff7bcb8c}
+
+
+Reimplemented in \hyperlink{class_c_o_n_t_r_afold_model_aa1d31567da78c2c621d62675a8f326ae}{C\+O\+N\+T\+R\+Afold\+Model}, \hyperlink{class_averaged_model_a0a261a8fe29b8b7bd00acf7eaeecf396}{Averaged\+Model}, and \hyperlink{class_c_o_n_t_r_afold_hom_model_af152e89d182c3371df6412a40fcc2b5e}{C\+O\+N\+T\+R\+Afold\+Hom\+Model}.
+
+
+
+Definition at line 603 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_aa979adbd342b75eb947927e6ff7bcb8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_af42fb74e518d56eaddaab33696b0d32f}{\index{Folding\+Engine@{Folding\+Engine}!stochastic\+\_\+fold@{stochastic\+\_\+fold}}
+\index{stochastic\+\_\+fold@{stochastic\+\_\+fold}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{stochastic\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::stochastic\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const S\+E\+Q \&}]{seq, }
+\item[{{\bf uint}}]{num\+\_\+samples, }
+\item[{std\+::ostream \&}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_folding_engine_af42fb74e518d56eaddaab33696b0d32f}
+
+
+Reimplemented in \hyperlink{class_averaged_model_a8b07acaf0d63c249cdc78dc1b2df7307}{Averaged\+Model}.
+
+
+
+Definition at line 246 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_af42fb74e518d56eaddaab33696b0d32f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_a3a83796b8f2eba402e90fb726c167680}{\index{Folding\+Engine@{Folding\+Engine}!stochastic\+\_\+fold@{stochastic\+\_\+fold}}
+\index{stochastic\+\_\+fold@{stochastic\+\_\+fold}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{stochastic\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::stochastic\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const S\+E\+Q \&}]{seq, }
+\item[{{\bf uint}}]{num\+\_\+samples, }
+\item[{std\+::vector$<$ {\bf B\+Pvec\+Ptr} $>$ \&}]{bpv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_folding_engine_a3a83796b8f2eba402e90fb726c167680}
+
+
+Reimplemented in \hyperlink{class_averaged_model_a65ce78340130f4ddb19b0b5782244a1b}{Averaged\+Model}.
+
+
+
+Definition at line 269 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a3a83796b8f2eba402e90fb726c167680_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_a4c379f7308f4aae89369301fbc1d396a}{\index{Folding\+Engine@{Folding\+Engine}!stochastic\+\_\+fold@{stochastic\+\_\+fold}}
+\index{stochastic\+\_\+fold@{stochastic\+\_\+fold}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{stochastic\+\_\+fold}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ void {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::stochastic\+\_\+fold (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const S\+E\+Q \&}]{seq, }
+\item[{{\bf uint}}]{num\+\_\+samples, }
+\item[{const std\+::vector$<$ float $>$ \&}]{gamma, }
+\item[{{\bf uint}}]{max\+\_\+clusters, }
+\item[{std\+::ostream \&}]{out, }
+\item[{const std\+::string \&}]{p\+\_\+outname, }
+\item[{float}]{th}
+\end{DoxyParamCaption}
+)}}\label{class_folding_engine_a4c379f7308f4aae89369301fbc1d396a}
+
+
+Definition at line 308 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a4c379f7308f4aae89369301fbc1d396a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_folding_engine_a1e4bc1f100ea5bf8d957a1b20139e6f1}{\index{Folding\+Engine@{Folding\+Engine}!stochastic\+\_\+traceback@{stochastic\+\_\+traceback}}
+\index{stochastic\+\_\+traceback@{stochastic\+\_\+traceback}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{stochastic\+\_\+traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ std\+::vector$<$ int $>$ {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::stochastic\+\_\+traceback (
+\begin{DoxyParamCaption}
+\item[{const S\+E\+Q \&}]{seq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_folding_engine_a1e4bc1f100ea5bf8d957a1b20139e6f1}
+
+
+Reimplemented in \hyperlink{class_c_o_n_t_r_afold_model_a759a5951561c3bc350d030fe34e760bb}{C\+O\+N\+T\+R\+Afold\+Model}, and \hyperlink{class_c_o_n_t_r_afold_multi_model_aace1a916ed70f69b6d8d852c69a1b549}{C\+O\+N\+T\+R\+Afold\+Multi\+Model}.
+
+
+
+Definition at line 619 of file folding\+\_\+engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_folding_engine_a1e4bc1f100ea5bf8d957a1b20139e6f1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_folding_engine_a9b9bda82bd46da0a8a41e22be459e559}{\index{Folding\+Engine@{Folding\+Engine}!bp\+\_\+@{bp\+\_\+}}
+\index{bp\+\_\+@{bp\+\_\+}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{bp\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ {\bf B\+P\+Table} {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::bp\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_folding_engine_a9b9bda82bd46da0a8a41e22be459e559}
+
+
+Definition at line 96 of file folding\+\_\+engine.\+h.
+
+\hypertarget{class_folding_engine_a9f810b5b55a05965f5421b201185e5fa}{\index{Folding\+Engine@{Folding\+Engine}!max\+\_\+bp\+\_\+dist\+\_\+@{max\+\_\+bp\+\_\+dist\+\_\+}}
+\index{max\+\_\+bp\+\_\+dist\+\_\+@{max\+\_\+bp\+\_\+dist\+\_\+}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{max\+\_\+bp\+\_\+dist\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ {\bf uint} {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::max\+\_\+bp\+\_\+dist\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_folding_engine_a9f810b5b55a05965f5421b201185e5fa}
+
+
+Definition at line 97 of file folding\+\_\+engine.\+h.
+
+\hypertarget{class_folding_engine_a73c7910614a8894d3334dbebd1fe1b35}{\index{Folding\+Engine@{Folding\+Engine}!mea\+\_\+@{mea\+\_\+}}
+\index{mea\+\_\+@{mea\+\_\+}!Folding\+Engine@{Folding\+Engine}}
+\subsubsection[{mea\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+E\+Q$>$ bool {\bf Folding\+Engine}$<$ S\+E\+Q $>$\+::mea\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_folding_engine_a73c7910614a8894d3334dbebd1fe1b35}
+
+
+Definition at line 95 of file folding\+\_\+engine.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/centroidalifold/\hyperlink{folding__engine_8h}{folding\+\_\+engine.\+h}\item 
+src/centroidalifold/\hyperlink{folding__engine_8cpp}{folding\+\_\+engine.\+cpp}\end{DoxyCompactItemize}

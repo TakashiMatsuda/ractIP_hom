@@ -1,0 +1,6 @@
+<map id="SStruct::GetMapping" name="SStruct::GetMapping">
+<area shape="rect" id="node2" href="$struct_c_o_n_t_r_afold_1_1_impl.html#aa715d3a69d3a0fbdc9a0516890e78fcf" title="CONTRAfold::Impl::Compute\lPosterior" alt="" coords="201,5,394,46"/>
+<area shape="rect" id="node3" href="$struct_c_o_n_t_r_afold_1_1_impl.html#ad612db1ca63f65e6ab924c4204deee34" title="CONTRAfold::Impl::Compute\lInside" alt="" coords="201,70,394,111"/>
+<area shape="rect" id="node4" href="$struct_c_o_n_t_r_afold_1_1_impl.html#a65cfdf3de5b950534835ac9a47d3a701" title="CONTRAfold::Impl::Compute\lViterbi" alt="" coords="201,135,394,177"/>
+<area shape="rect" id="node5" href="$struct_c_o_n_t_r_afold_1_1_impl.html#ae05e41f99c06e7e00ac29fb11d56c804" title="CONTRAfold::Impl::Prepare\lStochasticTraceback" alt="" coords="204,201,391,242"/>
+</map>

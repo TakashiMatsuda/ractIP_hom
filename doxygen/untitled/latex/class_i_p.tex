@@ -1,0 +1,148 @@
+\hypertarget{class_i_p}{\section{I\+P Class Reference}
+\label{class_i_p}\index{I\+P@{I\+P}}
+}
+
+
+{\ttfamily \#include $<$ip.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_i_p_af88e6fdfab32c2ed183920793a376ef7}{Dir\+Type} \{ \hyperlink{class_i_p_af88e6fdfab32c2ed183920793a376ef7a8c5f4cad2750385017e5f4130b493ae2}{M\+I\+N}, 
+\hyperlink{class_i_p_af88e6fdfab32c2ed183920793a376ef7a02d565f05c7c5bc19b435ee28ad118e7}{M\+A\+X}
+ \}
+\item 
+enum \hyperlink{class_i_p_ad3e0d9963922726d47f2f913aa2c8dca}{Bound\+Type} \{ \\*
+\hyperlink{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa3ac516e2eeda7996cdaad1e53db2d908}{F\+R}, 
+\hyperlink{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa7f6843d9ed7bee9109e014933d237aaa}{L\+O}, 
+\hyperlink{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa9beec925faa9260f06491e71e337d1c7}{U\+P}, 
+\hyperlink{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaac182842ac60265785e06d0f5ac0afa6e}{D\+B}, 
+\\*
+\hyperlink{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaad4599f2dd371dd5cc34f7c1d4050be29}{F\+X}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_p_a3f2cca8cf1bb5dc81c01ddebbc10b485}{I\+P} (\hyperlink{class_i_p_af88e6fdfab32c2ed183920793a376ef7}{Dir\+Type} dir, int n\+\_\+th)
+\item 
+\hyperlink{class_i_p_a5bb585bc3989eb9d800e56214a09287e}{$\sim$\+I\+P} ()
+\item 
+int \hyperlink{class_i_p_a5d886fd73f854d45edf0deed7725f1b7}{make\+\_\+variable} (double coef)
+\item 
+int \hyperlink{class_i_p_a69c73c2ff766acd2c6191999c3d0902c}{make\+\_\+constraint} (\hyperlink{class_i_p_ad3e0d9963922726d47f2f913aa2c8dca}{Bound\+Type} bnd, double l, double u)
+\item 
+void \hyperlink{class_i_p_aef4a713b86874bacbd6137d7fbd4a2cb}{add\+\_\+constraint} (int row, int col, double val)
+\item 
+void \hyperlink{class_i_p_aad094e5a2eba9883c75ef69a6e20a7c5}{update} ()
+\item 
+double \hyperlink{class_i_p_a9e33cc37ef1c24c06593a47bad87c340}{solve} ()
+\item 
+double \hyperlink{class_i_p_a2b0a691fa6e9db4bc4aa5f6c3289d2ec}{get\+\_\+value} (int col) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_i_p_ad3e0d9963922726d47f2f913aa2c8dca}{\index{I\+P@{I\+P}!Bound\+Type@{Bound\+Type}}
+\index{Bound\+Type@{Bound\+Type}!I\+P@{I\+P}}
+\subsubsection[{Bound\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I\+P\+::\+Bound\+Type}}}\label{class_i_p_ad3e0d9963922726d47f2f913aa2c8dca}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+R@{F\+R}!I\+P@{I\+P}}\index{I\+P@{I\+P}!F\+R@{F\+R}}\item[{\em 
+\hypertarget{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa3ac516e2eeda7996cdaad1e53db2d908}{F\+R}\label{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa3ac516e2eeda7996cdaad1e53db2d908}
+}]\index{L\+O@{L\+O}!I\+P@{I\+P}}\index{I\+P@{I\+P}!L\+O@{L\+O}}\item[{\em 
+\hypertarget{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa7f6843d9ed7bee9109e014933d237aaa}{L\+O}\label{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa7f6843d9ed7bee9109e014933d237aaa}
+}]\index{U\+P@{U\+P}!I\+P@{I\+P}}\index{I\+P@{I\+P}!U\+P@{U\+P}}\item[{\em 
+\hypertarget{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa9beec925faa9260f06491e71e337d1c7}{U\+P}\label{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaa9beec925faa9260f06491e71e337d1c7}
+}]\index{D\+B@{D\+B}!I\+P@{I\+P}}\index{I\+P@{I\+P}!D\+B@{D\+B}}\item[{\em 
+\hypertarget{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaac182842ac60265785e06d0f5ac0afa6e}{D\+B}\label{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaac182842ac60265785e06d0f5ac0afa6e}
+}]\index{F\+X@{F\+X}!I\+P@{I\+P}}\index{I\+P@{I\+P}!F\+X@{F\+X}}\item[{\em 
+\hypertarget{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaad4599f2dd371dd5cc34f7c1d4050be29}{F\+X}\label{class_i_p_ad3e0d9963922726d47f2f913aa2c8dcaad4599f2dd371dd5cc34f7c1d4050be29}
+}]\end{description}
+\end{Desc}
+\hypertarget{class_i_p_af88e6fdfab32c2ed183920793a376ef7}{\index{I\+P@{I\+P}!Dir\+Type@{Dir\+Type}}
+\index{Dir\+Type@{Dir\+Type}!I\+P@{I\+P}}
+\subsubsection[{Dir\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I\+P\+::\+Dir\+Type}}}\label{class_i_p_af88e6fdfab32c2ed183920793a376ef7}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+I\+N@{M\+I\+N}!I\+P@{I\+P}}\index{I\+P@{I\+P}!M\+I\+N@{M\+I\+N}}\item[{\em 
+\hypertarget{class_i_p_af88e6fdfab32c2ed183920793a376ef7a8c5f4cad2750385017e5f4130b493ae2}{M\+I\+N}\label{class_i_p_af88e6fdfab32c2ed183920793a376ef7a8c5f4cad2750385017e5f4130b493ae2}
+}]\index{M\+A\+X@{M\+A\+X}!I\+P@{I\+P}}\index{I\+P@{I\+P}!M\+A\+X@{M\+A\+X}}\item[{\em 
+\hypertarget{class_i_p_af88e6fdfab32c2ed183920793a376ef7a02d565f05c7c5bc19b435ee28ad118e7}{M\+A\+X}\label{class_i_p_af88e6fdfab32c2ed183920793a376ef7a02d565f05c7c5bc19b435ee28ad118e7}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_i_p_a3f2cca8cf1bb5dc81c01ddebbc10b485}{\index{I\+P@{I\+P}!I\+P@{I\+P}}
+\index{I\+P@{I\+P}!I\+P@{I\+P}}
+\subsubsection[{I\+P}]{\setlength{\rightskip}{0pt plus 5cm}I\+P\+::\+I\+P (
+\begin{DoxyParamCaption}
+\item[{{\bf Dir\+Type}}]{dir, }
+\item[{int}]{n\+\_\+th}
+\end{DoxyParamCaption}
+)}}\label{class_i_p_a3f2cca8cf1bb5dc81c01ddebbc10b485}
+\hypertarget{class_i_p_a5bb585bc3989eb9d800e56214a09287e}{\index{I\+P@{I\+P}!````~I\+P@{$\sim$\+I\+P}}
+\index{````~I\+P@{$\sim$\+I\+P}!I\+P@{I\+P}}
+\subsubsection[{$\sim$\+I\+P}]{\setlength{\rightskip}{0pt plus 5cm}I\+P\+::$\sim$\+I\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_i_p_a5bb585bc3989eb9d800e56214a09287e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_i_p_aef4a713b86874bacbd6137d7fbd4a2cb}{\index{I\+P@{I\+P}!add\+\_\+constraint@{add\+\_\+constraint}}
+\index{add\+\_\+constraint@{add\+\_\+constraint}!I\+P@{I\+P}}
+\subsubsection[{add\+\_\+constraint}]{\setlength{\rightskip}{0pt plus 5cm}void I\+P\+::add\+\_\+constraint (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{col, }
+\item[{double}]{val}
+\end{DoxyParamCaption}
+)}}\label{class_i_p_aef4a713b86874bacbd6137d7fbd4a2cb}
+\hypertarget{class_i_p_a2b0a691fa6e9db4bc4aa5f6c3289d2ec}{\index{I\+P@{I\+P}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!I\+P@{I\+P}}
+\subsubsection[{get\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}double I\+P\+::get\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{int}]{col}
+\end{DoxyParamCaption}
+) const}}\label{class_i_p_a2b0a691fa6e9db4bc4aa5f6c3289d2ec}
+\hypertarget{class_i_p_a69c73c2ff766acd2c6191999c3d0902c}{\index{I\+P@{I\+P}!make\+\_\+constraint@{make\+\_\+constraint}}
+\index{make\+\_\+constraint@{make\+\_\+constraint}!I\+P@{I\+P}}
+\subsubsection[{make\+\_\+constraint}]{\setlength{\rightskip}{0pt plus 5cm}int I\+P\+::make\+\_\+constraint (
+\begin{DoxyParamCaption}
+\item[{{\bf Bound\+Type}}]{bnd, }
+\item[{double}]{l, }
+\item[{double}]{u}
+\end{DoxyParamCaption}
+)}}\label{class_i_p_a69c73c2ff766acd2c6191999c3d0902c}
+\hypertarget{class_i_p_a5d886fd73f854d45edf0deed7725f1b7}{\index{I\+P@{I\+P}!make\+\_\+variable@{make\+\_\+variable}}
+\index{make\+\_\+variable@{make\+\_\+variable}!I\+P@{I\+P}}
+\subsubsection[{make\+\_\+variable}]{\setlength{\rightskip}{0pt plus 5cm}int I\+P\+::make\+\_\+variable (
+\begin{DoxyParamCaption}
+\item[{double}]{coef}
+\end{DoxyParamCaption}
+)}}\label{class_i_p_a5d886fd73f854d45edf0deed7725f1b7}
+\hypertarget{class_i_p_a9e33cc37ef1c24c06593a47bad87c340}{\index{I\+P@{I\+P}!solve@{solve}}
+\index{solve@{solve}!I\+P@{I\+P}}
+\subsubsection[{solve}]{\setlength{\rightskip}{0pt plus 5cm}double I\+P\+::solve (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_i_p_a9e33cc37ef1c24c06593a47bad87c340}
+\hypertarget{class_i_p_aad094e5a2eba9883c75ef69a6e20a7c5}{\index{I\+P@{I\+P}!update@{update}}
+\index{update@{update}!I\+P@{I\+P}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void I\+P\+::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_i_p_aad094e5a2eba9883c75ef69a6e20a7c5}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/\hyperlink{ip_8h}{ip.\+h}\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/\hyperlink{ip_8cpp}{ip.\+cpp}\end{DoxyCompactItemize}

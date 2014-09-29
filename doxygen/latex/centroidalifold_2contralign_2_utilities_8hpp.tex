@@ -1,0 +1,311 @@
+\hypertarget{centroidalifold_2contralign_2_utilities_8hpp}{\section{src/centroidalifold/contralign/\+Utilities.hpp File Reference}
+\label{centroidalifold_2contralign_2_utilities_8hpp}\index{src/centroidalifold/contralign/\+Utilities.\+hpp@{src/centroidalifold/contralign/\+Utilities.\+hpp}}
+}
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$cerrno$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$cstdarg$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$numeric$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$queue$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$stack$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}Utilities.\+ipp\char`\"{}}\\*
+Include dependency graph for Utilities.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{centroidalifold_2contralign_2_utilities_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{centroidalifold_2contralign_2_utilities_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_c_o_n_t_r_a_l_i_g_n_1_1triple}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::triple$<$ T1, T2, T3 $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{centroidalifold_2contralign_2_utilities_8hpp_a060f01dff93e683cf78598476058aa7f}{\+\_\+level\+\_\+2\+\_\+str}(s)~\hyperlink{contrafold_2_utilities_8hpp_ab041d05d6b186895ba96002efbb14c80}{\+\_\+level\+\_\+1\+\_\+str}(s)
+\item 
+\#define \hyperlink{centroidalifold_2contralign_2_utilities_8hpp_ab041d05d6b186895ba96002efbb14c80}{\+\_\+level\+\_\+1\+\_\+str}(s)~\#s
+\item 
+\#define \hyperlink{centroidalifold_2contralign_2_utilities_8hpp_ac8c8ba070a2efab7d65ae86173a039da}{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}~\hyperlink{contrafold_2_utilities_8hpp_a060f01dff93e683cf78598476058aa7f}{\+\_\+level\+\_\+2\+\_\+str}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{centroidalifold_2contralign_2_utilities_8hpp_ae74c7c31ab970b8638d26006a782e9ab}{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+}~\char`\"{}Assertion failed in file \textbackslash{}\char`\"{}\char`\"{} \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ \char`\"{}\textbackslash{}\char`\"{}, line \char`\"{} \+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+
+\item 
+\#define \hyperlink{centroidalifold_2contralign_2_utilities_8hpp_af8a39cb14d8eca76bb0a7cece4103f15}{Assert}(\hyperlink{errortest_8hpp_ac8da963855e09bf929c085486f4a3b47}{test}, fmt,...)~(\hyperlink{errortest_8hpp_ac8da963855e09bf929c085486f4a3b47}{test} ? 0 \+: \hyperlink{contrafold_2_utilities_8hpp_a431e93b8e953409b87c47ea4e94cfb44}{\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D}(\hyperlink{contrafold_2_utilities_8hpp_ae74c7c31ab970b8638d26006a782e9ab}{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+} \char`\"{}\+: \char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \#\# \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a493b7d65e8378d6b823fd6332f1caa79}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+B\+Y\+T\+E}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a338a4c4e7404ab754609c2b78623a756}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D} (const char $\ast$fmt,...)
+\item 
+void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a61966034d786cea05ffcfaf94857102b}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Error} (const char $\ast$fmt,...)
+\item 
+void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ac0f0da01d76aab8602edcd2e4defc15f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Warning} (const char $\ast$fmt,...)
+\item 
+bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a7d8b6bc69c474546641aca733a1ba0db}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Number} (const std\+::string \&s, int \&val)
+\item 
+bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a7da237d8ce22882695f3c123458b86cc}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Number} (const std\+::string \&s, unsigned int \&val)
+\item 
+bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a35c60ce0193bd02ab62b2a7a88cf28f8}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Number} (const std\+::string \&s, long int \&val)
+\item 
+bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a6329df40493ff670585d485a8fa113c8}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Number} (const std\+::string \&s, unsigned long int \&val)
+\item 
+bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_af5c3734e0fb093eab48cb799bae2aaf8}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Number} (const std\+::string \&s, float \&val)
+\item 
+bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a3808e83d03092912e19aedeb45b7c691}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Number} (const std\+::string \&s, double \&val)
+\item 
+bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a7c45f697e83f0391b2af6b0e75f6f62f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Number} (const std\+::string \&s, long double \&val)
+\item 
+std\+::string \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aac140f1a8b0d61744322cd54dac36ddd}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Upper\+Case} (const std\+::string \&s)
+\item 
+std\+::string \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a806aa2763d439f3199f571482ccd7033}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+To\+Lower\+Case} (const std\+::string \&s)
+\item 
+std\+::string \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a9c5b90dd5ac218f263563dbd70e46e3d}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Trim} (const std\+::string \&s)
+\item 
+std\+::string \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a00a7058454c235c938fb00a1f320ad79}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Remove\+Gaps} (const std\+::string \&s)
+\item 
+std\+::string \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_adeab7a5e03007b720dd6a7dc7bffd7de}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+S\+Print\+F} (const char $\ast$fmt,...)
+\item 
+void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a8f97b6e8affaf0d7532a88095e5c0c39}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Write\+Progress\+Message} (const std\+::string \&message)
+\item 
+double \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aa4152b19ef26d4c16d6b565b563286d1}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Get\+System\+Time} ()
+\item 
+void \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a56cc93ad68a451ab0bd2681943a2116a}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Make\+Directory} (const std\+::string \&directory)
+\item 
+std\+::string \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ae131464a4805f6186f3df734aed0b5ef}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Make\+Temp\+Directory} ()
+\item 
+std\+::vector$<$ int $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a09a6292733c57477e3ff079b192348d6}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Get\+Sequence\+Positions} (const std\+::string \&s)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a93f0680ae281198149502c325fc56d49}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Get\+Sequence\+Mapping} (const std\+::string \&s)
+\item 
+int \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ace866af1294f1def70aa7373adc6632d}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Ind} (bool condition)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aed9c0b72e8f62195682d84fb809bed28}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator==} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a00533aeff74d4937d55fc5325493000a}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$<$} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a18792ba6906e25c2178227113f998924}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator!=} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ae3eb2ccb80d117e609ecc584ca71181f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$>$} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a8d549020d197328238ec07aec158d838}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$<$=} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_af2698ca3552c349853f1d45c74399d52}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$>$=} (const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&y)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\\hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a98175ddcaf753882eb5f92de09f9108f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::make\+\_\+triple} (T1 first, T2 second, T3 third)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\std\+::ostream \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_af60b1eb5579c95763c8241ab707b917e}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$<$$<$} (std\+::ostream \&out, const std\+::pair$<$ T1, T2 $>$ \&x)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\std\+::ostream \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a37f6d4fc947c02293236890815321e35}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$<$$<$} (std\+::ostream \&out, const \hyperlink{structtriple}{triple}$<$ T1, T2, T3 $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ab021053662bde52f88f0e83578579559}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sqrt} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a5ca67d3de567a8e208454433fc9b3985}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Exp} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a4bfa0bc3748b3484f0a9e0d9bb5a62fa}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Log} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a2c8a2f8551093619bdb7afa60d34db78}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Pow} (const T x, const T p)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a054e3c2a248dca86c547d357c0063808}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tanh} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a8eab454f786925da404894d345c55572}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Floor} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a71287d09e3234f79f410137964df4d2f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Ceil} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ac6566074a120c798141a91753c50290f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Abs} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aa4f87aa569c6cb44a0e15a73cc475c13}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sign} (const T x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a469955594da581dc70e2bafc9f235680}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Clip} (const T x, const T lower, const T upper)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a060f37f304d3b409ad044d105b37c4af}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Dot\+Product} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aea939de28045df5b9199ff4bf6a93b49}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Norm} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a816d76c04970024e87d6a1f9a683b5f6}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sqrt} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a0c42332331fc02304c24391c147101aa}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Exp} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a2a61e9203cab173f040a408cf9dd9fff}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Log} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a17fe7e289f4cde741880207b3acc4130}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Pow} (const std\+::vector$<$ T $>$ \&x, const T p)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a2bd0fc4d043cea02c1208cc7a6e43d22}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Tanh} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a881da0309b37d990b01dada1819b5d6f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Abs} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aad158156e3616501f89ee66af1cf66ee}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sign} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T , typename P $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a75011b634203a445b81adaf2684162ff}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Test} (const std\+::vector$<$ T $>$ \&x, \hyperlink{pf__duplex_8c_a54f9e847235c2061dfd403c5869b5e2d}{P} pred)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_af5acb97fd09c707d30b0ba3a2f4ce343}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Sum} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ad582c5d78b26a7e58ee7721a42c01da6}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Prod} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a6b53b3062ca847fb117cf013785f8100}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Min} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a6c722fe0306d541389530e375d74ccdf}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Max} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_adf2697aa2857fa99795263160b364d3a}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Clip} (const std\+::vector$<$ T $>$ \&x, const T \&lower, const T \&upper)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a29e5e02d8c9a594a18989dd70a67d960}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Min} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a5cc9c10aa252a488e82c2bb32c183747}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Max} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a1b53d2a84cfba4108bb7beb5270fe1c1}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Min} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a7a9aa6d2e9f21b56e04c47dc9bda0a12}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Max} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ab012f896d978a3dffc160298b00000be}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Arg\+Min} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a00dc218b758ac62148b43b448dc0c1c2}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Arg\+Max} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a0dde76d72fb93b92bcf6bdcafbc435ba}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator-\/} (const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_af1b254c31a46ad2861442bb2390ee336}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$\ast$} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_abe533e779b3a764b4b7dca6b627c1fed}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator/} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ad37632aa6d04b0b0735dfe1a104a1010}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator+} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a2a3a5dcf2fc4605559fa475cab65c6fe}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator-\/} (const std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ae2d8e5fded025a34e09c65c2dc997dd8}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$\ast$} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a2dca0d21c43b77c6ea3f790feb7ec634}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator/} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ae2222d1e328d2c582c47a729bf9ebf42}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator+} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a6999f279abf3d94291a284bc5b82546e}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator-\/} (const std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a8b40f9b1bc2302cfd81508683105dd4f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$\ast$} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a514e32eb89504fc0d503a0350ff381cb}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator/} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ac43e8f22ac47bc4ce841bfc8c3fd943a}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator+} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\const std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_abf9d5632e8a4feaa3d5b254ac83ccd03}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator-\/} (const T \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aafc1ce4aa4d97210186c358eec543740}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$\ast$=} (std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a0100c7e8af5633fb403d3cbeee1f0dce}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator/=} (std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ad2bf01877959caf081dbde8bac578f3f}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator+=} (std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_af0e8c5f8fbce7e6a51b426e6ac663b30}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator-\/=} (std\+::vector$<$ T $>$ \&x, const std\+::vector$<$ T $>$ \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a4da5ff7c4e30e9e3ac87eeecc67fb638}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$\ast$=} (std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a821d8b72ad691f1e5b42ffe21b0c05d8}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator/=} (std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a9a01fa9073f79bc1871fd38aedeb8ac3}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator+=} (std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a47ed1e3a7df88433ef471e9ae68d8cdf}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator-\/=} (std\+::vector$<$ T $>$ \&x, const T \&y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a837e827bff6e65e98e8c1cc9c2a34d28}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::operator$<$$<$} (std\+::ostream \&out, const std\+::vector$<$ T $>$ \&x)
+\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a7482cc725c843303831d85acb4807163}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Convert\+Vector} (const std\+::vector$<$ U $>$ \&x)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a1c2096f8a125b6a778f5fe8ef8c6b93a}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Concatenate} (const std\+::vector$<$ T $>$ \&u, const std\+::vector$<$ T $>$ \&v)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ad43313a97ba0a47e7858d11c88f9da36}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Transpose} (const std\+::vector$<$ T $>$ \&m, const int rows, const int cols)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a53a2e031c10b47dedfcaab61f97c0c4b}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Expand\+Matrix} (const std\+::vector$<$ T $>$ \&mat, const int new\+\_\+rows, const int new\+\_\+cols, const std\+::vector$<$ int $>$ \&positions\+\_\+rows, const std\+::vector$<$ int $>$ \&positions\+\_\+cols)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::vector$<$ T $>$ \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a565dbfcc2a892a5a9d55c1dafc1a77bf}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Expand\+Vector} (const std\+::vector$<$ T $>$ \&v, const int new\+\_\+length, const std\+::vector$<$ int $>$ \&positions)
+\item 
+bool \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_adfeb25c8dd97c0d84c2b827e3d92e2e7}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Is\+Complementary} (char c, char d)
+\item 
+std\+::string \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_ac92d12442328b730b130b824cb8e71ba}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Get\+Dir\+Name} (const std\+::string \&filename)
+\item 
+std\+::string \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_aac8014733b9d18389b3e410cadf04539}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+Get\+Base\+Name} (const std\+::string \&filename)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \hyperlink{namespace_c_o_n_t_r_a_l_i_g_n_a10799300da481510c609583326c3bcaa}{C\+O\+N\+T\+R\+A\+L\+I\+G\+N\+::\+D\+I\+R\+\_\+\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+C\+H\+A\+R} = '/'
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{centroidalifold_2contralign_2_utilities_8hpp_ae74c7c31ab970b8638d26006a782e9ab}{\index{centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}!\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+@{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+@{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+}!centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+\+\_\+\+F\+L\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+F\+L\+\_\+\+\_\+~\char`\"{}Assertion failed in file \textbackslash{}\char`\"{}\char`\"{} \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ \char`\"{}\textbackslash{}\char`\"{}, line \char`\"{} \+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}}\label{centroidalifold_2contralign_2_utilities_8hpp_ae74c7c31ab970b8638d26006a782e9ab}
+
+
+Definition at line 36 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contralign_2_utilities_8hpp_ac8c8ba070a2efab7d65ae86173a039da}{\index{centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}!\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+@{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+@{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}!centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+\_\+\+L\+I\+N\+E\+S\+T\+R\+\_\+\+\_\+~{\bf \+\_\+level\+\_\+2\+\_\+str}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}}\label{centroidalifold_2contralign_2_utilities_8hpp_ac8c8ba070a2efab7d65ae86173a039da}
+
+
+Definition at line 35 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contralign_2_utilities_8hpp_ab041d05d6b186895ba96002efbb14c80}{\index{centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}!\+\_\+level\+\_\+1\+\_\+str@{\+\_\+level\+\_\+1\+\_\+str}}
+\index{\+\_\+level\+\_\+1\+\_\+str@{\+\_\+level\+\_\+1\+\_\+str}!centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+level\+\_\+1\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+level\+\_\+1\+\_\+str(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~\#s}}\label{centroidalifold_2contralign_2_utilities_8hpp_ab041d05d6b186895ba96002efbb14c80}
+
+
+Definition at line 34 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contralign_2_utilities_8hpp_a060f01dff93e683cf78598476058aa7f}{\index{centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}!\+\_\+level\+\_\+2\+\_\+str@{\+\_\+level\+\_\+2\+\_\+str}}
+\index{\+\_\+level\+\_\+2\+\_\+str@{\+\_\+level\+\_\+2\+\_\+str}!centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}}
+\subsubsection[{\+\_\+level\+\_\+2\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+level\+\_\+2\+\_\+str(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~{\bf \+\_\+level\+\_\+1\+\_\+str}(s)}}\label{centroidalifold_2contralign_2_utilities_8hpp_a060f01dff93e683cf78598476058aa7f}
+
+
+Definition at line 33 of file Utilities.\+hpp.
+
+\hypertarget{centroidalifold_2contralign_2_utilities_8hpp_af8a39cb14d8eca76bb0a7cece4103f15}{\index{centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}!Assert@{Assert}}
+\index{Assert@{Assert}!centroidalifold/contralign/\+Utilities.\+hpp@{centroidalifold/contralign/\+Utilities.\+hpp}}
+\subsubsection[{Assert}]{\setlength{\rightskip}{0pt plus 5cm}\#define Assert(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf test}, }
+\item[{}]{fmt, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~({\bf test} ? 0 \+: {\bf \+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+F\+A\+I\+L\+E\+D}({\bf \+\_\+\+\_\+\+F\+L\+\_\+\+\_\+} \char`\"{}\+: \char`\"{} fmt \char`\"{}\textbackslash{}n\char`\"{}, \#\# \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+))}}\label{centroidalifold_2contralign_2_utilities_8hpp_af8a39cb14d8eca76bb0a7cece4103f15}
+
+
+Definition at line 49 of file Utilities.\+hpp.
+

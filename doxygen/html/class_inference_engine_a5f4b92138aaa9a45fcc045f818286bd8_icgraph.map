@@ -1,0 +1,5 @@
+<map id="InferenceEngine::RegisterParameters" name="InferenceEngine::RegisterParameters">
+<area shape="rect" id="node2" href="$struct_c_o_n_t_r_afold_1_1_impl.html#a312d688c6e7568435fa35d0a624ce94e" title="CONTRAfold::Impl::Impl" alt="" coords="244,5,409,32"/>
+<area shape="rect" id="node3" href="$struct_c_o_n_t_r_afold_m_1_1_impl.html#a770a0ab7aebe80a4d453a8faf1696248" title="CONTRAfoldM::Impl::Impl" alt="" coords="239,56,415,83"/>
+<area shape="rect" id="node4" href="$struct_c_o_n_t_r_afold_m_1_1_impl.html#a060e2cc0363e787e67e6110e5ff06d03" title="CONTRAfoldM::Impl::\lPrepareStochasticTraceback" alt="" coords="230,107,423,149"/>
+</map>

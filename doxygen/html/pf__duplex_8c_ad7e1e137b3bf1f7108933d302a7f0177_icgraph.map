@@ -1,0 +1,7 @@
+<map id="space" name="space">
+<area shape="rect" id="node2" href="$pf__duplex_8h.html#acbc5353fd34e53e1945c6a4ea7a06211" title="pf_duplex" alt="" coords="411,59,491,86"/>
+<area shape="rect" id="node3" href="$pf__duplex_8c.html#a18f7e06d96a2968369bd535b8e037270" title="pf_duplex_fw" alt="" coords="262,34,362,61"/>
+<area shape="rect" id="node4" href="$pf__duplex_8c.html#a1f5f67a5c8f86d975b13706e00a9aa83" title="pf_duplex_bk" alt="" coords="112,85,213,111"/>
+<area shape="rect" id="node5" href="$pf__duplex_8c.html#af5eeb35514887f1d1d5e257c5511eec8" title="encode_seq" alt="" coords="115,135,210,162"/>
+<area shape="rect" id="node6" href="$pf__duplex_8c.html#a2c499774799976d65e1085d3150803c6" title="encode_seqs" alt="" coords="261,135,363,162"/>
+</map>

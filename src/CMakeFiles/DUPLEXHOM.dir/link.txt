@@ -1,0 +1,2 @@
+/usr/bin/ar cr libDUPLEXHOM.a  CMakeFiles/DUPLEXHOM.dir/duplexhom.cpp.o
+/usr/bin/ranlib libDUPLEXHOM.a

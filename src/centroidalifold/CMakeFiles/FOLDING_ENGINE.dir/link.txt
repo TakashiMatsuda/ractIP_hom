@@ -1,0 +1,2 @@
+/usr/bin/ar cr libFOLDING_ENGINE.a  CMakeFiles/FOLDING_ENGINE.dir/folding_engine.cpp.o
+/usr/bin/ranlib libFOLDING_ENGINE.a

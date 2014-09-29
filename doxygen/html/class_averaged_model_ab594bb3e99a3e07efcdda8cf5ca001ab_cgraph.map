@@ -1,0 +1,10 @@
+<map id="AveragedModel::calculate_posterior" name="AveragedModel::calculate_posterior">
+<area shape="rect" id="node2" href="$class_aln.html#a07ac4d997bee9b73c5d2da5fd8e0102a" title="Aln::seq" alt="" coords="278,5,349,32"/>
+<area shape="rect" id="node3" href="$class_folding_engine.html#aa979adbd342b75eb947927e6ff7bcb8c" title="FoldingEngine::set\l_constraint" alt="" coords="247,57,379,98"/>
+<area shape="rect" id="node4" href="$class_folding_engine.html#a314c78e5fe35d5a1b5f441604c58e8f1" title="FoldingEngine::calculate\l_posterior" alt="" coords="230,122,397,163"/>
+<area shape="rect" id="node5" href="$class_folding_engine.html#ab704de409c6dd7a674bf624335e68cc1" title="FoldingEngine::get_bp" alt="" coords="235,188,391,215"/>
+<area shape="rect" id="node6" href="$class_b_p_table_tmpl.html#a5689d5a1a149cb5e063408879ce707c0" title="BPTableTmpl::resize" alt="" coords="241,239,386,265"/>
+<area shape="rect" id="node7" href="$struct_average_b_p.html#aafec28a98d39cda263b9912eae89d4fc" title="AverageBP::make" alt="" coords="249,289,378,316"/>
+<area shape="rect" id="node8" href="$cyktable_8h.html#a181b043e226aeef951b922db3395fe34" title="inside_traverse" alt="" coords="456,264,568,291"/>
+<area shape="rect" id="node9" href="$class_b_p_table_tmpl.html#a82b234179a0f31ed29c1a4c81ac5067c" title="BPTableTmpl::size" alt="" coords="445,315,579,341"/>
+</map>

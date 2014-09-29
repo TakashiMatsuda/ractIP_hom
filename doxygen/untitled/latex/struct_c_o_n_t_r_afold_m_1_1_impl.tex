@@ -1,0 +1,135 @@
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl}{\section{C\+O\+N\+T\+R\+Afold\+M$<$ T $>$\+:\+:Impl Struct Reference}
+\label{struct_c_o_n_t_r_afold_m_1_1_impl}\index{C\+O\+N\+T\+R\+Afold\+M$<$ T $>$\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M$<$ T $>$\+::\+Impl}}
+}
+
+
+Collaboration diagram for C\+O\+N\+T\+R\+Afold\+M$<$ T $>$\+:\+:Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{struct_c_o_n_t_r_afold_m_1_1_impl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a770a0ab7aebe80a4d453a8faf1696248}{Impl} (bool canonical\+\_\+only, int \hyperlink{class_c_o_n_t_r_afold_m_a570e8b37cff3eb4b209887c945c6c0e2}{max\+\_\+bp\+\_\+dist})
+\item 
+\hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_ab56d56d4e196ef51e31923ca1d0a4600}{$\sim$\+Impl} ()
+\item 
+void \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a3cf6d30aba17266dd33c7bcd28f16cf2}{Set\+Parameters} (const std\+::string \&params)
+\item 
+void \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_af0e3b860ba28f13d604eb4be71ade866}{Init\+Rand} (unsigned int seed)
+\item 
+void \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a060e2cc0363e787e67e6110e5ff06d03}{Prepare\+Stochastic\+Traceback} (const std\+::vector$<$ std\+::string $>$ \&aln)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a4e93ce3e2148bd5777d6500ff3ceedbd}{Stochastic\+Traceback} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parameter_manager}{Parameter\+Manager}$<$ T $>$ \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a60c3b1fda2951015e561097906d52032}{pm\+\_\+}
+\item 
+\hyperlink{class_inference_engine}{Inference\+Engine}$<$ T $>$ \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_acd8955919fbf8c8f9d86fc195a00cdb0}{engine\+\_\+}
+\item 
+std\+::vector$<$ T $>$ \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a0d3688ca0a9ab1331d4976e92d2e8513}{w\+\_\+}
+\item 
+std\+::string \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_ad7f267d1860e0ccdeb4f5f269f1672c6}{paren\+\_\+}
+\item 
+int \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a9bf98e3520a857cc2f74c4c498c15f94}{max\+\_\+bp\+\_\+dist\+\_\+}
+\item 
+bool \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_ab91edfe6d89438fdb6bf2edb6eeaa199}{canonical\+\_\+only\+\_\+}
+\item 
+std\+::vector$<$ std\+::vector\\*
+$<$ unsigned int $>$ $>$ \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_ae0d86d3732f74d42ba6cc5993185aebb}{idx\+\_\+}
+\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a01416d1629455fa35c6c215f271b49de}{rev\+\_\+}
+\item 
+std\+::vector$<$ \hyperlink{class_inference_engine}{Inference\+Engine}\\*
+$<$ T $>$ $\ast$ $>$ \hyperlink{struct_c_o_n_t_r_afold_m_1_1_impl_a340457442751e450885b41148f2f8d04}{en\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a770a0ab7aebe80a4d453a8faf1696248}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!Impl@{Impl}}
+\index{Impl@{Impl}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{Impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::\+Impl (
+\begin{DoxyParamCaption}
+\item[{bool}]{canonical\+\_\+only, }
+\item[{int}]{max\+\_\+bp\+\_\+dist}
+\end{DoxyParamCaption}
+)}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a770a0ab7aebe80a4d453a8faf1696248}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_ab56d56d4e196ef51e31923ca1d0a4600}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!````~Impl@{$\sim$\+Impl}}
+\index{````~Impl@{$\sim$\+Impl}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{$\sim$\+Impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::$\sim$\+Impl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_ab56d56d4e196ef51e31923ca1d0a4600}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_af0e3b860ba28f13d604eb4be71ade866}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!Init\+Rand@{Init\+Rand}}
+\index{Init\+Rand@{Init\+Rand}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{Init\+Rand}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::\+Init\+Rand (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_af0e3b860ba28f13d604eb4be71ade866}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a060e2cc0363e787e67e6110e5ff06d03}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!Prepare\+Stochastic\+Traceback@{Prepare\+Stochastic\+Traceback}}
+\index{Prepare\+Stochastic\+Traceback@{Prepare\+Stochastic\+Traceback}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{Prepare\+Stochastic\+Traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::\+Prepare\+Stochastic\+Traceback (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::string $>$ \&}]{aln}
+\end{DoxyParamCaption}
+)}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a060e2cc0363e787e67e6110e5ff06d03}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a3cf6d30aba17266dd33c7bcd28f16cf2}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!Set\+Parameters@{Set\+Parameters}}
+\index{Set\+Parameters@{Set\+Parameters}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{Set\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::\+Set\+Parameters (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{params}
+\end{DoxyParamCaption}
+)}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a3cf6d30aba17266dd33c7bcd28f16cf2}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a4e93ce3e2148bd5777d6500ff3ceedbd}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!Stochastic\+Traceback@{Stochastic\+Traceback}}
+\index{Stochastic\+Traceback@{Stochastic\+Traceback}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{Stochastic\+Traceback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::vector$<$ int $>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::\+Stochastic\+Traceback (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a4e93ce3e2148bd5777d6500ff3ceedbd}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_ab91edfe6d89438fdb6bf2edb6eeaa199}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!canonical\+\_\+only\+\_\+@{canonical\+\_\+only\+\_\+}}
+\index{canonical\+\_\+only\+\_\+@{canonical\+\_\+only\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{canonical\+\_\+only\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::canonical\+\_\+only\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_ab91edfe6d89438fdb6bf2edb6eeaa199}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a340457442751e450885b41148f2f8d04}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!en\+\_\+@{en\+\_\+}}
+\index{en\+\_\+@{en\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{en\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::vector$<${\bf Inference\+Engine}$<$T$>$$\ast$$>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::en\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a340457442751e450885b41148f2f8d04}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_acd8955919fbf8c8f9d86fc195a00cdb0}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!engine\+\_\+@{engine\+\_\+}}
+\index{engine\+\_\+@{engine\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{engine\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Inference\+Engine}$<$T$>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::engine\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_acd8955919fbf8c8f9d86fc195a00cdb0}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_ae0d86d3732f74d42ba6cc5993185aebb}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!idx\+\_\+@{idx\+\_\+}}
+\index{idx\+\_\+@{idx\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{idx\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::vector$<$ std\+::vector$<$unsigned int$>$ $>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::idx\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_ae0d86d3732f74d42ba6cc5993185aebb}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a9bf98e3520a857cc2f74c4c498c15f94}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!max\+\_\+bp\+\_\+dist\+\_\+@{max\+\_\+bp\+\_\+dist\+\_\+}}
+\index{max\+\_\+bp\+\_\+dist\+\_\+@{max\+\_\+bp\+\_\+dist\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{max\+\_\+bp\+\_\+dist\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::max\+\_\+bp\+\_\+dist\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a9bf98e3520a857cc2f74c4c498c15f94}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_ad7f267d1860e0ccdeb4f5f269f1672c6}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!paren\+\_\+@{paren\+\_\+}}
+\index{paren\+\_\+@{paren\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{paren\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::string {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::paren\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_ad7f267d1860e0ccdeb4f5f269f1672c6}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a60c3b1fda2951015e561097906d52032}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!pm\+\_\+@{pm\+\_\+}}
+\index{pm\+\_\+@{pm\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{pm\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Parameter\+Manager}$<$T$>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::pm\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a60c3b1fda2951015e561097906d52032}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a01416d1629455fa35c6c215f271b49de}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!rev\+\_\+@{rev\+\_\+}}
+\index{rev\+\_\+@{rev\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{rev\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::vector$<$ std\+::vector$<$int$>$ $>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::rev\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a01416d1629455fa35c6c215f271b49de}
+\hypertarget{struct_c_o_n_t_r_afold_m_1_1_impl_a0d3688ca0a9ab1331d4976e92d2e8513}{\index{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}!w\+\_\+@{w\+\_\+}}
+\index{w\+\_\+@{w\+\_\+}!C\+O\+N\+T\+R\+Afold\+M\+::\+Impl@{C\+O\+N\+T\+R\+Afold\+M\+::\+Impl}}
+\subsubsection[{w\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::vector$<$T$>$ {\bf C\+O\+N\+T\+R\+Afold\+M}$<$ T $>$\+::Impl\+::w\+\_\+}}\label{struct_c_o_n_t_r_afold_m_1_1_impl_a0d3688ca0a9ab1331d4976e92d2e8513}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/contrafold/\hyperlink{contrafold_2wrapper_8cpp}{wrapper.\+cpp}\end{DoxyCompactItemize}

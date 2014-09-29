@@ -1,0 +1,114 @@
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix}{\section{P\+R\+O\+B\+C\+O\+N\+S\+:\+:Sparse\+Matrix Class Reference}
+\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix}\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+}
+
+
+{\ttfamily \#include $<$Sparse\+Matrix.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_ada05eaa254699e1e20941d15f04aa348}{Sparse\+Matrix} (int seq1\+Length, int seq2\+Length, const \hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} \&posterior)
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_safe_vector}{Safe\+Vector}$<$ \hyperlink{namespace_p_r_o_b_c_o_n_s_a397767dfc075ae6ba7e480f5f06edc32}{P\+I\+F} $>$\+::iterator \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a0e2b031451f16e055ef3c9baf220d2ae}{Get\+Row\+Ptr} (int row) const 
+\item 
+float \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a7a545fa7ccef54cd950196c0477c9ed9}{Get\+Value} (int row, int col)
+\item 
+int \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_abb1a773a3916f935ad103dadd0604cd6}{Get\+Row\+Size} (int row) const 
+\item 
+int \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a5cec4ef85573e6c588181ac24c056155}{Get\+Seq1\+Length} () const 
+\item 
+int \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a27045646a4f692e2fc7427767fbbcb21}{Get\+Seq2\+Length} () const 
+\item 
+int \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a589980a6897476bd527554fc5c2cfbd1}{Get\+Num\+Cells} () const 
+\item 
+void \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a6b6c625bd5965b8557235b383b8fa661}{Print} (ostream \&outfile) const 
+\item 
+\hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix}{Sparse\+Matrix} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a3a6545a946df758a37c29a8ffd987cdd}{Compute\+Transpose} () const 
+\item 
+\hyperlink{namespace_p_r_o_b_c_o_n_s_a7d46b91dfef3fa4038545a492ad12221}{V\+F} $\ast$ \hyperlink{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a0b0f6be9a5761daee30526ce7c470187}{Get\+Posterior} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_ada05eaa254699e1e20941d15f04aa348}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Sparse\+Matrix@{Sparse\+Matrix}}
+\index{Sparse\+Matrix@{Sparse\+Matrix}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Sparse\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Sparse\+Matrix (
+\begin{DoxyParamCaption}
+\item[{int}]{seq1\+Length, }
+\item[{int}]{seq2\+Length, }
+\item[{const {\bf V\+F} \&}]{posterior}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_ada05eaa254699e1e20941d15f04aa348}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a3a6545a946df758a37c29a8ffd987cdd}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Compute\+Transpose@{Compute\+Transpose}}
+\index{Compute\+Transpose@{Compute\+Transpose}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Compute\+Transpose}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sparse\+Matrix}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Compute\+Transpose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a3a6545a946df758a37c29a8ffd987cdd}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a589980a6897476bd527554fc5c2cfbd1}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Get\+Num\+Cells@{Get\+Num\+Cells}}
+\index{Get\+Num\+Cells@{Get\+Num\+Cells}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Num\+Cells}]{\setlength{\rightskip}{0pt plus 5cm}int P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Get\+Num\+Cells (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a589980a6897476bd527554fc5c2cfbd1}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a0b0f6be9a5761daee30526ce7c470187}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Get\+Posterior@{Get\+Posterior}}
+\index{Get\+Posterior@{Get\+Posterior}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Posterior}]{\setlength{\rightskip}{0pt plus 5cm}{\bf V\+F}$\ast$ P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Get\+Posterior (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a0b0f6be9a5761daee30526ce7c470187}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a0e2b031451f16e055ef3c9baf220d2ae}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Get\+Row\+Ptr@{Get\+Row\+Ptr}}
+\index{Get\+Row\+Ptr@{Get\+Row\+Ptr}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Safe\+Vector}$<${\bf P\+I\+F}$>$\+::iterator P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Get\+Row\+Ptr (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a0e2b031451f16e055ef3c9baf220d2ae}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_abb1a773a3916f935ad103dadd0604cd6}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Get\+Row\+Size@{Get\+Row\+Size}}
+\index{Get\+Row\+Size@{Get\+Row\+Size}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Row\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Get\+Row\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{row}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_abb1a773a3916f935ad103dadd0604cd6}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a5cec4ef85573e6c588181ac24c056155}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Get\+Seq1\+Length@{Get\+Seq1\+Length}}
+\index{Get\+Seq1\+Length@{Get\+Seq1\+Length}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Seq1\+Length}]{\setlength{\rightskip}{0pt plus 5cm}int P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Get\+Seq1\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a5cec4ef85573e6c588181ac24c056155}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a27045646a4f692e2fc7427767fbbcb21}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Get\+Seq2\+Length@{Get\+Seq2\+Length}}
+\index{Get\+Seq2\+Length@{Get\+Seq2\+Length}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Seq2\+Length}]{\setlength{\rightskip}{0pt plus 5cm}int P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Get\+Seq2\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a27045646a4f692e2fc7427767fbbcb21}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a7a545fa7ccef54cd950196c0477c9ed9}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Get\+Value}]{\setlength{\rightskip}{0pt plus 5cm}float P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Get\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a7a545fa7ccef54cd950196c0477c9ed9}
+\hypertarget{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a6b6c625bd5965b8557235b383b8fa661}{\index{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}!Print@{Print}}
+\index{Print@{Print}!P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix@{P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}void P\+R\+O\+B\+C\+O\+N\+S\+::\+Sparse\+Matrix\+::\+Print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{outfile}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_p_r_o_b_c_o_n_s_1_1_sparse_matrix_a6b6c625bd5965b8557235b383b8fa661}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/takashi/cbrc/ractip\+\_\+hom/src/centroidalifold/probcons\+R\+N\+A/\hyperlink{_sparse_matrix_8h}{Sparse\+Matrix.\+h}\end{DoxyCompactItemize}
