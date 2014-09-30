@@ -39,9 +39,6 @@
 /* Define to 1 if you have the `pthread' library (-lpthread). */
 #undef HAVE_LIBPTHREAD
 
-/* Define to 1 if you have the `RNA' library (-lRNA). */
-#undef HAVE_LIBRNA
-
 /* Define to 1 if you have the `z' library (-lz). */
 #undef HAVE_LIBZ
 

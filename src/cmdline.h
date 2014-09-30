@@ -49,7 +49,7 @@ struct gengetopt_args_info
   float beta_arg;	/**< @brief weight for unpaired bases (default='0.0').  */
   char * beta_orig;	/**< @brief weight for unpaired bases original value given at command line.  */
   const char *beta_help; /**< @brief weight for unpaired bases help description.  */
-  float fold_th_arg;	/**< @brief Threshold for base-pairing probabilities (default='0.0001').  */
+  float fold_th_arg;	/**< @brief Threshold for base-pairing probabilities (default='0.01').  */
   char * fold_th_orig;	/**< @brief Threshold for base-pairing probabilities original value given at command line.  */
   const char *fold_th_help; /**< @brief Threshold for base-pairing probabilities help description.  */
   float hybridize_th_arg;	/**< @brief Threshold for hybridazation probabilities (default='0.2').  */
@@ -64,6 +64,9 @@ struct gengetopt_args_info
   int min_w_arg;	/**< @brief Minimum length of accessible regions (default='0').  */
   char * min_w_orig;	/**< @brief Minimum length of accessible regions original value given at command line.  */
   const char *min_w_help; /**< @brief Minimum length of accessible regions help description.  */
+  double hyb_mix_w_arg;	/**< @brief Mixture weights of hybridization probability from homologous sequences (default='0.6').  */
+  char * hyb_mix_w_orig;	/**< @brief Mixture weights of hybridization probability from homologous sequences original value given at command line.  */
+  const char *hyb_mix_w_help; /**< @brief Mixture weights of hybridization probability from homologous sequences help description.  */
   int zscore_arg;	/**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) (default='0').  */
   char * zscore_orig;	/**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) original value given at command line.  */
   const char *zscore_help; /**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) help description.  */
@@ -106,6 +109,7 @@ struct gengetopt_args_info
   unsigned int acc_th_given ;	/**< @brief Whether acc-th was given.  */
   unsigned int max_w_given ;	/**< @brief Whether max-w was given.  */
   unsigned int min_w_given ;	/**< @brief Whether min-w was given.  */
+  unsigned int hyb_mix_w_given ;	/**< @brief Whether hyb-mix-w was given.  */
   unsigned int zscore_given ;	/**< @brief Whether zscore was given.  */
   unsigned int num_shuffling_given ;	/**< @brief Whether num-shuffling was given.  */
   unsigned int seed_given ;	/**< @brief Whether seed was given.  */

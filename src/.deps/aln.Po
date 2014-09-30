@@ -905,7 +905,14 @@ aln.o: centroidalifold/aln.cpp ../config.h centroidalifold/aln.h \
  /usr/local/include/boost/algorithm/string/detail/find_format_all.hpp \
  /usr/local/include/boost/algorithm/string/formatter.hpp \
  /usr/local/include/boost/algorithm/string/detail/formatter.hpp \
- /usr/local/include/boost/algorithm/string/erase.hpp
+ /usr/local/include/boost/algorithm/string/erase.hpp \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/PS_dot.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/plot_layouts.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/naview.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/aln_util.h
 
 ../config.h:
 
@@ -2850,3 +2857,17 @@ centroidalifold/aln.h:
 /usr/local/include/boost/algorithm/string/detail/formatter.hpp:
 
 /usr/local/include/boost/algorithm/string/erase.hpp:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/PS_dot.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/plot_layouts.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/naview.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/aln_util.h:

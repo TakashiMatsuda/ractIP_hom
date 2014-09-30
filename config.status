@@ -785,6 +785,7 @@ D["HAVE_LIBGMP"]=" 1"
 D["HAVE_LIBDL"]=" 1"
 D["HAVE_LIBLTDL"]=" 1"
 D["HAVE_LIBGLPK"]=" 1"
+D["HAVE_LIBRNA"]=" 1"
 D["HAVE_VIENNA18"]=" /**/"
 D["HAVE_VIENNA20"]=" /**/"
   for (key in D) D_is_set[key] = 1

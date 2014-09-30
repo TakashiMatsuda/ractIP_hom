@@ -97,7 +97,7 @@ public:
       th_hy_(0.2),
       th_ss_(0.0),
       th_ac_(0.0),
-      WH(0.5),
+      WH(0.6),
       max_w_(0),
       min_w_(0),
       enable_zscore_(0),
@@ -650,16 +650,7 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   homfold(s2, bp2, offset2, up2, cf2);
   rnaduplex_hom(s1, s2, hp, WH);
   
-#if 0
-  bool use_alifold=false;// temporary code
-  if(use_alifold){
-    alifold(a1, bp1, offset1, up1, cf1);
-    alifold(a2, bp2, offset2, up2, cf2);
-    rnaduplex_aln(a1,a2,hp);// 1st structure base pairing probability
-  }
-#endif
-  
-#if 0
+#if 1
   std::ofstream out_bp1("out_bp1_2.csv");
   VF::iterator it_bp1 = bp1.begin();
   for (it_bp1 = bp1.begin(); it_bp1 < bp1.end(); it_bp1++)
@@ -678,10 +669,11 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   for (itit_hp = hp.begin(); itit_hp < hp.end(); itit_hp++)
     {
       for (it_hp = (*itit_hp).begin(); it_hp < (*itit_hp).end(); it_hp++)
-	{
-	  out_hp << (*it_hp) << ",";
-	}
-    }
+      {
+       out_hp << (*it_hp) << ",";
+     }
+     out_hp << std::endl;
+  }
   out_bp1.close();
   out_bp2.close();
   out_hp.close();
@@ -1067,7 +1059,7 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
     {
       if (z[i][j]>=0 && ip.get_value(z[i][j])>0.2)
       {
-	//std::cout << "OUTER" << std::endl;
+
         r1[i]='['; r2[j]=']';
       }
     }
@@ -1081,7 +1073,6 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
         if (x[i][j]>=0 && ip.get_value(x[i][j])>0.2)
         {
           assert(r1[i]=='.'); assert(r1[j]=='.');
-	  //std::cout << "inner for 1" << std::endl;
           r1[i]='('; r1[j]=')';
         }
       }
@@ -1093,7 +1084,6 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
         if (y[i][j]>=0 && ip.get_value(y[i][j])>0.2)
         {
           assert(r2[i]=='.'); assert(r2[j]=='.');
-	  //std::cout << "inner for 2" << std::endl;
           r2[i]='('; r2[j]=')';
         }
       }
@@ -1138,6 +1128,7 @@ parse_options(int& argc, char**& argv)
   mix_w.push_back(args_info.mix_weight_arg);//float mix_weight_arg
   max_w_ = args_info.max_w_arg;
   min_w_ = args_info.min_w_arg;
+  WH = args_info.hyb_mix_w_arg;
   enable_zscore_ = args_info.zscore_arg;
   num_shuffling_ = args_info.num_shuffling_arg;
   seed_ = args_info.seed_arg;
@@ -1498,13 +1489,6 @@ run()
   //// future work: separate above code ///////
   //// future work: Revive the code below
   
-  // display the result
-  /**
-  std::cout << ">" << fa1.name() << std::endl
-            << fa1.seq() << std::endl << r1 << std::endl
-            << ">" << fa2.name() << std::endl
-            << fa2.seq() << std::endl << r2 << std::endl;
-  **/
   /**
   // show energy of the joint structure
   if (show_energy_ || enable_zscore_==1 || enable_zscore_==2 || enable_zscore_==12)
@@ -1555,6 +1539,12 @@ run()
   }
   **/
   return 0;
+}
+
+void
+writeBP(VVF bp, std::string filename)
+{
+
 }
 
 int

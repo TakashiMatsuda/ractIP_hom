@@ -38,11 +38,12 @@ const char *gengetopt_args_info_help[] = {
   "  -V, --version                Print version and exit",
   "  -a, --alpha=FLOAT             weight for hybridization  (default=`0.5')",
   "  -b, --beta=FLOAT             weight for unpaired bases  (default=`0.0')",
-  "  -t, --fold-th=FLOAT          Threshold for base-pairing probabilities\n                                 (default=`0.0001')",
+  "  -t, --fold-th=FLOAT          Threshold for base-pairing probabilities\n                                 (default=`0.01')",
   "  -u, --hybridize-th=FLOAT     Threshold for hybridazation probabilities\n                                 (default=`0.2')",
   "  -s, --acc-th=FLOAT           Threshold for accessible probabilities\n                                 (default=`0.0')",
   "      --max-w=INT              Maximum length of accessible regions\n                                 (default=`0')",
   "      --min-w=INT              Minimum length of accessible regions\n                                 (default=`0')",
+  "      --hyb-mix-w=DOUBLE       Mixture weights of hybridization probability\n                                 from homologous sequences  (default=`0.6')",
   "      --zscore=INT             Calculate z-score via dishuffling (0=no\n                                 shuffling, 1=1st seq only, 2=2nd seq only, or\n                                 12=both)  (default=`0')",
   "      --num-shuffling=INT      The number of shuffling  (default=`1000')",
   "      --seed=INT               Seed for random number generator  (default=`0')",
@@ -63,6 +64,7 @@ typedef enum {ARG_NO
   , ARG_STRING
   , ARG_INT
   , ARG_FLOAT
+  , ARG_DOUBLE
 } cmdline_parser_arg_type;
 
 static
@@ -90,6 +92,7 @@ void clear_given (struct gengetopt_args_info *args_info)
   args_info->acc_th_given = 0 ;
   args_info->max_w_given = 0 ;
   args_info->min_w_given = 0 ;
+  args_info->hyb_mix_w_given = 0 ;
   args_info->zscore_given = 0 ;
   args_info->num_shuffling_given = 0 ;
   args_info->seed_given = 0 ;
@@ -112,7 +115,7 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->alpha_orig = NULL;
   args_info->beta_arg = 0.0;
   args_info->beta_orig = NULL;
-  args_info->fold_th_arg = 0.0001;
+  args_info->fold_th_arg = 0.01;
   args_info->fold_th_orig = NULL;
   args_info->hybridize_th_arg = 0.2;
   args_info->hybridize_th_orig = NULL;
@@ -122,6 +125,8 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->max_w_orig = NULL;
   args_info->min_w_arg = 0;
   args_info->min_w_orig = NULL;
+  args_info->hyb_mix_w_arg = 0.6;
+  args_info->hyb_mix_w_orig = NULL;
   args_info->zscore_arg = 0;
   args_info->zscore_orig = NULL;
   args_info->num_shuffling_arg = 1000;
@@ -159,18 +164,19 @@ void init_args_info(struct gengetopt_args_info *args_info)
   args_info->acc_th_help = gengetopt_args_info_help[6] ;
   args_info->max_w_help = gengetopt_args_info_help[7] ;
   args_info->min_w_help = gengetopt_args_info_help[8] ;
-  args_info->zscore_help = gengetopt_args_info_help[9] ;
-  args_info->num_shuffling_help = gengetopt_args_info_help[10] ;
-  args_info->seed_help = gengetopt_args_info_help[11] ;
-  args_info->mccaskill_help = gengetopt_args_info_help[12] ;
-  args_info->allow_isolated_help = gengetopt_args_info_help[13] ;
-  args_info->show_energy_help = gengetopt_args_info_help[14] ;
-  args_info->param_file_help = gengetopt_args_info_help[15] ;
-  args_info->no_pk_help = gengetopt_args_info_help[16] ;
-  args_info->rip_help = gengetopt_args_info_help[17] ;
-  args_info->mix_weight_help = gengetopt_args_info_help[18] ;
-  args_info->engine_seq_help = gengetopt_args_info_help[19] ;
-  args_info->engine_aln_help = gengetopt_args_info_help[20] ;
+  args_info->hyb_mix_w_help = gengetopt_args_info_help[9] ;
+  args_info->zscore_help = gengetopt_args_info_help[10] ;
+  args_info->num_shuffling_help = gengetopt_args_info_help[11] ;
+  args_info->seed_help = gengetopt_args_info_help[12] ;
+  args_info->mccaskill_help = gengetopt_args_info_help[13] ;
+  args_info->allow_isolated_help = gengetopt_args_info_help[14] ;
+  args_info->show_energy_help = gengetopt_args_info_help[15] ;
+  args_info->param_file_help = gengetopt_args_info_help[16] ;
+  args_info->no_pk_help = gengetopt_args_info_help[17] ;
+  args_info->rip_help = gengetopt_args_info_help[18] ;
+  args_info->mix_weight_help = gengetopt_args_info_help[19] ;
+  args_info->engine_seq_help = gengetopt_args_info_help[20] ;
+  args_info->engine_aln_help = gengetopt_args_info_help[21] ;
   
 }
 
@@ -264,6 +270,7 @@ cmdline_parser_release (struct gengetopt_args_info *args_info)
   free_string_field (&(args_info->acc_th_orig));
   free_string_field (&(args_info->max_w_orig));
   free_string_field (&(args_info->min_w_orig));
+  free_string_field (&(args_info->hyb_mix_w_orig));
   free_string_field (&(args_info->zscore_orig));
   free_string_field (&(args_info->num_shuffling_orig));
   free_string_field (&(args_info->seed_orig));
@@ -329,6 +336,8 @@ cmdline_parser_dump(FILE *outfile, struct gengetopt_args_info *args_info)
     write_into_file(outfile, "max-w", args_info->max_w_orig, 0);
   if (args_info->min_w_given)
     write_into_file(outfile, "min-w", args_info->min_w_orig, 0);
+  if (args_info->hyb_mix_w_given)
+    write_into_file(outfile, "hyb-mix-w", args_info->hyb_mix_w_orig, 0);
   if (args_info->zscore_given)
     write_into_file(outfile, "zscore", args_info->zscore_orig, 0);
   if (args_info->num_shuffling_given)
@@ -528,6 +537,9 @@ int update_arg(void *field, char **orig_field,
   case ARG_FLOAT:
     if (val) *((float *)field) = (float)strtod (val, &stop_char);
     break;
+  case ARG_DOUBLE:
+    if (val) *((double *)field) = strtod (val, &stop_char);
+    break;
   case ARG_STRING:
     if (val) {
       string_field = (char **)field;
@@ -544,6 +556,7 @@ int update_arg(void *field, char **orig_field,
   switch(arg_type) {
   case ARG_INT:
   case ARG_FLOAT:
+  case ARG_DOUBLE:
     if (val && !(stop_char && *stop_char == '\0')) {
       fprintf(stderr, "%s: invalid numeric value: %s\n", package_name, val);
       return 1; /* failure */
@@ -620,6 +633,7 @@ cmdline_parser_internal (
         { "acc-th",	1, NULL, 's' },
         { "max-w",	1, NULL, 0 },
         { "min-w",	1, NULL, 0 },
+        { "hyb-mix-w",	1, NULL, 0 },
         { "zscore",	1, NULL, 0 },
         { "num-shuffling",	1, NULL, 0 },
         { "seed",	1, NULL, 0 },
@@ -680,7 +694,7 @@ cmdline_parser_internal (
         
           if (update_arg( (void *)&(args_info->fold_th_arg), 
                &(args_info->fold_th_orig), &(args_info->fold_th_given),
-              &(local_args_info.fold_th_given), optarg, 0, "0.0001", ARG_FLOAT,
+              &(local_args_info.fold_th_given), optarg, 0, "0.01", ARG_FLOAT,
               check_ambiguity, override, 0, 0,
               "fold-th", 't',
               additional_error))
@@ -837,6 +851,20 @@ cmdline_parser_internal (
                 &(local_args_info.min_w_given), optarg, 0, "0", ARG_INT,
                 check_ambiguity, override, 0, 0,
                 "min-w", '-',
+                additional_error))
+              goto failure;
+          
+          }
+          /* Mixture weights of hybridization probability from homologous sequences.  */
+          else if (strcmp (long_options[option_index].name, "hyb-mix-w") == 0)
+          {
+          
+          
+            if (update_arg( (void *)&(args_info->hyb_mix_w_arg), 
+                 &(args_info->hyb_mix_w_orig), &(args_info->hyb_mix_w_given),
+                &(local_args_info.hyb_mix_w_given), optarg, 0, "0.6", ARG_DOUBLE,
+                check_ambiguity, override, 0, 0,
+                "hyb-mix-w", '-',
                 additional_error))
               goto failure;
           

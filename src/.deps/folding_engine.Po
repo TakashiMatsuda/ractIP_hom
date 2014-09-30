@@ -952,7 +952,14 @@ folding_engine.o: centroidalifold/folding_engine.cpp ../config.h \
  /usr/local/include/boost/range/algorithm/equal.hpp \
  /usr/local/include/boost/range/detail/safe_bool.hpp \
  /usr/local/include/boost/range/iterator_range_io.hpp \
- /usr/local/include/boost/range/sub_range.hpp centroidalifold/ps_plot.h
+ /usr/local/include/boost/range/sub_range.hpp centroidalifold/ps_plot.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold_vars.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/PS_dot.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/plot_layouts.h \
+ /usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/naview.h
 
 ../config.h:
 
@@ -3001,3 +3008,17 @@ centroidalifold/diana.h:
 /usr/local/include/boost/range/sub_range.hpp:
 
 centroidalifold/ps_plot.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/data_structures.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/energy_const.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/fold_vars.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/PS_dot.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/plot_layouts.h:
+
+/usr/local/Cellar/viennarna/2.1.8/include/ViennaRNA/naview.h:

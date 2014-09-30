@@ -70,20 +70,21 @@ calculate_posterior(const TH &th1, const TH &th2, double wh){
   rnaduplex(th1.first, th2.first, no_hom_hp);
 
   long double tmp = 0;
+#if _OPENMP
+  std::cout << "thread_num= " << omp_get_max_threads() << std::endl;
+#endif
 #pragma omp parallel
 {
-//  std::cout << "thread_num= " << omp_get_max_threads() << std::endl;
   #pragma omp for
   for (int i = 0; i < res.size()-1; ++i){
-    #pragma omp for
-    for (int k = 0; k < res[i].size()-1; ++k){// openMPで高速化したい
+    std::cout << "HP calculation: " << i << " / " << res.size()-1 << std::endl;
+    for (int k = 0; k < res[i].size()-1; ++k){
       tmp = 0;
       for (uint xi = 0; xi < hom1.size(); ++xi){
         for (uint eta = 0; eta < hom2.size(); ++eta){
           for (uint j = 0; j < hom1[xi].size(); ++j){
             for (uint l = 0; l < hom2[eta].size(); ++l){
               res[i+1][k+1] += (double)dup_matrix[xi][eta][j+1][l+1]*(double)align_matrix1[xi][i][j]*(double)align_matrix2[eta][k][l];
-              // 桁あふれ?
             }
           }
         }
@@ -91,8 +92,7 @@ calculate_posterior(const TH &th1, const TH &th2, double wh){
       res[i+1][k+1] = res[i+1][k+1] / ((double)hom1.size() * (double)hom2.size());
       //res[i+1][k+1] = tmp;
       // whの比にしたがって、no_hom_hp(hom未考慮のhp)とres(考慮したhp)を混合
-      //debug
-      //res[i+1][k+1] = 0 * (double) no_hom_hp[i+1][k+1] + (1 - 0) * (double) res[i+1][k+1];
+      res[i+1][k+1] = wh * (double) no_hom_hp[i+1][k+1] + (1 - wh) * (double) res[i+1][k+1];
     }
   }
 }
