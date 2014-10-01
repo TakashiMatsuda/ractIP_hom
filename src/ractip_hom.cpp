@@ -654,20 +654,25 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   homfold(s2, bp2, offset2, up2, cf2);
   rnaduplex_hom(s1, s2, hp, WH);
   
+
 #if BP_OUTPUT
-  std::ofstream out_bp1(bp_dirname+"out_bp1_2.csv");
+  bp_dirname.append("/out_bp_1.csv");
+
+  std::ofstream out_bp1(bp_dirname.c_str());
   VF::iterator it_bp1 = bp1.begin();
   for (it_bp1 = bp1.begin(); it_bp1 < bp1.end(); it_bp1++)
     {
       out_bp1 << (*it_bp1) << ",";
     }
-  std::ofstream out_bp2(bp_dirname+"out_bp2_2.csv");
+  bp_dirname.append("/out_bp2_2.csv");
+  std::ofstream out_bp2(bp_dirname.c_str());
   VF::iterator it_bp2 = bp2.begin();
   for (it_bp2 = bp2.begin(); it_bp2 < bp2.end(); it_bp2++)
     {
       out_bp2 << (*it_bp2) << ",";
     }
-  std::ofstream out_hp(bp_dirname+"out_hp_2.csv");
+  bp_dirname.append("/out_hp_2.csv");
+  std::ofstream out_hp(bp_dirname.c_str());
   VVF::iterator itit_hp = hp.begin();
   VF::iterator it_hp;
   for (itit_hp = hp.begin(); itit_hp < hp.end(); itit_hp++)
