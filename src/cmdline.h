@@ -99,6 +99,9 @@ struct gengetopt_args_info
   char * engine_aln_arg;	/**< @brief specify the inference engine for independent Alignment (default='CONTRAlign').  */
   char * engine_aln_orig;	/**< @brief specify the inference engine for independent Alignment original value given at command line.  */
   const char *engine_aln_help; /**< @brief specify the inference engine for independent Alignment help description.  */
+  char * output_dir_arg;	/**< @brief directory name for outputting base-paring matrix (default='bp_matrix').  */
+  char * output_dir_orig;	/**< @brief directory name for outputting base-paring matrix original value given at command line.  */
+  const char *output_dir_help; /**< @brief directory name for outputting base-paring matrix help description.  */
   
   unsigned int help_given ;	/**< @brief Whether help was given.  */
   unsigned int version_given ;	/**< @brief Whether version was given.  */
@@ -122,6 +125,7 @@ struct gengetopt_args_info
   unsigned int mix_weight_given ;	/**< @brief Whether mix-weight was given.  */
   unsigned int engine_seq_given ;	/**< @brief Whether engine-seq was given.  */
   unsigned int engine_aln_given ;	/**< @brief Whether engine-aln was given.  */
+  unsigned int output_dir_given ;	/**< @brief Whether output-dir was given.  */
 
   char **inputs ; /**< @brief unamed options (options without names) */
   unsigned inputs_num ; /**< @brief unamed options number */

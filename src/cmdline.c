@@ -56,6 +56,7 @@ const char *gengetopt_args_info_help[] = {
   "  -w, --mix-weight=FLOAT       mixture weights of inference engines\n                                 (default=`0.5')",
   "  -X, --engine-seq=ENGINENAME  specify the inference engine for independent\n                                 sequence  (default=`McCaskill')",
   "  -A, --engine-aln=ENGINENAME  specify the inference engine for independent\n                                 Alignment  (default=`CONTRAlign')",
+  "      --output-dir=STRING      directory name for outputting base-paring matrix\n                                 (default=`bp_matrix')",
     0
 };
 
@@ -105,6 +106,7 @@ void clear_given (struct gengetopt_args_info *args_info)
   args_info->mix_weight_given = 0 ;
   args_info->engine_seq_given = 0 ;
   args_info->engine_aln_given = 0 ;
+  args_info->output_dir_given = 0 ;
 }
 
 static
@@ -147,6 +149,8 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->engine_seq_orig = NULL;
   args_info->engine_aln_arg = gengetopt_strdup ("CONTRAlign");
   args_info->engine_aln_orig = NULL;
+  args_info->output_dir_arg = gengetopt_strdup ("bp_matrix");
+  args_info->output_dir_orig = NULL;
   
 }
 
@@ -177,6 +181,7 @@ void init_args_info(struct gengetopt_args_info *args_info)
   args_info->mix_weight_help = gengetopt_args_info_help[19] ;
   args_info->engine_seq_help = gengetopt_args_info_help[20] ;
   args_info->engine_aln_help = gengetopt_args_info_help[21] ;
+  args_info->output_dir_help = gengetopt_args_info_help[22] ;
   
 }
 
@@ -283,6 +288,8 @@ cmdline_parser_release (struct gengetopt_args_info *args_info)
   free_string_field (&(args_info->engine_seq_orig));
   free_string_field (&(args_info->engine_aln_arg));
   free_string_field (&(args_info->engine_aln_orig));
+  free_string_field (&(args_info->output_dir_arg));
+  free_string_field (&(args_info->output_dir_orig));
   
   
   for (i = 0; i < args_info->inputs_num; ++i)
@@ -362,6 +369,8 @@ cmdline_parser_dump(FILE *outfile, struct gengetopt_args_info *args_info)
     write_into_file(outfile, "engine-seq", args_info->engine_seq_orig, 0);
   if (args_info->engine_aln_given)
     write_into_file(outfile, "engine-aln", args_info->engine_aln_orig, 0);
+  if (args_info->output_dir_given)
+    write_into_file(outfile, "output-dir", args_info->output_dir_orig, 0);
   
 
   i = EXIT_SUCCESS;
@@ -646,6 +655,7 @@ cmdline_parser_internal (
         { "mix-weight",	1, NULL, 'w' },
         { "engine-seq",	1, NULL, 'X' },
         { "engine-aln",	1, NULL, 'A' },
+        { "output-dir",	1, NULL, 0 },
         { 0,  0, 0, 0 }
       };
 
@@ -907,6 +917,20 @@ cmdline_parser_internal (
                 &(local_args_info.seed_given), optarg, 0, "0", ARG_INT,
                 check_ambiguity, override, 0, 0,
                 "seed", '-',
+                additional_error))
+              goto failure;
+          
+          }
+          /* directory name for outputting base-paring matrix.  */
+          else if (strcmp (long_options[option_index].name, "output-dir") == 0)
+          {
+          
+          
+            if (update_arg( (void *)&(args_info->output_dir_arg), 
+                 &(args_info->output_dir_orig), &(args_info->output_dir_given),
+                &(local_args_info.output_dir_given), optarg, 0, "bp_matrix", ARG_STRING,
+                check_ambiguity, override, 0, 0,
+                "output-dir", '-',
                 additional_error))
               goto failure;
           

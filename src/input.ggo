@@ -25,3 +25,6 @@ option "rip" r "Import posterior probabilities from the result of RIP" string ty
 option "mix-weight" w "mixture weights of inference engines" float typestr="FLOAT" no default="0.5"
 option "engine-seq" X "specify the inference engine for independent sequence" string typestr="ENGINENAME" no default="McCaskill"
 option "engine-aln" A "specify the inference engine for independent Alignment" string typestr="ENGINENAME" no default="CONTRAlign"
+
+# options for ouputting Base-Pairing Matrix
+option "output-dir" - "directory name for outputting base-paring matrix" string typestr="STRING" no default="bp_matrix"

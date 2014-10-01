@@ -50,6 +50,8 @@
 #include "centroidalifold/engine/contrafoldhom.h"
 #include "centroidalifold/engine/mccaskillhom.h"
 
+#define BP_OUTPUT 1
+
 
 namespace Vienna {
 extern "C" {
@@ -117,7 +119,8 @@ public:
       fa2_(),
       mix_w(),
       engine(),
-      engine_a()
+      engine_a(),
+      bp_dirname()
 
   {
   }
@@ -177,6 +180,7 @@ private:
   std::string fa2_;
   std::string aln1_;
   std::string aln2_;
+  std::string bp_dirname;
   
 
   /**
@@ -650,20 +654,20 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   homfold(s2, bp2, offset2, up2, cf2);
   rnaduplex_hom(s1, s2, hp, WH);
   
-#if 1
-  std::ofstream out_bp1("out_bp1_2.csv");
+#if BP_OUTPUT
+  std::ofstream out_bp1(bp_dirname+"out_bp1_2.csv");
   VF::iterator it_bp1 = bp1.begin();
   for (it_bp1 = bp1.begin(); it_bp1 < bp1.end(); it_bp1++)
     {
       out_bp1 << (*it_bp1) << ",";
     }
-  std::ofstream out_bp2("out_bp2_2.csv");
+  std::ofstream out_bp2(bp_dirname+"out_bp2_2.csv");
   VF::iterator it_bp2 = bp2.begin();
   for (it_bp2 = bp2.begin(); it_bp2 < bp2.end(); it_bp2++)
     {
       out_bp2 << (*it_bp2) << ",";
     }
-  std::ofstream out_hp("out_hp_2.csv");
+  std::ofstream out_hp(bp_dirname+"out_hp_2.csv");
   VVF::iterator itit_hp = hp.begin();
   VF::iterator it_hp;
   for (itit_hp = hp.begin(); itit_hp < hp.end(); itit_hp++)
@@ -677,6 +681,7 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   out_bp1.close();
   out_bp2.close();
   out_hp.close();
+  return 0;
 #endif
 
 
@@ -1539,12 +1544,6 @@ run()
   }
   **/
   return 0;
-}
-
-void
-writeBP(VVF bp, std::string filename)
-{
-
 }
 
 int
