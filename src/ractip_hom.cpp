@@ -656,32 +656,34 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
   
 
 #if BP_OUTPUT
-  bp_dirname.append("/out_bp_1.csv");
-
-  std::ofstream out_bp1(bp_dirname.c_str());
+  std::string innerbp_name1 = bp_dirname+"/out_bp_1.csv";
+  std::ofstream out_bp1(innerbp_name1.c_str());
   VF::iterator it_bp1 = bp1.begin();
   for (it_bp1 = bp1.begin(); it_bp1 < bp1.end(); it_bp1++)
     {
       out_bp1 << (*it_bp1) << ",";
     }
-  bp_dirname.append("/out_bp2_2.csv");
-  std::ofstream out_bp2(bp_dirname.c_str());
+  std::string innerbp_name2 = bp_dirname+"/out_bp2_2.csv";
+  std::ofstream out_bp2(innerbp_name2.c_str());
   VF::iterator it_bp2 = bp2.begin();
   for (it_bp2 = bp2.begin(); it_bp2 < bp2.end(); it_bp2++)
     {
       out_bp2 << (*it_bp2) << ",";
     }
-  bp_dirname.append("/out_hp_2.csv");
-  std::ofstream out_hp(bp_dirname.c_str());
+  std::string outbp_name = bp_dirname+"/out_hp_2.csv";
+  std::ofstream out_hp(outbp_name.c_str());
   VVF::iterator itit_hp = hp.begin();
   VF::iterator it_hp;
+  int hp_count = 1;
   for (itit_hp = hp.begin(); itit_hp < hp.end(); itit_hp++)
     {
+      int j = 1;
       for (it_hp = (*itit_hp).begin(); it_hp < (*itit_hp).end(); it_hp++)
       {
-       out_hp << (*it_hp) << ",";
+       out_hp << hp_count << "," << j << ","<<(*it_hp) << std::endl;
+       ++j;
      }
-     out_hp << std::endl;
+     ++hp_count;
   }
   out_bp1.close();
   out_bp2.close();
@@ -1180,6 +1182,8 @@ parse_options(int& argc, char**& argv)
     aln2_ = args_info.inputs[3];
 
   }
+
+  bp_dirname =  args_info.output_dir_arg;  
 
   cmdline_parser_free(&args_info);
   return *this;
