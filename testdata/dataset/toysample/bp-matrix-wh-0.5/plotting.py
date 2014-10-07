@@ -40,14 +40,14 @@ data = np.loadtxt("./out_hp_2.csv", delimiter=',')
 
 x = np.arange(0, len(data), 1)
 y = np.arange(0, len(data[0]), 1)
-print len(data)
 X, Y = np.meshgrid(x,y)
 
 print X, Y, data
 
 fig = plt.figure()
 ax = Axes3D(fig)
-ax.plot_surface(X,Y,data)
+#ax.plot_surface(X,Y,data)
+ax.plot_wireframe(X, Y, data)
 
 plt.show()
 

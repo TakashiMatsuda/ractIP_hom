@@ -37,7 +37,6 @@ private:
 	VVVF align_v(const TH& seq, double min_aln);
 
 	VVVVF rnaduplex_hom(const TH& th1, const TH& th2);
-	void aln_duplex(Alignment a1, Alignment a2, VVF& hp);
 	void rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const;
 };
 

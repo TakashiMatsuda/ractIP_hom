@@ -50,7 +50,7 @@
 #include "centroidalifold/engine/contrafoldhom.h"
 #include "centroidalifold/engine/mccaskillhom.h"
 
-#define BP_OUTPUT 1
+#define BP_OUTPUT 0
 
 
 namespace Vienna {
@@ -671,11 +671,10 @@ solve(TH& s1, TH& s2, std::string& r1, std::string& r2, FoldingEngine<TH>* cf1, 
       out_bp2 << (*it_bp2) << ",";
     }
 
-  // R用の形式に書き換えた
   std::string outbp_name = bp_dirname+"/out_hp_2.csv";
   std::ofstream out_hp(outbp_name.c_str());
   VVF::iterator itit_hp = hp.begin();
-  int S = (*(hp.begin())).size();
+//  int S = (*(hp.begin())).size();
 //  out_hp << 0;
   //for (int i = 1; i < S; i++){
  //   out_hp << "," << i;

@@ -38,7 +38,7 @@ const char *gengetopt_args_info_help[] = {
   "  -V, --version                Print version and exit",
   "  -a, --alpha=FLOAT             weight for hybridization  (default=`0.5')",
   "  -b, --beta=FLOAT             weight for unpaired bases  (default=`0.0')",
-  "  -t, --fold-th=FLOAT          Threshold for base-pairing probabilities\n                                 (default=`0.01')",
+  "  -t, --fold-th=FLOAT          Threshold for base-pairing probabilities\n                                 (default=`0.3')",
   "  -u, --hybridize-th=FLOAT     Threshold for hybridazation probabilities\n                                 (default=`0.2')",
   "  -s, --acc-th=FLOAT           Threshold for accessible probabilities\n                                 (default=`0.0')",
   "      --max-w=INT              Maximum length of accessible regions\n                                 (default=`0')",
@@ -117,7 +117,7 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->alpha_orig = NULL;
   args_info->beta_arg = 0.0;
   args_info->beta_orig = NULL;
-  args_info->fold_th_arg = 0.01;
+  args_info->fold_th_arg = 0.3;
   args_info->fold_th_orig = NULL;
   args_info->hybridize_th_arg = 0.2;
   args_info->hybridize_th_orig = NULL;
@@ -704,7 +704,7 @@ cmdline_parser_internal (
         
           if (update_arg( (void *)&(args_info->fold_th_arg), 
                &(args_info->fold_th_orig), &(args_info->fold_th_given),
-              &(local_args_info.fold_th_given), optarg, 0, "0.01", ARG_FLOAT,
+              &(local_args_info.fold_th_given), optarg, 0, "0.3", ARG_FLOAT,
               check_ambiguity, override, 0, 0,
               "fold-th", 't',
               additional_error))

@@ -49,7 +49,7 @@ struct gengetopt_args_info
   float beta_arg;	/**< @brief weight for unpaired bases (default='0.0').  */
   char * beta_orig;	/**< @brief weight for unpaired bases original value given at command line.  */
   const char *beta_help; /**< @brief weight for unpaired bases help description.  */
-  float fold_th_arg;	/**< @brief Threshold for base-pairing probabilities (default='0.01').  */
+  float fold_th_arg;	/**< @brief Threshold for base-pairing probabilities (default='0.3').  */
   char * fold_th_orig;	/**< @brief Threshold for base-pairing probabilities original value given at command line.  */
   const char *fold_th_help; /**< @brief Threshold for base-pairing probabilities help description.  */
   float hybridize_th_arg;	/**< @brief Threshold for hybridazation probabilities (default='0.2').  */
