@@ -8,8 +8,8 @@ AM_CONFIG_HEADER(config.h)
 AC_CONFIG_SRCDIR([src/ractip_hom.cpp])
 
 # Checks for programs.
-AC_PROG_CXX(g++-4.8)
-AC_PROG_CC(gcc-4.8)
+AC_PROG_CXX(g++)
+AC_PROG_CC(gcc)
 AC_LANG(C++)
 AC_PROG_RANLIB
 AC_OPENMP
