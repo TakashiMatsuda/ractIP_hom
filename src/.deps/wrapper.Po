@@ -1,515 +1,422 @@
 wrapper.o: centroidalifold/contrafold/wrapper.cpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/vector \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_algobase.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/c++config.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/os_defines.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/cpu_defines.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/functexcept.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/exception_defines.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/cpp_type_traits.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/type_traits.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/numeric_traits.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_pair.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/move.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/concept_check.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_iterator_base_types.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_iterator_base_funcs.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/debug/debug.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_iterator.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/allocator.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/c++allocator.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/new_allocator.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/new \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/exception \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/atomic_lockfree_defines.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/memoryfwd.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_construct.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/alloc_traits.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_uninitialized.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_vector.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_bvector.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/range_access.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/vector.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/string \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stringfwd.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/char_traits.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/postypes.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cwchar \
- /usr/include/wchar.h /usr/include/_types.h /usr/include/sys/_types.h \
- /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
- /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
- /usr/include/i386/_types.h /usr/include/Availability.h \
- /usr/include/AvailabilityInternal.h /usr/include/sys/_types/_null.h \
- /usr/include/sys/_types/_size_t.h /usr/include/sys/_types/_mbstate_t.h \
- /usr/include/sys/_types/_ct_rune_t.h /usr/include/sys/_types/_rune_t.h \
- /usr/include/sys/_types/_wchar_t.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/stdarg.h \
- /usr/include/stdio.h /usr/include/sys/_types/_va_list.h \
- /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_ssize_t.h \
- /usr/include/time.h /usr/include/_structs.h /usr/include/sys/_structs.h \
- /usr/include/sys/_types/_timespec.h /usr/include/sys/_types/_clock_t.h \
- /usr/include/sys/_types/_time_t.h /usr/include/_wctype.h \
- /usr/include/sys/_types/_wint_t.h /usr/include/_types/_wctype_t.h \
- /usr/include/ctype.h /usr/include/runetype.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/localefwd.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/c++locale.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/clocale \
- /usr/include/locale.h /usr/include/_locale.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/iosfwd \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cctype \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/ostream_insert.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/cxxabi_forced.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_function.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/backward/binders.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/basic_string.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/atomicity.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/gthr.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/pthread_impl.h /usr/include/sched.h \
- /usr/include/sys/_types/_pthread_attr_t.h \
- /usr/include/sys/_types/_pthread_cond_t.h \
- /usr/include/sys/_types/_pthread_condattr_t.h \
- /usr/include/sys/_types/_pthread_key_t.h \
- /usr/include/sys/_types/_pthread_mutex_t.h \
- /usr/include/sys/_types/_pthread_mutexattr_t.h \
- /usr/include/sys/_types/_pthread_once_t.h \
- /usr/include/sys/_types/_pthread_rwlock_t.h \
- /usr/include/sys/_types/_pthread_rwlockattr_t.h \
- /usr/include/sys/_types/_pthread_t.h \
- /usr/include/sys/_types/_mach_port_t.h \
- /usr/include/sys/_types/_sigset_t.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/atomic_word.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/basic_string.tcc \
- centroidalifold/contrafold/InferenceEngine.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/queue \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/deque \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_deque.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/deque.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_heap.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_queue.h \
- centroidalifold/contrafold/Config.hpp \
- centroidalifold/contrafold/SStruct.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/fstream \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/istream \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ios \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/ios_base.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/locale_classes.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/locale_classes.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/streambuf \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/streambuf.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/basic_ios.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/locale_facets.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cwctype \
- /usr/include/wctype.h /usr/include/_types/_wctrans_t.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/ctype_base.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/streambuf_iterator.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/ctype_inline.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/locale_facets.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/basic_ios.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ostream \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/ostream.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/istream.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/codecvt.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstdio \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/basic_file.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/c++io.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/fstream.tcc \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/sstream \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/sstream.tcc \
- centroidalifold/contrafold/Utilities.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/algorithm \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/utility \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_relops.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_algo.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstdlib \
- /usr/include/stdlib.h /usr/include/sys/wait.h \
- /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h \
- /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h \
- /usr/include/machine/signal.h /usr/include/i386/signal.h \
- /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h \
- /usr/include/mach/i386/_structs.h /usr/include/sys/_types/_sigaltstack.h \
- /usr/include/sys/_types/_ucontext.h /usr/include/sys/_types/_uid_t.h \
- /usr/include/sys/resource.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/stdint.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include-fixed/stdint.h \
- /usr/include/sys/_types/_int8_t.h /usr/include/sys/_types/_int16_t.h \
- /usr/include/sys/_types/_int32_t.h /usr/include/sys/_types/_int64_t.h \
- /usr/include/_types/_uint8_t.h /usr/include/_types/_uint16_t.h \
- /usr/include/_types/_uint32_t.h /usr/include/_types/_uint64_t.h \
- /usr/include/sys/_types/_intptr_t.h /usr/include/sys/_types/_uintptr_t.h \
- /usr/include/_types/_intmax_t.h /usr/include/_types/_uintmax_t.h \
- /usr/include/sys/_types/_timeval.h /usr/include/machine/endian.h \
- /usr/include/i386/endian.h /usr/include/sys/_endian.h \
- /usr/include/libkern/_OSByteOrder.h \
- /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
- /usr/include/machine/types.h /usr/include/i386/types.h \
- /usr/include/sys/_types/___offsetof.h /usr/include/sys/_types/_dev_t.h \
- /usr/include/sys/_types/_mode_t.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/algorithmfwd.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_tempbuf.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cerrno \
- /usr/include/errno.h /usr/include/sys/errno.h \
- /usr/include/sys/_types/_errno_t.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cmath \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include-fixed/math.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstdarg \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstring \
- /usr/include/string.h /usr/include/sys/_types/_rsize_t.h \
- /usr/include/strings.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/iomanip \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/iostream \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/numeric \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_numeric.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/map \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_tree.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_map.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_multimap.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/set \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_set.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_multiset.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/stack \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_stack.h \
- /usr/include/sys/time.h /usr/include/sys/_types/_fd_def.h \
- /usr/include/sys/_types/_suseconds_t.h \
- /usr/include/sys/_types/_fd_setsize.h /usr/include/sys/_types/_fd_set.h \
- /usr/include/sys/_types/_fd_clr.h /usr/include/sys/_types/_fd_isset.h \
- /usr/include/sys/_types/_fd_zero.h /usr/include/sys/_types/_fd_copy.h \
- /usr/include/sys/_select.h centroidalifold/contrafold/Utilities.ipp \
- centroidalifold/contrafold/ParameterManager.hpp \
- centroidalifold/contrafold/ParameterManager.ipp \
- centroidalifold/contrafold/LogSpace.hpp \
- centroidalifold/contrafold/rand.h \
- centroidalifold/contrafold/../../../config.h \
- /usr/local/include/boost/random.hpp \
- /usr/local/include/boost/random/additive_combine.hpp \
- /usr/local/include/boost/config.hpp \
- /usr/local/include/boost/config/user.hpp \
- /usr/local/include/boost/config/select_compiler_config.hpp \
- /usr/local/include/boost/config/compiler/gcc.hpp \
- /usr/local/include/boost/config/select_stdlib_config.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstddef \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/stddef.h \
- /usr/local/include/boost/config/no_tr1/utility.hpp \
- /usr/local/include/boost/config/stdlib/libstdcpp3.hpp \
- /usr/include/unistd.h /usr/include/sys/unistd.h \
- /usr/include/sys/_types/_posix_vdisable.h \
- /usr/include/sys/_types/_seek_set.h /usr/include/sys/_types/_gid_t.h \
- /usr/include/sys/_types/_useconds_t.h /usr/include/sys/select.h \
- /usr/include/sys/_types/_uuid_t.h /usr/include/gethostuuid.h \
- /usr/local/include/boost/config/select_platform_config.hpp \
- /usr/local/include/boost/config/platform/macos.hpp \
- /usr/local/include/boost/config/posix_features.hpp \
- /usr/local/include/boost/config/suffix.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include-fixed/limits.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include-fixed/syslimits.h \
- /usr/include/limits.h /usr/include/machine/limits.h \
- /usr/include/i386/limits.h /usr/include/i386/_limits.h \
- /usr/include/sys/syslimits.h /usr/local/include/boost/cstdint.hpp \
- /usr/local/include/boost/random/detail/config.hpp \
- /usr/local/include/boost/random/detail/operators.hpp \
- /usr/local/include/boost/detail/workaround.hpp \
- /usr/local/include/boost/random/detail/seed.hpp \
- /usr/local/include/boost/utility/enable_if.hpp \
- /usr/local/include/boost/core/enable_if.hpp \
- /usr/local/include/boost/type_traits/is_arithmetic.hpp \
- /usr/local/include/boost/type_traits/is_integral.hpp \
- /usr/local/include/boost/type_traits/detail/bool_trait_def.hpp \
- /usr/local/include/boost/type_traits/detail/template_arity_spec.hpp \
- /usr/local/include/boost/mpl/int.hpp \
- /usr/local/include/boost/mpl/int_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/adl_barrier.hpp \
- /usr/local/include/boost/mpl/aux_/config/adl.hpp \
- /usr/local/include/boost/mpl/aux_/config/msvc.hpp \
- /usr/local/include/boost/mpl/aux_/config/intel.hpp \
- /usr/local/include/boost/mpl/aux_/config/gcc.hpp \
- /usr/local/include/boost/mpl/aux_/config/workaround.hpp \
- /usr/local/include/boost/mpl/aux_/nttp_decl.hpp \
- /usr/local/include/boost/mpl/aux_/config/nttp.hpp \
- /usr/local/include/boost/mpl/aux_/integral_wrapper.hpp \
- /usr/local/include/boost/mpl/integral_c_tag.hpp \
- /usr/local/include/boost/mpl/aux_/config/static_constant.hpp \
- /usr/local/include/boost/mpl/aux_/static_cast.hpp \
- /usr/local/include/boost/preprocessor/cat.hpp \
- /usr/local/include/boost/preprocessor/config/config.hpp \
- /usr/local/include/boost/mpl/aux_/template_arity_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessor/params.hpp \
- /usr/local/include/boost/mpl/aux_/config/preprocessor.hpp \
- /usr/local/include/boost/preprocessor/comma_if.hpp \
- /usr/local/include/boost/preprocessor/punctuation/comma_if.hpp \
- /usr/local/include/boost/preprocessor/control/if.hpp \
- /usr/local/include/boost/preprocessor/control/iif.hpp \
- /usr/local/include/boost/preprocessor/logical/bool.hpp \
- /usr/local/include/boost/preprocessor/facilities/empty.hpp \
- /usr/local/include/boost/preprocessor/punctuation/comma.hpp \
- /usr/local/include/boost/preprocessor/repeat.hpp \
- /usr/local/include/boost/preprocessor/repetition/repeat.hpp \
- /usr/local/include/boost/preprocessor/debug/error.hpp \
- /usr/local/include/boost/preprocessor/detail/auto_rec.hpp \
- /usr/local/include/boost/preprocessor/tuple/eat.hpp \
- /usr/local/include/boost/preprocessor/inc.hpp \
- /usr/local/include/boost/preprocessor/arithmetic/inc.hpp \
- /usr/local/include/boost/mpl/aux_/config/lambda.hpp \
- /usr/local/include/boost/mpl/aux_/config/ttp.hpp \
- /usr/local/include/boost/mpl/aux_/config/ctps.hpp \
- /usr/local/include/boost/mpl/aux_/config/overload_resolution.hpp \
- /usr/local/include/boost/type_traits/integral_constant.hpp \
- /usr/local/include/boost/mpl/bool.hpp \
- /usr/local/include/boost/mpl/bool_fwd.hpp \
- /usr/local/include/boost/mpl/integral_c.hpp \
- /usr/local/include/boost/mpl/integral_c_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/lambda_support.hpp \
- /usr/local/include/boost/type_traits/detail/bool_trait_undef.hpp \
- /usr/local/include/boost/type_traits/is_float.hpp \
- /usr/local/include/boost/type_traits/detail/ice_or.hpp \
- /usr/local/include/boost/random/linear_congruential.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/stdexcept \
- /usr/local/include/boost/assert.hpp /usr/include/assert.h \
- /usr/local/include/boost/limits.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/limits \
- /usr/local/include/boost/static_assert.hpp \
- /usr/local/include/boost/integer/static_log2.hpp \
- /usr/local/include/boost/integer_fwd.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/climits \
- /usr/local/include/boost/mpl/if.hpp \
- /usr/local/include/boost/mpl/aux_/value_wknd.hpp \
- /usr/local/include/boost/mpl/aux_/config/integral.hpp \
- /usr/local/include/boost/mpl/aux_/config/eti.hpp \
- /usr/local/include/boost/mpl/aux_/na_spec.hpp \
- /usr/local/include/boost/mpl/lambda_fwd.hpp \
- /usr/local/include/boost/mpl/void_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/na.hpp \
- /usr/local/include/boost/mpl/aux_/na_fwd.hpp \
- /usr/local/include/boost/mpl/aux_/lambda_arity_param.hpp \
- /usr/local/include/boost/mpl/aux_/arity.hpp \
- /usr/local/include/boost/mpl/aux_/config/dtp.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessor/enum.hpp \
- /usr/local/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
- /usr/local/include/boost/mpl/limits/arity.hpp \
- /usr/local/include/boost/preprocessor/logical/and.hpp \
- /usr/local/include/boost/preprocessor/logical/bitand.hpp \
- /usr/local/include/boost/preprocessor/identity.hpp \
- /usr/local/include/boost/preprocessor/facilities/identity.hpp \
- /usr/local/include/boost/preprocessor/empty.hpp \
- /usr/local/include/boost/preprocessor/arithmetic/add.hpp \
- /usr/local/include/boost/preprocessor/arithmetic/dec.hpp \
- /usr/local/include/boost/preprocessor/control/while.hpp \
- /usr/local/include/boost/preprocessor/list/fold_left.hpp \
- /usr/local/include/boost/preprocessor/list/detail/fold_left.hpp \
- /usr/local/include/boost/preprocessor/control/expr_iif.hpp \
- /usr/local/include/boost/preprocessor/list/adt.hpp \
- /usr/local/include/boost/preprocessor/detail/is_binary.hpp \
- /usr/local/include/boost/preprocessor/detail/check.hpp \
- /usr/local/include/boost/preprocessor/logical/compl.hpp \
- /usr/local/include/boost/preprocessor/list/fold_right.hpp \
- /usr/local/include/boost/preprocessor/list/detail/fold_right.hpp \
- /usr/local/include/boost/preprocessor/list/reverse.hpp \
- /usr/local/include/boost/preprocessor/control/detail/while.hpp \
- /usr/local/include/boost/preprocessor/tuple/elem.hpp \
- /usr/local/include/boost/preprocessor/facilities/overload.hpp \
- /usr/local/include/boost/preprocessor/variadic/size.hpp \
- /usr/local/include/boost/preprocessor/tuple/rem.hpp \
- /usr/local/include/boost/preprocessor/variadic/elem.hpp \
- /usr/local/include/boost/preprocessor/arithmetic/sub.hpp \
- /usr/local/include/boost/random/detail/const_mod.hpp \
- /usr/local/include/boost/integer_traits.hpp \
- /usr/local/include/boost/type_traits/make_unsigned.hpp \
- /usr/local/include/boost/type_traits/is_signed.hpp \
- /usr/local/include/boost/type_traits/remove_cv.hpp \
- /usr/local/include/boost/type_traits/detail/cv_traits_impl.hpp \
- /usr/local/include/boost/type_traits/detail/type_trait_def.hpp \
- /usr/local/include/boost/type_traits/detail/type_trait_undef.hpp \
- /usr/local/include/boost/type_traits/is_enum.hpp \
- /usr/local/include/boost/type_traits/intrinsics.hpp \
- /usr/local/include/boost/type_traits/config.hpp \
- /usr/local/include/boost/type_traits/is_same.hpp \
- /usr/local/include/boost/type_traits/is_reference.hpp \
- /usr/local/include/boost/type_traits/is_lvalue_reference.hpp \
- /usr/local/include/boost/type_traits/is_rvalue_reference.hpp \
- /usr/local/include/boost/type_traits/ice.hpp \
- /usr/local/include/boost/type_traits/detail/yes_no_type.hpp \
- /usr/local/include/boost/type_traits/detail/ice_and.hpp \
- /usr/local/include/boost/type_traits/detail/ice_not.hpp \
- /usr/local/include/boost/type_traits/detail/ice_eq.hpp \
- /usr/local/include/boost/type_traits/is_volatile.hpp \
- /usr/local/include/boost/type_traits/is_unsigned.hpp \
- /usr/local/include/boost/type_traits/is_const.hpp \
- /usr/local/include/boost/type_traits/add_const.hpp \
- /usr/local/include/boost/type_traits/add_volatile.hpp \
- /usr/local/include/boost/random/detail/large_arithmetic.hpp \
- /usr/local/include/boost/integer.hpp \
- /usr/local/include/boost/random/detail/integer_log2.hpp \
- /usr/local/include/boost/pending/integer_log2.hpp \
- /usr/local/include/boost/integer/integer_log2.hpp \
- /usr/local/include/boost/random/detail/disable_warnings.hpp \
- /usr/local/include/boost/random/detail/enable_warnings.hpp \
- /usr/local/include/boost/random/detail/seed_impl.hpp \
- /usr/local/include/boost/throw_exception.hpp \
- /usr/local/include/boost/exception/exception.hpp \
- /usr/local/include/boost/current_function.hpp \
- /usr/local/include/boost/config/no_tr1/cmath.hpp \
- /usr/local/include/boost/integer/integer_mask.hpp \
- /usr/local/include/boost/random/detail/signed_unsigned_tools.hpp \
- /usr/local/include/boost/random/detail/generator_bits.hpp \
- /usr/local/include/boost/random/discard_block.hpp \
- /usr/local/include/boost/random/independent_bits.hpp \
- /usr/local/include/boost/random/inversive_congruential.hpp \
- /usr/local/include/boost/random/lagged_fibonacci.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/iterator \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stream_iterator.h \
- /usr/local/include/boost/random/uniform_01.hpp \
- /usr/local/include/boost/random/detail/ptr_helper.hpp \
- /usr/local/include/boost/random/detail/generator_seed_seq.hpp \
- /usr/local/include/boost/random/linear_feedback_shift.hpp \
- /usr/local/include/boost/random/mersenne_twister.hpp \
- /usr/local/include/boost/random/ranlux.hpp \
- /usr/local/include/boost/random/subtract_with_carry.hpp \
- /usr/local/include/boost/random/shuffle_order.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cassert \
- /usr/local/include/boost/random/shuffle_output.hpp \
- /usr/local/include/boost/random/taus88.hpp \
- /usr/local/include/boost/random/xor_combine.hpp \
- /usr/local/include/boost/random/generate_canonical.hpp \
- /usr/local/include/boost/random/seed_seq.hpp \
- /usr/local/include/boost/range/begin.hpp \
- /usr/local/include/boost/range/config.hpp \
- /usr/local/include/boost/range/iterator.hpp \
- /usr/local/include/boost/range/range_fwd.hpp \
- /usr/local/include/boost/range/mutable_iterator.hpp \
- /usr/local/include/boost/range/detail/extract_optional_type.hpp \
- /usr/local/include/boost/mpl/has_xxx.hpp \
- /usr/local/include/boost/mpl/aux_/type_wrapper.hpp \
- /usr/local/include/boost/mpl/aux_/yes_no.hpp \
- /usr/local/include/boost/mpl/aux_/config/arrays.hpp \
- /usr/local/include/boost/mpl/aux_/config/has_xxx.hpp \
- /usr/local/include/boost/mpl/aux_/config/msvc_typename.hpp \
- /usr/local/include/boost/preprocessor/array/elem.hpp \
- /usr/local/include/boost/preprocessor/array/data.hpp \
- /usr/local/include/boost/preprocessor/array/size.hpp \
- /usr/local/include/boost/preprocessor/repetition/enum_params.hpp \
- /usr/local/include/boost/preprocessor/repetition/enum_trailing_params.hpp \
- /usr/local/include/boost/type_traits/remove_reference.hpp \
- /usr/local/include/boost/iterator/iterator_traits.hpp \
- /usr/local/include/boost/detail/iterator.hpp \
- /usr/local/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
- /usr/local/include/boost/range/const_iterator.hpp \
- /usr/local/include/boost/type_traits/remove_const.hpp \
- /usr/local/include/boost/mpl/eval_if.hpp \
- /usr/local/include/boost/range/end.hpp \
- /usr/local/include/boost/range/detail/implementation_help.hpp \
- /usr/local/include/boost/range/detail/common.hpp \
- /usr/local/include/boost/range/detail/sfinae.hpp \
- /usr/local/include/boost/type_traits/is_array.hpp \
- /usr/local/include/boost/type_traits/is_void.hpp \
- /usr/local/include/boost/random/random_number_generator.hpp \
- /usr/local/include/boost/random/uniform_int_distribution.hpp \
- /usr/local/include/boost/random/detail/uniform_int_float.hpp \
- /usr/local/include/boost/random/variate_generator.hpp \
- /usr/local/include/boost/random/bernoulli_distribution.hpp \
- /usr/local/include/boost/random/binomial_distribution.hpp \
- /usr/local/include/boost/random/cauchy_distribution.hpp \
- /usr/local/include/boost/random/chi_squared_distribution.hpp \
- /usr/local/include/boost/random/gamma_distribution.hpp \
- /usr/local/include/boost/random/exponential_distribution.hpp \
- /usr/local/include/boost/random/discrete_distribution.hpp \
- /usr/local/include/boost/random/detail/vector_io.hpp \
- /usr/local/include/boost/random/extreme_value_distribution.hpp \
- /usr/local/include/boost/random/fisher_f_distribution.hpp \
- /usr/local/include/boost/random/geometric_distribution.hpp \
- /usr/local/include/boost/random/lognormal_distribution.hpp \
- /usr/local/include/boost/random/normal_distribution.hpp \
- /usr/local/include/boost/random/negative_binomial_distribution.hpp \
- /usr/local/include/boost/random/poisson_distribution.hpp \
- /usr/local/include/boost/random/piecewise_constant_distribution.hpp \
- /usr/local/include/boost/random/uniform_real.hpp \
- /usr/local/include/boost/random/uniform_real_distribution.hpp \
- /usr/local/include/boost/random/piecewise_linear_distribution.hpp \
- /usr/local/include/boost/random/student_t_distribution.hpp \
- /usr/local/include/boost/random/triangle_distribution.hpp \
- /usr/local/include/boost/random/uniform_int.hpp \
- /usr/local/include/boost/random/uniform_on_sphere.hpp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/functional \
- /usr/local/include/boost/random/uniform_smallint.hpp \
- /usr/local/include/boost/random/weibull_distribution.hpp \
- centroidalifold/contrafold/InferenceEngine.ipp \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/list \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_list.h \
- /usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/list.tcc \
- contrafold/SStruct.hpp centroidalifold/contrafold/Defaults.ipp \
- centroidalifold/contrafold/contrafold.h
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__config \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__bit_reference \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstddef \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstring \
+  /usr/include/string.h /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
+  /usr/include/i386/_types.h /usr/include/Availability.h \
+  /usr/include/AvailabilityInternal.h /usr/include/sys/_types/_size_t.h \
+  /usr/include/sys/_types/_null.h /usr/include/sys/_types/_rsize_t.h \
+  /usr/include/sys/_types/_errno_t.h /usr/include/sys/_types/_ssize_t.h \
+  /usr/include/strings.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/utility \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tuple \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tuple_03 \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/memory \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdint \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h \
+  /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h \
+  /usr/include/sys/_types/_int16_t.h /usr/include/sys/_types/_int32_t.h \
+  /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h \
+  /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h \
+  /usr/include/_types/_uint64_t.h /usr/include/sys/_types/_intptr_t.h \
+  /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h \
+  /usr/include/_types/_uintmax_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/limits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iosfwd \
+  /usr/include/wchar.h /usr/include/sys/_types/_mbstate_t.h \
+  /usr/include/sys/_types/_ct_rune_t.h /usr/include/sys/_types/_rune_t.h \
+  /usr/include/sys/_types/_wchar_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdarg.h \
+  /usr/include/stdio.h /usr/include/sys/_types/_va_list.h \
+  /usr/include/sys/_types/_off_t.h /usr/include/time.h \
+  /usr/include/_structs.h /usr/include/sys/_structs.h \
+  /usr/include/sys/_types/_timespec.h /usr/include/sys/_types/_clock_t.h \
+  /usr/include/sys/_types/_time_t.h /usr/include/_wctype.h \
+  /usr/include/sys/_types/_wint_t.h /usr/include/_types/_wctype_t.h \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base_03 \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/tuple \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/limits.h \
+  /usr/include/limits.h /usr/include/machine/limits.h \
+  /usr/include/i386/limits.h /usr/include/i386/_limits.h \
+  /usr/include/sys/syslimits.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/stdexcept \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__split_buffer \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdio \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cwchar \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cctype \
+  /usr/include/wctype.h /usr/include/_types/_wctrans_t.h \
+  centroidalifold/contrafold/InferenceEngine.hpp \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/queue \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/deque \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/functional \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_03 \
+  centroidalifold/contrafold/Config.hpp \
+  centroidalifold/contrafold/SStruct.hpp \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/fstream \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ios \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__locale \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ctime \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno \
+  /usr/include/errno.h /usr/include/sys/errno.h /usr/include/pthread.h \
+  /usr/include/pthread_impl.h /usr/include/sched.h \
+  /usr/include/sys/_types/_pthread_attr_t.h \
+  /usr/include/sys/_types/_pthread_cond_t.h \
+  /usr/include/sys/_types/_pthread_condattr_t.h \
+  /usr/include/sys/_types/_pthread_key_t.h \
+  /usr/include/sys/_types/_pthread_mutex_t.h \
+  /usr/include/sys/_types/_pthread_mutexattr_t.h \
+  /usr/include/sys/_types/_pthread_once_t.h \
+  /usr/include/sys/_types/_pthread_rwlock_t.h \
+  /usr/include/sys/_types/_pthread_rwlockattr_t.h \
+  /usr/include/sys/_types/_pthread_t.h \
+  /usr/include/sys/_types/_mach_port_t.h \
+  /usr/include/sys/_types/_sigset_t.h /usr/include/locale.h \
+  /usr/include/_locale.h /usr/include/xlocale.h /usr/include/_xlocale.h \
+  /usr/include/xlocale/_ctype.h /usr/include/xlocale/__wctype.h \
+  /usr/include/xlocale/_stdio.h /usr/include/xlocale/_string.h \
+  /usr/include/xlocale/_time.h /usr/include/xlocale/_wchar.h \
+  /usr/include/xlocale/_wctype.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/streambuf \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/locale \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdlib \
+  /usr/include/stdlib.h /usr/include/sys/wait.h \
+  /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_id_t.h \
+  /usr/include/sys/signal.h /usr/include/sys/appleapiopts.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h \
+  /usr/include/mach/i386/_structs.h \
+  /usr/include/sys/_types/_sigaltstack.h \
+  /usr/include/sys/_types/_ucontext.h /usr/include/sys/_types/_uid_t.h \
+  /usr/include/sys/resource.h /usr/include/sys/_types/_timeval.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
+  /usr/include/machine/types.h /usr/include/i386/types.h \
+  /usr/include/sys/_types/___offsetof.h /usr/include/sys/_types/_dev_t.h \
+  /usr/include/sys/_types/_mode_t.h /usr/include/xlocale/_stdlib.h \
+  /usr/include/nl_types.h /usr/include/sys/types.h \
+  /usr/include/sys/_types/_blkcnt_t.h \
+  /usr/include/sys/_types/_blksize_t.h /usr/include/sys/_types/_gid_t.h \
+  /usr/include/sys/_types/_in_addr_t.h \
+  /usr/include/sys/_types/_in_port_t.h /usr/include/sys/_types/_ino_t.h \
+  /usr/include/sys/_types/_ino64_t.h /usr/include/sys/_types/_key_t.h \
+  /usr/include/sys/_types/_nlink_t.h \
+  /usr/include/sys/_types/_useconds_t.h \
+  /usr/include/sys/_types/_suseconds_t.h \
+  /usr/include/sys/_types/_fd_def.h \
+  /usr/include/sys/_types/_fd_setsize.h \
+  /usr/include/sys/_types/_fd_set.h /usr/include/sys/_types/_fd_clr.h \
+  /usr/include/sys/_types/_fd_zero.h /usr/include/sys/_types/_fd_isset.h \
+  /usr/include/sys/_types/_fd_copy.h \
+  /usr/include/sys/_types/_fsblkcnt_t.h \
+  /usr/include/sys/_types/_fsfilcnt_t.h /usr/include/_types/_nl_item.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/bitset \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/sstream \
+  centroidalifold/contrafold/Utilities.hpp \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cmath \
+  /usr/include/math.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdarg \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iomanip \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iostream \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/numeric \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/stack \
+  /usr/include/sys/time.h /usr/include/sys/_select.h \
+  centroidalifold/contrafold/Utilities.ipp \
+  centroidalifold/contrafold/ParameterManager.hpp \
+  centroidalifold/contrafold/ParameterManager.ipp \
+  centroidalifold/contrafold/LogSpace.hpp \
+  centroidalifold/contrafold/rand.h \
+  centroidalifold/contrafold/../../../config.h \
+  /usr/local/include/boost/random.hpp \
+  /usr/local/include/boost/random/additive_combine.hpp \
+  /usr/local/include/boost/config.hpp \
+  /usr/local/include/boost/config/user.hpp \
+  /usr/local/include/boost/config/select_compiler_config.hpp \
+  /usr/local/include/boost/config/compiler/clang.hpp \
+  /usr/local/include/boost/config/select_stdlib_config.hpp \
+  /usr/local/include/boost/config/no_tr1/utility.hpp \
+  /usr/local/include/boost/config/stdlib/libcpp.hpp \
+  /usr/local/include/boost/config/select_platform_config.hpp \
+  /usr/local/include/boost/config/platform/macos.hpp \
+  /usr/local/include/boost/config/posix_features.hpp \
+  /usr/include/unistd.h /usr/include/sys/unistd.h \
+  /usr/include/sys/_types/_posix_vdisable.h \
+  /usr/include/sys/_types/_seek_set.h /usr/include/sys/select.h \
+  /usr/include/sys/_types/_uuid_t.h /usr/include/gethostuuid.h \
+  /usr/local/include/boost/config/suffix.hpp \
+  /usr/local/include/boost/cstdint.hpp \
+  /usr/local/include/boost/random/detail/config.hpp \
+  /usr/local/include/boost/random/detail/operators.hpp \
+  /usr/local/include/boost/detail/workaround.hpp \
+  /usr/local/include/boost/random/detail/seed.hpp \
+  /usr/local/include/boost/utility/enable_if.hpp \
+  /usr/local/include/boost/core/enable_if.hpp \
+  /usr/local/include/boost/type_traits/is_arithmetic.hpp \
+  /usr/local/include/boost/type_traits/is_integral.hpp \
+  /usr/local/include/boost/type_traits/detail/bool_trait_def.hpp \
+  /usr/local/include/boost/type_traits/detail/template_arity_spec.hpp \
+  /usr/local/include/boost/mpl/int.hpp \
+  /usr/local/include/boost/mpl/int_fwd.hpp \
+  /usr/local/include/boost/mpl/aux_/adl_barrier.hpp \
+  /usr/local/include/boost/mpl/aux_/config/adl.hpp \
+  /usr/local/include/boost/mpl/aux_/config/msvc.hpp \
+  /usr/local/include/boost/mpl/aux_/config/intel.hpp \
+  /usr/local/include/boost/mpl/aux_/config/gcc.hpp \
+  /usr/local/include/boost/mpl/aux_/config/workaround.hpp \
+  /usr/local/include/boost/mpl/aux_/nttp_decl.hpp \
+  /usr/local/include/boost/mpl/aux_/config/nttp.hpp \
+  /usr/local/include/boost/mpl/aux_/integral_wrapper.hpp \
+  /usr/local/include/boost/mpl/integral_c_tag.hpp \
+  /usr/local/include/boost/mpl/aux_/config/static_constant.hpp \
+  /usr/local/include/boost/mpl/aux_/static_cast.hpp \
+  /usr/local/include/boost/preprocessor/cat.hpp \
+  /usr/local/include/boost/preprocessor/config/config.hpp \
+  /usr/local/include/boost/mpl/aux_/template_arity_fwd.hpp \
+  /usr/local/include/boost/mpl/aux_/preprocessor/params.hpp \
+  /usr/local/include/boost/mpl/aux_/config/preprocessor.hpp \
+  /usr/local/include/boost/preprocessor/comma_if.hpp \
+  /usr/local/include/boost/preprocessor/punctuation/comma_if.hpp \
+  /usr/local/include/boost/preprocessor/control/if.hpp \
+  /usr/local/include/boost/preprocessor/control/iif.hpp \
+  /usr/local/include/boost/preprocessor/logical/bool.hpp \
+  /usr/local/include/boost/preprocessor/facilities/empty.hpp \
+  /usr/local/include/boost/preprocessor/punctuation/comma.hpp \
+  /usr/local/include/boost/preprocessor/repeat.hpp \
+  /usr/local/include/boost/preprocessor/repetition/repeat.hpp \
+  /usr/local/include/boost/preprocessor/debug/error.hpp \
+  /usr/local/include/boost/preprocessor/detail/auto_rec.hpp \
+  /usr/local/include/boost/preprocessor/tuple/eat.hpp \
+  /usr/local/include/boost/preprocessor/inc.hpp \
+  /usr/local/include/boost/preprocessor/arithmetic/inc.hpp \
+  /usr/local/include/boost/mpl/aux_/config/lambda.hpp \
+  /usr/local/include/boost/mpl/aux_/config/ttp.hpp \
+  /usr/local/include/boost/mpl/aux_/config/ctps.hpp \
+  /usr/local/include/boost/mpl/aux_/config/overload_resolution.hpp \
+  /usr/local/include/boost/type_traits/integral_constant.hpp \
+  /usr/local/include/boost/mpl/bool.hpp \
+  /usr/local/include/boost/mpl/bool_fwd.hpp \
+  /usr/local/include/boost/mpl/integral_c.hpp \
+  /usr/local/include/boost/mpl/integral_c_fwd.hpp \
+  /usr/local/include/boost/mpl/aux_/lambda_support.hpp \
+  /usr/local/include/boost/type_traits/detail/bool_trait_undef.hpp \
+  /usr/local/include/boost/type_traits/is_float.hpp \
+  /usr/local/include/boost/type_traits/detail/ice_or.hpp \
+  /usr/local/include/boost/random/linear_congruential.hpp \
+  /usr/local/include/boost/assert.hpp /usr/include/assert.h \
+  /usr/local/include/boost/limits.hpp \
+  /usr/local/include/boost/static_assert.hpp \
+  /usr/local/include/boost/integer/static_log2.hpp \
+  /usr/local/include/boost/integer_fwd.hpp \
+  /usr/local/include/boost/mpl/if.hpp \
+  /usr/local/include/boost/mpl/aux_/value_wknd.hpp \
+  /usr/local/include/boost/mpl/aux_/config/integral.hpp \
+  /usr/local/include/boost/mpl/aux_/config/eti.hpp \
+  /usr/local/include/boost/mpl/aux_/na_spec.hpp \
+  /usr/local/include/boost/mpl/lambda_fwd.hpp \
+  /usr/local/include/boost/mpl/void_fwd.hpp \
+  /usr/local/include/boost/mpl/aux_/na.hpp \
+  /usr/local/include/boost/mpl/aux_/na_fwd.hpp \
+  /usr/local/include/boost/mpl/aux_/lambda_arity_param.hpp \
+  /usr/local/include/boost/mpl/aux_/arity.hpp \
+  /usr/local/include/boost/mpl/aux_/config/dtp.hpp \
+  /usr/local/include/boost/mpl/aux_/preprocessor/enum.hpp \
+  /usr/local/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
+  /usr/local/include/boost/mpl/limits/arity.hpp \
+  /usr/local/include/boost/preprocessor/logical/and.hpp \
+  /usr/local/include/boost/preprocessor/logical/bitand.hpp \
+  /usr/local/include/boost/preprocessor/identity.hpp \
+  /usr/local/include/boost/preprocessor/facilities/identity.hpp \
+  /usr/local/include/boost/preprocessor/empty.hpp \
+  /usr/local/include/boost/preprocessor/arithmetic/add.hpp \
+  /usr/local/include/boost/preprocessor/arithmetic/dec.hpp \
+  /usr/local/include/boost/preprocessor/control/while.hpp \
+  /usr/local/include/boost/preprocessor/list/fold_left.hpp \
+  /usr/local/include/boost/preprocessor/list/detail/fold_left.hpp \
+  /usr/local/include/boost/preprocessor/control/expr_iif.hpp \
+  /usr/local/include/boost/preprocessor/list/adt.hpp \
+  /usr/local/include/boost/preprocessor/detail/is_binary.hpp \
+  /usr/local/include/boost/preprocessor/detail/check.hpp \
+  /usr/local/include/boost/preprocessor/logical/compl.hpp \
+  /usr/local/include/boost/preprocessor/list/fold_right.hpp \
+  /usr/local/include/boost/preprocessor/list/detail/fold_right.hpp \
+  /usr/local/include/boost/preprocessor/list/reverse.hpp \
+  /usr/local/include/boost/preprocessor/control/detail/while.hpp \
+  /usr/local/include/boost/preprocessor/tuple/elem.hpp \
+  /usr/local/include/boost/preprocessor/facilities/overload.hpp \
+  /usr/local/include/boost/preprocessor/variadic/size.hpp \
+  /usr/local/include/boost/preprocessor/tuple/rem.hpp \
+  /usr/local/include/boost/preprocessor/variadic/elem.hpp \
+  /usr/local/include/boost/preprocessor/arithmetic/sub.hpp \
+  /usr/local/include/boost/random/detail/const_mod.hpp \
+  /usr/local/include/boost/integer_traits.hpp \
+  /usr/local/include/boost/type_traits/make_unsigned.hpp \
+  /usr/local/include/boost/type_traits/is_signed.hpp \
+  /usr/local/include/boost/type_traits/remove_cv.hpp \
+  /usr/local/include/boost/type_traits/detail/cv_traits_impl.hpp \
+  /usr/local/include/boost/type_traits/detail/type_trait_def.hpp \
+  /usr/local/include/boost/type_traits/detail/type_trait_undef.hpp \
+  /usr/local/include/boost/type_traits/is_enum.hpp \
+  /usr/local/include/boost/type_traits/intrinsics.hpp \
+  /usr/local/include/boost/type_traits/config.hpp \
+  /usr/local/include/boost/type_traits/is_same.hpp \
+  /usr/local/include/boost/type_traits/is_reference.hpp \
+  /usr/local/include/boost/type_traits/is_lvalue_reference.hpp \
+  /usr/local/include/boost/type_traits/is_rvalue_reference.hpp \
+  /usr/local/include/boost/type_traits/ice.hpp \
+  /usr/local/include/boost/type_traits/detail/yes_no_type.hpp \
+  /usr/local/include/boost/type_traits/detail/ice_and.hpp \
+  /usr/local/include/boost/type_traits/detail/ice_not.hpp \
+  /usr/local/include/boost/type_traits/detail/ice_eq.hpp \
+  /usr/local/include/boost/type_traits/is_volatile.hpp \
+  /usr/local/include/boost/type_traits/is_abstract.hpp \
+  /usr/local/include/boost/type_traits/is_unsigned.hpp \
+  /usr/local/include/boost/type_traits/is_const.hpp \
+  /usr/local/include/boost/type_traits/add_const.hpp \
+  /usr/local/include/boost/type_traits/add_volatile.hpp \
+  /usr/local/include/boost/random/detail/large_arithmetic.hpp \
+  /usr/local/include/boost/integer.hpp \
+  /usr/local/include/boost/random/detail/integer_log2.hpp \
+  /usr/local/include/boost/pending/integer_log2.hpp \
+  /usr/local/include/boost/integer/integer_log2.hpp \
+  /usr/local/include/boost/random/detail/disable_warnings.hpp \
+  /usr/local/include/boost/random/detail/enable_warnings.hpp \
+  /usr/local/include/boost/random/detail/seed_impl.hpp \
+  /usr/local/include/boost/throw_exception.hpp \
+  /usr/local/include/boost/exception/exception.hpp \
+  /usr/local/include/boost/current_function.hpp \
+  /usr/local/include/boost/config/no_tr1/cmath.hpp \
+  /usr/local/include/boost/integer/integer_mask.hpp \
+  /usr/local/include/boost/random/detail/signed_unsigned_tools.hpp \
+  /usr/local/include/boost/random/detail/generator_bits.hpp \
+  /usr/local/include/boost/random/discard_block.hpp \
+  /usr/local/include/boost/random/independent_bits.hpp \
+  /usr/local/include/boost/random/inversive_congruential.hpp \
+  /usr/local/include/boost/random/lagged_fibonacci.hpp \
+  /usr/local/include/boost/random/uniform_01.hpp \
+  /usr/local/include/boost/random/detail/ptr_helper.hpp \
+  /usr/local/include/boost/random/detail/generator_seed_seq.hpp \
+  /usr/local/include/boost/random/linear_feedback_shift.hpp \
+  /usr/local/include/boost/random/mersenne_twister.hpp \
+  /usr/local/include/boost/random/ranlux.hpp \
+  /usr/local/include/boost/random/subtract_with_carry.hpp \
+  /usr/local/include/boost/random/shuffle_order.hpp \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cassert \
+  /usr/local/include/boost/random/shuffle_output.hpp \
+  /usr/local/include/boost/random/taus88.hpp \
+  /usr/local/include/boost/random/xor_combine.hpp \
+  /usr/local/include/boost/random/generate_canonical.hpp \
+  /usr/local/include/boost/random/seed_seq.hpp \
+  /usr/local/include/boost/range/begin.hpp \
+  /usr/local/include/boost/range/config.hpp \
+  /usr/local/include/boost/range/iterator.hpp \
+  /usr/local/include/boost/range/range_fwd.hpp \
+  /usr/local/include/boost/range/mutable_iterator.hpp \
+  /usr/local/include/boost/range/detail/extract_optional_type.hpp \
+  /usr/local/include/boost/mpl/has_xxx.hpp \
+  /usr/local/include/boost/mpl/aux_/type_wrapper.hpp \
+  /usr/local/include/boost/mpl/aux_/yes_no.hpp \
+  /usr/local/include/boost/mpl/aux_/config/arrays.hpp \
+  /usr/local/include/boost/mpl/aux_/config/has_xxx.hpp \
+  /usr/local/include/boost/mpl/aux_/config/msvc_typename.hpp \
+  /usr/local/include/boost/preprocessor/array/elem.hpp \
+  /usr/local/include/boost/preprocessor/array/data.hpp \
+  /usr/local/include/boost/preprocessor/array/size.hpp \
+  /usr/local/include/boost/preprocessor/repetition/enum_params.hpp \
+  /usr/local/include/boost/preprocessor/repetition/enum_trailing_params.hpp \
+  /usr/local/include/boost/type_traits/remove_reference.hpp \
+  /usr/local/include/boost/iterator/iterator_traits.hpp \
+  /usr/local/include/boost/detail/iterator.hpp \
+  /usr/local/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
+  /usr/local/include/boost/range/const_iterator.hpp \
+  /usr/local/include/boost/type_traits/remove_const.hpp \
+  /usr/local/include/boost/mpl/eval_if.hpp \
+  /usr/local/include/boost/range/end.hpp \
+  /usr/local/include/boost/range/detail/implementation_help.hpp \
+  /usr/local/include/boost/range/detail/common.hpp \
+  /usr/local/include/boost/range/detail/sfinae.hpp \
+  /usr/local/include/boost/type_traits/is_array.hpp \
+  /usr/local/include/boost/type_traits/is_void.hpp \
+  /usr/local/include/boost/random/random_number_generator.hpp \
+  /usr/local/include/boost/random/uniform_int_distribution.hpp \
+  /usr/local/include/boost/random/detail/uniform_int_float.hpp \
+  /usr/local/include/boost/random/variate_generator.hpp \
+  /usr/local/include/boost/random/bernoulli_distribution.hpp \
+  /usr/local/include/boost/random/binomial_distribution.hpp \
+  /usr/local/include/boost/random/cauchy_distribution.hpp \
+  /usr/local/include/boost/random/chi_squared_distribution.hpp \
+  /usr/local/include/boost/random/gamma_distribution.hpp \
+  /usr/local/include/boost/random/exponential_distribution.hpp \
+  /usr/local/include/boost/random/discrete_distribution.hpp \
+  /usr/local/include/boost/random/detail/vector_io.hpp \
+  /usr/local/include/boost/random/extreme_value_distribution.hpp \
+  /usr/local/include/boost/random/fisher_f_distribution.hpp \
+  /usr/local/include/boost/random/geometric_distribution.hpp \
+  /usr/local/include/boost/random/lognormal_distribution.hpp \
+  /usr/local/include/boost/random/normal_distribution.hpp \
+  /usr/local/include/boost/random/negative_binomial_distribution.hpp \
+  /usr/local/include/boost/random/poisson_distribution.hpp \
+  /usr/local/include/boost/random/piecewise_constant_distribution.hpp \
+  /usr/local/include/boost/random/uniform_real.hpp \
+  /usr/local/include/boost/random/uniform_real_distribution.hpp \
+  /usr/local/include/boost/random/piecewise_linear_distribution.hpp \
+  /usr/local/include/boost/random/student_t_distribution.hpp \
+  /usr/local/include/boost/random/triangle_distribution.hpp \
+  /usr/local/include/boost/random/uniform_int.hpp \
+  /usr/local/include/boost/random/uniform_on_sphere.hpp \
+  /usr/local/include/boost/random/uniform_smallint.hpp \
+  /usr/local/include/boost/random/weibull_distribution.hpp \
+  centroidalifold/contrafold/InferenceEngine.ipp \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/list \
+  contrafold/SStruct.hpp centroidalifold/contrafold/Defaults.ipp \
+  centroidalifold/contrafold/contrafold.h
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/vector:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_algobase.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__config:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/c++config.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__bit_reference:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/os_defines.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/cpu_defines.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/initializer_list:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/functexcept.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstddef:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/exception_defines.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stddef.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/cpp_type_traits.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/type_traits.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstring:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/numeric_traits.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_pair.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/move.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/concept_check.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_iterator_base_types.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_iterator_base_funcs.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/debug/debug.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_iterator.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/allocator.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/c++allocator.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/new_allocator.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/new:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/exception:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/atomic_lockfree_defines.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/memoryfwd.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_construct.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/alloc_traits.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_uninitialized.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_vector.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_bvector.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/range_access.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/vector.tcc:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/string:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stringfwd.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/char_traits.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/postypes.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cwchar:
-
-/usr/include/wchar.h:
+/usr/include/string.h:
 
 /usr/include/_types.h:
 
@@ -529,9 +436,71 @@ wrapper.o: centroidalifold/contrafold/wrapper.cpp \
 
 /usr/include/AvailabilityInternal.h:
 
+/usr/include/sys/_types/_size_t.h:
+
 /usr/include/sys/_types/_null.h:
 
-/usr/include/sys/_types/_size_t.h:
+/usr/include/sys/_types/_rsize_t.h:
+
+/usr/include/sys/_types/_errno_t.h:
+
+/usr/include/sys/_types/_ssize_t.h:
+
+/usr/include/strings.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/utility:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tuple:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tuple_03:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/memory:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/typeinfo:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/exception:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdint:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/sys/_types/_int8_t.h:
+
+/usr/include/sys/_types/_int16_t.h:
+
+/usr/include/sys/_types/_int32_t.h:
+
+/usr/include/sys/_types/_int64_t.h:
+
+/usr/include/_types/_uint8_t.h:
+
+/usr/include/_types/_uint16_t.h:
+
+/usr/include/_types/_uint32_t.h:
+
+/usr/include/_types/_uint64_t.h:
+
+/usr/include/sys/_types/_intptr_t.h:
+
+/usr/include/sys/_types/_uintptr_t.h:
+
+/usr/include/_types/_intmax_t.h:
+
+/usr/include/_types/_uintmax_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/limits:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iosfwd:
+
+/usr/include/wchar.h:
 
 /usr/include/sys/_types/_mbstate_t.h:
 
@@ -541,15 +510,13 @@ wrapper.o: centroidalifold/contrafold/wrapper.cpp \
 
 /usr/include/sys/_types/_wchar_t.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/stdarg.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/stdarg.h:
 
 /usr/include/stdio.h:
 
 /usr/include/sys/_types/_va_list.h:
 
 /usr/include/sys/_types/_off_t.h:
-
-/usr/include/sys/_types/_ssize_t.h:
 
 /usr/include/time.h:
 
@@ -573,35 +540,83 @@ wrapper.o: centroidalifold/contrafold/wrapper.cpp \
 
 /usr/include/runetype.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/localefwd.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/c++locale.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base_03:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/clocale:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/tuple:
 
-/usr/include/locale.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/climits:
 
-/usr/include/_locale.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.0/include/limits.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/iosfwd:
+/usr/include/limits.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cctype:
+/usr/include/machine/limits.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/ostream_insert.h:
+/usr/include/i386/limits.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/cxxabi_forced.h:
+/usr/include/i386/_limits.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_function.h:
+/usr/include/sys/syslimits.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/backward/binders.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/stdexcept:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/basic_string.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__split_buffer:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ext/atomicity.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/gthr.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdio:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/gthr-default.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cwchar:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cwctype:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cctype:
+
+/usr/include/wctype.h:
+
+/usr/include/_types/_wctrans_t.h:
+
+centroidalifold/contrafold/InferenceEngine.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/queue:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/deque:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/functional:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_03:
+
+centroidalifold/contrafold/Config.hpp:
+
+centroidalifold/contrafold/SStruct.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/fstream:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ios:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__locale:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/mutex:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__mutex_base:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/chrono:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ctime:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ratio:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/system_error:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cerrno:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
 
 /usr/include/pthread.h:
 
@@ -633,95 +648,33 @@ wrapper.o: centroidalifold/contrafold/wrapper.cpp \
 
 /usr/include/sys/_types/_sigset_t.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/atomic_word.h:
+/usr/include/locale.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/basic_string.tcc:
+/usr/include/_locale.h:
 
-centroidalifold/contrafold/InferenceEngine.hpp:
+/usr/include/xlocale.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/queue:
+/usr/include/_xlocale.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/deque:
+/usr/include/xlocale/_ctype.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_deque.h:
+/usr/include/xlocale/__wctype.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/deque.tcc:
+/usr/include/xlocale/_stdio.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_heap.h:
+/usr/include/xlocale/_string.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_queue.h:
+/usr/include/xlocale/_time.h:
 
-centroidalifold/contrafold/Config.hpp:
+/usr/include/xlocale/_wchar.h:
 
-centroidalifold/contrafold/SStruct.hpp:
+/usr/include/xlocale/_wctype.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/fstream:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/streambuf:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/istream:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/locale:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ios:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/ios_base.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/locale_classes.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/locale_classes.tcc:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/streambuf:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/streambuf.tcc:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/basic_ios.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/locale_facets.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cwctype:
-
-/usr/include/wctype.h:
-
-/usr/include/_types/_wctrans_t.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/ctype_base.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/streambuf_iterator.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/ctype_inline.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/locale_facets.tcc:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/basic_ios.tcc:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/ostream:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/ostream.tcc:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/istream.tcc:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/codecvt.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstdio:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/basic_file.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/x86_64-apple-darwin13.2.0/bits/c++io.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/fstream.tcc:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/sstream:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/sstream.tcc:
-
-centroidalifold/contrafold/Utilities.hpp:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/algorithm:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/utility:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_relops.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_algo.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstdlib:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdlib:
 
 /usr/include/stdlib.h:
 
@@ -753,34 +706,6 @@ centroidalifold/contrafold/Utilities.hpp:
 
 /usr/include/sys/resource.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/stdint.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include-fixed/stdint.h:
-
-/usr/include/sys/_types/_int8_t.h:
-
-/usr/include/sys/_types/_int16_t.h:
-
-/usr/include/sys/_types/_int32_t.h:
-
-/usr/include/sys/_types/_int64_t.h:
-
-/usr/include/_types/_uint8_t.h:
-
-/usr/include/_types/_uint16_t.h:
-
-/usr/include/_types/_uint32_t.h:
-
-/usr/include/_types/_uint64_t.h:
-
-/usr/include/sys/_types/_intptr_t.h:
-
-/usr/include/sys/_types/_uintptr_t.h:
-
-/usr/include/_types/_intmax_t.h:
-
-/usr/include/_types/_uintmax_t.h:
-
 /usr/include/sys/_types/_timeval.h:
 
 /usr/include/machine/endian.h:
@@ -805,63 +730,35 @@ centroidalifold/contrafold/Utilities.hpp:
 
 /usr/include/sys/_types/_mode_t.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/algorithmfwd.h:
+/usr/include/xlocale/_stdlib.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_tempbuf.h:
+/usr/include/nl_types.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cerrno:
+/usr/include/sys/types.h:
 
-/usr/include/errno.h:
+/usr/include/sys/_types/_blkcnt_t.h:
 
-/usr/include/sys/errno.h:
+/usr/include/sys/_types/_blksize_t.h:
 
-/usr/include/sys/_types/_errno_t.h:
+/usr/include/sys/_types/_gid_t.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cmath:
+/usr/include/sys/_types/_in_addr_t.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include-fixed/math.h:
+/usr/include/sys/_types/_in_port_t.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstdarg:
+/usr/include/sys/_types/_ino_t.h:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstring:
+/usr/include/sys/_types/_ino64_t.h:
 
-/usr/include/string.h:
+/usr/include/sys/_types/_key_t.h:
 
-/usr/include/sys/_types/_rsize_t.h:
+/usr/include/sys/_types/_nlink_t.h:
 
-/usr/include/strings.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/iomanip:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/iostream:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/numeric:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_numeric.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/map:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_tree.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_map.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_multimap.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/set:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_set.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_multiset.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/stack:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_stack.h:
-
-/usr/include/sys/time.h:
-
-/usr/include/sys/_types/_fd_def.h:
+/usr/include/sys/_types/_useconds_t.h:
 
 /usr/include/sys/_types/_suseconds_t.h:
+
+/usr/include/sys/_types/_fd_def.h:
 
 /usr/include/sys/_types/_fd_setsize.h:
 
@@ -869,11 +766,47 @@ centroidalifold/contrafold/Utilities.hpp:
 
 /usr/include/sys/_types/_fd_clr.h:
 
-/usr/include/sys/_types/_fd_isset.h:
-
 /usr/include/sys/_types/_fd_zero.h:
 
+/usr/include/sys/_types/_fd_isset.h:
+
 /usr/include/sys/_types/_fd_copy.h:
+
+/usr/include/sys/_types/_fsblkcnt_t.h:
+
+/usr/include/sys/_types/_fsfilcnt_t.h:
+
+/usr/include/_types/_nl_item.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/bitset:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/sstream:
+
+centroidalifold/contrafold/Utilities.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cmath:
+
+/usr/include/math.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdarg:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iomanip:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iostream:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/numeric:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/map:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tree:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/set:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/stack:
+
+/usr/include/sys/time.h:
 
 /usr/include/sys/_select.h:
 
@@ -899,17 +832,19 @@ centroidalifold/contrafold/../../../config.h:
 
 /usr/local/include/boost/config/select_compiler_config.hpp:
 
-/usr/local/include/boost/config/compiler/gcc.hpp:
+/usr/local/include/boost/config/compiler/clang.hpp:
 
 /usr/local/include/boost/config/select_stdlib_config.hpp:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cstddef:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/stddef.h:
-
 /usr/local/include/boost/config/no_tr1/utility.hpp:
 
-/usr/local/include/boost/config/stdlib/libstdcpp3.hpp:
+/usr/local/include/boost/config/stdlib/libcpp.hpp:
+
+/usr/local/include/boost/config/select_platform_config.hpp:
+
+/usr/local/include/boost/config/platform/macos.hpp:
+
+/usr/local/include/boost/config/posix_features.hpp:
 
 /usr/include/unistd.h:
 
@@ -919,37 +854,13 @@ centroidalifold/contrafold/../../../config.h:
 
 /usr/include/sys/_types/_seek_set.h:
 
-/usr/include/sys/_types/_gid_t.h:
-
-/usr/include/sys/_types/_useconds_t.h:
-
 /usr/include/sys/select.h:
 
 /usr/include/sys/_types/_uuid_t.h:
 
 /usr/include/gethostuuid.h:
 
-/usr/local/include/boost/config/select_platform_config.hpp:
-
-/usr/local/include/boost/config/platform/macos.hpp:
-
-/usr/local/include/boost/config/posix_features.hpp:
-
 /usr/local/include/boost/config/suffix.hpp:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include-fixed/limits.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include-fixed/syslimits.h:
-
-/usr/include/limits.h:
-
-/usr/include/machine/limits.h:
-
-/usr/include/i386/limits.h:
-
-/usr/include/i386/_limits.h:
-
-/usr/include/sys/syslimits.h:
 
 /usr/local/include/boost/cstdint.hpp:
 
@@ -1067,23 +978,17 @@ centroidalifold/contrafold/../../../config.h:
 
 /usr/local/include/boost/random/linear_congruential.hpp:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/stdexcept:
-
 /usr/local/include/boost/assert.hpp:
 
 /usr/include/assert.h:
 
 /usr/local/include/boost/limits.hpp:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/limits:
-
 /usr/local/include/boost/static_assert.hpp:
 
 /usr/local/include/boost/integer/static_log2.hpp:
 
 /usr/local/include/boost/integer_fwd.hpp:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/climits:
 
 /usr/local/include/boost/mpl/if.hpp:
 
@@ -1207,6 +1112,8 @@ centroidalifold/contrafold/../../../config.h:
 
 /usr/local/include/boost/type_traits/is_volatile.hpp:
 
+/usr/local/include/boost/type_traits/is_abstract.hpp:
+
 /usr/local/include/boost/type_traits/is_unsigned.hpp:
 
 /usr/local/include/boost/type_traits/is_const.hpp:
@@ -1253,10 +1160,6 @@ centroidalifold/contrafold/../../../config.h:
 
 /usr/local/include/boost/random/lagged_fibonacci.hpp:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/iterator:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stream_iterator.h:
-
 /usr/local/include/boost/random/uniform_01.hpp:
 
 /usr/local/include/boost/random/detail/ptr_helper.hpp:
@@ -1273,7 +1176,7 @@ centroidalifold/contrafold/../../../config.h:
 
 /usr/local/include/boost/random/shuffle_order.hpp:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/cassert:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cassert:
 
 /usr/local/include/boost/random/shuffle_output.hpp:
 
@@ -1399,19 +1302,13 @@ centroidalifold/contrafold/../../../config.h:
 
 /usr/local/include/boost/random/uniform_on_sphere.hpp:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/functional:
-
 /usr/local/include/boost/random/uniform_smallint.hpp:
 
 /usr/local/include/boost/random/weibull_distribution.hpp:
 
 centroidalifold/contrafold/InferenceEngine.ipp:
 
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/list:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/stl_list.h:
-
-/usr/local/Cellar/gcc48/4.8.3/lib/gcc/x86_64-apple-darwin13.2.0/4.8.3/include/c++/bits/list.tcc:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/list:
 
 contrafold/SStruct.hpp:
 

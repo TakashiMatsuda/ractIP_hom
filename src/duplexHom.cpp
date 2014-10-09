@@ -35,8 +35,9 @@ namespace Vienna {
 
 #include "centroidalifold/util.h"
 #include "centroidalifold/probconsRNA/probcons.h"
-
+#if _OPENMP
 #include <omp.h>
+#endif
 
 RNAduplexHommodel::
 RNAduplexHommodel(const std::string& engine_a){
