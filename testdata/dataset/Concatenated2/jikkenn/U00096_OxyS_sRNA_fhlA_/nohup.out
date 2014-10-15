@@ -1,0 +1,330 @@
+ib-t == 0.05
+ob-t == 0.05
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.002s
+ib-t == 0.05
+ob-t == 0.1
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.013s
+user	0m0.001s
+sys	0m0.000s
+ib-t == 0.05
+ob-t == 0.12
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.013s
+user	0m0.002s
+sys	0m0.000s
+ib-t == 0.05
+ob-t == 0.14
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.013s
+user	0m0.001s
+sys	0m0.001s
+ib-t == 0.05
+ob-t == 0.16
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.001s
+sys	0m0.000s
+ib-t == 0.1
+ob-t == 0.05
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.001s
+sys	0m0.001s
+ib-t == 0.1
+ob-t == 0.1
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.001s
+sys	0m0.001s
+ib-t == 0.1
+ob-t == 0.12
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.009s
+user	0m0.000s
+sys	0m0.002s
+ib-t == 0.1
+ob-t == 0.14
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.012s
+user	0m0.001s
+sys	0m0.000s
+ib-t == 0.1
+ob-t == 0.16
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.001s
+sys	0m0.001s
+ib-t == 0.15
+ob-t == 0.05
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.000s
+sys	0m0.002s
+ib-t == 0.15
+ob-t == 0.1
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.001s
+sys	0m0.000s
+ib-t == 0.15
+ob-t == 0.12
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.015s
+user	0m0.001s
+sys	0m0.001s
+ib-t == 0.15
+ob-t == 0.14
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.001s
+sys	0m0.001s
+ib-t == 0.15
+ob-t == 0.16
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.015s
+user	0m0.000s
+sys	0m0.001s
+ib-t == 0.2
+ob-t == 0.05
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.001s
+sys	0m0.001s
+ib-t == 0.2
+ob-t == 0.1
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.015s
+user	0m0.001s
+sys	0m0.001s
+ib-t == 0.2
+ob-t == 0.12
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.000s
+sys	0m0.002s
+ib-t == 0.2
+ob-t == 0.14
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.015s
+user	0m0.000s
+sys	0m0.001s
+ib-t == 0.2
+ob-t == 0.16
+./test.sh: line 9: /src/ractip_hom: そのようなファイルやディレクトリはありません
+
+real	0m0.014s
+user	0m0.001s
+sys	0m0.001s
+mkdir: ディレクトリ `newres' を作成できません: ファイルが存在します
+ib-t == 0.05
+ob-t == 0.05
+
+real	2m17.928s
+user	41m27.564s
+sys	0m0.139s
+ib-t == 0.05
+ob-t == 0.1
+
+real	2m9.305s
+user	38m52.888s
+sys	0m0.102s
+ib-t == 0.05
+ob-t == 0.12
+
+real	2m8.229s
+user	38m56.082s
+sys	0m0.117s
+ib-t == 0.05
+ob-t == 0.14
+./test.sh: line 5:  9007 終了しました      ${RACTIPHOM}/src/ractip_hom -t ${i} -u ${j} OxyS.fa U00096_OxyS_sRNA_fhlA_1.fa fhlA.fa U00096_OxyS_sRNA_fhlA_2.fa > newres/ibt-${i}-obt-${j}.fa
+
+real	0m27.097s
+user	0m27.029s
+sys	0m0.037s
+ib-t == 0.05
+ob-t == 0.16
+mkdir: ディレクトリ `newres' を作成できません: ファイルが存在します
+ib-t == 0.05
+ob-t == 0.05
+ib-t == 0.05
+ob-t == 0.1
+ib-t == 0.05
+ob-t == 0.12
+ib-t == 0.05
+ob-t == 0.14
+ib-t == 0.05
+ob-t == 0.16
+ib-t == 0.1
+ob-t == 0.05
+ib-t == 0.1
+ob-t == 0.1
+ib-t == 0.1
+ob-t == 0.12
+ib-t == 0.1
+ob-t == 0.14
+ib-t == 0.1
+ob-t == 0.16
+ib-t == 0.15
+ob-t == 0.05
+ib-t == 0.15
+ob-t == 0.1
+ib-t == 0.15
+ob-t == 0.12
+ib-t == 0.15
+ob-t == 0.14
+ib-t == 0.15
+ob-t == 0.16
+ib-t == 0.2
+ob-t == 0.05
+ib-t == 0.2
+ob-t == 0.1
+ib-t == 0.2
+ob-t == 0.12
+ib-t == 0.2
+ob-t == 0.14
+ib-t == 0.2
+ob-t == 0.16
+mkdir: ディレクトリ `newres' を作成できません: ファイルが存在します
+ib-t == 0.05
+ob-t == 0.05
+
+real	2m12.740s
+user	38m51.835s
+sys	0m0.119s
+ib-t == 0.05
+ob-t == 0.1
+
+real	2m25.593s
+user	38m43.253s
+sys	0m0.128s
+ib-t == 0.05
+ob-t == 0.12
+
+real	2m9.635s
+user	38m55.459s
+sys	0m0.109s
+ib-t == 0.05
+ob-t == 0.14
+
+real	2m9.333s
+user	39m20.430s
+sys	0m0.123s
+ib-t == 0.05
+ob-t == 0.16
+
+real	2m18.233s
+user	38m58.702s
+sys	0m0.131s
+ib-t == 0.1
+ob-t == 0.05
+
+real	2m16.782s
+user	38m44.321s
+sys	0m0.112s
+ib-t == 0.1
+ob-t == 0.1
+
+real	2m8.874s
+user	38m33.088s
+sys	0m0.131s
+ib-t == 0.1
+ob-t == 0.12
+
+real	2m8.638s
+user	38m39.477s
+sys	0m0.113s
+ib-t == 0.1
+ob-t == 0.14
+
+real	2m6.683s
+user	38m48.442s
+sys	0m0.116s
+ib-t == 0.1
+ob-t == 0.16
+
+real	2m21.416s
+user	38m43.934s
+sys	0m0.123s
+ib-t == 0.15
+ob-t == 0.05
+
+real	2m20.832s
+user	38m51.456s
+sys	0m0.125s
+ib-t == 0.15
+ob-t == 0.1
+
+real	2m26.934s
+user	38m41.572s
+sys	0m0.112s
+ib-t == 0.15
+ob-t == 0.12
+
+real	2m19.449s
+user	38m49.855s
+sys	0m0.156s
+ib-t == 0.15
+ob-t == 0.14
+
+real	2m17.097s
+user	38m43.408s
+sys	0m0.094s
+ib-t == 0.15
+ob-t == 0.16
+
+real	2m8.037s
+user	38m59.474s
+sys	0m0.093s
+ib-t == 0.2
+ob-t == 0.05
+
+real	2m11.081s
+user	38m43.668s
+sys	0m0.099s
+ib-t == 0.2
+ob-t == 0.1
+
+real	2m10.319s
+user	39m37.984s
+sys	0m0.111s
+ib-t == 0.2
+ob-t == 0.12
+
+real	2m23.125s
+user	38m43.555s
+sys	0m0.116s
+ib-t == 0.2
+ob-t == 0.14
+
+real	2m10.257s
+user	38m56.485s
+sys	0m0.083s
+ib-t == 0.2
+ob-t == 0.16
+
+real	2m15.809s
+user	38m43.129s
+sys	0m0.096s
