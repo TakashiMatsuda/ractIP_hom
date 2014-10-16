@@ -5,6 +5,7 @@ import scipy.interpolate
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
+import sys
 """
 f = open('./out_hp_2.csv')
 buffers = f.readlines()
@@ -42,6 +43,6 @@ x = np.arange(0, len(data), 1)
 y = np.arange(0, len(data[0]), 1)
 X, Y = np.meshgrid(x,y)
 """
-plt.plotfile('./plot.csv', (0,1), delimiter=',', names=('ppv', 'sen'))
-plt.show()
-
+plt.plotfile(sys.argv[1], (0,1), delimiter=',', names=('ppv', 'sen'))
+plt.savefig("ppv-sen-curve.png")
+print "message:: plotting successfully done!"

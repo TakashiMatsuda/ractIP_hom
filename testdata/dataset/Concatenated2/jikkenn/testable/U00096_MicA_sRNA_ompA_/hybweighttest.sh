@@ -25,7 +25,7 @@ do
 	    fi
 	    echo "ib-t == ${i}"
 	    echo "ob-t == ${j}"
-	    ${RACTIPHOM}/src/ractip_hom -t ${i} -u ${j} MicA.fa U00096_MicA_sRNA_ompA_1.fa ompA.fa U00096_MicA_sRNA_ompA_2.fa > tritest_hyb_t_u/ibt-${i}-obt-${j}-hyb-${k}.fa &
+	    ${RACTIPHOM}/src/ractip_hom -t ${i} -u ${j} --hyb-mix-w=${k} MicA.fa U00096_MicA_sRNA_ompA_1.fa ompA.fa U00096_MicA_sRNA_ompA_2.fa > tritest_hyb_t_u/ibt-${i}-obt-${j}-hyb-${k}.fa &
 	    NUM_PROCESS=`expr ${NUM_PROCESS} + 1`
 	done
     done

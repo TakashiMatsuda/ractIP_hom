@@ -1,7 +1,5 @@
 #! /usr/bin/ruby
 
-# どの点がどのパラメータ設定だかわからない、3列目にタグをいれておく。
-
 # f: filepointer
 # pick a RNA secondstructure
 def secondstrc(f)
@@ -71,9 +69,7 @@ for filepath in files
     output.close
     output = open("plot.csv", 'a')
     tot = Float(len)
-    ppv = Float(tp) / Float((tp + fp))
-    sen = Float(tp) / Float((tp + fn))
-    output.write("#{ppv},#{sen}\n")
+    output.write("#{fp/tot},#{tp/tot}\n")
     output.close
 #    tcount = tcount + tc_tmp
 #    ncount = ncount + nc_tmp
