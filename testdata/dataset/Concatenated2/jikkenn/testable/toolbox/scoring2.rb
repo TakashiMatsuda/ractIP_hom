@@ -1,5 +1,10 @@
 #! /usr/bin/ruby
 
+=begin
+Takashi Matsuda, 2014
+MIT License
+=end
+
 # f: filepointer
 # pick a RNA secondstructure section from fasta file
 def secondstrc(f)
