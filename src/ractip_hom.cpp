@@ -484,7 +484,7 @@ rnaduplex_aln(const Aln& a1, const Aln& a2, VVF& hp) const
     VVVF::iterator itr_vtr_hp;
     int L = vtr_hp[0].size();
     int M = vtr_hp[0][0].size();
-    hp.resize(L+1);// debug temporally
+    hp.resize(L+1);
     for (int i=0; i<L; i++)
     {
       for (int j = 0; j < M; j++)
@@ -567,7 +567,7 @@ rnaduplex(const std::string& s1, const std::string& s2, VVF& hp) const
     std::string c(s.size(), 'e');
     Vienna::pf_scale = -1;
     Vienna::cut_point = s1.size()+1;
-    Vienna::co_pf_fold(const_cast<char*>(s.c_str()), const_cast<char*>(c.c_str()));// reading
+    Vienna::co_pf_fold(const_cast<char*>(s.c_str()), const_cast<char*>(c.c_str()));
     pair_info* pi = NULL;
 #ifdef HAVE_VIENNA20
     Vienna::assign_plist_from_pr(&pi, Vienna::export_co_bppm(), s.size(), th_hy_);
@@ -1143,10 +1143,10 @@ parse_options(int& argc, char**& argv)
   gengetopt_args_info args_info;// Gnu gengetopt
   if (cmdline_parser(argc, argv, &args_info)!=0) exit(1);
   // the last filepointer should be taken by centroid_alifold section.
-  alpha_ = args_info.alpha_arg;
+  alpha_ = args_info.alpha_arg * (args_info.gamma_s_arg + 1) * (args_info.gamma_h_arg + 1);
   beta_ = args_info.beta_arg;
-  th_ss_ = args_info.fold_th_arg;
-  th_hy_ = args_info.hybridize_th_arg;
+  th_ss_ = 1.0 / (args_info.gamma_s_arg + 1.0);
+  th_hy_ = 1.0 / (args_info.gamma_h_arg + 1.0);
   th_ac_ = args_info.acc_th_arg;
   mix_w.push_back(args_info.mix_weight_arg);//float mix_weight_arg
   max_w_ = args_info.max_w_arg;

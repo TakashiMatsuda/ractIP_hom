@@ -38,12 +38,12 @@ const char *gengetopt_args_info_help[] = {
   "  -V, --version                Print version and exit",
   "  -a, --alpha=FLOAT             weight for hybridization  (default=`0.5')",
   "  -b, --beta=FLOAT             weight for unpaired bases  (default=`0.0')",
-  "  -t, --fold-th=FLOAT          Threshold for base-pairing probabilities\n                                 (default=`0.3')",
-  "  -u, --hybridize-th=FLOAT     Threshold for hybridazation probabilities\n                                 (default=`0.2')",
+  "  -t, --gamma_s=FLOAT          Gamma for base-paring probabilities. This value\n                                 decides simultaneously threshold for inner\n                                 base-paring probabilities.  (default=`3')",
+  "  -u, --gamma_h=FLOAT          Gamma for hybridization base-paring\n                                 probabilities. This value decides\n                                 simultaneously threshold for hybridization\n                                 base-paring probabilities  (default=`5')",
   "  -s, --acc-th=FLOAT           Threshold for accessible probabilities\n                                 (default=`0.0')",
   "      --max-w=INT              Maximum length of accessible regions\n                                 (default=`0')",
   "      --min-w=INT              Minimum length of accessible regions\n                                 (default=`0')",
-  "      --hyb-mix-w=DOUBLE       Mixture weights of hybridization probability\n                                 from homologous sequences  (default=`0.6')",
+  "      --hyb-mix-w=DOUBLE       Mixture weights of hybridization probability\n                                 from solo prediction  (default=`0.6')",
   "      --zscore=INT             Calculate z-score via dishuffling (0=no\n                                 shuffling, 1=1st seq only, 2=2nd seq only, or\n                                 12=both)  (default=`0')",
   "      --num-shuffling=INT      The number of shuffling  (default=`1000')",
   "      --seed=INT               Seed for random number generator  (default=`0')",
@@ -88,8 +88,8 @@ void clear_given (struct gengetopt_args_info *args_info)
   args_info->version_given = 0 ;
   args_info->alpha_given = 0 ;
   args_info->beta_given = 0 ;
-  args_info->fold_th_given = 0 ;
-  args_info->hybridize_th_given = 0 ;
+  args_info->gamma_s_given = 0 ;
+  args_info->gamma_h_given = 0 ;
   args_info->acc_th_given = 0 ;
   args_info->max_w_given = 0 ;
   args_info->min_w_given = 0 ;
@@ -117,10 +117,10 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->alpha_orig = NULL;
   args_info->beta_arg = 0.0;
   args_info->beta_orig = NULL;
-  args_info->fold_th_arg = 0.3;
-  args_info->fold_th_orig = NULL;
-  args_info->hybridize_th_arg = 0.2;
-  args_info->hybridize_th_orig = NULL;
+  args_info->gamma_s_arg = 3;
+  args_info->gamma_s_orig = NULL;
+  args_info->gamma_h_arg = 5;
+  args_info->gamma_h_orig = NULL;
   args_info->acc_th_arg = 0.0;
   args_info->acc_th_orig = NULL;
   args_info->max_w_arg = 0;
@@ -163,8 +163,8 @@ void init_args_info(struct gengetopt_args_info *args_info)
   args_info->version_help = gengetopt_args_info_help[1] ;
   args_info->alpha_help = gengetopt_args_info_help[2] ;
   args_info->beta_help = gengetopt_args_info_help[3] ;
-  args_info->fold_th_help = gengetopt_args_info_help[4] ;
-  args_info->hybridize_th_help = gengetopt_args_info_help[5] ;
+  args_info->gamma_s_help = gengetopt_args_info_help[4] ;
+  args_info->gamma_h_help = gengetopt_args_info_help[5] ;
   args_info->acc_th_help = gengetopt_args_info_help[6] ;
   args_info->max_w_help = gengetopt_args_info_help[7] ;
   args_info->min_w_help = gengetopt_args_info_help[8] ;
@@ -270,8 +270,8 @@ cmdline_parser_release (struct gengetopt_args_info *args_info)
   unsigned int i;
   free_string_field (&(args_info->alpha_orig));
   free_string_field (&(args_info->beta_orig));
-  free_string_field (&(args_info->fold_th_orig));
-  free_string_field (&(args_info->hybridize_th_orig));
+  free_string_field (&(args_info->gamma_s_orig));
+  free_string_field (&(args_info->gamma_h_orig));
   free_string_field (&(args_info->acc_th_orig));
   free_string_field (&(args_info->max_w_orig));
   free_string_field (&(args_info->min_w_orig));
@@ -333,10 +333,10 @@ cmdline_parser_dump(FILE *outfile, struct gengetopt_args_info *args_info)
     write_into_file(outfile, "alpha", args_info->alpha_orig, 0);
   if (args_info->beta_given)
     write_into_file(outfile, "beta", args_info->beta_orig, 0);
-  if (args_info->fold_th_given)
-    write_into_file(outfile, "fold-th", args_info->fold_th_orig, 0);
-  if (args_info->hybridize_th_given)
-    write_into_file(outfile, "hybridize-th", args_info->hybridize_th_orig, 0);
+  if (args_info->gamma_s_given)
+    write_into_file(outfile, "gamma_s", args_info->gamma_s_orig, 0);
+  if (args_info->gamma_h_given)
+    write_into_file(outfile, "gamma_h", args_info->gamma_h_orig, 0);
   if (args_info->acc_th_given)
     write_into_file(outfile, "acc-th", args_info->acc_th_orig, 0);
   if (args_info->max_w_given)
@@ -637,8 +637,8 @@ cmdline_parser_internal (
         { "version",	0, NULL, 'V' },
         { "alpha",	1, NULL, 'a' },
         { "beta",	1, NULL, 'b' },
-        { "fold-th",	1, NULL, 't' },
-        { "hybridize-th",	1, NULL, 'u' },
+        { "gamma_s",	1, NULL, 't' },
+        { "gamma_h",	1, NULL, 'u' },
         { "acc-th",	1, NULL, 's' },
         { "max-w",	1, NULL, 0 },
         { "min-w",	1, NULL, 0 },
@@ -699,26 +699,26 @@ cmdline_parser_internal (
             goto failure;
         
           break;
-        case 't':	/* Threshold for base-pairing probabilities.  */
+        case 't':	/* Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities..  */
         
         
-          if (update_arg( (void *)&(args_info->fold_th_arg), 
-               &(args_info->fold_th_orig), &(args_info->fold_th_given),
-              &(local_args_info.fold_th_given), optarg, 0, "0.3", ARG_FLOAT,
+          if (update_arg( (void *)&(args_info->gamma_s_arg), 
+               &(args_info->gamma_s_orig), &(args_info->gamma_s_given),
+              &(local_args_info.gamma_s_given), optarg, 0, "3", ARG_FLOAT,
               check_ambiguity, override, 0, 0,
-              "fold-th", 't',
+              "gamma_s", 't',
               additional_error))
             goto failure;
         
           break;
-        case 'u':	/* Threshold for hybridazation probabilities.  */
+        case 'u':	/* Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities.  */
         
         
-          if (update_arg( (void *)&(args_info->hybridize_th_arg), 
-               &(args_info->hybridize_th_orig), &(args_info->hybridize_th_given),
-              &(local_args_info.hybridize_th_given), optarg, 0, "0.2", ARG_FLOAT,
+          if (update_arg( (void *)&(args_info->gamma_h_arg), 
+               &(args_info->gamma_h_orig), &(args_info->gamma_h_given),
+              &(local_args_info.gamma_h_given), optarg, 0, "5", ARG_FLOAT,
               check_ambiguity, override, 0, 0,
-              "hybridize-th", 'u',
+              "gamma_h", 'u',
               additional_error))
             goto failure;
         
@@ -865,7 +865,7 @@ cmdline_parser_internal (
               goto failure;
           
           }
-          /* Mixture weights of hybridization probability from homologous sequences.  */
+          /* Mixture weights of hybridization probability from solo prediction.  */
           else if (strcmp (long_options[option_index].name, "hyb-mix-w") == 0)
           {
           

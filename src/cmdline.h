@@ -49,12 +49,12 @@ struct gengetopt_args_info
   float beta_arg;	/**< @brief weight for unpaired bases (default='0.0').  */
   char * beta_orig;	/**< @brief weight for unpaired bases original value given at command line.  */
   const char *beta_help; /**< @brief weight for unpaired bases help description.  */
-  float fold_th_arg;	/**< @brief Threshold for base-pairing probabilities (default='0.3').  */
-  char * fold_th_orig;	/**< @brief Threshold for base-pairing probabilities original value given at command line.  */
-  const char *fold_th_help; /**< @brief Threshold for base-pairing probabilities help description.  */
-  float hybridize_th_arg;	/**< @brief Threshold for hybridazation probabilities (default='0.2').  */
-  char * hybridize_th_orig;	/**< @brief Threshold for hybridazation probabilities original value given at command line.  */
-  const char *hybridize_th_help; /**< @brief Threshold for hybridazation probabilities help description.  */
+  float gamma_s_arg;	/**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. (default='3').  */
+  char * gamma_s_orig;	/**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. original value given at command line.  */
+  const char *gamma_s_help; /**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. help description.  */
+  float gamma_h_arg;	/**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities (default='5').  */
+  char * gamma_h_orig;	/**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities original value given at command line.  */
+  const char *gamma_h_help; /**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities help description.  */
   float acc_th_arg;	/**< @brief Threshold for accessible probabilities (default='0.0').  */
   char * acc_th_orig;	/**< @brief Threshold for accessible probabilities original value given at command line.  */
   const char *acc_th_help; /**< @brief Threshold for accessible probabilities help description.  */
@@ -64,9 +64,9 @@ struct gengetopt_args_info
   int min_w_arg;	/**< @brief Minimum length of accessible regions (default='0').  */
   char * min_w_orig;	/**< @brief Minimum length of accessible regions original value given at command line.  */
   const char *min_w_help; /**< @brief Minimum length of accessible regions help description.  */
-  double hyb_mix_w_arg;	/**< @brief Mixture weights of hybridization probability from homologous sequences (default='0.6').  */
-  char * hyb_mix_w_orig;	/**< @brief Mixture weights of hybridization probability from homologous sequences original value given at command line.  */
-  const char *hyb_mix_w_help; /**< @brief Mixture weights of hybridization probability from homologous sequences help description.  */
+  double hyb_mix_w_arg;	/**< @brief Mixture weights of hybridization probability from solo prediction (default='0.6').  */
+  char * hyb_mix_w_orig;	/**< @brief Mixture weights of hybridization probability from solo prediction original value given at command line.  */
+  const char *hyb_mix_w_help; /**< @brief Mixture weights of hybridization probability from solo prediction help description.  */
   int zscore_arg;	/**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) (default='0').  */
   char * zscore_orig;	/**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) original value given at command line.  */
   const char *zscore_help; /**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) help description.  */
@@ -107,8 +107,8 @@ struct gengetopt_args_info
   unsigned int version_given ;	/**< @brief Whether version was given.  */
   unsigned int alpha_given ;	/**< @brief Whether alpha was given.  */
   unsigned int beta_given ;	/**< @brief Whether beta was given.  */
-  unsigned int fold_th_given ;	/**< @brief Whether fold-th was given.  */
-  unsigned int hybridize_th_given ;	/**< @brief Whether hybridize-th was given.  */
+  unsigned int gamma_s_given ;	/**< @brief Whether gamma_s was given.  */
+  unsigned int gamma_h_given ;	/**< @brief Whether gamma_h was given.  */
   unsigned int acc_th_given ;	/**< @brief Whether acc-th was given.  */
   unsigned int max_w_given ;	/**< @brief Whether max-w was given.  */
   unsigned int min_w_given ;	/**< @brief Whether min-w was given.  */
