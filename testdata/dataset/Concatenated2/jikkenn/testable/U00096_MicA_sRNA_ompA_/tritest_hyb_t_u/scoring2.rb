@@ -78,7 +78,6 @@ def countmatch(bplist_list, l)
         for ansbp2 in anslist
           if testbp[1] = ansbp2[1]
             tp = tp + 1
-            puts "match #{testbp} - #{ansbp}"
             break
           end
         end
@@ -107,15 +106,12 @@ for filepath in files
     #tf_name = filepath.gsub('answer', '_res')
 #    test_file = open("res/#{tf_name}", 'r')
     test_strc = secondstrc(test_file)
-#    ans_file = open("../../MicA-ompAanswer.fa", 'r')
-    ans_file = open(filepath, 'r')
+    ans_file = open("../../MicA-ompAanswer.fa", 'r')
     ans_strc = secondstrc(ans_file)
     inbp = [innerbplist(test_strc), innerbplist(ans_strc)]# 2本の区別の情報は潰している。
     outbp = [outerbplist(test_strc), outerbplist(ans_strc)]
     # count the number of matching between bp[0](experiment) and bp[1](answer)
-    puts "inner basepairs match :"
     inner_res=countmatch(inbp, ans_strc.length)
-    puts "outer basepairs match :"
     outer_res=countmatch(outbp, ans_strc.length)
 #tn, tp, fn and fp of innerbp
     output = open("#{filepath}-count-inner", 'w+')
@@ -125,8 +121,7 @@ for filepath in files
     output = open("#{filepath}-count-total-sensitivity", 'w+')
     tp_tot = inner_res[0]+outer_res[0]
     fn_tot = inner_res[3]+outer_res[3]
-    puts "tp: #{tp_tot}"
-#    puts "fp: #{fn_tot}"
+    puts "#{filepath}====tp: #{tp_tot}"
     sen_tot = Float(tp_tot) / Float(tp_tot + fn_tot)
     output.write("#{sen_tot}")
     output.close
