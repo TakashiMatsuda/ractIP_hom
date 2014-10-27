@@ -106,7 +106,7 @@ for filepath in files
     #tf_name = filepath.gsub('answer', '_res')
 #    test_file = open("res/#{tf_name}", 'r')
     test_strc = secondstrc(test_file)
-    ans_file = open("../../MicA-ompAanswer.fa", 'r')
+    ans_file = open("../MicA-ompAanswer.fa", 'r')
     ans_strc = secondstrc(ans_file)
     inbp = [innerbplist(test_strc), innerbplist(ans_strc)]# 2本の区別の情報は潰している。
     outbp = [outerbplist(test_strc), outerbplist(ans_strc)]
@@ -121,21 +121,28 @@ for filepath in files
     output = open("#{filepath}-count-total-sensitivity", 'w+')
     tp_tot = inner_res[0]+outer_res[0]
     fn_tot = inner_res[3]+outer_res[3]
-    puts "#{filepath}====tp: #{tp_tot}"
+#    puts "#{filepath}====tp: #{tp_tot}"
     sen_tot = Float(tp_tot) / Float(tp_tot + fn_tot)
     output.write("#{sen_tot}")
     output.close
 
-    output = open("#{filepath}-count-total-ppv", 'w+')
+    output = open("total-count-sen-ppv-fmeasure.csv", 'a+')
+    # もしoutputが空だったら、先頭タグを書いてあげる。
+    if output.read(1) == nil
+      output.write("filepath,sensitivity,ppv,fmeasure\n")
+    end
+    # parameterの値、sen, ppv, fmeasureの順のcsvを作る
     fp_tot = inner_res[2] + outer_res[2]
     ppv_tot = Float(tp_tot) / Float(tp_tot + fp_tot)
-    output.write("#{ppv_tot}")
+    fmeasure=2*sen_tot*ppv_tot / (sen_tot + ppv_tot)
+    output.write("#{filepath},#{sen_tot},#{ppv_tot},#{fmeasure}\n")
     output.close
-
+=begin
     output = open("plot.csv", 'a')
     tot = (test_strc.length * (test_strc.length - 1)) / 2
     output.write("#{inner_res[3]/tot},#{inner_res[1]/tot}\n")
     output.close
+=end
 #    puts "File close: #{filepath}"
 #    tcount = tcount + tc_tmp
 #    ncount = ncount + nc_tmp
