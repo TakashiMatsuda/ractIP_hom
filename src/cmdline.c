@@ -38,12 +38,12 @@ const char *gengetopt_args_info_help[] = {
   "  -V, --version                Print version and exit",
   "  -a, --alpha=FLOAT             weight for hybridization  (default=`0.5')",
   "  -b, --beta=FLOAT             weight for unpaired bases  (default=`0.0')",
-  "  -t, --gamma_s=FLOAT          Gamma for base-paring probabilities. This value\n                                 decides simultaneously threshold for inner\n                                 base-paring probabilities.  (default=`3')",
-  "  -u, --gamma_h=FLOAT          Gamma for hybridization base-paring\n                                 probabilities. This value decides\n                                 simultaneously threshold for hybridization\n                                 base-paring probabilities  (default=`5')",
+  "  -t, --gamma_s=FLOAT          Gamma for base-paring probabilities. This value\n                                 decides simultaneously threshold for inner\n                                 base-paring probabilities.  (default=`10')",
+  "  -u, --gamma_h=FLOAT          Gamma for hybridization base-paring\n                                 probabilities. This value decides\n                                 simultaneously threshold for hybridization\n                                 base-paring probabilities  (default=`10')",
   "  -s, --acc-th=FLOAT           Threshold for accessible probabilities\n                                 (default=`0.0')",
   "      --max-w=INT              Maximum length of accessible regions\n                                 (default=`0')",
   "      --min-w=INT              Minimum length of accessible regions\n                                 (default=`0')",
-  "      --hyb-mix-w=DOUBLE       Mixture weights of hybridization probability\n                                 from solo prediction  (default=`0.6')",
+  "      --hyb-mix-w=DOUBLE       Mixture weights of hybridization probability\n                                 from solo prediction  (default=`0.03')",
   "      --zscore=INT             Calculate z-score via dishuffling (0=no\n                                 shuffling, 1=1st seq only, 2=2nd seq only, or\n                                 12=both)  (default=`0')",
   "      --num-shuffling=INT      The number of shuffling  (default=`1000')",
   "      --seed=INT               Seed for random number generator  (default=`0')",
@@ -117,9 +117,9 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->alpha_orig = NULL;
   args_info->beta_arg = 0.0;
   args_info->beta_orig = NULL;
-  args_info->gamma_s_arg = 3;
+  args_info->gamma_s_arg = 10;
   args_info->gamma_s_orig = NULL;
-  args_info->gamma_h_arg = 5;
+  args_info->gamma_h_arg = 10;
   args_info->gamma_h_orig = NULL;
   args_info->acc_th_arg = 0.0;
   args_info->acc_th_orig = NULL;
@@ -127,7 +127,7 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->max_w_orig = NULL;
   args_info->min_w_arg = 0;
   args_info->min_w_orig = NULL;
-  args_info->hyb_mix_w_arg = 0.6;
+  args_info->hyb_mix_w_arg = 0.03;
   args_info->hyb_mix_w_orig = NULL;
   args_info->zscore_arg = 0;
   args_info->zscore_orig = NULL;
@@ -704,7 +704,7 @@ cmdline_parser_internal (
         
           if (update_arg( (void *)&(args_info->gamma_s_arg), 
                &(args_info->gamma_s_orig), &(args_info->gamma_s_given),
-              &(local_args_info.gamma_s_given), optarg, 0, "3", ARG_FLOAT,
+              &(local_args_info.gamma_s_given), optarg, 0, "10", ARG_FLOAT,
               check_ambiguity, override, 0, 0,
               "gamma_s", 't',
               additional_error))
@@ -716,7 +716,7 @@ cmdline_parser_internal (
         
           if (update_arg( (void *)&(args_info->gamma_h_arg), 
                &(args_info->gamma_h_orig), &(args_info->gamma_h_given),
-              &(local_args_info.gamma_h_given), optarg, 0, "5", ARG_FLOAT,
+              &(local_args_info.gamma_h_given), optarg, 0, "10", ARG_FLOAT,
               check_ambiguity, override, 0, 0,
               "gamma_h", 'u',
               additional_error))
@@ -872,7 +872,7 @@ cmdline_parser_internal (
           
             if (update_arg( (void *)&(args_info->hyb_mix_w_arg), 
                  &(args_info->hyb_mix_w_orig), &(args_info->hyb_mix_w_given),
-                &(local_args_info.hyb_mix_w_given), optarg, 0, "0.6", ARG_DOUBLE,
+                &(local_args_info.hyb_mix_w_given), optarg, 0, "0.03", ARG_DOUBLE,
                 check_ambiguity, override, 0, 0,
                 "hyb-mix-w", '-',
                 additional_error))

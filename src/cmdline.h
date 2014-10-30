@@ -49,10 +49,10 @@ struct gengetopt_args_info
   float beta_arg;	/**< @brief weight for unpaired bases (default='0.0').  */
   char * beta_orig;	/**< @brief weight for unpaired bases original value given at command line.  */
   const char *beta_help; /**< @brief weight for unpaired bases help description.  */
-  float gamma_s_arg;	/**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. (default='3').  */
+  float gamma_s_arg;	/**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. (default='10').  */
   char * gamma_s_orig;	/**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. original value given at command line.  */
   const char *gamma_s_help; /**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. help description.  */
-  float gamma_h_arg;	/**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities (default='5').  */
+  float gamma_h_arg;	/**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities (default='10').  */
   char * gamma_h_orig;	/**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities original value given at command line.  */
   const char *gamma_h_help; /**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities help description.  */
   float acc_th_arg;	/**< @brief Threshold for accessible probabilities (default='0.0').  */
@@ -64,7 +64,7 @@ struct gengetopt_args_info
   int min_w_arg;	/**< @brief Minimum length of accessible regions (default='0').  */
   char * min_w_orig;	/**< @brief Minimum length of accessible regions original value given at command line.  */
   const char *min_w_help; /**< @brief Minimum length of accessible regions help description.  */
-  double hyb_mix_w_arg;	/**< @brief Mixture weights of hybridization probability from solo prediction (default='0.6').  */
+  double hyb_mix_w_arg;	/**< @brief Mixture weights of hybridization probability from solo prediction (default='0.03').  */
   char * hyb_mix_w_orig;	/**< @brief Mixture weights of hybridization probability from solo prediction original value given at command line.  */
   const char *hyb_mix_w_help; /**< @brief Mixture weights of hybridization probability from solo prediction help description.  */
   int zscore_arg;	/**< @brief Calculate z-score via dishuffling (0=no shuffling, 1=1st seq only, 2=2nd seq only, or 12=both) (default='0').  */
