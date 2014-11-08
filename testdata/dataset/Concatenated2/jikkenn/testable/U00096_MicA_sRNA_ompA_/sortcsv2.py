@@ -4,7 +4,7 @@
 Takashi Matsuda, 2014
 MIT License
 
-Python script to sort csv file having 2 column by 1st column value.
+Python script to sort csv file having N columns by 1st column value.
 """
 import sys
 
@@ -15,16 +15,31 @@ print "open : "+filename
 put a row into list of vectors with two values 
 """
 res = []
+flag = False
 for line in fp:
-	tmp = line.split(',')
-	tmp_res=[float(tmp[0]), float(tmp[1])]
-	res.append(tmp_res)
+	if flag==False:
+		flag=True
+		continue
+	else:
+		tmp = line.split(',')
+		tmp_res=[]
+		for vl in tmp:
+			tmp_res.append(float(vl))
+		res.append(tmp_res)
 
 # sort that list by first value
-sortedres = sorted(res, key=lambda x : x[0])
+sortedres = sorted(res, key=lambda x : x[int(sys.argv[2])])
 
 op = open("sorted"+filename, 'w')
 for line in sortedres:
-	op.write(str(line[0])+','+str(line[1])+'\n')
+	counter = 0
+	for line_val in line:
+		if counter==0:
+			op.write(str(line_val))
+		else:
+			op.write(','+str(line_val))
+			if counter == len(line)-1:
+				op.write('\n')
+		counter = counter + 1
 
 op.close()

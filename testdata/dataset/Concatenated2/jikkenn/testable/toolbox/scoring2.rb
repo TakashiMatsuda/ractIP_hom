@@ -99,6 +99,7 @@ files = Dir::entries(Dir::pwd)
 #tot = 0
 for filepath in files
   # find a answer file
+  if /^ibp/ =~ filepath
   if /.fa$/ =~ filepath
 #    puts "File Open: #{filepath}"
     test_file = open(filepath, 'r')
@@ -129,13 +130,22 @@ for filepath in files
     output = open("total-count-sen-ppv-fmeasure.csv", 'a+')
     # もしoutputが空だったら、先頭タグを書いてあげる。
     if output.read(1) == nil
-      output.write("filepath,sensitivity,ppv,fmeasure\n")
+      output.write("gamma_s,gamma_h,alpha,sensitivity,ppv,fmeasure\n")
     end
     # parameterの値、sen, ppv, fmeasureの順のcsvを作る
     fp_tot = inner_res[2] + outer_res[2]
     ppv_tot = Float(tp_tot) / Float(tp_tot + fp_tot)
     fmeasure=2*sen_tot*ppv_tot / (sen_tot + ppv_tot)
-    output.write("#{filepath},#{sen_tot},#{ppv_tot},#{fmeasure}\n")
+
+    # filepathをparseして、パラメータibp, hbp, alphaの値を得る
+    parsedary = filepath.split('-')
+    gamma_s = parsedary[1].to_f
+    gamma_h = parsedary[3].to_f
+    alpha=parsedary[5]
+    alpha.slice!(-3..-1)
+
+    output.write("#{gamma_s},#{gamma_h},#{alpha},#{sen_tot},#{ppv_tot},#{fmeasure}\n")
+#    output.write("#{filepath},#{sen_tot},#{ppv_tot},#{fmeasure}\n")
     output.close
 =begin
     output = open("plot.csv", 'a')
@@ -148,6 +158,7 @@ for filepath in files
 #    ncount = ncount + nc_tmp
 #    puts "True : #{tc_tmp}"
 #    puts "False: #{nc_tmp}"
+  end
   end
 end
 
