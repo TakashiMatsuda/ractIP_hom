@@ -1,4 +1,5 @@
 #! /usr/bin/ruby
+# -*- coding: utf-8 -*-
 
 =begin
 Takashi Matsuda, 2014
@@ -107,7 +108,7 @@ for filepath in files
     #tf_name = filepath.gsub('answer', '_res')
 #    test_file = open("res/#{tf_name}", 'r')
     test_strc = secondstrc(test_file)
-    ans_file = open("../MicA-ompAanswer.fa", 'r')
+    ans_file = open("../MicA-ompAanswer.fa")
     ans_strc = secondstrc(ans_file)
     inbp = [innerbplist(test_strc), innerbplist(ans_strc)]# 2本の区別の情報は潰している。
     outbp = [outerbplist(test_strc), outerbplist(ans_strc)]
@@ -130,7 +131,7 @@ for filepath in files
     output = open("total-count-sen-ppv-fmeasure.csv", 'a+')
     # もしoutputが空だったら、先頭タグを書いてあげる。
     if output.read(1) == nil
-      output.write("gamma_s,gamma_h,alpha,sensitivity,ppv,fmeasure\n")
+      output.write("gamma_s,gamma_h,sensitivity,ppv,fmeasure\n")
     end
     # parameterの値、sen, ppv, fmeasureの順のcsvを作る
     fp_tot = inner_res[2] + outer_res[2]
@@ -141,12 +142,21 @@ for filepath in files
     parsedary = filepath.split('-')
     gamma_s = parsedary[1].to_f
     gamma_h = parsedary[3].to_f
+# alphaを動かしている場合
+
     alpha=parsedary[5]
     alpha.slice!(-3..-1)
-
     output.write("#{gamma_s},#{gamma_h},#{alpha},#{sen_tot},#{ppv_tot},#{fmeasure}\n")
+
+# alphaを動かしていない場合
+=begin
+    output.write("#{gamma_s},#{gamma_h},#{sen_tot},#{ppv_tot},#{fmeasure}\n")
+
+=end
+
 #    output.write("#{filepath},#{sen_tot},#{ppv_tot},#{fmeasure}\n")
     output.close
+
 =begin
     output = open("plot.csv", 'a')
     tot = (test_strc.length * (test_strc.length - 1)) / 2

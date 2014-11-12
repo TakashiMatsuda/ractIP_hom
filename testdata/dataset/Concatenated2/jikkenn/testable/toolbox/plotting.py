@@ -43,6 +43,15 @@ x = np.arange(0, len(data), 1)
 y = np.arange(0, len(data[0]), 1)
 X, Y = np.meshgrid(x,y)
 """
-plt.plotfile(sys.argv[1], (0,1), delimiter=',', names=('ppv', 'sen'))
-plt.savefig("ppv-sen-curve.png")
+
+plt.plotfile(sys.argv[1], (3,2), checkrows=0, \
+	delimiter=',', names=('gamma_s', 'gamma_h',\
+		'sen', '1-ppv', 'fmeasure'), linestyle="", marker='o')
+plt.savefig(sys.argv[2])
+
+"""
+ppv-sen curve
+"""
+
+
 print "message:: plotting successfully done!"
