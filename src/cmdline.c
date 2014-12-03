@@ -39,7 +39,7 @@ const char *gengetopt_args_info_help[] = {
   "  -a, --alpha=FLOAT             weight for hybridization  (default=`0.5')",
   "  -b, --beta=FLOAT             weight for unpaired bases  (default=`0.0')",
   "  -t, --gamma_s=FLOAT          Gamma for base-paring probabilities. This value\n                                 decides simultaneously threshold for inner\n                                 base-paring probabilities.  (default=`10')",
-  "  -u, --gamma_h=FLOAT          Gamma for hybridization base-paring\n                                 probabilities. This value decides\n                                 simultaneously threshold for hybridization\n                                 base-paring probabilities  (default=`10')",
+  "  -u, --gamma_h=FLOAT          Gamma for hybridization base-paring\n                                 probabilities. This value decides\n                                 simultaneously threshold for hybridization\n                                 base-paring probabilities  (default=`1')",
   "  -s, --acc-th=FLOAT           Threshold for accessible probabilities\n                                 (default=`0.0')",
   "      --max-w=INT              Maximum length of accessible regions\n                                 (default=`0')",
   "      --min-w=INT              Minimum length of accessible regions\n                                 (default=`0')",
@@ -57,6 +57,7 @@ const char *gengetopt_args_info_help[] = {
   "  -X, --engine-seq=ENGINENAME  specify the inference engine for independent\n                                 sequence  (default=`McCaskill')",
   "  -A, --engine-aln=ENGINENAME  specify the inference engine for independent\n                                 Alignment  (default=`CONTRAlign')",
   "      --output-dir=STRING      directory name for outputting base-paring matrix\n                                 (default=`bp_matrix')",
+  "      --number-homologous=INT  The number of homologous sequence used by this\n                                 program. This picks up the number sequences\n                                 from the inputed homologous file.\n                                 (default=`10')",
     0
 };
 
@@ -107,6 +108,7 @@ void clear_given (struct gengetopt_args_info *args_info)
   args_info->engine_seq_given = 0 ;
   args_info->engine_aln_given = 0 ;
   args_info->output_dir_given = 0 ;
+  args_info->number_homologous_given = 0 ;
 }
 
 static
@@ -119,7 +121,7 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->beta_orig = NULL;
   args_info->gamma_s_arg = 10;
   args_info->gamma_s_orig = NULL;
-  args_info->gamma_h_arg = 10;
+  args_info->gamma_h_arg = 1;
   args_info->gamma_h_orig = NULL;
   args_info->acc_th_arg = 0.0;
   args_info->acc_th_orig = NULL;
@@ -151,6 +153,8 @@ void clear_args (struct gengetopt_args_info *args_info)
   args_info->engine_aln_orig = NULL;
   args_info->output_dir_arg = gengetopt_strdup ("bp_matrix");
   args_info->output_dir_orig = NULL;
+  args_info->number_homologous_arg = 10;
+  args_info->number_homologous_orig = NULL;
   
 }
 
@@ -182,6 +186,7 @@ void init_args_info(struct gengetopt_args_info *args_info)
   args_info->engine_seq_help = gengetopt_args_info_help[20] ;
   args_info->engine_aln_help = gengetopt_args_info_help[21] ;
   args_info->output_dir_help = gengetopt_args_info_help[22] ;
+  args_info->number_homologous_help = gengetopt_args_info_help[23] ;
   
 }
 
@@ -290,6 +295,7 @@ cmdline_parser_release (struct gengetopt_args_info *args_info)
   free_string_field (&(args_info->engine_aln_orig));
   free_string_field (&(args_info->output_dir_arg));
   free_string_field (&(args_info->output_dir_orig));
+  free_string_field (&(args_info->number_homologous_orig));
   
   
   for (i = 0; i < args_info->inputs_num; ++i)
@@ -371,6 +377,8 @@ cmdline_parser_dump(FILE *outfile, struct gengetopt_args_info *args_info)
     write_into_file(outfile, "engine-aln", args_info->engine_aln_orig, 0);
   if (args_info->output_dir_given)
     write_into_file(outfile, "output-dir", args_info->output_dir_orig, 0);
+  if (args_info->number_homologous_given)
+    write_into_file(outfile, "number-homologous", args_info->number_homologous_orig, 0);
   
 
   i = EXIT_SUCCESS;
@@ -656,6 +664,7 @@ cmdline_parser_internal (
         { "engine-seq",	1, NULL, 'X' },
         { "engine-aln",	1, NULL, 'A' },
         { "output-dir",	1, NULL, 0 },
+        { "number-homologous",	1, NULL, 0 },
         { 0,  0, 0, 0 }
       };
 
@@ -716,7 +725,7 @@ cmdline_parser_internal (
         
           if (update_arg( (void *)&(args_info->gamma_h_arg), 
                &(args_info->gamma_h_orig), &(args_info->gamma_h_given),
-              &(local_args_info.gamma_h_given), optarg, 0, "10", ARG_FLOAT,
+              &(local_args_info.gamma_h_given), optarg, 0, "1", ARG_FLOAT,
               check_ambiguity, override, 0, 0,
               "gamma_h", 'u',
               additional_error))
@@ -931,6 +940,20 @@ cmdline_parser_internal (
                 &(local_args_info.output_dir_given), optarg, 0, "bp_matrix", ARG_STRING,
                 check_ambiguity, override, 0, 0,
                 "output-dir", '-',
+                additional_error))
+              goto failure;
+          
+          }
+          /* The number of homologous sequence used by this program. This picks up the number sequences from the inputed homologous file..  */
+          else if (strcmp (long_options[option_index].name, "number-homologous") == 0)
+          {
+          
+          
+            if (update_arg( (void *)&(args_info->number_homologous_arg), 
+                 &(args_info->number_homologous_orig), &(args_info->number_homologous_given),
+                &(local_args_info.number_homologous_given), optarg, 0, "10", ARG_INT,
+                check_ambiguity, override, 0, 0,
+                "number-homologous", '-',
                 additional_error))
               goto failure;
           

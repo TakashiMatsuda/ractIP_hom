@@ -52,7 +52,7 @@ struct gengetopt_args_info
   float gamma_s_arg;	/**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. (default='10').  */
   char * gamma_s_orig;	/**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. original value given at command line.  */
   const char *gamma_s_help; /**< @brief Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities. help description.  */
-  float gamma_h_arg;	/**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities (default='10').  */
+  float gamma_h_arg;	/**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities (default='1').  */
   char * gamma_h_orig;	/**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities original value given at command line.  */
   const char *gamma_h_help; /**< @brief Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities help description.  */
   float acc_th_arg;	/**< @brief Threshold for accessible probabilities (default='0.0').  */
@@ -102,6 +102,9 @@ struct gengetopt_args_info
   char * output_dir_arg;	/**< @brief directory name for outputting base-paring matrix (default='bp_matrix').  */
   char * output_dir_orig;	/**< @brief directory name for outputting base-paring matrix original value given at command line.  */
   const char *output_dir_help; /**< @brief directory name for outputting base-paring matrix help description.  */
+  int number_homologous_arg;	/**< @brief The number of homologous sequence used by this program. This picks up the number sequences from the inputed homologous file. (default='10').  */
+  char * number_homologous_orig;	/**< @brief The number of homologous sequence used by this program. This picks up the number sequences from the inputed homologous file. original value given at command line.  */
+  const char *number_homologous_help; /**< @brief The number of homologous sequence used by this program. This picks up the number sequences from the inputed homologous file. help description.  */
   
   unsigned int help_given ;	/**< @brief Whether help was given.  */
   unsigned int version_given ;	/**< @brief Whether version was given.  */
@@ -126,6 +129,7 @@ struct gengetopt_args_info
   unsigned int engine_seq_given ;	/**< @brief Whether engine-seq was given.  */
   unsigned int engine_aln_given ;	/**< @brief Whether engine-aln was given.  */
   unsigned int output_dir_given ;	/**< @brief Whether output-dir was given.  */
+  unsigned int number_homologous_given ;	/**< @brief Whether number-homologous was given.  */
 
   char **inputs ; /**< @brief unamed options (options without names) */
   unsigned inputs_num ; /**< @brief unamed options number */

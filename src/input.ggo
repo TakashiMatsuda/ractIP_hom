@@ -8,7 +8,7 @@ option "beta" b  "weight for unpaired bases" float typestr="FLOAT" no default="0
 #option "fold-th" t "Threshold for base-pairing probabilities" float typestr="FLOAT" no default="0.3"
 option "gamma_s" t "Gamma for base-paring probabilities. This value decides simultaneously threshold for inner base-paring probabilities." float typestr="FLOAT" no default = "10"
 #option "hybridize-th" u "Threshold for hybridization base-paring probabilities" float typestr="FLOAT" no default="0.2"
-option "gamma_h" u "Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities" float typestr="FLOAT" no default="10"
+option "gamma_h" u "Gamma for hybridization base-paring probabilities. This value decides simultaneously threshold for hybridization base-paring probabilities" float typestr="FLOAT" no default="1"
 option "acc-th" s "Threshold for accessible probabilities" float typestr="FLOAT" no default="0.0"
 option "max-w" -  "Maximum length of accessible regions" int typestr="INT" no default="0"
 option "min-w" - "Minimum length of accessible regions" int typestr="INT" no default="0"
@@ -30,3 +30,6 @@ option "engine-aln" A "specify the inference engine for independent Alignment" s
 
 # options for ouputting Base-Pairing Matrix
 option "output-dir" - "directory name for outputting base-paring matrix" string typestr="STRING" no default="bp_matrix"
+
+# options for testing
+option "number-homologous" - "The number of homologous sequence used by this program. This picks up the number sequences from the inputed homologous file." int typestr="INT" no default= "10"
