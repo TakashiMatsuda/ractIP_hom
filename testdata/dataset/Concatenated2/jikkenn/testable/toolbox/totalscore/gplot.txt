@@ -1,0 +1,10 @@
+set terminal postscript eps color
+set datafile separator ","
+set xtics 0.1
+set ytics 0.1
+set xlabel '1-ppv'
+set ylabel 'sen'
+set key top right
+set title "ROC plot of RactIP and RactIP_hom"
+set output '1-ppv-sen-curve-average-gp.eps'
+plot "previous/total-count-sen-1-ppv-fmeasure--prev2-1-plot.csv" using 5:4 lc rgbcolor "yellow" title 'RactIP', "total-count-sen-1-ppv-fmeasure-averaged-plot-lf.csv" using 4:3 lc rgbcolor "blue" title 'RactIP_hom'
